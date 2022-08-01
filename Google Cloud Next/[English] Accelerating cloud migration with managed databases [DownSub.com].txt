@@ -1,0 +1,1177 @@
+
+
+ANITA KIBUNGUCHY-GRANT:
+Hello, and welcome
+
+to Google Cloud Next.
+
+In this session,
+we'll walk through how
+
+to accelerate your move to the
+cloud with managed databases.
+
+If you're here to learn
+about Cloud SQL, Bare Metal
+
+Solution for Oracle, Database
+Migration Service, and more,
+
+then you are in the right place.
+
+We'll also explore why Google
+Cloud for your databases.
+
+My name is Anita
+Kbunguchy-Grant,
+
+and I am the product
+marketing lead here
+
+for the Databases organization.
+
+And I have the pleasure of being
+joined by GG, group product
+
+manager for databases.
+
+So let's go ahead
+and get started.
+
+
+
+Here's a quick agenda
+for this session.
+
+We'll start with
+what we're seeing
+
+in the industry across trends,
+go through five reasons
+
+why Google Cloud
+for your databases.
+
+We'll hear from GG about
+real-world customer use cases
+
+and finally end with
+how to get started,
+
+including some important
+resources you should check out.
+
+
+
+So some migration trends.
+
+Managed services just
+makes sense for databases.
+
+I have never met someone
+who loved managing database
+
+infrastructure, at
+least just not yet.
+
+When you think about
+all the care and feeding
+
+necessary to keep your
+databases healthy,
+
+there are a lot of
+things to consider--
+
+all the work to provision,
+set up, and maintain
+
+your hardware, the operating
+system, and database software,
+
+plus all the management
+tools and [INAUDIBLE] patches
+
+for security and maintenance;
+scaling the system;
+
+ensuring that your backups and
+restores are meeting recovery
+
+goals; and that the
+application can continue
+
+to run during various failure
+recoveries and scenarios;
+
+on top of all this,
+monitoring all of these things
+
+to make sure that
+your system is running
+
+the way your business needs to.
+
+This is a lot of work
+and pretty diverse set
+
+of skills that are needed.
+
+Consider the
+thousands of databases
+
+run by many companies.
+
+This work really adds up.
+
+Most importantly,
+these are things
+
+that are just table
+stakes for you
+
+and typically not
+the things that
+
+help you outmaneuver
+your competitors.
+
+It's therefore no
+surprise that databases
+
+are moving fast to the cloud.
+
+According to Gartner,
+75% of all databases
+
+will be deployed or migrated
+to a Cloud platform by 2022,
+
+and this is massive.
+
+It's important to note that the
+Cloud DBMS market is not new,
+
+but what is new is a growth
+in cloud revenue, which
+
+is actually projected to account
+for 50% of the total DBMS
+
+market revenue by 2023.
+
+This trend actually helps
+reinforce the notion
+
+that cloud service provider
+infrastructure and the services
+
+that run on top of
+them are becoming
+
+the new data-management
+platforms.
+
+And because of
+this, it's no wonder
+
+that so many companies
+are turning to managed
+
+services in the cloud--
+
+for their databases, that is.
+
+So why not let someone
+else who does it
+
+for millions of
+deployments and who's
+
+been automating systems
+like this for decades
+
+handle this for you?
+
+Let's talk about why Google
+Cloud offers the best place
+
+to migrate your databases.
+
+
+
+We'll start with
+reason number one.
+
+We offer a
+comprehensive platform
+
+that allows you
+to securely unify
+
+the data across your
+entire organization.
+
+This allows you to break
+down silos, increase agility,
+
+innovate faster, and support
+business transformation.
+
+We connect the different
+roles that work with data
+
+and provide them a common
+platform to build upon.
+
+So no matter where
+you start, there's
+
+always more places to go across
+analytics, databases, AI,
+
+and machine-learning services.
+
+BigQuery, our fully managed
+enterprise data warehouse,
+
+allows you to run analytics
+at scale up to 34% lower TCO
+
+than other cloud data
+warehouse alternatives.
+
+Spanner provides
+unlimited scale,
+
+global consistency across
+regions, and high availability
+
+up to five nines.
+
+Looker provides a
+single shared place
+
+for people and
+applications to interact
+
+with it no matter the cloud.
+
+And these are just a
+few of the key services
+
+you can take advantage of on
+the Google Cloud data platform.
+
+As I mentioned earlier,
+no matter where you start,
+
+there's always more places to
+go with best-in-class products
+
+across the entire
+data lifecycle.
+
+
+
+Let's take a look at
+reason number two.
+
+At Google Cloud, we
+understand that most companies
+
+have a multidatabase strategy.
+
+In some cases, it's intentional.
+
+In others, it's a natural
+outcome of growth and change
+
+over the years,
+plus the fact that
+
+replatforming a database
+can be very intimidating.
+
+So we've been steadily focused
+on building options that
+
+help meet you
+where you are today
+
+and also give you a
+path for the future.
+
+When you look at some of
+the most popular databases,
+
+there are great options
+on Google Cloud.
+
+These are for Oracle, SQL
+Server, Postgres, and MySQL.
+
+And for Postgres,
+MySQL, and SQL Server,
+
+the Database Migration
+Service provides
+
+a serverless experience for
+quickly and safely migrating
+
+your databases from
+anywhere to Cloud SQL.
+
+We also support nonrelational
+database workloads.
+
+If you're using
+Redis, you can now
+
+take advantage of Google Cloud
+Memorystore for Redis or Redis
+
+Labs, one of our key
+database partners.
+
+For Memcached, you can now
+use Memorystore for Memcached.
+
+For HBase and if you're ready
+to move off your Hadoop stack,
+
+you can easily
+migrate to Bigtable,
+
+which has been in production
+for over 15 years at Google
+
+and is the original
+inspiration for HBase.
+
+For all that MongoDB
+you're self-managing,
+
+you can use MongoDB
+Atlas on Google Cloud.
+
+All of these provide
+options and flexibility
+
+to quickly and safely migrate
+to the cloud, helping meet you
+
+where you are.
+
+
+
+Let's take a look at
+reason number three.
+
+We've talked about some of
+the product capabilities.
+
+Let's do a deeper dive
+into some of them.
+
+Let's start with Cloud SQL.
+
+Cloud SQL is our fully managed
+relational database service
+
+and one of Google Cloud's
+fastest-growing top services.
+
+Over the past year,
+the team has been
+
+focused on addressing
+many of the major blockers
+
+for customers, and we now
+have unique capabilities
+
+in the market.
+
+We added the Database
+Migration Service
+
+to migrate your MySQL,
+Postgres, and SQL Server
+
+workloads to Cloud SQL.
+
+We've significantly
+reduced maintenance windows
+
+by over 80%, and we've also
+launched Cloud SQL Insights,
+
+which bring database
+observability
+
+to your developers.
+
+We were first to market to
+support the latest versions,
+
+including Postgres
+13, because we
+
+want to make sure this
+is the simplest migration
+
+experience for you.
+
+Cloud SQL also
+offers integration
+
+with Kubernetes, which makes
+connecting your applications
+
+easy and secure.
+
+It also supports
+federation with BigQuery,
+
+and we've seen users carrying
+over 125 petabytes of data
+
+in Cloud SQL, on
+average, in one month.
+
+And so Cloud SQL is pretty
+ready for you critical
+
+relational workloads on MySQL,
+Postgres, and SQL Server.
+
+The next service we'll
+do a deeper dive on
+
+is the Bare Metal
+Solution for Oracle.
+
+We've taken an optimized
+approach with our BMS solution
+
+for Oracle.
+
+We provide certified
+and optimized hardware
+
+for your Oracle
+workloads, allowing
+
+you to run all versions of
+Oracle database, including RAC,
+
+and all the tools and
+playbooks you use today,
+
+such as Data Guard and RMAN.
+
+You get to maintain your
+on-premises licensing, run
+
+books, DBAs, and
+system integrators.
+
+Google provides management
+of the data center
+
+with enterprise-grade
+security and reliability.
+
+We're available in
+13 cloud regions,
+
+and we're less than
+2 milliseconds away
+
+from Google Cloud resources.
+
+With Bare Metal
+Solution for Oracle,
+
+you have full control
+over how the data is
+
+managed using optimized
+and certified SAN storage.
+
+
+
+And finally, we'll take a
+look at some of the tools
+
+and partners available.
+
+As I mentioned earlier, we
+announced Database Migration
+
+Service to migrate your MySQL,
+Postgres, and SQL Server
+
+workloads onto Cloud SQL, and
+we're seeing a lot of customers
+
+start to use Database
+Migration Service to migrate
+
+their workloads.
+
+We also hear that DMS is easy
+to use, and more than 85%
+
+of the migrations using DMS are
+underway in less than one hour.
+
+We also announced Datastream
+earlier this year,
+
+a CDC and change data capture
+service that provides access
+
+to streaming low-latency data
+from Oracle and MySQL databases
+
+with integrations across
+BigQuery, Cloud Spanner,
+
+Dataflow and Data Fusion.
+
+We also work with partner
+solutions like Stream
+
+and also offer assessment
+tools, including StratoZone
+
+and migVisor to get you quickly
+started on your migration
+
+journey.
+
+
+
+Reason number four for
+why Google Cloud is we
+
+provide robust
+tools and technology
+
+to protect and govern your
+data throughout its lifecycle.
+
+We realize that security
+and governance are
+
+key concerns for many
+of our customers,
+
+and providing these
+controls are key to peace
+
+of mind for your databases.
+
+We offer built-in data
+protection at scale,
+
+and this is by
+default. All your data
+
+is automatically encrypted
+while in transit and at rest.
+
+We've also added
+customer-managed encryption
+
+keys for some of
+our key services,
+
+including Cloud SQL and Spanner.
+
+Secondly, we supply
+tools and technology
+
+to efficiently govern your data.
+
+Cloud Identity and
+Access Management
+
+provides access
+control and visibility
+
+into security policies
+across your organization.
+
+Thirdly, we support
+compliance requirements
+
+with third-party audits
+and certifications.
+
+And finally, we
+believe that trust
+
+is created through
+transparency, and so we provide
+
+tools such as Access
+Transparency which give you
+
+visibility into accesses by
+either support or engineering.
+
+And all these
+capabilities ensure
+
+that your data is protected.
+
+
+
+And finally, let's look
+at reason number five
+
+for why Google Cloud.
+
+It goes without saying
+that your databases are
+
+as good as your availability.
+
+We offer five nines
+industry-leading
+
+SLA across our cloud-native
+databases, Spanner, Firestore,
+
+and Bigtable, and four
+nines SLA for BigQuery.
+
+And these databases
+are actually built
+
+on Google's dedicated
+network, and they're
+
+battle tested by Google
+Cloud Services used
+
+by billions of users,
+and they're actually
+
+made available for your use.
+
+All these services are simply
+unmatched for speed, scale,
+
+security, and capability
+for any sized organization,
+
+and these availability
+SLAs ensure
+
+that your business continues
+to run without disruption.
+
+So there you have
+it, five key reasons
+
+why migrating your
+databases to Google Cloud
+
+is a good move
+for your business,
+
+from the fact that
+we offer managed
+
+services for your Oracle,
+MySQL, Postgres, and SQL Server
+
+workloads, including
+Redis, MongoDB, and HBase,
+
+to the sophisticated security
+and privacy controls,
+
+all the way to the five nines
+availability across some
+
+of our key services.
+
+
+
+Whew.
+
+I realize that was a
+ton of information,
+
+so it would be good
+to be able to bring
+
+all these things to life.
+
+So let's do a deep dive
+into three key customer use
+
+cases across some of
+these key services.
+
+So I'm excited to welcome
+GG, group product manager
+
+to talk more to us.
+
+Welcome, GG.
+
+GURMEET GOINDI:
+Thank you, Anita.
+
+Indeed, that is a great
+overview of our portfolio
+
+and the reasons why customers
+are choosing our solutions.
+
+And I 100% agree with you.
+
+In my 20 years of my career
+here in Silicon Valley,
+
+I have not met a single person
+who wakes up in the morning
+
+and said managing databases
+really excites me.
+
+What they do wake
+up and tell us is
+
+how we can help them run these
+databases more efficiently,
+
+more reliably, help them build
+new customer experiences,
+
+at the same time
+lowering their cost.
+
+One such customer that
+I like to talk about
+
+is a leading travel service
+provider or travel company,
+
+you might say.
+
+This industry is
+in a lot of churn,
+
+and customers are trying
+to-- these companies
+
+are trying to build
+new experiences
+
+for their customers, and the
+customer base is also evolving.
+
+So this company turned
+to us, and the reason
+
+they like the strategy is
+the breadth of our product
+
+portfolio, whether it be the
+world's leading five nines
+
+databases such as
+Spanner or our ability
+
+to provide a stable,
+secure, high-performing home
+
+for their legacy databases at
+states which might be running
+
+on databases like Oracle.
+
+This particular
+customer had a lot
+
+of Oracle databases running on
+premises, on AWS, you name it.
+
+The permanent solution, we
+were able to provide them
+
+a home where they can
+migrate as is and then
+
+upgrade these
+databases to Spanner
+
+or other cloud-native
+databases at their own pace.
+
+Not only they were able to
+keep all of their run books
+
+and playbooks and partners
+as is, at the same time
+
+they were able to benefit
+from the extreme low latency
+
+to Google Cloud so that they
+can iterate their workloads back
+
+and forth between a
+cloud-native database
+
+and a traditional
+database such as Oracle.
+
+What was a little
+needle mover for them,
+
+they had [INAUDIBLE]
+of Oracle versions,
+
+and they probably used every
+possible Oracle HA technology.
+
+With Oracle BMS, they've
+been able to leverage
+
+those technologies
+as is and move
+
+the databases to production
+in a record amount of time.
+
+On the other
+spectrum of industry,
+
+I would like to share an
+example with a leading
+
+German bank we are working on.
+
+All of you might know banks are
+really particular about data
+
+security-- not that
+others are not,
+
+but they're regulated towards
+data security, data residency,
+
+and privacy.
+
+With the Oracle
+Bare Metal Solution,
+
+they were able to meet
+their stringent regulatory
+
+requirements placed
+upon them as a business.
+
+At the same time, with the
+help of our engineering teams,
+
+they were able to migrate over a
+hundred mission-critical Oracle
+
+databases to Oracle Bare Metal
+Solution within three months.
+
+Now they're using
+the data sitting
+
+in the databases in
+Bare Metal Solution
+
+to bring new
+experiences by using
+
+cloud-native databases in GCP.
+
+Last but not the least, I
+would like to talk about one
+
+of my favorite use cases is
+this big ticketing marketplace
+
+which built the entire business
+on a set of clustered databases
+
+running on Oracle.
+
+And they looked to GCP to help
+them take this marketplace
+
+and transform it in
+an extensible scale
+
+that Spanner provides--
+extensible and five-nine
+
+availability that
+Spanner provides.
+
+But this journey is
+not simple and needs
+
+a lot of steps and
+iteration between them.
+
+So they decided to move their
+clustered databases, which
+
+is running on aging hardware,
+to the state of the art
+
+infrastructure provided by
+Oracle Bare Metal Solution that
+
+enabled them to not only
+modernize or at least lower
+
+the cost of running
+the databases using
+
+modern hardware on
+Oracle Bare Metal
+
+Solution-- at the
+same time, start
+
+modernizing their existing
+applications with Google Cloud
+
+Spanner.
+
+
+
+Last but not least,
+this customer
+
+has been live with running one
+of the largest Oracle clusters
+
+in any public cloud of
+Bare Metal Solution,
+
+and we are very happy
+to have them here.
+
+With that being said, Anita,
+I'll hand it back to you
+
+to take us to this presentation.
+
+Thank you for your time.
+
+
+
+ANITA KIBUNGUCHY-GRANT:
+Thank you so much, GG.
+
+Those are all such
+great example use cases,
+
+and I'm sure many of that will
+actually resonate with you.
+
+So how should you think
+about moving forward
+
+with your migration journey?
+
+
+
+A good migration plan is
+going to have four key phases.
+
+First, your
+assessment phase where
+
+you work to understand
+exactly what you have already.
+
+Secondly, based on
+that assessment,
+
+you start to plan
+what you should move
+
+and how you should move it.
+
+Third, you start to execute
+the migration itself.
+
+And finally, you fine tune and
+optimize what you've migrated.
+
+I think this should
+sound pretty familiar.
+
+GG just talked about the
+customer who actually
+
+went through these type
+of four key phases,
+
+and they're actually still
+going through that journey.
+
+And I realized that we're
+representing this migration
+
+plan as a single circle,
+but in reality, it's
+
+a bit more recursive
+in that you'll
+
+have your high-level
+migration plan,
+
+but then you also have
+groups of applications called
+
+migration waves that have their
+own specific plans as well,
+
+and each subsequent
+plan in theory
+
+is adapting the lessons from
+previous migration waves.
+
+In addition, it's not
+uncommon to go back and forth
+
+between each of the
+four different phases.
+
+It's all about building
+that migration muscle memory
+
+and realizing that
+this is a journey.
+
+
+
+And so what tools do we offer?
+
+And all of these should now
+sound very, very familiar.
+
+For your database
+assessments, you
+
+should check up
+migVisor and StratoZone.
+
+We have 50-plus
+regional champions
+
+trained on migVisor that are
+a combination of CEs, PSO,
+
+and partner
+engineering teams who
+
+are ready to help you
+carry out your assessments.
+
+We also offer partner
+programs as well.
+
+We also talked about the
+Database Migration Service
+
+for your MySQL, Postgres,
+and SQL Server workloads.
+
+And finally, we're also
+working really hard
+
+to improve that customer
+experience across our teams
+
+and services to help you quickly
+and safely and efficiently
+
+migrate your databases
+to Google Cloud.
+
+
+
+And last but not least,
+make sure you check out
+
+this great white-paper resource
+with a lot of good information
+
+around migrating your databases.
+
+It has a lot of the
+content we spoke about
+
+in this presentation
+and actually provides it
+
+in much more detail.
+
+It will be included
+in the Resource
+
+section of this presentation.
+
+You can also get started with
+some hands-on labs as well.
+
+I know that Cloud SQL
+is widely represented,
+
+and so you can actually
+get started on checking out
+
+the hands-on labs there.
+
+And so I'd like
+to thank you again
+
+for joining us for
+this presentation
+
+and for this session, and we
+absolutely value your feedback,
+
+so please take the
+time to provide it.
+
+Let us know what we did
+well and what we could have
+
+done to improve for next time.
+
+
+
+Thank you so much,
+and thanks again,
+
+GG, for joining me this session.
+
+GURMEET GOINDI: Thanks,
+Anita, for having me.
+
+
+

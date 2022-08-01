@@ -1,0 +1,1266 @@
+
+
+BRYAN ZIMMERMAN: Welcome, and
+thank you for joining us today.
+
+We're going to be
+speaking about how
+
+to build event-driven
+applications on Google
+
+Cloud using Eventarc.
+
+My name is Bryan Zimmerman,
+product manager at Google
+
+Cloud, focusing on Eventarc.
+
+METE ATAMEL: And my
+name is Mete Atamel.
+
+I'm a developer advocate
+at Google Cloud.
+
+BRYAN ZIMMERMAN: Before
+getting into the details,
+
+let's look at our
+orchestration suite of products
+
+at a high level.
+
+Today, as we're
+talking about building
+
+event-driven
+applications, Eventarc
+
+is the product that helps
+you accomplish this easily.
+
+Along with Workflows,
+Tasks, and Scheduler,
+
+Eventarc is part of
+a suite of products
+
+that are fully
+managed, flexible,
+
+and enterprise-ready to
+help you accomplish all
+
+of your orchestration needs.
+
+Eventarc connects to
+over 60 GCP services
+
+through its integration
+with cloud audit logs.
+
+In addition, our integration
+with Pub/Sub as a source
+
+allows you to use
+Eventarc for events raised
+
+from your own application.
+
+As far as targets, we currently
+support Cloud Run in GA
+
+and Cloud Run for Anthos,
+and functions in preview.
+
+Our other products
+support even more targets
+
+through HTTP execution.
+
+Together, these fully
+managed and flexible products
+
+help developers connect
+the cloud with less code.
+
+In our demo today,
+you will see many
+
+of these products in action--
+
+specifically, Eventarc,
+Workflows, Cloud Run,
+
+and Cloud Functions.
+
+So what do we mean by
+event-driven architecture?
+
+First, let's talk about
+the modern application.
+
+Here's an example of
+a simple application
+
+with a complex web of service
+teams working together
+
+towards a common goal.
+
+This application is
+somewhat complicated
+
+with interactions
+and dependencies
+
+that can become a
+drag on velocity.
+
+But in reality, today
+your application
+
+is more likely to look like
+this, an extremely complex web
+
+of point-to-point
+interactions creating
+
+a significant number
+of dependencies
+
+and points of failure.
+
+As applications
+expand horizontally,
+
+connections become
+even more complex
+
+and difficult to understand.
+
+While microservice
+patterns provide
+
+a great deal of
+advantages, they also
+
+come with a great
+deal of complexity.
+
+By contrast,
+event-driven architecture
+
+produces a solution
+for this problem.
+
+It provides the ability
+to reduce dependencies
+
+and complexity in
+your application
+
+while still allowing
+the creation of more
+
+and more microservices.
+
+Event-driven architecture allows
+true separation of concern.
+
+A producer need not
+know how an event will
+
+be consumed or take
+on any dependency
+
+from a downstream service.
+
+Similarly, the
+consumer only needs
+
+to know that the event will
+be raised and understand
+
+how to utilize it,
+none of the details
+
+of the upstream service.
+
+With this loosely
+coupled approach,
+
+we eliminate hard
+dependencies between services
+
+and eliminate that
+drag on velocity.
+
+In a traditional
+application, you can only
+
+scale one way, vertically.
+
+With event-driven
+architecture, a developer
+
+is easily able to
+scale an application
+
+as performance needs increase.
+
+Furthermore, imagine
+a scenario where
+
+you're adding a new service
+to an existing application.
+
+In a point-to-point
+signaling model,
+
+upstream services
+must be updated
+
+in order to signal the
+downstream services.
+
+However, in an
+event-driven pattern,
+
+users are easily able
+to add a new service
+
+from existing events
+without updating
+
+the upstream application at all.
+
+This helps to
+eliminate that spider
+
+web of concerns and
+point-to-point interactions
+
+substantially.
+
+
+
+Eventarc is Google's
+solution to this problem.
+
+It is a managed
+eventing system that
+
+makes building event-driven
+serverless applications easy.
+
+Simply select the Google
+Cloud service or Pub/Sub
+
+topic you're interested
+in as a source,
+
+define the filter
+parameters, and choose
+
+the target you wish to invoke.
+
+We do use Pub/Sub in the
+background as a transport layer
+
+to benefit from its superior
+reliability and observability,
+
+but we take care of all
+the details of setup.
+
+Simply create that
+trigger, and we'll
+
+take care of the event
+ingress, the filtering,
+
+and the delivery of events
+to your desired target.
+
+Lastly, we use the CNCF
+Standard cloud events format.
+
+And because of this, it's
+easy to understand and marshal
+
+the details of your
+events in order
+
+to more intelligently
+drive application behavior.
+
+
+
+Now I'd like to share
+an important customer
+
+story from one of our
+customers, Vivint.
+
+Vivint is an
+exciting IoT company.
+
+They currently power
+the smart home for
+
+over 1.8 million customers.
+
+Their portfolio of devices is
+impressive, offering smart home
+
+bundles that cover
+everything from cameras
+
+to locks to important sensors
+such as flood sensors.
+
+As these devices are
+important for ensuring
+
+your home is running
+smoothly and safely,
+
+latency and reliability
+of the backend system
+
+is extremely important for
+creating the right customer
+
+experience.
+
+Let's talk a bit about the
+challenge they were facing.
+
+In 2020, Vivint was presented
+with an exciting business
+
+opportunity.
+
+They intended to offer a
+standalone doorbell camera
+
+outside of their
+smart home bundle.
+
+This was an interesting
+technical challenge.
+
+Their core system,
+you see, was built
+
+around the concept of bundles,
+so this standalone offering
+
+was a significant
+departure from that model.
+
+Lastly, time to market
+really mattered.
+
+There was a limited
+window they had in
+
+which to make this
+happen in order
+
+to address this
+fast-moving market segment.
+
+Here's what they
+built. By leveraging
+
+events and serverless
+technology,
+
+they were able to separate
+the components needed
+
+to run the camera application
+from the core platform
+
+without having to
+rewrite everything,
+
+and without adding any risk
+or instability to the user
+
+experience of either
+the new application
+
+or their core offering.
+
+Let's examine in detail the
+architecture used for their use
+
+case, or one of their
+use cases specifically,
+
+an image processing pipeline
+for their camera application.
+
+Images were loaded from
+the camera to a GCS bucket.
+
+This invoked a Cloud
+Function or Cloud
+
+Run for Anthos Service, which
+analyzed the images using
+
+the Computer Vision API in
+order to categorize and annotate
+
+appropriately.
+
+The results were
+updated in a BigQuery
+
+data set for use later.
+
+And the frontend platform was
+signaled via an integration
+
+with Pub/Sub.
+
+Firebase FCM was used in
+order to send notifications
+
+to the mobile app, and
+their core platform
+
+received the event
+for historical reasons
+
+and tracking.
+
+The result, Eventarc and
+GCP surveillance technology
+
+allowed them to accelerate time
+to value and time to market.
+
+Not only did these products
+help solve their problem
+
+but did so in a way
+that would scale,
+
+and by achieving
+separation of concern
+
+without risking their
+core technology.
+
+To dig into some of
+the secondary benefits,
+
+this provided a number
+of things that were
+
+really interesting to them.
+
+First, it decreased the time
+to market, as I mentioned.
+
+The backend system was
+developed and ready to go
+
+earlier than expected.
+
+They were also able to
+implement continuous deployment.
+
+They deployed new code
+after every two-week sprint.
+
+This is an improvement over the
+previous quarterly OTA updates.
+
+By using event processing
+in the same location,
+
+they were also able to--
+sorry, in the same location
+
+as the notification
+service, they
+
+were also able to
+decrease latency by 78%.
+
+And finally, built entirely
+on managed serverless
+
+and orchestration
+products, the new solution
+
+was scalable even in the
+most successful scenarios.
+
+
+
+Vivint didn't have to
+worry about scalability out
+
+of the gate, as they
+were able to rest
+
+assured in the confidence
+of Google Cloud's ability
+
+to scale.
+
+Hopefully, Vivint's
+story helps exemplify
+
+how Eventarc and Google Cloud
+can help accelerate time
+
+to value for your organization.
+
+To help understand how this can
+work for you in the real world,
+
+Mete has created a demo of
+a similar image processing
+
+pipeline.
+
+So with this said, I will
+hand things over to Mete.
+
+METE ATAMEL: Thanks, Bryan.
+
+I'll show you a simplified
+image processing pipeline.
+
+In this pipeline, users drop
+images in a Cloud Storage
+
+bucket.
+
+These images will be processed
+by a chain of Cloud Run
+
+and Cloud Function services.
+
+We use Eventarc to trigger
+the pipeline via Cloud Run,
+
+and Workflows to orchestrate
+the services that
+
+process the images.
+
+Let's have a look.
+
+OK.
+
+Before running the
+demo, let's look
+
+at the architecture diagram.
+
+First, we have end users saving
+some images to an input bucket.
+
+Once the image is saved,
+this generates an event,
+
+and this event goes to a
+Filter Cloud Run service.
+
+Now, this event is routed
+using Eventarc's Cloud Storage
+
+trigger.
+
+Now the filter service
+will receive the image,
+
+and it will use Vision API to
+determine if it's a safe image
+
+or not.
+
+If the image is
+safe, then the filter
+
+starts a Workflow execution.
+
+This Workflow execution,
+called image processing,
+
+will call a number
+of Cloud Functions.
+
+The first Cloud Function
+is called Labeler.
+
+Labeler will receive
+the image and again, it
+
+will use Vision API to extract
+the labels out of the image.
+
+And it will save them
+to an output bucket.
+
+Then Workflows will call
+a Resizer Cloud Function.
+
+This will take the image, and
+resize it into 400 by 400,
+
+and save it to that
+bucket as well.
+
+And then there will
+be another function
+
+called Watermarker that
+will receive the labels
+
+from the first function.
+
+And it will also receive
+the resized image.
+
+And it will add a
+watermark using the labels
+
+on the resized image.
+
+And then it will save
+it to the output bucket.
+
+As you can see, these are
+three separate functions,
+
+but they're orchestrated
+together using Workflows.
+
+So how do you set
+something like this?
+
+We'll take a look.
+
+But before I show you the code
+and the setup, all of the code
+
+is on GitHub, and all the
+instructions are on GitHub.
+
+So feel free to check
+it out yourself as well.
+
+Now first, let's take a
+look at what we need to do.
+
+So this is the GitHub page.
+
+And before you begin, you
+need to set up the project ID.
+
+You need to enable the APIs
+that we need with Eventarc
+
+and Workflows and others.
+
+Then we need to pick a region.
+
+And we need to set
+our Cloud Run region
+
+and our Eventarc
+location to that region.
+
+And then we need to configure
+some service accounts,
+
+because we're going to use
+them in Eventarc triggers.
+
+So we want to make sure
+that we have a service
+
+account with
+eventarc.eventReceiver role.
+
+And we also need a
+pubsub.publisher role
+
+for the Cloud Storage trigger.
+
+And we also want to make
+sure that our Pub/Sub service
+
+account has the
+serviceAccountTokenCreator
+
+role.
+
+Now, once we have all of those--
+and I already set all of this--
+
+we need to create storage
+buckets for our images.
+
+So we create one bucket
+for the input images
+
+and another bucket
+for output images.
+
+So this is where the images
+will be saved by the users,
+
+and this is where the
+processing will happen
+
+and the output images
+will be saved as well.
+
+All right.
+
+Then we can start
+deploying our services.
+
+If you remember, we had
+three Cloud Functions,
+
+Watermarker,
+Resizer, and Labeler,
+
+that are orchestrated
+together in a workflow.
+
+So let's look at
+Watermarker first.
+
+Watermarker is a C# function,
+but it can be in any language.
+
+And to look at the code
+quickly, what it does
+
+is that first, we read the
+bucket name as an environment
+
+variable.
+
+This is the output
+bucket where we're
+
+going to save the image
+once we process it.
+
+Then we receive HTTP
+request in this method.
+
+And from the HTTP request, we
+extract a couple of things.
+
+First, we extract the bucket
+and the file information
+
+so we can download the image.
+
+And then we also
+extract the labels that
+
+will be passed in by Workflows.
+
+And we're going to use these
+labels to add a watermark.
+
+Then we download the
+image from the bucket.
+
+Then in this piece of code, we
+use an image processing library
+
+to use the labels and add a
+watermark on top of the image.
+
+And then finally,
+we save the image
+
+with the watermarks
+to the output bucket.
+
+All right.
+
+Now, to deploy this service
+we just use gcloud deploy.
+
+We specify the
+runtime as dotnet3.
+
+We make sure that this is
+an HTTP triggered function.
+
+And we also pass in the
+environment variable
+
+for the bucket so that the
+function knows how to save--
+
+where to save the image.
+
+So once this is deployed,
+we can move on to Resizer.
+
+Resizer is very similar to
+the previous Watermarker.
+
+But instead of adding a
+watermark, it resizes.
+
+And we deploy it pretty
+much the same way.
+
+You can check out
+the code if you like.
+
+And then Labeler is, again,
+very similar function.
+
+Instead of resizing the image,
+it extracts the labels out
+
+of the image.
+
+And it uses Vision
+API to do that.
+
+So if we take a look
+at the code quickly,
+
+you can see that the Labeler
+will receive the bucket
+
+and file information,
+then it will
+
+call this ExtractLabelsAsync
+method with the storage
+
+URL of the image.
+
+And if you look
+at this method, it
+
+basically uses the
+Vision API client
+
+and calls the DetectLabelsAsync
+to extract the labels.
+
+Then we order the
+labels by score.
+
+And we return them in
+a list that we use.
+
+So once we return the
+labels, what we do
+
+is that we first save
+these labels in a text
+
+file to the output bucket.
+
+And then we also extract the
+top three of these labels
+
+and return them as
+HTTP response data.
+
+And we're going to use this
+from Workflows as well.
+
+OK.
+
+So that's Labeler.
+
+And now we need to put
+this into an orchestration.
+
+And we do that with Workflows.
+
+And to define the workflow, we
+create a workflow.yaml file.
+
+And then we'll define what
+happens in that YAML file.
+
+So let's take a look
+at that quickly here.
+
+So in workflow.yaml file, first
+it receives some arguments.
+
+This will be coming from
+our Cloud Run service
+
+that I'm going to show you next.
+
+And in these arguments,
+we have the information
+
+about the bucket and the file.
+
+And we also pass in the
+URLs or our services.
+
+Because we don't
+want to hardcode
+
+these URLs of these
+functions, so instead
+
+we passed them in as arguments.
+
+Then we have our steps.
+
+In the first steps, we log our
+bucket and file information
+
+just to make sure that we
+are on the right track.
+
+Than in the label
+step, we make a call
+
+to the Labeler URL, which is
+the URL of the Labeler function.
+
+And we pass in the
+bucket and file.
+
+And then this calls
+the Labeler function.
+
+And then we get the
+response from the function
+
+and save it to
+labelResponse variable,
+
+Then we do the same
+with resize step.
+
+So in the resize step,
+you just call the Resizer
+
+and capture the response
+in resizeResponse.
+
+Then in watermark step,
+we call the Watermarker,
+
+but we pass in the bucket
+and file information
+
+from the resize step.
+
+This is because we want
+to add the watermark
+
+for the resized image, right?
+
+So because of that, we pass
+in the resized image's bucket
+
+and file information.
+
+And we also pass in the labels
+from the label response.
+
+Because these are the
+labels that we extracted
+
+from the Labeler function, so
+we are passing them in as well.
+
+And the Watermarker
+will use those labels
+
+to add the watermark.
+
+And then in the final step,
+we return the HTTP status
+
+code from all the
+steps, just to make sure
+
+that our workflow
+completed successfully.
+
+OK.
+
+So that's workflow.
+
+And to deploy our
+workflow, all we need to do
+
+is just use gcloud
+workflows deploy.
+
+So let's just copy
+this, and go back here,
+
+and deploy our workflow.
+
+So this will look at
+our workflow.yaml.
+
+And now it's deploying
+our workflow, which
+
+is very quick, as you can see.
+
+Great.
+
+Now the next step is
+the filter function.
+
+So if you go back to our
+architecture diagram,
+
+we deployed our functions,
+we deployed our workflows.
+
+Now we need to deploy the
+Filter Cloud Run service.
+
+And we need to
+make sure that it's
+
+connected to Cloud
+Storage events
+
+using a Cloud Storage trigger.
+
+Now, to deploy the filter,
+this is a Cloud Run service.
+
+So it's-- we need a Docker file,
+and we need to build and push
+
+the image.
+
+So that's what we
+are doing here.
+
+And then we also deploy
+the Cloud Run service
+
+using gcloud run deploy,
+and point to our image,
+
+and pass in some
+environment variables.
+
+These variables, like the
+project ID, region, workflow
+
+name, this is the information
+needed for the workflow.
+
+But we are also
+passing in the URLs
+
+or our functions, the
+Labeler URL, the Resizer URL.
+
+That way, we don't need to
+hardcode them in our workflow.
+
+Now, this, I already did this.
+
+But now we need to connect Cloud
+Run service to Cloud Storage
+
+events.
+
+And we do that with
+triggers in Eventarc.
+
+So we create a
+trigger name, and then
+
+we just create a trigger
+with this command.
+
+Here we are saying that this
+trigger connects this Cloud Run
+
+service in this region.
+
+And it's filtering these events.
+
+These events, as you can see,
+it's the Cloud Storage object
+
+finalize event.
+
+This is the event that gets
+triggered when you save a file
+
+and we're also
+filtering on the bucket.
+
+So let's copy this as
+well, and go back here
+
+and create our trigger.
+
+So this will create
+the Eventarc trigger.
+
+And now everything
+pretty much set.
+
+We have our workflow.
+
+We have our Cloud Run.
+
+We have our trigger.
+
+Now, to test, we need to drop
+an image and see what happens.
+
+So let's make sure
+that our trigger is
+
+created, that it's created.
+
+And if I do gcloud
+eventarc triggers list,
+
+we can see that the
+triggers are running.
+
+Now, to test this out, let's
+go to our Cloud Storage bucket.
+
+And you can see that I
+have an input bucket.
+
+So let's upload a
+couple of pictures here.
+
+So I will upload one
+picture of myself.
+
+And then I'll upload another
+beach kind of picture.
+
+So let's upload these.
+
+And now this starts
+up the whole chain.
+
+And if we go to
+the output bucket,
+
+we should start
+seeing some images.
+
+So now I will wait a little bit.
+
+
+
+So you can see that we have some
+labels for the first picture.
+
+So if you click on the labels
+and look at the actual file,
+
+these are the labels that were
+extracted from my picture.
+
+Now the next one we see is
+the picture that's resized.
+
+This is the 400 to 400 picture,
+so it's resized to 400 to 400.
+
+And finally, the third
+picture is the resized image
+
+with the watermark.
+
+And the watermark is
+just the top three labels
+
+from the image.
+
+And just to show the
+other image as well,
+
+if you look at
+the beach, you see
+
+that it has water, cloud,
+and sky as the watermark.
+
+So this concludes the demo.
+
+I hope you enjoyed it.
+
+Thanks very much.
+
+BRYAN ZIMMERMAN:
+Thank you, Mete.
+
+It is great to see our
+products work together
+
+to help customers
+connect to cloud,
+
+with less code of course.
+
+Today, we've
+discussed what we have
+
+to offer in our orchestration
+and serverless products; how
+
+our customer Vivint has
+used this to accelerate time
+
+to value; and even shown a
+demo that you can try yourself
+
+via the GitHub link that Mete
+has provided to gain experience
+
+with the concepts.
+
+To learn even more, there
+are several other sessions
+
+that can teach you about other
+related serverless technology.
+
+And of course, please
+visit us at google.com.
+
+Thank you again for
+spending us time today.
+
+I hope you enjoyed it
+as much as we have.
+
+
+

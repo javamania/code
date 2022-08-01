@@ -1,0 +1,944 @@
+
+
+RAHUL HARPALANI: Hi.
+
+This presentation is
+Observability Best Practices
+
+for Reliably
+Running Apps on VMs.
+
+
+
+I'm Rahul Harpalani, but
+my friends call me Harp.
+
+I'm a product manager at Google
+Cloud focused on observability,
+
+and specifically
+telemetry, which
+
+is the capturing of metrics and
+logs to enable ops management.
+
+I'm joined here by
+my partner Ling.
+
+Ling, would you like
+to introduce yourself?
+
+LING HUANG: Sure thing.
+
+Hey, everyone.
+
+My name is Ling.
+
+I'm so glad to be here today.
+
+And I'm working very closely
+with Harp on the cloud ops
+
+instrumentation
+efforts, driving mainly
+
+from the technical side
+as the TO of the team.
+
+And you're going to see
+me again at the demo time
+
+towards the end of
+this presentation.
+
+Harp, I'm going to hand
+it back to you now.
+
+RAHUL HARPALANI: Thanks, Ling.
+
+In this presentation, we'll be
+walking through observability
+
+within virtual machines.
+
+Recently, the 2021
+Report on Accelerating
+
+the State of DevOps
+found that teams
+
+who excel at modern
+operational practices
+
+are 40% more likely to
+report greater software
+
+delivery and
+operational performance
+
+and 80% more likely to report
+better business outcomes when
+
+they fully invest in
+managing operations at scale.
+
+So, as you can see, setting
+up logging and monitoring
+
+and making sure you're
+collecting the right
+
+telemetry data is the
+first important step
+
+of day-two operations.
+
+This helps you run a reliable
+application and triangulate if,
+
+when, and where
+something went wrong.
+
+As a foreshadow, we're
+going to focus a lot
+
+on the value of our agent.
+
+There are many great resources
+for deeper dives into the Cloud
+
+Ops Suite for visualization,
+alerting, and other logging
+
+and monitoring capabilities.
+
+
+
+I recommend you go
+to YouTube and search
+
+"Stack Doctor" to learn more.
+
+
+
+There is a lot of buzz around
+containers and Kubernetes,
+
+but many of us are still
+running on VMs and plan
+
+to do so for the
+foreseeable future.
+
+Especially as more
+customers are doing
+
+a lift-and-shift migration from
+their on-prem environments,
+
+we often hear, how can
+I set up my applications
+
+and VMs to run on the cloud
+while simultaneously learning
+
+all the features Google
+Cloud has to offer?
+
+Running apps reliably
+on VMs does not
+
+happen without good telemetry.
+
+Data about your applications,
+about your processes,
+
+about your systems are essential
+to delivering a high quality
+
+experience.
+
+I'm going to spend roughly
+the next 10 minutes walking
+
+through some of the challenges
+that I constantly hear about.
+
+I'll review the
+guiding principles
+
+we use in VM observability
+to address these challenges.
+
+Then I'll give an
+overview of the Ops
+
+Agent, the single client-side
+solution for logging
+
+and monitoring.
+
+We'll then get a
+demo from Ling, where
+
+she'll walk through
+installing the Ops Agent using
+
+popular open-source
+configuration tooling.
+
+And finally, we'll leave
+some time for questions.
+
+All right.
+
+Let's jump in.
+
+
+
+As a product manager, some
+questions I often ask our users
+
+are, are you running VMs in
+more than one environment?
+
+Are you operating in hybrid
+or a multi-cloud environment?
+
+What solutions are you using
+for monitoring versus logging?
+
+Do you have to leverage
+multiple client-side agents
+
+to capture telemetry?
+
+And what tools are you
+using to provision,
+
+install, configure,
+and manage your agents?
+
+These questions usually
+lead to one conclusion--
+
+complexity.
+
+Simply put, users
+have tons of VMs
+
+that need to be instrumented
+with one or more agents.
+
+These agents need to be
+managed with one or more tools,
+
+and even the
+thought of migration
+
+can be stress inducing.
+
+Let's quickly
+visualize this to put
+
+this problem in perspective.
+
+Often we think of only
+our own environments.
+
+And despite this downscoping,
+it still can be hectic.
+
+When we start to think about
+all the permutations I just
+
+discussed beyond
+our own workloads
+
+and think about this
+issue at enterprise scale
+
+with tens of thousands of
+VMs, the problem of complexity
+
+becomes glaring.
+
+
+
+For this reason, the integration
+between Google Cloud and Cloud
+
+Ops is a game changer
+in reducing complexity,
+
+and why we at Cloud Ops
+believe having an integrated
+
+solution that meets
+you where you are
+
+is very important in helping
+you manage and reduce
+
+your ops burden.
+
+When we think about
+simplification,
+
+we think about the agent.
+
+For this reason, we
+embraced several principles
+
+in making our latest
+agent, the Ops Agent,
+
+industry leading in its
+user-friendly focus.
+
+Fewer agents-- this starts
+right here at Google Cloud.
+
+Up until a couple
+of months ago, we
+
+had two agents, one for
+logging and one for monitoring.
+
+We've invested heavily
+in a single unified agent
+
+to reduce the number of
+agents and complexity
+
+our users must manage.
+
+Number two, the ability to
+manage our agents at scale
+
+by investing in solutions
+to easily support the most
+
+popular config-management
+tools that most of our users
+
+are already leveraging.
+
+Simple configuration--
+the Ops Agent
+
+only has one
+configuration file, making
+
+it simple to manage both
+logging and monitoring.
+
+Finally, third-party
+application support--
+
+here at Cloud Ops,
+we're making the move
+
+from monitoring the
+platform to also monitoring
+
+popular applications.
+
+We don't think
+that requiring you
+
+to install extra agents or extra
+software to capture this data
+
+is something that makes sense
+or is a good use of your time.
+
+So we're building this
+capability into the Ops Agent.
+
+One thing that's
+not on this slide
+
+and is crucial to
+our strategy is
+
+our investment in open source.
+
+We know the overall
+story to telemetry
+
+is not cutting it for
+all operations users.
+
+And that includes our own users,
+as well as everyone else's.
+
+Customers are simply
+juggling too many agents,
+
+too many protocols, and too
+many ways to capture telemetry.
+
+In this vein, we decided to go
+beyond a new agent and stake
+
+out a path forward that would
+make capturing telemetry
+
+easier for all of our users.
+
+And we are doing this by
+committing and supporting
+
+open observability standards.
+
+The Ops Agent is
+built to support
+
+the future of
+application and system
+
+telemetry, which is
+being democratized
+
+through open source.
+
+We've incorporated two important
+open-source technologies
+
+into the Ops Agent.
+
+First, Fluent Bit.
+
+Fluent Bit is an open-source
+log processor and forwarder,
+
+which allows you to collect logs
+with incredibly high throughput
+
+and resource efficiency.
+
+The second technology
+is OpenTelemetry.
+
+This is a CNCF-supported,
+open-source,
+
+and vendor-neutral technology
+and is at the forefront
+
+of unifying operations.
+
+It has garnered the support of
+many vendors in the op space.
+
+And the Cloud Ops Agent
+emphasizes our belief
+
+that this technology will
+lead to interoperability
+
+within the ops community.
+
+We've worked very close with
+the OpenTelemetry community.
+
+And through this effort, much
+of which is frontier territory,
+
+we are helping to guide
+the greater telemetry
+
+community to a place that is
+optimized for you, the user.
+
+
+
+I mentioned these
+topics earlier,
+
+but I wanted to
+specifically call out
+
+how we are meeting our
+users where they are.
+
+What I hear from
+customers all the time is
+
+that they are overwhelmed
+with all of the tools
+
+they have to manage
+and learn to use.
+
+That's why we made sure that
+the Ops Agent could be managed
+
+by the open-source configuration
+and provisioning tools
+
+that you're already using, such
+as Terraform, Ansible, Puppet,
+
+and Chef, and of course, our
+in-house option, VM Manager.
+
+In the demo, which
+Ling will run shortly,
+
+you will see the
+installation of the Ops
+
+Agent handled by Ansible.
+
+Additionally, I
+mentioned the support
+
+for third-party applications.
+
+Currently we support
+Nginx and JVM.
+
+But we have an aggressive
+rollout schedule
+
+for the rest of this year
+to include Apache, MySQL,
+
+Redis, and many more.
+
+In 2022, we're going
+to increase the support
+
+by 50 additional third-party
+applications directly built
+
+into the Ops Agent.
+
+
+
+Finally, I want to review
+our integration with GCP.
+
+While the Ops Agent is built
+on OpenTelemetry and Fluent Bit
+
+for the efficient
+collection of telemetry,
+
+it is purpose built to support
+our own operations suite,
+
+which includes cloud
+monitoring and logging.
+
+With the operations suite, we
+want you to have reliability
+
+without sacrificing agility.
+
+As you'll see in the demo, data
+from cloud logging and cloud
+
+monitoring is made available
+directly in context
+
+in Google Compute Engine.
+
+And many other GCP services
+have similar integrations.
+
+Time for the demo.
+
+Ling, are you ready?
+
+LING HUANG: Ready for a demo.
+
+So in this demo, we're
+going to show you
+
+how to use the Google
+Cloud Ops Agent Ansible
+
+role to install the Ops
+Agent on the fleet of VMs
+
+and then configure Ops Agent
+to monitor Nginx applications.
+
+And at the end of
+the demo, we are
+
+going to go to the console UI.
+
+So that way, we can show you
+how to pull the Nginx dashboard
+
+template and create a
+real dashboard out of it.
+
+So other details
+of this tutorial
+
+can be found on our
+public documentation site
+
+as well, just so you
+can check it out later.
+
+Now, let's get started.
+
+In this demo environment,
+I have already
+
+finished installing some basic
+setups, so that those parts are
+
+tedious and not fun to watch.
+
+So I installed Ansible.
+
+I installed the Google
+Cloud Ops Agent role.
+
+I set up our service
+account for the project,
+
+downloaded the service
+account key to my workstation,
+
+and set up an environment
+variable for it.
+
+I also finished
+setting up my local SSH
+
+key, which is what Ansible will
+be using to talk to the VMs.
+
+So let's go to the
+actual fun stuff.
+
+First, let's take a look at
+the Ansible inventory we have.
+
+So here we are using
+a plugin called
+
+gcp_compute to help
+manage the GCP VMs.
+
+This plugin uses the service
+account to authenticate.
+
+And it will list all the VMs
+in the lingshi-sandbox project.
+
+And it will also show the
+public IP of those VMs.
+
+And Ansible will later
+use these addresses to SSH
+
+into those VMs.
+
+Before we kick off this
+playbook, let's first
+
+ensure that Ansible can actually
+successfully talk to those VMs
+
+we are targeting at.
+
+So we can use Ansible
+to quickly ping
+
+them to make sure they are.
+
+The connection is alive.
+
+Cool.
+
+Great.
+
+The connections-- looks OK.
+
+So now let's dive a little
+bit into the actual Ansible
+
+playbook.
+
+I'll actually--
+let me double-check
+
+that the installation of the
+Ansible role is successful.
+
+Yeah.
+
+I already installed this before,
+so it's already installed,
+
+as it shows.
+
+The examples playbook we are
+using today looks like this.
+
+Looks pretty simple, right?
+
+We are basically asking
+Ansible to install the latest
+
+version of Ops Agent with
+a custom configuration file
+
+on all the hosts that we
+have in the inventory.
+
+Now, you might wonder, what is
+in that ops-agent-config.yml?
+
+Well, that's a good question.
+
+Basically, our Ops
+Agent by default
+
+collects some system
+metrics and logs.
+
+However, we can customize it to
+collect more logs and metrics
+
+from third-party applications.
+
+And in this example, we
+are collecting metrics
+
+and logs from Nginx.
+
+On the metrics
+side, I have already
+
+pre-installed
+Nginx on those VMs,
+
+and their metrics expose via
+their stub status module.
+
+So the key in this
+configuration part
+
+is to make sure that Ops Agent
+knows basically which URL it
+
+should be using to talk to their
+stub status module of the Nginx
+
+application to
+collect the metrics.
+
+And then, on the
+logging side, we
+
+collect both Nginx access
+logs and Nginx error logs.
+
+OK, let's quit this, and
+now it's the exciting part.
+
+Let's actually
+execute the playbook.
+
+So the start of the
+playbook execution
+
+is going to take a few minutes.
+
+Well, actually, I have
+executed this playbook already,
+
+so this should return just OK.
+
+And while it's running, we
+can go to the console UI
+
+and take a look at
+the actual dashboard.
+
+So you can reach this page
+via the monitoring dashboards.
+
+And the sample library has
+our Nginx template already.
+
+So if you click on this, you
+can go to this Nginx overview
+
+and preview what the
+dashboard looks like.
+
+Here, we're going to
+skip that and just import
+
+the sample dashboard.
+
+So it will automatically
+create a dashboard for you.
+
+It has a few metrics
+that's tracking already.
+
+And you can show
+that it's tracking
+
+the few VMs we created before.
+
+And it shows the total requests
+coming to the Nginx server.
+
+It shows the
+current connections.
+
+It also shows the history
+of the connections.
+
+And of course, you can
+also edit this dashboard
+
+or add more charts
+to this dashboard,
+
+because Nginx does ingest more
+than just these three metrics.
+
+On the other side, we mentioned
+before that Ops Agent also
+
+collects some system metrics.
+
+So the most interesting one
+might be the processes metrics.
+
+If we go to the dashboard
+list, there is GCP dashboard,
+
+and one of them
+says VM Instances.
+
+If we go to this
+page, it shows you
+
+our few tabs of different
+property of the VMs.
+
+You can see CPU metrics, memory
+metrics, and most excitingly,
+
+you can see processes metrics.
+
+They will tell you the
+top processes by memory,
+
+the top processes by CPU.
+
+So that way, we can
+easily tell what
+
+is using all the
+resources on the VM
+
+and what could
+potentially go wrong.
+
+
+
+That's the dashboard part.
+
+Now let's go back to see if
+that execution of playbook--
+
+OK, it looks great.
+
+The execution of the
+playbook was successful.
+
+And that's actually
+the end of this demo.
+
+Thank you so much.
+
+RAHUL HARPALANI: Thank
+you so much, Ling,
+
+for that awesome demo.
+
+As a reminder to those
+of you tuning in, please
+
+use the
+question-and-answer forum,
+
+which is embedded
+in this video page.
+
+I want to take a
+minute to show you
+
+other interesting presentations
+in the operation space
+
+that are happening
+at Next this week.
+
+We're launching a preview
+of fully managed Prometheus
+
+service called Managed
+Service for Prometheus.
+
+If you were running
+Kubernetes, chances
+
+are that you're very
+familiar with Prometheus
+
+and how difficult
+it can be to manage.
+
+This new service takes away the
+pain of Prometheus at scale.
+
+We are also launching
+a preview of a service
+
+that combines logs
+data with the power
+
+and performance of BigQuery.
+
+You can learn more
+about Log Analytics,
+
+what it is, and the use
+cases in that presentation.
+
+Finally, the integrated
+Cloud Ops story,
+
+where we talk about
+how Ops Tools can
+
+be used to make your development
+team and the apps they
+
+run more effective.
+
+I'd like to thank
+Ling for the demo
+
+and thank our viewers
+for tuning in.
+
+
+

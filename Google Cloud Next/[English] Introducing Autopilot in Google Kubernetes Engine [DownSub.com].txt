@@ -1,0 +1,1599 @@
+
+
+WILLIAM DENNIS: Hi, everyone.
+
+I'm William Dennis, a Product
+Manager on Google Cloud working
+
+on GKE Autopilot.
+
+I'll be joined later
+by my colleague
+
+Gary, who's going to take
+you through a few demos.
+
+I'm excited to talk to you
+today about GKE's new Autopilot
+
+mode of operation to help
+streamline your application
+
+delivery and management.
+
+Before getting into the
+details of GKE Autopilot,
+
+I'd like to quickly go
+over some different options
+
+you have today for
+deploying your applications.
+
+You can run them the traditional
+way on VMs directly using GCE,
+
+or build them for
+serverless with Cloud Run.
+
+And sitting in the middle
+is Kubernetes with GKE.
+
+As you move up the
+layers of abstraction,
+
+from raw VMs where you manage
+everything, through Kubernetes,
+
+which offers container
+orchestration and management,
+
+to serverless, where you just
+provide your container to run,
+
+your operations get easier as
+there's less for you to manage.
+
+But your deployment
+choices and flexibility
+
+is a little bit
+reduced as you go up
+
+the stack at the same time.
+
+That's essentially
+the trade-off.
+
+You're trading the flexibility
+to deploy things however
+
+you like with the need to manage
+all that custom configuration.
+
+So what makes Kubernetes
+such a popular choice?
+
+The main reasons I
+hear are that you
+
+have some requirements that
+are not necessarily solved
+
+by a higher order product.
+
+While it's great if you
+can adapt everything
+
+to your serverless-- and
+frankly speaking, if you can,
+
+I would recommend it--
+
+a lot of the time, the
+reality is there's just
+
+stuff you don't want to change.
+
+Maybe you bring over a bunch
+of existing applications.
+
+Maybe you need to run a fairly
+complex deployment with state--
+
+that needs an attached
+persistent disk.
+
+And sure, in those cases,
+people will tell you, hey,
+
+you need to get rid of
+that persistent disk
+
+and go use a managed products.
+
+And well, they might be
+right some of the time.
+
+But practically speaking,
+it's not always an option.
+
+Maybe the state is
+for a custom database
+
+that you're the one
+responsible for managing.
+
+Maybe there is no managed
+solution available,
+
+or maybe you just don't
+want to change things.
+
+Kubernetes is a very practical
+deployment environment
+
+which understands
+that you have a lot
+
+of different applications,
+some legacy, some new ones,
+
+and they have
+various requirements
+
+that can be pretty complex.
+
+So it is in turn a fairly
+powerful system for handling
+
+these requirements.
+
+What about compared to VMs?
+
+Well, if you run
+stuff in VMs you
+
+have to manage all these VMs,
+which can be quite a burden.
+
+You need to worry about
+where your application is
+
+going on which VM.
+
+You have to remember the
+health of those VMs, and so on.
+
+Kubernetes sits right in
+the middle of this spectrum.
+
+It's not too low level and
+it's not too high level,
+
+and that makes it a very
+attractive deployment
+
+platform for a lot of users.
+
+Add to this a few other
+properties, like the fact
+
+it's based on
+open-source technology
+
+so you can move your
+deployments around,
+
+and it becomes very
+attractive indeed.
+
+Kubernetes can run
+pretty much anywhere.
+
+So you might be running
+Kubernetes on-prem,
+
+you might be running
+in other clouds.
+
+Using Kubernetes in
+all these environments
+
+makes your deployments
+standardized and portable.
+
+So what are the
+actual components
+
+in Kubernetes that offer
+this flexibility that
+
+makes it so attractive?
+
+Kubernetes ships
+with many components
+
+out of the box,
+including Deployment,
+
+for stateless web
+applications, StatefulSet,
+
+for custom databases,
+and anything else
+
+that needs a persistent disk.
+
+For batch jobs,
+there's the Job object.
+
+If you need to run an
+agent on every node,
+
+such as to capture logs,
+you have the DaemonSet.
+
+Added to this are some
+scheduling constructs,
+
+like zonal affinity,
+and pod topology
+
+spread patterns that allow
+you to design your workload
+
+around failure domains, as well
+as priority and preemption that
+
+give you fine-grained access
+to the scheduling priority
+
+to enable rapid scaling of
+high-priority workloads.
+
+At a technical level,
+all these constructs
+
+are represented in
+Kubernetes objects
+
+through the Kubernetes API.
+
+You can describe a whole bunch
+of things, even at this level,
+
+at the Kubernetes API level,
+what zones you want to run in,
+
+or how you want to spread
+your pods for fault tolerance.
+
+Say if you want to co-locate
+two different apps together
+
+on a node so that each machine
+is running the frontend
+
+and backend application, while
+at the same time being spread
+
+out over a zone,
+you can do that.
+
+Now Kubernetes does have a
+bit of a reputation for having
+
+a steep learning curve.
+
+After all, there's a
+lot of different things
+
+here, many of which
+I just talked about.
+
+And that reputation may
+be somewhat deserved.
+
+But let me make a
+couple of claims.
+
+Firstly, if you just need
+to deploy a simple web
+
+application, then
+as my colleague
+
+Gary is going to demonstrate,
+it's not that hard at all.
+
+You only need to learn
+to API constructs--
+
+a deployment, which
+houses your code,
+
+and a service, which is how
+you expose your application
+
+to the internet-- that's it.
+
+So don't feel like you have to
+learn everything all at once,
+
+but know that it's there if
+and likely when you need it.
+
+And secondly, as a
+professional, you're
+
+not necessarily always
+looking for the simplest
+
+tools out there.
+
+Simple is good,
+don't get me wrong.
+
+But what you really
+need are powerful tools.
+
+You want to make sure that the
+deployment tools you're using
+
+can actually deliver all the
+things that you need to do.
+
+And Kubernetes is really
+good at doing that,
+
+so I'd say it's worth learning.
+
+Now one of the things that
+makes Kubernetes a little more
+
+challenging, though, is
+that you traditionally
+
+need to learn two systems.
+
+You need to learn the
+Kubernetes architecture-- that
+
+is, the open-source
+API components,
+
+above the line on
+the screen here.
+
+And you also need to learn
+the platform API, like GKE's.
+
+At the GKE layer, you create
+the cluster and provision
+
+it with the compute capacity
+your workloads need, or set up
+
+autoscalers to do that for you.
+
+And once created, you have
+a shared responsibility
+
+for those compute
+resources, and may
+
+need to debug node
+issues from time to time.
+
+This is just our
+Kubernetes works,
+
+and the overhead you incur
+for getting the benefits
+
+and power of Kubernetes.
+
+At least, that's
+how it used to be.
+
+This is why we created
+Autopilot for GKE.
+
+Autopilot joins what we now call
+the standard mode of operation,
+
+giving you two ways to use GKE.
+
+With Autopilot, most
+of the platform details
+
+are handled for
+you automatically.
+
+It's still the same GKE
+that you know and love.
+
+We just now have a new
+way for you to operate it.
+
+This is the Cluster Creation
+page for GKE Autopilot.
+
+As you can see,
+it's pretty simple.
+
+In fact, these are
+all the settings
+
+you need to get
+yourself a functioning,
+
+production-grade cluster.
+
+You just need to give
+your cluster a name,
+
+pick the region, and
+configure network.
+
+So hopefully coming up
+with a name isn't so hard.
+
+As for the region, you may
+have a favorite already.
+
+Otherwise, generally
+you would just
+
+pick the one closest
+to your users.
+
+For networking, if you
+have public networking
+
+you don't need to
+do anything more.
+
+For private networks,
+you just need
+
+to specify your subnets
+and ranges like normal,
+
+and that's it.
+
+That's really it.
+
+Sure, there's a couple of
+additional security features
+
+that you can enable or
+disable below the fold,
+
+or you can just accept
+our secure defaults
+
+and change it later
+if you need to.
+
+Importantly, there is no node
+or autoscaling setup needed.
+
+Just go ahead and click
+the Create button,
+
+get your
+production-grade cluster.
+
+Going back to the API view of
+the world, what does this mean?
+
+Well, basically we shrank the
+whole GKE API service down
+
+to a single core,
+the create core.
+
+As for the Kubernetes
+API, which is
+
+how you represent
+your workloads,
+
+well, that's still there.
+
+And this is really the point.
+
+Our goal with Autopilot is to
+support most of those workloads
+
+that GKE standard does today.
+
+In particular, we still support
+all those stateful workloads
+
+that need a persistent disk.
+
+Our goal here is not to change
+the Kubernetes API, just
+
+the platform it runs on.
+
+So how does this work?
+
+How can we still offer most of
+the Kubernetes features of GKE
+
+standard, while reducing
+the platform API to just the
+
+create function?
+
+Well, with Autopilot, you
+describe your workloads
+
+in Kubernetes terms,
+as you always have,
+
+like your container image
+and the resources it needs.
+
+Once scheduled on a GKE cluster
+running in Autopilot mode,
+
+we'll automatically figure
+out the node resources
+
+needed to run those
+workloads and provision
+
+enough capacity for you.
+
+For example, if your container
+requests two CPU cores
+
+and 6 gigabytes of
+memory, we'll provision
+
+a node big enough to handle it.
+
+We apply the best
+practices that we've
+
+learned from six
+years of running GKE,
+
+giving you a production-grade
+cluster without the hassle.
+
+So that's handy.
+
+But what about after
+the cluster is created?
+
+This is actually where the real
+benefit of Autopilot comes in.
+
+With a traditional
+Kubernetes platform,
+
+including GKE's standard
+mode of operation,
+
+there is a shared
+responsibility over the nodes.
+
+While GKE standard handles
+the lifecycle of those nodes,
+
+for example, the creation,
+updating, deleting,
+
+and offers several
+features to help automate,
+
+like auto-repair-- at
+the end of the day,
+
+those nodes are still VMs
+that you need to manage.
+
+You have admin access to
+them and can potentially
+
+modify them to behave in ways
+that GKE might not expect.
+
+So for Autopilot, we
+looked at this and asked,
+
+do you come to GKE
+for the ability
+
+to be the root user
+on those nodes?
+
+Or are you primarily looking
+to run your own applications
+
+on this platform?
+
+We believe for most, the goal
+is to run your own business
+
+applications.
+
+So that's what we offer here.
+
+In this mode you're responsible
+for describing your workloads
+
+and running them.
+
+If your workload crashes
+due to a bug in your code,
+
+I hate to say it, it's
+still your problem.
+
+But most other components
+related to the nodes
+
+are now Google's responsibility,
+along with the cluster itself.
+
+This is a big deal.
+
+And so with this, we
+introduced a pod-level SLA
+
+for the first time on GKE.
+
+It's three 9s.
+
+This means you now have a
+cluster that's easier to set up
+
+and easier to manage.
+
+So as a developer,
+you're more productive,
+
+and in production,
+you spend less time
+
+on the minutiae of
+managing the thing,
+
+and more time running
+your application, which
+
+is presumably what you're
+ultimately here to do.
+
+The third major difference
+with this mode of operation
+
+is how resources are built.
+Since you describe everything
+
+at a pod level, we bill
+you at a pod level as well.
+
+It's kind of intuitive
+and it brings
+
+with it some nice benefits.
+
+One benefit is you don't have
+to be a so-called Kubernetes
+
+binpacking expert, because you
+no longer care if your node has
+
+32 pods or 0, or whether
+your node's CPU has
+
+been fully allocated or not.
+
+Because all of that
+is now our problem.
+
+Our system is responsible
+for packing pods onto nodes.
+
+And if there's any wasted
+spare capacity, that's on us.
+
+You don't pay for it.
+
+So it's a really nice
+billing model as well.
+
+And with this comes
+another nice attribute.
+
+If you're running
+a multi-team setup,
+
+you can now figure out how
+much each namespace costs just
+
+by adding up all the pod
+requests in that namespace.
+
+And we even have tools
+to help you with that.
+
+What's more is that Autopilot
+comes with a strong security
+
+posture right out of the box.
+
+We implement the GKE
+hardening guidelines,
+
+and since the nodes are
+more locked down in order
+
+for us to provide
+management and that SLA,
+
+you have the benefit of
+the reduced node surface
+
+area as well.
+
+You won't need to worry
+about unpatched nodes either,
+
+since we will keep everything
+up to date automatically.
+
+And if automatic
+updates worry you,
+
+fear not, as we
+have several tools
+
+to manage that as well,
+including maintenance windows
+
+and pod disruption budgets.
+
+So coming back to the Kubernetes
+workload constructs I presented
+
+earlier, and one
+of the main reasons
+
+why people use Kubernetes in the
+first place, let's have a look.
+
+Do they work on Autopilot?
+
+The answer is, for the most
+part, yes, and in the same way.
+
+Deployments, stateful
+set, jobs, they
+
+all work exactly the same way.
+
+Yes, even that complex
+stateful custom database
+
+will just work on Autopilot with
+no additional platform-specific
+
+configuration needed.
+
+You can move it right on over.
+
+Let me repeat this,
+because it's so important.
+
+We understand that
+a lot of users
+
+run stateful workloads
+in their clusters.
+
+So when we created Autopilot, we
+didn't take any shortcuts here.
+
+Everything just works
+for stateful set
+
+as you would expect from GKE.
+
+Now since pods
+running on Autopilot
+
+don't have admin privileges,
+it does alter some use cases,
+
+especially for DaemonSets.
+
+But this is mostly in the domain
+of administrative functions.
+
+The exact type of functions, we
+hope, won't be needed anymore.
+
+And we've engaged
+several key partners
+
+to deliver their
+solutions on Autopilot
+
+for logging, monitoring,
+and security in the same way
+
+they work on GKE
+standard, covering
+
+many of the popular
+DaemonSets that we see.
+
+There's a couple
+of other features,
+
+like GPUs, which GKE
+standard offers that's
+
+currently lacking in Autopilot.
+
+For the full list, see our
+comprehensive Autopilot
+
+overview documentation.
+
+I'll put a link in
+the description below.
+
+So we launched Autopilot
+about half a year ago,
+
+and companies like
+Ubie are already seeing
+
+the benefit of this approach.
+
+Ubie, if you haven't
+heard of them yet,
+
+it's an innovative
+medical technology startup
+
+based in Japan.
+
+They found that
+with Autopilot they
+
+were able to focus
+more on doing the thing
+
+that they created
+their company to do,
+
+which is to build better
+health care solutions, and less
+
+on managing the cluster
+and all the infrastructure.
+
+You can read all
+about this case study
+
+on our website, which
+I highly recommend.
+
+Again, I'll put a link
+in the description below.
+
+And with that, I want to
+hand it over to my colleague,
+
+Gary, who's going to run
+through a practical demo using
+
+Autopilot.
+
+Over to you, Gary.
+
+GARI SINGH: Thanks, William.
+
+In this demo, we'll try
+to deploy a standard web
+
+application with a Redis
+backend on Autopilot.
+
+The application has
+three services--
+
+a Redis leader with a single
+replica, a Redis follower,
+
+which actually has three
+replicas, and a Redis
+
+and a frontend web
+application, which has three
+
+replicas as well.
+
+Now let's deploy
+this application.
+
+
+
+All right.
+
+Now let's check the
+status of our pods.
+
+
+
+Now notice that we have one
+in the Ready state and several
+
+in the Pending state.
+
+That's because we actually don't
+have enough compute resource
+
+provisioned in the cluster.
+
+But not to worry, Autopilot
+will handle this for us.
+
+
+
+Behind the scenes,
+Autopilot is actually
+
+provisioning additional
+compute for us.
+
+Let's take a look.
+
+
+
+You can see that here
+we've added one new node,
+
+and we have two new nodes in the
+provisioning status right now.
+
+If we take another
+look at our pods,
+
+we'll see that we actually
+have a couple more
+
+in the ContainerCreating stage.
+
+We'll wait for a little
+bit, but soon we'll
+
+see all of our application.
+
+So all of our pods will
+actually be deployed.
+
+
+
+All right.
+
+Let's check our pod
+status one more time.
+
+
+
+All right.
+
+All of our pods are Running.
+
+We'll also notice we now have
+five nodes up and running
+
+as well to meet the demands.
+
+
+
+Now let's actually test
+out this application.
+
+We need to get the address
+of the frontend application.
+
+All right.
+
+We can see that the external
+IP address here is that.
+
+We'll copy that, paste
+it into our browser.
+
+
+
+All right.
+
+We have the Guestbook
+application.
+
+We'll type in a
+few messages here.
+
+
+
+All right we'll close this out.
+
+But if all is working, we should
+see these messages back again
+
+coming from the cache.
+
+All right.
+
+Our application is up
+and running, all as well.
+
+
+
+Now in this demo, we showed
+the ability of Autopilot
+
+to automatically and
+dynamically provision compute
+
+as needed by our workload.
+
+We didn't get into autoscaling,
+but William's going
+
+to tell us a bit about that.
+
+And then I'll be back
+with another demo
+
+to show you that as well.
+
+WILLIAM DENNIS: Thanks, Gary.
+
+So as Gary showed, Autopilot
+will automatically provision
+
+resources to schedule
+your pods under the hood,
+
+based on the resources
+those pods request.
+
+But what about scaling
+the workloads themselves?
+
+For this, GKE offers to
+pod-level scaling options.
+
+The vertical pod autoscaler
+can increase and decrease
+
+the resources used by the pod.
+
+It does this by
+monitoring the resource
+
+utilization of the pod.
+
+And it can adjust
+the pod requests,
+
+either increasing it
+to improve performance
+
+when it notices more
+CPU might be needed,
+
+or decreasing it, when
+it sees that the CPU is
+
+being underutilized.
+
+And when you Autopilot,
+that's all you need to do.
+
+Autopilot will
+ensure that you have
+
+the right node resources
+available to run
+
+those resized pods.
+
+And of course, you only pay for
+the precise resource requests
+
+of your pod.
+
+To enable in GKE
+Autopilot, create
+
+a Vertical Pod Autoscaling
+object that references
+
+your deployment.
+
+You can optionally
+exclude certain containers
+
+in the pod from the VPA.
+
+I'll put a link to
+the documentation
+
+in the description below.
+
+The other workload
+scaling option
+
+is the Horizontal Pod
+Autoscaler, or HPA.
+
+The Horizontal
+Pod Autoscaler can
+
+change the number of pod
+replicas in your deployment
+
+based on demand.
+
+With the Horizontal
+Pod Autoscaler,
+
+you set a metric to
+observe, and a target,
+
+and the HPA will attempt
+to create more pod replicas
+
+to keep that targeting range.
+
+For example, if you want
+to have 1 pod for every 100
+
+requests per second that
+hit your load balancer,
+
+it could do that.
+
+With GKE Autopilot, you can
+just set and forget this HPA
+
+and let it handle the
+usage spikes for you,
+
+as Autopilot will provision
+and de-provision automatically
+
+the compute resources
+needed to handle those pods.
+
+And of course, as always, you
+only pay for running pods.
+
+To enable, create a
+Horizontal Pod Autoscaling
+
+object that references the
+deployment to be scaled,
+
+specifying the minimum and
+maximum replicate counts,
+
+the metric to be observed,
+and your desired target.
+
+Horizontal Pod Autoscaling
+can be configured
+
+to use CPU, memory,
+or custom metrics,
+
+like requests per second,
+or pub-sub queue depth.
+
+Now I'd like to hand
+it back to Gary, who's
+
+going to show you a really
+cool demo of using Autopilot
+
+with a Horizontal Pod Autoscaler
+to handle a pub-sub queue.
+
+Back over to you, Gary.
+
+GARI SINGH: Thanks, William.
+
+In this demo, we're going
+to show how to auto scale
+
+a pub-sub workload
+based on metrics
+
+provided by Google
+Cloud Monitoring.
+
+As you can see, we've already
+created a topic named echo,
+
+and a corresponding
+subscription named echo-read.
+
+The goal for this demo is to
+scale the number of subscribers
+
+for this topic
+based on the number
+
+of unacknowledged messages
+remaining in the subscription.
+
+As you can see on the
+screen, pub-sub conveniently
+
+provides this metric
+for us, and later we'll
+
+actually show how to
+configure the Horizontal Pod
+
+Autoscaler to use it.
+
+Now this is all made possible
+by using the custom metrics
+
+adapter, which will provide
+cloud-monitoring metrics
+
+for our cluster.
+
+Now while William was
+talking I actually
+
+took the liberty of
+deploying this adapter,
+
+so let's take a quick look
+just to make sure everything's
+
+running.
+
+All right.
+
+So now we see we have our custom
+metrics adapter up and running.
+
+Now we can actually
+check to make sure
+
+that the metric that we want
+is available by querying
+
+the Kubernetes
+external metrics API.
+
+
+
+And here in this box,
+you'll see that we
+
+have our subscription number
+undelivered messages metric.
+
+And we actually see that we have
+it for our actual subscription.
+
+So we'll be set up to use
+this in the HPA later on.
+
+
+
+But before we can
+deploy our application,
+
+we'll need to
+configure an identity
+
+the app can use to authenticate
+with Cloud pub-sub.
+
+Autopilot workloads
+use workload identity,
+
+which is the recommended
+way to access Google Cloud
+
+Services from applications.
+
+It provides improved
+security and manageability
+
+over using things like secrets
+or mounting token files, which
+
+are insecure.
+
+First, let's create a dedicated
+namespace for our application.
+
+
+
+Great.
+
+We'll use the namespace pubsub.
+
+Next, we'll need
+to create a service
+
+account that we'll actually
+use in our deployment metadata.
+
+We'll call it
+pubsub-service-account.
+
+We also need to create a
+Google Cloud service account.
+
+
+
+And we'll need to
+give it permission
+
+to actually access pubsub.
+
+Here you see we're giving
+it the pubsub.editor role.
+
+
+
+Next, we'll actually bind the
+Kubernetes service account
+
+with the Google service account.
+
+
+
+And finally, we'll annotate
+the Kubernetes service account
+
+so that it knows
+about this binding.
+
+
+
+Now let's take a look at our
+actual application itself.
+
+
+
+The actual application
+itself is a simple app
+
+which uses a Python SDK to
+actually just pull messages
+
+from the subscription.
+
+Now our deployment for this
+application is pretty simple.
+
+We have a standard container.
+
+We're going to name it pubsub.
+
+And as you can see
+here, we've actually
+
+chosen the serviceAccount
+under which
+
+this particular deployment
+will actually run.
+
+Now along with that, we
+also have a Horizontal Pod
+
+Autoscaler resource.
+
+And as you can see here, we
+showed this metric earlier.
+
+We're using the external metric.
+
+We're using the
+undelivered messages.
+
+We want this to be for our
+echo-read subscription.
+
+And our goal here will be
+that we never want to--
+
+no matter how many
+subscribers we have,
+
+we want the average value of
+the backlog to actually be 5.
+
+
+
+All right.
+
+So let's actually
+deploy our application.
+
+
+
+First, we'll just set
+the default namespace
+
+for our context.
+
+
+
+Then we'll actually
+deploy our pod.
+
+
+
+We'll check to make
+sure our pod is running.
+
+
+
+All right.
+
+We've successfully
+deployed that.
+
+Next, we'll actually
+deploy the HPA resource.
+
+
+
+Let's take a quick look.
+
+
+
+Here, we can
+actually see that we
+
+have it set up as a
+target of 5-- that's
+
+what we configured in there.
+
+The MINPODS is 1 and
+the MAXPODS are 5.
+
+And right now we don't
+actually have any messages,
+
+so the backlog is 0, and our
+Deployment is actually fine.
+
+
+
+Now, let's actually
+generate some load.
+
+We'll do that by publishing
+about 100 messages
+
+to the topic itself.
+
+
+
+All right.
+
+Now that our messages are there,
+let's take a look at the HPA
+
+itself.
+
+
+
+As you can see here, it's
+actually updated now.
+
+We actually see that the value
+that it's seeing here is 22,
+
+and that it's looking
+for a value of 5.
+
+So if we actually
+describe the HPA,
+
+we'll see that it actually wants
+to trigger up and autoscale
+
+our stuff up to the
+max size of actual 5.
+
+Let's take a quick
+look at our pods.
+
+
+
+You'll see that we've now
+actually scaled up to 4 pods,
+
+and we have a fifth pod pending.
+
+So as you can see here, we were
+able to build an application,
+
+have it subscribe,
+set the metric based
+
+on the unacknowledged backlog
+from Google Cloud metrics,
+
+and autoscale our application.
+
+And once again, the
+great thing here
+
+was we didn't have
+to worry about any
+
+of the underlying compute
+resources required for this
+
+to actually work.
+
+
+
+All right.
+
+You'll see that our container
+is actually creating.
+
+And yeah, that's about
+it for this demo.
+
+So thanks, William.
+
+Back over to you.
+
+WILLIAM DENNIS: Thank you, Gary.
+
+That was a really
+powerful demonstration
+
+of what Autopilot can do.
+
+All you need to do is add
+your Kubernetes workload
+
+and we'll take care
+of everything else.
+
+Well, that's GKE Autopilot.
+
+To learn more, you can visit
+the link on the screen,
+
+or those in the
+description below.
+
+Thank you.
+
+
+

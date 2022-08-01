@@ -1,0 +1,1040 @@
+
+
+KELLY STIRMAN: Hello, and
+welcome to "Helping You
+
+Realize the Full Potential of
+PostgreSQL with Google Cloud."
+
+my name is Kelly
+Stirman, and I'm
+
+a Director of Product Management
+in the Databases group.
+
+Later in this presentation,
+we'll hear from Phil and Tim
+
+from Wayfair on how they're
+using Postgres on Google Cloud.
+
+In this session,
+we're going to discuss
+
+why so many of our customers
+are choosing Postgres to build
+
+new operational
+systems and what we're
+
+doing to help address
+some of their challenges.
+
+The team from Wayfair will talk
+about their work with Postgres
+
+on Google Cloud.
+
+So let's get started
+and start by discussing
+
+exactly what Postgres is and a
+brief overview of its history.
+
+Postgres is a modern open-source
+relational database, originally
+
+developed at UC Berkeley, and
+its first release was in 1996.
+
+While commonly used to
+manage relational data,
+
+it supports a more comprehensive
+set of data models,
+
+like JSON, Key Value,
+XML, geospatial,
+
+and many more capabilities
+through its powerful extension
+
+model.
+
+This rich data
+model support means
+
+that Postgres is used in a wide
+range of database use cases.
+
+Databases created
+with Postgres are
+
+used in every conceivable
+type of application,
+
+from the very simplest
+single-user database
+
+app to demanding enterprise
+applications supporting
+
+tens of thousands of
+users running thousands
+
+of transactions a second.
+
+It's found on the simplest
+single-board computers
+
+to the largest Linux
+servers with hundreds
+
+of cores and
+terabytes of memory,
+
+managing petabytes of data.
+
+So why have so many
+of our customers
+
+adopted Postgres as
+a database of choice?
+
+Well, organizations have
+started looking for alternatives
+
+to the commercial database
+they have historically used.
+
+They've done this as a means
+of reducing the perceived
+
+punitive cost and
+the aggressive sales
+
+practices that have somewhat
+soured their experiences.
+
+But given the number of
+open-source databases
+
+that are available, why
+should you consider Postgres?
+
+Well, Postgres has a
+number of attributes that
+
+make that decision simpler.
+
+It provides a similar
+and, in some cases,
+
+better set of functionality
+than the expensive closed-source
+
+alternatives.
+
+If you're looking for a database
+that supports parallel query,
+
+partition tables, stored
+logic, replication, change data
+
+capture, rich data models, and
+so on, all in a single product,
+
+then look no further
+than Postgres.
+
+On top of this
+impressive functionality,
+
+Postgres has demonstrated
+itself in demanding customer
+
+environments time
+and time again,
+
+giving others the
+confidence to use it
+
+in their own applications.
+
+All this, and a friendly
+and engaging community
+
+with a rich set of
+tools and utilities,
+
+has made Postgres an easy choice
+for many of our customers.
+
+But perhaps the most
+important aspect of Postgres
+
+is its role as an open API.
+
+While SQL is commonly
+considered the language of data,
+
+and is indeed responsible
+for the ongoing success
+
+of relational databases,
+each relational database
+
+has its own implementation
+with functions and operators
+
+that behave slightly
+differently,
+
+and more substantial differences
+in programmatic APIs.
+
+What Postgres has the
+potential to deliver
+
+is a common SQL layer
+that is consistent,
+
+regardless of the database
+engine that underpins it.
+
+Postgres-- certainly,
+its SQL layer--
+
+could lead to a standardization
+of databases in the same way
+
+we've seen Linux change the
+enterprise operating system
+
+world.
+
+
+
+Cloud SQL for Postgres is part
+of Google Cloud's fully managed
+
+database portfolio.
+
+It provides fully managed,
+reliable database instances
+
+with features that
+make databases
+
+easy to set up,
+back up, restore,
+
+and provide high availability.
+
+It's the same
+version of Postgres
+
+that you can download from
+the community website,
+
+with the ability to
+choose between the version
+
+of the database that
+suits your requirements.
+
+Google takes care of the
+heavy lifting on your behalf,
+
+patching and securing
+your databases
+
+with very little downtime.
+
+Cloud SQL aims to provide
+the best Postgres experience
+
+anywhere in the cloud.
+
+So given the many
+options you have
+
+when deciding on where to
+run your Postgres databases,
+
+why should you
+choose Google Cloud?
+
+Well, Google understands
+the importance of the role
+
+that open source plays
+in the enterprise
+
+and is committed to provide
+the best experience for users
+
+of Postgres.
+
+We particularly
+understand the importance
+
+that Postgres will
+play as a SQL standard
+
+for databases in the future.
+
+We offer a one-of-a-kind
+platform to run your Postgres
+
+databases, using the same
+infrastructure that runs many
+
+of the Google applications
+you use daily.
+
+You get access to fast
+and scalable compute
+
+and high-performance,
+low-latency networks
+
+with a global reach.
+
+Google continues to invest
+in its own dedicated
+
+global network backbone
+and standing up
+
+data centers around
+the world to ensure
+
+you have the fastest and most
+secure access to your data.
+
+We will continue to offer the
+best experience for developers,
+
+whether you're building out
+your own VM-based applications
+
+or building them on
+top of Kubernetes.
+
+Google Cloud offers modern
+APIs and frameworks,
+
+whether you plan to
+use Postgres to build
+
+modern microservices
+or more traditional
+
+monolithic applications.
+
+We understand developers
+and are committed
+
+to making your teams as
+productive as possible.
+
+We've created integrations
+and management tools
+
+to simplify how you make
+the most of your data.
+
+And we provide
+rich and open APIs
+
+to protect your
+application investments.
+
+
+
+We've been hard at work
+adding important features
+
+to Cloud SQL for Postgres.
+
+Recently, we added support for
+logical replication and IAM
+
+authentication, making
+Cloud SQL easier
+
+to integrate with your
+core enterprise systems.
+
+Cloud SQL for Postgres now
+supports over 140 flags
+
+and 44 extensions.
+
+We have tuned the operating
+systems on our Cloud SQL
+
+instances for
+database workloads.
+
+Google Cloud was
+the first to support
+
+Postgres 13 in the cloud.
+
+And in just a moment, we'll
+talk about Cloud SQL insights
+
+and cost recommendations
+via Active Assist.
+
+
+
+Our database migration service
+makes migration simple, safe,
+
+and secure.
+
+DMS is serverless, so there's
+nothing for you to provision
+
+or manage.
+
+DMS will do all that
+heavy lifting for you.
+
+More than 85% of DMS
+migrations are underway
+
+in less than an hour.
+
+And a majority of
+these migrations
+
+are coming from other clouds.
+
+Observability is critical
+for managing your database
+
+deployments.
+
+Recently, we launched
+SQL Insights,
+
+giving you best-in-class
+database observability using
+
+open standards.
+
+SQL Insights helps
+your developer teams
+
+to understand
+performance issues,
+
+whether you're building
+a monolithic app
+
+or using microservices.
+
+And now we provide
+cost recommendations
+
+through Active Assist, helping
+you right-size your resources
+
+and optimize your spend,
+potentially saving you
+
+thousands of dollars a month.
+
+So thus far, we've been talking
+about Cloud SQL for Postgres.
+
+Now I'd like to spend
+a few minutes talking
+
+about Cloud Spanner and some
+work we're doing with Postgres.
+
+Cloud Spanner is the
+relational database
+
+that banks, game studios,
+retailers and organizations,
+
+and many other industries
+trust with their most
+
+demanding workloads.
+
+It's the same database
+that powers Google's
+
+most recognizable products.
+
+Spanner offers global
+consistency and five nines
+
+of availability at
+almost any scale,
+
+without painful sharding or
+re-architecture as you grow.
+
+Spanner's new
+lower cost of entry
+
+now makes realizing these
+benefits even easier.
+
+You can start small and
+be assured that Spanner
+
+will scale to meet your needs.
+
+Even with Spanner and all of
+Google Cloud's unique benefits,
+
+our customers want options.
+
+Spanner isn't the only managed
+database service out there.
+
+We want our customers
+to feel confident
+
+that they'll be able
+to move their data
+
+and applications elsewhere
+without a disruptive rewrite.
+
+The PostgreSQL interface
+for Cloud Spanner
+
+that we announced earlier today
+will provide the scalability
+
+and reliability of Spanner
+that enterprises trust, along
+
+with the familiarity and
+portability of Postgres
+
+that developers love.
+
+We're making it so you can bring
+your existing skills and tools
+
+around Postgres
+to take advantage
+
+of the unique
+capabilities Spanner
+
+has to offer in terms of
+availability and scalability.
+
+So, to sum it up,
+Postgres is becoming
+
+the relational
+database of choice
+
+for the enterprise
+for many good reasons.
+
+We believe Google Cloud
+offers the best place
+
+to run your Postgres databases.
+
+And we're seeing a trend to
+make Postgres's SQL layer
+
+act as an open API for
+applications and deployments.
+
+Now, I'd like to hand
+things over to our friends
+
+from Wayfair.
+
+Tim and Phil,
+please take it away.
+
+TIM QUINNEY: Thanks, Kelly.
+
+Hello.
+
+My name is Tim
+Quinney, and I lead
+
+the product team for database
+platforms here at Wayfair.
+
+I'm joined by Phil
+Portnoy, who's
+
+our lead architect and
+engineer for database platform
+
+development.
+
+Wayfair is a platform
+that's solely
+
+focused on the category of
+home across our six brands,
+
+including our marquee
+Wayfair.com, and our specialty
+
+brands of Perigold, AllModern,
+Joss & Main, Birch Lane,
+
+as well as our Wayfair
+professional business.
+
+We have more than 31
+million active customers,
+
+shopping a catalog of
+more than 20 million items
+
+from a network of more than
+16,000 global suppliers.
+
+Powering the systems to
+make this all possible
+
+is a team of over 3,000 software
+engineers and data scientists.
+
+When considering the needs
+of our engineering community,
+
+the use cases we
+support run the gamut
+
+from integrating the
+suppliers to build our catalog
+
+to marketing the
+products and powering
+
+the customer-facing
+shopping experience online,
+
+all the way to managing
+the delivery of orders
+
+through our global logistics
+and operational systems.
+
+To accomplish this,
+our database strategy
+
+is focused on providing
+well-paved paths for our users
+
+to quickly provision and
+deploy database solutions that
+
+meet their scale, resiliency,
+and latency requirements,
+
+all while providing a high-tier
+support and subject matter
+
+expertise.
+
+Core to this strategy is
+Postgres and Google's suite
+
+of database products.
+
+Whether it be single-region
+reads and writes
+
+for similar applications
+running on Cloud
+
+SQL or a globally distributed
+system running on Google Cloud
+
+Spanner, we have found
+that Google's suite
+
+of database offerings enable
+us to drive innovation.
+
+To share more about why
+we're excited about Postgres
+
+and the Google offering,
+I'll hand it over
+
+to my colleague, Phil.
+
+PHIL PORTNOY: Thanks, Tim.
+
+For me, as an
+enterprise architect
+
+for a fairly large
+engineering organization
+
+of a couple of thousands
+of engineers and analysts,
+
+technology matters.
+
+PostgreSQL, being an open-source
+and free-to-use product,
+
+is the type of technology
+that enables large enterprises
+
+like Wayfair to have control
+over their own destiny
+
+in the data space.
+
+PostgreSQL is a
+proven technology.
+
+Our developers can use it with
+any architecture and software
+
+stack of their choice,
+without compromising
+
+velocity and portability.
+
+There is a massive
+amount of learning
+
+materials, documentation,
+open-source guides.
+
+And community support is
+available around the clock,
+
+which truly puts
+developers first.
+
+However, as most of
+you probably know,
+
+considerations about databases
+don't end with developers.
+
+Managing provisioning,
+orchestration, monitoring,
+
+and maintenance of physical
+or virtual infrastructure
+
+is a massive component
+of operating data stores.
+
+Google Cloud Platform takes
+the infrastructure management
+
+challenge out of the
+equation completely,
+
+allowing us to focus effort
+and resources entirely
+
+on product development.
+
+Using open-source
+solutions helps
+
+Wayfair to transform
+our business
+
+in much more ways than one.
+
+But there is one benefit
+that's hard to overlook,
+
+and that benefit is cost.
+
+In modern, fast-paced
+technological environments,
+
+time to market is critical.
+
+And PostgreSQL on
+Google's Cloud SQL
+
+allows us to minimize the
+effort of preparing our products
+
+and applications
+to serve production
+
+workloads, while significantly
+reducing the overall cost
+
+of the solution.
+
+We've discovered that supporting
+similar workloads on Cloud SQL
+
+and PostgreSQL is anywhere
+from four to eight times
+
+cheaper than a comparable
+commercial database
+
+engine provisioned
+on Compute Engine,
+
+after accounting
+for licensing costs
+
+and depending on the
+redundancy and distribution
+
+level of the
+deployment, of course.
+
+On top of that
+difference, with Cloud SQL
+
+being a completely
+managed service,
+
+there are additional
+cost savings
+
+associated with
+dramatic reduction
+
+in operating costs compared
+to deploying on premises
+
+or in an unmanaged fashion.
+
+This makes PostgreSQL a
+perfect, cost-effective solution
+
+for the majority of online
+relational data storage
+
+needs in Wayfair.
+
+However, for some
+distributed use cases
+
+where consistent, safe
+writes to the same data set
+
+are happening from
+multiple locations,
+
+spanning countries and
+sometimes continents,
+
+a slightly different
+solution is required.
+
+That's where Google
+Cloud Spanner comes in,
+
+a truly distributed
+and truly consistent
+
+solution for relational
+database workloads that
+
+require distribution.
+
+We're able to provision
+distributed data stores
+
+within minutes and with
+almost zero operational effort
+
+required from us.
+
+Thanks to Google's
+TrueTime distributed clock,
+
+Spanner is capable of providing
+the same consistency guarantees
+
+as PostgreSQL at a minimal
+added latency cost,
+
+switching from writing and
+storing data in a single data
+
+center to persisting
+the same data
+
+points in a globally
+distributed database.
+
+And having the data
+available locally
+
+for clients around
+the world requires
+
+next to zero development time.
+
+And with technologies
+like PostgreSQL Interface
+
+for Spanner, software
+product journeys
+
+can start with a local
+PostgreSQL database
+
+and shift towards Spanner
+later in the lifecycle,
+
+providing global availability
+in an effortless fashion.
+
+Back to Tim.
+
+TIM QUINNEY: Echoing what
+both Phil and Kelly shared,
+
+the value proposition
+of Postgres
+
+is highly resonant to us.
+
+It's open source
+and cost efficient.
+
+It has tremendous
+community support,
+
+with low barriers of
+adoption for our users.
+
+Google's investment in database
+products leveraging Postgres,
+
+from Cloud SQL to the new
+Postgres interface in Spanner,
+
+becomes increasingly
+compelling for us,
+
+because these products are
+offered as managed services
+
+and enable portability
+to follow the lifecycle
+
+of an application.
+
+I'm really excited about
+this concept of portability.
+
+An application can start with
+a simple Cloud SQL instance.
+
+Maybe it's a proof of concept
+on a Friday afternoon.
+
+And before the team knows it,
+it's a runtime-critical system.
+
+In due configuration, you
+can enable scale read.
+
+If it grows to the occasion
+needing global distribution,
+
+it can be migrated
+over to Spanner
+
+without the need of a
+significant re-architecture.
+
+This saves us from over
+provisioning infrastructure
+
+from perpetual rewrites
+of applications
+
+and from the significant
+overhead of managing
+
+a sharded database environment.
+
+For these reasons, teams
+such as our supply chain,
+
+catalog engineering,
+marketing technology,
+
+are already leveraging
+Postgres on Cloud SQL
+
+for some of their systems.
+
+Additionally, Spanner is
+quickly gaining traction,
+
+their home services
+and customs platform
+
+teams recently adopting.
+
+As we look to the future,
+we're excited to see
+
+what kind of performance
+and operational gains
+
+can be achieved as we consider
+moving other systems to Cloud
+
+SQL and Cloud Spanner.
+
+One that comes to mind
+that's particularly exciting
+
+for us is our user profile
+service, which is currently
+
+on a sharded
+database environment
+
+across many servers.
+
+This is a prime candidate
+for migration to Spanner
+
+and core to our customer
+shopping experience.
+
+And now I'll hand
+it back to Kelly.
+
+KELLY STIRMAN: Thanks,
+Phil and Tim, for that.
+
+And thanks to all of you
+for joining us today.
+
+We appreciate it.
+
+Hope you have a great day.
+
+
+

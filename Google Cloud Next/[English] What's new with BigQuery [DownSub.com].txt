@@ -1,0 +1,1418 @@
+
+
+JONATHAN KELLER: Thank you
+all for joining me today.
+
+My name is Jonathan
+Keller, and I
+
+have the privilege
+of being the Director
+
+of Product Management
+for the BigQuery team
+
+here at Google Cloud.
+
+Very excited to
+have the opportunity
+
+to walk you through a
+lot of the innovations
+
+that we're working on
+to help you unlock value
+
+from your data.
+
+It's no secret why
+we're all here.
+
+The world has become
+much more data-driven,
+
+and every company
+and every industry
+
+is on their journey to figure
+out how to leverage data
+
+to drive value.
+
+Unfortunately though,
+many companies
+
+are still struggling to
+realize tangible and measurable
+
+value from their
+data, but they want
+
+to learn how to provide
+better customer experiences
+
+or drive operational
+excellence through more
+
+intelligent decision making
+and improve processes.
+
+Happy to be here to share with
+you many of the innovations
+
+that BigQuery is working on to
+help customers around the world
+
+finally be able to untap
+the power of their data.
+
+If you're not familiar
+with BigQuery,
+
+it is Google's cloud-scale
+enterprise data warehouse.
+
+It sits at the center of
+our open platform strategy
+
+that delivers value from data.
+
+And of course,
+standard SQL with DML.
+
+It's truly serverless,
+multitenant, encrypted,
+
+durable, and ready for the
+largest internet scale services
+
+and also highly secure
+enterprise workloads
+
+from gigabytes to exabytes.
+
+It is also intelligent, with
+built in ML, extensibility,
+
+and support for
+in-memory analytics.
+
+It has a simplified
+architecture that
+
+unifies real time
+and batch workloads
+
+and supports virtually unlimited
+number of analytics use cases.
+
+And it does this all with
+industry-leading reliability
+
+and predictable costs.
+
+Just to drill into a
+little bit of how Google
+
+is able to uniquely
+deliver this value,
+
+BigQuery takes advantage of
+Google's full stack innovations
+
+from hardware and
+storages, network,
+
+all the way up to
+the software that
+
+has been used to analyze data
+for search and advertising
+
+for over a decade.
+
+We are not strangers
+to big data analytics.
+
+This full stack
+approach allows you
+
+to access stateless
+compute, which
+
+enables virtually unlimited
+capacity to analyze your data.
+
+There's no dedicated
+VMs and no clusters
+
+for you to worry about,
+think about sizing,
+
+or trying to manage.
+
+Our unique network and
+storage infrastructure
+
+provides incredibly
+high throughput,
+
+making it easy for BigQuery
+to analyze exabytes
+
+of customer data every
+day and support streaming
+
+ingestion of petabytes
+of data every day,
+
+as well, all while providing
+industry-leading reliability.
+
+And now with the recent
+natively-integrated BI engine,
+
+we're leveraging this
+amazing full stack to power
+
+in memory and real time
+analytics, as well.
+
+I wish I had more time to
+walk you through everything
+
+we are working on to provide
+an innovation pace that
+
+supports your business.
+
+But unfortunately
+I just have time
+
+to call out a few things from
+the huge number of capabilities
+
+that have been released
+over the last few months.
+
+So whether it's
+governance capabilities
+
+like our field-level
+encryption, our automatic DLP
+
+integration with BigQuery which
+helps you secure your data
+
+or continue to invest in
+advancing in data warehouse,
+
+machine learning with BQML,
+or powerful new SQL workload
+
+management capabilities,
+we're committed
+
+to meeting your analytics needs.
+
+With that quick recap of
+where we've been investing,
+
+I want to pivot to a
+deep dive in the areas
+
+investment we're making to
+really support your business
+
+building and running
+applications in the Cloud,
+
+such as interoperability
+support that breaks down
+
+data and application silos,
+our migration and management
+
+support for helping
+you get to the Cloud
+
+and save money when
+you're here, and finally,
+
+a ton of investments in cracking
+that hard problem of really
+
+getting value from
+data with real time
+
+and predictive analytics.
+
+As we think about
+BigQuery's interoperability,
+
+it's really not like any
+other data warehouse.
+
+You get choice of storage,
+cloud, tools, engines,
+
+and languages, and we make
+that possible to leverage
+
+all these choices with
+a consistent security
+
+and governance
+framework, so whether it
+
+is our recent launch of Cloud
+Spanner Query Federation
+
+or the launch of
+autoscaling serverless Spark
+
+Integration, which you can
+learn more about in the Open
+
+and Integrated Data
+Analytics session,
+
+or some of the new capabilities
+I'm going to walk you
+
+through now, you get
+to make the choice that
+
+is right for your business
+and your data analytics needs.
+
+Speaking of choice
+of cloud, we are
+
+very excited to announce
+the general availability
+
+of BigQuery Omni for Amazon Web
+Services and Microsoft Azure.
+
+Most companies have data
+across multiple clouds today,
+
+and that frequently
+creates data silos
+
+that make it difficult,
+if not even impossible,
+
+for analysts to access
+and leverage that data.
+
+BigQuery Omni is a flexible
+cross cloud analytics solution
+
+that lets you cost effectively
+access and securely analyze
+
+data across GCP, AWS, and Azure.
+
+With BigQuery Omni,
+you can leverage
+
+the familiar BigQuery
+UI, API, or standard SQL
+
+to quickly answer
+questions and share results
+
+from a single pane of glass.
+
+With net new capability
+that we are announcing
+
+called Cross Cloud Transfer,
+you can use standard SQL
+
+to bring the results of
+your analysis back to GCP
+
+with a simple copy statement
+and combine that data
+
+and perform advanced analytics
+for something like BQML
+
+or aggregate the data from
+multiple clouds for Looker
+
+and BI tools.
+
+BigQuery Omni is serverless
+and connects directly
+
+to your data on AWS or Azure.
+
+You can securely run analytics
+on other public cloud
+
+with a fully managed
+infrastructure.
+
+All compute runs on
+BigQuery Omni clusters
+
+in the same AWS or Azure
+region as your data storage.
+
+To learn more
+about BigQuery Omni
+
+and see a demo of our new Cross
+Cloud Transfer capability,
+
+please visit the Data Analytics
+session on multi cloud,
+
+and we encourage you
+to come give it a try.
+
+In addition to the
+recent BigQuery Omni,
+
+happy to announce that we
+were making the secure lake
+
+house architecture a reality
+across all three clouds.
+
+With the introduction of
+authorized external tables,
+
+it is now possible to have
+fine-grained governance
+
+and security permissions
+on lake house data.
+
+Authorized external tables allow
+you to set up a service account
+
+for accessing your data natively
+in Google Cloud Storage, S3,
+
+or Azure storage,
+so you don't have
+
+to grant privileges
+to the raw data
+
+or worry about
+physical file layout.
+
+You can use BigQuery's
+native policy capabilities
+
+to provide table, column,
+or row-level security
+
+for your data and data
+lakes, and those policies
+
+are consistently
+enforced, regardless
+
+of whether accessing the
+data through SQL, data PROC,
+
+or other engines, like Spark.
+
+Net, you no longer have to care
+about where your data resides
+
+or what engine you're
+using to access it in order
+
+to provide consistent,
+secure, auditable, and even
+
+policy-driven
+access to your data.
+
+
+
+Before today, BigQuery
+customers had the ability
+
+to create user-defined
+functions in SQL or JavaScript
+
+and run them entirely
+within BigQuery,
+
+and while these functions are
+performant and fully managed
+
+from within BigQuery,
+customers expressed an interest
+
+and desire to
+extend BigQuery UVFs
+
+to their own external code.
+
+We had requests from
+health care providers
+
+who wanted to bring
+their existing security
+
+platforms to BigQuery,
+financial institutions
+
+that wanted to
+enrich their BigQuery
+
+data with real-time
+stock updates,
+
+and data scientists who wanted
+to be able to use Vertex AI
+
+alongside with BQML.
+
+To help these customers extend
+BigQuery into other components,
+
+we created BigQuery
+External Functions.
+
+BigQuery External Functions
+provides a direct integration
+
+with cloud functions,
+GCP's serverless execution
+
+environment for
+single-purpose functions.
+
+With external
+functions in BigQuery,
+
+you'll now be able to write a
+function in node, Python, Go,
+
+Java, .NET, Ruby, or even
+PHP and execute it on columns
+
+passed in from
+BigQuery SQL queries.
+
+BigQuery external functions that
+you incorporate BigQuery SQL
+
+functionality with software
+outside of BigQuery.
+
+We've already started
+working with key partners
+
+like Protegrity on
+using external functions
+
+as a mechanism to merge
+BigQuery into their security
+
+platform, which
+will help us help
+
+our mutual customers address
+their stringent compliance
+
+controls.
+
+Also happy to announce the
+preview of Analytics Hub, which
+
+will help organizations publish,
+discover, subscribe, and share
+
+data assets so they can
+seek broader insights
+
+and ask bigger questions.
+
+BigQuery has had
+cross-organizational data
+
+sharing in place
+capability since inception,
+
+and we have thousands of
+organizations sharing hundreds
+
+of petabytes of data today.
+
+Our Analytics Hub makes
+that experience of discovery
+
+and management much easier.
+
+Analytics Hub will
+allow publishers
+
+to create exchanges that
+combine unique Google data
+
+sets with commercial industry
+data sets and public data sets.
+
+Publishers will be able
+to curate data exchanges
+
+internally and
+externally, and they'll
+
+be able to view aggregated
+usage metrics on how popular
+
+their exchanges are.
+
+With other interoperability
+capabilities
+
+I mentioned, it will
+soon be possible to share
+
+data in the Analytics Hub
+in place from your data
+
+to data lake, as well.
+
+In addition to the
+unique Google data
+
+that we are working to
+bring to Analytics Hub,
+
+such as the recent release
+of Google Trends data,
+
+which enables discovery of top
+search terms across locations,
+
+we're also partnering
+with Crux Informatics
+
+to accelerate access to
+data on Analytics Hub.
+
+Data providers across finance,
+geospatial, retail, and more
+
+are all bringing
+their data to BigQuery
+
+and delivering it
+through Analytics Hub.
+
+We will announce
+more partnerships
+
+as we move closer to general
+availability of Analytics Hub
+
+next year.
+
+Deciding to move to the
+Cloud is a big commitment,
+
+both in tech, processes,
+and change management.
+
+And knowing that it is the
+right choice for your business,
+
+both for the
+capabilities it unlocks
+
+but also for the overall
+TCO, is equally important.
+
+Happy to highlight
+some capabilities
+
+we're invested in that make
+all aspects of moving your data
+
+warehouse to the Cloud and to
+BigQuery on GCP a good bet.
+
+I'm excited to introduce
+the BigQuery migration
+
+service, a comprehensive
+solution for migrating data
+
+to BigQuery which will enable
+fast and low-risk migrations.
+
+The BigQuery migration
+service speeds up
+
+Teradata to BigQuery migrations
+with predictable tooling
+
+for customers and
+partners, which
+
+cover migration planning, data
+transfer, automatic SQL script
+
+conversion, and
+data verification.
+
+Support for additional data
+warehouses is also coming soon.
+
+One of the hardest pieces of
+any data warehouse migration
+
+is modernizing legacy business
+logic like SQL queries,
+
+scripts, and stored procedures.
+
+The BigQuery migration
+service provides
+
+fast, semantically-correct and
+human-readable translations
+
+of legacy objects with
+no ongoing dependencies.
+
+It supports a broad range
+of Teradata artifacts,
+
+including DML, DDL, and
+BTEQ, and translations
+
+can be run in batch
+mode or ad hoc directly
+
+from the BigQuery SQL Workspace.
+
+Customers like Walmart
+and MercadoLibre
+
+have used it to successfully
+translate millions of queries,
+
+and we encourage you
+to come give a try.
+
+
+
+When doing analytics at scale,
+understanding what is happening
+
+and being able to take action
+in real time is critical,
+
+and many of our customers also
+desire capacity management
+
+capabilities to optimize
+their BQ environments.
+
+We're happy to launch a new
+BigQuery Administration Hub
+
+experience with new
+features such as research
+
+charts and the slot estimator.
+
+The capabilities
+help our admin users
+
+to understand and manage
+their BigQuery environments
+
+like never before.
+
+Research charts
+provide a native,
+
+out-of-the-box experience
+for real-time monitoring
+
+and troubleshooting of
+your BigQuery environments.
+
+These charts make it
+easy to understand
+
+your historical patterns
+across slot consumption, job
+
+concurrency, and
+job performance,
+
+allowing you to take
+actions to ensure
+
+your BigQuery environment
+continues to run smoothly.
+
+This is now generally available
+for all customers that
+
+purchase slot reservations.
+
+Many customers with
+pre-purchase capacity
+
+also want to understand,
+should I buy more?
+
+Do I have too many slots?
+
+Will additional slots
+affect my job performance?
+
+The slot estimator is an
+interactive capacity management
+
+tool that helps administrators
+estimate and optimize
+
+their BigQuery capacity
+based on jobs performance.
+
+It looks at historical usage
+and helps customers make
+
+capacity planning decisions.
+
+It also provides estimates
+on price for performance
+
+when adding or reducing slots.
+
+This is now available for public
+preview for all reservation
+
+customers.
+
+In addition to
+the Admin tooling,
+
+sometimes customers have one
+off or spiking workloads,
+
+and flex slots can
+be a great solution.
+
+In fact, many customers have
+been leveraging flex slots
+
+to scale up or down their
+environments via simple SQL
+
+statements.
+
+This is great for
+one-off batch workloads,
+
+but does require you to estimate
+and manage your capacity.
+
+We're now happy to announce
+the preview of the Flex Slot
+
+Autoscaler.
+
+Autoscaling enables
+customers to take
+
+full advantage of BigQuery's
+elastic serverless architecture
+
+while maintaining
+controls over cost.
+
+With autoscaling, you
+simply set the size
+
+of the environment you're
+willing to scale up to
+
+and then BigQuery looks at
+your current query load.
+
+And if more budget is
+available and more capacity
+
+would accelerate your
+queries in flight,
+
+it scales up your
+environment on the fly
+
+in very small increments.
+
+By adjusting the size of your
+environment every few seconds,
+
+you get maximum performance
+without any wasted capacity
+
+up to your budget.
+
+Customers like Snap
+have been using
+
+this to provide phenomenal
+performance for their analysts,
+
+and we've had customers
+scale up tens of thousands
+
+of slots for incredible
+performance on really
+
+large workloads.
+
+In addition to the
+great capabilities
+
+we've announced for managing
+your query resources,
+
+we're also adding
+additional support
+
+for managing your storage.
+
+Snapshots, currently
+in Preview, provide
+
+read-only, point-in-time
+versions of tables
+
+without actually having
+to copy the base data
+
+and incur duplicate costs.
+
+They can be really useful
+for logical backups,
+
+saving the state of something
+like a financial dashboard
+
+to keep points in time,
+and many other use cases.
+
+Clones, coming soon, provide
+modifiable versions of tables
+
+without having to copy
+the base data, as well.
+
+This makes it possible
+for you to test things
+
+like schema evolution, where
+you're modifying columns
+
+for the rollout of a new
+version of your application
+
+or to set up dev test
+environments that work
+
+end-to-end so you can run
+crews on a large amount of data
+
+without incurring the
+cost of duplicate data
+
+just for a test environment.
+
+
+
+Once you're in the
+Cloud, it's time
+
+to really leverage the
+capabilities that have been
+
+unlocked that will enable
+you to drive your business
+
+and really drive
+value from that data.
+
+Happy to highlight
+some of the investments
+
+across the full stack, from
+high throughput investment to BI
+
+in tooling and ML that will
+help you unlock value from data.
+
+For customers with needs for
+real-time data analytics,
+
+the new BigQuery Write API
+is now generally available.
+
+This new Write API underscores
+our engineering innovation
+
+to bring industry-leading
+performance
+
+for streaming ingestion.
+
+With over 1 gigabyte
+per second of ingestion
+
+throughput enabled by
+default and the ability
+
+to scale to 100 times or more
+that, the Write API allows
+
+you to unify streaming
+and batch ingestion
+
+and offers exact once
+delivery semantics.
+
+It also supports
+stream-level transactions
+
+and automatic detection
+of target schema changes.
+
+These features, combined
+with native integration
+
+with the data flow,
+will allow you
+
+to accelerate your real-time
+analytics workloads.
+
+I'm also happy to
+tell you that all
+
+of this net new value over the
+previous Streaming API, yet
+
+is priced at 50% cheaper
+than the current offerings.
+
+So we encourage you to move
+to the new BigQuery Write API.
+
+
+
+BigQuery is a powerful
+analytics engine
+
+that provides great performance
+on calculations, aggregations
+
+for data at any scale.
+
+However, the way
+customers use BigQuery
+
+has expanded from traditional
+data warehouses or data lakes,
+
+and today there are many
+applications built on BigQuery
+
+that may not want
+to crunch numbers,
+
+but simply return a
+handful of rows associated
+
+with a specific data point,
+like a name or an IP address.
+
+Customers expressed that when
+finding these specific data
+
+points in terabytes
+or petabytes of data,
+
+it was slower, maybe
+even more cost expensive,
+
+than the applications
+were designed for.
+
+This is because BigQuery
+needs to do a full table scan
+
+and read all of it just to
+find the rows associated
+
+with the unique element.
+
+To help customers build these
+operational applications
+
+on top of BigQuery, we
+are announcing new search
+
+capabilities in BigQuery.
+
+Customers can now
+create Search Indexes
+
+for a table that accelerates
+the speed at which you
+
+can identify the rows that
+contain specific text.
+
+You can use BigQuery Search
+Indexes and Preview today
+
+if you have scenarios that
+would benefit from speed up
+
+of point lookups.
+
+Or another way,
+Search Indexes are
+
+useful when you need to
+find a needle in a haystack.
+
+Search Indexes can be used
+across multiple columns
+
+at once.
+
+So even if you don't know
+exactly where the data is
+
+stored, it can still be found.
+
+It's also fully integrated
+with our native JSON data type,
+
+also in Preview,
+meaning that you
+
+can search for fields
+and values in data
+
+that is unstructured or has a
+constantly changing structure.
+
+These search indexes also
+back our new log analytics
+
+application that was
+recently announced,
+
+Cloud Logging, which helps use
+BigQuery to better understand
+
+your telemetry and data.
+
+Like the rest of BigQuery,
+these search indexes
+
+are fully managed
+and serverless.
+
+Google has all the
+resource provisioning,
+
+tokenizes the data, and loads
+the index behind the scenes.
+
+So once you create a
+Search Index on a table,
+
+you can start streaming data
+in and know that your search
+
+indexes will
+automatically be refreshed
+
+without any management overhead.
+
+We've been working
+with our customers
+
+on this feature, who
+started testing it
+
+for a variety of
+different use cases.
+
+For example, a
+major retailer found
+
+that they are
+improving dashboards
+
+that have highly
+selective inventory items
+
+that they need to
+slice and dice.
+
+We've also worked for
+several companies in the U
+
+who are hoping use Search
+Indexes to dramatically reduce
+
+costs for their GDPR
+processes, since they're now
+
+able to touch only the rows that
+contain specific individuals,
+
+no longer having to
+query the full data set
+
+for each GDPR request.
+
+And of course, we found a
+myriad of other improvements
+
+for log analytics
+applications that
+
+can now use BigQuery for
+efficient lookups of things
+
+like IP addresses, error
+codes, emails, and URLs.
+
+
+
+We were one of the first
+to bring integrated
+
+machine learning into the data
+warehouse with BigQuery ML,
+
+and we continue to see
+tremendous adoption
+
+and customer innovation
+because of the ease of use,
+
+ability to unlock ML with
+only a few lines of SQL,
+
+and no infrastructure
+management.
+
+In addition to continued
+investment in additional models
+
+and capabilities, like
+XG Boost, AutoML Tables,
+
+and Hyperparameter
+Tuning, I wanted
+
+to highlight our work
+around a couple of areas.
+
+First off, Explainable AI.
+
+Explainable AI helps you
+understand the results
+
+that your predictive
+machine learning models
+
+generate by defining how
+much each feature contributes
+
+to the predicted results.
+
+This is referred to as
+feature attribution.
+
+This information can be used
+to verify the model as behaving
+
+as expected, to recognize
+bias in your models,
+
+and to inform ways
+to improve your model
+
+and your training data.
+
+We support both local and
+global explainability.
+
+We're also investing in
+integrating BQML and Vertex AI
+
+closer together so you can
+leverage the best of both
+
+for ML ops deployments.
+
+For example, BQML models
+will be registered in Vertex
+
+and they can be used to manage
+versions and compare there.
+
+We'll also be adding
+support in Vertex Pipelines.
+
+So all BQML training
+and prediction
+
+will be possible through
+Vertex pipeline components.
+
+So this user can continue to
+use their favorite notebook
+
+and use BQML pipeline
+components to vote, training,
+
+and prediction.
+
+Overall, in partnership
+with the Vertex AI team,
+
+we're committed to delivering
+a powerful and fully integrated
+
+ML solution with
+great ease of use.
+
+Finally, happy to announce
+the launch of BigQuery's
+
+BI Engine, our solution for
+enabling data and business
+
+analysts to perform interactive
+analytics in real-time
+
+and with high concurrency.
+
+BI Engine is not a cache.
+
+It is a fully-distributed,
+highly-available, in-memory
+
+database Engine, which
+is natively incorporated
+
+into standard BigQuery APIs.
+
+It enables subsequent
+queries on large data
+
+sets with high concurrency
+and can eliminate the need
+
+to manage BI servers
+or ETL pipelines,
+
+and it natively works with SQL
+and BI tools such as Looker,
+
+Tableau, Power BI, et cetera.
+
+For GA, we added support for
+pinning preferred tables and up
+
+to one terabyte of
+memory per reservation
+
+and additional joint operations
+and support for streaming.
+
+This means that in
+combination with the new Write
+
+API for high
+throughput streaming,
+
+materialized views which have
+also been recently released,
+
+and BI Engine for acceleration
+of interactive analytics,
+
+these technologies
+all work together
+
+to make the vision of always
+fresh, always fast analytics
+
+a reality at any scale.
+
+That was quite
+the whirlwind tour
+
+of what's new with BigQuery.
+
+Thank you for joining
+us today, and I
+
+hope you can see our
+commitment to provide
+
+powerful analytic
+solutions that will
+
+help drive your businesses
+forward and help you unlock
+
+data.
+
+If you'd like to
+learn more, here
+
+are some additional
+sessions I suggest
+
+you take a look at to see
+the power of Omni, Serverless
+
+Spark, Streaming, Log Analytics,
+and Secure Data Classification
+
+with Google Cloud.
+
+Thanks again for joining me
+to learn more about BigQuery,
+
+and I hope we can help you
+drive your business and data
+
+analytics for your
+company forward.
+
+Thank you.
+
+
+

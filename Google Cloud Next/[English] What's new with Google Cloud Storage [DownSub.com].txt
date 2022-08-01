@@ -1,0 +1,1350 @@
+
+
+BRIAN SCHWARZ:
+Welcome to the What's
+
+New and What's Next for
+Storage session here
+
+at Google Cloud Next '21.
+
+My name is Brian Schwarz.
+
+And I'm joined by my colleague
+here, Dave Nettleton.
+
+We're leaders in the
+product management
+
+team here for
+storage, and excited
+
+to talk to you about the
+entire storage portfolio
+
+that Dave and I work on
+along with our colleagues.
+
+During the session
+today we've broken it up
+
+into a few different sections.
+
+First, Dave's going to start
+with the strategy for Google
+
+Cloud Storage.
+
+And then we're going to run
+through the updates and what's
+
+new on a number of parts of the
+product line, Cloud Storage,
+
+file, persistent disk.
+
+And we'll end with some
+discussions about transfer
+
+in Backup Archive DR, as well
+as include a few links to where
+
+to find more information.
+
+With that, I want
+to turn it over
+
+to Dave to start a discussion
+about the strategy.
+
+DAVE NETTLETON: Thanks, Brian.
+
+And so just at a
+very high level,
+
+I thought it'd be
+helpful to go through how
+
+we think about our strategy and
+the different parts of that.
+
+So our goal is to
+deliver easy to use,
+
+performant, and highly available
+storage for all workloads
+
+with enterprise management
+controls and insights.
+
+This really guides how we
+think about both the portfolio
+
+of products that we have,
+but also the individual
+
+features within them.
+
+And so at a high level,
+three main types of storage
+
+that we provide in the Cloud,
+block, object, and file.
+
+We'll spend a little bit
+more time on each of these.
+
+These cover both cloud native
+and more traditional enterprise
+
+use cases.
+
+Together with those,
+we have capabilities
+
+for data transfer and
+data protection, which
+
+are very important
+services that come hand
+
+in hand often with storage.
+
+And then as well as what we
+deliver in terms of first party
+
+products from Google,
+we're very big
+
+believers in having an open
+ecosystem of partners here
+
+to give customers a range of
+choices for their workloads
+
+as they bring them to the cloud.
+
+Two big categories there would
+be in file and data protection.
+
+For file we partner closely
+with NetApp, Dell EMC, and DDN.
+
+And for Backup and DR,
+Commvault, and Veeam
+
+are two of the partners,
+who amongst others
+
+we work with very, very closely.
+
+So let me dive in a
+little bit on some
+
+of the great
+enhancements that we've
+
+had in the products recently.
+
+So starting with our object
+storage product, Cloud Storage.
+
+So one of the great
+features in Cloud Storage,
+
+our object storage
+product, is the notion
+
+of dual regional storage.
+
+And what this does is
+it lets you manage data
+
+across two regions.
+
+So without this
+product, you need
+
+to put a bucket in
+each of two regions.
+
+Each of those buckets would
+have a different name.
+
+You'd have to separately deal
+with managing and copying data
+
+from one bucket to the other.
+
+If you had to deal
+with a disaster
+
+or you wanted to
+redirect traffic
+
+to read from one
+bucket or the other,
+
+you'd have to deal with
+failover and fail back
+
+of those storage buckets.
+
+With dual regional storage,
+we provide a product
+
+that gives just a single bucket
+that spans those two regions.
+
+So resources in each
+of those regions,
+
+or indeed, in other regions,
+can read data from that bucket.
+
+And we will manage, behind the
+scenes, the data placement.
+
+And we provide a
+single namespace
+
+that you can read and write to.
+
+So it's active, active from
+a read and write perspective.
+
+We provide strong consistency
+over that metadata
+
+of the bucket.
+
+And then in the background,
+we move the data,
+
+replicate the data
+between the two regions.
+
+In the event of a failure
+in one of the regions,
+
+the application won't
+notice it continue
+
+to read the metadata that's
+consistent across these two
+
+regions, giving immediate
+failover to any activity that's
+
+happening in the other region.
+
+One of the big enhancements
+that we are announcing
+
+is that we're going to allow
+not just fixed name pairs, which
+
+is what we have today.
+
+We currently have a
+pair of regions in Asia,
+
+a pair of regions in the US,
+and a pair of regions in Europe.
+
+We're going to allow
+customers to specify
+
+the particular regions that
+they want to create a custom
+
+dual region across.
+
+This is very powerful,
+being able to pair together
+
+a couple of regions and
+provide a single bucket
+
+that spans those two regions.
+
+Together with that, we also
+want to deliver a capability
+
+to give stronger guarantees
+around the recovery point
+
+objective.
+
+So we call this turbo
+replication, where
+
+we'll give an SLA of the data
+that is written on one side
+
+will be replicated to the
+other side within 15 minutes.
+
+And so we'll provide
+an SLA back replication
+
+for the data in these
+dual region buckets.
+
+Very excited about this in
+helping customers better
+
+support their business
+continuity needs,
+
+and also managing their data
+across multiple regions.
+
+As well as that feature,
+some other enhancements
+
+from Cloud Storage that
+have happened recently.
+
+So multipart uploads, this
+has been a very common feature
+
+ask from customers
+who are looking
+
+to make it easy to bring
+large objects to the cloud,
+
+and construct them in parts,
+and finalize them in the clouds.
+
+This has been a very popular
+programmability feature.
+
+And then a category, the next
+three all around security.
+
+So security is something we
+take very, very seriously.
+
+We work a lot with customers
+around their security needs.
+
+So we want to make sure that we
+support the various workloads
+
+that they have here,
+through assured workloads,
+
+through providing tags, bucket
+level tags that let customers
+
+reason about their data
+through IAM policies,
+
+and support
+certifications like FINRA
+
+with capabilities
+like bucket lock
+
+that let customers lock a
+bucket for an extended duration
+
+of time.
+
+And then another enhancement
+that we announced earlier in
+
+this year--
+
+it's relatively small,
+but actually very powerful
+
+is with Google Cloud Storage we
+offer four classes of storage,
+
+from hot all the
+way down to archive.
+
+And we let customers
+tier between that data
+
+for managing costs.
+
+It doesn't actually--
+all storage classes
+
+have the same API and the
+same fast access to data.
+
+So even the archive tier is
+online and instantly available.
+
+But customers want a tier
+between those storage classes
+
+for cost purposes.
+
+With a custom timestamp
+as part of the metadata,
+
+customers can now
+use a measure of time
+
+to help them make decisions
+about when to tier data.
+
+So it's a powerful capability.
+
+Moving on from
+our object storage
+
+and cloud storage
+over to file storage,
+
+both from Filestore,
+our first party product,
+
+and also with partners.
+
+So file storage
+is a huge use case
+
+for our customers,
+particularly customers
+
+coming from on premises,
+where they have built
+
+rich and sophisticated
+workflows around enterprise file
+
+offerings, whether that's
+just as traditional file
+
+shares, or as directories
+where they're putting shared
+
+executables as
+part of workflows,
+
+build pipelines, et cetera.
+
+So customers are looking,
+as they lift and shift
+
+to the cloud, to have a
+very powerful set of file
+
+capabilities.
+
+To date, we've had a
+file store product that's
+
+both a basic and a high scale.
+
+And these have been
+zonal products.
+
+And we're really
+pleased to announce
+
+that we've launched
+Filestore Enterprise, which
+
+is a regional service.
+
+So it will survive
+a zone failure.
+
+So we replicate data
+across multiple zones.
+
+So customers don't need
+to worry about that.
+
+They have a highly
+available regional service,
+
+backed with a four nines SLA.
+
+And then we're also making
+sure that this is then
+
+well integrated with all of
+the other enterprise features
+
+that customers
+expect in the cloud,
+
+whether that's
+Stackdriver for logging,
+
+or our security features like
+VPC Service Controls, VPN,
+
+Interconnect to help customers
+set up the appropriate security
+
+perimeter around
+their infrastructure,
+
+and have that file product
+to be part of that.
+
+And we also want
+to make sure this
+
+is available through our
+console, CLI, nice and easy
+
+to use.
+
+And then in particular
+with GKE, to help
+
+make it easy to provision
+and get file resources there,
+
+providing the CSI driver
+support to simplify.
+
+So as well as
+Filestore Enterprise,
+
+some other enhancements for file
+that we've announced recently
+
+is backups for Filestore Basic.
+
+So Filestore Basic
+is our zonal product.
+
+And we've delivered
+backups for that.
+
+
+
+Filestore High Scale is
+our high performance scale
+
+of Filestore, which lets
+customers scale to many tens
+
+to up to 100 terabytes of scale
+at much higher performance.
+
+And then as well as what we've
+been doing our first party
+
+with Filestore,
+lots of enhancements
+
+through our partners, in
+particular with NetApp
+
+and Dell.
+
+And we're seeing a lot
+of customers having
+
+a lot of success with
+some of the workloads
+
+that they're bringing
+to the cloud with things
+
+like SMB workloads for
+Windows, or media rendering
+
+and genomics.
+
+And with that, I'll
+hand back over to Brian
+
+to tell you all a little
+bit about persistent disk.
+
+BRIAN SCHWARZ: Thanks, Dave.
+
+So persistent disk is the
+block storage offering here
+
+in Google Cloud.
+
+It's often used with
+the Compute Engine VMs.
+
+That's probably the
+most common use case,
+
+but it's also used quite a bit
+with Kubernetes Engine, GKE
+
+for container workloads.
+
+And it's also used with Cloud
+SQL for the managed database
+
+offering.
+
+So pretty popular offering, a
+bunch of different use cases.
+
+One of the new, great features
+that we introduced recently
+
+is a new class of performance,
+extreme persistent disk.
+
+And it's really targeted at the
+highest performing workloads
+
+in your data center,
+particularly high end
+
+databases, SAP HANA
+being an absolutely
+
+classic example of this.
+
+In addition to
+great performance,
+
+another great feature
+it has is the ability
+
+to independently scale
+capacity and performance.
+
+So you can really tune the cost,
+and performance, and capacity
+
+to really get the best TCO
+for your environment, just
+
+in the persistent
+disk volumes itself.
+
+It also includes easy
+to use snapshots,
+
+which can be used for
+like cloning use cases.
+
+So you could refresh test and
+dev environments and workflows
+
+similar to that.
+
+And also, you can attach
+persistent disk volumes
+
+to any size VM.
+
+So again, it's another
+capability of flexibility.
+
+So you can really use the
+Google Cloud infrastructure
+
+to tune the capabilities
+of the infrastructure
+
+to exactly what you need.
+
+So you don't pay for maybe
+a really large VM just
+
+because you need really
+high performance storage.
+
+So again, just try and give
+you all that flexibility.
+
+Dave mentioned security.
+
+It kind of exists kind of
+throughout our portfolio.
+
+Another classic example is
+here with persistent disk
+
+is the ability to
+have, of course,
+
+at rest encryption and
+encryption in transit,
+
+and lots of flexibility
+in terms of how
+
+you manage the
+keys, with customer
+
+managed keys or
+customer supplied keys.
+
+And another thing we're
+really excited about
+
+is these constant investments
+we make in the resiliency
+
+of our system.
+
+And extreme persistent disk
+has a six nines durability,
+
+which is a measure of how
+durable the storage is.
+
+It's really important
+that we invest
+
+in making these things
+available and durable for you.
+
+There's a number of
+other enhancements
+
+that we've had for
+persistent disk that
+
+expand beyond extreme PD.
+
+And the first one
+is probably a tie
+
+off to what I just
+talked about durability.
+
+We have a nice public
+blog posting we've done
+
+and inclusion in some
+more documentation
+
+for PD about the really
+leading durability
+
+guarantees that we have
+included in our services.
+
+Another service that we
+added earlier in the year
+
+was balance PD.
+
+It's an SSD class storage.
+
+So it gives you good
+performance, not as
+
+good as extreme PD, but at
+a much lower price point.
+
+And it's a really good
+offering for a lot of,
+
+I'll say general purpose
+workloads in the cloud.
+
+People use them for boot disks,
+for test and dev databases.
+
+There's lots of reasons why
+these things are interesting.
+
+And it really gives you great
+IOPS at a lower price point.
+
+Also with balanced PD
+is we have something
+
+we refer to as regional
+PD, which essentially
+
+is synchronous replication
+across the zones in a given
+
+region.
+
+This is a differentiated
+capability
+
+for Google Cloud, super powerful
+and important for those of you
+
+who basically need to
+protect against zone failures
+
+and essentially you're
+getting synchronous rights
+
+across multiple regions.
+
+Used quite a bit with the
+Cloud SQL offering today
+
+to provide the highest
+levels of availability
+
+for some of your
+important databases.
+
+And, of course,
+along the same lines,
+
+increasingly investing
+in APIs to be
+
+able to deliver application
+consistent snapshots,
+
+which will really
+speed the recovery time
+
+if you need to re-instantiate
+a database from a snapshot.
+
+Another small part of the
+block storage product line
+
+here is our local SSD offering.
+
+And you can think about
+this as a counterpoint
+
+to persistent disk that's really
+targeted at ephemeral or cache
+
+workloads.
+
+So locally attached to the VM,
+very high performance, very
+
+high IOPS, very low latency.
+
+Really targeted at
+these caching workloads,
+
+in-memory databases where
+you need the absolute highest
+
+level of performance, but you
+don't need the persistence,
+
+and durability,
+and the enterprise
+
+features that we have
+in persistent disk.
+
+So again, a nice addition
+to the product line
+
+earlier this year
+was the support
+
+for 9 terabyte local SSDs.
+
+And again, like I mentioned
+earlier, the ability
+
+to attach these to many
+sizes and shapes of VMs
+
+so you can really, again, tune
+performance with CPU, memory,
+
+and storage performance, all
+being targeted exactly what you
+
+need for your workload.
+
+And with that, I would like
+to turn it back over to Dave
+
+to talk about data transfer.
+
+DAVE NETTLETON: Thanks, Brian.
+
+Yeah, so data transfer
+there's two major products
+
+in the portfolio that we have
+here, the Transfer Appliance
+
+and the Transfer Service.
+
+So starting out with
+Transfer Appliance,
+
+one exciting enhancement
+that we've had
+
+is to allow this to be available
+to customers in what we
+
+call a connected mode.
+
+So to date, we've
+had an appliance
+
+that ships to a
+customer's premises,
+
+either, for example, to
+move large amounts of data
+
+from a data center that
+they're migrating to the cloud.
+
+Or increasingly we're seeing for
+capture at the edge use cases,
+
+where for AI/ML workloads
+there's a lot of data capture
+
+that might happen in the field.
+
+And we want to gather
+a lot of that data
+
+and then bring it to the cloud.
+
+So we've had a
+Transfer Appliance
+
+to allow customers
+to capture that data
+
+and ship it to the cloud.
+
+Recently we just announced
+that we'll actually allow this
+
+to operate in a connected mode.
+
+So you can actually drop
+data onto the appliance,
+
+and then over a
+network connection
+
+it would move the data to
+the cloud on your behalf
+
+via that connection.
+
+So excited to see
+some of the use cases
+
+our customers will put this to.
+
+As well as the Appliance, a lot
+of enhancements on the Transfer
+
+Service recently.
+
+Several here that
+I'll highlight.
+
+First of all, the
+Transfer Service API.
+
+So giving programmability
+control over transfers we think
+
+will help customers much
+better integrate this
+
+into their various workflows.
+
+Agent pools is a
+capability we've
+
+added to the agent that
+is part of transfer
+
+service for on premises.
+
+So this is something
+that is deployed
+
+into a compute resource
+and manages the transfer.
+
+With agent rules, we're now
+enabling those resources
+
+to be better managed across
+multiple transfer jobs,
+
+and over a shared resource
+like a network link,
+
+so giving much more flexibility
+control over transfer.
+
+And then more sources and
+sinks for their service.
+
+We've added support
+for Azure Data Lake V2.
+
+And for the appliance we're
+adding more locations,
+
+with London being one that's
+recently been announced.
+
+And with that, I'll
+hand back to Brian.
+
+BRIAN SCHWARZ: Thanks, Dave.
+
+For the last content
+section, I want
+
+to talk about Backup,
+Archive, and DR.
+
+And it's a really
+important area to make sure
+
+that you're protecting your data
+in all the different places it
+
+exists in Google Cloud.
+
+One of the new
+offerings that we just
+
+announced in September
+of '21 is a new offering
+
+focused on containers,
+Google Cloud GKE Backup.
+
+And what we've
+seen is an increase
+
+in the number of customers
+running stateful workloads
+
+inside of containers, including
+very traditional databases.
+
+And as a result of
+that, we've been
+
+working on essentially a
+new service offering that's
+
+targeted at protecting the
+data inside these stateful
+
+containers.
+
+It has a nice
+orchestration built into it
+
+that essentially allows you
+to take regular PD snapshots
+
+to protect the data inside
+these stateful containers.
+
+And it gives you pretty
+flexible recovery options
+
+to recover individual
+containers,
+
+as well as full clusters, both
+in the normal region where
+
+it was running, as well as
+potentially for a DR use case
+
+to reinstantiate it
+inside of another region.
+
+There is flexibility
+to basically manage
+
+your backup policy, scheduling,
+recurring snapshots,
+
+as well as setting the
+retention cycles on how long
+
+you want to keep these
+snapshots around.
+
+And as GKE and
+containers continues
+
+to be used for more
+important, very traditional,
+
+enterprise class workloads,
+it's important to have offerings
+
+like this that
+essentially help you
+
+meet compliance requirements.
+
+So you can create
+backups for the data
+
+for inside of these containers.
+
+And we also have the
+ability to do pre and post
+
+hooks so you can
+also get application
+
+consistent snapshots.
+
+Across the rest of our
+Backup and Archive portfolio,
+
+there's a number of other
+things that have been going on.
+
+In particular, last
+year at the end of 2020
+
+we acquired Actifio.
+
+And it's the real centerpiece
+of our first party backup
+
+investments going forward.
+
+Actifio was a
+Google Cloud partner
+
+and had an offering called
+Actifio Go in the marketplace.
+
+And we've been working
+on making that offering
+
+more native inside
+of Google Cloud,
+
+to really simplify the
+deployment of this service,
+
+integrated billing.
+
+And, of course, it leverages
+all the great technology
+
+Actifio had as it
+came into Google
+
+around incremental
+forevers in terms
+
+of speeding up the backups
+after the first one.
+
+It's really targeted,
+again, at these mission
+
+critical databases, SAP HANA,
+Oracle, MySQL, et cetera.
+
+And it's really important for us
+to continue to invest in this,
+
+particularly about making it
+a first class service that'll
+
+be more natively
+integrated into some
+
+of the higher level managed
+services as we go on.
+
+And to round out this, I
+wanted to briefly mention
+
+some of the partners, just
+like Dave did for file.
+
+There's a number of
+data protection partners
+
+we work with, two of
+them who have done
+
+some recent enhancements
+to the offerings
+
+to support Google Cloud
+are Veeam and Commvault.
+
+So Veeam V11, which
+is often used on prem,
+
+now supports Google Cloud
+Storage as a backup target.
+
+So you can really think about
+the tape replacement use case.
+
+I like to tell people, one
+of the hidden gems of GCS
+
+is some of the cheaper
+tiers of storage
+
+have very low latency
+in terms of access.
+
+So you can really use these
+cheaper tiers to protect
+
+your data and have compliance.
+
+But if you ever
+need to get it back,
+
+you don't need to wait hours
+or days to do restores.
+
+And also, there is a new Veeam
+for Backup for Google, V2
+
+that just got released
+on the marketplace.
+
+And it also supports the
+archive class tiering,
+
+which, again, will reduce the
+cost for long term retention.
+
+And lastly, Commvault
+has done a great job.
+
+They're a member
+of our marketplace,
+
+recently came onto
+the marketplace.
+
+And has some great capabilities.
+
+Obviously well known
+for VMware backups,
+
+and have done some nice
+integration with Google Cloud
+
+VMware Engine.
+
+So again, an exciting
+new partnership.
+
+We're excited to work with these
+partners as well as others,
+
+again, to provide a wide array
+of backup, archive, and DR
+
+solutions, both from Google
+and from our partner ecosystem.
+
+So to round out
+the session, I just
+
+wanted to talk a
+little bit about where
+
+to learn more information.
+
+And there's a couple
+of other sessions
+
+here at Google Cloud
+Next that I think
+
+if you're interested
+in this section would
+
+be useful to look at.
+
+There's a more specific session
+that goes a little bit deeper
+
+into Filestore Enterprise, which
+is something Dave mentioned.
+
+There's a wider HA and
+availability section
+
+that talks about a number
+of the capabilities,
+
+as well as some
+customer sessions
+
+sprinkled in throughout.
+
+So I really hope you
+get value out of these.
+
+Included a number
+of links to where
+
+to find best practices
+and additional technical
+
+documentation, as well
+as some of the training
+
+and certification links on how
+to get more training and get
+
+certified.
+
+And one of the things
+that I was excited to see
+
+is that last year the Google
+Cloud Professional Cloud
+
+Architect was the highest
+paying certification.
+
+So great kind of career
+option for people
+
+to invest in themselves.
+
+And we're excited.
+
+Hopefully this session
+was a good overview
+
+of all the things that is what's
+new with Google Cloud Storage.
+
+Enjoy the rest of the event.
+
+And we'll see you again soon.
+
+Thank you.
+
+
+

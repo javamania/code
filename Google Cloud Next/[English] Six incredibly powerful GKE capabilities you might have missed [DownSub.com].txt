@@ -1,0 +1,1087 @@
+
+
+JERZY FORYCIARZ: Hello, Next.
+
+Welcome to our
+breakout session, where
+
+we'll talk about the six
+incredibly powerful GKE
+
+capabilities you
+may have missed.
+
+It's a fun session packed
+with cutting-edge tech
+
+and a demo of our
+newest capabilities.
+
+My name is Jerzy.
+
+And today with me is Roman.
+
+Both of us are product managers
+on Google Kubernetes Engine
+
+team.
+
+Together, we will learn
+how using GKE and adopting
+
+the right culture can
+help customers like Ubie,
+
+a Japan-based health
+care technology startup
+
+that automatically generates
+medical records using
+
+an AI-powered patient
+questionnaire app,
+
+achieve 20% saving
+while deploying
+
+to hundreds of
+medical institutions
+
+and improving availability.
+
+Or Scoopwhoop, a media platform
+for whom autoscaling on GKE
+
+helps match capacity with
+the real-time demand.
+
+The result is 99%
+uptime and 50% reduction
+
+in infrastructure costs, while
+removing operational burdens.
+
+Now they can invest more
+time on coding and less
+
+on managing the resources.
+
+As well as Mr. Cooper, an
+industry-leading mortgage
+
+service provider that now can
+pack their nodes to achieve 90%
+
+CPU load.
+
+In fact, Forrester
+conducted a study
+
+in which they created a
+composite organization based
+
+on the GKE customers
+and concluded
+
+the following total economic
+impact numbers of GKE
+
+with expected investment
+payback in under six
+
+months for a typical customer.
+
+Check their study to learn more.
+
+Over to Roman.
+
+ROMAN ARCEA: Thank you, Jerzy.
+
+This is great.
+
+Our team was on a critical
+mission, a mission
+
+to empower you,
+the user, to never
+
+again waste time and money
+on infrastructure you
+
+don't actually use.
+
+When you run workloads on
+Google Kubernetes Engine,
+
+we know you've made
+the choice in favor
+
+of simplicity, efficiency,
+security, and scalability.
+
+But we also know that falling
+for the non-efficiency pitfalls
+
+is easy when you are in charge
+of running infrastructure
+
+at scale, with its endless
+number of components
+
+and possibilities.
+
+In six years of
+GKE's existence, we
+
+learned that four major
+challenges make your life hard.
+
+The first challenge is cultural.
+
+Many teams that embrace the
+public cloud aren't used
+
+to the pay-as-you-go
+billing style and frequently
+
+don't fully understand the
+environment their apps are
+
+running on, in this
+case Kubernetes.
+
+The FinOps movement, which
+is getting lots of attention
+
+recently, is all about
+evolving such a culture.
+
+One of the FinOps
+best practices is
+
+to provide teams with
+real-time information
+
+about their spending and
+their business impact.
+
+Small things like this
+have considerable impact
+
+on companies' culture, resulting
+in a more balanced cost
+
+optimization equation.
+
+The second challenge
+has been packing.
+
+How well do you
+pack applications
+
+onto your Kubernetes nodes.
+
+The better you pack apps onto
+nodes, the more you save.
+
+Then we have the
+app rightsizing,
+
+the ability to set appropriate
+resource requests and autoscale
+
+applications deployed
+in the cluster.
+
+The more precisely you set
+resources on your pods,
+
+the more reliably your
+applications will run,
+
+and in the vast majority
+of cases, the more space
+
+you'll save in the cluster.
+
+And the last challenge is
+node scaling down your cluster
+
+during off-peak hours.
+
+Ideally, to save money
+during low-demand periods,
+
+for example at
+night, your cluster
+
+should be able to scale down
+following the actual demand.
+
+However, in some
+cases, scaling down
+
+doesn't happen as
+expected due to workloads
+
+or cluster configurations
+that block cluster autoscaler.
+
+By themselves, each
+of those are tricky.
+
+But together, this
+is a complex problem.
+
+In our experience, most of
+our provisioned environments
+
+have at least two of the
+following challenges at hand.
+
+But fear not.
+
+We're here to help.
+
+Let's look at some of the
+incredibly powerful GKE
+
+capabilities you
+might have missed
+
+that will take you a step closer
+to running GKE at scale cost
+
+effectively.
+
+Jerzy, over to you.
+
+And tell us about your
+favorite top three.
+
+JERZY FORYCIARZ:
+Thank you, Roman.
+
+I certainly have
+my own top three.
+
+Let me focus on some of the
+existing top-of-the-line GKE
+
+capabilities.
+
+And here there are.
+
+Autopilot.
+
+Traditional Kubernetes
+expects you, the user,
+
+to understand and manage the
+control plane, worker node,
+
+security configuration, upgrade,
+scaling, and availability.
+
+GKE, on the other hand,
+is a truly managed service
+
+that helps you focus
+on your business.
+
+The best and most intelligent
+way of using Kubernetes today
+
+is by activating GKE Autopilot,
+a mode of operation that
+
+automatically manages
+the most complex aspects
+
+of your infrastructure
+configuration.
+
+If, however, the user needs
+more control of their clusters,
+
+she can choose a standard
+GKE mode of operation.
+
+You can think of modes of GKE as
+the level of control customers
+
+have over a given GKE cluster.
+
+And the best part yet?
+
+You can mix and match
+modes of operation
+
+between different clusters.
+
+So you choose GKE Standard
+for advanced configuration,
+
+flexibility over the
+cluster infrastructure,
+
+or GKE Autopilot to
+have Google provision
+
+and manage entire
+underlying infrastructure.
+
+User is in full control
+and can break glass,
+
+converting Autopilot
+clusters into Standard.
+
+These are just a few examples
+of how Autopilot does things
+
+differently.
+
+Autopilot clearly wins as a
+hands-off Kubernetes experience
+
+because it optimizes for
+production like Kubernetes
+
+expert, provides strong
+security posture,
+
+lets Google become your SRE,
+reducing the day-2 operation,
+
+improves resource
+efficiency, and it's still
+
+Kubernetes, still GKE.
+
+But how does this all play
+into GKE cost optimization?
+
+GKE Autopilot shares a
+four-way scalability capability
+
+with the GKE Standard.
+
+Same, well-known tech as
+horizontal pod autoscaling
+
+or vertical pod
+autoscaling apply and serve
+
+as a frame of cost reference.
+
+Users are still in full control
+about how their workloads will
+
+scale and behave.
+
+However, the
+infrastructure is now
+
+managed fully by the Autopilot.
+
+And that has significant
+optimization implications
+
+for everything you
+plan to do with GKE.
+
+You remember early
+in the conversation,
+
+we talked about the
+four main challenges
+
+of cost optimization.
+
+With Autopilot, you pay for the
+compute resources requested.
+
+With our new pay-per-pod
+model, paying for nodes
+
+remains a thing of the past.
+
+That means that bin packing
+is not a problem anymore.
+
+How cool is that?
+
+Not only do you get a
+managed hands-off experience
+
+that lets you focus
+on your business
+
+while improving your security
+and operational posture,
+
+you also get rid of one of
+the most challenging aspects
+
+of cost optimization.
+
+And if you thought
+this is not enough, how
+
+about not having to pay for
+the compute overhead costs
+
+of running the OS and the
+cost of running Kubernetes,
+
+such as Kube system components?
+
+
+
+Scalability is a big subject.
+
+We graduated 15k to
+GA in 2021, which,
+
+for the vast majority of
+users, removed scalability
+
+as a constraint
+in cluster design.
+
+Why does it matter?
+
+Thanks to operating
+in one large cluster,
+
+you can simplify microservices
+lifecycle management,
+
+easier absorb larger
+spikes in resource demand,
+
+and shorten the time to process
+data for batch workloads.
+
+As the result, you can
+combine the services
+
+of your organization into one
+or just a few GKE clusters that
+
+provide better utilization
+and, in effect, will cost less.
+
+Combine this with
+our cost optimized
+
+machine types such
+as E2 or Tau for even
+
+better price/performance ratio
+compared to general purpose
+
+VMs.
+
+Next is the node
+auto-provisioning,
+
+a feature that is internally
+powering all of Autopilot.
+
+But what if you can't
+yet run Autopilot?
+
+Bin packing, that
+annoying issue that
+
+requires you to either make
+sure your workload fits well
+
+inside of the machine side
+or manually create and manage
+
+multiple node pools and play
+with affinity, that can quickly
+
+get out of control and become
+an operational bottleneck.
+
+But there is a simple option--
+
+configure node
+auto-provisioning.
+
+Node auto-provisioning is the
+next generation of our cluster
+
+autoscaler that not only knows
+to scale your cluster using
+
+the chosen VM types, but also
+knows to create entire node
+
+pools from scratch
+that are best suited
+
+for your specific workloads.
+
+Node auto-provisioning makes
+GKE clusters fully automatic,
+
+provisioning relevant machine
+types like GPUs and TPUs,
+
+and removing node
+pools when not needed.
+
+Node auto-provisioning is also
+integrated with vertical pod
+
+autoscaling and provisions
+optimal node pools
+
+ahead of vertical pod
+autoscaling updates
+
+to ensure quick action.
+
+In practice, that
+means that you're
+
+more likely to have VMs
+that are the right size
+
+for your workloads
+than what you get
+
+with the manual provisioning.
+
+All right, Roman.
+
+Those are my top three.
+
+What about yours?
+
+ROMAN ARCEA: Thank you, Jerzy.
+
+I definitely have
+my own list as well.
+
+Let me go through some
+of our latest additions
+
+that we believe are
+important for everyone
+
+to know and understand.
+
+We know that with Autopilot
+and node auto-provisioning,
+
+bin packing is a nonexistent
+or considerably smaller
+
+of a problem.
+
+But what about
+application rightsizing?
+
+While app rightsizing is
+a challenging dimension
+
+to tackle, we've been
+making significant progress
+
+to make it simpler for you.
+
+Let's look at the latest preview
+for the multidimensional pod
+
+autoscaling.
+
+Horizontal pod
+autoscaler is a term
+
+that is familiar to
+most everyone using GKE.
+
+Horizontal pod autoscaling
+scales your pods horizontally,
+
+adding replicas when certain
+thresholds or conditions are
+
+met.
+
+HPA works hand-in-hand
+with cluster autoscaler
+
+or node auto-provisioner,
+making sure
+
+that resources
+requested by containers
+
+can be accommodated
+on an existing node.
+
+If this is not the
+case, new nodes
+
+are being added
+to the node pool.
+
+However, that means that the
+user deploying containers
+
+must have expert knowledge of
+the exact amount of resources
+
+to be configured
+for their workloads.
+
+Based on what we know of
+how Kubernetes is used,
+
+the right resource choice is a
+true challenge that few master.
+
+This is why we've
+introduced the vertical pod
+
+autoscaling, a capability that
+understands the true resource
+
+usage of your containers
+and recommends
+
+or directly adjust the
+requests to get them
+
+as close as possible to what
+your containers actually
+
+need to operate properly.
+
+However, HPA and VPA did not
+always play well together.
+
+As HPA had targets
+such as CPU, VPA
+
+had trouble understanding either
+resources under consumption
+
+was a choice or an effect.
+
+This is why we've introduced
+the multidimensional pod
+
+autoscaler, now in preview.
+
+With a single
+object, GKE can now
+
+manage both horizontal
+and vertical autoscaling.
+
+While HPA continues to add
+or remove pod replicas based
+
+on CPU, vertical pod
+autoscaling works
+
+on memory, one of the most
+over-provisioned resources,
+
+to adjust it to requests
+that meet best your container
+
+actual usage needs, with this
+further simplifying the app
+
+rightsizing and
+the off-peak hour
+
+over-provisioning challenges.
+
+Now, what if we told you that
+you could improve your GKE
+
+cluster utilization meaningfully
+with a single change?
+
+Please meet the
+optimize-utilization profile,
+
+now in GA.
+
+If your applications
+are ready to tolerate
+
+a more aggressive cluster
+autoscaler behavior,
+
+this is the feature to try.
+
+The optimize-utilization
+profile is the second
+
+in line of our autoscaling
+profiles giving users
+
+choice of a more active
+autoscaling and scheduling
+
+behavior.
+
+The well-known balanced profile
+optimizes for availability.
+
+It scales down idle nodes
+only after 10 minutes.
+
+Workloads are also spread
+as much as possible
+
+by the scheduler.
+
+Optimize-utilization
+profile, on the other hand,
+
+strikes a balance between
+availability and cost
+
+efficiency.
+
+Nodes scale down after
+1 minute of being idle.
+
+Aside, scheduler
+tries to bin pack pods
+
+from different deployments as
+much as possible to add scaling
+
+down speed and
+statistically maximize
+
+your chances of having
+empty nodes that
+
+can be easily removed.
+
+Where it takes the balanced
+profile as much as 10
+
+to 30 minutes to
+scale down nodes
+
+after an abrupt
+stop in requests,
+
+it takes optimize-utilization
+profile 1 to 3 minutes
+
+to achieve the same result.
+
+The way this is
+achieved is reducing
+
+a number of intervals
+and thresholds
+
+that increase the sensitivity
+of autoscaling behavior
+
+to set load thresholds,
+such as scale-down times,
+
+delay after add,
+and scan intervals.
+
+In our tests,
+optimize-utilization profile
+
+shows up as being one
+of the capabilities
+
+that you could adopt
+for significantly
+
+improved outcomes.
+
+We've now had a look at
+five great GKE features that
+
+help improve the balance
+between cost and performance out
+
+of the box.
+
+But how do you even know if
+anything needs to be improved?
+
+And what is the scale of
+the opportunity at hand?
+
+How do you help your
+team take a step forward
+
+into solving for the cultural
+challenges of GKE cost
+
+optimization?
+
+I am thrilled to introduce
+the GKE cost optimization
+
+insights, now
+available in preview
+
+across all regions
+and GKE cluster types.
+
+GKE cost optimization insights
+gives you a single entry point
+
+into the GKE cost
+optimization journey right
+
+inside the user interface.
+
+Let's see how it works.
+
+Let's start with a blank project
+and create the first cluster.
+
+For this, we will use
+the recently released
+
+cost-optimized
+cluster setup guide.
+
+The setup guide helps build
+a GKE standard cluster
+
+with all the best infrastructure
+level cost optimization
+
+features built right in.
+
+The cluster is now created.
+
+But how do we know where we
+stand on the cluster resource
+
+usage efficiency?
+
+With the new Cost Optimization
+tab, discovering this
+
+becomes a no-brainer.
+
+In one click, we see
+all the key information
+
+for the clusters such as used,
+requested, or allocatable
+
+resources for memory and CPU.
+
+Cost optimization insights works
+across Standard and Autopilot,
+
+should you have one or
+hundreds of clusters.
+
+Let's add a number of other
+clusters to see it better.
+
+Now, bin packing
+is not a challenge
+
+when you use Autopilot.
+
+This is made very
+clear in the view,
+
+differentiating the
+Standard and Autopilot
+
+clusters on the type of
+metrics you should care about.
+
+In an Autopilot
+cluster, only the
+
+used and requested
+resources matter,
+
+while with Standard
+you should also
+
+care about your
+allocatable capacity.
+
+Spotting your cost optimization
+opportunities out of the box
+
+has never been easier.
+
+And with the time
+picker, you can even
+
+see the data across the
+time horizon of your choice.
+
+CPU and memory
+aggregations in time
+
+gives you visibility
+of your cluster sizes
+
+and running capacity
+at all times.
+
+Cluster insights helps
+spot bin packing,
+
+app rightsizing, and potentially
+off-peak hour optimization
+
+opportunities.
+
+But which of the workloads
+are the largest contributors
+
+to resource consumption?
+
+To help answer
+this, you have now
+
+access to cost optimization
+insights at workload level 2.
+
+Let's deploy a number of
+workloads to various clusters
+
+to see this in action.
+
+
+
+There are now multiple
+deployments available.
+
+Let's also top it off
+with one of the offerings
+
+from the marketplace.
+
+As everything is deployed
+now, within moments
+
+we start seeing
+insights for workloads,
+
+such as used, requested,
+and resource limits
+
+for each individual deployment.
+
+With this new view,
+understanding application
+
+rightsizing opportunities
+becomes considerably less
+
+of a challenge.
+
+By looking at used versus
+requested capacity,
+
+all teams can keep an eye on
+optimization opportunities
+
+for their individual workloads.
+
+And that in turn helps with one
+more cost optimization aspect--
+
+building a solid cost
+optimization culture
+
+across your entire team.
+
+Watch this space.
+
+We're just getting started.
+
+And we're looking forward to
+adding more capabilities that
+
+will improve visibility
+and provide recommendations
+
+for GKE cost optimization.
+
+That was it from my side, Jerzy.
+
+Take it from here.
+
+JERZY FORYCIARZ:
+Thank you, Roman.
+
+And big thanks to our audience
+for staying with us today.
+
+And remember, we're on a
+mission to empower you to never
+
+again waste time and money
+on infrastructure you
+
+don't actually use.
+
+So here's our call to action.
+
+If you're only getting
+started with GKE,
+
+check Forrester
+Total Economic Impact
+
+Report to see what impact GKE
+may have for your business.
+
+Are you already deployed
+and going full speed?
+
+Follow these six things
+we discussed today
+
+and see how this advances
+your GKE capabilities.
+
+Have you already
+done all of this?
+
+Come partner with us for
+more in-depth collaboration.
+
+Get in touch with your
+account representative
+
+or reach us via media channels.
+
+If you want to learn more
+about GKE cost optimization,
+
+follow these links.
+
+Thank you.
+
+
+

@@ -1,0 +1,1310 @@
+
+
+MANOJ SHARMA: Hello, and welcome
+to the session that shows you
+
+how to increase agility
+and reduce costs
+
+with VMware as a service,
+or as I'd like to say,
+
+what's this new hard VMware
+on Google Cloud thing
+
+that everyone's talking about?
+
+
+
+Hi.
+
+I'm Manoj, and I lead the Google
+Cloud VMware Engine product
+
+team.
+
+And I'm co-presenting
+with Sai, who
+
+will join us later after my
+section of the talk is over.
+
+So we learned today how Google
+Cloud VMware Engine finally
+
+makes it super easy for you to
+go from your VMware deployments
+
+on prem to Google Cloud.
+
+We'll also learn what the
+service is all about, as well
+
+as some key advantages
+and use cases.
+
+And then we show you
+how to get started
+
+with the service with some
+cool demos along the way.
+
+So what's the problem statement?
+
+So let's face it, on
+prem infrastructure
+
+can be a challenge.
+
+It can strain [INAUDIBLE]
+staff because they
+
+have to do laborious tasks
+related to infrastructure
+
+procurement, and maintenance,
+and be reactive to business
+
+needs with long lead times.
+
+But it also means that they're
+using legacy systems that
+
+are not adding value to the
+business, other than keeping
+
+the lights on.
+
+And therefore, they
+can't scale with ease.
+
+They're locked into what
+they have on premises
+
+and are forced to pay
+for overprovisioning
+
+and forced to provision
+for peak usage.
+
+So how do we solve this problem?
+
+Google Cloud has created a
+service called VMware Engine,
+
+which solves the problem.
+
+And it really gives you
+a fast forward button
+
+to your journey to the Cloud.
+
+It's the fastest way to
+migrate your apps from VMware
+
+to the Cloud.
+
+You get the platform
+you know and love
+
+with all the familiar interfaces
+in the VMware platform,
+
+such as vCenter.
+
+And the service is sold on the
+basis of hyper converged nodes,
+
+which includes the service, the
+software license, the storage,
+
+compute networking,
+and all infrastructure
+
+you need to run VMware
+natively on Google Cloud.
+
+The solution is sold by Google
+and is supported directly
+
+by Google, but it has been built
+with the cooperation of VMware.
+
+And VMware fully
+certifies this offering.
+
+And you can consume
+VMware basically
+
+in a fully automated
+self-service manner,
+
+just like you consume
+any other Cloud service.
+
+And by getting all the service
+needs from one company,
+
+you simplify the way you
+consume VMware in the Cloud.
+
+I want to highlight that we
+have a real strong partnership
+
+with VMware to make Google
+Cloud VMware Engine happen.
+
+And the partnership is
+not just at the technology
+
+and engineering level.
+
+Our collaboration
+extends far beyond that
+
+to ensure that our customers
+have a smooth experience
+
+with the service.
+
+To find out more, I
+encourage you to check out
+
+the sessions and the
+customer conversations
+
+at VMware's marquee event that
+just happened, VMworld 2021.
+
+You can also check
+out the blog post.
+
+The link is indicated
+on the slide.
+
+And a lot of the VMworld
+infrastructure, I want to note,
+
+is actually the user labs.
+
+And a lot of the
+hands-on experience
+
+for customers at
+VMworld 2021, in fact,
+
+was hosted on Google
+Cloud VMware Engine.
+
+So we are very happy
+and proud about that.
+
+So what we did to find out
+whether the service adds value,
+
+we surveyed a lot of IT and
+application leader owners.
+
+And we found that
+the service delivers.
+
+We found that the
+service is really able
+
+to meet the goals of the
+Cloud transformation journey
+
+that we talked about.
+
+First, we find
+that the customers
+
+are able to provision very
+quickly and in minutes
+
+in Google Cloud and get to the
+time to value to be really low.
+
+You can run next to a
+wide variety of data, AI,
+
+and infrastructure services that
+Google Cloud is known and loved
+
+for.
+
+You get extremely reliable, high
+performance, highly redundant
+
+infrastructure to
+ensure that you
+
+have a no-compromises
+enterprise experience.
+
+It's super important.
+
+And the best part
+is that you'll be
+
+able to save money while
+you're doing all of this
+
+by leveraging the Cloud
+economies of scale and the pay
+
+as you go flexibility that
+you get in Google Cloud.
+
+So when we were
+designing the service
+
+we had a certain mission
+and a vision in mind.
+
+And that was really what we
+call cloud-native VMware.
+
+And cloud-native VMware means
+three very specific things.
+
+First, it means that it's a
+cloud-optimized experience,
+
+meaning that customers can
+consume VMware as simply
+
+as any other cloud
+service, and take advantage
+
+of the elasticity of
+scale that I talked about
+
+and the scale on demand model.
+
+And you can do so much
+faster than any other way
+
+in getting your VMware
+infrastructure to the Cloud.
+
+We simplify the use
+of VMware services
+
+through unified identities,
+access control, and support.
+
+And a customer [INAUDIBLE]
+has moved to a self-service
+
+and scale on demand model
+on their VMware consumption
+
+with the service, and
+have done so much faster
+
+than was ever possible
+before for them in the Cloud.
+
+The second part of what
+cloud-native VMware means
+
+is a cloud-integrated
+VMware experience.
+
+And what this means is you can
+transform business applications
+
+with simplified integrations
+of Google Cloud Services,
+
+like Cloud Operations,
+BigQuery, and Anthos.
+
+And so you can respond
+to business needs
+
+more quickly in a more agile
+fashion with these services.
+
+A large telco provider has
+streamlined their operations
+
+management, monitoring
+and logging,
+
+coming from both
+VMware, as well as
+
+the rest of cloud conversion
+into a single pane of glass
+
+with the Cloud
+Operations integrations
+
+you have with VMware.
+
+And the third part of
+the cloud-native VMware
+
+is the familiar
+third-party applications
+
+that you consume on prem,
+as well as in the Cloud.
+
+What that means
+is you can extend
+
+your ecosystem of
+third-party apps and services
+
+that are critical
+to your business
+
+for your various needs, such
+as desktop and backup and DR.
+
+And we've partnered
+with solution providers
+
+and third-party application
+developers, such as Veeam,
+
+Rubrik, and [INAUDIBLE].
+
+And we've also partnered
+to solve the storage
+
+infrastructure
+problem with NetApp
+
+to provide storage
+solutions for VMware.
+
+So that's how we
+bring this mission
+
+to life with these
+three elements
+
+of cloud-optimized,
+cloud-integrated, and ecosystem
+
+enabled.
+
+So one of the surprising aspects
+of adopting VMware Engine
+
+is that customers, in
+fact, save quite a bit
+
+compared to both
+running on premises
+
+and choosing other
+options in the Cloud.
+
+And you must have seen
+these kinds of studies
+
+many times that they
+show that they save over
+
+a three-year window.
+
+But then you find that the cost
+of initial adoption is high.
+
+And that's not the
+case with our service.
+
+Let me level with you.
+
+If you're going to
+the Cloud anyway,
+
+and you're coming
+from VMware, there's
+
+no better place than
+Google Cloud VMware Engine,
+
+because the platform is the
+same as what you can do on prem.
+
+And with the
+oversubscription capabilities
+
+of the VMware platform,
+you get very high density
+
+and lower cost per VM.
+
+And what better way to
+understand this value
+
+than to hear a testimonial
+directly from the customer?
+
+So let's take a look at
+a video that gives you
+
+a good idea of how
+Mitel is getting
+
+the best of both worlds, running
+the platform they know and love
+
+on Google Cloud.
+
+[VIDEO PLAYBACK]
+
+SPEAKER: Mitel is a modern
+communications company,
+
+leveraging state of
+the art technology
+
+with offices
+throughout the world.
+
+Our challenge is really
+netted out to the four
+
+S's-- stability, SLA,
+security, and scale.
+
+Google Cloud VMware
+Engine is really
+
+solving the stability and the
+reliability platform issue.
+
+With that, we're
+able to move out
+
+of about 15 data centers, which
+gets us closer to our data
+
+center decommission objective.
+
+The benefit going forward
+in the Google Cloud
+
+is now we can look at different
+deployment options as we grow.
+
+[MUSIC PLAYING]
+
+[END PLAYBACK]
+
+MANOJ SHARMA: What
+a great video.
+
+And let me give you just
+a little more perspective.
+
+I was, in fact, involved
+in the Mitel experience.
+
+And there moved thousands
+of VMs, most of which
+
+happened on just a
+couple of weekends.
+
+And they were running
+a telephony application
+
+with voice and video needs.
+
+And they needed low latency
+and really high throughput.
+
+And with the VMware Engine's
+fully allocated networking,
+
+fully dedicated
+networking, they were
+
+able to get
+sustained performance
+
+and not have to worry
+about multitenancy
+
+or any other customer
+stepping on their toes.
+
+And so that's how they truly
+got to this best of both worlds
+
+experience, and got from
+the VMware environment
+
+that they truly
+love to Google Cloud
+
+that they have come to
+now know and love as well.
+
+And with that, I'll hand
+the baton to my colleague,
+
+Sai, who will walk us through
+the differentiation and the use
+
+cases and give you more
+examples of the goodness coming
+
+from the service and how
+you can truly supercharge
+
+your journey to the Cloud.
+
+So over to you, Sai.
+
+SAI GOPALAN: Thank you, Manoj.
+
+I'm Sai, and I'm a product
+manager with Google Cloud.
+
+Let's get right into it.
+
+With Google Cloud
+VMware Engine, you're
+
+able to migrate to Google
+Cloud without changes
+
+to your applications.
+
+You use the same
+tools and processes,
+
+and your staff can hit
+the ground running.
+
+From an experience
+standpoint, there
+
+is a single vendor,
+Google, which
+
+means that for your purchasing
+support and service needs,
+
+Google is there for you.
+
+For the given that this is
+a Google managed service,
+
+you do not have to manage
+the lifecycle of your VMware
+
+infrastructure.
+
+Google does that for you so
+you can focus on your apps.
+
+With our differentiated
+networking,
+
+you can truly leverage some of
+the native capabilities that
+
+allow your apps and
+environments to be global.
+
+But unified management,
+unified access control,
+
+and access to the same
+third-party pooling
+
+that you have built and invested
+in, [INAUDIBLE] becomes simple.
+
+You can run both
+VMs and containers
+
+in Google Cloud VMware Engine.
+
+And this is extremely useful for
+high performance applications
+
+where locality and running
+on dedicated infrastructure
+
+is important.
+
+Further, high bandwidth,
+low latency, private access
+
+to co-located Google
+services reduces
+
+the amount of work required
+to modernize applications.
+
+Let us look at some of the
+key use cases of Google Cloud
+
+VMware.
+
+Customers that want to
+migrate their entire data
+
+centers to the Cloud due to
+events such as data center
+
+exits, mergers,
+acquisitions, or those
+
+that just want to extend their
+data center to add capacity
+
+in the Cloud can invest in
+Google Cloud VMware Engine.
+
+It is completely consistent with
+the on premises environment.
+
+We simplify the networking and
+provide the service globally.
+
+This also applies
+to customers who
+
+are looking to support
+high performance
+
+applications in isolated
+compute environments,
+
+and also apps and [INAUDIBLE]
+that are incompatible
+
+with other
+infrastructure platforms.
+
+For those that are looking
+to develop a cloud-based DS
+
+strategy due to events, such
+as upcoming audits, protecting
+
+against ransomware,
+protecting tier two,
+
+tier three apps,
+or geographic risk
+
+diversification can also look
+towards Google Cloud VMware
+
+Engine, given our
+low cost DR solutions
+
+and support for a wide
+ecosystem of goods.
+
+For customers looking to
+support distributed desktop
+
+infrastructures in
+multiple geographies,
+
+or those that have upcoming
+software licensing renewals,
+
+or that are looking to
+address seasonality or support
+
+with more end users
+at scale, save
+
+for their work-from-anywhere
+initiatives,
+
+our service offers support
+for both industry-leading VDI
+
+solutions with VMware
+Horizon, as well as Citrix.
+
+Finally, for those
+customers who are looking
+
+to unlock the value
+of Google services
+
+for their applications
+and infrastructure,
+
+Google Cloud VMware
+Engine offers a path
+
+towards where you can move
+your applications rapidly
+
+to the Cloud, and then
+modernize over time.
+
+We are now available
+in 12 regions
+
+worldwide with the latest
+addition of Mumbai.
+
+Then we have four [INAUDIBLE]
+of SLA in a single zone in each
+
+of these locations.
+
+In other Cloud context,
+this might not be possible.
+
+There are customers who
+want even more availability.
+
+And for them, we have
+additional zones coming up.
+
+Please speak to your Google
+Cloud sales representative
+
+or your customer
+engineer if you have
+
+requirements for a
+particular region that
+
+is not shown over here.
+
+Google Cloud VMware
+Engine is HIPAA compliant,
+
+and other key industry
+certifications
+
+are being looked upon.
+
+These include ISO,
+PCI DSS, and SOC.
+
+Now, Google Cloud
+VMware Engine truly
+
+delivers a global
+highly performant,
+
+enterprise friendly, flexible
+networking experience.
+
+With simplified regional
+and global routing modes,
+
+you have one global
+network with no necessity
+
+to create regional network
+designs and connect them.
+
+This greatly simplifies and
+reduces the cost and complexity
+
+to have more than one point
+of presence in the Cloud.
+
+You can architect and
+connect different parts
+
+of your environment
+easily across projects
+
+and across regions
+with capabilities,
+
+such as multi-VPC and
+multi-region networking.
+
+With a fully redundant 100
+Gbps east-west networking
+
+with no oversubscription, as
+well as a superior low latent
+
+packet rate performance,
+our architecture
+
+really helps customers
+who have applications
+
+that are latency sensitive
+or have high performance
+
+networking requirements, such
+as voice over IP applications,
+
+and other end user workloads, as
+you've heard from our customer
+
+testimony.
+
+Finally, with Google
+Cloud VMware Engine,
+
+your current networking
+Windows solutions
+
+can be brought to the Cloud.
+
+We offer flexible public
+ingress and egress options
+
+with support for three
+different ways for workloads
+
+to get access to the internet.
+
+We have the Google Cloud VMware
+Engine edge, the Google Cloud
+
+edge, or your own corporate DNS.
+
+We also have built-in
+integration with Cloud DNS,
+
+and you can also bring
+your own corporate DNS.
+
+We are an enterprise
+ready platform
+
+that scales and supports
+for your enterprise
+
+workloads with up to
+64 node private clouds
+
+running on highly
+performant and scalable
+
+Google Cloud infrastructure,
+dynamic resource management
+
+with autoscaling enabled.
+
+We also provide a
+fully dedicated,
+
+single-tenant high-performance
+node with all NVMe storage
+
+and with rich GCP networking,
+and full functionality of NSX-T
+
+with access to NSX-T manager.
+
+With 99.9 SLA in a single
+zone with 5 to 32 nodes
+
+in a cluster, you have
+the high availability
+
+that is required by some of your
+mission critical applications.
+
+In addition, we also support
+rich media environments
+
+with large scale VMware Horizon
+architectures supported,
+
+as well as the ability to extend
+and migrate VMware-based Citrix
+
+media workloads.
+
+It's fully validated by Citrix.
+
+One of the questions
+we often get
+
+is, can I bring my VMware,
+just my VMware environment,
+
+or everything I consume on it.
+
+How can I make my VMware
+environment and consumption
+
+better in the Cloud?
+
+The answer is we offer a fully
+compatible VMware experience
+
+so you can bring your existing
+tools and processes as is.
+
+Whether it is your VMware Tools,
+all your third party tools
+
+that support VMware, as well as
+our own marketplace services.
+
+In addition, you can take
+advantage of Google Cloud
+
+Services, whether
+it is optimizing
+
+the embedded protection using
+Cloud Storage, a zero footprint
+
+DR solution with
+[INAUDIBLE],, building
+
+hybrid, high performance,
+and availability
+
+architectures for databases,
+modernizing your applications
+
+using containers and Kubernetes,
+centralizing and modernizing
+
+your operations management,
+or enriching your app's data
+
+analytics, and more.
+
+In the next segment,
+we will look
+
+at a couple of these examples.
+
+Now, as you consume
+VMware in the Cloud,
+
+you want to ensure that you
+avoid switching between screens
+
+for operations management.
+
+For example, if you have
+a performance problem,
+
+you want to be able
+to troubleshoot
+
+all aspects of the application
+dependencies in one place
+
+rather than go to
+different systems
+
+to solve part of the problem.
+
+While the VMware Engine
+service fully supports
+
+existing VMware monitoring and
+logging codes without changes,
+
+as you start to develop more
+hybrid applications that
+
+actually live outside of
+the VMware environment,
+
+getting all operations data in
+one place will be important.
+
+To solve this, you can use
+Google Cloud's Operation
+
+Service, formerly Stackdriver.
+
+You collect metrics,
+logs, and places
+
+across VMware Engine and
+other Google Cloud Services.
+
+You can use built-in,
+out-of-the-box dashboards
+
+and views to monitor
+your platform,
+
+as well as the applications and
+query and analyze these signals
+
+as well.
+
+You can see the information
+from the VMware infrastructure,
+
+as well as the in-guest
+and application.
+
+As far as the VMware
+infrastructure goes,
+
+you can see the vCenter,
+the [INAUDIBLE] side
+
+do log analysis.
+
+This does not require
+any agent installation.
+
+Metrics such as VM CPU,
+disk, and network usage
+
+are all available.
+
+For VM guests and
+applications, you
+
+can use open-source agents
+to collect additional logs
+
+and methods.
+
+So if you want to troubleshoot
+any application or gain
+
+insight into the
+optimization or usage,
+
+you can do it all in one place.
+
+As for the second
+example, we will
+
+look at a demo of how
+we integrate BigQuery
+
+with workloads running in
+Google Cloud VMware Engine
+
+to unlock the value of data
+analytics for our customers.
+
+[VIDEO PLAYBACK]
+
+SPEAKER: The fraudulent
+charges data set
+
+is in a MySQL database
+running on premises in a VM.
+
+We have taken that data and
+migrated the VM to Google Cloud
+
+VMware Engine using HCX.
+
+Now we can access the data
+with Google Cloud Services.
+
+To move the data
+into Google Cloud,
+
+we replicate the data
+into a Cloud SQL instance
+
+using the Google database
+migration service.
+
+We can then write
+a simple SQL script
+
+to show the zip codes with
+the most amount of credit card
+
+fraud.
+
+As you can see, Google
+BigQuery transforms that data
+
+to appear as a visual map.
+
+Let's take a deeper look into
+the data from a global view
+
+first.
+
+Now we would like
+to see on a zip code
+
+basis which part of
+the United States
+
+shows the highest incident
+of credit card fraud.
+
+Here, you can see that this zip
+code has an unusually higher
+
+incident of credit card fraud.
+
+[END PLAYBACK]
+
+SAI GOPALAN: Now, how
+do you get started?
+
+Well, moving to the
+Cloud can bring up
+
+concerns about how to
+rationalize existing license
+
+investments that you may
+have made on premises.
+
+Now we are introducing this
+program called the Catalyst
+
+program, which provides
+Google Cloud VMware Engine
+
+users financial
+flexibility to accelerate
+
+their journey to Google Cloud.
+
+Eligible customers can now get
+one-time Google Cloud credits
+
+that offset unused VMware
+licensing investments.
+
+You can apply these credits
+against the consumption
+
+of Google Cloud VMware Engine,
+as well as any other Google
+
+Cloud service of your
+choice the following year.
+
+This is a
+consumption-based program,
+
+and this program is available
+directly through Google Cloud,
+
+or through existing Google
+Cloud channel partners
+
+that you work with.
+
+Terms and conditions apply.
+
+So if you're interested, please
+do contact a Google Cloud sales
+
+representative or your
+partner service manager
+
+for more details.
+
+In addition, with the
+planned capability
+
+of a single node
+private cloud, you
+
+can experience the
+service with a single node
+
+for non-production
+quick proof of concepts.
+
+Note that the single node
+private cloud will remain live
+
+for 30 days, after which
+it will expire or reset.
+
+During this period you could
+upgrade the full production
+
+cluster with all
+your data as well.
+
+So what are you waiting for?
+
+As next steps, there
+are a few resources
+
+that you can take advantage of.
+
+Google Cloud VMware Engine
+comes in a hyperconverged form
+
+factor with all compute and
+storage included with the node.
+
+However, there are cases when
+you need additional storage
+
+for capacity hungry
+scenarios, such as large scale
+
+databases, media, electronic
+design automation, data
+
+warehousing, or large
+scale analytics.
+
+You also need to lower
+cost in DR scenarios
+
+so you can protect your mission
+critical data without overhead.
+
+To solve for such
+needs, we are now
+
+announcing today
+support for NetApp Cloud
+
+Volumes in preview.
+
+If you think that this is
+going to be useful for you,
+
+I encourage you to contact
+your Google representative
+
+to find out how you can
+participate in the preview.
+
+Contact your Google team for
+a Google Search Cloud VMware
+
+Engine demo.
+
+We can also conduct a free
+assessment with Google Cloud,
+
+or with our partners, as well
+as schedule a half day workshop
+
+with your Google
+Cloud team to go over
+
+the results of that assessment.
+
+This brings us to the
+end of this presentation.
+
+Thank you so much for watching.
+
+
+

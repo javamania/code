@@ -1,0 +1,1153 @@
+
+
+ADAM MICHELSON: Hi, and
+welcome to our Cloud Next
+
+session on load balancers.
+
+And today, we're
+going to be talking
+
+about the next generation
+of our Cloud load balancers.
+
+We've introduced many
+new features recently.
+
+And we're excited today
+to share with you some
+
+of what those features entail.
+
+But first, let's talk--
+
+let me present to
+you our presenters.
+
+So Adam Michelson--
+I'm a product
+
+manager at Google
+Cloud, and I help
+
+run the Cloud load balancers.
+
+Babi, do you want to
+introduce yourself?
+
+BABI SEAL: Hi, everyone.
+
+I'm Babi.
+
+I'm also a product manager
+on the load balancing team.
+
+Thank you, Adam.
+
+ADAM MICHELSON: Awesome.
+
+So with no further ado,
+let's dive right in.
+
+So today, we're going to talk
+to you about three items.
+
+One is next-generation
+load balancing.
+
+We've been working to
+re-platform many of our load
+
+balancers to include advanced
+traffic control capabilities.
+
+Our load balancers have
+been re-platformed to run
+
+on top of the Envoy
+open source system.
+
+And if you're familiar
+with the Envoy system,
+
+then many of these features
+may be familiar to you.
+
+And if you're not,
+that's totally fine.
+
+You don't need to
+know that platform
+
+to use our Cloud load balances.
+
+We'll also be talking about
+how using this common platform
+
+will enable you to have common
+capabilities across our load
+
+balancers as well as common
+control planes across our load
+
+balancers.
+
+Next, we'll also be talking
+about load balancing
+
+everywhere.
+
+This is a feature where, if
+you have services that run off
+
+of Google Cloud, such as
+on-prem or in a multi-cloud
+
+environment, how you can
+connect to those services
+
+through our load balancers--
+so if you run services that
+
+are not running on
+Google, you can still
+
+access those services
+via our load balancers.
+
+And finally, we're going
+to talk to you about some
+
+of our enterprise-ready
+features,
+
+such as Private Service Connect,
+which enables you to connect
+
+to third-party-- or services
+that are not necessarily
+
+under your
+organization's control,
+
+as well as how you can connect
+to third-party applications.
+
+So first, we're going
+to talk about some
+
+of our next-generation load
+balancing capabilities.
+
+So for the folks who may not
+be familiar with our load
+
+balancers, this is a quick
+overview of our load balancers.
+
+We have a few load balancers
+in our load balancer fleet.
+
+We have both a set of Level 7
+HTPS load balancers as well as
+
+Level 4 network load balancers.
+
+Most of the next-generation
+capabilities
+
+you're going to see in our
+Level 7 load balancers.
+
+So as we were saying,
+many of our load balancers
+
+are getting an upgrade, where
+we have advanced traffic control
+
+capabilities brought by Envoy.
+
+Now, Envoy, as I said earlier,
+is an open source platform.
+
+If you're familiar with
+the Envoy platform, then,
+
+again, these services
+may be familiar to you.
+
+One of the commitments Google
+has is to the open source
+
+community.
+
+And this is an
+example of that, where
+
+we work with the Envoy community
+to contribute features back
+
+to that community.
+
+And then we consume
+those features
+
+into these load balances.
+
+So as part of that
+capability, you'll
+
+see our load balancer have
+consistent set of features,
+
+also consistent with the
+open source capabilities.
+
+And through that
+consistency, you'll
+
+see common control planes,
+common observability,
+
+and common feature set
+throughout our load balances.
+
+During the initial release
+of our load balancers
+
+that support our
+Envoy, you'll have--
+
+you'll see many new features.
+
+Here on the right, you'll see
+examples of what those are.
+
+I'm not going to go
+through all of them,
+
+but I'll call out a couple.
+
+So one example is weighted
+traffic splitting.
+
+Weighted traffic splitting
+is used when you roll out,
+
+for example, a new
+feature or a new service
+
+and you want to
+test that service,
+
+such as running a canary
+test across those services.
+
+Weighted traffic
+splitting allows
+
+you to take a certain
+percentage of your traffic--
+
+1%, 2%, 5%, 50%, what
+have you-- and push it
+
+to the new service
+you're rolling out.
+
+Another example is
+fault injection.
+
+In this example,
+you can emulate what
+
+would happen if you had
+a fault in your system
+
+before it happens in production.
+
+That way, you can
+harden your deployment
+
+to make sure that when errors do
+inevitably occur in production,
+
+you've had an opportunity
+to test them using
+
+fault injection, as an example.
+
+Now, this advanced
+traffic control capability
+
+of our load balancer actually
+extends beyond just load
+
+balancer capabilities.
+
+For those who, again, may be
+familiar with using something
+
+like an Envoy sidecar, this
+example may be familiar to you.
+
+For those who are
+not, Envoy, again,
+
+is an open source component
+and platform which
+
+handles traffic management.
+
+We have some of those
+capabilities built natively
+
+into our load balancers.
+
+And again, you don't have
+to understand Envoy at all
+
+to use our load balancers.
+
+They're just native features
+of our load balances.
+
+But for deployments that
+are heterogeneous by nature,
+
+multicloud, or on-premises,
+and you want a common feature
+
+set of traffic control
+across Cloud and on-premises
+
+or multicloud and you want
+common policy management
+
+and control, you
+can deploy what's
+
+called an Envoy
+sidecar, which is
+
+a deployable piece of
+code that can deploy next
+
+to your services.
+
+And those sidecar will contain
+traffic control capabilities.
+
+And if you wish, you
+can use a component,
+
+such as Google's
+Traffic Director, which
+
+is a managed control plane that
+can push XDS configurations
+
+and controls into your sidecars.
+
+And it doesn't have to be Envoy.
+
+It just has to be an
+XDS-compatible service.
+
+So if you do that, then you
+can have some services sit
+
+behind Google Cloud
+load balancers
+
+and other services that have
+a sidecar sitting next to them
+
+in Google Cloud or
+on-premises or in multicloud.
+
+And in that architecture, you
+can handle a highly distributed
+
+set of systems running
+across heterogeneous systems,
+
+but running as if
+they're running
+
+in a homogeneous environment
+because they're all
+
+standardized using the Envoy
+traffic control capabilities.
+
+They'll have common features.
+
+They'll have common
+control planes.
+
+They'll have common
+observability.
+
+Let's run through
+a quick example
+
+of how this might be useful.
+
+So in this case, imagine
+you're an e-commerce provider
+
+and you have a shared service
+across many components--
+
+in this case, a wallet service
+that could be maybe a payment
+
+processing engine.
+
+Now, here we have
+an e-commerce engine
+
+that will use the external
+global load balancer
+
+to access that service.
+
+We also have,
+potentially, a call center
+
+using an internal load balancer,
+which is, again, hitting
+
+the same common service.
+
+And on the right
+side of this picture,
+
+you'll see the tension is point
+of sale using regional load
+
+balancers, or maybe there's
+nightly batch jobs running
+
+on-premises, maybe
+running fraud protection.
+
+So in all these cases,
+you have a common service
+
+that these various
+systems are using.
+
+So what happens if
+you want to roll out
+
+a new service, a
+version 2 of the wallet?
+
+Each of these
+disparate systems need
+
+to be able to test that
+service using something
+
+like a canary test.
+
+That's pretty complicated to
+do if each of these systems
+
+has its own capabilities.
+
+And some may or may not have
+weighted traffic splitting,
+
+for example, built in.
+
+But if you're using something
+like an Envoy platform
+
+everywhere, then you can use a
+common weighted traffic system
+
+across all these systems.
+
+This will be the same
+capability, the same control
+
+planes, the same observability
+to see if features are working
+
+or if they're not working.
+
+And in this way, you can go
+ahead and test a secondary
+
+wallet service--
+say, version 2--
+
+and see if that service
+is working as expected.
+
+And once it is, then
+you can push all traffic
+
+to that new service.
+
+And so in this way, if you
+do have a highly distributed
+
+set or a complicated
+architecture that
+
+has reusable
+services, whether it
+
+be just a distributed set
+of services or a system
+
+like service mesh, you can use
+advanced traffic management
+
+that's built natively
+into our load
+
+balancers and other
+components to reduce the toil
+
+and overhead of managing
+a highly distributed
+
+set of services.
+
+So now what I want to do is
+run you through a quick demo
+
+to see this live in action.
+
+In this demonstration,
+we're going
+
+to see how to roll
+out a canary test.
+
+Here, we see four
+different services--
+
+in the upper left, a
+global load balancer,
+
+lower left-- regional load
+balancer, upper right--
+
+an internal load balancer,
+and in the lower right,
+
+we see a sidecar proxy.
+
+Here we're rolling out
+the various commands
+
+required to be able
+to do our canary test.
+
+Now we're seeing that some
+traffic is switching over
+
+from version 1 to version 2.
+
+And over the course of
+about 30 seconds or so,
+
+all the various traffic
+management solutions,
+
+load balancer and
+sidecar proxies,
+
+are beginning to send their
+traffic to both version
+
+1 and version 2.
+
+The purpose is to make sure that
+version 2 is handling traffic
+
+properly.
+
+At this point, we see a lot
+of traffic going to version 2.
+
+So now we're going to say that
+everything is working properly.
+
+And we're going to
+send all of our traffic
+
+now to the version 2
+and away from version 1
+
+and do our full rollout.
+
+So again, we have the
+same four services.
+
+And we're going to run
+the commands, which
+
+are going to be common across
+these various services,
+
+to be able to switch our traffic
+onto the new, updated version 2
+
+wallet service.
+
+And once again, it takes
+about 30 seconds or so
+
+for all the services
+to get the command
+
+and to switch all their
+traffic over to version 2.
+
+And so now you see that all
+the traffic at this point
+
+has been switched to version 2.
+
+And our canary
+rollout is complete.
+
+Now that you've seen how
+the next generation of load
+
+balancers can enable advanced
+traffic management capabilities
+
+across a highly distributed
+set of services,
+
+I want to turn the
+conversation over
+
+to Babi, who is going
+to run you through some
+
+of our capabilities around
+load balancing everywhere.
+
+Babi?
+
+BABI SEAL: So one of the goals
+of our Cloud load balancing
+
+is to meet you where you're
+at in your journey to Cloud.
+
+And as part of that, we have
+gone ahead and introduced
+
+hybrid load balancing.
+
+So what is hybrid
+load balancing?
+
+You have clients that could be
+external to Google or internal.
+
+They send traffic to our
+external HTTPS load balancing
+
+or external TCP proxy or our
+internal HTPS load balancing.
+
+These load balances have
+back ends, of course,
+
+on Google Cloud.
+
+But now we've enhanced them
+to also support back ends
+
+on-prem and in other clouds.
+
+These on-prem and
+other cloud back ends
+
+are connected to Google
+either via public connectivity
+
+across the internet or
+via private connectivity
+
+through HA VPN or interconnects.
+
+What we're really
+excited to share
+
+with you is that we have
+now in public preview
+
+our hybrid load
+balancing with support
+
+for on-prem and other Cloud back
+ends via private connectivity.
+
+And we support health
+checking of these back ends.
+
+And we'd really like
+for you to try them out.
+
+So how are some of our customers
+using hybrid load balancing?
+
+What are some of-- a use cases?
+
+The most
+straightforward use case
+
+is load balancing to
+workloads on on-prem.
+
+More concretely, you can imagine
+an ERP application running
+
+on-prem [INAUDIBLE] regional
+extension connected to Google
+
+via partner interconnects.
+
+The second use
+case is protecting
+
+your on-prem workloads against
+DDoS attacks with Cloud Armor,
+
+or you can use identity-aware
+proxy to authorize access
+
+to your on-prem resources.
+
+You can enhance the latency
+experience for your end users
+
+by caching static
+content on CDN.
+
+The third use case uses
+weighted traffic splitting
+
+that Adam had alluded
+to earlier to do
+
+a gradual migration of workloads
+from on-prem to Google.
+
+Now we are working on
+additional use cases,
+
+such as supporting failover
+from on-prem to Google.
+
+As we develop more and more,
+we shall share them with you.
+
+Now let us turn our
+attention to how
+
+we are enhancing our enterprise
+users with hybrid load
+
+balancing use cases.
+
+So what we are focused on is
+reducing the operational toil
+
+and meeting the scale
+and security requirements
+
+for our enterprise users.
+
+In this regard, first let
+us look at Private Service
+
+Connect.
+
+So what is Private
+Service Connect?
+
+In typical customer
+deployments, you
+
+have multiple teams producing
+services for consumption
+
+by other teams.
+
+The groups offering
+these services
+
+could be part of the
+same organization
+
+or they could be third-party
+services or services offered
+
+by Google.
+
+The way you typically
+set this up securely
+
+is via private
+connectivity by setting up
+
+peering between the
+producer and the consumer.
+
+But you run into a lot of
+operational toil and scale
+
+constraints with peering.
+
+Now, this is where Private
+Service Connect comes in.
+
+It is our converged service
+connectivity offering.
+
+Because it does this through
+private connectivity,
+
+it is secure.
+
+You don't have the
+scale constraints
+
+that you have with peering.
+
+And it can scale to
+thousands of endpoints.
+
+It is also very performant.
+
+You get line rate because there
+is no proxy in the middle.
+
+Now, how does this Private
+Service Connect actually work?
+
+Well, you have a
+producer and a consumer.
+
+And the producer--
+you set up the service
+
+behind a load balancer and
+a service attachment point
+
+in the producer's address space.
+
+This service attachment
+point is linked
+
+to endpoints in the
+consumer's address space.
+
+The workloads in the
+consumer, wishing
+
+to access the endpoints,
+simply send traffic
+
+to the endpoints in
+their own address space.
+
+So how does load balancing work
+with Private Service Connect?
+
+Let's start with the producer.
+
+The internal HTPS load balancer
+and the internal Layer 4 load
+
+balancer helps you
+scale out your service
+
+and makes it highly available.
+
+Now, remember how
+I was referring
+
+to hybrid load balancing?
+
+The internal HTPS load balancer
+now supports endpoints on-prem.
+
+So you can use the
+Private Service Connect
+
+to offer a service
+residing on-prem securely
+
+without having to worry about
+overlapping IP address space.
+
+On the consumer
+front, we are now
+
+working on putting these PSC
+endpoints behind our HTTP load
+
+balancers, external or internal.
+
+With the URL maps that are
+associated with these HTP load
+
+balancers, you get fine-grained
+control and selection of which
+
+producer services
+that you route to.
+
+You also can now log
+every service invocation
+
+with our HTPD load
+balancing logging.
+
+In addition, for external
+services that access HBS load
+
+balancer, you can
+put a Cloud Armor
+
+and protect against DDoS attacks
+or use our managed TLS offering
+
+to secure the service further.
+
+
+
+Now I'm excited
+to share with you
+
+another capability that we have
+enhanced for our enterprise
+
+users.
+
+And that is integration
+with third-party appliances.
+
+So a lot of our
+enterprise users,
+
+as they migrate to
+Google Cloud, wish
+
+to bring their favorite
+third-party appliances
+
+with them as part of
+the lift and shift.
+
+With our ILPS next hop, we
+have made it very seamless
+
+and scalable integration
+of these appliances
+
+by our bump-in-the-wire
+mechanisms.
+
+What we have done is gone ahead
+and enhanced that with three
+
+additional enhancements.
+
+The first one is support
+for symmetric hashing.
+
+When you have these multiple
+stateful firewall appliances
+
+and you have
+bidirectional traffic,
+
+you need to ensure
+that the return
+
+traffic hits the same
+instance on the way back.
+
+You typically do this by
+configuring [INAUDIBLE]..
+
+But there's a lot of operational
+toil associated with it.
+
+But now, by using symmetric
+hashing with our Layer 4
+
+internal load balancer
+for bidirectional flows,
+
+you no longer have that
+constraint and toil.
+
+The second enhancement
+that we've done
+
+is we've enabled all
+protocols to flow
+
+through ILB as next hop,
+not just TCP and UDP.
+
+So now, by allowing
+ICMP packets through,
+
+we'll be able to support
+ping and trace routes
+
+so that you can better
+troubleshoot your flows.
+
+Last, but not the
+least, we've also
+
+added tagging support
+for your load balancers.
+
+What this effectively does
+is it allows you to group
+
+a certain set of endpoints
+with a tag and associate them
+
+with an ILB and route your
+traffic from those clients
+
+specifically to that ILB.
+
+The most common use case
+has been regionalization,
+
+where you can tag all
+workloads in a specific region
+
+and associate them with that
+ILB in that specific region.
+
+We have a very compelling
+roadmap of our load balancing
+
+offerings and features.
+
+Let me share some
+of them with you.
+
+If you look at this
+roadmap across the board,
+
+we have multiple flavors and
+features of our load balancing.
+
+What I'd like to
+bring your attention
+
+to is in the Security
+column, you'll
+
+see that we've made TLS 1.3
+the default for our HTPS load
+
+balancers.
+
+With perfect forward
+secrecy, getting
+
+rid of old, less
+secure ciphers, we
+
+made our solution more secure.
+
+By cutting down on the
+handshakes and the setup
+
+latency, we've resulted in
+a much more optimal end user
+
+experience.
+
+On the scaling front,
+if you'll notice,
+
+we've added support for
+Layer 4 ILB [INAUDIBLE]..
+
+What this allows you to do is
+to scale your back ends, more
+
+than 255 of your
+Layer 4 load balancer,
+
+and, hence, scale out
+your service much--
+
+now let me hand it off to
+Adam to wrap this session up.
+
+ADAM MICHELSON: Thank you.
+
+Thanks so much, Babi.
+
+So I wanted to thank all of
+you first who joined us today.
+
+And I hope you
+enjoyed our session
+
+and found it informative--
+
+and also wanted
+to present to you
+
+other networking sessions
+that are happening if you're
+
+interested in other topics.
+
+And of course, with
+our load balancers,
+
+we'd love it if you would
+have the opportunity
+
+to try them out.
+
+And we always are
+interested in--
+
+to hear your feedback in
+terms of which features
+
+are working for you
+and what enhancements
+
+you would like to see.
+
+So with that, I'd
+like to thank you,
+
+on my-- for-- on my behalf,
+and then Babi's, as well,
+
+and we do hope that you enjoy
+the rest of your Next sessions.
+
+
+

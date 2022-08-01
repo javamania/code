@@ -1,0 +1,1270 @@
+
+
+LEIGHA JARETT: Hi, and welcome
+to our session on building
+
+an interactive machine learning
+application using both Vertex
+
+AI and Looker.
+
+I'm Leigha Jarett,
+and I'm a developer
+
+advocate here at Google Cloud.
+
+And I'm also joined by my
+colleague Sara Robinson.
+
+Before we get into
+the details, let's
+
+talk about why you might want
+to build an interactive data
+
+science application
+for your team.
+
+Well, we know that business
+users of all different types
+
+need access to the results
+of machine learning models.
+
+And we really want to
+eliminate that bottleneck
+
+so that they don't need
+to go through a data team
+
+to get access to the results.
+
+We also want to make sure
+that our data science
+
+application has an
+easy-to-use and simple UI
+
+so that people of all
+different technical levels
+
+are able to interact with
+machine learning models
+
+and get the data that they
+need to do their jobs.
+
+Finally, we want
+to provide guidance
+
+onto how business
+users should interpret
+
+the results of machine
+learning and also take action
+
+on them so we're making sure
+that machine learning is
+
+having a real influence on
+business decision making.
+
+Now in this
+presentation, we're going
+
+to talk about how
+Google Cloud can
+
+help you build these data
+science applications.
+
+
+
+So let's pretend
+that we are working
+
+for a marketing department
+of an e-commerce company.
+
+I might decide to create two
+different models in Vertex AI.
+
+First, I'm going to create
+a classification model
+
+to predict whether or
+not different users who
+
+see an advertisement are
+likely to make a purchase.
+
+Then we're going to create
+a time series forecasting
+
+model to predict our different
+revenue so we can accurately
+
+measure the lift
+of those campaigns.
+
+Now, in order to train
+our Vertex AI models,
+
+we're going to supply data
+that's coming from our BigQuery
+
+data warehouse.
+
+This gives us the
+scale and reliability
+
+that BigQuery offers
+so we're able to store
+
+and transform and prepare our
+data for machine learning.
+
+Finally, we're going to use
+Looker to actually create
+
+a custom application
+that our business
+
+users can interact with.
+
+Using Looker's
+Extension Framework,
+
+we can customize the UI
+exactly for our needs.
+
+And we'll enable our users
+to interact with this UI
+
+and have the results of
+their interactions sent back
+
+to Vertex AI to create new
+predictions from our models.
+
+Now I'm going to
+pass it off to Sara
+
+to talk more about Vertex AI.
+
+SARA ROBINSON: Thanks, Leigha.
+
+Let's start by looking at what
+Vertex AI is at a high level.
+
+Vertex AI is our end-to-end
+managed machine learning
+
+platform on Google Cloud.
+
+It's designed to help you with
+every step of your machine
+
+learning workflow, and
+it's designed for people
+
+regardless of ML expertise.
+
+So whether you have deep
+experience building custom
+
+models, or you're just getting
+started with machine learning,
+
+we have ways that
+you can use Vertex
+
+AI to add to your machine
+learning applications.
+
+So here we can see an overview
+of all the different products
+
+that are included in
+Vertex AI for each phase
+
+of a typical machine
+learning workflow.
+
+We're going to focus
+just on a few of these
+
+in this presentation,
+starting with data sets,
+
+showing you how to
+link data in BigQuery
+
+to a data set in Vertex AI.
+
+Then we'll look at how
+to train models in Vertex
+
+and get predictions
+on those models.
+
+And throughout
+this presentation,
+
+we'll be focused on models
+trained on tabular data
+
+to build both a classification
+and a forecasting model.
+
+
+
+Let's start by
+looking at data, which
+
+is usually the first part of
+any machine learning workflow.
+
+So in Vertex AI, you start
+by uploading a data set.
+
+And you do this by
+selecting the type of data
+
+you're working with, along
+with the prediction task
+
+that you'll be solving.
+
+In this presentation,
+we're going
+
+to be working with
+tabular data, but we also
+
+support a lot of
+other data types.
+
+And if your data doesn't fit
+into any of these categories,
+
+don't worry.
+
+You can still use Vertex AI to
+train your own custom models.
+
+
+
+Next let's look at
+a decision framework
+
+that I use to help
+customers figure out
+
+which parts of Vertex
+AI are right for them.
+
+The first question to
+ask is whether or not
+
+you have your own training
+data to use for your model.
+
+If the answer is no, we have
+a set of pre-trained APIs
+
+that give you access to
+machine learning models
+
+that have already been trained
+on lots and lots of data
+
+that you can access
+via a REST API.
+
+For this presentation,
+we're going
+
+to be focused on the right
+side of this flowchart.
+
+We're assuming that you
+do have your own training
+
+data that you want to use to
+train custom machine learning
+
+models.
+
+The next question
+to ask yourself
+
+is whether or not you're going
+to be writing the model code.
+
+And whatever the
+answer is to this,
+
+we have tools to support
+you on Vertex AI.
+
+We're going to be focused
+on AutoML for training,
+
+but you can also use Vertex
+AI to train your own custom
+
+models built with any
+machine learning framework.
+
+Let's take a closer look
+at AutoML for training.
+
+AutoML is a tool that lets you
+train state of the art machine
+
+learning models in less
+time, because you're not
+
+required to write any of that
+model training code yourself.
+
+All you do is upload
+your data to Vertex,
+
+select the columns
+that you're going
+
+to be using for training,
+along with the column that
+
+has your label or the thing that
+your model will be predicting.
+
+You press a Train
+button, and Vertex AI
+
+will iterate over different
+model architectures
+
+to find the best one suited
+for your prediction task.
+
+When your model
+is done training,
+
+you'll then get access to
+detailed model evaluation
+
+metrics along with
+feature attributions.
+
+
+
+Once you have a
+trained model, there
+
+are a couple of options
+for how to get predictions
+
+on that model.
+
+The first is you can
+deploy your model
+
+to an endpoint in Vertex AI.
+
+And endpoints live in
+the same place in the UI
+
+whether you train the model
+using AutoML or your own custom
+
+model code.
+
+You can also access both types
+of models via the Vertex AI
+
+SDK.
+
+You can split traffic
+between different models,
+
+and you can also customize
+the machine type where
+
+your endpoint is deployed.
+
+
+
+And if latency is
+less of a concern
+
+and you have a lot
+of test examples
+
+that you want to
+get predictions on,
+
+you might want to create
+a batch prediction job.
+
+And we'll show how to
+do this in the demo.
+
+To create a batch
+prediction, you
+
+can do this either in
+the Vertex AI console,
+
+or via the Vertex AI SDK.
+
+And you'll specify
+where your data
+
+is that you want to get
+batch predictions on,
+
+and then where you want
+Vertex AI to write the results
+
+of those batch predictions.
+
+In the demo, we'll be creating
+a batch prediction job based
+
+on data we have in BigQuery.
+
+And without further ado,
+let's take a look at a demo.
+
+In this demo, I'm
+going to be showing
+
+how to train two different
+models using data
+
+from BigQuery.
+
+We'll train a classification
+model, along with a time series
+
+forecasting model.
+
+And we'll use AutoML to
+train both of those models.
+
+When the models
+are done training,
+
+we'll look at some
+evaluation metrics,
+
+and then we'll see how we can
+create batch prediction jobs so
+
+that we can then visualize
+the results of those model
+
+predictions in our
+Looker dashboard.
+
+Let's go to the demo.
+
+We'll train two models in
+Vertex AI using our retail data.
+
+First, we need to import our
+data from BigQuery into Vertex.
+
+There's a direct integration
+between Vertex AI and BigQuery.
+
+Here we'll create a data set.
+
+This data set will be used to
+train a tabular classification
+
+model.
+
+We want to import data from
+BigQuery, so we'll select here.
+
+And this is the
+BigQuery table we
+
+want to use to train our model.
+
+It's some data on
+orders, and we'll
+
+use it to predict whether or not
+a customer will make an order.
+
+We'll enter that
+BigQuery table here.
+
+And now we're ready to
+train a model on this data.
+
+We'll train our
+model using AutoML,
+
+which means that we don't
+need to worry about writing
+
+any of the model code.
+
+Our target column is made_order.
+
+This will tell us whether or not
+the customer made a purchase.
+
+Here we'll select the columns
+we want to use for training.
+
+Here we want AutoML to maximize
+the accuracy on our model
+
+for the less common class.
+
+We're doing this because the
+percentage of customers who
+
+made an order in our data set
+is much smaller than those who
+
+didn't.
+
+And with that, we're
+ready to start training.
+
+We'll follow the same process
+to train a forecasting
+
+model to predict sales for
+different item categories.
+
+Here we're using
+seven days of data
+
+to predict what the
+category sales will
+
+be seven days in the future.
+
+Now that we've
+trained two models,
+
+let's see how each one
+performed, starting
+
+with our classification model.
+
+Here we can see that 77%
+of the time our model
+
+was able to correctly
+predict when a customer would
+
+make a purchase.
+
+We can also see
+feature importance.
+
+This shows us which features
+signaled our model's prediction
+
+the most.
+
+In this case, it looks like
+the advertisement category
+
+was the most important
+indicator of whether or not
+
+someone would make a purchase.
+
+With our trained model, we can
+now deploy it to an end point
+
+to get online predictions.
+
+We can also request
+batch predictions
+
+by creating a batch prediction
+job, either in the UI,
+
+or programmatically
+via the Vertex AI API.
+
+The result of our
+batch production job
+
+was written to a BigQuery table.
+
+For each row, we can see
+the percentage likelihood
+
+that a purchase was made.
+
+Here it looks like there is a
+71% chance that the customer
+
+made a purchase.
+
+Let's also take a look
+at how our forecasting
+
+model performed.
+
+Here we can see some evaluation
+metrics on our model.
+
+When we kicked off
+our training job,
+
+we specified that we'd like
+test predictions written
+
+to a BigQuery table.
+
+Let's take a look
+at that table now.
+
+Here we can see the sales
+predicted by our model
+
+compared to the actual
+sales on that date.
+
+Now let's see how to
+create a batch prediction
+
+job, looking at one window
+of our time series data.
+
+When we're formatting
+our data for prediction,
+
+we'll pass it a BigQuery
+table with sales
+
+data for our seven-day
+context window,
+
+and then we'll provide
+the date we want
+
+to generate a prediction on.
+
+For this model, it's
+seven days in the future.
+
+We'll leave the sales
+value for that row blank,
+
+since that's what
+we want to predict.
+
+We can get predictions on as
+many seven-day time series
+
+windows as we'd like.
+
+Here we're just showing
+one for demo purposes.
+
+When this batch
+prediction job completes,
+
+we'll see the resulting
+predicted sales value
+
+for the date that we specified.
+
+In our Looker
+dashboard, we'll be
+
+able to visualize the
+predictions resulting
+
+from both of these models.
+
+LEIGHA JARETT: Thanks, Sara.
+
+So now we understand
+how to actually create
+
+models in Vertex AI and
+even hit an end point
+
+to get new predictions.
+
+But how do we extend
+these capabilities
+
+so that non-technical
+business users
+
+are able to interact
+with Vertex AI
+
+and analyze the results
+of those predictions?
+
+This is where Looker comes in.
+
+So you may already be familiar
+with Looker's architecture.
+
+Looker enables you
+to create a data
+
+model, your single
+source of truth
+
+for all of your
+different metrics.
+
+And it sits directly on
+top of your data warehouse,
+
+so BigQuery in our case.
+
+For the data
+science application,
+
+we might create a model
+where we're actually
+
+defining metrics associated with
+the prediction results coming
+
+from Vertex AI.
+
+This will allow our business
+users to explore the results
+
+and create visualizations
+or dashboards,
+
+and even operational
+workflows to take action
+
+on those results.
+
+But how do we
+actually enable them
+
+to interact with that endpoint
+and create different inputs
+
+that feed into Vertex AI?
+
+This is where the Extension
+Framework comes into play.
+
+Looker's Extension
+Framework allows
+
+you to create custom
+JavaScript to control
+
+the UI for a custom application
+posted in the Looker
+
+environment.
+
+So the great thing about the
+Looker Extension Framework
+
+is it handles all hosting,
+authentication, authorization,
+
+and gives you access
+to Looker's APIs,
+
+ability to embed
+Looker components,
+
+like dashboards and looks.
+
+And also, we have a set of
+open source UI components
+
+to really accelerate
+your time to value.
+
+This diagram really helps
+put it into perspective.
+
+If you want to go and
+build a data science
+
+application on
+your own, you have
+
+to take care of all of that
+stuff outside of Looker.
+
+But with the Extension
+Framework, so much of it
+
+is taken care of for
+you under the hood.
+
+
+
+So just to put these
+two pieces together,
+
+first, we're going to create a
+dashboard using native Looker
+
+technology.
+
+We'll model the
+prediction results.
+
+We'll explore them,
+and create a report
+
+that business users can use.
+
+Next we'll use the Extension
+Framework to actually customize
+
+the UI so it's purpose
+built for our models,
+
+and so that users can
+control the inputs that
+
+are fed back into the
+Vertex AI prediction job.
+
+So let's actually see a demo
+of all of this in action.
+
+I'll jump into my data
+science application
+
+so we can see how a marketing
+person would interact with it.
+
+In Looker, I can navigate to
+my data science application
+
+from the left side panel under
+the Applications dropdown,
+
+or if you're using an
+earlier version of Looker,
+
+from the Browse dropdown.
+
+Now I can see my
+custom-built application
+
+for the marketing team to
+create targeted advertisement
+
+campaigns.
+
+On the left-hand
+side, marketers are
+
+able to control
+inputs to the model,
+
+like selecting users
+from a certain traffic
+
+source, country, gender, age,
+and previous purchase history.
+
+They can also specify
+what type of advertisement
+
+they're planning to run.
+
+For example, here
+we're predicting
+
+if we fed an advertisement
+campaign for accessories
+
+through a search channel.
+
+On the right-hand side,
+we have our dashboard
+
+to actually analyze the
+results of the model.
+
+So here we can see that
+when we ran the model,
+
+we fed in over 65,000 users
+that had an average age of 53,
+
+a certain average
+prior spending habits,
+
+and we can also see their
+geographic location.
+
+
+
+Scrolling down, we
+can start to analyze
+
+the results of the batch
+predictions from Vertex AI.
+
+So here I can see that
+2.6% of our user base
+
+was expected to make a purchase.
+
+We can also use that
+information to calculate
+
+our predicted campaign cost
+if we just targeted that 2.6%.
+
+And we can slice our
+likelihood to make a purchase,
+
+so that predicted measure
+coming from Vertex AI,
+
+by other fields in
+the user information,
+
+like how many orders
+they previously
+
+made, what their
+traffic source was,
+
+and what their age group was.
+
+Next, we can look at the results
+of our time series forecasting
+
+model.
+
+So to actually see what our
+predicted revenue if we don't
+
+do anything is for
+the next seven days,
+
+and see that compared to
+prior historical sales.
+
+Now this dashboard is just
+like any old Looker dashboard.
+
+So as a marketer, I can
+explore from here, drill in.
+
+So I might want to
+explore and actually send
+
+these users who we predict
+to make a purchase off
+
+to an external
+application to target them
+
+for that advertisement.
+
+Now that we understand how
+a marketer would interact
+
+with this application,
+let's start
+
+thinking about how
+we actually went
+
+and built this application.
+
+Like we said earlier, we built
+this using Looker's Extension
+
+Framework.
+
+So what we did was created some
+lightweight custom JavaScript
+
+to control the UI that
+we're seeing here.
+
+On the left-hand
+side, I actually
+
+used Looker's
+components to create
+
+each one of these inputs.
+
+Let's see what one of these
+components might look like.
+
+For example, the
+CheckboxGroup component
+
+is used for our first input.
+
+Now, I'm a data person, and
+not a front end developer.
+
+And although I did have to learn
+a bit of JavaScript and React
+
+to get everything
+working appropriately,
+
+most of the
+application was built
+
+leveraging these
+components and working off
+
+the Extension Framework code
+templates that are available.
+
+Now if a marketer wants to
+change the inputs to the model,
+
+for example only focusing
+on people in the US
+
+and maybe seeing
+what would happen
+
+if we ran an advertisement
+for jeans, I can click Run.
+
+And I'm going to have
+to verify my identity
+
+to make sure I have permission
+to run the Vertex model.
+
+And then in the
+Extension Framework,
+
+my code is actually going to
+send this information to Vertex
+
+to create a batch
+prediction job.
+
+Now before Looker
+actually talks to Vertex,
+
+it uses the Looker API to
+create a BigQuery table that
+
+contains one row for each person
+in that audience we created
+
+to predict on.
+
+And you can see we're going
+to have the jeans search
+
+campaign, which is the
+fields that the user entered
+
+to actually see
+what would happen
+
+if we ran a certain
+type of advertisement.
+
+And then the details of
+the BigQuery table, we
+
+can see that it's set
+to expire tomorrow
+
+so that we aren't storing too
+much unnecessary information.
+
+And also, it's named
+with this long hash.
+
+And this is basically a unique
+identifier for the prediction
+
+that we're running.
+
+Now if we open up
+our extension code,
+
+we can see that after
+the BigQuery table has
+
+been created, it's time to make
+our Vertex prediction call.
+
+Here we're using
+Looker's extension SDK
+
+to create a POST request
+to Google Cloud platform.
+
+And in the input we're going to
+specify things like our model
+
+ID, the location where
+this needs to run,
+
+and also our input data, so that
+BigQuery table we just created,
+
+and our output
+BigQuery data set.
+
+
+
+Since batch
+predictions sometimes
+
+take a few minutes to run,
+we send the user a message
+
+on Google Chat when
+the results are
+
+ready with a link to review.
+
+Here we also include the
+same hash used earlier
+
+to bring the user back to
+the results of the model
+
+so that they can
+use the dashboard
+
+to investigate their results.
+
+The dashboard itself is just
+a regular old Looker dashboard
+
+that's embedded
+into our application
+
+using Looker's embed SDK.
+
+So just like previous
+Looker API calls we made,
+
+this requires just
+a few lines of code
+
+and no authentication needed.
+
+We use the embed methods to
+pass in values for the filters
+
+based on what the user
+has entered on the left.
+
+You'll also notice that we have
+a parameter for our table name.
+
+This is the hash that was used
+to identify the prediction,
+
+and it's what's going
+to be used to make sure
+
+that we're leveraging
+the right table that
+
+stores the results of the latest
+prediction results from Vertex
+
+AI.
+
+Now the great thing
+about this entire app
+
+is that it was simple to build,
+since Looker and Vertex do all
+
+the hard parts, like model
+and front end development,
+
+deployment, and authentication.
+
+And my marketers can
+interact with machine
+
+learning all on their own to
+get data when they need it.
+
+Thanks again for
+joining us today.
+
+So we talked about how to
+build a complete data science
+
+application using
+Vertex AI and Looker.
+
+Sara walked us through the
+Vertex AI platform, including
+
+how to create, train,
+and deploy models,
+
+and I showed you how to explore
+the results of those models
+
+in Looker and create your
+own custom application using
+
+Looker's Extension Framework.
+
+So to get you well on your
+way to creating your own data
+
+science application, we
+have listed some resources,
+
+like Looker and Vertex AI
+training courses and labs.
+
+We also included some
+other Next sessions
+
+that might be relevant to
+what we talked about today.
+
+So thanks again, Sara,
+for joining us and talking
+
+about Vertex AI.
+
+And thank all of you
+for joining us today.
+
+We hope you enjoyed
+this session,
+
+and that you enjoy
+the rest of Next 2021.
+
+
+

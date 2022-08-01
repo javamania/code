@@ -1,0 +1,1063 @@
+
+
+STEREN GIANNINI: Hi, I am
+Steren Giannini, Senior Product
+
+Manager at Google Cloud.
+
+Welcome to "What's
+New in Serverless?"
+
+Today, we are mainly
+going to talk about two
+
+of our Serverless products,
+Google Cloud Functions, which
+
+is Serverless functions,
+and Google Cloud
+
+Run, which is Serverless
+applications and containers.
+
+First, I want to call
+out that Serverless
+
+is available in every
+Google Cloud region.
+
+You will find Clarin and
+Cloud Functions in all
+
+of the Google Cloud regions.
+
+And you can expect us to open up
+those products in future Google
+
+Cloud regions.
+
+All right.
+
+Let us dive into
+Cloud Functions.
+
+
+
+So, first, we've been
+hard at work delivering
+
+a new runtimes for Cloud
+Functions, new programming
+
+languages.
+
+The first one is Ruby.
+
+then is .NET Core, PHP, and
+we've also been updating
+
+our existing runtimes with
+Python 3.9 and Node.js 14,
+
+and even 16 in preview.
+
+
+
+Next, we added
+more customization
+
+to the build process.
+
+So you might know that when you
+deploy your function on Cloud
+
+Function, the first
+step that happens
+
+is that this function is
+built before it gets deployed.
+
+So you can now
+customize where that
+
+build happens by targeting
+a private worker pool.
+
+This allows you to
+customize the machine
+
+types on which the
+function will be built,
+
+or to ensure that the function
+is built within your VPC SC
+
+perimeter.
+
+We've also added the
+ability to define
+
+build environment variables.
+
+So these en vars are en vars
+available at build time.
+
+They, for example, help
+you configure the buildback
+
+behavior.
+
+
+
+And, finally, we delivered Min
+instances to Cloud Functions.
+
+So we've been hearing from you
+that cold start is a problem
+
+with function as a service.
+
+So what is a cold start?
+
+When your function
+receives no traffic,
+
+its number or function
+instances are scaled to 0.
+
+But then when traffic
+arrives, Cloud Functions
+
+will scale from 0
+to 1, and the time
+
+it takes for the
+function to start
+
+is what we call a cold start.
+
+Thanks to Min instances, you
+can simply define a value
+
+that Cloud Functions
+will scale down to,
+
+keeping one or more
+instances warm,
+
+so that when the next
+request comes in,
+
+there are already some warm
+instances to process them.
+
+So when not in use,
+those warm instances
+
+are charged for memory, but
+also for CPU at 10% the price.
+
+To use Min instances, you can
+do so via a simple command line
+
+flag or user interface inputs.
+
+
+
+Right now, I would
+like to call out
+
+two of the Google
+Cloud orchestration
+
+products that pair very well
+with Cloud Functions and Cloud
+
+Run.
+
+The first one is
+called Eventarc.
+
+So Eventarc allows you to
+asynchronously deliver events
+
+from Google Services
+software as a service,
+
+and you own apps to
+Serverless products.
+
+Eventarc has added
+a few new features--
+
+the ability to target Cloud
+Functions, the ability
+
+to receive events
+from Cloud Storage,
+
+and a new standalone
+user interface that
+
+allow you to manage
+your Eventarc
+
+triggers in a central place.
+
+
+
+Second, I want to
+call out Workflows,
+
+which is Google Cloud product
+to orchestrate automate Google
+
+Cloud and HTTP based API
+services with a workflow
+
+that you define.
+
+So on the right, you can
+see a screenshot of the user
+
+interface where the workflow is
+using a comprehensible syntax,
+
+but can also be visualized
+in a very nice graph.
+
+So Workflows has added
+a few new features.
+
+First, the ability to use
+HTTP callbacks, the ability
+
+to connect to many
+Google Cloud APIs.
+
+It has increased the memory,
+as well as the number
+
+of concurrent executions.
+
+And there were many syntax
+and library enhancements.
+
+
+
+All right.
+
+Now let us dive into Cloud Run.
+
+So, first, I want
+to call out that we
+
+have added committed use
+discounts to Cloud Run.
+
+So committed use
+discounts allow you
+
+to commit to an early spend
+on Cloud Run for a year,
+
+and you would-- you simply
+receive a 17% discount
+
+on this commitment.
+
+Of course, usage above
+the committed amount
+
+is charged at normal rates.
+
+This is self-service.
+
+From the Cloud Console,
+you go into Billing,
+
+you click Commitment,
+and this is
+
+where you can purchase
+the commitment for a year.
+
+I should note that committed
+use discounts apply
+
+to all Cloud Run
+services of your accounts
+
+across all of your projects
+for a given region.
+
+Let's take an example.
+
+On the right, we can see
+an example Cloud Run bill
+
+over time.
+
+This, basically, reflects the
+Cloud Run usage over time.
+
+As you can see, because most of
+the time, the bill is above $1,
+
+it makes it very economical
+in that situation
+
+to commit to a $1 per
+hour usage, because that
+
+means that you would only
+pay $0.83 for every hour.
+
+And of course, if usage
+goes above the commitment,
+
+for example, because you
+used $1.50 of Cloud Run,
+
+then you would only pay
+the discounted on the $1.00
+
+and $0.50 above the dollar.
+
+Now, I want to tell you how we
+have been improving the Cloud
+
+Run developer experience
+with three things following
+
+the development journey.
+
+First, we have added local
+development to Cloud Run.
+
+Second, we are making it easier
+to deploy your source code.
+
+And third, we improved
+the observability
+
+of your Cloud Run services.
+
+Let's take a look.
+
+Local development-- this allows
+you to run your Cloud Run
+
+services in a local emulator.
+
+This emulator is available
+in the gcloud command line,
+
+in the Cloud Code for VSCode,
+in Cloud Code for IntelliJ
+
+as well as in
+Cloud Shell Editor,
+
+the online IDE of Google Cloud.
+
+If we take an
+example, you can see
+
+that you can store your Cloud
+Run config in a file that
+
+would allow you to define
+how the emulator should
+
+be configured.
+
+Then, using a simple command,
+gcloud beta code dev,
+
+you start a local
+development environment that
+
+will emulate the
+characteristics of Cloud Run,
+
+with the CPU and
+memory allocation
+
+that you defined with
+the environment variables
+
+that you defined.
+
+And it will watch your local
+source code for changes,
+
+and when they happen,
+will rebuild them
+
+into a container that-- and
+restart the local server.
+
+So quite handy for
+a fast development
+
+group instead of
+deploying to the Cloud
+
+for testing new changes.
+
+Then, once you have
+developed your service,
+
+you want to deploy it.
+
+We have added support
+for deploying source code
+
+to Cloud Run.
+
+This is, basically, a command,
+a very simple command,
+
+in three words that will build,
+push, and deploy your service
+
+from local source code.
+
+This command is
+gcloud run deploy.
+
+That's right.
+
+That's the default
+for gcloud run deploy.
+
+It's to build your local
+source code using Cloud Build,
+
+push it to Artifact
+Registry, and then deploy it
+
+to Cloud Run.
+
+
+
+This command is also leveraging
+Google Cloud Buildpacks,
+
+in order to allow you to
+deploy source code in popular
+
+languages without any
+Dockerfile, that includes Go,
+
+Node.js, Python, Java, and .Net.
+
+But, of course, if a local
+Dockerfile is present,
+
+then this command
+will simply build it
+
+with the instructions that
+are in the Dockerfile,
+
+and deploy the arbitrary
+container image to Cloud Run.
+
+
+
+Lastly, we added more
+observability to Cloud Run.
+
+First, by delivering
+a few more metrics,
+
+notably, the instance
+count metric,
+
+which would show you
+simply the number
+
+of active and idle instances
+for a given Cloud Run service.
+
+Then, we've walked with
+the Cloud AR Reporting team
+
+to make sure AR reporting
+was able to capture
+
+system errors out of the box.
+
+So without any
+more configuration,
+
+that means that, if your Cloud
+Run container instance is out
+
+of memory, or if
+Cloud Run is not
+
+able to scale because it is
+reaching its max instance
+
+limit, those errors that
+are present in your logs
+
+will now also be aggregated
+in Cloud error reporting
+
+and displayed in a very
+actionable way in the Cloud Run
+
+user interface.
+
+And lastly, we have collaborated
+with the Cloud Trace team
+
+to provide out-of-the-box
+request tracing.
+
+That means that you can analyze
+the latency of your Cloud Run
+
+services using Cloud Trace
+without any instrumentation
+
+needed.
+
+
+
+All right, now, I'm
+going to tell you
+
+how we have made it easier to
+run more workloads on Cloud
+
+Run with three changes.
+
+First, giving you more control
+around the CPU allocation
+
+of your service.
+
+Second, by delivering a
+new execution environment.
+
+And third, by pushing
+the limits that
+
+were historical
+limits of Cloud Run.
+
+Let's take a look.
+
+CPU allocation--
+let's take an example.
+
+Here, you can see one container
+instance of a Cloud Run
+
+service.
+
+It is starting.
+
+Then it has started.
+
+It receives requests,
+potentially multiple requests
+
+at the same time
+thanks to concurrency.
+
+And then at the end of its
+life, it gets terminated.
+
+Today, the CPU for
+that container instance
+
+would only be allocated when the
+container instance is starting,
+
+or when it is receiving
+at least one request.
+
+
+
+As a customer, you
+would also only
+
+be charged when the
+CPU is allocated.
+
+And, in particular, you are
+charged for CPU and memory,
+
+but also you are charged
+every time a request arrives.
+
+
+
+We are introducing the
+ability to opt out of this CPU
+
+throttling by simply saying
+that you want the CPU to always
+
+be allocated to your
+controller instances
+
+as long as the
+instance is alive.
+
+So in that case, you would
+be charged, of course,
+
+for the entire lifetime of
+that continual instance.
+
+But the CPU will always be
+available to that container
+
+instance.
+
+You can enable this
+via simple command line
+
+flag on an existing
+or a new service
+
+as well as a simple checkbox
+in the user interface.
+
+So this new option to
+always have CPU allocated
+
+allows you to run background
+tasks or async processing
+
+after you have
+returned requests.
+
+It makes Cloud Run more
+compatible with monitoring
+
+agents like OpenTelemetry.
+
+Many programming languages
+do things asynchronously,
+
+like Goroutines, or async,
+or threads, or coroutines.
+
+These are now more
+compatible with Cloud Run.
+
+And lastly, you can
+deploy Spring Boot apps
+
+that are expecting to
+do background things.
+
+And as I said, when you opt
+in to this new CPU allocation
+
+to always have
+CPU allocated, you
+
+are charged for a
+different price.
+
+There is no request fee.
+
+And the CPU and
+memory is 25% lower.
+
+You can couple
+this always on CPU
+
+allocation with Min
+instances, basically
+
+allowing you to have
+a number of instances
+
+that are always scheduled,
+and which always have CPU,
+
+and looking at some quite
+interesting use cases.
+
+
+
+Next, you will find
+that we've improved
+
+the performances of
+Cloud Run, as well
+
+as we are adding network
+file system support.
+
+This is thanks to a new
+execution environment
+
+that we call Second Generation.
+
+So, basically, when you deploy
+a container image to Cloud Run,
+
+it runs in the execution
+environment, also known
+
+as Sandbox.
+
+So, today, you can opt into
+the Second Generation execution
+
+environment.
+
+Again, using a simple command
+line flag or user interface
+
+button.
+
+And this new sandbox
+has increased network
+
+in CPU performance, has
+better Linux compatibility,
+
+and allows you to use network
+file system, like Cloud
+
+Filestore, for example.
+
+
+
+And, next, I should call
+out that we are constantly
+
+at work to increase the
+limits of Cloud Run.
+
+So, first, we have added
+support for more protocols,
+
+like Websockets, HTTP/2, and
+gRPC bi-directional streaming.
+
+All of these are
+generally available now.
+
+You can now pick up to 16
+gigabytes of memory in preview,
+
+up to 4 VCPUs.
+
+Each request can run
+for up to 16 minutes.
+
+And each container
+instance can process up
+
+to 1,000 concurrent
+requests at the same time.
+
+This can become
+very handy if you
+
+are using Websockets and
+opening many streams on a given
+
+instance, for example.
+
+
+
+Lastly, I want to tell
+you how we have made Cloud
+
+Run even easier to secure--
+
+by meeting regulatory
+frameworks,
+
+by allowing you to put a secure
+perimeter around your Cloud Run
+
+services, and by helping you
+secure your Cloud Run services.
+
+
+
+So Cloud Run is now covered by
+these regulatory frameworks.
+
+We know this is very important
+for enterprise settings.
+
+I should call out FedRAMP
+Moderate, PCI DSS, SOC 1, 2,
+
+and 3.
+
+All of these are now
+covered for Cloud Run.
+
+Next, how can you
+secure or define
+
+what is allowed to reach
+your Cloud Run service?
+
+Well, first, we have added
+support for ingress control.
+
+By default, all traffic
+at a networking layer
+
+is allowed to reach
+your Cloud Run service.
+
+But you can now restrict
+the ingress to only allow
+
+internal traffic, so that means
+traffic coming from your VPC
+
+or from Google Cloud,
+like Cloud Webserve,
+
+and you can allow internal
+traffic plus traffic coming
+
+from Google Cloud
+Load Balancing.
+
+Similarly, you can control where
+the unknown request should go.
+
+For example, when you
+do an outbound request
+
+to the internet, you can force
+it to go through your VPC.
+
+And by using ingress
+and egress settings,
+
+you can also enable
+VPC service control,
+
+allowing you to put your Cloud
+Run services inside a VPC AC
+
+perimeter.
+
+Thanks to Cloud Run Integration
+with Google Cloud Load
+
+Balancing, you can
+leverage Cloud Armor, which
+
+is a web application firewall.
+
+And you can use
+identity aware proxy
+
+to build internal
+applications that
+
+would only be accessible to
+your employees, for example.
+
+
+
+And, lastly, I want
+to tell you how
+
+we made it easier to secure
+your Cloud Run services.
+
+First, by providing a native
+integration with Google Cloud
+
+Secret Manager.
+
+So Secret Manager is
+a Google Cloud product
+
+to store your secrets
+in a secured place
+
+with potentially your
+own encryption keys.
+
+You can now mount those
+secrets as volumes or as
+
+en vars inside your
+Cloud Run services,
+
+allowing you to
+decouple your code,
+
+your container from
+its configuration,
+
+or even its secret.
+
+
+
+Then, we added more
+security features.
+
+Of course, you might know
+that Cloud Run services run
+
+with a certain
+identity, so that means
+
+you can provide a
+service account that
+
+would be used as the
+identity of the code that
+
+runs for a particular service.
+
+And the service account can have
+more or less IM permissions.
+
+Notably, you can remove all
+permission of a certain Cloud
+
+Run service if this one is
+not expected to call any APIs.
+
+
+
+We are announcing the
+general availability
+
+of Binary Authorization
+for Cloud Run.
+
+Binary Authorization allows you
+to define a policy regarding
+
+which containers can or cannot
+be deployed to Cloud Run.
+
+And by using an
+organizational policy,
+
+you can enforce
+Binary Authorization
+
+to be applied to your Cloud Run
+services in a set of projects.
+
+Lastly, we delivered customer
+manage encryption keys,
+
+allowing you to bring
+your own encryption
+
+keys to encrypt the container
+images deployed to Cloud Run.
+
+And finally, we
+haven't stopped here.
+
+We are proactively
+producing recommendations
+
+to secure your
+Cloud Run services.
+
+The first one that
+we delivered is
+
+to recommend you to
+use a dedicated service
+
+account with a minimal set of
+permissions for each production
+
+Cloud Run services.
+
+
+
+So to recap, we have added
+many things to Cloud Run.
+
+The first is committed
+used discount,
+
+allowing you to get a
+discount of up to 17%
+
+on the amount you commit.
+
+We've improved, and we
+are continuously improving
+
+its developer experience,
+with local development,
+
+deploying from source
+code, more metrics.
+
+We've increased the
+workloads that you
+
+can deploy to Cloud
+Run, with CPU allocation
+
+controls, a Second Generation
+execution environment,
+
+or just by pushing the
+limits of Cloud Run.
+
+And, lastly, we made it easier
+to secure your Cloud Run
+
+services.
+
+
+
+To learn more
+about Serverless, I
+
+recommend you those
+three sessions--
+
+Dev100, which is a
+great introduction
+
+to Serverless on GCP;
+Dev201, which will deep
+
+dive into some very cool
+features of Cloud Functions,
+
+including some that
+are coming; and Dev205,
+
+which will teach you how to
+build event-driven applications
+
+with Eventarc and Cloud Run.
+
+Thanks for joining me today.
+
+This was "What's
+New in Serverless?"
+
+Enjoy the rest of Cloud Next.
+
+
+

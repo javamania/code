@@ -1,0 +1,1008 @@
+
+
+NIRAV MEHTA: Thank
+you for joining me.
+
+My name is Nirav Mehta.
+
+I am Director of Product
+Management for Google Cloud
+
+Compute Engine.
+
+I'd like only 20 minutes
+of your time today.
+
+The first half, I
+want to share with you
+
+some of our recent innovations,
+but also the core principles
+
+that drive them.
+
+And for the second half I'll
+be talking with Omer Hasan, who
+
+will join me from AppLovin.
+
+He's the VP of Operations.
+
+I'm very excited to have him
+here for a short conversation.
+
+So let's get right
+to it and start
+
+with some of the investment
+themes and principles that
+
+drive us.
+
+First, Google Cloud
+Compute Engine
+
+is all about offering you
+thoughtful and intuitive
+
+choices.
+
+What this means is
+it's easy for you
+
+to select the right virtual
+machine type, the right storage
+
+type simply by looking at how
+we've organized our choices
+
+by workloads or by use case.
+
+And I'll talk about that
+in a couple of minutes.
+
+Second, package
+solutions that allow
+
+you to very easily, in an
+opinionated way, deploy,
+
+for example, SAP HANA, or
+VMware, Microsoft SQL Server.
+
+We've thought through
+reference architectures
+
+and common deployment
+templates to help
+
+you get to outcomes quickly.
+
+Third, and perhaps
+the most central tenet
+
+that we have behind the
+platform engineering,
+
+is simplicity at scale.
+
+Many customers I
+talk with tell me
+
+that Google Cloud is intuitive.
+
+And as they use it more,
+they find it simpler,
+
+and that we make complex
+things seem simple.
+
+This is very important to us.
+
+We take it to heart and want
+to ensure we maintain this
+
+as we grow, add more features.
+
+So it's a commitment to
+maintain this advantage,
+
+and I'll talk
+about how we do it.
+
+Security is paramount.
+
+Not only making sure that we
+offer all the right security
+
+controls and
+compliance controls,
+
+but also that we put privacy
+in the hands of the customer,
+
+or in the control of
+you who owns the data.
+
+A simple example of this
+is our recent feature
+
+for encrypting
+in-memory contents
+
+within a virtual machine.
+
+The encryption keys are
+controlled by the customer,
+
+and turning the
+feature on is a matter
+
+of simply checking one box.
+
+So simple security that's
+comprehensive with the customer
+
+remaining in control.
+
+And lastly, cost optimization
+in all its forms,
+
+not just offering the right
+price points, the right price
+
+performance points, but also
+helping you reduce waste,
+
+making machine learning based
+recommendations that tell you
+
+what types you should
+be using, how you
+
+should be adjusting your spend.
+
+All of that comes together
+to make this a highly cost
+
+optimized platform.
+
+So let's talk about
+each of these,
+
+starting with VM families.
+
+With VM families, at
+the very highest level,
+
+there are two categories--
+workload-optimized
+
+and general purpose.
+
+For workload-optimized there
+are three categories-- compute
+
+optimized for high
+performance computing,
+
+and these are heavier on compute
+power, or memory optimized,
+
+or the M series of VMs.
+
+This is for the high-end
+databases like SAP HANA,
+
+with very high
+configuration of RAM.
+
+And lastly, there is
+accelerator optimized,
+
+which is GPU-enabled
+VMs for machine
+
+learning training inference.
+
+I'll talk about a
+couple of these soon.
+
+And looking at
+general purpose, we
+
+have, again, three
+different categories,
+
+ranging from price-optimized
+or cost-optimized,
+
+to price performance-optimized
+for scale out.
+
+Our cost optimized family
+is called the E-series,
+
+or the Efficient series.
+
+If price per VM
+or price per core
+
+is the most important
+consideration, that's the one
+
+you would pick.
+
+If you want a
+balance and a feature
+
+set that works for the long
+tail of general purpose
+
+applications, you would
+go for the M series.
+
+And the newest addition
+to the VM family
+
+is the T-Series, or the Tau VMs.
+
+These are optimized
+with a lean feature set,
+
+eliminating waste, and offering
+only the right features
+
+for scale out digital native
+applications at a very
+
+attractive price point.
+
+Specifically, we tested our Tau
+VMs against competitive options
+
+from leading clouds.
+
+And as you see here, we've
+achieved a price point
+
+that's 42% better
+in price performance
+
+than anything else
+from a leading cloud.
+
+This includes anything with an
+Intel, AMD, or ARM processor.
+
+We are committed to
+all these CPU types.
+
+But what's interesting
+is with Tau VMs
+
+we've achieved the leading price
+performance point with AMD VMs.
+
+That means your
+developers don't have
+
+to go port from
+an x86 application
+
+to ARM or another
+type, and still
+
+achieve this price performance.
+
+Tau VMs are in preview and we
+are open for registration now.
+
+An example of recent innovation
+for accelerator-optimized VMs
+
+is our A2 VMs.
+
+These are the first VMs to
+introduce the NVIDIA A100 GPU.
+
+And I'm very proud that we
+have delivered the largest
+
+single instance VM with up to 16
+NVIDIA A100 GPUs among leading
+
+clouds, so that you can bring
+your machine learning training
+
+workloads, achieve the scale
+and performance you need,
+
+and grow with Google Cloud.
+
+Another thing that's new
+with virtual machines
+
+is our spot VMs.
+
+Spot VMs are a new
+and enhanced version
+
+of our pre-emptible
+VMs, which allow
+
+you to use our
+infrastructure when it is not
+
+being used by us so that you
+can get very attractive price
+
+points.
+
+What's interesting here is we
+guarantee 60% minimum savings,
+
+which we believe is one of
+the most compelling price
+
+points in the market.
+
+Second, and more importantly,
+this pricing is predictable.
+
+Quite often for this type of
+VM you will see in the market
+
+the prices vary
+every five minutes.
+
+In our case, these
+virtual machines
+
+are much more
+predictable in pricing.
+
+The variation is not more
+frequent than once a month.
+
+Third, Kubernetes Engine
+also supports smart VMs,
+
+so you can take advantage
+of the price point
+
+from the Kubernetes clusters.
+
+And in doing so,
+we have made sure
+
+that the preemption, when it
+does happen, is very graceful.
+
+And lastly, you can
+combine this price benefit
+
+with custom machine types.
+
+Custom machine types allow
+you to pick the exact point
+
+for the number of
+cores and memory,
+
+so that you don't have any waste
+that is often caused by having
+
+predefined machine sizes.
+
+Moving on to block storage,
+again, a simple set of choices.
+
+At the very left, you
+are optimized for cost.
+
+We call it the persistent
+disk efficient category.
+
+The efficient category
+will be released next year.
+
+In the middle, as
+you try to seek
+
+a balance of price
+and performance,
+
+we have PD balanced.
+
+And then, as you
+go to the right,
+
+you have the more
+performance-intensive storage
+
+options, PD performance
+and PD extreme.
+
+For example, PD extreme would
+be used for the highest end SAP
+
+HANA databases, delivering
+up to 1,200k IOPS.
+
+So we talked about
+compute and storage.
+
+Let me address
+simplicity at scale
+
+with two features that
+were released recently.
+
+And we are continuously
+enhancing those features
+
+with new capabilities.
+
+First is VM Manager.
+
+This is a suite of tools that
+allow you to do three things--
+
+patch management,
+config management,
+
+and inventory management
+for operating systems.
+
+Combined together, this
+allows very easy visibility
+
+into the posture of your
+operating system compliance.
+
+Quickly identify where
+you are out of compliance,
+
+and then launch
+from the dashboard,
+
+or in an automatable
+manner, the remediation
+
+to bring it back to compliance.
+
+This is very important for
+managing VM fleets at scale.
+
+Having this sort
+of burden and toil
+
+removed by having it
+managed by the platform
+
+saves a lot of time
+and costly labor.
+
+Similar to VM Management,
+we have this feature
+
+called managed instance groups.
+
+But in this case, instead
+of managing the VMs,
+
+you're actually
+managing a group of VMs
+
+as a composite application,
+which is much more intuitive.
+
+If this is what
+you want to do, you
+
+can achieve that
+with Google Cloud.
+
+For example, as shown here,
+we can auto heal applications.
+
+So for example, some of the
+VMs in a group stop working.
+
+The rest of the VMs
+will take over the load.
+
+And when the VMs are healed,
+they're put back into the group
+
+and they start managing the
+load with the rest of the group.
+
+We can also achieve autoscaling
+and talk about that,
+
+and things like auto updating.
+
+It's very important that the
+managed instance groups are
+
+stateful, so you can deliver a
+stateful application, not just
+
+stateless applications.
+
+We support that.
+
+So let's talk about autoscaling.
+
+With managed instance
+groups you can scale up
+
+and scale down as needed.
+
+Most often customers
+in the past have been
+
+using scheduled autoscaling.
+
+So if you're expecting
+a peak at 9:00 AM, then
+
+a little bit in advance of
+that, schedule autoscaling.
+
+And then later in the day
+have an autoscale down.
+
+With Google Cloud you can
+do another thing in addition
+
+to schedule auto scale.
+
+You can use machine learning
+to have the platform recommend
+
+or automatically scale up and
+scale down the managed instance
+
+groups based on past
+patterns of traffic.
+
+This is very useful when
+you're in a business where
+
+you don't quite know how your
+traffic might evolve over time.
+
+And so using machine
+learning at scale,
+
+we are able to drive autoscaling
+with managed instance groups.
+
+So in summary, I've covered a
+few of these core principles
+
+that drive us.
+
+Hopefully you see how our
+investments are really
+
+driven by all the principles
+that I've shared here.
+
+Over time I hope to come back
+to you and share much more.
+
+And now I am very excited
+to have with me Omer Hasan,
+
+VP of Operations at AppLovin.
+
+AppLovin is a leading
+marketing platform
+
+that helps mobile app developers
+grow their applications.
+
+Omer, welcome, and thank
+you for being with us.
+
+OMER HASAN: Glad
+to be here, Nirav.
+
+NIRAV MEHTA: So Omer, let's
+start with your migration
+
+to Google Cloud.
+
+You achieved one of
+the faster migrations,
+
+closing down several
+data centers,
+
+and coming over to Google
+Cloud in a very short time.
+
+I'd like to have you tell
+us a little bit about how
+
+you went about it.
+
+What were some of the
+key tools, practices
+
+that you used in achieving
+the speed of migration
+
+that you did?
+
+OMER HASAN: Yeah, sure.
+
+Our journey did start over
+on on-prem data centers.
+
+And we found, as our
+business continued to grow,
+
+they no longer
+could scale with us.
+
+And we looked at
+Google Cloud for that,
+
+and we leveraged tools like
+Google Cloud Interconnect
+
+to help with our
+migration initially,
+
+and then tools like
+Terraform and Chef
+
+to build up our infrastructure.
+
+We found that Terraform
+was really simple
+
+with Google Cloud, and leveraged
+a lot of the APIs underneath.
+
+And we were able to build
+our data centers really
+
+fast and efficiently.
+
+NIRAV MEHTA: What was
+the rough timeframe?
+
+And I think you did quite a few
+data centers within a few days.
+
+OMER HASAN: Yeah, sure.
+
+We built out our infrastructure
+first on Google Cloud.
+
+And when it came
+to migration day,
+
+we were confident enough
+to do five data center
+
+migrations in a single day.
+
+NIRAV MEHTA: Wow, very good.
+
+I'm sure a lot of planning,
+but also a lot of skills,
+
+thoughtful training
+that went into it.
+
+How did you go about
+guiding your teams
+
+to embrace a new concept
+because they were working
+
+with on-premise data centers?
+
+What were some of the
+observations there?
+
+OMER HASAN: Yeah, sure.
+
+Part of that was working
+with Google's PSO team,
+
+along with just reading
+a lot of documentation
+
+and understanding the
+best practices of it.
+
+From there, we started
+to automate and build out
+
+our Terraform
+scripts and modules.
+
+And it was easy from there.
+
+NIRAV MEHTA: So the
+support for Terraform,
+
+having the right libraries
+was important to you.
+
+You found the Google support
+to be complete enough that you
+
+could just be productive?
+
+OMER HASAN: Absolutely.
+
+The Google team was
+very responsive.
+
+And if we needed a new feature,
+it was built out within a week.
+
+NIRAV MEHTA: Good.
+
+Good to know.
+
+With respect to once you
+arrived on Google Cloud
+
+and how you scaled up,
+what benefits you saw,
+
+can you start with
+maybe, what were
+
+some of the first observations
+you had in, hey, this
+
+is working a lot
+better than it used to?
+
+OMER HASAN: Yeah, the
+impact was immediate.
+
+We saw that in our
+KPIs internally.
+
+We saw latency drop by 25%.
+
+We were just able to
+handle a lot more.
+
+We saw, in addition to
+that, a material impact
+
+to the business.
+
+NIRAV MEHTA: What about SLAs?
+
+How have your SLAs to
+the business changed
+
+as a result of this move?
+
+OMER HASAN: We were able
+to tighten up our SLAs.
+
+Given that things were
+performing faster,
+
+we were scaled out
+more, and doing this
+
+all in the midst of
+a growing business.
+
+
+
+And I'm pretty proud to say
+that we were able to just
+
+do more, and cheaper.
+
+NIRAV MEHTA: That's great.
+
+Yeah, that's what
+we like to hear.
+
+Let's talk about the
+network resilience,
+
+the overall resilience
+of the platform.
+
+Where did you see advantages
+in terms of eliminating
+
+single points of failure?
+
+OMER HASAN: Yeah, sure.
+
+When we were on-prem we would
+have NAT-based load balancers.
+
+And we found with moving into
+Google Cloud we didn't quite
+
+need that anymore.
+
+And by eliminating that single
+point of failure, and really
+
+a choke point, we
+felt more confident
+
+in our infrastructure.
+
+And particularly in
+failover scenarios
+
+where traffic increased by
+a lot, or significantly,
+
+we had an ease of mind there.
+
+NIRAV MEHTA: Great.
+
+Yeah, good to know.
+
+I think the collection of
+different availability features
+
+come together to support
+your applications.
+
+And knowing how you've used
+those features to deliver scale
+
+to your business is
+very useful to us.
+
+It realizes the promise of
+what we like to deliver.
+
+I want to also talk
+about things that you're
+
+doing that are above the
+raw virtual machine layer.
+
+Tell us about any
+services you're using,
+
+higher-order services in Google
+Cloud beyond virtual machines.
+
+OMER HASAN: Yeah, sure.
+
+We're using Dataproc today.
+
+NIRAV MEHTA: What are
+you using that for?
+
+OMER HASAN: We're using
+that for our machine
+
+learning algorithms, and being
+able to do that at scale.
+
+In fact, it was actually
+one of the first services
+
+we used at Google.
+
+And as we were growing
+and scaling our business
+
+and doing more ML, we found
+that doing that on-prem
+
+would just be a CapEx feat.
+
+And it would really take
+a long time to build.
+
+And so when we saw Dataproc
+it felt like a natural fit.
+
+And able to scale
+out, and not only
+
+scale out, but also
+lower our SLAs,
+
+and do that in a
+cost-efficient manner.
+
+NIRAV MEHTA: Yeah, and a
+lot more elastic, I imagine.
+
+Because the nature of
+these workloads is they
+
+go up and down unpredictably.
+
+OMER HASAN: Correct.
+
+NIRAV MEHTA: So that's
+what you meant by CapEx,
+
+and not having to
+spend on those peaks--
+
+OMER HASAN: Exactly.
+
+NIRAV MEHTA: Makes
+a lot of sense.
+
+So as I reflect
+back, you migrated
+
+almost the entire platform
+over to Google Cloud,
+
+achieved a larger regional
+footprint, better SLAs,
+
+better performance,
+cost savings.
+
+We couldn't ask for more.
+
+Thank you so much, Omer.
+
+That is an impressive journey.
+
+The speed with which you
+migrated over to Google Cloud,
+
+how you scaled, how you took
+advantage of all our principles
+
+to improve your resilience,
+offer better SLAs,
+
+better performance,
+these are all the things
+
+we love to see in our customer.
+
+So thank you for taking
+the time to join me
+
+and sharing your experiences
+with the audience.
+
+To all of you out there, it's
+a real pleasure to be with you.
+
+Thank you for the time you took.
+
+Hopefully you get a
+good glimpse of what
+
+drives our roadmaps, what
+we've delivered recently.
+
+I hope to come back and share
+much more with you over time,
+
+and also bring more
+conversations with customers.
+
+Thank you.
+
+
+

@@ -1,0 +1,1164 @@
+
+
+MICAH BAKER: Hello, and
+welcome to our session.
+
+This session is
+intended for customers
+
+who are new to Cloud
+Run for Anthos,
+
+as well as our
+existing customers who
+
+are excited to learn
+what's new in the product.
+
+I'm excited to walk us
+through our agenda today,
+
+including a demo of the
+new capabilities of Cloud
+
+Run for Anthos that
+we'll explore later
+
+in the presentation.
+
+I'm Micah Baker, Product Manager
+for Cloud Run for Anthos,
+
+and I'm joined by my
+colleague, Jeenal.
+
+JEENAL SHAH: Hi, I'm Jeenal
+Shah, Engineering Manager
+
+at Google Cloud.
+
+My focus is building
+simplified developer experience
+
+on Managed and Hybrid
+Serverless Compute Platforms.
+
+I'm very excited
+to share updates
+
+on Cloud Run for Anthos.
+
+We have been focused on
+bringing Cloud Run for Anthos
+
+to all Anthos platforms.
+
+Micah?
+
+MICAH BAKER: Yeah, I think
+for a lot of the customers who
+
+are new to Cloud Run
+for Anthos, maybe we
+
+should give a little
+bit of background
+
+on what is Cloud Run for
+Anthos, what makes it special,
+
+and maybe some of
+the building blocks.
+
+Could you tell us a
+little bit about Knative?
+
+JEENAL SHAH: Yes, absolutely.
+
+So Cloud Run for Anthos is
+built on top of Knative.
+
+What is Knative?
+
+Knative is an
+open-source platform
+
+with a very strong
+community that
+
+brings built-in
+learnings from Google
+
+and many other companies.
+
+So what values does it bring?
+
+So Kubernetes is a raw power.
+
+It's a ubiquitous platform, but
+it's not easy for developers.
+
+Knative was initial step,
+adding convenience and tooling
+
+built on top of Kubernetes.
+
+It provides a
+developer-centric API
+
+to stand up scalable, secure,
+stateless services in seconds.
+
+On top of that, you run Knative
+anywhere Kubernetes runs,
+
+so you never have to worry
+about vendor lock in.
+
+So, Micah.
+
+MICAH BAKER: Yeah, I love
+that explanation of Knative.
+
+Thanks so much, Jeenal.
+
+I think of Cloud
+Run for Anthos as
+
+like the Google-supported
+managed Knative.
+
+It allows us to give all the
+power of Kubernetes that you
+
+mentioned, as well as
+the benefits of Knative,
+
+but further create ease of
+use, add more features to it,
+
+and bring that Google support.
+
+So it also makes
+it possible for us
+
+to use part of the Anthos
+Ecosystem as needed.
+
+For example, we use
+Anthos Service Mesh now,
+
+which is our managed version
+of open-source Istio.
+
+Also because of Anthos, we can
+deploy Cloud Run for Anthos
+
+anywhere that Anthos Service
+Mesh can be installed.
+
+So it gives us a
+lot of flexibility
+
+and enables these hybrid
+and multicloud deployments
+
+that our customers
+have been asking for.
+
+But Jeenal, can you
+tell us a little bit
+
+about how the
+developer experience
+
+in Cloud Run for
+Anthos relates back
+
+to that Knative building block?
+
+JEENAL SHAH: Yes, absolutely.
+
+So what we are doing here is we
+are delivering all the powers
+
+of Kubernetes along with
+developer-focused features
+
+of Knative, but without
+making developers
+
+learn either technology.
+
+Cloud Run for Anthos abstracts
+all the complex details
+
+of platform, enabling developers
+to focus on what matters--
+
+that is, writing code and
+building applications.
+
+Micah?
+
+MICAH BAKER: That's a
+really great outcome
+
+for our developers,
+that they don't
+
+have to become Kubernetes
+experts or Knative experts.
+
+They can just focus on
+development velocity.
+
+So I think that's a really
+good background on what
+
+Cloud Run for Anthos is.
+
+Maybe before we continue,
+just a quick pit
+
+stop into what is Anthos and
+how that Anthos stack actually
+
+enables these outcomes
+for developers.
+
+So I'll just explain a
+little bit about Anthos
+
+as an abstraction of Kubernetes.
+
+So Anthos is a
+Kubernetes platform
+
+that can run on Google Cloud.
+
+It can run on-prem
+and it can also
+
+run on other Cloud
+providers and still
+
+have a single pane of
+glass for a platform team
+
+to manage that infrastructure.
+
+And then Cloud Run
+for Anthos runs
+
+on top of Anthos,
+further abstracting
+
+Kubernetes from the developers.
+
+So it creates a
+separation of concerns--
+
+platform teams
+care about Anthos,
+
+that's the platform they
+run, and then the developers
+
+care about Cloud Run for
+Anthos because that's
+
+their lens that
+they see the Cloud
+
+and on-prem
+infrastructure through.
+
+Jeenal, could you
+explain a little bit
+
+about how it works
+for a developer?
+
+A little bit about what their "a
+day in the life of a developer"
+
+would be?
+
+JEENAL SHAH: Absolutely,
+and I'm happy to share
+
+what all features Cloud Run for
+Anthos comes out of the box.
+
+Cloud Run for Anthos is tightly
+integrated with Cloud Builder
+
+and under the covers uses
+industry-standard Cloud-native
+
+specification that allows you
+to build applications directly
+
+from source code and deploy.
+
+You can also directly
+deploy your Docker
+
+containerised applications.
+
+You don't need to learn
+kubectl or Knative commands.
+
+It is directly integrated with
+G-Cloud CLI or Google Cloud
+
+Platform UI.
+
+The other features that I
+am really passionate about
+
+is talking about gradual
+rollouts, rollbacks,
+
+and traffic
+migrations, and why I'm
+
+so excited because it
+brings out of the box
+
+Google's SRE's best practices.
+
+Cloud Run for Anthos
+allow you to roll out
+
+new revisions of your
+applications or services
+
+you perform with
+simple A/B testing,
+
+canary testing by specify
+which revision should receive
+
+what percentage of traffic.
+
+It allows you to roll back
+to our previous versions
+
+gradually throughout
+your revision,
+
+or split traffic between
+multiple revisions.
+
+And with this, you can
+directly either use
+
+our continuous deployment or
+integrate that with your CI/CD.
+
+It also comes tightly integrated
+with Cloud Monitoring and Cloud
+
+Logging out of the box.
+
+It provides a metrics
+collection dashboard
+
+so that you can gain visibility
+into your performance
+
+availability, health of your
+services, and infrastructures.
+
+Because it uses an
+OpenTelemetry agent,
+
+it is possible to
+also send metrics
+
+to any compatible third
+party monitoring solutions.
+
+So we have some
+amazing features that
+
+comes right out of the box.
+
+And, yeah, we will see
+some of this during a demo.
+
+Over to you, Micah.
+
+MICAH BAKER: Well,
+thanks, Jeenal.
+
+I love that
+developer experience,
+
+and especially the focus
+on it works out of the box,
+
+but there are also
+ways to customize.
+
+And I think that really
+leads well into what's
+
+in it for the platform team.
+
+The platform teams
+get all the benefits
+
+of Kubernetes and the
+standards that it brings.
+
+It's just such a rich
+ecosystem for platform teams
+
+using Kubernetes.
+
+They can take advantage of
+the hardware customization
+
+through Kubernetes,
+but not have to worry
+
+about exposing that
+complexity to the developers.
+
+There's lots of ways
+to configure and manage
+
+Kubernetes and make sure
+that clusters are conforming
+
+to policies, but we
+don't need to expose
+
+any of the YAML and other
+configuration scripts
+
+to the developers.
+
+So thanks to Anthos
+and Kubernetes,
+
+it's possible for the platform
+teams to target workloads
+
+wherever you need them.
+
+There might be latency-sensitive
+applications that
+
+need to be very
+close to customers,
+
+and so you might use a
+mix of different providers
+
+to make sure that you have
+your workloads running as close
+
+to your users as possible.
+
+But the developers don't
+have to think about, oh, am I
+
+deploying my workload
+in the correct provider?
+
+They just say, I'm
+deploying my workload,
+
+and it can go automatically
+to the correct places.
+
+So I think that
+the platform team
+
+gets a full separation
+of the concerns
+
+so that they can
+focus on the platform.
+
+And then the developer
+team, the application team
+
+gets to have a
+separation of concerns
+
+so they can focus on
+just the application
+
+logic and increasing
+developer velocity,
+
+doing lots more A/B testing,
+and handling those rollbacks
+
+that you talked about, which
+sounds really exciting.
+
+I think it's a really
+good time for us
+
+to give a demo of
+some of these things
+
+we've been talking about.
+
+So I'd like to switch
+us over to some
+
+of these new features showing
+you what's possible now
+
+that Cloud Run for
+Anthos can be deployed
+
+on even more destinations
+throughout Anthos.
+
+So let's take a look.
+
+So we have several
+different Anthos clusters
+
+to showcase the hybrid
+and multi-cloud deployment
+
+capabilities of
+Cloud Run for Anthos.
+
+The platform team has
+already benefited from Anthos
+
+by making it possible to
+run these GKE clusters
+
+across clouds and on-prem.
+
+So let's look at the
+second half of our story
+
+to see what the
+developer and operator
+
+experience is on top of that.
+
+Our demo starts just
+as we're finishing
+
+rolling out the blue revision
+of our blue green app.
+
+And we just have
+one last cluster
+
+to deploy to, which is
+the GKE on AWS cluster,
+
+and that will complete
+the initial rollout.
+
+So we're doing things
+manually for demo purposes,
+
+but all of the things
+you're going to see here
+
+would be part of
+continuous deployment
+
+if this were a
+production workload.
+
+So that means that
+these services
+
+could be deployed to
+all of the clusters
+
+simultaneously as part of
+your delivery pipeline.
+
+So let's get started by
+clicking this Create Service
+
+button, where we
+can manually select
+
+a target for the service.
+
+
+
+In this case, we're going to
+select that GKE on AWS cluster.
+
+We'll leave the
+namespace as default.
+
+We'll call it the same
+service as before.
+
+
+
+We'll deploy the
+blue app revision.
+
+And I'm also going to set the
+minimum number of instances
+
+to 1.
+
+That way this starts
+right away and we
+
+have an app that we can view
+as soon as it's deployed.
+
+I'm going to click Create.
+
+And now it's pulling down
+that container image.
+
+JEENAL SHAH: So the app
+URL at the top, Micah,
+
+if you can highlight that.
+
+Yep, so that app
+you URL at the top
+
+is using the IP address
+of Anthos Service Mesh
+
+ingress gateway with a
+simple DNS reflection service
+
+to provide a quick
+way to test apps.
+
+But for production,
+our customers
+
+would use their
+own custom domain.
+
+So, Micah, can you talk about
+the domain a little bit?
+
+MICAH BAKER: Yeah, I appreciate
+that call out, Jeenal.
+
+The services deployed
+by Cloud Run for Anthos
+
+have this format that
+you'll see consistently.
+
+So it's broken up like this.
+
+First, you see the service name.
+
+In this case, it's
+blue green app.
+
+And then you'll see the
+namespace that we deployed to,
+
+which is default. And then
+the last part of the URL
+
+is whatever your
+domain would be.
+
+So for production use, you
+would have some actual domain
+
+name mapped here.
+
+And there's a setting for
+you to tell your clusters
+
+that all services deployed
+should use your domain
+
+and not the IP address
+that we're using here.
+
+But this is a quick and easy
+thing to do for demo purposes.
+
+Imagine this being replaced
+with your own domain name
+
+if you're deploying
+this in the production.
+
+So it looks like our
+app is rolled out.
+
+Let's click on that URL
+and see what happened.
+
+This is the first
+launch of the pod,
+
+so it'll go through that Anthos
+Service Mesh ingress gateway
+
+that we set up and
+access that blue revision
+
+of the blue green app
+that we just deployed.
+
+And if everything is good,
+we'll see a blue app.
+
+And here it is.
+
+The blue app is up and
+running and everything
+
+looks good from an
+end user perspective.
+
+So I'll close this,
+and we'll go back here.
+
+So now that we've rolled
+out the initial revision
+
+that we were targeting,
+which was the blue app,
+
+we can go back to
+our services list,
+
+and we see that
+all of our clusters
+
+for hybrid and multi-cloud now
+have this initial revision.
+
+But now we want to do an A/B
+test with our green app, which
+
+is the cutting edge, new app
+in our blue green app product.
+
+And we're just going to jump
+back to our GKE cluster.
+
+And it's just
+starting this process
+
+of deploying a
+new service again.
+
+But this time, we're going to
+click this Edit and Deploy New
+
+Revision button at the top.
+
+Since we have an existing
+service already deployed,
+
+we're going to tell
+Cloud Run for Anthos
+
+that we'd like to
+add something to it.
+
+So in this case, we already had
+the blue app container image.
+
+I'm going to replace that with
+the green app container image.
+
+And is there anything else
+I need to change, Jeenal?
+
+JEENAL SHAH: Yeah, so
+let's make sure to disable
+
+automatic rollout so
+we can use traffic
+
+splitting for granular
+control of the traffic
+
+to a new revision.
+
+MICAH BAKER: OK.
+
+JEENAL SHAH: That's the one.
+
+MICAH BAKER: Right here.
+
+So, yeah, we want to start
+off with 0% traffic to this
+
+since our intent is an A/B test.
+
+That will say,
+create this revision,
+
+but we're not going to
+serve anything, right?
+
+JEENAL SHAH: Correct.
+
+MICAH BAKER: All
+right, let's deploy.
+
+
+
+And now it's grabbing
+that container image.
+
+
+
+OK, so that looked easy.
+
+We can use this
+Manage Traffic button
+
+to control the traffic split.
+
+And notice that
+we're already serving
+
+100% from the initial revision,
+which was our blue app.
+
+Jeenal, what do you
+recommend for this demo
+
+versus what we would do in
+production for this traffic
+
+split?
+
+JEENAL SHAH: Yeah,
+so to make it easier
+
+to see the traffic splitting
+at work, let's go with 50%
+
+to each revision.
+
+What do you think?
+
+MICAH BAKER: That sounds good.
+
+Oh, yeah, look at that.
+
+I changed the new one to 50%
+and automatically balanced
+
+out the percentages.
+
+50-50 is great because for demo
+purposes of the blue green app
+
+that we're doing, that
+will make it really easy
+
+to see the traffic split.
+
+JEENAL SHAH: Yeah.
+
+Yeah, and for the
+production, of course,
+
+we wouldn't recommend
+that, and would instead
+
+follow the Google
+SRE best practices
+
+for the class of application
+and potentially plan a five day
+
+gradual rollout
+that begins with 1%,
+
+and then graduates daily
+to a larger percentage.
+
+MICAH BAKER: I
+appreciate the call
+
+out to Google SRE
+best practices, which
+
+we are certainly not
+following in this demo
+
+if we jump straight to 50% if
+this was production traffic.
+
+But this will be a great
+way for us to just showcase
+
+this traffic splitting.
+
+So let's see what happened.
+
+I'm going to open up the app.
+
+And look, we already
+got the green app.
+
+I'm going to refresh.
+
+And look at that.
+
+The first refresh switched
+me to the blue app.
+
+So both of them are
+running, and it's just
+
+alternating between
+the two as it randomly
+
+does a 50% split for
+any incoming requests.
+
+So that's a pretty
+quick and easy way
+
+to do any kind of A/B tests.
+
+Let's go back here then.
+
+Jeenal, what do you think we
+should do next since we-- it
+
+looks to me from an end user
+perspective like the 50% split
+
+is working.
+
+Is there anything else that
+you would want to check?
+
+JEENAL SHAH: Yeah, so
+let's look at the metrics
+
+and log to confirm that what
+we see here, we like it,
+
+and then progress the rollout.
+
+Yeah.
+
+MICAH BAKER: So I just jumped
+right to a one hour view
+
+since that makes
+sense to me of what
+
+we've just been working on.
+
+Yeah.
+
+JEENAL SHAH: Yeah, and
+can we also quickly--
+
+or, Micah, can you
+quickly tell me
+
+before we go to a
+different tab here that,
+
+how am I seeing these metrics?
+
+
+
+MICAH BAKER: I wish
+that I could claim
+
+that I built this
+dashboard myself,
+
+but I actually am happier
+to say that this was just
+
+something that's
+built into the product
+
+and it works out of the box.
+
+So I could do custom
+metrics and logging,
+
+but this is actually Cloud
+Monitoring and Cloud Logging
+
+working right out of the box.
+
+So pretty convenient for
+I can just immediately see
+
+these key details of my apps.
+
+JEENAL SHAH: Yeah, and it
+has all the basic metrics,
+
+like you said, Micah.
+
+That looks great.
+
+Next, can we jump
+quickly at logs?
+
+And I want to see how
+my green app is doing
+
+and if I see any error or not.
+
+MICAH BAKER: It looks like it's
+giving us success on the most
+
+recent deployment of this.
+
+JEENAL SHAH: So it seems like
+there are no obvious issues.
+
+So let's progress the rollout
+to the green app to 100%.
+
+MICAH BAKER: OK.
+
+That sounds good.
+
+So I'm using that same
+Manage Traffic button
+
+that I used before.
+
+We're going to just
+type in 100 here.
+
+And it automatically
+takes the blue app to 0.
+
+So I'm just going to click Save.
+
+Did my changes.
+
+And, yeah, looks
+like that's done.
+
+Let's go back.
+
+Let's go verify this.
+
+This should no longer show blue.
+
+So if I refresh, I expect--
+yeah, now it's green.
+
+I'll refresh a few more times.
+
+I'm getting nothing but green.
+
+It's super green.
+
+OK, that looks like
+a success to me.
+
+That was a really
+fun experience.
+
+I didn't even have to
+be a Kubernetes ninja
+
+to do any of this.
+
+I was able to just
+use this interface
+
+to accomplish my goals
+and not really think
+
+about the Kubernetes part of it.
+
+JEENAL SHAH: Yep, so
+that's the experience
+
+we are targeting the Cloud
+Run for Anthos, Micah.
+
+And it's possible to break a
+glass and customize things,
+
+but it's also a great
+experience right out of the box.
+
+MICAH BAKER: That's great.
+
+So the platform team
+gets all this value
+
+from Anthos at the
+platform level,
+
+and the application team
+gets this additional value
+
+from Cloud Run for Anthos
+at the application level.
+
+That sounds like a
+pretty great combination.
+
+That concludes the demo.
+
+If you'd like to learn more
+about Cloud Run for Anthos,
+
+please visit any of
+the links listed here.
+
+We're excited to help both
+our existing customers
+
+and new customers continue
+their journey into Kubernetes
+
+with Anthos and
+Cloud Run for Anthos.
+
+It's been my pleasure
+to talk to you
+
+and have this discussion about
+the exciting new features
+
+in Cloud Run for Anthos.
+
+Also, thank you so much, Jeenal,
+for sharing this time with me.
+
+JEENAL SHAH: Thank you, Micah.
+
+And thank you,
+viewers, for tuning in.
+
+I hope you enjoy the
+rest of your next 2021.
+
+Thank you.
+
+
+

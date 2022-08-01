@@ -1,0 +1,1147 @@
+
+
+ALOK JAIN: Hello and welcome
+to What's New in Anthos.
+
+In this session, we will go
+over exciting new additions
+
+to Anthos, which will
+make it even more easier
+
+for you to manage and secure
+your multi-cloud and hybrid
+
+applications.
+
+We have been working hard
+to add more features,
+
+expand reach, and simplify
+the experiences to make Anthos
+
+the best application
+modernization platform.
+
+I'm Alok Jain.
+
+And I lead Product Management
+for Anthos at Google.
+
+Joining us in this session
+is my colleague Lisa Shen.
+
+LISA SHEN: Hi, everyone.
+
+My name is Lisa Shen.
+
+And I am a Google
+Cloud product manager.
+
+ALOK JAIN: Before
+we dive deep, here's
+
+a quick introduction for
+those who are new to Anthos.
+
+Let's go back a few years.
+
+We created Kubernetes
+to maximize
+
+productivity of our own
+developers at Google.
+
+And then we open sourced it to
+help others achieve the same.
+
+To make Kubernetes
+production-ready,
+
+we created Google
+Kubernetes Engine--
+
+or GKE, as we call it--
+
+the best way to
+consume Kubernetes
+
+as a reliable, secure,
+and fully-managed service.
+
+In 2019, we introduced Anthos,
+a managed platform designed
+
+to simplify the
+management of Kubernetes
+
+cluster or any public
+or private cloud
+
+by extending a GKE-like
+experience along with our best
+
+open source frameworks.
+
+Anthos extends Google
+engineering practices
+
+to your environment, so that you
+can modernize your apps faster
+
+and establish operational
+consistency across them
+
+from a single pane of glass.
+
+It helps you minimize
+operational overhead
+
+as you scale your infrastructure
+and helps you reduce
+
+the total cost of ownership.
+
+Containerization offers a common
+application packaging format
+
+across different
+infrastructure types.
+
+And Kubernetes offers consistent
+APIs and control mechanisms,
+
+and thus can be used for
+application deployments
+
+on your existing
+virtual machines,
+
+or bare metal servers, or even
+on other public clouds like AWS
+
+and Azure--
+
+besides Google Cloud.
+
+Anthos is made up of
+a few core components.
+
+Infrastructure
+management provides
+
+a reliable and efficient
+way to deploy and run
+
+containers and manage them
+across any environment.
+
+Next is application
+service management--
+
+it provides managed service mesh
+to connect, manage, and secure
+
+containers.
+
+We extend the
+capabilities of Anthos
+
+to run serverless
+applications as well.
+
+It also has a wide selection of
+production-related development
+
+stacks and services.
+
+Operation management is
+an integrated logging
+
+and monitoring service for
+your container, services,
+
+and applications.
+
+Policy management and
+security management
+
+are central to manage
+configuration and security
+
+policies across your fleet.
+
+And it helps you reduce
+your operational cost--
+
+at the same time, enforce
+security posture that's
+
+right for your applications.
+
+With that, we are now
+ready to jump right
+
+in and talk about the new and
+exciting additions to Anthos.
+
+Anthos MultiCloud allows
+container orchestration
+
+standardization across clouds
+via a new managed service.
+
+With this new
+service, we've also
+
+added support for
+Anthos and Azure.
+
+Both of these are in
+preview with GA coming right
+
+around the corner.
+
+So now you can deploy
+Google Kubernetes clusters
+
+with GCP, AWS, and Azure
+directly from Google Cloud.
+
+You can control all cluster
+lifecycle operations centrally.
+
+You can review system
+and application logs
+
+and monitor clusters
+across all clouds
+
+through a single pane of glass.
+
+Cluster lifecycle
+operations can be controlled
+
+via G. Cloud, API, or Terraform,
+allowing for a completely
+
+automated workflow.
+
+As a result, you get
+consistent, unified,
+
+and secure cluster and
+container management
+
+on a cloud of your choice.
+
+In addition to centralized
+logging and monitoring,
+
+you benefit from
+our connect gateway,
+
+which allows for Google Cloud
+to be the central access
+
+point for each cluster.
+
+We'll talk more
+about it in a minute.
+
+After you've deployed Kubernetes
+fabric in your environment,
+
+the next step is to deploy
+cluster-level configuration
+
+policy.
+
+And finally, application specs--
+
+choosing Anthos configuration
+management service,
+
+you can send GKE
+and non-GKE cluster
+
+to a Git repo that
+defines the guardrails
+
+for your organization.
+
+The repo can include config
+maps, network policies,
+
+SRE agents, and so on.
+
+Policy configurations can
+also be located in the repo
+
+to enforce best practices
+or custom rules set
+
+by your organization.
+
+For example, you can
+set policies to actively
+
+block non-compliant
+API requests or simply
+
+to audit the configuration
+of your clusters
+
+and report violations,
+such as applications
+
+without proper labels.
+
+Configuration specs
+can be applied
+
+to all clusters or just a subset
+using Cluster Selector Object.
+
+Any changes to the
+config in the repo
+
+will be observed
+automatically by the cluster.
+
+And besides GKE, Anthos supports
+CMC of confirmed Kubernetes
+
+clusters like AKS or EKS,
+giving you the option
+
+to keep your application running
+on your favorite Kubernetes
+
+and still take advantage
+of Anthos services.
+
+Next is Anthos on bare metal.
+
+It lets you deploy
+Kubernetes clusters directly
+
+on your own servers, giving
+you the best performance
+
+and flexibility options.
+
+You have direct control over
+the application scale, security,
+
+network latency by running
+containerized application
+
+on GKE and benefit from Anthos
+components running locally.
+
+We have made a number
+of announcements
+
+recently to Anthos
+on bare metal,
+
+such as providing Containerd
+as a default runtime,
+
+adding registry
+building that helps
+
+you insulate from any service
+outages over the network
+
+and helps improve the security.
+
+It will also reduce
+minimum system requirement
+
+for running Anthos on bare metal
+by over 50% for edge use cases.
+
+Now you will only need
+one of the two PCPUs
+
+and only four
+gigabytes of memory
+
+to run Anthos on bare metal.
+
+That means more
+compute and more memory
+
+available for your applications.
+
+It reduces the overall TCO.
+
+And you have many edge locations
+with a small footprint.
+
+Anthos on bare metal brings
+Google Kubernetes Engine
+
+to optimized centers with broad
+support for vSphere platforms,
+
+including the latest
+stable release 7.0.
+
+We have rolled out a number
+of features on Anthos VMware
+
+this year.
+
+For example, with the Cluster
+Backup and Restore feature,
+
+you can now set up
+admin plus 10 backups
+
+to perform automatically before
+and after cluster creation
+
+or upgrade for user
+and admin clusters.
+
+You can also perform
+an on-demand backup
+
+whenever you deem it necessary.
+
+Another feature is User
+Cluster Autoscaling,
+
+which resizes the
+number of nodes
+
+in a given node pool based
+on demand of your workloads.
+
+You don't need to manually
+add or remove nodes or even
+
+overprovision your node pools
+to guarantee availability--
+
+and thereby adding to the cost.
+
+Instead, you can specify
+a minimum and maximum size
+
+for the node pole and the rest
+is taken care automatically.
+
+Last year, we announced support
+for Windows server containers
+
+on GCP, which lets you take
+advantage of containers
+
+without putting in
+applications to darknet code
+
+or rewriting them.
+
+
+
+We have now enabled support
+for Windows server container
+
+and Anthos for VMware embedded
+in your on-prem environment.
+
+By running Windows and Linux
+workloads side by side,
+
+you get operational
+consistency and efficiency.
+
+There is no need to have
+multiple teams specializing
+
+in different
+tooling or platforms
+
+to manage different workloads.
+
+Mixed workloads can be
+configured on a single cluster
+
+as well, giving you
+even more flexibility.
+
+The ability to manage policies
+from a central control plane
+
+further simplifies the
+management experience,
+
+while bin-packing multiple
+Windows applications
+
+drives better
+resource utilization,
+
+leading to infrastructure
+and license cost savings.
+
+
+
+We have recently made Anthos
+Connect Gateway generally
+
+available for our customers.
+
+It provides a single
+Google-hosted front load,
+
+allowing for customers to
+use their existing tooling
+
+to effortlessly access
+Anthos-connected clusters
+
+running anywhere.
+
+It solves key pain points we
+have heard from many customers,
+
+deploying on-prem, at the
+edge, or even on other clouds.
+
+Accessing Kubernetes
+clusters can be a challenge.
+
+And they often resort to
+using jump hosts or VPNs
+
+to these clusters.
+
+Connect Gateway simplifies
+the connectivity challenge
+
+by using the same infrastructure
+that powers existing connected
+
+Anthos UIs. The service
+authenticates and authorizes
+
+GCP users and forwards their
+request to the Connect agent
+
+running in the cluster, and
+ultimately, the cluster's
+
+Kubernetes API server.
+
+As a result, you get a
+consistent and secure way
+
+to use your existing
+Kubernetes tooling
+
+to perform common operations
+against any fleet-registered
+
+Kubernetes cluster.
+
+A key building block for Anthos
+infrastructure management
+
+is our software-defined
+networking,
+
+as the capabilities in Anthos
+extend the full networking
+
+stack from layer 2 to layer 7.
+
+And it's built on
+best-in-class Kubernetes
+
+open-source infrastructure.
+
+We have extended
+the capabilities
+
+with innovations such as
+node network firewalls
+
+to protect workload at
+infrastructure level.
+
+Load balancing for Kubernetes
+workload is bundled
+
+in by taking in solutions
+like MetalLB and extending it
+
+for layer 4 /
+layer 7 use cases ,
+
+as well as integrating
+BJP support into it.
+
+We also enable
+connectivity workloads
+
+across hybrid environments with
+easy-to-deploy VPN solution
+
+and provide consistent
+observability and affordability
+
+tools.
+
+There are two important
+features that we
+
+have introduced in Anthos
+networking stack this year.
+
+Anthos Dataplane v2 is optimized
+for Kubernetes networking.
+
+It is an opinionated
+data plane that
+
+leverages Cilium, an
+open-source project that
+
+makes the Linux kernels
+Kubernetes-aware using AVP app.
+
+It delivers a unified
+user experience
+
+for configurations,
+deployments, and monitoring
+
+of networking features across
+Google Cloud, hybrid, and even
+
+other cloud environments.
+
+It makes parts.
+
+The first cluster is
+a networking ecosystem
+
+with better performance
+and visibility.
+
+Another key feature is
+Anthos networking gateway,
+
+which provides a number
+of advanced networking
+
+features for hybrid and
+multicloud environments.
+
+For example, Egress
+NAT enables you
+
+to have a deterministic
+IP for egress traffic
+
+with namespace and
+level granularity.
+
+With multi-cluster
+connectivity, you
+
+get direct part reachability
+between environments.
+
+Well, I hope you're as
+excited about these additions
+
+as we are.
+
+And wait, we have a
+lot more to talk about.
+
+I'll invite Lisa to share
+more exciting capabilities
+
+that we've added to Anthos.
+
+LISA SHEN: Thank you, Alok.
+
+Now let's take a look at Anthos
+Configuration Management.
+
+It enables you to automatically
+deploy shared environment
+
+configurations and enforce
+approved security policies
+
+across Kubernetes clusters
+on premises, on GKE,
+
+and in your other
+public cloud platforms.
+
+As part of Anthos
+Configuration Management,
+
+we have recently announced
+a new feature available
+
+called Config Controller,
+a hosted service
+
+to provision and orchestrate
+Google Cloud resources.
+
+The service offers
+an API endpoint
+
+that can provision
+and orchestrate
+
+more than 120 Google
+Cloud resources
+
+the same way it manages
+Kubernetes resources,
+
+with continuous monitoring
+and self healing.
+
+As a hosted service,
+you don't have
+
+to install or manage the
+components of the Config
+
+Controller or be an expert in
+Kubernetes resource management,
+
+because Google Cloud
+will manage them for you.
+
+Config Controller
+provisions infrastructure,
+
+applications, and
+cloud services,
+
+configs them to meet
+your desired intent,
+
+and monitors them for
+the configuration Git.
+
+Config changes are as
+easy as a Git push,
+
+and can be easily integrated
+with your development
+
+workflows.
+
+Another exciting new feature
+we've introduced this year
+
+is the ACM Multi-Repo Support.
+
+Enabling Multi-Repo mode
+lets you sync configurations
+
+from multiple repositories
+to the same set of clusters.
+
+An example is shown
+in the diagram here.
+
+The platform admin manages
+the centralized infrastructure
+
+for the organization
+and enforces policies
+
+on the cluster and on all
+namespaces in the org.
+
+The application developers who
+are responsible for managing
+
+live deployments
+apply configurations
+
+to applications in the
+namespaces they work on.
+
+The Multi-Repo feature decouples
+the config deployment lifecycle
+
+for different teams.
+
+It provides you with more
+autonomy and flexibility.
+
+And you get to choose where
+you want to place the repo
+
+and how to structure it.
+
+
+
+Microservice architectures
+present numerous benefits
+
+but also introduce challenges
+like added complexity
+
+and fragmentation for
+different workloads.
+
+Anthos Service Mesh, which is
+a Google fully managed service,
+
+simplifies service
+delivery across the board,
+
+from traffic management and
+mesh telemetry to security
+
+and communications between
+different services.
+
+We have many exciting new
+features rolled out in ASM
+
+this year.
+
+And all of these are Anthos
+value-add over the Istio
+
+open source project.
+
+With the managed ASM
+control plan on GCP,
+
+Google is responsible for the
+availability, scalability,
+
+and the security of
+the control plane.
+
+We also have managed
+certification on GCP
+
+and managed proxy updates
+based on the release channels.
+
+Both SRE dashboard with
+service-level objectives
+
+and the Security
+Insights dashboard
+
+are available to give
+you in-depth visibility
+
+into the application services.
+
+With the application
+Security Insights dashboard,
+
+you will have a 360-degree
+view of workload security.
+
+You get a summary of the
+security configuration
+
+with the workload drilldown
+view to troubleshoot
+
+security issues.
+
+In addition, you can now
+add Google Compute Engine
+
+VMs in managed instance
+groups to a service mesh.
+
+You'll get the same
+observability, telemetry,
+
+and security
+capabilities as you would
+
+get from running
+services on Anthos GKE
+
+clusters in the mesh.
+
+
+
+Anthos Identity Service is an
+authentication proxy for Anthos
+
+that enables customers
+to authenticate
+
+their users to
+Anthos environment
+
+using their existing
+identity solutions.
+
+AIS simplifies
+identity management
+
+across hybrid and
+multicloud deployments
+
+by providing a common
+authentication abstraction
+
+layer for all the
+Anthos environments.
+
+As a result, you can leverage
+your existing identity
+
+investment with Anthos
+using standard identity
+
+protocols such as LDAP or
+OIDC, or you can consistently
+
+apply your policies
+across the environments.
+
+It simplifies your
+cross-environment workload
+
+migration.
+
+
+
+Anthos Workload Identity feature
+enables Kubernetes workload
+
+hosted on any cluster
+to authenticate
+
+to Google Cloud or other
+services in a consistent way.
+
+We have extended GKE
+workload identity
+
+concept to Anthos platforms
+on-prem and in multiclouds.
+
+The Workload Identity
+Federation feature
+
+eliminates the need for
+long-lead credentials
+
+and replaces them with
+short-lead, autorotated
+
+credentials.
+
+It enables consistent
+authentication
+
+across all the clusters.
+
+The feature not only helps
+application developers
+
+to connect applications to
+essential services easier,
+
+but also helps
+the platform admin
+
+to maintain the governance
+across the clusters.
+
+
+
+On the application
+management side,
+
+I'm very excited that we
+will have Anthos Hybrid
+
+CI/CD available for public
+preview in November this year.
+
+Built on top of the
+existing Google Cloud
+
+Build and the Google
+Cloud Deploy solution,
+
+Anthos Hybrid CI/CD will allow
+customers to build and deploy
+
+containerized
+applications seamlessly
+
+to hybrid and multicloud
+environments using
+
+a single control plane.
+
+Hybrid Cloud on-cluster
+CI/CD is ideal for customers
+
+that are prohibited from
+connecting their source control
+
+or artifact repos to GCP due
+to organizational, or network,
+
+or security requirements.
+
+More specifically, this
+will allow customers
+
+to run CI/CD workloads
+with their private network
+
+with simplified network
+configurations that don't
+
+rely upon network peering.
+
+In addition, the on-cluster
+CI/CD also reduces the latency
+
+for accessing local resources.
+
+
+
+Another popular tool included
+in the Anthos product
+
+is Migrate for Anthos and GKE.
+
+Migrate for Anthos
+and GKE intelligently
+
+extracts, migrates,
+and modernizes
+
+applications to run natively
+on containers in GKE and Anthos
+
+clusters.
+
+It makes it easy and
+fast to modernize
+
+traditional applications
+away from virtual machines
+
+and into native containers.
+
+You can migrate VMs running
+on VMware, AWS, or Azure
+
+into containers managed
+by Anthos in real time
+
+and capitalize on increased
+resource utilization, unified
+
+logging and monitoring, and
+modern application lifecycle
+
+management tools.
+
+A recent feature
+that we've introduced
+
+is called the Migrate
+Fit Assessment
+
+Tool, which helps customers
+discover their inventory
+
+and assess fit for
+containerization.
+
+It replaces the existing
+Migrate Discovery Tool
+
+and it runs completely
+disconnected from the internet.
+
+In addition, Migrate
+for Anthos and GKE
+
+now supports enhanced
+container runtimes
+
+such as Anthos Cloud Run.
+
+Cloud Run is a managed
+compute platform
+
+that enables you to run
+stateless containers that
+
+are invocable by web
+request or Pub/Sub events.
+
+The enhancements let you
+deploy your migrate container
+
+workloads on Cloud Run.
+
+
+
+You can learn more about
+Anthos via Google Cloud Product
+
+website or explore our powerful
+multi-cluster Kubernetes
+
+management features with
+the Anthos sample deployment
+
+tutorial.
+
+When you are ready, be sure
+to schedule your application
+
+assessment workshop
+with your Google team
+
+to begin planning your
+application modernization
+
+journey.
+
+Thank you for watching the show.
+
+And I hope you have a great day.
+
+ALOK JAIN: Thanks, Lisa.
+
+And thank you, everyone,
+for being with us
+
+on What's New With Anthos.
+
+We hope you enjoy the rest
+of the Google Next 2021.
+
+
+

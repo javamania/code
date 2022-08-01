@@ -1,0 +1,1259 @@
+
+
+ANDY CHANG: Welcome to
+SCC 208, Shared Fate.
+
+In this talk, you'll learn
+how Google Cloud is working
+
+to enable you to move from
+a shared responsibility
+
+model for security
+and public cloud
+
+to a shared fate model, where
+we as the cloud provider
+
+collaborate much more
+strongly with you
+
+and take additional
+responsibility for making
+
+sure what's deployed
+together is in the most
+
+secure and compliant state.
+
+A core component of
+this ability to change
+
+how risk is transferred
+is providing you
+
+with production-proven
+blueprints
+
+for foundational infrastructure,
+workloads, and applications
+
+built with Google Cloud
+best practices and patterns
+
+so that collectively we
+have a much better view
+
+and understanding of
+the quantified risk
+
+and the security
+posture being deployed.
+
+I'm Andy Chang, senior product
+manager for the Cloud Security
+
+team.
+
+
+
+As we've seen with
+many customers,
+
+an ongoing desire is to
+get started and operate
+
+much quicker but with
+also additional security
+
+so that the value of Cloud
+can reflect in the businesses
+
+that you run.
+
+The approach we're now taking
+to enable and accelerate this
+
+is building out a set of
+opinionated security foundation
+
+and posture blueprints to
+automatically allow you
+
+to leverage predefined Google
+Cloud security best practices
+
+for your infrastructure
+and for your workloads.
+
+
+
+This is part of the
+overall Google Cloud
+
+vision in security for going
+even further in our partnership
+
+with our customers.
+
+We want to move the industry
+and help move the industry
+
+from current shared
+responsibility
+
+approach to a shared fate
+model, where we're truly
+
+partners in your success
+and in achieving your goals.
+
+And this won't happen overnight.
+
+But the key pieces
+are coming into place.
+
+First, a necessary
+condition for this
+
+is that the underlying
+Cloud infrastructure
+
+is highly trusted and secure,
+that we're providing you
+
+with that secure
+compliant platform as well
+
+as a portfolio of security
+and compliance products
+
+and solutions that you can use.
+
+The good news is that
+our mission to make
+
+Google the most trusted cloud--
+
+we're well along the way there.
+
+Next, we're providing customers
+with opinionated foundational
+
+and posture blueprints matched
+to the type of workloads
+
+that they need, which
+enable you, again,
+
+to build on top of the
+underlying services,
+
+to stack and build posture
+blueprints on top of landing
+
+zones, and which all have
+Google best practices in terms
+
+of configuration,
+architecture, security posture
+
+embed with them.
+
+You're therefore able to stack
+these opinionated posture
+
+blueprints on top
+of landing zones
+
+and take advantage
+of the knowledge
+
+that Google's already
+built around security.
+
+We then take the next step
+and think about taking
+
+the blueprints as the basis for
+end-to-end solutions to solve
+
+very specific
+business problems--
+
+for example, web application
+API protections, zero trust,
+
+and BeyondCorp enterprise
+solutions and security
+
+analytics at scale.
+
+By combining these
+together, you're
+
+now able to get the best
+practices in a deployable form
+
+targeted towards solving very
+specific business problems.
+
+Finally, by having
+the combination
+
+of the blueprints
+and the solutions,
+
+it leads to a significant
+increase in the ability for you
+
+to use consistent approved
+end-to-end patterns
+
+for complete business
+processes and applications.
+
+That consistency
+and greater default
+
+secure configuration and
+best practice adoption
+
+leads to a much more
+quantified risk model,
+
+allows us and you to better
+understand the architecture
+
+and risks of being deployed
+in your infrastructure
+
+and your workloads,
+and therefore
+
+allows us to take on more
+responsibility collaborating
+
+with you and enabling different
+models of risk transfer.
+
+As we launched both our risk
+manager and our risk protection
+
+program, this allows you, if
+you've adopted these patterns,
+
+to take advantage of some
+specific cyber insurance
+
+offerings, which
+will allow you to now
+
+have more options for that risk
+transfer and risk management.
+
+
+
+Along the evolution
+path of shared fate,
+
+in addition to changing how you
+as customers can manage risk,
+
+we see parallel
+transformation opportunities
+
+in other key tracks as well.
+
+Today many customers
+in public cloud
+
+have complex experiences
+for security and governance.
+
+And we see an
+opportunity for use
+
+the jobs to be done
+framework to change these
+
+into much more consistent and
+complete end-to-end journeys.
+
+Similarly, many
+customers in public cloud
+
+have disjoint experiences
+managing policy and governance
+
+for both their individual
+instances in public cloud,
+
+as well as across public
+cloud and on prem.
+
+We feel, again, that
+there is an opportunity
+
+to change this fundamentally
+into a much more coordinated
+
+and verifiable experience.
+
+Blueprints play a key
+role both in moving
+
+product security from a
+bolted on after effect
+
+to a built in part of
+the underlying solution,
+
+and also from moving
+platform security
+
+from a set of complex
+configurations
+
+to increasingly
+secure by default.
+
+As we think about the stack
+from a customer perspective,
+
+as we talked about,
+we first build
+
+on top of that secure core
+Google infrastructure.
+
+And with the next layer
+of security products
+
+like SCC Premium, Assured
+Workloads, Organization Policy,
+
+VPC Service Controls giving
+you additional capabilities
+
+differentiated in their
+ability to help you manage
+
+your security posture,
+your visibility,
+
+and your segmentation.
+
+These form the lowest layer
+of the security stack.
+
+On top of this
+baseline comes both
+
+the foundational and
+posture blueprints,
+
+where the foundational
+blueprints
+
+include org policy, resource
+hierarchy, networking,
+
+access segmentation,
+logging, detective controls
+
+to allow you to take
+advantage of proven designs
+
+to build your foundational
+infrastructure.
+
+And on top of that,
+the posture blueprints
+
+cover specific sets of
+services aggregated together.
+
+And both the individual
+service specific controls
+
+as well as the
+intraservices controls
+
+necessary for the
+workloads to work properly.
+
+The blueprints come
+in three tiers.
+
+And they differ really in
+their level of native support
+
+and their lifecycle management.
+
+The three tiers are
+supported blueprints,
+
+verified blueprints, and
+compatible blueprints.
+
+Supported blueprints are
+created by Google security teams
+
+and managed as products with
+regular six month refreshes
+
+and attestation and testing
+of the functionality
+
+and resilience, as well as
+the interoperability testing
+
+between them.
+
+Verified blueprints can be
+created by Google teams,
+
+partner teams, or customers.
+
+The key is that the lifecycle
+management, as well as
+
+a station fit for purpose,
+are the responsibility
+
+of the creating team.
+
+Compatible blueprints
+are just that.
+
+They're compatible.
+
+I mean, they can be
+created by anyone.
+
+And their requirement is that
+they need to be from a format
+
+and also a style
+standpoint correctly
+
+matched to be operated with our
+blueprint tools and a blueprint
+
+engine.
+
+And finally, on top of
+the posture blueprints,
+
+we have security solutions.
+
+And these solutions
+address specific use cases
+
+and further add the wrappings
+of go to market collateral, best
+
+practice, application notes
+so that you can adopt these
+
+for your particular use cases.
+
+
+
+We focus today really on the
+security foundations blueprints
+
+as well as the security
+posture blueprints
+
+and their relationship
+to each other.
+
+We think about the core
+foundational blueprint.
+
+The key is to allow
+you to start up front
+
+with best practices embedded in.
+
+It creates a better
+starting point
+
+as well for security and
+compliance, as the security
+
+best practices encoded in
+our foundation blueprint
+
+give you a great
+start to be compatible
+
+and meeting certain requirements
+within CIS, PCI-DSS,
+
+NIST-800-53, as
+well as ISO27001.
+
+In addition, they allow you
+to implement key security
+
+best practices and
+philosophies core
+
+to how Google protects itself.
+
+These key principles really
+fall into three categories--
+
+first that all defense is
+always executed at in depth
+
+and at scale so multiple
+layers of protection
+
+separate something of interest
+from potential external threat.
+
+They allow you to adopt
+the BeyondProd model
+
+for deployment centric
+infrastructure and the ability
+
+to have a zero trust
+model around both
+
+the infrastructure
+you build as well
+
+as the applications you build.
+
+And then also, they de-risk the
+cloud deployment and adoption
+
+by moving you to these
+proven patterns that
+
+allow you to move towards a
+more shared fate relationship
+
+between yourselves and Google.
+
+
+
+To dive in a little
+bit more detail
+
+on the security
+foundations blueprint,
+
+it provides that
+strong starting point
+
+we talked about in baseline.
+
+It's delivered not
+only in documentation
+
+but infrastructure as code
+in deployable terraform
+
+that automates, accelerates
+your ability to use it.
+
+It encodes those best
+practices and can
+
+be deployed either at an
+organization level or a folder
+
+level.
+
+And it has a six-month
+lifecycle refresh.
+
+We deployed the very first
+version back in August 2020.
+
+The second version was
+deployed in April of this year.
+
+And then these three will
+be launching in October.
+
+And the posture blueprints that
+we'll talk about build on top
+
+of it are tested and
+verified against it.
+
+One example of the
+security posture blueprint
+
+is the one we're building
+for secured data warehousing.
+
+Secure data analytics
+and data warehousing
+
+are a key reason many customers
+come to Google, as we're
+
+differentiated in our BigQuery
+product and the things
+
+we do in data analytics.
+
+As you can see here,
+we've adopted architecture
+
+that has the landing
+area and ingest,
+
+the data warehouse itself,
+the storage and processing,
+
+classification and
+governance pieces,
+
+as well as security, posture,
+and detection for threats.
+
+In addition, there's also
+the optional presentation
+
+layer, which in the case of
+the blueprints we've built,
+
+we provide an example in
+the form of an AI notebook.
+
+To dive this a little
+bit more detail, what
+
+you see in the next level of
+detail of the architecture
+
+is we've segmented this
+into four different projects
+
+within the BigQuery itself and
+then separate set of projects
+
+for the AI Notebook.
+
+These projects not only
+create resource separation,
+
+but are also their
+own BPC service
+
+perimeters, which
+allow us to manage
+
+both sensitive and
+non-sensitive data.
+
+The ingest contains
+the ability to ingest
+
+both batch and streaming data
+and then de-identification
+
+of all the data so it can
+be correctly classified
+
+into the non-sensitive and
+sensitive areas of BigQuery.
+
+We manage the IM structures,
+the data encryption, and also
+
+data classification so
+that using Data Catalog you
+
+can have column level access
+control of the BigQuery Data
+
+Warehouse.
+
+And this architecture is based
+on proven production instances
+
+we've built together with
+some of our financial service
+
+customers so that we have good
+confidence that the scales
+
+and works well for those
+regulated industries.
+
+We dive into a little bit more--
+
+what is in the BigQuery Data
+Warehouse blueprint in addition
+
+to the terraform itself
+and deployable instances,
+
+it has a set of documentation
+that comes with it around--
+
+accessible through either the
+architecture center or the best
+
+practice site, quick starts,
+technical design docs,
+
+solution guides, the code itself
+with the guide for deployment
+
+of the code-- terraform code--
+
+overview decks, licensing and
+pricing models, public talks,
+
+the blogs, and also application
+notes for specific use cases
+
+as examples to get you
+started more quickly.
+
+It too is on a
+six-month refresh cycle,
+
+with the first version just
+being launched here in October
+
+and then the V2 targeted
+for a Q2 2022 launch.
+
+Built on top and also available
+as a standalone-- what
+
+this means is that with each
+of the posture blueprints,
+
+they are first and
+foremost able to be
+
+compatible with our security
+foundations blueprint
+
+and tested from an
+integration standpoint
+
+with that and the other
+posture blueprints.
+
+But also, they're
+deployable in standalone
+
+in your own Brownfield.
+
+And then they include
+third party attestations
+
+around the security architecture
+design, the stride threat
+
+modeling as well as
+being pen tested.
+
+And you'll see
+what this blueprint
+
+in Q4 being tested against
+NIST-800-53 compliance
+
+standard in detail.
+
+When we think about the
+controls that are fundamentally
+
+built into the BigQuery
+Data Warehouse,
+
+they fall in three categories.
+
+Controls that manage
+configuration state--
+
+as misconfiguration is one of
+the largest sources of data
+
+breaches, we
+particularly provide
+
+and code best practices
+for configuration
+
+of each of the services as well
+as integration and interaction
+
+of the services within the
+BigQuery secure data warehouse
+
+blueprint.
+
+Behavioral controls
+focuse specifically
+
+around the design and
+architecture of the secure data
+
+warehouse to look
+at specific threats
+
+from either data exfiltration,
+from privilege escalation,
+
+from things that break
+the segmentation model,
+
+the built in, and then
+environmental controls.
+
+As we talked about before, the
+secure data warehouse blueprint
+
+can be deployed either as
+a standalone, in which case
+
+the environmental
+controls are fully encased
+
+with that particular blueprint.
+
+Or if they are deployed on
+top of a security foundations
+
+blueprint, they inherit
+the environmental controls
+
+from the underlying
+core infrastructure.
+
+We're now going
+to move to a demo.
+
+We're going to walk you through
+a fully deployed secure data
+
+warehouse and highlight
+some of the configuration
+
+controls, the behavioral
+security protections,
+
+as well as the
+environmental controls.
+
+Here we have a demo
+organization in which
+
+we've deployed the
+secured data warehouse
+
+blueprint in its own folder.
+
+The secured data
+warehouse blueprint
+
+consists of four
+distinct projects--
+
+a data ingestion project,
+which includes Cloud Storage,
+
+Pub/Sub, and Dataflow, a
+data lake project, which
+
+includes the BigQuery instance
+for non-sensitive data,
+
+privileged BigQuery
+Data Warehouse,
+
+which includes Cloud Storage as
+well as the privilege BigQuery
+
+Data Warehouse instance, and
+a data governance project,
+
+which includes Data Catalog,
+key management, and data
+
+classification through DLP.
+
+When deploying these
+into your own Brownfield
+
+or on top of the
+foundations blueprint,
+
+you can plug in the
+data encryption keys
+
+into your existing
+encryption key project,
+
+logging into your
+centralized lodging project,
+
+and the network connections
+to allow the Dataflow
+
+templates in through
+your existing system.
+
+You can also run this standalone
+if you want to experiment
+
+and play with it.
+
+And to do that, we include
+two harness projects, which
+
+supply the Dataflow template
+and the terraform sourcing.
+
+The security perimeters around
+the BigQuery Data Warehouse
+
+and the other projects
+are set up as follows.
+
+We have three
+separate perimeters--
+
+one around ingestion, one
+around the privileged data,
+
+and then one around
+data governance.
+
+In addition, we set up
+bridges between ingestion
+
+and governance, privilege
+and governance, and then
+
+privilege and ingestion.
+
+
+
+If we look at the VPC
+Service perimeter around data
+
+ingestion.
+
+You'll see it includes the
+ingestion project and the data
+
+lake, has its own
+defined access context
+
+levels, and specific
+egress rules.
+
+Similarly, if we look at
+the VPC Service perimeter
+
+around privileged
+data, it captures
+
+the privileged BigQuery
+Data Warehouse project
+
+as its own access levels
+defined at egress rules.
+
+And then the last perimeter
+is around data governance,
+
+which secures the data
+governance project
+
+and has its own
+access levels defined.
+
+If we look now at the
+bridging, the first bridge
+
+connects the ingestion, the
+data lake and governance.
+
+The second bridge connects the
+data lake to the privileged.
+
+And then the final bridge
+connects the data governance
+
+to privileged.
+
+As you can see, we've
+defined access policies
+
+for each of the separate
+VPC Service perimeters.
+
+We've also used our DLP to
+de-identify specifically card
+
+number and card pin data so that
+in the non-sensitive BigQuery
+
+instance, they can be used by
+lower access levels and folks
+
+with more generalized roles--
+
+separate from when there
+are the actual values
+
+are being used in the
+privileged data warehouse.
+
+We use Data Catalog
+with policy tags
+
+in order to further provide
+column level control.
+
+You can see we use
+column level policy
+
+tags for person name,
+credit limit, and also
+
+credit card number.
+
+So we give you additional
+fine grained control of who,
+
+what service
+accounts, what humans
+
+can access these pieces of
+sensitive data as an example.
+
+
+
+If we now look at
+the data lake, which
+
+has the non-sensitive
+data set, you
+
+can see that if we look at,
+again, card number and card pin
+
+and create a query, you
+see de-identified version
+
+of both card pin
+and card number that
+
+is still format preserving.
+
+If we now move to the sensitive
+data and the privileged data
+
+warehouse--
+
+if we were to look at
+the card pin data--
+
+
+
+because I have the
+right set of accesses,
+
+you'll see the
+actual card pin data
+
+within the privileged and
+protected BigQuery instance.
+
+However, to show you that we're
+using column level control,
+
+I'm now also going to try
+to query the card number.
+
+And here you see
+access has been denied
+
+because this particular
+user currently
+
+does not have the IM permissions
+to access the card numbers.
+
+We can fix this by going back
+and granting the permissions
+
+for fine grained reader
+on that particular column.
+
+
+
+And now if we rerun
+the query, we'll
+
+see we get both the pin and
+the underlying card numbers.
+
+So we've now shown you
+the architecture example
+
+for the secure data warehouse
+containing three VPC Service
+
+parameters and both data
+lake for non-sensitive data
+
+and a separate secure
+data set, which
+
+has column level access managed
+through Data Catalog policy
+
+text.
+
+We've now shown you a deployed
+version of the secure data
+
+warehouse blueprint.
+
+And we walked you through
+some of the key configuration,
+
+behavioral, and
+environmental controls.
+
+So hopefully this
+provides you a view
+
+of how we're embedding
+best practices in security
+
+as well as the
+architecture to give you
+
+something as a reference,
+starting point, and pattern
+
+to jump-start your workloads
+and production around data
+
+warehousing and data analytics.
+
+To learn more,
+you can explore at
+
+cloud.google.com/security/best
+practices the range
+
+of our current portfolio of
+blueprints for foundation
+
+and for security posture,
+explore the documentation
+
+as well as the terraform
+repos that we've supplied,
+
+and then download kind
+of reference guides from
+
+a step-by-step basis.
+
+We'd highly encourage you
+to deploy these security
+
+blueprints into your own
+example, organizations,
+
+and folders so that
+you can experiment
+
+to see how they fit
+with your environments
+
+and definitely encourage
+you to customize and use
+
+the module as a
+script if they create
+
+additional differentiation
+for your particular needs.
+
+As we talked about,
+these blueprints
+
+are refreshed on
+a six-month cycle.
+
+So we highly encourage you
+to also feed back to us
+
+where you've seen gaps
+and things that you'd want
+
+to see in future iterations.
+
+We can put that in the
+backlog and many of your needs
+
+may show up in future
+versions of the blueprint
+
+so you can use a standard
+blueprint as opposed
+
+to one that you've
+[INAUDIBLE] yourself.
+
+And lastly, we encourage you
+to start trialing the Security
+
+Command Center Premium, as
+it provides an overall Cloud
+
+Security posture
+management around not only
+
+your organization but
+these multi-project and
+
+folder-centric posture
+blueprints as well.
+
+
+
+Thank you so much for your
+time and the opportunity
+
+to share with you what
+we're thinking about
+
+on the shared faith
+standpoint as well as some
+
+of those core blueprints that
+allow you to jump-start and get
+
+started with the best
+practices and patterns
+
+that can help you
+be more successful.
+
+
+

@@ -1,0 +1,1493 @@
+[MUSIC PLAYING]
+
+
+
+LEIGHA JARETT: Hi, everybody.
+
+I'm Leigha.
+
+NIKITA NAMJOSHI: And I'm Nikita.
+
+LEIGHA JARETT: And welcome
+to the Data Cloud live demo.
+
+If you're just joining us
+from this morning's keynote
+
+and spotlight, you heard some
+of the latest innovations
+
+we launched.
+
+Earth Engine, Spark on Google
+Cloud, PostgreSQL Interface
+
+for Spanner, and
+Vertex AI Workbench,
+
+all to help organizations solve
+their most complex data driven
+
+challenges.
+
+In this live demo, we're going
+to take complex, fragmented
+
+data systems and simplify
+them, bringing together
+
+data on a massive scale
+to explore a real world
+
+scenario for climate and
+supply chain analytics.
+
+NIKITA NAMJOSHI: In
+order to do this,
+
+we're going to need
+the whole data team.
+
+Say hi, everyone.
+
+BRAD MIRO: Hello, I'm Brad.
+
+DEREK DOWNEY: Hi, I'm Derek.
+
+BRAD MIRO: Now, a quick
+reminder, this demo
+
+is truly live and you can
+engage with us directly.
+
+So, ask questions, say
+hi in the chat window,
+
+and hit those emojis.
+
+LEIGHA JARETT: I think I
+see some coming in now.
+
+I see lots of hearts and fire.
+
+A lot of people saying
+hello in the chat.
+
+Thanks, everyone,
+for joining us today.
+
+So, if you can't see
+the emojis or the chat,
+
+just go back to the
+next event website
+
+and click on the blue Join The
+Interactive Experience button.
+
+NIKITA NAMJOSHI: OK, let's
+have a little fun with this.
+
+Today, you're actually joining
+us for our weekly stand
+
+up at Cymbal Superstore.
+
+A fictional US-based
+grocery chain,
+
+focused on sourcing
+from local producers.
+
+Like many different
+industries, we
+
+need to bring together
+disparate data sources
+
+to build resilience.
+
+Specifically for us,
+drought in the Western US
+
+has impacted our producers
+and our supply chain
+
+has been disrupted with
+decreased shipments week
+
+over week.
+
+We need to better understand
+how to manage inventory
+
+to prevent stock
+outs, and ensure
+
+we can scale in both how
+we analyze information
+
+and how we run our transactions.
+
+LEIGHA JARETT: All right, team.
+
+So, to address the supply
+and scale challenges
+
+that Nikita just mentioned, we
+have four different workloads.
+
+First, I'm going to evaluate
+the best climate information
+
+to identify at risk producers.
+
+Then Brad will mature
+our data pipelines
+
+to transform that data.
+
+Next, Derek will dig into
+scaling our transaction
+
+processing.
+
+And finally, Nikita
+will show how
+
+we're gaining new insights
+by evolving our data science
+
+capabilities.
+
+NIKITA NAMJOSHI:
+Let's get into it.
+
+And let's keep hearing
+from all of you
+
+out there, our data pros.
+
+Leigha, you're up first.
+
+LEIGHA JARETT: Great.
+
+Thanks, Nikita.
+
+So, in order to gain insight
+into our supply chain,
+
+first, I need to
+evaluate the risks.
+
+So, I'm focusing
+on figuring out how
+
+drought impacts the very
+source of our grocery products.
+
+And to do this, I turn to
+Google's platform for Earth
+
+science data and
+analytics, Earth Engine,
+
+which has a huge catalog of
+satellite images for things
+
+like climate, weather,
+croplands, and much more.
+
+There's currently over,
+like, 50 petabytes
+
+of data in the catalog,
+plus more and more images
+
+are added each day.
+
+So, let me just go
+ahead and bring up
+
+this cool little application
+that I built using the Earth
+
+Engine code editor.
+
+So, I can walk you
+through the three
+
+data sets we'll be using today.
+
+First is going to be Crop
+Data from the USDA NASS
+
+program, which I can grab right
+from the public data catalog
+
+by searching.
+
+So, this data set is going to
+contain one image of the US
+
+for each year, going
+back all the way to 1997.
+
+And each 10 meter
+pixel in this image
+
+has actually been
+assigned a crop type.
+
+Let me just close out of this
+here, bring you back to my app.
+
+So, the second data set
+contains the outline
+
+of agricultural
+fields, and we're
+
+going to use Earth Engine to
+assign each one of these fields
+
+the crop type that is most
+prevalent among the cells that
+
+cover it.
+
+So, in this view that
+I'm showing right here,
+
+the pink fields are alfalfa
+and the dark green fields
+
+are almonds.
+
+NIKITA NAMJOSHI: Leigha, these
+visuals are super helpful,
+
+but could we export
+this data for analysis
+
+in other environments?
+
+LEIGHA JARETT:
+Yeah, I'm actually
+
+going to push this into
+Cloud Storage and BigQuery
+
+in just a sec, but
+first, I want to add
+
+in some additional
+signals on drought.
+
+So, the third data
+set that I'm using
+
+is a collection of both
+short and long term drought
+
+indicators.
+
+Meaning that we can
+see what drought looks
+
+like for each field over time.
+
+Now, using data sets like these
+does require some deep subject
+
+matter expertise.
+
+So, special thanks to
+our real world partners,
+
+at Climate Engine,
+who build solutions
+
+on top of Earth Engine's
+API, helping organizations
+
+ground their analytics projects
+with scientifically accepted
+
+methodologies.
+
+OK, so, you just saw how
+we use geospatial data.
+
+And I want to know how you
+use it in your analysis.
+
+So, go ahead and answer
+that poll so we can see.
+
+All right, everyone.
+
+So, with these
+layers in place, we
+
+can start exploring
+drought risk.
+
+Let me just go ahead
+and zoom to this field.
+
+And here I'm going to show
+an almond orchard Northeast
+
+of Modesto, California.
+
+And what we're looking at is
+the long term drought indicator.
+
+So, this orange tint
+that you're seeing
+
+means that this
+field has experienced
+
+pretty high levels of drought
+over the last five years.
+
+Now, if I go ahead and
+just Zoom out a bit,
+
+we can actually see
+that the entire Central
+
+Valley in California is
+pretty drought stressed.
+
+So, my last step was to
+calculate drought risk for each
+
+of the fields I showed before.
+
+And this will tell us
+which farms and produce
+
+types are potentially at
+risk for not meeting customer
+
+demand, which is just one
+consideration to inform
+
+Cymbal's resilience strategy.
+
+Better yet, we can incorporate
+this geography data
+
+with other spatial stuff, like
+store and customer locations,
+
+that are already
+inside a BigQuery,
+
+and anyone who knows me
+knows that I love BigQuery.
+
+If you agree, let me
+see in the emojis.
+
+All right, so, the
+Code Editor has
+
+been great for interacting
+with Earth Engine,
+
+but making these
+calculations at scale
+
+requires a different approach.
+
+So, I went ahead and
+created Earth Engine Tasks
+
+for batch processing, to
+run these calculations
+
+over all the data in five-day
+increments for the past 10
+
+years.
+
+I also set up a
+Cloud function to run
+
+every five days going forward.
+
+So, that we'll always
+have fresh data.
+
+Now, just as a quick recap,
+we jumped into Earth Engine
+
+to evaluate Earth science
+data that indicates climate
+
+risk for our farm fields.
+
+Now, we'll have fresh
+drought data available
+
+in Cloud Storage.
+
+So, just think of the
+power of integrating
+
+huge amounts of
+specialized data,
+
+giving us a complete picture of
+supply risk for our business.
+
+Oh, and I think I can see the
+poll results coming in now.
+
+It looks like lots of people
+are using geospatial data
+
+for all different
+kinds of things.
+
+And if your answer
+wasn't in the poll,
+
+just go ahead and let
+us know in the chat.
+
+So, next up, Brad will
+transform and push this data
+
+into BigQuery for geospatial
+analysis with our existing
+
+data.
+
+So, Brad, over to you.
+
+BRAD MIRO: OK, that was
+pretty cool, Leigha.
+
+Thanks.
+
+All right, so, to
+gain more insight
+
+into how drought is
+impacting production,
+
+my main focus has been building
+out the data transformation
+
+pipeline to push farm field
+drought indicators from Cloud
+
+Storage into BigQuery.
+
+Speaking of batch
+processing, as you
+
+know, to assist with inventory
+management, price optimization,
+
+and product assortment,
+we use Spark
+
+to standardize our large
+scale data processing.
+
+And we use Google Cloud Dataproc
+as our long running clusters.
+
+For you data pros
+out there, we'd
+
+love to know how you're
+using Spark today.
+
+So, let us know while I go ahead
+and pull up the Cloud Console.
+
+
+
+So, here is a Dataproc
+cluster we currently
+
+use to schedule PySpark jobs.
+
+And here I'm connected
+to a Jupyter Notebook,
+
+running on the same cluster
+with some PySpark code.
+
+This code is typical
+boilerplate code
+
+you'd write to do basic
+data transformations.
+
+In this case, we are processing
+the Earth Engine files
+
+from Cloud Storage,
+performing type checking
+
+and mapping to ensure proper
+ingestion into BigQuery using
+
+the Spark BigQuery connector.
+
+LEIGHA JARETT: Hey, Brad.
+
+So, this is pretty
+cool, but I think
+
+having a batch workflow
+that's scheduled
+
+on a continuously
+running cluster
+
+seems like it can
+be kind of wasteful.
+
+So, is there any way we can
+make this more efficient?
+
+BRAD MIRO: That's a
+fair point, Leigha.
+
+There is still some
+overhead in management here,
+
+and for hardened
+batch cases like this,
+
+it would be preferred
+to have these jobs run
+
+on their own discrete resources.
+
+But good news, with the new
+serverless option for Dataproc,
+
+we can submit a PySpark
+job without spinning up
+
+any infrastructure.
+
+These automagic capabilities,
+I can spend more dev time
+
+writing code and less time
+on managing infrastructure.
+
+LEIGHA JARETT: All right, Brad.
+
+First off, I'm pretty sure that
+you just set me up for that.
+
+And second, you definitely
+made up that word, automagic.
+
+BRAD MIRO: Yeah, can I get
+the emoji love for that?
+
+Anyway, I'll now go ahead
+and export this notebook
+
+to a Python file
+using nbconvert.
+
+
+
+OK, and next, let's go
+and use the Cloud SDK
+
+to submit a serverless
+PySpark job.
+
+We can use the Dataproc
+API and call batches
+
+to submit a serverless job.
+
+
+
+So, I'm showing you
+here a PySpark job,
+
+but I can also submit Spark
+jobs written in Scala, Java, R,
+
+or SQL.
+
+With auto provision
+and auto scale,
+
+no infrastructure
+configuration is needed.
+
+This helps those less
+familiar with how
+
+to fine tune their
+Spark jobs to utilize
+
+its powerful distributed
+data processing model.
+
+With these capabilities,
+there's no need
+
+to manually create
+intune clusters.
+
+So, once I've
+submitted the job, I
+
+can show it listed in the
+serverless Spark console
+
+and I can click on the
+job to view its logs.
+
+Now, serverless Spark
+takes about a minute
+
+or so to autoprovision
+the resources
+
+as well as start
+writing out log output.
+
+So, what I'll go
+ahead and do here
+
+is show you the log output
+from a completed job
+
+that I ran earlier.
+
+
+
+So, if we click in
+here, we can see.
+
+OK, so, I added some print
+statements into this job.
+
+And here, it's showing me that
+there's some short term drought
+
+data that's processed, some
+long term drought data,
+
+and then some
+geographical data as well.
+
+Now, in addition to this, I can
+also show you the Spark history
+
+server, which is where the
+more details of the Spark job
+
+itself will be outputted once
+the job has been completed.
+
+So, we can go back and debug.
+
+And then additionally,
+we can also
+
+gain access to metadata
+via Dataproc Metastore.
+
+Now, in addition
+to all of this, we
+
+are also looking
+into a new solution
+
+for creating long running
+clusters or a place where
+
+our infrastructure team can
+manage Dataproc clusters.
+
+Now, fortunately, we feel that
+Spark on GKE fits our use case
+
+and lets us utilize our
+existing GKE infrastructure.
+
+So, clearly, it's
+been a busy week
+
+for me using Spark serverless
+to create pipelines to push
+
+drought data into BigQuery.
+
+But the efficiency
+improvements we'll
+
+gain by not needing to
+manage cluster overhead
+
+will be worth it.
+
+Now, you can let
+me know in the chat
+
+if you're as excited about
+Spark serverless as I am.
+
+NIKITA NAMJOSHI:
+OK, let's see how
+
+everyone's using Spark today.
+
+Looks like notebooks
+are pretty popular.
+
+LEIGHA JARETT: Oh, and
+automation through Airflow.
+
+That's cool too.
+
+OK, great.
+
+Thanks so much, Brad.
+
+So, now that we have greater
+insight into supply risks,
+
+we need to scale our transaction
+systems to handle more orders
+
+and allow us to understand
+the potential business
+
+impact of these climate risks,
+while hopefully lowering costs.
+
+So, this brings me
+to Derek, our DBA.
+
+Derek, you've been
+focusing on this effort.
+
+So, can you let us know
+where you're at today?
+
+DEREK DOWNEY: Yeah,
+absolutely, Leigha.
+
+We have a new grocery
+chain that has
+
+struggled to maintain
+their on Prem databases
+
+as they're grown.
+
+There's an opportunity to
+solve their underlying scaling
+
+problems with Cloud Spanner.
+
+I spent the last few weeks
+validating Spanner's ability
+
+to scale and the
+ease of maintenance,
+
+while keeping strong consistency
+for this point of sale
+
+workload.
+
+I migrated some of the new
+chain stores to Spanner already.
+
+Using granular
+instant sizing, I only
+
+provisioned a portion
+of a Spanner node
+
+to handle the required load.
+
+As we move the
+remainder of the stores,
+
+we can easily scale up without
+downtime or app changes.
+
+NIKITA NAMJOSHI:
+Quick question, Derek.
+
+We've been really
+focused on reducing
+
+the cost and complexity of
+building scalable applications.
+
+So, I'm wondering,
+how does adding
+
+Spanner impact that effort?
+
+DEREK DOWNEY: Yeah, that's
+a great question, Nikita.
+
+One way we've been doing
+this in other environments
+
+is to standardize on Postgres.
+
+Postgres is a well established
+open source database
+
+with an active ecosystem that
+our development and ops teams
+
+are already familiar with.
+
+I tried to get the team
+to add an elephant emoji,
+
+so y'all could show some love
+for Postgres, but anyway.
+
+Spanner just announced
+a PostgreSQL interface.
+
+This gives us the
+benefits of Spanner
+
+without having to completely
+retrain our application teams.
+
+Having a standard
+API for our data
+
+will help us maintain
+velocity for new features,
+
+even as our database
+needs evolve.
+
+Here, let me show you.
+
+So, I've connected into
+our Spanner instance
+
+using the PSQL
+command line tool.
+
+From here, I can explore
+the schema just like I
+
+would any other database,
+any other Postgres database.
+
+You can see that both
+the Postgres data
+
+type and the Spanner data type
+is available to the information
+
+schema.
+
+So, this will make
+it familiar to anyone
+
+who already knows Postgres.
+
+LEIGHA JARETT: Awesome.
+
+Thanks, Derek.
+
+This is really cool.
+
+I'm really looking
+forward to the scalability
+
+that this is going
+to bring our team.
+
+DEREK DOWNEY: Absolutely.
+
+And as a quick
+summary, I highlighted
+
+how Spanner allows us
+to get started small
+
+and scale as needed using
+granular instant sizing.
+
+And how the new
+PostgreSQL interface
+
+reduces friction for our team's
+already familiar with Postgres.
+
+Nikita and Leigha, you can treat
+the existing data as golden
+
+and I'll keep
+onboarding more stores.
+
+Nikita, I believe you need this
+data for some of the BigQuery
+
+analysis you were working on.
+
+You've been busy figuring
+out how to evolve our ability
+
+to make sense of all this data.
+
+Can you show us how that works?
+
+NIKITA NAMJOSHI:
+Yes, absolutely.
+
+I was hoping that you'd ask.
+
+So, to ensure that
+we're managing stock
+
+to meet customer demand,
+my focus this week
+
+was on evolving our data
+science capabilities
+
+for exploratory analysis.
+
+I combine the transactional
+data that Derek's
+
+been working on with
+the drought data
+
+that Leigha and Brad
+pushed into BigQuery.
+
+This way we can gain
+insight into which
+
+products are most at risk of
+not meeting customer demand.
+
+So, my first step
+was to integrate
+
+all of our transactional
+data within BigQuery,
+
+primarily using Federation
+with Cloud SQL and Spanner.
+
+This provides a
+unified environment
+
+for aggregation and analysis
+where we can join transactions
+
+back to producer details and the
+associated drought risk scores.
+
+Now, as you all
+know, we recently
+
+migrated to Vertex
+AI Workbench, which
+
+has really, really helped with
+our basic compute and resource
+
+management.
+
+DEREK DOWNEY: A quick
+question, Nikita.
+
+Is Vertex AI Workbench a
+notebook for Vertex AI?
+
+NIKITA NAMJOSHI: That is an
+excellent question, Derek.
+
+Vertex AI Workbench contains
+recently updated manage
+
+notebooks, which bring
+forth more integrated data
+
+engineering capabilities into
+our data science environments.
+
+So, we can ingest and
+analyze data and deploy
+
+and manage ML models
+all from one spot.
+
+Now, let me show you a little
+bit about what this looks like.
+
+After I provisioned a
+new managed notebook,
+
+my first task was to analyze the
+demand on the high volume SKUs.
+
+And for that, I use the BigQuery
+connector to view and query
+
+the sales data.
+
+With Vertex AI Workbench, I
+can inspect BigQuery metadata,
+
+preview tables, and automate
+basic SQL construction entirely
+
+from my notebook environment.
+
+OK, it's my turn on the emojis.
+
+I want to see the fire emoji
+from all the data scientists
+
+out there who are
+as excited as I
+
+am about being able to access
+BigQuery from the notebook
+
+interface.
+
+
+
+Looks like I'm not the only one.
+
+BRAD MIRO: Hey, Nikita.
+
+Hold on.
+
+Sorry to interrupt
+your emoji fest,
+
+but I see you're working
+out of the lakes project,
+
+but are able to pin other
+projects you have access to,
+
+like the ops project.
+
+Is that new?
+
+NIKITA NAMJOSHI: Yes,
+that's correct, Brad.
+
+Vertex AI Workbench
+actually enables
+
+me to interact with all
+services via my own identity.
+
+The BigQuery plug-in also
+provides some templated code
+
+to help build out queries
+and project results
+
+to [INAUDIBLE] data frame.
+
+So, here, we can see-- oh, looks
+like I just need to refresh.
+
+Sorry about that, team.
+
+I'm just going to refresh my
+Jupyter lab instance here.
+
+I guess I had it
+open for too long.
+
+LEIGHA JARETT: And I guess
+while Nikita is doing that.
+
+Like, who uses Jupyter now?
+
+Let's see the fire
+emojis lighting up.
+
+I see some now.
+
+
+
+I personally use it a
+lot in my day to day.
+
+NIKITA NAMJOSHI: All right.
+
+Thanks, Leigha.
+
+So, perfect.
+
+Now, you can see a simple
+view of all transactions
+
+by the day of week.
+
+And Vertex Workbench
+actually also allows
+
+me to launch different kernels
+entirely in the same instance.
+
+So, Brad, I think
+you were working out
+
+of a PySpark notebook
+earlier, is that correct?
+
+BRAD MIRO: Yeah.
+
+So, data Spark clusters
+are also supported
+
+as a back end as a part
+of Spark on Google Cloud.
+
+We can access all supported
+kernels on the cluster,
+
+including PySpark.
+
+NIKITA NAMJOSHI:
+Well, for my analysis,
+
+I just needed a Python kernel.
+
+So, let me show you what's
+going on in this notebook
+
+and what I've been
+up to this week.
+
+You can see here that I've
+done a deep dive into the data.
+
+I've plotted the
+transaction volume.
+
+I've created a heat
+map of purchase counts
+
+across various departments.
+
+And I've also plotted the
+short term drought index
+
+across various crop types,
+like corn, dry beans, pears,
+
+and rice.
+
+But my last task, and
+the most important task,
+
+was to map SKUs to suppliers
+and calculate a risk score based
+
+on the aggregate field data.
+
+So, to do this, I started with
+our mapping table, which you
+
+can see a sample of right here.
+
+This helped me to determine
+which farm fields actually
+
+source ingredients
+for a particular SKU.
+
+And then I calculated
+a weighted risk score
+
+that takes into account
+each product's demand
+
+and the associated farms
+overall drought risk.
+
+And you can see each of these
+measurements in this data frame
+
+right here.
+
+Ultimately, this score will help
+us to prioritize managing items
+
+where we're most at risk of
+not meeting customer demand.
+
+So, as a quick summary, I
+used Vertex AI Workbench
+
+manage notebooks to
+connect back to data
+
+accessible from BigQuery
+and create a weighted risk
+
+score for each one
+of our products,
+
+combining both climate
+and demand data.
+
+Leigha, I went ahead
+and put all of this back
+
+into BigQuery, just to
+keep it centralized.
+
+LEIGHA JARETT: Awesome.
+
+Thanks so much, Nikita.
+
+That risk score is going to
+be huge in helping our team
+
+understand supply risk.
+
+So, to make sure the broader
+team has a trusted view of all
+
+this information, I started
+incorporating everything
+
+into a Looker dashboard.
+
+Now, with Looker, we define
+our metrics, like average risk,
+
+using Look ML,
+Looker's data model.
+
+And Looker uses this
+to compile SQL queries
+
+and send them back to
+BigQuery on our behalf,
+
+so that our
+non-technical users can
+
+explore the results
+of these data efforts.
+
+So, let me show
+you this dashboard
+
+that I've been working on.
+
+And first off, you can
+see this custom map layer
+
+that I use to visualize
+drought risk across farm
+
+regions in the West.
+
+And we're able to take
+advantage of BigQuery's
+
+geospatial functions and
+drill from this aggregate view
+
+all the way to producer or
+even grocery product level.
+
+Let me show you.
+
+So, I'll drill to field ID.
+
+And then I can jump right
+into Looker's Explorer
+
+to bring in some more
+fields, like maybe I
+
+want to specifically
+look at products
+
+that are at risk in this region
+where we're quickly expanding.
+
+
+
+NIKITA NAMJOSHI: Making all this
+data accessible to the broader
+
+team is really important.
+
+So, can we make sure that the
+marketing team is aware of this
+
+so they know how to hold off
+on coupons or advertisements
+
+for these products?
+
+LEIGHA JARETT: Yeah.
+
+Actually, we can set up
+a schedule from Looker
+
+so that the regional
+marketing teams are always
+
+notified if new products
+seem to go at risk.
+
+So, putting this
+all together, we
+
+used Earth Engine to process
+new Earth science data signals.
+
+We used Spark to efficiently
+transform geospatial data
+
+and push drought
+indicators into BigQuery.
+
+Spanner to scale our
+transaction systems, ensuring we
+
+have the infrastructure
+to handle future growth.
+
+And Vertex AI
+Workbench plus Looker,
+
+backed by the power of BigQuery,
+to evolve our data science
+
+capabilities and surface
+important trends back
+
+to key decision makers.
+
+So, with integrations
+across these services,
+
+anyone is able to
+explore and take action
+
+on insights that combine
+climate data and transactions.
+
+Now, we can understand
+where products
+
+may go out of stock due to
+increasing drought conditions
+
+and identify areas
+to build resilience
+
+against changes in our climate.
+
+So, with this
+geospatial information,
+
+we're given a whole
+new set of data,
+
+so that we can not only be
+considerate of our customers,
+
+but also find ways to be more
+considerate of our planet.
+
+And with that, it looks like
+we're right about at time.
+
+So, thank you so much
+for joining us today
+
+as we've shown how Google
+Cloud can offer a world class
+
+experience for creating
+a scalable, unified data
+
+platform.
+
+And a special thanks
+to my colleagues,
+
+Nikita for showing us
+Vertex AI Workbench,
+
+Derek for introducing us
+to Spanner and its Postgres
+
+interoperability, and
+Brad for walking us
+
+through Spark on Google Cloud.
+
+NIKITA NAMJOSHI: And
+thank you, Leigha,
+
+for showing us Looker
+and Earth Engine.
+
+Last but certainly not least,
+thank you all out there
+
+so much for your engagement.
+
+We love those emojis and
+seeing all of your comments
+
+in the chat.
+
+So, stay tuned for
+our live Q&A, which
+
+is going to cover everything
+from our spotlight
+
+through this demo.
+
+LEIGHA JARETT: Thank you.
+
+NIKITA NAMJOSHI:
+Thanks, everyone.
+
+DEREK DOWNEY: Yeah, thanks.
+
+Bye.
+
+
+

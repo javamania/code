@@ -1,0 +1,1006 @@
+
+
+STEVE FRANCIA:
+Welcome to my session,
+
+"Enterprise-Ready Modern
+Applications with Go--
+
+The Rise of Digital Chaos."
+
+For years, one of the
+most talked-about topics
+
+has been digital transformation.
+
+It seems like everyone's
+feeling the need
+
+to modernize their legacy
+enterprise applications.
+
+As technology has specialized,
+it has grown exponentially
+
+in complexity.
+
+Two decades ago there might
+have been a dozen choices
+
+that needed to be made, with
+typically two or three options.
+
+Today the amount of choices
+is simply staggering.
+
+Nobody can possibly
+begin to understand
+
+all that is required.
+
+3/4 of CIOs say managing
+performance is now
+
+impossible due to
+the IT complexity.
+
+Security risks have seen a
+similar exponential expansion.
+
+It seems like every day we hear
+about another major breach.
+
+The historical approach
+to enterprise architecture
+
+doesn't work in the digital age.
+
+If we don't dramatically
+change our approach,
+
+and soon, it will be too late.
+
+Today I'm here to share
+with you what the path is.
+
+We need to modernize our
+enterprise applications,
+
+and a lot of folks
+have this wrong.
+
+They have part of the
+picture, but haven't
+
+grasped that true
+modernization requires
+
+simplifying our approach,
+not simply containerizing it.
+
+Who am I?
+
+I've spent the last decade and
+a half leading industry-changing
+
+organizations, focused
+on bringing simplicity
+
+to the chaos.
+
+As senior vice
+president at MongoDB,
+
+I led the development of the
+first non-relational database
+
+to enter mainstream
+use in 45 years.
+
+As chief operator at
+Docker, I led the effort
+
+to simplify containers.
+
+As a side project
+I created Hugo,
+
+the most secure and highest
+performance web engine.
+
+Today I'm one of the leads
+of the Go Team, where
+
+we are building a modern,
+simple Cloud-native programming
+
+language.
+
+
+
+Since you might not
+be familiar with Go,
+
+I'll first provide a short
+overview of what Go is.
+
+Then I'll share with you
+what a modern enterprise
+
+application requires.
+
+Lastly, I'll share with
+you how Go and Google
+
+Cloud will help you with
+migration to modern enterprise.
+
+Along the way I'll share
+quotes from enterprises,
+
+and how Go helped them.
+
+Go is a modern programming
+language designed by Google
+
+for Google's problems
+of building and serving
+
+server-side software at scale.
+
+
+
+Google uses Go extensively
+for a wide range of things,
+
+from our indexing platform
+that powers Google
+
+Search to the infrastructure
+that Google Cloud is built on.
+
+
+
+Launched a decade ago, Go
+has seen explosive growth.
+
+Today, Go is a top 10
+language, with broad adoption
+
+among the world's
+leading enterprises.
+
+Go follows Einstein's Maxim--
+
+be as simple as
+possible, but no simpler.
+
+As Go is designed for
+maximum simplicity,
+
+it is very easy to
+learn and to work with.
+
+
+
+Go drives the balance between
+productivity and performance,
+
+sharing the friendliness of
+dynamic languages like Python
+
+and the productivity of compiled
+languages like C and Java.
+
+As a modern language,
+Go was designed
+
+from the very beginning with
+security and safety in mind.
+
+Over the past 10 years, Go has
+developed a large and mature
+
+ecosystem.
+
+Go is loved by both developers
+and employers alike,
+
+ranked as the
+number one language
+
+across many industry surveys.
+
+
+
+Go is widely loved by
+developers because it
+
+makes building modern
+software simple and secure.
+
+But what does it take to build
+modern enterprise applications?
+
+First of all, they
+must minimize risk.
+
+
+
+They must be fully modern.
+
+Adding modern components onto
+or alongside legacy systems
+
+introduces significantly
+higher risk and complexity.
+
+Instead of simplifying things,
+they multiply the complexity.
+
+You now need to worry about
+many systems, languages,
+
+and integration points.
+
+
+
+They must be safe.
+
+Modern applications
+have to be built
+
+in a way that ensures safety.
+
+According to researchers
+at Microsoft,
+
+70% of the security bugs that
+the company fixes each year
+
+relate to memory safety.
+
+Google found a similar 70%
+of serious bugs in Chrome
+
+are memory management
+and safety bugs.
+
+Legacy programming
+languages were not
+
+designed with safety in
+mind, because at the time
+
+there was no such
+thing as a cyberattack
+
+and bits were at a premium.
+
+Our environment today is vastly
+different from the one legacy
+
+languages were designed for.
+
+Modern languages massively
+de-risk applications.
+
+They must be secure.
+
+One of the largest
+risks systems face
+
+is in the form of lacking
+security, which results
+
+in leaks and attack vectors.
+
+In the constant
+battle for security,
+
+applications need to
+utilize the latest
+
+encryption and protocols.
+
+They need to run in
+minimal environments
+
+with maximum isolation and
+minimal external dependencies.
+
+They need to not depend
+on legacy libraries
+
+and environments.
+
+
+
+Modern enterprise applications
+must adapt to business needs.
+
+One way they do
+this is by utilizing
+
+service-oriented APIs.
+
+Approaching applications with
+a communication-first focus
+
+ensures that the application
+has the proper separation,
+
+scalability, and flexibility
+to adapt to new business
+
+requirements.
+
+This approach also isolates each
+feature for greater flexibility
+
+and security.
+
+They must be architected to
+be modular and composable.
+
+Tech debt can be a
+technologist's worst enemy.
+
+This hidden tax slows
+down all development.
+
+Traditional inheritance-based
+architectures
+
+create code that is
+very tightly coupled,
+
+and hard to adapt
+to new requirements
+
+and very hard to maintain.
+
+Which brings us to
+our next point--
+
+they must be easily
+maintainable.
+
+Teams and priorities
+are constantly changing.
+
+We need code that is easy
+to understand and pick up
+
+by a constant influx
+of new engineers.
+
+We want applications that
+require minimal maintenance
+
+without constant
+runtime upgrades.
+
+Our final theme is that
+modern enterprise apps
+
+must sustain growth.
+
+They must be scalable
+and efficient.
+
+Data and usage has been
+expanding exponentially
+
+for the past five decades.
+
+With the end of Moore's
+Law and increased pressure
+
+on computing costs, modern
+enterprise applications
+
+need rapid deployment
+and the ability
+
+to scale up and down with ease,
+using resources efficiently
+
+and keeping operating and
+management costs down.
+
+They must have a
+Cloud-native architecture.
+
+Modern enterprise
+applications must
+
+take advantage of innovations
+in Cloud computing.
+
+With the Cloud-native
+architecture,
+
+they must be designed with
+automation, monitoring,
+
+and repair from the beginning,
+favoring managed services.
+
+
+
+They must incorporate
+event-driven components,
+
+also known as serverless.
+
+Event-driven features
+must be properly utilized
+
+to bring cost savings,
+adaptability, and efficiency
+
+to modern enterprise
+applications.
+
+This requires software
+that loads instantly
+
+with minimal
+resource consumption
+
+and minimal dependencies.
+
+We're now going to go
+through these requirements
+
+and highlight the ways
+that Go and Google Cloud
+
+Platform will help you build
+modern enterprise applications.
+
+
+
+Go and GCP help
+you minimize risk.
+
+Go is a truly modern language,
+requiring a completely clean
+
+implementation, keeping
+your application decoupled
+
+from legacy libraries.
+
+While there is
+risk in a rewrite,
+
+it pales in comparison
+to the larger risk
+
+of sticking with legacy
+systems, or worse,
+
+maintaining both a legacy
+and a modern system.
+
+Go's high learnability,
+productivity, and simplicity
+
+minimize the rewrite
+risk, and often pay
+
+dividends in massively
+reducing both operating
+
+costs and technical
+debt, further
+
+minimizing business risk.
+
+Zviad, a Senior Principal
+Engineer at Dropbox,
+
+said, "People become very
+productive in Go very fast.
+
+Our infrastructure
+is built in Go today,
+
+and all the new things
+we build in Go."
+
+Legacy software
+languages were designed
+
+for a different era where safety
+wasn't prioritized, or worse,
+
+often compromised
+for performance.
+
+This trade-off made sense
+in a pre-network era,
+
+but has created massive
+risk in today's environment.
+
+Modern languages
+like Go are designed
+
+for today's environment,
+where safety is critical.
+
+Go is memory safe,
+type safe, and utilizes
+
+low-latency garbage collection.
+
+These features alone avoid
+over 70% of critical bugs
+
+resulting from unsafe
+legacy languages.
+
+Bala, a Senior Director of
+Engineering at PayPal, wrote,
+
+"In our tightly managed
+environments where we run Go
+
+code, we have seen a CPU
+reduction of around 10% versus
+
+C++, with cleaner and
+more maintainable code."
+
+Go has been designed to create
+the most secure applications,
+
+minimizing risk as
+much as possible.
+
+Go applications compile
+down to a single binary
+
+without any local dependencies.
+
+It's not uncommon to
+see an application built
+
+using only the standard
+library, or only a couple
+
+well-vetted Go dependencies.
+
+Go's dependency management
+uses an industry-leading,
+
+tamper-evident transparency
+log, with built
+
+in tooling that ensures
+that your dependencies are
+
+exactly what you expect.
+
+Go has native
+encryption, which is
+
+used to power much
+of the internet,
+
+including key components
+of Google and Cloudflare.
+
+Adopting Go means that
+the next Heartbleed, which
+
+impacted virtually every
+application written
+
+in any other language, won't
+impact your application.
+
+Go even supports
+distroless containers,
+
+where there are zero local
+dependencies to worry about.
+
+GCP, CI/CD, and Artifact
+Manager have direct access
+
+to Go's Vulnerability
+Database and can provide you
+
+instant warnings about
+security threats.
+
+
+
+Finally, Go and GCP will help
+you adapt to business needs.
+
+Service-oriented APIs
+provide enhanced agility,
+
+scalability, and reliability,
+allowing your business
+
+to adapt to market and
+strategy changes quickly.
+
+Go is the only language
+explicitly designed
+
+to build service-oriented APIs.
+
+Go has native support
+in the standard library
+
+for all you need to build
+performant and secure APIs,
+
+including a
+high-performance web server.
+
+This is Go's most
+common use case,
+
+with over 70% of Go developers
+using Go for building APIs.
+
+Matt, a Principal Software
+Engineer at Monzo,
+
+shared, "Go is a perfect
+language for creating
+
+microservice architectures.
+
+The concurrency features,
+and the language in general,
+
+has allowed the easy creation
+of small and simple network
+
+services at Monzo."
+
+A unique feature of Go is
+that its application structure
+
+directly mirrors
+the architecture
+
+of service-oriented systems.
+
+Services are designed
+independently
+
+in a share-nothing architecture
+communicating across networks.
+
+Go applications are composed
+of share-nothing modules
+
+communicating across channels,
+a native feature of Go.
+
+This means that both your
+service and your application
+
+composed of many
+services are using
+
+the same architectural pattern.
+
+The benefits of
+agility, independence,
+
+and easy maintenance
+are twice as impactful
+
+for Go-based services,
+maximizing your ability
+
+to adapt to business needs.
+
+There's an additional
+cognitive benefit
+
+for developers of using a
+single architectural pattern
+
+at every level of your system.
+
+John Graham-Cumming,
+the CTO at Cloudflare,
+
+shared about Go, "I came
+for the easy concurrency,
+
+I stayed for the
+easy composition."
+
+Kubernetes creator, Joe Beda,
+tweeted, "Kubernetes success
+
+is in part due to Go
+and the Go community.
+
+Go hits the sweet spot for
+distributed system software."
+
+High maintenance costs
+ensure that your technology
+
+can't properly adapt or
+support business needs.
+
+Go is unique among all languages
+as it has been designed
+
+to minimize maintenance costs.
+
+Rapidly-evolving teams
+are common at Google
+
+and virtually all enterprises.
+
+Go's simplicity, easy
+readability, and single-binary
+
+deployment ensures that
+Go applications have
+
+minimal maintenance
+and that it's
+
+relatively easy for
+someone new to a code base
+
+to safely maintain it.
+
+Martin, a software
+engineer at Trivago,
+
+spoke of this hidden
+benefit of Go.
+
+"Go's simplicity and its
+sophisticated tooling
+
+let us scale not only our
+service, but more importantly,
+
+the process of software
+engineering itself.
+
+Reducing the friction of
+onboarding and training someone
+
+has a significant impact on
+the company's productivity,
+
+even more so at a
+constantly moving
+
+environment like Trivago."
+
+And Benjamin Cane, Vice
+President and Principal
+
+Engineer at American Express,
+shared, "After working on Go,
+
+most of our
+developers don't want
+
+to go back to other languages."
+
+
+
+Go and GCP will help you
+sustain business growth.
+
+Historically, CTOs have
+needed to make an impossible
+
+trade-off-- either choose to
+delay launch as the team builds
+
+a scalable application first, or
+choose to ship a slow prototype
+
+early, acknowledging that
+development will be delayed
+
+significantly later as adoption
+growth demands a rewrite--
+
+effectively having
+to choose when
+
+to be unable to support
+business growth.
+
+Go has eliminated this dilemma.
+
+Go is designed for Google Scale
+with built-in concurrency that
+
+takes full advantage of today's
+multicore machines and Cloud
+
+Services.
+
+Go enables programmers
+to quickly develop
+
+applications that perform
+at scale, no rewrite needed.
+
+Eric, a Software Engineering
+Manager at MercadoLibre,
+
+wrote, "With Go, the company
+obviated 88% of their servers
+
+and cut CPU on the
+remaining ones in half,
+
+producing a tremendous
+cost savings."
+
+Cloud computing brings
+countless benefits
+
+for flexibility and efficiency,
+critical to sustaining
+
+business growth.
+
+Go is the only modern
+language that has first class
+
+support on all Cloud platforms.
+
+Go is designed for
+Cloud-native applications.
+
+Over 3/4 of the projects
+in the Cloud-Native
+
+Computing Foundation
+are written in Go.
+
+And Go is designed for
+container deployment,
+
+with a very small
+footprint, compared
+
+to the "ship the world" legacy
+languages like Java, Python,
+
+and Note.
+
+Mariano, a Software
+Engineer at Movio,
+
+blogged, "Our Go
+microservices currently build
+
+in 5 seconds or less, they test
+in one or two seconds which
+
+includes integration
+tests, and they
+
+can deploy (via
+Kubernetes) new containers
+
+in 10 seconds or less.
+
+The key factor here
+is small images."
+
+Among all Cloud
+benefits, serverless
+
+has the largest potential for
+sustaining business growth,
+
+with its low cost,
+instant scalability,
+
+and expanded flexibility.
+
+Go is an ideal fit
+for serverless,
+
+with broad support on
+all serverless platforms.
+
+Go has very low
+resource use and nearly
+
+instant startup times
+compared to applications
+
+written in legacy languages
+that utilize interpreters.
+
+Google's Cloud Run is the ideal
+platform for Go applications
+
+with seamless deployment.
+
+Go and GCP help you
+simplify the chaos.
+
+"The biggest impediment to
+a company's future success
+
+is its past success,"
+according to Dan Schulman,
+
+the CEO of PayPal.
+
+Today's business environment is
+defined by modern enterprises
+
+with a "move fast and
+break things" culture.
+
+Enterprises will need
+to embrace the process
+
+of constant transformation
+to remain relevant.
+
+
+
+Go provides the
+flexibility and performance
+
+to assist organizations with
+application modernization
+
+efforts, and GCP provides
+flexible managed services
+
+to guide your organization
+into the modern era.
+
+
+
+To learn more about Go,
+its primary use case,
+
+and to read case
+studies of enterprises
+
+who have transformed their
+organizations, visit Go.dev.
+
+Thanks for spending
+time with me today.
+
+I hope that you've
+learned something.
+
+I hope you enjoyed
+it, and I hope
+
+to see you at a future
+conference or one
+
+of the many Go conferences.
+
+Thank you.
+
+
+

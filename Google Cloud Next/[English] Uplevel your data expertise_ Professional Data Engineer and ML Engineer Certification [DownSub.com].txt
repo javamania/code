@@ -1,0 +1,1338 @@
+
+
+DOUG KELLY: Welcome
+to our session,
+
+uplevel your data expertise,
+professional data engineer
+
+and professional ML
+engineer certification.
+
+I'm Doug Kelly and I
+now oversee learning
+
+offerings for machine
+learning and AI solutions
+
+on Google Cloud.
+
+Previously, I worked as an ML
+engineer and data scientist
+
+at Google Cloud and oversaw data
+science content at Coursera.
+
+I now spend my time
+thinking deeply
+
+about industrializing
+machine learning development
+
+on Google Cloud and driving
+the creation of training
+
+to prepare learners such as
+yourselves for data and machine
+
+learning engineering careers.
+
+In this session, I
+would like to start off
+
+by discussing two key data and
+machine learning challenges
+
+that enterprises
+are facing today.
+
+The gap between data platform
+investments and realizing value
+
+from them and the scarcity
+and corresponding high demand
+
+for data and machine
+learning engineering talent.
+
+This will frame our discussion
+on how Google Cloud is
+
+addressing these, both through
+data and machine learning
+
+platform innovations as well
+as through our industry leading
+
+professional certifications,
+the professional data
+
+engineer and professional
+ML engineer certifications.
+
+I hold both of
+these certifications
+
+and will share my
+perspective with you
+
+on the benefits of
+these certifications
+
+as well as the
+recommended learning
+
+path and resources for each.
+
+Lastly, I will
+give you a preview
+
+of what's coming next
+for data and machine
+
+learning training from
+Google Cloud learning.
+
+My goal for the
+session is that you
+
+walk away excited about building
+data and machine learning
+
+solutions on Google Cloud
+and you start or level
+
+up your learning journey
+towards certification today.
+
+
+
+One of the bigger
+challenges for data teams
+
+is turning into a
+competitive advantage
+
+the immense, fast growing,
+and fast moving amount of data
+
+that our organizations, our
+customers, our partners,
+
+our ecosystem is creating.
+
+
+
+According to IDC, 175
+zettabytes of data
+
+will be created in
+the next five years.
+
+One zetabyte equaling
+1 trillion gigabytes--
+
+that's 21 zeros.
+
+Our data production
+has more than 10xed
+
+in the last eight years.
+
+In fact, 90% of the
+data in the world
+
+has been created in
+just the past 10 years.
+
+
+
+Yet, when it comes
+to turning data
+
+into business outcomes and
+business value for companies,
+
+the situation is quite alarming.
+
+Over 2/3 of the data produced
+is never actually analyzed.
+
+And almost 70% of
+companies say they're
+
+unable to realize tangible and
+measurable value from data.
+
+The key takeaway is this,
+delivering value with analytics
+
+and machine learning
+requires a modern data
+
+platform such as Google Cloud.
+
+Data engineers are essential
+to build, operate, and maintain
+
+these data platforms to
+enable business value.
+
+And machine learning
+engineers, in turn,
+
+build and deploy machine
+learning solutions
+
+on top of a robust data platform
+to drive decision making
+
+and the realization of value.
+
+
+
+Data engineers and ML
+engineers work closely together
+
+on data teams to
+close the data value
+
+gap by tightly integrating
+data and machine
+
+learning infrastructure.
+
+In industry, we know
+that machine learning
+
+has had the most business impact
+by scaling real-time decision
+
+making and personalization.
+
+That means we have to act fast.
+
+To do so, we need data engineers
+enabling data processing
+
+and analytics speed
+and ML engineers
+
+to deliver predictions that
+arrive at the point of action
+
+and real time.
+
+That's the difference between
+discovering and preventing
+
+fraud, purchases and
+cart abandonment,
+
+and proactive and
+reactive customer service.
+
+
+
+Google Cloud is simplifying data
+analytics and machine learning
+
+through each of
+the platform design
+
+pillars outlined on this slide.
+
+We deliver serverless
+analytics, allowing customers
+
+to keep development velocity
+high and their focus purely
+
+on analytics versus
+infrastructure.
+
+We offer a comprehensive set
+of data analytics workloads,
+
+from batch and streaming data
+processing to data warehousing
+
+to business intelligence.
+
+We provide the services
+for our customers
+
+to operationalize machine
+learning solutions,
+
+from pre-built ML APIs to
+AutoML to BigQuery ML to custom
+
+TensorFlow and PyTorch models.
+
+We enable the best open source
+data technologies to give you
+
+flexibility and choice.
+
+And we build for enterprise data
+and machine learning workloads
+
+at any scale.
+
+
+
+Google Cloud is already a
+recognized industry leader
+
+with a purpose built, end-to-end
+data analytics and machine
+
+learning platform to support
+the entire data team anywhere,
+
+on premise or on Google Cloud.
+
+Data engineers are able to
+leverage services like Pub/Sub,
+
+Dataflow, and Data Fusion to
+ingest, prepare, and transform
+
+data at any scale.
+
+They can also leverage
+new data services
+
+like data plaques and
+analytics hub and market
+
+leading analytics services,
+such as BigQuery and Looker,
+
+to manage and quickly
+surface enterprise data
+
+sets and insights to
+the entire organization.
+
+Announced at Google
+I/O this year,
+
+Vertex AI is also rolling
+out as the successor
+
+to AI platform for machine
+learning development.
+
+It provides ML engineers with
+an integrated suite of services
+
+to help enable each stage
+of your ML workflow,
+
+from gathering data to feature
+engineering to building models
+
+and, finally, deploying
+and moderneering
+
+these models in production.
+
+For example, new
+Vertex MLop services,
+
+like Pipelines
+and Feature Store,
+
+give ML engineers
+reusable ML workflows
+
+while Vertex Predictions
+gives ML engineers
+
+a scalable, serverless
+solution to get
+
+model predictions into
+decision making UIs faster.
+
+
+
+Depending upon how you define
+the machine learning market,
+
+if you look at platforms like
+Qwiklabs, Kaggle, Coursera,
+
+and LinkedIn, there
+are only about 300,000
+
+global professional data
+engineers, data scientists,
+
+and ML engineers today.
+
+Yet, at the same time, there's
+huge demand for data engineers
+
+and ML engineers in the market.
+
+According to Coursera
+market research,
+
+in just the past
+12 months, there's
+
+been over 200,000 job postings
+requiring data engineering
+
+and ML engineering
+skills, and that demand
+
+has been trending upwards.
+
+Over the past three
+years, there's
+
+been a 91% increase in job
+postings requiring these skill
+
+sets.
+
+Many enterprises are
+still in the early stages
+
+of data platform
+modernization and AI adoption
+
+and are really struggling to
+find data engineers and ML
+
+engineers to make this happen.
+
+To bridge the skills gap, Google
+Cloud learning has brought some
+
+of the best of Google
+together, its top engineers,
+
+it's solutions and expertise
+in building large scale data
+
+and machine learning systems
+to produce two industry leading
+
+certifications in the job
+market, the professional data
+
+engineer and
+professional ML engineer.
+
+These certifications are
+not just about Google Cloud
+
+technologies.
+
+In fact, the initial stages of
+designing each certification
+
+are product agnostic.
+
+And just like the
+real world examinees
+
+are expected to
+know the vast amount
+
+of foundational concepts, design
+patterns, and technology trade
+
+offs that they may encounter
+in their day to day jobs.
+
+So how have these certifications
+been received by learners
+
+and recognized in
+the job market?
+
+
+
+Think of Google
+Cloud certifications
+
+as valuable tools to
+validate your learning
+
+and help you build your career,
+get promoted, and earn raises.
+
+In a recent survey of Google
+Cloud certified individuals
+
+conducted by an
+independent third party,
+
+we heard some incredible
+pieces of feedback
+
+from learners across the job
+market on how Google Cloud
+
+certifications have enabled and
+boosted skills for Cloud roles.
+
+78% of respondents
+were more confident
+
+when talking about their
+future opportunities
+
+after certification.
+
+82% of respondents felt
+proud to have a proof
+
+point about their
+skills and abilities
+
+when working with recruiters.
+
+83% of respondents told us
+they felt more marketable.
+
+And finally, 85%
+of respondents just
+
+had the boost of confidence
+that they both wanted
+
+and needed to really
+get themselves out there
+
+for Cloud opportunities.
+
+So in short, if you're asking
+yourself, what's in it for me,
+
+I hope these anecdotal
+shares and statistics drive
+
+home how learners
+like yourselves
+
+have benefited from Google
+Cloud certifications.
+
+Next, let's take a
+look a little bit more
+
+closely at the
+value propositions
+
+for the professional data
+engineer and ML engineer
+
+certifications.
+
+
+
+First, let's talk about the
+professional data engineer
+
+certification.
+
+A professional data
+engineer is the enabler
+
+of data driven decision making
+by collecting, transforming,
+
+and publishing data.
+
+This is an intermediate
+professional certification
+
+that requires three-plus
+years of industry experience
+
+and one-plus years
+designing and managing
+
+data solutions on Google Cloud.
+
+We offer a data
+engineering learning
+
+path with hands-on
+practice through Qwiklabs
+
+that culminates in a
+two hour multiple choice
+
+and multi select exam
+to validate your ability
+
+to design, build, and
+operationalize data processing
+
+systems.
+
+Upon completion, you earn a
+shareable credential and gain
+
+access to Google Cloud
+community, swag, and events.
+
+
+
+So why do I think you should
+get certified as a Google Cloud
+
+data engineer?
+
+Data engineering is a
+challenging applied discipline
+
+that is best learned
+through practice.
+
+Through following the
+recommended learning path,
+
+you will complete 30 plus
+hands on data engineering labs
+
+in a sandbox GCP
+project environment
+
+to practice building
+and deploying
+
+data processing solutions.
+
+Further, the Google Cloud
+data engineer certification
+
+was recently named
+as the number one
+
+top paid global IT certification
+according to global knowledge
+
+market research.
+
+You will learn some of the
+most valuable and in-demand
+
+enterprise skills
+in the market and be
+
+indispensable to organizations
+modernizing their data
+
+platforms and looking to
+adopt machine learning.
+
+Third, you will learn data
+engineering best practices
+
+from Google, which brought
+Hadoop and Beam to the world
+
+and currently processes over
+2.5 exabytes of logs per
+
+month on planet scale
+compute in network.
+
+Through this certification,
+you will differentiate yourself
+
+for career success by learning
+how to choose the right data
+
+storage and processing services,
+identify the right balance
+
+of trade offs for
+various data workloads,
+
+and practice implementing
+production tested data
+
+processing design patterns.
+
+
+
+To prepare you for the exam,
+we designed a learning path
+
+that covers foundational
+data concepts
+
+and data pipeline design
+patterns as well as
+
+steps you progressively through
+key data ingestion, storage,
+
+and data transformation
+services on Google Cloud.
+
+For aspiring data
+engineers, the learning path
+
+is designed to be completed
+in about three and 1/2 months
+
+and about five hours per week.
+
+For existing data engineers,
+the Coursera preparation
+
+certificate is
+still a great place
+
+to start to learn Google Cloud
+data services that you can then
+
+supplement as needed with
+additional hands-on practice
+
+through Qwiklabs.
+
+I recommend the certification
+to ML engineers, as well,
+
+and personally started
+my certification journey
+
+here first.
+
+Data management
+and data processing
+
+are key foundations of modern
+production ML pipelines.
+
+
+
+Now, let's discuss the
+professional ML engineer
+
+certification.
+
+This is a more
+advanced certification
+
+that also recommends three-plus
+years of industry experience
+
+as a data scientist or
+machine learning engineer,
+
+including at least one
+year designing and managing
+
+machine learning
+solutions on Google Cloud.
+
+A professional ML
+engineer designs, builds,
+
+and production houses ML models
+to solve business challenges
+
+using Google Cloud ML services
+and knowledge of proven ML
+
+models and techniques.
+
+So why do I think you should get
+certified as a Google Cloud ML
+
+engineer?
+
+The Google Cloud professional
+ML engineer certification
+
+is continuously updated by
+leading Googler and industry
+
+subject matter experts to
+best reflect the ML engineer
+
+skill set in the job market.
+
+This gives aspiring and
+current ML engineers
+
+the opportunity to validate
+their expertise in machine
+
+learning in Google Cloud against
+a rigorous, practical industry
+
+benchmark exam recognized
+in the job market.
+
+Google is a globally
+recognized leader
+
+in AI research and
+applied machine learning
+
+with over a decade of
+experience productionizing
+
+machine learning systems as
+part of applications serving
+
+billions of users per day.
+
+Google Cloud is the
+platform by which
+
+Google delivers this pioneering
+ML research and product
+
+solutions to customers.
+
+In fact, Google
+Cloud's AI platform
+
+was recognized by Gartner as
+an industry leader in its 2020
+
+Magic Quadrant for Cloud
+AI developer services.
+
+My key takeaways on the ML
+engineer certification for you
+
+all are this.
+
+The Google Cloud professional
+ML engineering certification
+
+is a rewarding learning
+journey for you
+
+to build your development skills
+on an industry-leading data
+
+and machine learning platform to
+both differentiate yourself as
+
+well as position yourself
+for success in the rapidly
+
+evolving field of
+applied machine learning.
+
+
+
+The learning path is designed
+to augment your study
+
+through a structured progression
+of role based curriculum
+
+through Google
+Cloud fundamentals
+
+through applied machine learning
+and up to ML ops content.
+
+It's designed to be completed
+in about four months
+
+at about six hours per week.
+
+The content is
+available on demand
+
+through a Coursera professional
+certification certificate
+
+with additional hands-on
+practice opportunities
+
+available through Qwiklabs.
+
+For aspiring ML engineers,
+I have two additional tips
+
+for you.
+
+First, take advantage of $300
+in free credits in the Google
+
+Cloud free tier on products
+such as the ML APIs AutoML
+
+and BigQuery to start building
+ML applications today.
+
+Second, learn
+socially and publicly.
+
+Form a study group to share
+your learnings and projects
+
+with others.
+
+GitHub, blogs, or the
+Google Cloud learning forums
+
+are a great place to start.
+
+I personally like open
+source contributions
+
+to projects, tutorials,
+and documentation.
+
+Take a look at open issues on
+some of your favorite email
+
+projects like TensorFlow
+and Google Cloud samples
+
+tagged as help-wanted
+or good first issue
+
+as an approachable
+place to dive in.
+
+
+
+Lastly, I'd like to share
+with you all of what's
+
+coming next for Google Cloud
+data and machine learning
+
+training.
+
+It's an exciting time to be
+building data and machine
+
+learning solutions.
+
+So far in 2021, Google Cloud's
+already industry leading data
+
+and machine learning
+platform has
+
+seen its most significant
+enhancements in the past two
+
+to three years.
+
+In the June 2021 data summit,
+Google Cloud engineering teams
+
+laid out their vision
+for the data cloud
+
+with new services like
+Dataplex and Analytics Hub
+
+to bring new data management and
+analytics sharing capabilities
+
+to enterprise data teams.
+
+Together, along with new
+integrations between BigQuery
+
+and Booker, data engineers can
+focus on further breaking down
+
+organizational data silos
+to more broadly socialize
+
+insights across organizations
+to enable business value.
+
+Furthermore, at
+Google IO in May 2021,
+
+Google Cloud
+announced Vertex AIs,
+
+the successor to AI Platform,
+a unification of services
+
+such as AutoML and
+custom training
+
+for developing ML
+solutions faster.
+
+There are over 20-plus major
+updates and net new services
+
+reaching GA over the next
+year, particularly related
+
+to ML ops, opening up
+fundamentally new ways
+
+to build and deploy ML
+solutions and incorporate them
+
+into decision making systems
+to deliver business value.
+
+Vertex AI, BigQuery,
+and Looker, as well as
+
+AI industry solutions empower
+data scientists or data
+
+engineers and ML
+engineers with new tools
+
+to close the data value gap
+while enhancing development
+
+and productivity, the ability
+to scale your workflow
+
+and your decision
+making with your data,
+
+as well as accelerating
+time to value.
+
+My colleagues and I in
+Cloud Learning services
+
+are hard at work bringing Data
+Cloud, Vertex AI, and industry
+
+solutions content to you
+through Qwiklabs and Coursera.
+
+Stay tuned for
+significant new data
+
+and machine learning
+training rolling out
+
+in the second half of
+this year as well as
+
+a major update to the
+professional ML engineer
+
+certification for Vertex AI
+in the second half of 2022.
+
+Now, I'm keen to switch over
+to the Google Cloud console
+
+to share with you some of the
+new capabilities of Vertex AI.
+
+Welcome to the Vertex AI
+ML development platform
+
+in the Google Cloud console.
+
+To get started, first
+enable the Vertex service
+
+in the API and Services tab.
+
+
+
+Vertex AI is a platform
+that contains services
+
+for each phase of the ML
+development lifecycle,
+
+from data sets to
+predictions, enabling
+
+you to go from experimentation
+to production ML
+
+workflows to delivering
+business value faster.
+
+The Data Sets tab contains
+a list of all your data
+
+sets in your project with
+support for image, tabular,
+
+text, and video data types.
+
+Manage data sets enable you to
+create a link between your data
+
+sets and your models for
+traceable and reproducible
+
+experiments.
+
+You also get descriptive
+statistics on your data set
+
+as well as the ability to
+configure automatic or custom
+
+data splitting.
+
+The Notebooks tab contains new
+features such as Managed Vertex
+
+Notebooks.
+
+
+
+Vertex Notebooks are interactive
+JupyterLab development
+
+environments that enable
+you to quickly build custom
+
+machine learning solutions.
+
+They provide support
+for multiple frameworks
+
+flexible compute and easy
+access to accelerators
+
+like GPUs and TPUs.
+
+They also have newer,
+tighter integrations
+
+with key Google
+Cloud data services,
+
+like Cloud Storage and
+BigQuery in a single window.
+
+Check out some of the newer
+integrations with Data PROC
+
+as well, which also
+makes Vertex notebooks
+
+a great single window for
+development of Apache spark,
+
+as well.
+
+
+
+In the Training tab you can also
+see and create your training
+
+pipelines using the same
+managed data set for both AutoML
+
+and custom training jobs.
+
+
+
+You can leverage pre-built
+containers with your model code
+
+with frameworks like TensorFlow,
+Scikit-learn, PyTorch,
+
+or XGBoost.
+
+For maxima; flexibility,
+you can also
+
+leverage custom containers, as
+well, leverage in any framework
+
+you'd like with any
+additional dependencies,
+
+upload it to artifact
+registry, and use it
+
+for model, training, prediction,
+or as a pipeline step.
+
+
+
+AutoML is a great way to quickly
+build highly accurate models
+
+with built-in support for
+standard evaluation metrics,
+
+feature attributions,
+quick model deployment,
+
+as well as metadata that
+covers the model architecture
+
+search as well as the
+hyperparameters that
+
+were searched, as well.
+
+In the Experiments tab, you can
+create a managed TensorBoard
+
+instance to organize and compare
+model performance across model
+
+runs and data splits.
+
+
+
+For predictions, you
+can deploy new endpoints
+
+for online predictions
+or scheduled batch jobs
+
+for bulk predictions, as well.
+
+A model can be deployed
+to multiple endpoints
+
+or can serve multiple
+models on a single endpoint.
+
+With multiple models on a single
+endpoint and traffic splitting
+
+capabilities, you now have some
+new model prediction evaluation
+
+capabilities, such
+as A/B testing.
+
+For production ML workflows,
+the new Vertex pipeline service
+
+enables you to automate,
+monitor, and govern
+
+your machine learning systems
+by orchestrating your tasks
+
+in a serverless manner.
+
+Clicking into an
+individual pipeline run,
+
+you have a graphical
+user interface
+
+to view and debug each
+step of your workflow,
+
+from data set creation,
+model training, evaluation,
+
+and deployment.
+
+You can expand
+upon your artifacts
+
+to be able to deep dive
+into individual pipeline
+
+runs and their artifacts, such
+as model evaluation metrics.
+
+
+
+In this example, you also have
+a conditional model deployment
+
+step, which you
+can use to ensure
+
+that you're only pushing
+higher performing
+
+models to production.
+
+This concludes a
+quick walkthrough
+
+of just some of the new
+features available in Vertex AI.
+
+I encourage you
+to also check out
+
+services like data labeling,
+ML metadata for tracking
+
+your development artifacts
+across your project,
+
+as well as the upcoming
+Feature Store, which
+
+enables you to reuse
+features across ML use cases.
+
+For hands-on on practice in a
+Google Cloud project with some
+
+of the features I just
+introduced, check out
+
+the Vertex AI labs on Qwiklabs.
+
+A great place to start is
+the Vertex AI Qwik Start,
+
+where you will walk through
+an end-to-end custom training
+
+workflow on Vertex AI
+to train and deploy
+
+a TensorFlow model to predict
+customer lifetime value.
+
+To start your data and
+machine learning engineering
+
+learning journeys today, check
+out our recently launched
+
+Google Cloud Skills
+Boost, our new destination
+
+for Google Cloud learning with
+over 700 labs and courses.
+
+This will be available to you
+all the entire month of October
+
+free of charge.
+
+It's never been a more
+exciting and productive time
+
+to be building data systems and
+doing applied machine learning.
+
+Thank you for learning with us.
+
+
+

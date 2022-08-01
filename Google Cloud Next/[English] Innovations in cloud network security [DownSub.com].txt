@@ -1,0 +1,1355 @@
+
+
+PETER BLUM: Hi, everyone,
+and welcome to our session,
+
+Innovations in DDoS,
+WAF, Firewalls,
+
+and Network-based
+Threat Detection.
+
+My name is Peter Blum.
+
+And I run the network security
+PM team here at Google Cloud.
+
+And I'm joined by Emil, who I'm
+going to let introduce himself.
+
+EMIL KINER: Thanks, Peter.
+
+Hi.
+
+My name is Emil Kiner.
+
+And I run product management
+for our DDoS mitigation and web
+
+application firewall product
+line called Cloud Armor.
+
+PETER BLUM: So today,
+I'm going to start off
+
+by sharing our vision
+for network security
+
+and provide a brief
+overview of our solutions.
+
+After that, I'm
+going to hand over
+
+to Emil, who's
+going to get us up
+
+to date on all the
+latest with Cloud Armor.
+
+And then I'll pick back up and
+cover all the great new things
+
+that we've been doing
+in network protection
+
+with our Cloud firewall,
+NAT, and IDS offerings.
+
+So let me start with our broader
+vision of network security
+
+at Google Cloud.
+
+As you can see in
+our vision statement,
+
+our goal with network security
+is to make it invisible.
+
+We want to weave it
+into the cloud fabric
+
+with automated, but verifiable,
+protection, simplified control,
+
+and clear prioritization
+of critical threats
+
+with relevant context.
+
+And where we can, we also
+want to provide the solution.
+
+Emil is actually going
+to talk about some
+
+of the new capabilities in
+Cloud Armor in just a bit
+
+that I think are a
+perfect example of what
+
+we're working towards
+across the entire portfolio.
+
+I wanted to provide an overview
+of our network security
+
+portfolio.
+
+I'm going to overlay this on
+a high-level diagram that's
+
+showing flows in, between,
+and out of our cloud.
+
+First, in terms of
+handling incoming traffic
+
+to internet-facing services,
+we provide an integrated edge
+
+delivery stack that includes
+a global load balancer and CDN
+
+that provide for availability,
+scalability, and performance.
+
+And then built into
+this stack to provide
+
+our global-scale DDoS protection
+and a great web application
+
+firewall is Cloud
+Armor, which Emil
+
+is going to dig into shortly.
+
+And then we provide
+defense in depth
+
+with a network firewall and NAT
+service built into our cloud
+
+networking fabric.
+
+These same two
+services also provide
+
+for protection and privacy
+for traffic out of the network
+
+as well.
+
+And as you can expect, our
+network security solutions
+
+are integrated in our
+Cloud Security products,
+
+bringing in context about
+threats, integration
+
+with our bot, fraud, and
+application access solutions
+
+as well.
+
+And then we provide
+a full complement
+
+of network-level
+telemetry from metadata
+
+about traffic flows inside
+and out of the cloud, data
+
+about traffic we block at the
+network and application layer,
+
+plus we provide full
+packet inspection
+
+services with our packet
+mirroring capability.
+
+And with the next
+few months, you'll
+
+see we've also released
+network threat detection.
+
+It's a system called
+Cloud IDS that
+
+was a joint partnership with
+Palo Alto Networks, where
+
+we use their threat detection
+systems within our own cloud.
+
+All the alerts and telemetry
+from these products
+
+are also integrated into
+our own threat-hunting,
+
+alert management, and unified
+security management services.
+
+And then we also integrate with
+third-party SIEM and source
+
+systems as well.
+
+So with that, let
+me hand over to Emil
+
+to take us through Cloud Armor.
+
+EMIL KINER: Thanks, Peter.
+
+Today, I'm excited
+to share with you
+
+all the great new
+developments and capabilities
+
+we've released with Cloud
+Armor over the past year.
+
+Cloud Armor is Google Cloud's
+DDoS protection service
+
+and web application firewall.
+
+It provides global-scale defense
+against volumetric, protocol,
+
+and application-level attacks.
+
+And it's built using the same
+technology and infrastructure
+
+that we originally
+built to protect
+
+our own billion-user properties,
+such as Search, Gmail,
+
+and Maps.
+
+Cloud Armor reflects
+our vision of bringing
+
+to bear Google's global scale
+to protect customer workloads
+
+wherever they are deployed.
+
+Cloud Armor, in
+addition to the rest
+
+of our edge infrastructure,
+including load balancing
+
+and CDN, can be deployed
+in front of your websites
+
+or services, whether
+you are running
+
+on Google Cloud, on-prem, or
+with another infrastructure
+
+provider.
+
+Over the past year, we've
+been privileged enough
+
+to help protect a growing
+set of enterprise customers
+
+while moving quickly to
+expand our capabilities
+
+and scope of protection,
+all while investing
+
+heavily into building a
+cutting-edge machine learning
+
+solution to meet the evolving
+threat landscape head-on.
+
+I'm excited to
+share with you some
+
+of our recent developments.
+
+Earlier this year, we introduced
+Cloud Armor Managed Protection
+
+Plus, a managed application
+protection service
+
+which bundles together all
+the features and capabilities
+
+of Cloud Armor with additional
+value-added services
+
+into an enterprise-friendly
+and predictable
+
+monthly subscription.
+
+Managed Protection Plus
+delivers unrivaled application
+
+protection while providing
+the peace of mind
+
+that Google has your back 24/7.
+
+In addition to including
+all Cloud Armor WAF
+
+rules, policies, and requests,
+Managed Protection Plus
+
+includes premium capabilities,
+like Adaptive Protection,
+
+as well as 24/7 DDoS response
+support, which gives you
+
+access to Google's DoS experts
+to help mitigate attacks
+
+targeting your services.
+
+Further, with DDoS
+Bill Protection,
+
+we're removing the
+financial risk of DDoS
+
+by insulating you from spikes in
+your networking expenses caused
+
+by successful DDoS attacks.
+
+Over the next several
+quarters, you'll
+
+see us continue to add
+additional premium capabilities
+
+and manage services into Managed
+Protection Plus subscription.
+
+Next, we want to talk about
+our new Adaptive Protection
+
+capability, which
+has already generated
+
+a lot of positive feedback
+from a fast-growing enterprise
+
+customer base.
+
+Adaptive Protection is a
+machine learning-based solution
+
+to detect and
+efficiently respond
+
+to application-level distributed
+denial of service attacks.
+
+We have developed
+Adaptive Protection
+
+over the last several years
+in close collaboration
+
+with external and
+internal customers,
+
+like Project Shield,
+continuously training
+
+on attack data we observe
+against all of Google.
+
+Adaptive Protection develops
+a per-application baseline
+
+by learning what normal
+traffic patterns look
+
+like for each
+protected application.
+
+In addition to
+traffic volumes, we
+
+assess dozens of
+features and attributes
+
+of the incoming request traffic
+to establish the baseline.
+
+Next, Adaptive Protection
+monitors traffic flows
+
+in real time and
+generates alerts
+
+for anomalous or
+potentially attack traffic.
+
+A second set of
+machine learning model
+
+then distills the
+anomalous traffic
+
+into a dynamically
+generated signature.
+
+The result of this analysis
+is presented immediately
+
+as part of the original alert.
+
+We also take it a step further
+and provide a proposed Cloud
+
+Armor rule that can
+mitigate the attack
+
+traffic with minimal
+to no collateral damage
+
+to the good baseline traffic.
+
+Adaptive Protection provides
+near-real-time attack detection
+
+with immediately
+actionable alerts,
+
+saving your incident responders
+critical minutes or hours
+
+of time-consuming log
+analysis, triage, and other IR
+
+activities, allowing you to
+safely and efficiently deliver
+
+reliable services.
+
+
+
+This is the main Adaptive
+Protection dashboard.
+
+Here, you can see
+incoming traffic patterns
+
+for all of your
+services protected
+
+by Adaptive
+Protection as well as
+
+the list of attack alerts
+detected over the selected time
+
+horizon.
+
+When we click on
+one of the alerts,
+
+we see a much more
+detailed view of the attack
+
+and the results of our machine
+learning-powered analysis.
+
+We present the
+machine-determined confidence
+
+level in our findings, the
+size and shape of the attack,
+
+as well as the attack signature.
+
+For this attack
+in particular, we
+
+have identified and
+presented a unique signature
+
+across the source region code,
+remote host, and target host
+
+attributes.
+
+We also propose a rule that can
+be deployed in near real time
+
+to mitigate the attack
+as it's occurring.
+
+
+
+Because of the sensitivity
+of our detection models,
+
+alerts are frequently generated
+while an attack is still
+
+ramping up, allowing you to
+respond before it has a chance
+
+to impact your services.
+
+When the operator
+clicks Apply, they
+
+can see the proposed rule, as
+well as additional guidance
+
+from Adaptive Protection, to aid
+in understanding and assessing
+
+the expected impact of
+the proposed mitigation.
+
+Mitigations can also be deployed
+in a logging-only or preview
+
+mode to validate
+effectiveness and safety.
+
+Specifically, you can
+see the expected impact
+
+of the proposed rule on
+the good and bad traffic.
+
+In this case, the
+proposed rule is
+
+expected to impact 0%
+of the good traffic
+
+from the baseline while
+blocking about all or nearly all
+
+of the incoming attack.
+
+So we are providing
+an end-to-end solution
+
+to detect and mitigate attacks
+with near-real-time actionable
+
+alerts containing dynamically
+generated mitigations, which
+
+are narrowly targeted for
+just the malicious traffic.
+
+This insight not only
+saves incident responders
+
+critical time in reacting and
+mounting an effective defense,
+
+but also provides
+the information
+
+to aid triage efforts and
+help explain why we consider
+
+the traffic suspicious.
+
+
+
+Next, we're proud to announce
+the preview release of Cloud
+
+Armor Bot Management
+with a deep integration
+
+with reCAPTCHA Enterprise, which
+is Google Cloud's enterprise
+
+version of the leading bot
+and fraud protection product.
+
+While customers can use these
+products together already,
+
+we wanted to simplify
+the deployment process
+
+and provide a more integrated
+and scalable experience.
+
+ReCAPTCHA Enterprise provides
+a world-class bot detection
+
+mechanism developed
+from and continuously
+
+learning from a
+globally distributed
+
+multi-million
+website install base.
+
+With this deep integration,
+Cloud Armor customers
+
+can now leverage reCAPTCHA
+to detect and block
+
+bot traffic within their
+Cloud Armor security policies.
+
+All of this occurs at the
+edge of Google's network,
+
+far upstream of your
+protected workloads,
+
+allowing us to leverage the
+global scale of our network
+
+to mitigate bot threats without
+impacting the performance
+
+of your applications.
+
+Critically, with the
+integrated solution,
+
+Cloud Armor and
+reCAPTCHA Enterprise
+
+can protect customer
+applications
+
+without requiring server-side
+changes on the application
+
+to decipher and enforce
+bot assessments.
+
+You can configure Cloud
+Armor security policies
+
+in several ways to
+leverage this integration.
+
+You can configure
+any rule action
+
+to serve the
+reCAPTCHA challenge,
+
+forcing suspicious end
+users to solve the puzzle
+
+before being allowed through.
+
+Additionally, you can instrument
+your client-side applications
+
+with the reCAPTCHA library
+for seamless and silent bot
+
+assessments and then have Cloud
+Armor decipher and enforce
+
+the assessment at the edge.
+
+In addition to the
+reCAPTCHA integration,
+
+Cloud Armor Bot Management
+introduces an enhanced set
+
+of capabilities designed to
+help you deploy an effective bot
+
+management strategy.
+
+These capabilities include
+additional rule actions
+
+to redirect traffic,
+as well as the ability
+
+to insert a custom header
+into a suspicious request,
+
+but otherwise allow it to
+reach your application.
+
+Customers use this custom
+header to tag suspicious traffic
+
+for alternative processing
+within their workloads,
+
+like sending to
+a honeypot or not
+
+completing a potentially
+fraudulent transaction
+
+without notifying the
+bot that it was detected.
+
+We're also proud to share
+that one of our most highly
+
+anticipated features,
+rate limiting,
+
+is now available in preview.
+
+With Cloud Armor
+per-client rate limiting,
+
+users can ensure that
+no client exceeds
+
+a pre-configured threshold
+through two new actions
+
+for any existing or
+new Cloud Armor rule.
+
+With the throttle
+action, requests
+
+from individual clients will be
+dropped when the client begins
+
+exceeding the prescribed rate
+to ensure that, on average,
+
+the client's
+request volume stays
+
+within the configured threshold.
+
+Similarly, the
+rate-based ban action
+
+aims to punish abuse of clients
+by temporarily banning them
+
+for a configured amount of time
+if they exceed your threshold.
+
+And clients can be
+identified by their source
+
+IP, X-Forwarded-For header,
+or any arbitrary header,
+
+like a session
+identifier or a user ID.
+
+Cloud Armor rate limiting
+is an effective means
+
+to detect and thwart
+high-volume DDoS attempts,
+
+mitigate credential
+stuffing attacks,
+
+all while ensuring the
+availability and reliability
+
+of your workloads.
+
+Finally, Cloud Armor
+edge security policies
+
+are available in preview to
+provide Cloud Armor protection
+
+in front of Cloud CDN cache or
+Google Cloud Storage buckets.
+
+The new edge
+security policy types
+
+can be applied to protected
+services in parallel
+
+with the existing back-end
+security policies.
+
+The new policy types
+are stored, evaluated,
+
+and enforced even further
+upstream in our edge
+
+infrastructure before a request
+can be served from the CDN's
+
+cache or from a GCS bucket.
+
+Requests that make it through
+the edge security policy that
+
+cannot be served from cache
+are still evaluated by any
+
+configured back-end security
+policy for full Layer 7
+
+filtering and WAF before it is
+proxied back to your protected
+
+application or origins.
+
+Edge security policies
+support IP and geo-filtering
+
+to filter out unwelcome end
+users or geographies in order
+
+to comply with security
+compliance, export controls,
+
+or licensing agreements.
+
+While delivering these much
+anticipated capabilities,
+
+we are continuing
+to invest heavily
+
+into expanding Cloud Armor
+scope and depth of protection
+
+to help protect your
+applications and services.
+
+So stay tuned.
+
+Now I'll hand it back
+to Peter to tell you
+
+about more great developments
+across our network security
+
+products.
+
+
+
+PETER BLUM: Thanks, Emil.
+
+It's great to hear about
+all the good stuff that's
+
+happening with Cloud Armor.
+
+Next, I'd like to get into
+what's new and innovative
+
+with network protection.
+
+I'm going to cover innovations
+in Cloud Firewall, Cloud
+
+NAT, and Cloud IDS.
+
+So let's start with
+Cloud Firewall.
+
+This is our integrated
+virtual firewall service
+
+for ingress, egress, and inside
+the cloud network protection.
+
+It's fully integrated
+with Google's SDN fabric.
+
+And the firewall
+policy enforcement
+
+is distributed
+across that fabric.
+
+And to make firewall
+policies dynamic,
+
+we allow for easier
+microsegmentation
+
+and provide a shift to a
+zero-trust workload protection
+
+posture by using network
+tags and service accounts.
+
+This removes the need for
+encoding static IP addresses
+
+into firewall rules and
+makes protection dynamic.
+
+The example I like to give is
+you can add new microservices
+
+with a tag.
+
+And they'll automatically get
+the established protection
+
+rules.
+
+And in terms of
+recent innovations,
+
+we have two great additions.
+
+First is Firewall
+Insights, which
+
+provides information that helps
+operators learn about which
+
+firewall rules are used,
+never used, and overshadowed
+
+by other, more broad, rules.
+
+This helps identify
+misconfigurations,
+
+attacks, and allows tightening
+controls for better security.
+
+And then we just released a
+new capability in preview here
+
+that highlights rules
+that have perhaps
+
+over-granted permissions,
+which is a great opportunity
+
+to tighten up your
+firewall rules.
+
+Next, we released
+hierarchical firewall policies
+
+earlier this year, which
+allows creating and enforcing
+
+a consistent set of
+firewall policies
+
+across an entire organization.
+
+This improves protection
+and simplifies
+
+complex, large deployments.
+
+The great thing is that once
+you set up your organization's
+
+standard set of
+firewall policies,
+
+any new projects added
+automatically get that policy.
+
+But it still allows
+for local overrides
+
+deeper within the
+organization when required.
+
+We find it's really
+helping customers simplify
+
+their firewall
+configurations by reducing
+
+the number of firewall rules
+needed across an organization.
+
+
+
+Next up is Cloud NAT.
+
+This is our integrated network
+address translation service.
+
+Like our firewall, it's
+built into the fabric
+
+and provides
+security and privacy
+
+for outbound connections
+with the ability
+
+to use static or
+auto-allocated IPs.
+
+And like our firewall,
+it's built into the network
+
+fabric versus a single gateway.
+
+So you can scale it up
+to thousands of VMs.
+
+And in terms of
+recent innovations,
+
+we have two great additions
+in preview now at the show.
+
+The first is NAT
+rules, which allow
+
+for tighter control over
+which external IPs are
+
+used for different
+internal requesters.
+
+For example, you
+can ensure a service
+
+making requests out over NAT
+always uses the same public IP
+
+address.
+
+And then we introduced a
+new capability in preview
+
+called dynamic port allocation.
+
+This allows for higher scale
+by automatically optimizing NAT
+
+port utilization in real time.
+
+Previously, customers
+had to manually configure
+
+port allocations across VMs.
+
+And they were generally
+over-allocated.
+
+Now the system does it for
+you on its own automatically.
+
+And we just recently announced
+our new Cloud IDS product,
+
+which provides for
+managed network threat
+
+detection with high
+levels of security
+
+efficacy and low noise.
+
+It's quick and easy to deploy.
+
+It's managed, scaled,
+and operated by Google,
+
+with high performance and
+availability all built in.
+
+It's super easy to set up.
+
+With a few clicks,
+you just select
+
+what you want to monitor,
+which types of monitoring
+
+you want to enable, and then
+the logging and telemetry
+
+is all integrated into
+all our own systems,
+
+like Cloud Logging, Chronicle.
+
+And all the alerts flow to SCC.
+
+We can also send the alerts and
+telemetry to third-party SIEM
+
+and SOAR products as well.
+
+And then we're super excited
+to share that we partnered
+
+with our friends at
+Palo Alto Networks
+
+to embed their
+industry-leading threat
+
+detection technologies
+in the product.
+
+So this ensures we have
+industry-leading detection
+
+capabilities, both
+in terms of breadth
+
+of coverage and efficacy.
+
+And it's all backed
+by their expert,
+
+production-proven technologies
+and world-class threat
+
+intelligence teams,
+but all nicely
+
+integrated into Google Cloud,
+sold and supported by us.
+
+In fact, I wanted you to hear
+from our GM of IaS, Sachin
+
+Gupta, and Palo Alto
+Networks's SVP, Anand Oswal,
+
+more about the collaboration
+that led to this product.
+
+
+
+[MUSIC PLAYING]
+
+
+
+ANAND OSWAL: The introduction
+of Google Cloud IDS--
+
+SACHIN GUPTA:
+That's right, Anand.
+
+It's been an
+incredible partnership.
+
+And we're now taking it
+to a completely new level.
+
+Over the last year,
+our engineering teams
+
+have worked together to build
+a new joint product that
+
+combines the industry-leading
+capabilities of Palo Alto
+
+Networks in advanced
+network threat detection
+
+with the simplicity and
+scale of Google Cloud.
+
+We're calling this product Cloud
+IDS, a cloud-native service
+
+delivered to all our customers.
+
+With just a few
+clicks, customers
+
+can inspect traffic, get
+application-level visibility,
+
+and detect advanced threats.
+
+They don't need to
+worry about throughput.
+
+They don't need to
+worry about redirecting
+
+network traffic to the service.
+
+It's all done in
+a cloud-native way
+
+as part of the normal workflow.
+
+They don't need to
+worry about scale.
+
+This is a service that's always
+on, that is highly performant,
+
+and that scales on demand.
+
+This is Google Cloud
+simplicity at its finest.
+
+And it's something that
+customers should consider
+
+deploying in every single VPC.
+
+Anand, why don't you talk
+more about the strength
+
+of the security capabilities
+that Palo Alto Networks brings
+
+as part of Cloud IDS?
+
+ANAND OSWAL: Absolutely, Sachin.
+
+The core of what we do
+in the Cloud IDS product
+
+is a network threat
+detection engine.
+
+This is a machine
+learning-powered engine.
+
+It looks at over 15 trillion
+transactions every single day.
+
+With all our network security
+products and our endpoints,
+
+we are constantly looking
+at millions and millions
+
+of samples of malware.
+
+These are processed to ensure
+that we protect our customers
+
+from day-zero threats.
+
+We are pushing over 4.3
+million unique security
+
+updates every single day.
+
+And that's not enough.
+
+In addition to our
+automated analysis,
+
+we have 200 of our
+finest threat researchers
+
+of our Unit 42 organization
+that do in-depth research
+
+and have the best understanding
+of the entire threat landscape.
+
+But Sachin, the point
+you talked about,
+
+combining simplicity
+and showing that you're
+
+having security-- we are
+bringing these two together
+
+with this joint product.
+
+SACHIN GUPTA: If you'd like
+to learn more about Cloud IDS,
+
+go to cloud.google.com/ids.
+
+PETER BLUM: We love
+the collaboration
+
+with Palo Alto
+Networks, which has
+
+led to a super easy to deploy
+network threat detection
+
+system, but with
+production-proven high
+
+efficacy, all powered
+by Palo Alto Networks.
+
+Well, thanks so much
+for joining us today.
+
+And thank you, Emil, for
+co-presenting with me.
+
+We were glad you
+were able to join
+
+us to learn more about
+innovations in DDoS, firewalls,
+
+and network threat detection.
+
+You can visit us on the
+web at cloud.google.com
+
+/products/networking.
+
+And then the Cloud
+networking team
+
+has a great set of
+sessions during Next,
+
+where you can learn more
+about how we're simplifying
+
+networking, delivering new
+services, and all about what
+
+we're doing on the edge.
+
+Thanks again.
+
+
+

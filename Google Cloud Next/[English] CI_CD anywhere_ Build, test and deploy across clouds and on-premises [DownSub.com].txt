@@ -1,0 +1,1044 @@
+
+
+DAMITH KARUNARATNE:
+Hey, everyone.
+
+Welcome to the session
+on CI/CD anywhere.
+
+In this session, we'll be
+discussing why CI/CD anywhere
+
+matters and how we're helping
+customers streamline their
+
+build, test, and deploy
+processes across cloud
+
+and on-premise environments.
+
+My name is Damith Karunaratne,
+and I'm a Senior Product
+
+Manager at Google Cloud.
+
+And this is my
+colleague, Ben Houston,
+
+who is a Kubernetes
+Specialist at Google Cloud.
+
+Today, we will be speaking to
+you about Google's new approach
+
+to doing CI/CD anywhere.
+
+Before I dive into
+product details,
+
+I'd like to turn it over to Ben.
+
+He's going to give
+a quick overview
+
+on why a hybrid
+approach to CI/CD
+
+is such a hot topic these days.
+
+BEN HUSTON: Damith, thanks
+for the great introduction.
+
+And to those of you
+in the audience,
+
+I have an important
+question for you.
+
+Why should we care
+about being able to do
+
+continuous integration and
+continuous delivery anywhere?
+
+
+
+Well, we should care
+because CI/CD flexibility
+
+is an extremely important
+topic right now.
+
+This is due to the
+fact that enterprises
+
+need build processes that
+can keep pace with constantly
+
+changing business, regulatory,
+and security requirements
+
+and which will work across
+multiple environments
+
+they have made massive
+investments in.
+
+More specifically, enterprises
+need transformational
+
+development capabilities,
+like build anywhere or deploy
+
+anywhere, because these can
+support massive on-demand
+
+scaleup, are inherently
+resilient and highly available,
+
+can be authored and managed
+in a completely versioned,
+
+declarative manner, and
+are instrumented with
+
+out-of-the-box tooling
+which provides end-to-end
+
+observability across
+the entire build system.
+
+Unfortunately, most
+enterprises are still
+
+using flexible legacy
+build tools like Jenkins,
+
+which predate the cloud.
+
+These tools simply can't meet
+enterprise's current needs,
+
+because they don't
+provide a uniform way
+
+to do continuous integration
+or continuous delivery
+
+across different environments.
+
+And they also can't easily
+scale to accommodate
+
+the type of extremely high
+volume, high concurrency
+
+CI/CD that dominates modern
+software development.
+
+The good news is that most
+of the performance problems,
+
+which have traditionally
+plagued build systems,
+
+have been solved in recent
+years by Kubernetes, which
+
+is an extremely
+popular orchestration
+
+framework for operating
+systems at massive scale.
+
+The most highly
+sought-after at-scale system
+
+attributes, such as flexibility,
+scalability, resilience,
+
+control, and performance, are
+now provided out of the box
+
+by the Kubernetes API,
+its unique approach
+
+to distribute application
+lifecycle management.
+
+Next-gen build tools, like
+the one that my colleague
+
+Damith will introduce next,
+understand they do not
+
+need to reinvent the wheel.
+
+These tools explicitly harness
+the power of the Kubernetes API
+
+and extend it with the rich,
+new primitives specifically
+
+designed to address the most
+difficult CI/CD use cases.
+
+Now, let me explain why
+Kubernetes is such a big deal
+
+for modern CI/CD.
+
+Let me turn the
+floor back to Damith
+
+to introduce Google's new
+approach to CI/CD anywhere.
+
+DAMITH KARUNARATNE: Thanks, Ben.
+
+With all of this in mind, I'd
+like to introduce Cloud Build
+
+Hybrid.
+
+With Cloud Build
+Hybrid, Google Cloud
+
+is taking the power,
+flexibility, and simplicity
+
+of Google Cloud Build and
+bringing it to anywhere
+
+you can run Kubernetes.
+
+Cloud Build Hybrid is powered
+by Tekton, which means out
+
+of the box, you
+avoid vendor lock-in
+
+and get the
+reliability that you've
+
+come to expect from Kubernetes.
+
+Capabilities like self-healing
+and graceful failover
+
+allow for no single
+point of failure.
+
+Being able to run directly
+on your infrastructure
+
+behind your firewalls
+now means you
+
+can get the advantages
+of cloud-native CI/CD
+
+for workloads that can't
+easily be moved to the cloud.
+
+But Cloud Build
+Hybrid is not only
+
+about providing the benefits
+of Kubernetes in Tekton.
+
+Since this is an extension
+of Google Cloud Build,
+
+Cloud Build Hybrid provides
+you a consistent interface
+
+and workflow for building and
+deploying your applications.
+
+You can seamlessly switch
+between using the fully managed
+
+or hybrid version of
+Cloud Build without having
+
+to change your workflow.
+
+You also get a
+single pane of glass
+
+through the existing
+Cloud Build interface,
+
+so you can easily
+see activity across
+
+all your CI/CD
+environments in one place,
+
+regardless of whether you're
+using the fully managed
+
+or hybrid version.
+
+With Cloud Build's
+developer-centric syntax,
+
+you're able to easily
+define your CI/CD workloads
+
+without having advanced
+knowledge of Kubernetes.
+
+So developers can
+spend more time
+
+on building and
+delivering software
+
+that drives the business.
+
+And upgrades have
+never been easier.
+
+All Cloud Build Hybrid instances
+can be centrally managed,
+
+which includes automated
+updates and patches to make
+
+sure you're always secure.
+
+In addition to this, with the
+Google-managed control plane,
+
+you get the availability and
+support your business relies on
+
+to ensure smooth operation.
+
+
+
+With Cloud Build Hybrid,
+we handle the complexity
+
+of multienvironment CI/CD.
+
+Just add environment
+configuration
+
+to your Cloud Build
+YAML, and your pipelines
+
+will easily and
+transparently run
+
+the workload against registered
+Kubernetes environments,
+
+regardless of where
+they're located.
+
+Scaling these workloads
+across your environment
+
+is also simplified.
+
+Cloud Build Hybrid harnesses
+the power of Kubernetes
+
+to provide robust
+autoscaling and concurrency
+
+for all your CI/CD processes.
+
+Not only is scaling
+simplified but it's
+
+also more efficient
+with resource pooling.
+
+All workloads are entirely
+containerized and managed using
+
+Kubernetes, allowing them to
+be scheduled right alongside
+
+non-CI/CD workloads.
+
+Workloads also run
+completely hermetically,
+
+ensuring that no build
+time dependencies ever
+
+cross-contaminate the runtime
+dependencies relied upon
+
+by other colocated workloads.
+
+For hard-to-update,
+resource-constrained,
+
+on-premise environments
+this scheduling fungibility
+
+is extremely valuable.
+
+Now, let's take a peek under
+the hood to see how this works.
+
+On the left, we have Google
+Cloud in the fully managed
+
+control plane.
+
+On the right, we have a
+hybrid multicloud environment
+
+running a Kubernetes cluster.
+
+With Google Cloud's
+Connect service,
+
+we can connect a Kubernetes
+cluster to the Google Cloud
+
+control plane.
+
+Doing this will install
+the Connect agent,
+
+which will allow the
+control plane to communicate
+
+with the cluster.
+
+Once the cluster
+is connected, we
+
+can enable the
+Cloud Build feature
+
+and install hybrid worker pools.
+
+These hybrid worker
+pools consist
+
+of Tekton and some
+additional components
+
+and configuration that make
+interacting with Google Cloud
+
+seamless.
+
+Once hybrid worker
+pools are installed,
+
+Cloud IAM will need to be
+configured for Cloud Build
+
+service accounts to
+properly communicate
+
+with the worker pool.
+
+And finally, we'll
+need to make sure
+
+that the Kubernetes service
+account on the worker pool
+
+is configured to interact with
+our source control and artifact
+
+repositories.
+
+
+
+Once Cloud Build
+Hybrid is set up,
+
+you can leverage the
+same Cloud Build workflow
+
+as the fully managed offering
+to build, test, and deploy
+
+your applications.
+
+Your workload is
+executed as a series
+
+of build steps,
+which are defined
+
+as containers we call builders.
+
+Since each build step is
+hermetic and only exists
+
+for the duration of
+the step, any data
+
+that you wish to
+share across steps
+
+can be shared through
+a common workspace.
+
+Google Cloud provides a set of
+fully supported and maintained
+
+builders for a
+variety of workloads,
+
+but there are also over a
+hundred community builders
+
+available.
+
+You can also create
+your own builder
+
+to address unique use cases.
+
+This workflow can
+not only be used
+
+to build containers but also
+noncontainers, such as Java,
+
+or Go artifacts, or
+golden VM images.
+
+
+
+The Cloud Build syntax
+remains the same
+
+for executing workloads
+on hybrid worker pools.
+
+All you need to do is specify
+the hybrid pool that's
+
+going to execute the workload.
+
+For instance, in this
+"Hello, world" example,
+
+which has six lines of code,
+we specify the hybrid pool
+
+that the build is
+going to run on.
+
+This build will be transformed
+into a Tekton task run
+
+before it's sent to
+the hybrid worker pool
+
+with optional support for
+Docker and Docker builds.
+
+There's a large community
+that uses Docker today,
+
+and we want to make sure the
+experience for the Docker
+
+community is as
+seamless as possible.
+
+This means they
+don't have to worry
+
+about the overhead
+of orchestrating
+
+Docker and Docker build
+processes in Kubernetes
+
+since we take care of this
+based on the hybrid pool
+
+configuration.
+
+The resulting Tekton
+task run in this example,
+
+which executes a
+Docker and Docker build
+
+ends up being 156 lines.
+
+This translates to roughly
+26 times more lines of code.
+
+We're taking care of the
+boilerplate and Kubernetes
+
+configuration required to run
+this build while integrating it
+
+with Google Cloud Services, such
+as Cloud IAM, Cloud Logging,
+
+and source control integrations.
+
+This allows developers to focus
+on building great software
+
+and not worry about the
+underlying technologies running
+
+their CI/CD workloads across
+all their environments.
+
+Cloud Build and
+Cloud Build Hybrid
+
+are part of a much broader
+end-to-end GCP DevOps tool
+
+chain.
+
+Some of these
+platforms and services
+
+will be highlighted in the demo
+that Ben is about to show you.
+
+Ben, over to you.
+
+BEN HUSTON: Thanks, Damith.
+
+Awesome product overview.
+
+I'm going to quickly walk
+through the logical flow
+
+of a short demo we've prepared.
+
+First, we'll see a
+developer check new code
+
+into version control.
+
+Next, we'll see Cloud Build
+Hybrid detect the code change
+
+and begin to kick off builds.
+
+Then we'll see four
+processes concurrently
+
+building and deploying
+the same application
+
+to four different
+target environments--
+
+GKE, Anthos attached
+clusters in AWS and Azure,
+
+and an Anthos bare-metal cluster
+which is running on premise.
+
+Finally, we'll see the overall
+build progress being monitored
+
+with built-in tooling, like
+the Cloud Operations suite
+
+and Cloud Build dashboards.
+
+OK, on onto the demo.
+
+
+
+All right, you're now ready
+for a quick demo of Cloud Build
+
+Hybrid.
+
+Here, we see four
+different types
+
+of Kubernetes clusters
+registered with the Google
+
+Cloud control plane--
+
+GKE cluster, two Anthos-attached
+clusters for EKS and AKS,
+
+and Anthos bare-metal cluster
+that is running on premise.
+
+The great news is that
+once you register a cluster
+
+to Google Cloud,
+installing Cloud Build
+
+Hybrid it's dead simple.
+
+
+
+Now we're going to open
+a Cloud Shell session
+
+and run a quick CLI command
+to confirm that our cluster is
+
+ready for action.
+
+
+
+Yep, the install [INAUDIBLE]
+is OK across the board.
+
+OK, now that the environment
+overview is out of the way,
+
+let's quickly explain how Cloud
+Build Hybrid jobs get queued.
+
+
+
+Cloud Build Hybrid
+uses a configuration
+
+construct called the trigger
+to associate a build event
+
+like a pull request
+with a build pipeline
+
+and kick start
+the build process.
+
+You can see we have four
+triggers to find, one for each
+
+of our Kubernetes clusters.
+
+In a moment, we're
+going to switch
+
+to an IDE, a.k.a., an
+Interactive Development
+
+Environment.
+
+We'll commit a config change
+and push it to our Git repo.
+
+Afterwards, the
+triggers we defined here
+
+will listen for this
+commit, and they kick off
+
+a Cloud Build Hybrid job for
+each of our environments.
+
+
+
+In our IDE, we see
+three important files--
+
+cloudbuild.yaml,
+deployment.yaml, and the Docker
+
+file.
+
+Cloudbuild.yaml defines
+a build pipeline.
+
+Here, you can see that
+we've defined three steps--
+
+Build Image, Push Image,
+and Deploy to a Cluster.
+
+Next, deployment.yaml contains
+our Kubernetes deployment
+
+configuration.
+
+Here, we see that the Kubernetes
+ServiceAccount, a Deployment,
+
+and a HorizontalPodAutoscaler
+have been defined.
+
+Finally, the Docker
+file shows what is
+
+baked into our container image.
+
+Here, we pull an
+upstream nginx image,
+
+write an awesome echo
+statement, and then take a nap.
+
+To show Cloud Build
+Hybrid in action,
+
+we're going to increase
+the sleep to 11 seconds
+
+and then commit and
+push this change.
+
+
+
+Now that code is committed,
+we'll switch back
+
+to the GCP console, where
+we see four new builds
+
+in this schedule.
+
+Each build corresponds
+to one of the triggers
+
+we showed earlier--
+
+one for Google Cloud, AWS,
+Azures, and on premises.
+
+Importantly, both the
+CI and the CD steps
+
+are happening at the same
+time within each cluster
+
+using Tekton.
+
+
+
+Now that a few
+minutes have passed,
+
+we'll see that our builds
+are starting to complete.
+
+Next, we're going to click
+on one of these builds
+
+to see what that looks like.
+
+
+
+Here, we can see
+three build steps--
+
+build, push, and deploy--
+
+and our build logs.
+
+You can also see metadata
+related to the build.
+
+For example, we can see that
+it ran on hybrid worker pool
+
+gke-cluster-001.
+
+Finally, I want to show you
+something else that's pretty
+
+cool about Cloud Build Hybrid.
+
+If you want to do a deep
+analysis of your build logs,
+
+these are already preintegrated
+with Cloud Logging.
+
+This means that
+all of your build
+
+logs are already defined with
+the powerful Common Expression
+
+Language.
+
+You can modify as you
+see fit and then use
+
+to rerun your queries.
+
+This allows you to easily
+dive in and explore
+
+any complex build errors
+you might run into.
+
+
+
+Now that our builds
+are finished,
+
+I want to show you one
+more important thing.
+
+
+
+When we explore the
+build for another cloud,
+
+like AWS, we see that
+the build interface
+
+looks identical to the
+one we just saw for GKE,
+
+which is totally awesome.
+
+
+
+Now it's time to check the
+stats of the workloads we just
+
+deployed.
+
+In the Google Cloud
+console, we see a screen
+
+that shows what workloads
+existed in the default
+
+Kubernetes namespace
+of our clusters
+
+before we committed new code.
+
+
+
+Hitting Refresh shows we
+now see four new nginx
+
+apps running across
+Google Cloud, AWS, Azure,
+
+and on premise.
+
+And just for fun,
+let's confirm what
+
+the dashboard for a few
+other cloud providers shows.
+
+
+
+Hitting refresh in EKS shows
+the same workload deployed
+
+about five minutes ago.
+
+
+
+The view from the AKS dashboard
+tells the exact same story.
+
+Same workload again-- this
+time, it's four minutes old.
+
+
+
+And now we've reached
+the end of our demo.
+
+We've seen how
+Cloud Build Hybrid
+
+can be used to both
+build and deploy apps
+
+across multiple environments
+using Tekton-powered Kubernetes
+
+awesomeness and
+slick Google tooling.
+
+Enjoy.
+
+DAMITH KARUNARATNE: Thanks
+for the great demo, Ben.
+
+To quickly recap,
+you just saw Ben
+
+show how Cloud Build Hybrid
+provides a unified CI/CD
+
+experience that abstracts
+away the complexities
+
+of cloud-native CI/CD with
+Kubernetes while providing
+
+the flexibility to build, test,
+and deploy to any environment.
+
+Google Cloud's fully
+managed control planed
+
+provides a single pane of
+glass to gain visibility
+
+into all your
+workloads, regardless
+
+of where they're running.
+
+Finally, Cloud Build
+Hybrid harnesses
+
+the power of
+Kubernetes and Tekton
+
+to run your workloads
+reliably at scale.
+
+
+
+All of this will be
+available in public preview
+
+later this quarter.
+
+In the meantime, to learn
+more about Cloud Build,
+
+take a look at the Cloud
+Build documentation.
+
+And don't forget
+to check out some
+
+of the other sessions on
+Cloud Build, Cloud Deploy,
+
+and securing your software
+delivery pipeline.
+
+Thanks for tuning in and
+learning about Google Cloud's
+
+approach to CI/CD anywhere.
+
+Enjoy the rest of
+Google Cloud Next.
+
+
+

@@ -1,0 +1,1009 @@
+
+
+MINH NGUYEN: Hi.
+
+And welcome to "The future
+of application development
+
+with cloud databases."
+
+My name is Minh.
+
+And I'm a product manager
+for Cloud Firestore.
+
+Join with me today and Natan,
+a software engineer from Dott.
+
+Today's session will be focused
+on resolving one key question--
+
+why is it so challenging to
+build and scale applications?
+
+And more importantly,
+what is Google
+
+doing to make application
+development easier?
+
+
+
+To answer this
+question, we'll begin
+
+by reviewing two popular
+application architectures.
+
+Choosing an architecture
+has a large impact
+
+on how an application is
+built and how it scales.
+
+In the second part
+of the session,
+
+you'll hear a
+customer testimonial
+
+from Dott describing how
+thoughtful architectural
+
+decisions have impacted
+their business.
+
+Finally, we'll round out
+the session with new product
+
+announcements and resources
+to learn more about Firestore.
+
+Let's get started.
+
+
+
+Imagine for a moment that
+you're writing a new application
+
+and decide to use a
+more traditional n-tier
+
+architecture.
+
+Today's example can apply to
+any general purpose application,
+
+but to ground the
+discussion let's
+
+assume it's an e-commerce app.
+
+At the heart of the
+application is a database.
+
+The database is
+used to store data.
+
+
+
+In front of the
+database are typically
+
+a set of microservices that
+manage your application's
+
+business logic.
+
+Let's assume that you have
+three separate microservices--
+
+a service for your
+product catalog,
+
+a service for your product
+inventory, and lastly a service
+
+for your shopping carts.
+
+
+
+As usage for your microservices
+grow and declines,
+
+you'll need to load
+balance traffic
+
+while horizontally scaling
+and compacting capacity.
+
+
+
+In order to secure access
+to these microservices,
+
+you'll need to add
+an API gateway.
+
+
+
+Finally, to enable
+broad distribution
+
+of your application, you'll
+need to develop clients--
+
+the web, Android, and even iOS.
+
+Furthermore, you want to make
+sure that your users always
+
+have the latest data.
+
+To access your application
+when they're offline,
+
+you'll need to add
+support for web sockets
+
+and an offline caching system.
+
+As you can see, there's a lot
+of technical complexity here.
+
+
+
+Unfortunately
+technical complexity
+
+can be the enemy of
+business innovation.
+
+Let's examine the downstream
+impact this architecture has.
+
+
+
+First, operationalizing
+all the services
+
+that support an application
+can be intensive.
+
+Second, each layer
+of the architecture
+
+typically represents
+specialized teams,
+
+which means complex
+dependency planning
+
+and therefore potential
+risks for project delay.
+
+
+
+Third, sourcing talent for
+each layer of the architecture
+
+can be difficult and
+expensive, especially
+
+in competitive hiring
+markets like today.
+
+Let's figure out how
+Google is solving
+
+for each of these
+challenges, starting
+
+with the operational challenge.
+
+
+
+Google offers
+management services
+
+for each layer of the stack.
+
+With Cloud SQL, for
+example, we will assist you
+
+in operationalizing popular
+relational databases
+
+such as PostgreSQL, MySQL,
+or even Microsoft SQL.
+
+
+
+With Kubernetes Engine,
+we will assist you
+
+in operationalizing
+your microservices.
+
+With Apigee, we will assist you
+in operationalizing your API
+
+gateway.
+
+
+
+So the combination of these
+management services from Google
+
+will assist you in
+operationalizing
+
+each layer in the stack
+while still enabling
+
+high customization.
+
+Alternatively, if you're
+interested in taking
+
+the surplus route,
+you can use Cloud Run
+
+to run your microservices in
+Firestore as your database.
+
+
+
+Choosing to go the
+serverless route
+
+allows you to delegate
+operational complexity
+
+to Google, freeing
+up your team to focus
+
+on product development.
+
+OK.
+
+We've addressed
+operational complexity,
+
+but what about projects
+or hiring complexity?
+
+Let's examine how a deeper
+investment in Firestore
+
+can address the
+remaining challenges.
+
+
+
+Firestore is a serverless
+document database
+
+that can also act as a
+complete backend as a service.
+
+Firebase Auth is a
+service that allows
+
+you to delegate your
+applications auth and user
+
+management to Google.
+
+Firestore and Firebase Auth
+are seamlessly integrated.
+
+Using a combination
+of these two services
+
+allows customers to
+focus on UI development,
+
+delegating secure auth and
+backend service management
+
+to Google.
+
+Furthermore, you'll get
+built-in functionality
+
+for real-time synchronization,
+connection management
+
+between clients
+and your database,
+
+and offline caching
+using the Firestore SDKs.
+
+
+
+So by using Firestore as
+a backend of the service,
+
+you can focus on UI development.
+
+And UI teams are empowered
+to make decisions,
+
+as they no longer are dependent
+on changes from backend teams.
+
+
+
+With universal
+application frameworks
+
+like Google Flutter
+or Facebook React,
+
+you can now write
+native applications
+
+using a single code
+base and deploy them
+
+across multiple client platforms
+such as the web, Android,
+
+and iOS.
+
+Firestore fully supports
+these universal app frameworks
+
+with an easy-to-use
+set of plain SDKs.
+
+
+
+As a result, with Firestore
+and universal app frameworks
+
+you can focus on hiring
+for Flutter or React skills
+
+from a very large
+pool of developers.
+
+
+
+The result of these
+investments enables
+
+you to focus on
+business innovation
+
+through a single autonomous
+team and code base.
+
+
+
+There are many factors that go
+into application development.
+
+And at Google, we're investing
+in a complete ecosystem
+
+for app development.
+
+This includes, one, core
+UI frameworks and operating
+
+systems to build
+applications, two,
+
+in-app services from Firebase
+to manage aspects like auth,
+
+and three, backend
+services from Google Cloud
+
+to manage aspects like
+back office analytics using
+
+BigQuery.
+
+Firestore brings together
+these portfolio investments
+
+in an intelligent way by
+enabling seamless integration
+
+into each of these portfolios.
+
+
+
+Frequently applications rely
+on third-party services,
+
+and it's important that these
+services are also seamlessly
+
+integrated with Firestore.
+
+One popular integration
+request we've received
+
+has been an integration
+with Elastic.
+
+Today, we're excited to
+announce, in partnership
+
+with Elastic, a
+new extension that
+
+streams changes from
+a Firestore database
+
+to an Elastic app
+search instance.
+
+You can install this extension
+and many other third-party
+
+extensions from the Firebase
+extensions directory.
+
+
+
+So in summary, Firestore
+allows customers
+
+to focus on business value
+and product differentiation.
+
+[INAUDIBLE] document database
+that can also act as a backend
+
+to service.
+
+With over 250,000 monthly
+active developers,
+
+you can have confidence
+that the solution
+
+is backed by a large
+community of developers.
+
+Furthermore, with
+Firestore applications now
+
+supporting 750 million monthly
+active end users using Firebase
+
+Auth, you can be confident
+that Firestore will
+
+scale to your business's needs.
+
+
+
+We've covered the
+traditional n-tier
+
+in Firestore architectures.
+
+Let's review the
+strengths of each.
+
+
+
+The traditional n-tier
+offers a high customizability
+
+and is compatible with
+popular open source frameworks
+
+and libraries.
+
+However, as we explained
+in this session,
+
+this normally comes at the
+trade-off of technical,
+
+project, and hiring complexity.
+
+Pricing for this
+solution is often
+
+driven by a capacity
+model, which
+
+means that you have to configure
+how capacity is scaled,
+
+and you're billed for
+capacity even when
+
+it's not fully utilized.
+
+
+
+Firestore, on the other hand,
+provides a fully integrated,
+
+Google-based solution
+that significantly
+
+reduces technical, operational,
+project, and hiring complexity.
+
+Customers who choose
+Firestore have the flexibility
+
+to use it as a
+backend of a service,
+
+in an n-tier architecture, or
+maybe a hybrid of the both.
+
+Since it's serverless,
+pricing for Firestore
+
+is based on the actual
+operations conducted, storage
+
+used, or network egress.
+
+And with that I'm excited
+to introduce Natan
+
+from Dott, who will share
+how Dott uses Firestore.
+
+[MUSIC PLAYING]
+
+
+
+NATAN SAGOL: Good morning.
+
+I'm Natan, one of
+the engineers who
+
+joined Dott at the very
+beginning of our journey.
+
+We are a micromobility operator
+with over 50,000 e-scooters
+
+and e-bikes across
+45 cities in Europe.
+
+We are active in nine countries,
+in capitals like London, Paris,
+
+and Warsaw, and
+many more cities.
+
+I have been fortunate
+to participate
+
+in growing our company
+from the very first scooter
+
+to tens of thousands
+we operate today,
+
+to see our engineering
+organization expand to over 30
+
+people--
+
+looking forward to
+welcoming many more
+
+before the year's end--
+
+to enable millions
+to take clean rights.
+
+
+
+At Dott, we deeply care
+about the environment,
+
+and we try to reduce our carbon
+footprint as much as possible.
+
+While Google Cloud
+is carbon neutral,
+
+it's even better not to
+consume any kind of resources
+
+in the first place.
+
+That's why we
+choose technologies
+
+which rapidly up and downscale
+to precisely match our needs.
+
+Firestore is one of
+these technologies.
+
+It has been a core
+to our solutions
+
+from the very beginning.
+
+We started on Firestore by
+connecting our vehicles, which
+
+frequently send information
+about their location
+
+and relevant telemetry.
+
+We quickly moved to
+user-facing features,
+
+using Firestore as a backend.
+
+Connecting to it
+directly from our apps
+
+allowed us to work
+efficiently and independently.
+
+We were a small team back then.
+
+Removing the need for
+any backend development
+
+allowed us to shift
+features quickly.
+
+In a single day with
+real-time synchronization,
+
+we were able to implement
+a vibrant live map
+
+of available scooters.
+
+
+
+Over time, we added
+many functionalities,
+
+from basic ones like
+starting and ending
+
+a trip to more complex, such
+as payment processing, where
+
+accuracy is critical.
+
+For these
+functionalities, Firestore
+
+provided us not only with an
+ability to develop rapidly,
+
+but with an ability to
+develop with confidence,
+
+allowing us to
+ensure correctness
+
+with the use of transactions.
+
+
+
+The world changes all the time.
+
+So does our business.
+
+More sophisticated
+functionalities
+
+require specialized services.
+
+We have developed
+a lot of these,
+
+and each time Firestore has
+proven to be a good fit.
+
+
+
+Some of these services replaced
+directories from our apps
+
+when we needed complexity
+that was easier to manage
+
+with a dedicated backend.
+
+But we are grateful
+we didn't have
+
+to implement all of
+this back in the days
+
+when there were
+just a few of us.
+
+
+
+Some of the recent
+changes we all experienced
+
+were challenging for individuals
+and businesses alike.
+
+Shelter-in-place
+orders, while necessary,
+
+affected every one of us and
+affected a lot of companies,
+
+including Dott.
+
+Our choice to utilize Firestore
+and our serverless products
+
+helped us navigate
+shelter in place.
+
+With the lower usage came a
+lower bill with the expected
+
+one-to-one correlation.
+
+Nowadays many lean more towards
+individual transportation,
+
+such as with the use of
+e-scooters and e-bikes
+
+due to health safety reasons.
+
+At Dott, we see many more
+riders and trips in comparison
+
+to pre-COVID numbers, with
+utilization of our fleet
+
+75% higher in some
+cities such as Brussels.
+
+Scalability of
+Firestore enabled us
+
+to support this demand
+without requiring
+
+any changes on our side.
+
+
+
+As regard to our
+infrastructure, we simply
+
+don't have to worry
+what happens next.
+
+Firestore will
+adapt to our needs
+
+and support us in our journey.
+
+
+
+Now that you know a bit
+more about our history,
+
+it's a good time to
+share with you what
+
+I think about it in retrospect.
+
+While at the beginning we were
+considering other databases--
+
+relational, graph, and
+document oriented--
+
+today I know that we
+couldn't have made a better
+
+choice than Firestore.
+
+That's why it's such a
+pleasure for me to be here
+
+today and give this testimony.
+
+Thank you all.
+
+And thank you, the
+Firestore team.
+
+Back to you, Minh.
+
+
+
+MINH NGUYEN: Thank you, Natan,
+for sharing Dott's journey.
+
+I'm excited about Dott's
+impact on the future
+
+of transportation.
+
+We appreciate the opportunity
+to partner with Dott.
+
+Next, I'll be sharing
+exciting product announcements
+
+for Firestore.
+
+
+
+Firestore is committed to
+the security and privacy
+
+of our customers.
+
+To demonstrate that
+commitment, I'm
+
+excited to announce
+four new features.
+
+With Data Access Audit Logs,
+privileged administrators
+
+will be able to audit
+all operations conducted
+
+on a database.
+
+With custom IAM,
+customers will be
+
+able to align
+Firestore permissions
+
+to their organization's
+IAM roles.
+
+You can get started with Data
+Access Audit Logs and custom
+
+IAM today.
+
+With VPC Service
+Controls, customers
+
+will be able to reduce
+exfiltration risk using network
+
+level security controls.
+
+And with App Check,
+customers will
+
+be able to ensure only signed
+and pre-authorized client
+
+applications are allowed to
+make requests to Firestore.
+
+Both the previews of VPC
+Service Controls and App Check
+
+will be rolling out in Q4.
+
+
+
+Firestore's developer
+experience truly sets it apart,
+
+and we are continually
+investing in this area.
+
+With Key Visualizer,
+customers will
+
+be able to quickly
+identify performance issues
+
+with a visual
+performance profiling.
+
+With the latest
+version of our Web SDK
+
+we have added tree
+shaking, which
+
+enables the reduction of the
+SDK footprint by as much as 80%.
+
+That means faster load
+times for your application.
+
+Both Key Visualizer
+and the new Web SDK
+
+are generally available today.
+
+
+
+We'll also be graduating with
+Unity and C++ SDKs to general
+
+availability in Q4.
+
+Both of these SDKs are
+focused on making it easier
+
+to develop mobile
+games using Firestore.
+
+
+
+Lastly, I'm excited to
+announce the graduation
+
+of Cloud Functions Triggering
+to general availability.
+
+Cloud Functions
+Triggering enables
+
+customers to execute custom
+business logic in response
+
+to changes to a
+Firestore document.
+
+
+
+This session is
+coming to an end,
+
+but I hope this was just the
+beginning of a shared journey.
+
+If you want to take a moment to
+try Firestore out for yourself,
+
+you can take a peek
+at our quick start
+
+guides, YouTube [INAUDIBLE]
+series, and Qwiklabs.
+
+If you have additional
+questions about using Firestore,
+
+we encourage you to post those
+questions on Stack Overflow.
+
+My name was Minh.
+
+And I hope that you
+enjoyed today's session.
+
+If you did, please take
+a moment to fill out
+
+the follow-up survey.
+
+Bye for now.
+
+
+

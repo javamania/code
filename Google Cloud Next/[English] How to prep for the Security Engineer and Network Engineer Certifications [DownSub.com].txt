@@ -1,0 +1,1052 @@
+
+
+MAGDA JARY: Welcome to the
+certification preparation
+
+Professional Security Engineer
+and Professional Network
+
+Engineer certification.
+
+My name is Magda, and
+I'm the global lead
+
+for the Google Cloud
+Certification and Digital
+
+Badges Go-to-Market team.
+
+And joining me today is Cori
+Peele, customer engineer
+
+at Google Cloud.
+
+Let's take a look
+at our agenda today.
+
+First, we'll review the
+certification benefits.
+
+Then we'll review the learning
+resources and the Google Cloud
+
+Certification's portfolio.
+
+We'll then talk with Cori
+about her certification
+
+and preparation journey.
+
+And then we'll recap with
+the additional resources.
+
+So let's get started with
+the certification benefits.
+
+First of all, cloud
+skills are really
+
+critical to enabling
+customer success
+
+and fueling our ecosystem.
+
+The job posting looking
+for cloud skills
+
+grew over 40% between
+the first quarter of 2019
+
+and the first quarter of 2021.
+
+Secondly, over 90%
+of IT leaders expect
+
+to expand cloud services in
+the next one to three years,
+
+but over 80% of them identified
+a lack of internal skills
+
+and knowledge as the top
+barriers to cloud success.
+
+And then lastly, the
+Google Cloud skills
+
+are particularly in
+high demand, commanding
+
+the top two paying IT
+certifications in 2021
+
+in the US.
+
+
+
+We also love to hear from
+our community about the Cloud
+
+Certification Program impact.
+
+78% of our survey respondents
+feel more confident
+
+in their professional future.
+
+82% can prove cloud skills
+competency to recruiters.
+
+83% feel that their
+resume is more attractive.
+
+And then finally, 85% feel
+more confident in cloud skills.
+
+Here are some of
+the benefits you
+
+can enjoy by joining the
+certification community
+
+and achieving your
+certification.
+
+First, you distinguish yourself
+with a Google Cloud Certified
+
+badge and a certificate.
+
+You also receive exclusive
+Google Cloud Certified swag
+
+for our professional exams.
+
+You can network and exchange
+ideas in the Google Cloud
+
+Certified community.
+
+And you also receive special
+recognition at select events.
+
+Let's review some of
+the learning resources
+
+and our Google Cloud
+certifications.
+
+
+
+Here are some of
+the modalities that
+
+really help us build skills for
+the future with Google Cloud
+
+Learning, starting with the
+instructor-led format delivered
+
+by our authorized
+training partners.
+
+Then we also have a modality
+of the on-demand training
+
+so you can learn any time by the
+use of the on-demand content.
+
+The third piece is
+really the hands-on labs
+
+and is really all about
+learning by doing.
+
+So you can practice
+there directly
+
+with Google Cloud technologies.
+
+And lastly, our Google
+Cloud Certified program
+
+that really provides a framework
+and benchmark for success
+
+in core job roles.
+
+Our exams are proficiency
+and role-based
+
+and provide you a
+benchmark for success.
+
+And let's take a look at the
+overall portfolio of our Google
+
+Cloud certifications.
+
+You'll notice we have the exams
+at the professional level, as
+
+well as our associate
+cloud engineer,
+
+and the very recently
+launched cloud digital leader.
+
+This final one is for
+the business audience.
+
+Otherwise, our associate
+and professional exams
+
+are all job role-based
+and really cater
+
+to the technical audience.
+
+Today in our session, we focus
+on the professional cloud
+
+security engineer and the
+professional cloud network
+
+engineer.
+
+So let's start with the
+review of the readiness path
+
+for the networking and
+security network engineer role.
+
+You can notice the resources
+in the Learn section,
+
+then some hands-on practice
+resources with skill badges,
+
+and then some additional
+preparation resources.
+
+You can find all
+of these resources
+
+on our external
+training website.
+
+Specifically reviewing the
+professional cloud network
+
+engineer role, let's really
+have a better understanding
+
+what this role is really about.
+
+A professional cloud
+network engineer
+
+implements and manages network
+architectures in Google Cloud.
+
+This individual may work on
+networking or cloud teams
+
+with architects who design
+cloud infrastructure.
+
+The cloud network engineer uses
+the Google Cloud Console and/or
+
+command-line interface
+and leverages experience
+
+with network services,
+application, and container
+
+networking, hybrid and
+multicloud connectivity,
+
+implementing VPCs and security
+for established network
+
+architectures to
+ensure successful cloud
+
+implementations.
+
+And you can review our exam
+page for further details.
+
+On the exam page,
+you'll also notice,
+
+what are the core domains
+covered by the exam?
+
+And it's all available in the
+certification exam guide that's
+
+available on the website.
+
+
+
+Likewise, let's review
+the preparation path
+
+for the security
+engineer certification.
+
+You can note that the
+learning resources, trainings,
+
+then in the practice section,
+the hands-on labs and skill
+
+badges, some of the
+preparation resources,
+
+like sample questions, and then
+finally, the certification.
+
+So likewise, who is the
+professional security engineer?
+
+This person enables
+organizations
+
+to design and implement a secure
+infrastructure on Google Cloud.
+
+Through an understanding
+of security best practices
+
+and industry security
+requirements,
+
+this individual
+designs, develops,
+
+and manages a secure
+infrastructure leveraging
+
+Google security technologies.
+
+The cloud security professional
+should be proficient
+
+in all aspects of
+cloud security,
+
+including managing identity
+and access management,
+
+defining organizational
+structure and policies,
+
+using Google technologies
+to provide data protection,
+
+configuring network
+security defenses,
+
+collecting and analyzing
+Google Cloud logs,
+
+managing incident reports, and
+demonstrating an understanding
+
+of regulatory concerns.
+
+All of this
+available on our exam
+
+website, including the detailed
+domains that the security
+
+engineer exam covers.
+
+So very briefly, a little bit
+more information about these
+
+exams.
+
+They are two hours
+long, multiple choice,
+
+and multiple select.
+
+There are no prerequisites.
+
+However, we strongly recommend
+you have around three years
+
+of industry experience,
+including a year, at least,
+
+of hands-on GCP knowledge.
+
+So with this, I'm really
+delighted to welcome Cori.
+
+Hello, Cori.
+
+CORI PEELE: Hi, Magda.
+
+How are you today?
+
+MAGDA JARY: Really good.
+
+Great to see you.
+
+So we would love to get
+your insights, expertise
+
+on the topic of the security
+and network engineer
+
+certifications.
+
+So if you could
+start with letting
+
+us know about your role
+in some of the projects
+
+you are working on.
+
+CORI PEELE: Yes, thanks.
+
+I'm a customer engineer
+with Google Cloud.
+
+And in this role, I'm able
+to work with customers
+
+to understand their
+business requirements,
+
+some of the things they may
+want to do to maybe transform
+
+their industry, and
+I work with them
+
+to understand how they
+can accomplish some
+
+of those goals using
+Google Cloud and parts
+
+of Google Cloud's ecosystem.
+
+And in order to do
+this, I need to have
+
+a really good understanding
+of what we have
+
+available in terms of features.
+
+But not just that.
+
+It's really focusing on, how
+do you solve these business
+
+problems with the right
+amount of emphasis
+
+on performance for the right
+price at the right time?
+
+And by doing this with
+some of my customers--
+
+and some of you may be seeing
+some of them speak during
+
+Google Next--
+
+we are able to accomplish
+really meaningful and impactful
+
+accomplishments, not
+just for the customer,
+
+but also for the
+users they serve.
+
+And in that way, they
+all have a bit of a focus
+
+on improving our overall
+experience in the world today.
+
+So it's extremely rewarding.
+
+MAGDA JARY: That's
+great to hear.
+
+Thank you, Cori.
+
+So please tell us about your
+certification preparation
+
+experience.
+
+CORI PEELE: Yes.
+
+So in my case, I had
+several certifications.
+
+However, I was focusing
+on how to study
+
+where I'm optimizing my time.
+
+Because when you think about
+the certification journeys
+
+and you look at the
+exam guides, you
+
+will see that there are
+certain common recommendations
+
+across networking and security.
+
+So having a really
+solid understanding
+
+of the foundational
+infrastructure
+
+components of Google Cloud
+will be the first thing.
+
+And so we have the ability to
+use instructor-led training
+
+or on-demand training through
+Pluralsight or Coursera.
+
+So I mapped out the
+courses, and I also
+
+leveraged the
+certification paths
+
+that have been outlined by
+our certification leads.
+
+And so by doing this, I was
+able to go through the training
+
+in terms of on-demand training.
+
+I had also mapped
+out the questions
+
+that were maybe
+giving me some trouble
+
+when I took the practice exam.
+
+And this is extremely useful,
+because the Google Cloud
+
+practice exam gives you not
+only an explanation regarding
+
+each answer, but it gives
+you links to resources
+
+for further information.
+
+So after doing
+that practice exam
+
+and understanding that
+there are other areas
+
+to focus on a bit more, I
+was able to really research
+
+and make sure I had a solid
+understanding of those topics,
+
+as well.
+
+I also participated in community
+activities, where several of us
+
+are embarking on a
+certification journey together.
+
+And this helps, because you're
+able to ask questions and also
+
+benefit from
+communicating with others.
+
+And so in this case,
+once I felt comfortable
+
+that I was able to answer
+the questions across all
+
+of the sections
+of the exam guide,
+
+then I registered for the
+exam and I was able to pass.
+
+So I'm very fortunate to
+have several certifications,
+
+including the security
+and networking engineer
+
+certifications.
+
+MAGDA JARY: Wonderful,
+and congratulations, Cori.
+
+CORI PEELE: Thanks.
+
+MAGDA JARY: So how
+would you encourage
+
+someone brand new to the
+security or network engineering
+
+area to set a goal of
+achieving a certification?
+
+CORI PEELE: Yes, I would really
+encourage you to think about
+
+how this benefits your
+day-to-day activities,
+
+in addition to how it may impact
+your company and your growth
+
+in your organization as a whole.
+
+The things you are doing
+today in your environment
+
+might be focused on maybe a
+couple of different patterns
+
+and a few different
+architectures,
+
+based on what you have in
+your environment today.
+
+However, in order to
+really be prepared
+
+for different types
+of challenges,
+
+and to really have a
+solid understanding of how
+
+you can apply these
+types of technologies
+
+to other business problems,
+it's important to have
+
+a very detailed understanding
+and a broad understanding
+
+of a lot of the topics that
+are covered in the exam.
+
+And so I really would
+encourage you to think
+
+about achieving certification.
+
+Think about planning-- and
+I would say think of it
+
+in terms of maybe in 12
+weeks, so within one quarter.
+
+You may start your studying in
+the beginning of the quarter
+
+and then plan to have an
+exam taken towards the end.
+
+So that way, you're
+able to incorporate
+
+studying for the exam with
+all the other things you're
+
+probably doing at the same time.
+
+And so with that
+type of structure,
+
+it's fairly reasonable
+for you to be
+
+able to really have
+that goal established
+
+and then also achieve the goal.
+
+And don't worry if you
+don't pass the first time.
+
+You have the ability
+to retake the exam.
+
+So again, the focus
+on establishing
+
+that type of target goal, and
+then planning your schedule
+
+accordingly so you can
+meet that timeline.
+
+MAGDA JARY: Thank you, and
+thank you for all the tips.
+
+Cori, could you review some of
+the synergies between security
+
+and networking in Google Cloud?
+
+CORI PEELE: Yes, and there
+are a lot of synergies.
+
+And actually, when you think
+about what the cloud is,
+
+we are thinking about the
+resources that are networked.
+
+And so network security
+is very important.
+
+And you will find that there
+are networking and security
+
+topics on both exams.
+
+So one really important
+perspective we have at Google
+
+is to think about
+a zero-trust model.
+
+We've published a white
+paper called Beyond Corp.
+
+And this is just a
+different way of thinking
+
+about managing security and
+network security for those who
+
+are used to the world where
+you have a demilitarized zone,
+
+and you're allowing
+communications across the board
+
+as soon as someone
+has permission
+
+to get into that perimeter.
+
+Well, with zero
+trust, this means
+
+that even though you may
+be in the same network,
+
+you do not have access.
+
+So this is, again, nothing--
+
+no access unless
+you are granted that
+
+by a policy explicitly
+or something where
+
+you are inheriting it.
+
+So being able to apply
+these types of principles
+
+across multiple products in the
+security and networking space
+
+will be really important.
+
+Also, it's important to
+think about how we approach
+
+open-source software security.
+
+So we have a lot of
+different mechanisms
+
+to plan how we are
+managing development
+
+and what happens from a
+development standpoint.
+
+But also, when you're
+doing additional builds,
+
+there are many other
+types of approaches.
+
+And so this is something that
+you want to really think about,
+
+because the impact of
+leveraging open source,
+
+where potentially-- this
+doesn't happen that often.
+
+But it has happened where
+there may be a bad actor.
+
+And so how do you prevent that
+from impacting your business?
+
+So making sure you
+have enough awareness
+
+of a lot of the latest practices
+and demonstrating competency
+
+to really plan to protect your
+organization is important.
+
+Again, protecting
+against ransomware.
+
+Ransomware is a problem our
+world is dealing with now
+
+and it seems to
+be getting worse.
+
+However, we have
+tools and products
+
+and processes to help protect
+against ransomware and other
+
+types of attacks.
+
+So having this type
+of knowledge lets
+
+you understand what you may do
+on the networking side in terms
+
+of how you're protecting
+from that standpoint,
+
+but then also from a security.
+
+And then when people think about
+cybersecurity in general, how
+
+do you really approach this?
+
+And so we have, again, processes
+and tools and product offerings
+
+to assist with that.
+
+One major change in
+the past several years
+
+has been the shift
+from just working
+
+with data centers that
+are owned by a company
+
+to a cloud infrastructure.
+
+And then now you actually
+have several approaches
+
+where you're thinking about
+multicloud and hybrid cloud.
+
+So your approach to security
+across all of these boundaries,
+
+and then also the
+way you approach it--
+
+let's say if you were maybe
+monetizing some offerings,
+
+or doing joint ventures and
+you have a different definition
+
+of what these boundaries
+actually are--
+
+this becomes something
+that can appear
+
+to be fairly complicated.
+
+However, if you are
+able to leverage
+
+some of the recommendations
+and best practices
+
+from Google Cloud, you'll have
+an understanding of the way
+
+to approach this so that your
+company and organization will
+
+be able to be really flexible as
+different demands and business
+
+models emerge in the future.
+
+And then really thinking about
+cybersecurity and resilience,
+
+cyber-resilience is
+extremely important.
+
+And when you are thinking about
+the broad spectrum of security
+
+and networking and how
+it's addressed together,
+
+it's really providing
+you with the capabilities
+
+to address these
+real-world problems.
+
+So I really recommend
+anyone who--
+
+again, if you already
+have a certification,
+
+or maybe you're someone who's a
+manager of people who are doing
+
+more of the hands-on
+tasks, it's still
+
+useful to think about
+getting these certifications,
+
+because these
+certifications focus on,
+
+how do you approach the design
+to meet a certain business need
+
+or to address certain problems?
+
+And it's not focused
+on just tasks.
+
+So by having a really
+great understanding
+
+of how you approach the design
+of security and networking
+
+will really be very beneficial.
+
+So yeah, and Magda, thanks for
+asking some of these questions.
+
+This is a really
+important topic.
+
+And I really hope that we have
+a lot more of our customers
+
+and other stakeholders consider
+taking the certification exam.
+
+MAGDA JARY: Super helpful.
+
+Thank you so much, Cori.
+
+Great insights.
+
+And thank you so
+much for your time.
+
+And with this, we
+are going to wrap up
+
+with additional resources.
+
+So if you do want to start
+or continue your readiness
+
+journey in the networking
+and security area,
+
+here is your spot.
+
+So we are very excited to
+introduce the Google Cloud
+
+Skills Boost, our new
+destination for Google Cloud
+
+Learning, with over 700 labs,
+courses, and certification
+
+preparation resources.
+
+And to help you build
+the technical skills
+
+that you and your teams need,
+we are opening up access
+
+to Google Cloud Learning
+for a month at no cost.
+
+So just visit
+g.co/cloud/freetraining.
+
+And thank you so much
+for your time today.
+
+We hope you enjoyed the session
+and learned something new.
+
+Bye-bye.
+
+
+

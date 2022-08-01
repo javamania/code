@@ -1,0 +1,1088 @@
+
+
+SCOTT ELLIS: Hi.
+
+Welcome to our
+talk on how to take
+
+charge of your sensitive data.
+
+My name is Scott Ellis,
+and I'm a Product Manager
+
+on Google Cloud's Data
+Security and Privacy team.
+
+
+
+Now, data powers your
+business, and data
+
+is one of your greatest assets.
+
+But it can also be one
+of your biggest risks.
+
+And today we're going
+to talk about how you
+
+can take charge of your data.
+
+And we're going to
+cover topics like how
+
+you can discover and
+classify your sensitive data.
+
+We feel that understanding
+your sensitive data
+
+is the first step
+in protecting it.
+
+And once you have that
+kind of visibility,
+
+we're going to talk about
+how you can manage your data
+
+risk using things
+like security policy,
+
+confidential processing,
+and data obfuscation.
+
+And ultimately, we want to
+be able to do this at scale
+
+so that you can focus
+on your business
+
+and, again, really
+focus on the outcomes.
+
+
+
+Now, to do this,
+automation is key.
+
+And again, if you want
+to know your data,
+
+and if want to understand your
+sensitive data so that you
+
+can better protect it, on-demand
+scans and manual review
+
+can help.
+
+However, the challenge is
+that your data is growing
+
+as your business is growing.
+
+And that means your data
+footprint is growing,
+
+and it's more
+challenging to manage it.
+
+And so you really need a way
+to automatically discover
+
+and classify your data.
+
+
+
+And today we're going
+to talk about how
+
+you can get automatic
+discovery, automatic inspection,
+
+automatic classification, and
+automatic data profiling--
+
+really, automatic DLP.
+
+And this is now
+available for BigQuery,
+
+and it's powered by
+our Cloud DLP platform.
+
+
+
+And what that means
+is that you can
+
+get an understanding
+of your data risk
+
+across your entire
+BigQuery footprint.
+
+And that means
+you can understand
+
+where you have, maybe,
+low-risk data, which
+
+could mean that there's no
+evidence of sensitive data
+
+or that it's got extra
+protections in place,
+
+or where you have
+moderate or high risk.
+
+This could be where you have
+evidence of sensitive data,
+
+like PII, or evidence
+of unstructured data
+
+or free text that might
+be inside of your tables,
+
+or where you have highly
+sensitive data, something
+
+like PII, like credit card
+numbers, or financial data.
+
+
+
+And what automatic DLP will
+do is generate rich insights
+
+for each table and
+column across your org.
+
+And that's really
+important, because you
+
+want to get that visibility
+across all of your tables, all
+
+of your columns,
+so you can really
+
+understand your data risk.
+
+Now, here's an example
+of a column profile
+
+for a table where we're seeing
+different types of metrics
+
+that indicate the type of
+risk, the type of sensitivity.
+
+And it includes the
+DLP's predicted infoType.
+
+And this gives an
+indication in this table
+
+that we see evidence of
+a credit card number,
+
+an email address, and a
+couple of columns that
+
+have evidence of a person name.
+
+This kind of data
+type can really
+
+help you understand your
+data or take the next step
+
+to protecting it.
+
+Now, this automatic
+visibility with DLP
+
+really means that you get
+continuous monitoring.
+
+That means that tables are
+picked up automatically.
+
+So as you're creating
+new projects,
+
+new data sets, and new tables
+in BigQuery, Automatic DLP
+
+will pick them up automatically
+and profile them for you.
+
+And it's designed as a
+fully managed service
+
+to have low overhead.
+
+What that means is
+that there's no jobs
+
+to manage or orchestrate, and
+you can enable this directly
+
+in the Cloud Console.
+
+It's also been built with
+data residency in mind.
+
+And again, if you're turning
+on across your entire org,
+
+you may have data in
+different regions,
+
+different geographic regions.
+
+And DLP will inspect that
+data in the geographic region
+
+that you have set for
+your BigQuery tables.
+
+It will also
+generate the profiles
+
+and store them in that
+same geographic region.
+
+And that way, you can ensure
+that your data stays where
+
+you want it, even when it's
+being inspected and profiled
+
+by DLP.
+
+And lastly, this
+is Google-driven.
+
+And what that means
+is that we figure out
+
+how to inspect and
+profile your data,
+
+so you can focus,
+again, on the outcomes.
+
+Great.
+
+Now, let's see this in action.
+
+And now let's see a demo
+of this automatic DLP.
+
+And for this, let's meet Angie.
+
+Angie is a data
+compliance officer
+
+for a large online
+retailer that serves
+
+customers across the globe.
+
+Angie oversees how data is
+collected, shared, and used
+
+across all departments.
+
+
+
+Angie's company is
+growing, and their data
+
+is growing with them.
+
+They've chosen to use BigQuery
+as their data warehouse
+
+to power most of their
+analytics and business needs.
+
+And usage of BigQuery is spread
+across several departments
+
+and project teams.
+
+And again, these teams are
+creating new projects, new data
+
+sets, new tables constantly
+as part of their business.
+
+And Angie wants
+to know, how can I
+
+gain visibility into the
+sensitive data across my org?
+
+
+
+And for this, we're going
+to use our Automatic DLP.
+
+What this means is,
+you can now enable
+
+Cloud DLP across your org and
+your entire BigQuery footprint.
+
+So what that means is
+that you can turn DLP
+
+on across your
+organization, as we're
+
+seeing here, across specific
+organization folders--
+
+maybe these represent
+departments or different parts
+
+of your organization--
+
+or individual projects.
+
+Now, BigQuery data lives inside
+tables and data sets that
+
+reside inside these projects.
+
+So depending on where
+you turn this on,
+
+you'll get coverage
+across all that data.
+
+When this is enabled, Cloud
+DLP will automatically
+
+pick up new data,
+pick up existing data,
+
+profile it, and give
+you those insights
+
+into your sensitive data.
+
+Now, enabling this is easy
+and can be done completely
+
+in the Cloud Console UI.
+
+For this, at the
+org level, Angie
+
+would navigate to Security
+and then Data Loss Prevention
+
+and then click on the
+Scan Org link here.
+
+Now, let's go ahead and
+see what that looks like.
+
+I'm going to switch over
+here to my test project.
+
+We're going to click
+on Scan Organization.
+
+Now, we can configure
+this in one click and take
+
+care of everything for you.
+
+But let's go ahead and
+walk through the custom
+
+configuration, just so you can
+see the options that you have.
+
+The first option
+you have here is
+
+to choose whether you want to
+scan your entire organization,
+
+or if you want to
+browse and select
+
+individual folders to scan.
+
+For now, we'll just scan
+our entire organization.
+
+Now, this service is
+built with Cloud Data Loss
+
+Prevention, or Cloud DLP.
+
+So you can use your existing
+inspection templates,
+
+or you can create a new one.
+
+But this is powered by the
+same infoType detectors
+
+that we have for Cloud DLP.
+
+So you can select from
+our built-in detectors
+
+or define custom
+ones of your own.
+
+Additionally, you can
+select the third option,
+
+which will run a set of our
+most popular default detectors.
+
+And just simply
+select that option.
+
+
+
+And next, you can
+see the permissions
+
+needed to run this scan.
+
+Now, we're very transparent
+about the permissions
+
+that are needed here.
+
+We can also create
+those for you,
+
+or you can set those permissions
+individually-- again, just
+
+depending on what is best
+for your organization.
+
+And next, let's talk a little
+bit about data residency.
+
+So data residency is
+crucial to your data.
+
+And we've built this Cloud
+DLP from the ground up
+
+to support data residency.
+
+And that holds true for
+this automatic solution
+
+for BigQuery.
+
+What that means is
+that when you have
+
+data in a certain
+geographic region,
+
+configured in BigQuery to be
+in a certain geographic region,
+
+DLP will scan data
+in that same region.
+
+So the process of
+scanning your data
+
+happens in the same
+geographic region.
+
+Additionally, the
+profile output will
+
+be stored in the same geographic
+region as your BigQuery data.
+
+And again, this allows you to
+maintain that data residency.
+
+Additionally, we
+give you the control
+
+to decide where to store
+the actual configuration
+
+data, which is what
+we're configuring here.
+
+Again, we want to make
+sure you have good insight
+
+and control of your data
+to know where and how it's
+
+being processed.
+
+Now, if I click
+Create here, this
+
+is going to enable
+this new service
+
+for my entire organization,
+which is great.
+
+However, I've already done that.
+
+So I'm going to go
+ahead and click Cancel.
+
+And let's take a look at
+what the results look like.
+
+Now, in this particular
+organization,
+
+I only have these
+six projects here.
+
+And each of these projects
+has BigQuery data, data sets,
+
+and tables inside them.
+
+Now, here at the
+Project view, I'm
+
+just getting a high-level
+view of the tables
+
+and a summary of the risk
+and sensitivity in them.
+
+Let's go ahead and click
+on one of these projects.
+
+And now what I'm seeing is
+every data set and table that
+
+is in that project and the
+associated metrics at the table
+
+level, including things like
+our data risk assessments,
+
+whether this data is public,
+what kind of encryption it has,
+
+row count.
+
+And I can also click
+on one of these tables
+
+to go even further.
+
+I'm going to click
+on this table,
+
+and this will take me into
+the column-level profile.
+
+Here we see detailed metrics
+for every column in that table,
+
+including DLP's predicted
+info type, which,
+
+again is-- if we can
+figure out this column
+
+looks like a
+particular data type,
+
+we actually label that
+column here with that type.
+
+So here we're seeing a column
+with credit card numbers, email
+
+addresses, and person name.
+
+It looks like we have a
+first name and a last name,
+
+as well as metrics
+around that for data risk
+
+sensitivity and some
+additional metrics
+
+around whether or
+not this column looks
+
+like it has free text, or
+it's unstructured, maybe
+
+a comment field, as
+well as uniqueness
+
+and null-percent estimates.
+
+Now, these are important,
+because imagine this column
+
+of credit card numbers--
+
+we also see that there is
+a uniqueness score of 1.
+
+And that's a high
+uniqueness score,
+
+which indicates that this column
+likely contains unique credit
+
+card numbers in every
+row, which would
+
+be different than a low
+uniqueness score, where
+
+maybe that same
+value was repeated
+
+over and over multiple times.
+
+We also see that with an
+estimated null percent of 0%.
+
+That means that this column
+looks like it's pretty well
+
+populated, and there's not a lot
+of null or sparsely populated
+
+data in these columns.
+
+But again, this is the
+kind of rich insights
+
+that you get with the
+column-level profile,
+
+as well as the table- and
+project-level profiles.
+
+And all of this, again,
+will be continuously
+
+running and generating
+as new tables are
+
+created across your org.
+
+
+
+Great.
+
+Let's go back to Angie.
+
+Now, Angie needed an
+automated solution.
+
+And Angie chose to use
+Cloud DLP's new service
+
+to automatically discover,
+inspect, and profile
+
+their BigQuery tables for
+sensitive data like PII.
+
+And this automatic DLP service
+will pick up new projects,
+
+data sets, and
+tables automatically.
+
+And the outcome is that Angie's
+team now has clear visibility
+
+into their sensitive
+data and can
+
+make more informed decisions
+about how it's protected,
+
+used, processed, and shared.
+
+And that concludes our demo
+of the new automatic DLP
+
+for BigQuery.
+
+Great.
+
+We've now just shown you how
+you can get org-wide visibility
+
+with the new automatic DLP.
+
+And again, this can give
+you clear visibility
+
+into your sensitive
+data so that you can
+
+make more informed decisions.
+
+And that's now
+available for BigQuery.
+
+Now that you have that clear
+visibility into your data,
+
+let's figure out some ways
+to manage your data risk
+
+and reduce your data risk.
+
+So first, how can I enable
+more fine-grained access
+
+control and protection?
+
+So now that you know where
+your sensitive data is,
+
+maybe you want to go in and
+employ column-level access
+
+policy.
+
+And using BigQuery
+policy tags, you
+
+can enable column-level
+access enforcement,
+
+which can help you strike
+a balance between access
+
+and security.
+
+So an example policy
+is shown here.
+
+And these policies have
+a taxonomy or a hierarchy
+
+to them.
+
+What that means is that we can
+put an element like credit card
+
+number underneath or inside
+of a higher-level policy
+
+like financial.
+
+And that allows you to grant
+access and manage your policy
+
+at that higher
+level, while enabling
+
+you to tag the data at the lower
+level, at credit card number.
+
+Let's see this in action.
+
+So here's an example
+here where we're
+
+seeing a table where we have
+tagged four of the columns
+
+in here with a tag for person
+name, email address, and credit
+
+card number.
+
+And we have turned
+on enforcement
+
+of a policy using
+BigQuery policy tags,
+
+so that users can only access
+those sensitive elements
+
+if they have the
+right permission.
+
+And what that means is, if
+I have access to this table,
+
+but I don't have access to
+those particular columns,
+
+I'll still be able to query
+the table and, in this case,
+
+maybe run analysis
+on the payment type
+
+and the transaction amount.
+
+But I won't be able to
+access the sensitive elements
+
+like the PII here that
+we see unless I have
+
+that additional access control.
+
+And again that's
+the way you can find
+
+that balance between
+access and security
+
+and, overall, reduce and
+manage some of your data risk.
+
+Another technique is to go in
+and use obfuscation or masking.
+
+And this is something that
+you can do with Cloud DLP,
+
+and it's a technique we
+call de-identification.
+
+Now, de-identification
+includes a set of transforms
+
+like redaction,
+masking, tokenization,
+
+format-preserving encryption,
+date shifting, bucketing,
+
+and more.
+
+And these transformations
+are designed
+
+to actually manipulate
+and transform your data
+
+in order to reduce the risk.
+
+So for example, in this
+before-and-after animation that
+
+we're seeing, we're seeing these
+techniques applied to a table--
+
+in this case, a table
+that has four columns.
+
+And we're applying
+transformations
+
+across the entire column in
+these first three columns.
+
+Again, our goal here is to
+reduce the risk of the data.
+
+So we are manipulating
+and transforming
+
+the sensitive information
+and replacing it
+
+with something
+that is obfuscated.
+
+Now, in that fourth
+column, we're
+
+combining the power of
+DLP's inspection capability
+
+with the masking so
+that we can actually
+
+go into these unstructured
+comment fields,
+
+find the sensitive
+element, and only mask
+
+that sensitive element.
+
+And this is something
+that you can
+
+do because we've
+combined that inspection
+
+capability with the data-masking
+capability all in one platform.
+
+Otherwise, you'd have
+to potentially redact
+
+the entire Comment Field column.
+
+But instead, you
+can actually go in
+
+and redact only the sensitive
+information in line.
+
+
+
+Now, another question
+is, how can I
+
+improve protection
+and process my data
+
+in a confidential manner?
+
+Again, now that
+you have visibility
+
+into where your
+sensitive data exists,
+
+you can use
+confidential processing
+
+to process that more securely.
+
+An example of that would
+be Confidential Dataproc,
+
+which offers encryption
+in use, which can easily
+
+add security protections to your
+most sensitive data workloads.
+
+Here's an example where we are
+turning on confidential compute
+
+with a simple command-line
+flag as we create and launch
+
+our Dataproc pipeline.
+
+
+
+Now, Confidential
+Dataproc is now in GA.
+
+Now, Dataproc is a fully
+managed and highly scalable
+
+service for running things
+like Apache Spark, Flink,
+
+and Presto.
+
+And Confidential Dataproc adds
+that data encryption in use,
+
+again, to protect your
+most sensitive data.
+
+And it does this by using
+confidential VMs to provide
+
+that in-line memory encryption.
+
+And this is powered by AMD's
+secure encrypted virtualization
+
+processors.
+
+
+
+And this brings us to the end
+of our talk on how to take
+
+charge of your sensitive data.
+
+And we'll leave you with a few
+key takeaways and action items.
+
+First, automatic DLP is
+now available for BigQuery
+
+and can give you insight
+into your entire BigQuery
+
+footprint across your org.
+
+You can get started in the
+Cloud Console by navigating
+
+to Security and then
+Data Loss Prevention,
+
+or you can read
+our documentation
+
+at cloud.google.com/dlp.
+
+You can also check out
+obfuscation and masking,
+
+or what we call
+de-identification,
+
+also at cloud.google.com/dlp.
+
+And you can read more about
+confidential processing,
+
+which is available
+with VMs, GKE,
+
+and now in GA for Dataproc at
+cloud.google.com/confidential
+
+computing.
+
+Thank you again for
+joining us today,
+
+and we're happy to be
+part of your journey
+
+as you take care of
+your sensitive data.
+
+Thank you.
+
+
+

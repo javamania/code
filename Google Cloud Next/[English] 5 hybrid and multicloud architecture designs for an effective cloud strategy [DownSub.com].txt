@@ -1,0 +1,1233 @@
+
+
+AMINA MANSOUR: Hello, everyone.
+
+My name is Amina Mansour,
+and I'm a Solutions Architect
+
+at Google Cloud.
+
+Scott Surovich, who is the
+Global Container Engineering
+
+Lead at HSBC, will be
+joining me later for a Q&A.
+
+With the growing
+interest and adoption
+
+of hybrid and multicloud
+architectures,
+
+I find myself working
+with a lot of customers
+
+that are looking for guidance
+on architecting their platforms
+
+and choosing where
+their applications
+
+and services reside.
+
+Today we will briefly review
+the difference between hybrid
+
+and multicloud,
+then I will present
+
+some of the more common patterns
+we've seen with our customers.
+
+And for the interesting
+part of the talk,
+
+we will have a Q&A with
+Scott to share his experience
+
+and insights with
+hybrid and multicloud.
+
+So what is the difference
+between hybrid and multicloud?
+
+If we take hybrid
+first, this is where
+
+you have workloads
+that are deployed
+
+across multiple
+environments, one
+
+being a private
+on-prem data center
+
+and one in the public Cloud.
+
+Multicloud, on the other
+hand, combines at least two
+
+public Cloud environments,
+but you can also
+
+have a private computing
+environment as part
+
+of your multicloud setup.
+
+So really, multicloud is a
+superset of hybrid Cloud.
+
+We can put these patterns
+into two buckets.
+
+The first is
+distributed deployment,
+
+where the aim is to run the
+application in the environment
+
+that suits it best.
+
+So each application runs
+in a specific environment.
+
+The second is
+redundant deployment,
+
+where you deploy
+the same application
+
+in multiple environments.
+
+Let's now look at the
+different patterns.
+
+The first pattern
+we will talk about
+
+is the tiered or
+layered pattern.
+
+The idea of it is to
+focus first on deploying
+
+front-end applications
+to the public Cloud.
+
+In this pattern, you keep your
+back-end applications and data
+
+in the private
+computing environment.
+
+Some advantages are
+that this allows
+
+you to start with the
+less complex migrations.
+
+You also benefit from
+what Google Cloud knows
+
+what to do well, so things like
+load balancing and autoscaling.
+
+And you keep your data
+and back-end on-prem
+
+for regulatory reasons.
+
+Because you are communicating
+across environments,
+
+choose the Google Cloud Regions
+and Interconnect location
+
+closest to your data center.
+
+Make sure to secure the
+communication with VPN tunnels,
+
+TLS, or both, and
+establish a common identity
+
+between environments
+to authenticate across.
+
+The second pattern is
+the partition pattern.
+
+It combines multiple
+public cloud environments
+
+that gives you the
+flexibility to deploy
+
+an application in the best
+computing environment for it.
+
+So application A is on Cloud 1
+and application B is on Cloud 2
+
+based on its dependencies
+and Cloud services it uses.
+
+Because of your presence
+in multiple public Cloud
+
+environments, you're
+lowering your risk
+
+and you have the flexibility to
+change plans or partnerships.
+
+You can also choose
+which provider
+
+to run an application or service
+on depending on its needs.
+
+Each additional environment
+comes with additional overhead,
+
+so weigh the advantages
+against the overhead.
+
+You should also minimize
+dependencies across Clouds
+
+so it doesn't
+affect performance.
+
+And focus less on portability
+of your applications
+
+and more on the portability
+of your workflows
+
+and having a unified
+platform across providers.
+
+Our third pattern is edge.
+
+Running workloads in
+the Cloud requires
+
+that clients have fast and
+reliable internet connectivity.
+
+There are scenarios when you
+cannot rely on continuous
+
+connectivity, such as stores or
+supermarkets that might be only
+
+connected occasionally or use
+links that are not reliable
+
+enough for business
+critical transactions.
+
+With this pattern, you run time-
+and business-critical workloads
+
+locally at the
+edge of the network
+
+while using the Cloud for
+all other kinds of workloads.
+
+In an edge setup,
+the internet link
+
+is a non-critical
+component that is
+
+used for management purposes
+and to synchronize your upload
+
+data.
+
+This helps you ensure low
+latency and self-sufficiency
+
+in cases when you cannot do that
+due to network restrictions.
+
+You also reuse existing
+investments and equipment
+
+at those edge locations.
+
+And remember that increased
+traffic to Google Cloud
+
+is free, so that makes
+it easier to communicate
+
+back to the Cloud with
+status or data syncs.
+
+Two things to keep in
+mind with this pattern--
+
+you don't want to increase
+the burden of management
+
+of these edge locations
+linearly with how many they are,
+
+so you should have a centralized
+control plane in the Cloud
+
+to manage them all.
+
+Also, the less dependencies
+on the Cloud environment,
+
+the more reliable and
+faster your edge setup is.
+
+Our fourth pattern is analytics.
+
+In this pattern,
+transactional workloads
+
+stay on-prem and
+analytics workloads
+
+are in the public Cloud to
+leverage best of read services.
+
+Of course, the first thing that
+comes to mind with this pattern
+
+is BigQuery, which is a very
+common reason why our customers
+
+choose this pattern.
+
+Analytics workloads often need
+to process huge amounts of data
+
+and can be bursty, so
+they lend themselves
+
+well to the public
+Cloud and you don't
+
+need to overprovision
+on-prem anymore.
+
+Google Cloud also
+provides a rich set
+
+of services to manage
+data throughout its entire
+
+lifecycle, ranging from
+initial acquisition,
+
+to processing and analyzing,
+to final visualization.
+
+Also you get to take advantage
+of Cloud capabilities--
+
+again, like I mentioned,
+increased traffic and moving
+
+data from the private computing
+environment to Google Cloud
+
+is free of charge.
+
+And when you have existing
+Hadoop or Spark workloads,
+
+consider migrating
+jobs to data PROC
+
+and migrating existing
+HDFS data to Cloud Storage.
+
+
+
+Use queues to hand over data.
+
+So things like Pub/Sub or maybe
+even Cloud Storage buckets
+
+to hand over the
+data to Google Cloud.
+
+Choose the transfer
+approach that is best suited
+
+for your data set size
+and available bandwidth
+
+for the initial data
+transfer, and you
+
+should use consistent
+tooling and processes
+
+across environments
+to help increase
+
+your operational efficiency.
+
+This one is very common for
+a majority of the patterns.
+
+Last but not least is
+the bursting pattern,
+
+and it's the only
+pattern discussed today
+
+that fits in the redundant
+deployment pattern bucket.
+
+The idea of the Cloud
+bursting pattern
+
+is to use a private
+computing environment
+
+for the baseline load
+and burst to the Cloud
+
+temporarily when you
+need that extra capacity.
+
+While you can accommodate bursty
+workloads in a classic data
+
+center-based
+computing environment,
+
+by overprovisioning
+your resources,
+
+this approach is not
+really cost effective.
+
+So this pattern
+allows you to apply it
+
+to interactive and
+batch workloads.
+
+But when you're dealing
+with interactive workloads,
+
+you must determine how
+to distribute requests
+
+across environments.
+
+These three advantages
+are all related.
+
+It allows you to
+reuse, or in this case,
+
+use your investments,
+and there is no longer
+
+a need to overprovision your
+compute resources on-prem.
+
+So that enables increased
+utilization and cost
+
+effectiveness in the private
+computing environment.
+
+As for best
+practices, again, you
+
+should choose the regions
+that are close together.
+
+That applies to the Cloud region
+and the Interconnect location.
+
+You should make Cloud resources
+private for batch workloads.
+
+Those are not public-facing,
+and so in this case,
+
+you should secure and
+have them be private.
+
+And you should secure
+the communication
+
+because the data that is
+exchanged between environments
+
+might be sensitive.
+
+And finally, establish
+common identity
+
+so that you can
+securely authenticate
+
+across environment boundaries.
+
+Now it's time for the
+more interesting part
+
+of our session.
+
+Scott is the Global
+Container Engineering
+
+Lead at HSBC and the Global
+Anthos Product Owner.
+
+He's also a Google
+Cloud Certified
+
+Fellow and Co-Chair of the
+CNCF Financial Services Working
+
+Group.
+
+Great to have you with
+us here today, Scott.
+
+SCOTT SUROVICH: Hi, Amina.
+
+Thanks for having me.
+
+AMINA MANSOUR: Before we
+start with our questions,
+
+why don't you tell us a little
+bit about the scale of HSBC?
+
+SCOTT SUROVICH: Sure.
+
+So before we get
+into the patterns,
+
+I'll explain about who HSBC is.
+
+We are one of the world's
+largest global banks,
+
+and the sheer scale of what
+we deal with on a daily basis
+
+is presented in this slide.
+
+As you can see, we're
+in 66 countries.
+
+We process about $1.5
+trillion a day in payments.
+
+We have 110,000 servers,
+roughly, globally
+
+right now-- so that's
+an out of date portion.
+
+We have data centers in
+21 different countries--
+
+that does not count where we
+have large server rooms, as
+
+well.
+
+We have a large amount of
+employees, around 235,000.
+
+We've got 39 million
+customers globally.
+
+We process about revenue
+of $53.8 billion a year,
+
+and we have offices all over
+the world-- roughly about
+
+3,900 offices.
+
+So it's a large organization.
+
+And even in the IT section, we
+have 40,000 IT professionals
+
+working for us.
+
+AMINA MANSOUR: Thank you
+for that intro, Scott.
+
+Let me start by asking
+you why you would consider
+
+a hybrid or multicloud solution
+in a highly-regulated industry?
+
+SCOTT SUROVICH:
+Definitely, great idea.
+
+The first thing
+I'll talk about is
+
+going to be the hybrid Cloud.
+
+So in the hybrid Cloud,
+as we have on the slide,
+
+we have data centers globally.
+
+And again, we have server
+rooms globally, as well.
+
+So we have a large investment
+in data centers already.
+
+So we want to utilize
+that where we can.
+
+But of course,
+going to the Cloud
+
+makes sense in
+multiple scenarios.
+
+So to use these data centers,
+we have a hybrid Cloud solution.
+
+It helps us with a backup plan.
+
+So if we go to a Cloud
+with an application,
+
+we have to have a backup
+plan for the regulators.
+
+So we have to show
+that if something
+
+were to go wrong in the
+links, the relationship, just
+
+with the vendor in general,
+where do we go from there?
+
+And on-prem is a
+viable solution.
+
+It also could go to
+another CSV, but since we
+
+have those data centers, we
+can leverage that internally.
+
+Finally, it takes time to get
+approval to go to the Cloud
+
+for an application.
+
+It can take three to six months.
+
+Now, in that time, you
+don't want to sit idle.
+
+You might want to
+refactor your app.
+
+You might want to test
+out some new services.
+
+So with the introduction
+of containers--
+
+Kubernetes and
+Anthos-- for on-prem,
+
+if a workload fits into
+that, my developers
+
+can actually start
+developing that today
+
+and they can move
+that to the Cloud
+
+once they have the
+approval to do so.
+
+In the multicloud side, we
+select the best-of-breed
+
+for features for each CSP.
+
+As you said, BigQuery is a
+big one for the Google side,
+
+and it's just one of
+many different features
+
+on the Google side.
+
+There's also regional
+availability.
+
+Certain times I
+have an application
+
+that has to go into
+multiple regions.
+
+But somebody like Google may
+not have a presence in China,
+
+or you may not have
+a point of presence
+
+somewhere close to a
+certain other region.
+
+So we have to go multicloud
+where it makes sense
+
+to go multicloud.
+
+AMINA MANSOUR: Those are
+all great reasons, Scott.
+
+Of course, we
+recognize there are
+
+many other reasons for other
+industries and verticals.
+
+But of those patterns that I
+described, which patterns are
+
+you most likely to implement?
+
+SCOTT SUROVICH: Sure.
+
+All the models are great.
+
+All the patterns are great.
+
+So the first one that
+I like to talk about
+
+is going to be the tiered
+model, or the tiered pattern.
+
+So in my previous days, we
+would have our websites on-site.
+
+And we would be under attack--
+get denial of service attacks.
+
+We'd have to engage
+multiple teams--
+
+operating systems, networking,
+obviously our service
+
+providers, and we would
+spend hours and hours trying
+
+to remediate that situation.
+
+We want to restore the
+services to our customers
+
+and our employees.
+
+So rather than have us deal
+with that-- the whole time we're
+
+fighting that fire,
+we are not innovating
+
+and we're not going
+forward for the business.
+
+So let's let
+somebody like Google,
+
+who was born in the Cloud,
+raised in the Cloud,
+
+knows the Cloud, and
+can protect the Cloud--
+
+we will put our
+presentation layer in GCP
+
+and products like the
+Web Application Firewall,
+
+available on Cloud
+Armor, would help
+
+us to remediate that
+attack a lot faster
+
+and not drain our resources.
+
+So put the front end
+in the CSP, but keeping
+
+your data safe, and even
+better, regulatory compliance
+
+to have your data on-prem.
+
+The other model would
+be the partition model.
+
+Now, we've already mentioned
+that HSBC has multiple data
+
+centers and multiple
+server rooms
+
+globally, so we have a heavy
+investment in machines.
+
+AMINA MANSOUR: But what
+about the bursting pattern?
+
+From your experience, what
+are some use cases for that?
+
+SCOTT SUROVICH: Yeah,
+the bursting pattern
+
+is a great use case for Cloud.
+
+However, it's also one of the
+more difficult ones to utilize.
+
+And I say that
+because the challenge
+
+is the regulatory issues that
+we deal with in this industry.
+
+So because of that, I can't
+just select any workload
+
+and say, OK, I'm going to burst
+when I need to in the Cloud.
+
+It has to be an application
+that is approved,
+
+the data has to be approved.
+
+So we have to be careful.
+
+So with the right choice,
+it's the perfect scenario
+
+for the challenges
+that it addresses.
+
+And 2020 was one of
+those challenges.
+
+So, of course, during
+2020, a lot of people
+
+started working from home.
+
+Basically everybody
+started working from home.
+
+If you had to expand your
+data center for certain use
+
+cases because of this
+different working pattern,
+
+you might have to
+expand out and scale out
+
+your server infrastructure.
+
+That was a big
+challenge in 2020.
+
+Trying to order
+equipment was delayed
+
+for months due to
+manufacturing, due to shipping,
+
+or due to silicone shortages.
+
+So we can't wait
+months for that.
+
+So to address this, first
+thing is the perfect scenario.
+
+It's a little bit longer
+than normal temporary,
+
+kind of like what
+you were mentioning
+
+during your introduction,
+but at some point
+
+we do hope that all of
+this is going to die down,
+
+everything's going
+to be good, and then
+
+we all get back to
+the office-- we don't
+
+need all that extra capacity.
+
+So by scaling up and
+bursting into the Cloud,
+
+we do it faster,
+we do it cheaper,
+
+and we don't have any of
+that hardware left over
+
+after we're done with all
+of the nightmare of 2020.
+
+AMINA MANSOUR: 100%.
+
+You hit the nail on the
+head with this example.
+
+But let's pivot to
+something happier.
+
+What's a fun use case
+for the edge pattern?
+
+SCOTT SUROVICH: Yeah,
+the edge pattern
+
+is one I've always liked.
+
+So in the banking industry,
+a lot of processes,
+
+a lot of hardware,
+started to look at that.
+
+So ATMs-- we're not
+quite there yet,
+
+but that's a great
+use case for an edge.
+
+From an HSBC view, though, the
+edge case I like to bring up
+
+is something called Pepper.
+
+Pepper is actually a
+robot, originally developed
+
+by SoftBank, that we
+have in 22 branches.
+
+And what Pepper does is
+it will greet the customer
+
+as they come in.
+
+So banking isn't exciting.
+
+We all kind of know that.
+
+Pepper makes it exciting.
+
+So when you walk
+into this branch
+
+and you see this robot with
+a really cute face looking
+
+at you with an LCD and touch
+screen, you can walk up to her
+
+and you can choose what you
+want to talk about to CSR
+
+or what products you
+might be interested in.
+
+Not only is it fun
+and interactive,
+
+but it cuts the wait time
+down for the customer.
+
+This all goes into a system
+that the CSR will see
+
+and then they can walk
+out to get you and know
+
+exactly what you need
+before four other people ask
+
+you the same questions.
+
+You go right to the person,
+they know what you need,
+
+and they can process your
+request really quick.
+
+Now aside from the cool factor--
+
+it does bring people
+into the branch.
+
+So people want to see Pepper--
+
+taking pictures, posting them.
+
+We get our brand out there.
+
+But it can go further than
+just this basic stuff.
+
+So internally, Pepper is limited
+to about four core M processor
+
+with 4 gigs of RAM.
+
+It can do a lot of processing.
+
+It can talk to systems
+locally so we can figure out
+
+what we need for you.
+
+But to make it more
+fun and to expand it,
+
+we can connect that
+into the Cloud.
+
+So of course, using
+something like Google,
+
+we can use translation
+services, text-to-speech, AI
+
+interactions.
+
+And one of my favorite
+ones that we've
+
+been debating, with consent,
+would be facial recognition.
+
+So Pepper can greet you when
+you walk into the branch
+
+and it can say,
+"Welcome back, Amina.
+
+Would you like to
+look at this service?"
+
+Or just having a
+conversation with you
+
+using the AI interaction.
+
+AMINA MANSOUR: That's amazing.
+
+I personally hope to
+meet Pepper someday.
+
+I know that HSBC leverages
+BigQuery for some analytics
+
+workloads, so tell
+us a little bit more
+
+about the analytics
+pattern there.
+
+SCOTT SUROVICH: Yeah.
+
+We're a bank, we
+get a lot of data.
+
+We have a lot of things that
+we have to sift through,
+
+look at, do analysis on.
+
+So BigQuery is very popular
+among our developers,
+
+and that's at a global scale.
+
+So with BigQuery, as you said
+during the introductions,
+
+it can process your data,
+handle millions of queries
+
+per second, and without
+us having to expand
+
+and install hardware for this.
+
+Now, in the earlier
+days, we used to do this.
+
+We would run things that
+would take two weeks.
+
+It would run at a bunch of
+kit that we also had DR for,
+
+because if we didn't
+have a problem of fraud,
+
+we'd have to put it to
+DR. It's a lot of money
+
+that when you're not processing
+anything, it just sits there.
+
+So aside from just being
+slower and costing more,
+
+we wanted to go to
+the Cloud for that.
+
+So one of our
+applications that we did
+
+happen to move used to take
+about 10 days to process
+
+the information.
+
+It sat on a lot of kit, and
+for the rest of that month
+
+it just sat.
+
+So it takes up power,
+it takes up cooling,
+
+it just takes up
+general maintenance.
+
+We have to pay for a lot
+of stuff that isn't in use.
+
+By moving it over to
+BigQuery, we only utilize
+
+or we only get charged
+when we're utilizing it.
+
+It also cut our processing time
+on that operation from those
+
+10 days down to less than a
+day, and on certain operations
+
+down to a couple of hours.
+
+So we get the
+information analyzed
+
+much quicker and cheaper.
+
+And there really is
+nothing better, and faster,
+
+and cheaper, and it's done well.
+
+AMINA MANSOUR: That's a
+great use case for BigQuery
+
+and the analytics pattern.
+
+Thank you so much for
+joining us today, Scott.
+
+It is great to learn
+about all the innovation
+
+that Google Cloud products
+enable for our customers.
+
+SCOTT SUROVICH: Great.
+
+Thanks, Amina.
+
+It's my pleasure to be here.
+
+AMINA MANSOUR: If you'd like
+to continue learning more
+
+about the different
+multicloud and hybrid patterns
+
+and how to implement those
+using Google Cloud products,
+
+please check out
+these sessions here
+
+that will talk about Anthos,
+for example, as the control
+
+plane supporting that
+multicloud or hybrid patterns,
+
+as well as different
+examples with Cloud Run
+
+running in hybrid or
+multicloud environments,
+
+all the way to
+extending your Anthos
+
+or multicloud environment to VM
+workloads on-premises, as well.
+
+Thank you so much for
+joining the session today,
+
+and hopefully it was useful.
+
+
+

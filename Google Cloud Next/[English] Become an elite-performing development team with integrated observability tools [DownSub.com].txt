@@ -1,0 +1,1380 @@
+
+
+RAKESH DHOOPAR: First of
+all, I want to welcome you
+
+to Google Next 2021.
+
+In this session, I
+will focus on what role
+
+integrated
+observability tools play
+
+in helping developing teams
+become elite-performing teams.
+
+So without further
+delay, let's get started.
+
+
+
+My name is Rakesh Dhoopar.
+
+I'm a Director of Product
+Management at Google.
+
+I focus on our products
+related to cloud observability.
+
+In today's session, I
+will touch on five areas.
+
+First, I will start
+by talking about,
+
+what do we mean by the term,
+"elite-performing teams?"
+
+While transformation towards
+becoming an elite team usually
+
+requires a wide variety
+of changes, including
+
+adhering to certain
+operational principles,
+
+evolving operational
+processes, and adopting
+
+a variety of tools,
+in this session,
+
+I will focus on
+observability tools only.
+
+We call our offering for
+observability the Cloud Ops
+
+Suite.
+
+I will then dive
+deeper into some
+
+of the specific capabilities
+that help developers
+
+and operators
+reduce the time they
+
+need to spend on identifying,
+diagnosing, and troubleshooting
+
+problems.
+
+Now, this part of
+the talk will focus
+
+on how we make it
+easier to instrument
+
+and collect telemetry signals
+and analyze them effectively
+
+to improve troubleshooting.
+
+Lastly, I will talk about how
+developers and operators can
+
+overcome friction
+between the two teams
+
+so that they can move fast
+while maintaining reliability
+
+of their services.
+
+
+
+So let me first start
+by defining what we mean
+
+by the term, "elite teams."
+
+And to illustrate that, I will
+refer to a quote from the Dora
+
+report.
+
+So some of you may be wondering,
+what is the Dora report?
+
+Now, at its very foundation Dora
+is an ongoing research program
+
+sponsored by Google.
+
+It is the largest and
+longest-running research
+
+program of its kind.
+
+The research program
+collects and analyzes data
+
+from over 30,000
+practitioners and analyzes
+
+the practices that drive
+their software delivery
+
+and operations performance.
+
+Participating
+organizations are measured
+
+on metrics for
+software development,
+
+metrics for software
+deployment, and metrics
+
+for service operations.
+
+From this collected
+data, we then
+
+do cluster analysis to
+benchmark organizations
+
+against the industry and
+identify characteristics
+
+that are grouped into cohorts
+for low, medium, high,
+
+and elite performers.
+
+Elite teams are the highest
+performers on at least one
+
+of the metrics measured
+for either software
+
+development, software
+deployment, or service
+
+operations.
+
+Now, one of the most interesting
+findings from this research
+
+is that many professionals
+approach these metrics
+
+as representing a
+set of trade-offs.
+
+Now, these professionals believe
+that increasing throughput
+
+of software development
+will negatively
+
+impact the availability and
+reliability of their services.
+
+However, to the
+contrary, this research
+
+has consistently shown,
+for the last six years,
+
+that speed and stability are
+outcome that enable each other.
+
+Simply stated,
+elite performers are
+
+able to move fast and
+deploy their code rapidly
+
+without compromising
+on service reliability.
+
+
+
+The research also
+found that elite teams
+
+were able to deploy
+multiple times
+
+a day, while low performers
+were deploying less than once
+
+per month.
+
+Now, at the same time,
+these elite performers
+
+had a time to restore a
+service of less than one hour,
+
+while the low performers
+reported between one week
+
+to one month.
+
+
+
+I'm going to briefly talk about
+one of our customers in more
+
+detail, and that
+customer is Lowe's.
+
+So Lowe's is one of the largest
+do-it-yourself home improvement
+
+retailer in the United States.
+
+Now, as a part of their
+digital transformation efforts,
+
+they decided to modernize
+some of their applications
+
+using Google Cloud.
+
+Now, as they went through
+this business transformation,
+
+they worked closely with Google
+to transform their organization
+
+from a traditional
+IT ops organization
+
+to an SRE-type organization.
+
+For their observability
+tools, they
+
+picked our cloud-native
+capabilities offered
+
+by the Cloud Operations Suite.
+
+When they embarked on this
+journey in 2019, in early 2020,
+
+they had to accelerate
+this transformation effort.
+
+The pandemic forced
+more and more customers
+
+to transact online.
+
+And they had to integrate
+these cloud-native apps
+
+with pricing systems
+that were running
+
+on prem and with many store
+best inventory systems
+
+so that they could
+fulfill customer orders
+
+from a particular store
+in a timely manner.
+
+Then, during the Black
+Friday, Cyber Monday period,
+
+their transaction volume
+increased by 3 times
+
+of their already
+high daily volume.
+
+Lowe's handled the
+entire workload
+
+and their observability
+challenges without any hiccups.
+
+The results they shared
+with us were simply amazing.
+
+They were able to
+reduce their mean time
+
+to acknowledge from 30 minutes
+to 1 minute, their mean time
+
+to restore a service from
+2 hours to 20 minutes,
+
+while increasing their
+development velocity by 300x.
+
+They were able to move
+from one monolithic release
+
+every two weeks to
+20-plus releases a day.
+
+Now, that's quite a story.
+
+So let's dive into the
+observability tools offering
+
+from Google.
+
+Collectively, we call these
+capabilities Cloud Operations
+
+Suite.
+
+
+
+Cloud Operations Suite is
+Google's observability solution
+
+that was designed for scale.
+
+It includes Cloud
+Monitoring, Cloud Logging,
+
+and advanced
+observability tools.
+
+Cloud Monitoring
+captures and analyzes
+
+system and application metrics.
+
+It also enables users
+to define and monitor
+
+service-level objectives.
+
+And it automatically tracks
+corresponding error budgets.
+
+Cloud Logging offers users the
+ability to aggregate system
+
+and application logs,
+and explore these logs
+
+with an intuitive
+log explorer UI.
+
+Our advanced observability
+tools include Cloud Trace.
+
+And that enables users to track
+how requests are propagating
+
+through your applications
+or microservices
+
+and receive detailed
+real-time insights.
+
+
+
+Now, it is important to
+highlight the Cloud Logging
+
+and Monitoring are both
+built on the same platform
+
+that Google uses internally
+for its SRE operations.
+
+Now, as a result, as
+your applications scale,
+
+you don't have to
+worry about scaling
+
+your observability tools.
+
+Google Cloud Logging processes
+about 2 and 1/2 exabytes
+
+of log data every month.
+
+Now, while most
+enterprises may not
+
+require that level
+of scalability,
+
+you should feel comfortable
+that logging and monitoring
+
+systems will be able
+to scale not if,
+
+but when your business
+needs suddenly change
+
+and you witness an order
+of magnitude more users
+
+or are faced with any kind
+of cloud burst use cases.
+
+And that has actually happened
+with several of our customers.
+
+And I will share a
+couple of examples here.
+
+Gannett, a media company
+that owns "USA Today,"
+
+they saw an order of
+magnitude higher number
+
+of users on election
+night, 2020 in the US.
+
+In another example, one
+of our gaming customers
+
+saw their users expand
+overnight every time they
+
+launched new games.
+
+So they have easily seen more
+than a million users join over
+
+a very short period of time.
+
+And in both cases,
+the customers were
+
+able to scale
+their applications,
+
+and along with
+those applications,
+
+their observability solutions.
+
+
+
+Similarly, our
+monitoring service
+
+is also based on a highly
+scalable time series platform.
+
+When applications are
+monolithic and deployed
+
+on a small number
+of named servers,
+
+the volume of metrics
+and monitoring tools
+
+was not very high.
+
+Now, with the move to Kubernetes
+and microservices-based
+
+architectures, the number of
+components generating metrics
+
+has gone way up.
+
+In some instances, we have
+seen that metric volumes
+
+have actually gone up
+by almost 100 times.
+
+Also, because of the ephemeral
+nature of components,
+
+the granularity of
+metrics has shifted
+
+from 1-minute
+collection frequency
+
+down to 10-second
+collection frequency.
+
+And sometimes, even down to
+1-second collection frequency.
+
+All of these have created
+extremely high requirements
+
+on scaling the underlying
+time series platforms.
+
+And we want to make sure that we
+provide a platform that scales
+
+to meet your toughest
+scaling requirements.
+
+
+
+So with that
+high-level overview,
+
+let us first look
+at how users can
+
+instrument their
+applications and collect
+
+telemetry signals from
+systems and applications that
+
+are running on GCP.
+
+
+
+Instrumentation and data
+collection have always
+
+been a challenge in IT.
+
+And we have seen a proliferation
+of agents over the past two
+
+decades.
+
+Google has been a strong
+proponent of open standards.
+
+And we've been actively
+driving OpenTelemetry standard
+
+for service instrumentation
+and signal collection.
+
+Now, as the standards
+evolve and mature,
+
+we have been adopting
+it in our products
+
+to make it easier for
+developers to instrument
+
+their applications.
+
+The OpenTelemetry standard
+consists of three key things.
+
+A, language-specific API
+and SDK for developers
+
+to instrument
+their applications.
+
+B, the OpenTelemetry
+collector and receivers
+
+for collecting signals.
+
+And C, the
+OpenTelemetry exporter
+
+for sending data to different
+vendors for storage,
+
+visualization, and alerting.
+
+We're currently working on
+instrumenting our client
+
+libraries with OpenTelemetry,
+starting with the gRPC library.
+
+We believe that as the
+OpenTelemetry standards mature
+
+across all three
+signal types, it
+
+will provide huge
+benefits for developers
+
+to start instrumenting
+their applications
+
+from the very beginning,
+rather than wait for incidents
+
+to happen and then have
+the operations team define
+
+what needs to be instrumented
+in the application.
+
+Secondly, to provide
+out-of-the-box support
+
+for OpenTelemetry, we recently
+released the unified ops agent.
+
+The unified ops
+agent makes it easier
+
+to install, configure, and
+upgrade the collection agent.
+
+This unified agent combines
+the monitoring and logging
+
+agent into one
+installable component,
+
+and provides a single YAML-based
+configuration language.
+
+We're migrating our
+third-party application
+
+stack monitoring
+plugins to become
+
+OpenTelemetry-based receivers.
+
+And those should be available
+through the rest of this year.
+
+Now, Prometheus is a very
+popular open-source monitoring
+
+service in Kubernetes
+environments.
+
+Now, in the spirit of openness
+and support for open source,
+
+we support and integrate
+with Prometheus in two ways.
+
+First, we have integrations
+with the Prometheus engine
+
+to make it easier for users
+to ingest Kubernetes metrics
+
+and workload metrics
+from Prometheus to Cloud
+
+Monitoring and leverage the
+rich capabilities in Cloud
+
+Monitoring.
+
+That includes alerting,
+dashboarding, and metric query
+
+language.
+
+Second, we recently announced
+the Google-managed Prometheus
+
+service for users who want
+to continue using Prometheus,
+
+but do not want to stand
+up the infrastructure
+
+behind Prometheus on
+their own, and then
+
+manage the Prometheus service.
+
+
+
+Now, for GKE environments
+specifically, we
+
+have made signal
+collection even easier.
+
+One of the key
+benefits of Cloud Ops
+
+is that users do
+not have to deploy
+
+any agents for
+collecting metrics
+
+and logs in GKE environments.
+
+Not only does this reduce
+the toil of deploying agents,
+
+this is very critical in
+Kubernetes environments,
+
+because the containers
+are ephemeral.
+
+And in some cases,
+the containers
+
+may have very short lifespans,
+as they are automatically
+
+scaled up and down
+based on policies.
+
+This automatic collection
+includes key metrics
+
+for a variety of GKE objects,
+including nodes, pods,
+
+and clusters.
+
+In addition to the
+system logs, application
+
+logs that are written
+with standard out
+
+and standard error
+are automatically
+
+collected as well.
+
+Now, more importantly,
+the preconfigured agent
+
+automatically
+captures metadata and
+
+the hierarchical relationships
+amongst all of the Kubernetes
+
+objects, from clusters to
+nodes to services, all the way
+
+to pods and containers.
+
+As we will see later,
+these relationships
+
+come in very handy
+when users are
+
+exploring observability data
+for diagnosing problems.
+
+
+
+Let us now briefly look
+at what capabilities
+
+we provide for signal
+analysis and visualization.
+
+
+
+As part of the Cloud Ops Suite,
+we offer an out-of-the-box GKE
+
+dashboard.
+
+The dashboard provides a very
+rich and powerful experience
+
+that was purpose-built for GKE.
+
+The dashboard aggregates
+all metrics, logs,
+
+service-level objectives,
+Kubernetes events, and alerts
+
+into one place for all
+of your GKE clusters.
+
+Entities and their data,
+presented in this dashboard,
+
+are related to each other using
+the context graph that I talked
+
+about on the previous slide.
+
+When the context graph
+is not visible in the UI,
+
+when you start filtering
+data in this dashboard,
+
+the presence of the context
+graph becomes evident.
+
+The filtering is not just a
+text or label-based filtering,
+
+but the filtering
+in this dashboard
+
+happens based on the
+relationships in the context
+
+graph.
+
+So for example, when users
+filter for a specific cluster,
+
+only objects that
+belong to that cluster
+
+will be shown in the dashboard.
+
+Each section of the
+dashboard, from namespace
+
+to node to service, will
+be filtered based on
+
+whether or not they belong
+to the specific cluster.
+
+Similarly, when a user filters
+based on the name of a pod,
+
+again, all the objects that
+are not related to this pod
+
+will be filtered out.
+
+Only the cluster, the
+namespace, the node,
+
+and the service that
+this pod belongs to
+
+will be shown in the dashboard.
+
+Now, this is extremely powerful.
+
+And a lot of work
+has actually gone
+
+into scaling this
+kind of filtering
+
+and presenting all of this
+data in an aggregated manner.
+
+
+
+Cloud Operations offers
+purpose-built explorers
+
+for each of the three
+different types of signals.
+
+Namely, metrics,
+logs, and traces.
+
+So for metrics, we offer
+the Metrics Explorer
+
+for analyzing time series
+data for creating charts
+
+as well as for adding
+these charts to a dashboard
+
+For advanced metric analysis,
+we offer the metric query
+
+language, which provides a
+powerful query-based mechanism
+
+to manipulate this
+time series data.
+
+Using these queries, users
+can compute ratios of metrics.
+
+Users can perform
+time-shift analysis.
+
+Users can analyze
+arbitrary percentiles.
+
+And users can evaluate arbitrary
+mathematical expressions
+
+on this time series data.
+
+Similarly the Logs Explorer
+was purpose-built for analyzing
+
+logs.
+
+The Logs Explorer provides
+a histogram view that
+
+helps users analyze log trends.
+
+Writing log analysis
+queries can be tedious.
+
+So we've made it a lot easier to
+create, save, and share queries
+
+for analyzing these logs.
+
+For richer analysis
+of log data, users
+
+can extract and analyze
+fields from log data,
+
+as well as define
+streaming alerts
+
+on individual log events.
+
+Logs can also be
+converted into metrics.
+
+And then, users can leverage
+all of the capabilities
+
+available in Cloud Monitoring,
+which includes visualization,
+
+learning, dashboarding,
+or defining SLOs
+
+on these logs-based metrics.
+
+Lastly, the Trace Explorer
+provides an interface
+
+that makes it easy to visualize
+all traces and associated
+
+latencies, filter
+traces of interest
+
+based on different criteria,
+and define alerts on trace data
+
+so that users can do
+behavioral comparison of how
+
+the latency of a specific
+trace compares over time.
+
+
+
+While GKE Dashboard provides a
+curated and tailored experience
+
+for GKE-based apps,
+many customers
+
+still need to build
+custom dashboards.
+
+We did quite an extensive
+amount of UEX research
+
+over the past year
+to understand what
+
+users need when they're actually
+creating these dashboards.
+
+Based on that research, we
+have created a pretty intuitive
+
+experience for creating and
+editing custom dashboards.
+
+There's a variety
+of new chart types,
+
+dynamically re-sizable
+charts, easy way
+
+to drag and drop
+editing on a dashboard,
+
+as well as use the full power
+of the metrics query language
+
+within the dashboard itself
+to explore the data before you
+
+add it to a dashboard.
+
+Now, one of the
+interesting chart
+
+types we've added recently
+is the Alert chart type.
+
+When a user adds this
+chart to the dashboard,
+
+they can also associate an
+alert policy with that chart.
+
+And users can then see
+the alert threshold
+
+from that policy on this chart.
+
+Finally, to automate the
+creation of dashboards
+
+we have populated
+a GitHub repository
+
+with over 60
+dashboard templates,
+
+and a Terraform module to
+automate the deployment
+
+of these templates.
+
+In addition, we recently added
+a sample dashboard capability
+
+directly into the
+product UI that
+
+makes it easy to ingest and
+adapt these sample dashboards
+
+from the GitHub repository.
+
+Users can get a preview of
+each of these dashboards
+
+without any effort before they
+start adapting and adopting
+
+these sample dashboards.
+
+
+
+Let us finally look at
+how development teams can
+
+become elite-performing teams.
+
+And the most important thing
+we will discuss in this section
+
+is, how the two teams can
+collaborate amongst each other.
+
+
+
+Well, the collaboration between
+development and ops teams
+
+can be improved by
+defining and measuring
+
+service-level objectives.
+
+That is easier said than done.
+
+To improve that
+collaboration, we
+
+recommend that both
+developers and operators
+
+have a seat at the design table
+early on in the software design
+
+process so they can agree
+to a common language,
+
+agree on a best way to
+measure reliability,
+
+and create reliability as a
+shared objective for the two
+
+teams.
+
+Now, once they have agreed to
+the service-level indicators
+
+and what service-level
+objectives
+
+they want to achieve, they can
+then use these capabilities
+
+within the Service Monitoring
+feature in Cloud Operations.
+
+Cloud Monitoring-- or
+Service Monitoring--
+
+will automatically
+and continuously
+
+keep track of how
+the teams are doing
+
+with respect to the agreed SLO.
+
+The error budget
+is automatically
+
+computed and tracked as well.
+
+As long as the error budget
+for a given time period
+
+has not been
+exhausted, developers
+
+can move with full
+velocity to continue
+
+pushing out new capabilities.
+
+However, as the error budget
+gets close to exhaustion,
+
+the mechanism becomes
+self-regulating.
+
+New features are slowed
+down, and both developers
+
+and operator shifts towards
+improving the service
+
+reliability.
+
+Now, as organizations
+improve the collaboration
+
+between developers and
+operators around SLOs,
+
+they also need to adopt
+some best practices
+
+that we have shared.
+
+These best practices
+include A, accepting
+
+that failure is normal and
+not striving towards 100% SLO.
+
+B, measuring everything,
+including toil and reliability,
+
+and using automation and
+observability tools to reduce
+
+toil so developers and
+operators can contribute
+
+towards feature velocity.
+
+Lastly, when an
+incident does happen,
+
+we recommend that
+the two teams strive
+
+towards blameless
+postmortems and drive service
+
+reliability improvements.
+
+
+
+Let us look at how
+customers can use service
+
+monitoring to
+adopt and implement
+
+some of these SRE principles.
+
+The service monitoring
+capabilities
+
+enables users to select
+a service-level indicator
+
+and define the
+service-level objectives.
+
+Now, once the SLO is
+defined, Cloud Monitoring
+
+will automatically compute
+and track error budgets.
+
+Users can also define alerts
+on these error budgets.
+
+So as you reach a critical
+threshold on your error budget,
+
+alerts will be generated.
+
+And users will be notified about
+the exhaustion of the error
+
+budget.
+
+For GKE services, there
+is further out-of-the-box
+
+integration that makes it easier
+to define the service-level
+
+objectives.
+
+Cloud Ops will
+automatically discover
+
+services that are using Istio
+and ASM deployed on GKE.
+
+So when a user defines an
+SLO for these auto-discovered
+
+services, if they choose an
+availability or latency metric,
+
+Cloud Ops will automatically
+pick or recommend the metric
+
+to be used as a
+service-level indicator.
+
+Now, since some customers
+choose Prometheus to monitor
+
+Kubernetes services--
+
+and specifically, their
+apps running in Kubernetes--
+
+we also provide out-of-the-box
+integration for such customers
+
+to ingest metrics from
+Prometheus and be able
+
+to define SLIs and SLOs
+on Prometheus metrics.
+
+Of course, users can
+define custom services
+
+or choose any other custom
+metric to use as an SLI,
+
+and then define an
+SLO on that metric.
+
+
+
+So let me summarize some of the
+key highlights from this talk.
+
+First, what we have seen from
+the analysis in the Dora report
+
+and from the customer
+example I talked about.
+
+Elite teams can achieve
+high feature velocity
+
+without sacrificing
+service reliability.
+
+Two, from a tools point
+of view, Cloud Operations
+
+offers integrated capabilities
+that brings together the three
+
+different signals
+to make it easier
+
+to improve MTGR and
+enable developers and SRE
+
+users to focus on
+increasing code velocity.
+
+Three, elite teams
+use SLIs and SLOs
+
+as a mechanism to formalize
+reliability targets
+
+between developers
+and operators.
+
+And customers can use
+these capabilities
+
+within Cloud Operations.
+
+If you're interested in more
+sessions around this topic
+
+or interested in learning about
+our Cloud Operations Suite,
+
+there are three additional
+sessions listed on this slide.
+
+And I welcome you
+to go watch those.
+
+Please enjoy those
+sessions and other sessions
+
+in the Next 2021.
+
+And thank you again for
+attending this session.
+
+
+

@@ -1,0 +1,1137 @@
+
+
+RACHEL TSAO: Hello, and welcome
+to Top Use Cases to Start Your
+
+Serverless Journey.
+
+My name is Rachel
+Tsao, Product Manager
+
+for Serverless at Google Cloud.
+
+Today, I'm joined by my
+colleague Preston Holmes.
+
+We'll cover the
+benefits and use cases
+
+of using Google Cloud
+serverless compute.
+
+We'll start with why modernizing
+is beneficial for everyone,
+
+whether you're an
+established enterprise
+
+or a fast-growing
+digital native.
+
+We'll cover why Google
+Cloud serverless.
+
+We'll dive into why
+serverless is a good fit
+
+for pragmatic enterprises.
+
+And then I will hand
+it over to Preston
+
+to talk about great workloads
+for your serverless journey.
+
+Let's start with why modernize.
+
+As we look towards
+the future, there
+
+is a growing need for
+companies to create value
+
+through application design.
+
+Companies are looking to delight
+customers with responsiveness,
+
+derive value from data,
+and be insights driven,
+
+respond faster to
+change quickly,
+
+and be secure and available
+in regions globally.
+
+They also want to be well-run
+with effective cost management
+
+while being able
+to scale quickly
+
+to potentially
+millions of users.
+
+These characteristics
+are no longer
+
+just a choice, but an
+expectation from customers.
+
+But companies face
+barriers internally.
+
+These include people and
+organizational barriers,
+
+like a lack of confidence in new
+technology, a need for control,
+
+a lack of cloud-native
+skills, a lack of automation.
+
+It can also be resistance
+to change, [INAUDIBLE],, lack
+
+of innovation, lack
+of cost optimization,
+
+and the need to comply
+with security policies.
+
+Overcoming these barriers
+with a cloud-native strategy
+
+is important as
+modern applications
+
+are able to achieve
+outstanding outcomes, including
+
+being dynamic, scalable,
+and intelligent.
+
+These characteristics
+are increasingly
+
+important for them to meet
+fast-changing user needs.
+
+A cloud-native
+strategy is possible,
+
+whether your company is
+migrating from virtual machines
+
+or building new
+applications cloud native.
+
+When a company is
+migrating from VMs,
+
+they often face tight budgets,
+security concerns, the need
+
+to maintain legacy
+infrastructure,
+
+and the need to migrate
+and modernize their APIs.
+
+Modernizing to serverless can
+help meet many of these demands
+
+in a way that is developer
+friendly while considering
+
+costs and time to market.
+
+Similarly, building
+new applications
+
+requires services to be
+built in a way that reacts
+
+to market and customer demands.
+
+For these new
+applications, we developers
+
+want to use the
+latest technology.
+
+We don't want to
+think about upgrades.
+
+We want to take advantage of
+the new economics provided
+
+by the cloud, and we want
+architectural portability
+
+so we are not locked in.
+
+No matter where
+you are starting,
+
+serverless is a great
+choice and meets
+
+demand of modern applications.
+
+Now, let's explore why
+Google Cloud serverless.
+
+Serverless is a set
+of characteristics.
+
+It simplifies the
+developer experience
+
+by eliminating the need
+to manage infrastructure.
+
+It is scalable out of
+the box, whether you
+
+want to scale down
+to 0 with no traffic,
+
+or up to millions of users.
+
+It has a pay-as-you-use model,
+where you pay for exactly what
+
+you use instead of guessing
+the capacity upfront.
+
+If you don't have any traffic,
+you don't pay for anything.
+
+Serverless technology enables
+companies to quickly build,
+
+develop, and deploy any
+application in a fully
+
+automated environment.
+
+It removes the
+operational burden
+
+of infrastructure management
+with built-in security,
+
+operations, and
+DevOps best practices.
+
+As our customer
+needs have evolved,
+
+we've built our serverless
+compute portfolio
+
+to enable them in
+their journeys.
+
+As many of you know, App Engine
+was one of the first serverless
+
+solutions to market in
+2008, and early customers
+
+took advantage of
+serverless and App Engine
+
+as they scaled their
+web applications
+
+across millions of users
+on Google's infrastructure.
+
+We then added the ability to
+run functions in the service
+
+to our serverless
+portfolio in 2017.
+
+With Cloud Functions, we give
+customers a simple developer
+
+experience with the ability
+to rapidly write and run
+
+tiny snippets of code.
+
+In parallel, Google also
+introduced innovations
+
+to the container
+market with Kubernetes,
+
+and we started to
+hear from customers
+
+who wanted to know if
+we could combine the two
+
+awesome serverless attributes
+of autoscaling and developer
+
+experience with the
+flexibility of containers.
+
+In response, we introduced
+Cloud Run, the next generation
+
+of serverless.
+
+Serverless is no longer about
+event-driven programming
+
+or microservices.
+
+It's also about running
+complex workloads at scale
+
+while preserving a delightful
+developer experience.
+
+In fact, serverless
+with Cloud Run
+
+is about having a true developer
+platform with the flexibility
+
+to run any language,
+any library, any binary.
+
+
+
+Serverless offers the
+following benefits.
+
+The infrastructure
+is managed by Google,
+
+meaning that you
+benefit from deploying
+
+on the same infrastructure
+as Google engineers.
+
+Your engineers do not need
+to think or spend time
+
+worrying about scale.
+
+Because you only pay for
+when there is traffic,
+
+it often enables
+great cost savings.
+
+And finally,
+serverless is secure.
+
+Google manages
+infrastructure-level security
+
+for you, ensuring that you
+have the latest patches.
+
+You can choose from a suite of
+Google Cloud security features
+
+to meet your business needs.
+
+Google Cloud serverless
+is the pragmatic choice
+
+for enterprises,
+and it's not just
+
+for lightweight applications,
+like this zippy golf cart
+
+you might imagine here.
+
+We're actually enabling all
+kinds of heavy duty workloads,
+
+like this tractor.
+
+
+
+In fact, this year, we unlocked
+several security features
+
+on Cloud Run, making it even
+more secure for enterprises.
+
+With Binary Authorization
+and Manage Secrets,
+
+you can ensure your
+application is safe to run.
+
+With Cloud Armor support,
+identity-aware proxy,
+
+ingress settings,
+and IAM ingress,
+
+you can ensure the
+right folks have access.
+
+And finally, you can understand
+what your application can
+
+access with restriction
+egress out of VPC,
+
+intelligent security
+recommendations,
+
+and VPC-SC network
+egress settings.
+
+We've also unlocked new
+pricing options on Cloud Run.
+
+Out of the box, you
+only pay for what you
+
+use for under 200 milliseconds.
+
+And this year, we introduced
+committed use discounts,
+
+meaning that if you commit
+to one or three years,
+
+you can save up to 17%.
+
+And finally, we also introduced
+CPU allocation controls,
+
+meaning that if you
+have a workload that
+
+needs to run continuously, we
+do not charge for service fees
+
+to start Cloud Run back
+up every single time.
+
+In addition, all our
+serverless products
+
+offer built-in observability
+and monitoring without setup.
+
+For example, requests
+and container logs
+
+are automatically sent to
+Cloud Logging from Cloud Run.
+
+And error reporting
+is automatically
+
+enabled for Cloud Run.
+
+No additional setup or
+configuration is required.
+
+You can simply view logs
+on the Cloud Run page,
+
+and also in the Cloud
+Logging console.
+
+Choosing Google
+Cloud serverless can
+
+help eliminate
+operational overhead,
+
+manage costs, all in
+an innovative building
+
+model with easier scalability.
+
+Now I'll hand it over
+to Preston to see
+
+what workloads are a great fit.
+
+PRESTON HOLMES: Thanks, Rachel.
+
+So let's talk about
+some of these workloads.
+
+You'll note that in
+Google Cloud platform,
+
+we have a range of options
+to run the compute portion
+
+of your application code.
+
+And these can be
+broadly laid out
+
+on a spectrum between
+convenience and control.
+
+So we've got Cloud Functions
+for very small, lightweight
+
+snippets of code.
+
+We've got serverless
+containers with Cloud Run.
+
+We've got cluster-based
+infrastructure
+
+in Kubernetes and GKE.
+
+And then, for VMs, we've
+got Google Compute Engine.
+
+So, many of these workloads
+are potentially a better fit
+
+for one of these than another.
+
+But rather than create
+a large decision tree,
+
+we've decided to pick out
+three workloads that we think
+
+are a particularly good fit
+for serverless and Cloud Run,
+
+and those are web applications,
+data processing, and APIs.
+
+Now, I'll actually
+speak to a little bit
+
+of a sub flavor of each of these
+to give it a bit more context
+
+of where you can get started.
+
+And so, for web
+applications, I'm
+
+going to talk about
+intranet web applications.
+
+So these are applications
+designed to be accessed only
+
+by company employees.
+
+And what we want
+to do is we want
+
+to bring you a bit of
+how we get to interact
+
+with our internal applications
+at Google, which Google
+
+has published some research
+about we call BeyondCorp.
+
+And that is, at
+Google, we no longer
+
+use VPNs to access
+internal applications.
+
+Instead, we use very secure
+Identity Aware proxies
+
+that can use context
+about an employee
+
+to make sure they
+have access only
+
+to the right internal
+applications.
+
+Now, we have externalized
+this in Cloud platform
+
+as the Identity
+Aware proxy, and we
+
+can put that in front of
+our serverless Cloud Run
+
+applications.
+
+The idea of IAP is
+that we only want
+
+authorized and corporate
+employees to be able to access
+
+those internal applications.
+
+And they should not be
+accessible by the public.
+
+But at the same
+time, we don't want
+
+to burden our
+internal developers
+
+with having to
+recreate and reproduce
+
+a secure posture for each
+new intranet application.
+
+Instead, that should
+be globally handled
+
+by a frontend system
+that will make sure
+
+only our employees are
+accessing these applications.
+
+Now, this is
+specifically delivered
+
+through a composition and
+integration of Google Cloud
+
+platform products.
+
+It starts with Cloud Identity,
+which provides an identity
+
+service so that we know who it
+is that's logging into our web
+
+applications.
+
+It can then be guarded with
+Cloud Armor, a web application
+
+firewall that does things
+like rate limiting, protection
+
+of our applications, or can
+whitelist certain IP ranges.
+
+We then hit the
+Identity Aware proxy.
+
+This gives our users
+that user login flow.
+
+So it makes sure
+that every access
+
+to the actual application
+has been authorized
+
+and only identified
+users are logging in.
+
+And then, finally,
+the load balancer
+
+distributes these requests to
+multiple different intranet
+
+apps.
+
+So let's take a look at a
+demo of this in practice
+
+and see what it can look
+like at your company.
+
+So here you can see
+the intranet project
+
+I have set up with several
+example applications already
+
+deployed.
+
+I have an Intranet Home app.
+
+This acts as the
+home page for listing
+
+all of my other applications.
+
+And then a Birthdays application
+and a Vacations application.
+
+You'll note that the ingress
+setting for all of these
+
+is set to internal
+and load balancing.
+
+What that means is that these
+are not reachable directly
+
+from the internet.
+
+You can see, while this URL
+is here, it's grayed out
+
+and is not directly accessible.
+
+This is actually enforced
+for any new Cloud Run
+
+application deployed
+through organization policy.
+
+So for the entire project or
+maybe a folder of projects,
+
+I can set that the only allowed
+values for this ingress setting
+
+is internal traffic only, or
+internal plus load balancing.
+
+So we are running
+these applications
+
+behind a load
+balancer, and we have
+
+two backend services set up.
+
+The first is really just
+used as our catchall to route
+
+to that intranet home page.
+
+The other is using a wild
+card pattern in the host rule.
+
+And what that wild
+card pattern does
+
+is allow us to use a
+single mask applications
+
+network endpoint group.
+
+This network
+endpoint group takes
+
+advantage of a feature with
+its own URL mask there.
+
+And this service
+placeholder in the URL mask
+
+means that for every new
+intranet application I
+
+deploy that has a service
+name, I automatically
+
+have the route set up to reach
+that particular Cloud Run
+
+service in the
+single load balancer
+
+without needing
+to manually create
+
+each additional backend for
+each new intranet application.
+
+Now, the BeyondCorp
+part of this is
+
+that I run these behind
+the Identity Aware proxy.
+
+This will force the login flow
+to reach these applications.
+
+I actually have this set
+up to use our organization
+
+only as a source of identity.
+
+So this is limited just
+to our organization.
+
+The last thing we'll do here is
+just check on public DNS Google
+
+to see that the domain name
+I have set up with my load
+
+balancer is resolving.
+
+And it does.
+
+It resolves to this
+IP address, which
+
+is the same as that set up
+in the load balancer here.
+
+So with that, let's
+take a look at what
+
+the login flow looks like.
+
+Again, this will be the
+first-time login for a user.
+
+
+
+And if I do that, I'm given
+a standard login dialog here.
+
+This is using, in this
+case, my Google account.
+
+But we could also use a
+corporate SSO flow for IAP.
+
+And now I'm on the
+intranet home page.
+
+Now, I'm seeing a couple
+other of the applications
+
+I can get to.
+
+So for example, I can
+schedule some time off.
+
+This will route me to
+the Vacations service
+
+that has got its own hostname
+path behind this load balancer.
+
+I could also go to
+the Birthday service.
+
+And again, this will route
+to that individual Cloud Run
+
+service.
+
+Each of these can be
+independently managed
+
+and deployed by different
+groups, or teams, or authors.
+
+And in fact, you see that IAP
+will pass through information
+
+about the logged in user.
+
+So applications can make use of
+a already authenticated value
+
+for the current
+user to do things
+
+like user-specific
+profiles or updates,
+
+or further rule-based
+authorization.
+
+Now, subsequent logins
+to this will not
+
+require any particular
+auth flow, except subject
+
+to sort of any timeouts policy
+my org has set up because this
+
+is using cookies to
+remember this login
+
+for some period of time.
+
+If I try to log in as a user
+from some non-organization user
+
+account, you'll see
+that I don't even
+
+have the option of logging
+in because the entire auth
+
+application is limited to
+only organization users.
+
+So this will be another
+layer of defense
+
+that prevents anyone from
+accidentally enabling
+
+specific permission to a user.
+
+That's an option on IAP that
+you can set up and either allow
+
+that or not allow that.
+
+So you're not forced to do that.
+
+But if you do want to keep
+this as an organization-only
+
+intranet setup, you can do that.
+
+And so deploying
+a new intranet app
+
+is pretty much
+just as easy as now
+
+deploying another
+container-based Cloud Run
+
+service.
+
+Each of these scales down
+to 0 and makes it very easy.
+
+Great, now that we've taken
+a look at internet web
+
+applications, let's take
+a look at data processing.
+
+Now, data processing is really
+a catchall or umbrella term
+
+that might cover any number of
+types of changes or mutations
+
+you're going to make
+to the data you have,
+
+which include converting
+data, packaging data,
+
+validating data.
+
+So it really covers a
+wide range of use cases.
+
+So let's take a
+look at something
+
+that's a bit more
+specific, which
+
+is performing some
+lightweight data processing
+
+at the time of ingest.
+
+Now, on Cloud Platform,
+we have a product
+
+called Cloud Pub/Sub,
+which is really
+
+great at delivering messages
+to many of our backend data
+
+processing systems.
+
+And as an architectural
+component,
+
+it's often very useful to
+decouple the producers of data
+
+from those systems
+which will consume it.
+
+But there are times that
+you need to bring data
+
+into your platform.
+
+This might be video
+game telemetry.
+
+Might be device data.
+
+It might be some sort
+of external log ingest
+
+where what you want to do is
+not completely decouple this
+
+at the point of ingest.
+
+So you might want to provide
+custom authentication
+
+at the point of ingest.
+
+Or you might want to validate
+the contents of each message
+
+and make sure that only good
+and verified data is making it
+
+onto the Pub/Sub topic.
+
+And so Cloud Run acts as a very
+nice, scalable point of ingest
+
+where you can both
+receive the data into GCP,
+
+as well as perform some
+lightweight data processing
+
+at that point of ingest.
+
+Another one of the use
+cases we want to talk today
+
+is about REST APIs.
+
+Now, REST APIs are not
+a brand new use case.
+
+In fact, they've
+been around a while.
+
+But they still remain
+a real bread and butter
+
+of many enterprise IT projects.
+
+This is often where you
+have multiple surfaces
+
+in the backend composed into
+a single API service, where
+
+each backend microservice
+might be only contributing
+
+one element of an
+overall API experience.
+
+So in this case, we have a
+hypothetical weather service
+
+where you might have
+alerts, forecast, locations,
+
+each being fulfilled
+by a separate backend
+
+and independently
+deployed microservice.
+
+Now, these are all
+routed through some sort
+
+of API management
+system, often serving
+
+the need of authentication,
+or rate limiting,
+
+or quota management.
+
+And then these reach the end
+user application and either
+
+a client or a mobile
+web application.
+
+One of the customers using Cloud
+Run in this case is ecobee.
+
+ecobee uses Cloud Run for API
+services, driving experience,
+
+and functionality in
+their customer-facing web
+
+and mobile applications.
+
+This has allowed
+engineering teams
+
+to ship new features
+to their customers
+
+faster, as new services
+can be turned up in days,
+
+and iteration is made faster
+by using the same serverless
+
+technologies to simplify QA
+environments, streamlining
+
+the path from code
+to production.
+
+By using fully managed
+databases together
+
+with serverless
+compute, services
+
+scale smoothly and
+reliably as a whole.
+
+These technologies have led to
+greater operational efficiency,
+
+removing many of
+the incident pages
+
+which were due purely to
+infrastructure issues instead
+
+of the applications themselves.
+
+And with that, I
+want to thank you
+
+on behalf of Rachel and
+myself for joining us today.
+
+
+

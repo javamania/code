@@ -1,0 +1,1001 @@
+
+
+CHELSIE CZOP: Welcome.
+
+Thanks for joining us
+to review what's new
+
+and what's next with
+infrastructure for AI and ML.
+
+I'm Chelsie Czop, Product
+Manager for Compute Engine
+
+within Google Cloud.
+
+And I'm joined today by
+Omkar Pathak, Product Manager
+
+for Cloud TPUs within Google.
+
+First, we'll review our
+accelerator mission, AI and ML
+
+within Google, how we're
+able to provide you
+
+with a differentiated
+compute platform,
+
+and the ways to take advantage
+of our accelerator hardware.
+
+Then we'll focus on our
+accelerator hardware platform,
+
+Cloud GPUs, and Cloud TPUs.
+
+We'll cover what's new and
+what's next in the portfolio
+
+and sprinkle in ways
+that our customers
+
+are creating innovative products
+and services within Google
+
+Cloud.
+
+At Google Cloud, we believe that
+cutting-edge machine learning
+
+infrastructure should excel
+at performance, scalability,
+
+and usability to allow
+you to be able to create
+
+innovative and differentiated
+services for your users,
+
+all at a low total
+cost of ownership.
+
+Our leadership in AI through
+both Google research, DeepMind,
+
+and also in the practical
+applications of AI
+
+within our Google
+products, allow
+
+us to be able to provide you
+with an innovative platform
+
+for your AI and ML use cases.
+
+We bring our experience
+of deploying AI and ML
+
+models in production
+across all of Google
+
+and provide you with the
+same infrastructure and tools
+
+that we use.
+
+This means we have accelerators
+for any of your use cases,
+
+from high-performance
+training to serving models
+
+cost-effectively.
+
+You're able to achieve the
+optimal price per performance
+
+for your use case through our
+selection of Cloud GPUs, Cloud
+
+TPUs, as well as
+compute-optimized VMs
+
+on Compute Engine.
+
+This gives you the
+ability to choose
+
+the latest and
+greatest infrastructure
+
+to fit your use case needs.
+
+Last, and arguably
+most important for you,
+
+is that it's easy to
+get started and to scale
+
+using a wide range
+of tools and services
+
+offered through Compute
+Engine and Vertex AI platform,
+
+allowing you to create
+business value faster.
+
+It really helps to partner
+with companies that have fully
+
+deployed AI and ML in their
+own production environments
+
+to help you overcome
+roadblocks faster.
+
+We have a long history
+of hardware development.
+
+And we're always dedicated
+to being an open cloud,
+
+allowing you a
+diversity of options,
+
+from frameworks to
+application portability.
+
+We're at a really exciting time
+in the world for AI and ML.
+
+Every industry will
+soon be transformed.
+
+The organizations that
+embrace the AI and ML
+
+in this transformation will
+have a competitive advantage.
+
+To unlock the full
+value of AI and ML,
+
+we must first focus on
+your business challenges.
+
+We're able to do that
+in two progressive ways.
+
+First, you can focus on
+common business challenges.
+
+Shown here are the common
+business challenges
+
+by industry, along with the
+solutions that we've created
+
+to help you easily get started.
+
+
+
+Then, moving on, you're able
+to solve challenges that
+
+are unique to your business.
+
+The following solutions,
+services, APIs, and models
+
+all help with AI needs
+at every single level
+
+of expertise and readiness.
+
+You.
+
+Really don't need to be an
+ML expert to get started.
+
+We have easy-to-use
+APIs or AutoML models
+
+that allow you to
+create a customized
+
+solution to your unique
+business challenges.
+
+You can plug and play
+the APIs and models
+
+to create exactly what you need.
+
+Underneath this entire portfolio
+are our hardware accelerators,
+
+Cloud TPUs, Cloud GPUs,
+and Compute Engine.
+
+
+
+There's three main ways to
+take advantage of accelerators
+
+on Google Cloud.
+
+First we have Vertex AI,
+offering end-to-end AI
+
+and ML tooling and
+scheduling via GKE
+
+using containers, enabling
+GPUs and TPUs as a service,
+
+removing the burden from you to
+manage the hardware or the VMs
+
+for your AI workload.
+
+Simply give your
+containers access
+
+to GPUs via the Kubernetes
+API, and then you're
+
+able to take advantage
+of autoscaling,
+
+see the GPU utilization,
+and scale these workloads up
+
+and down based on the demand.
+
+Last, also via
+Compute Engine, we
+
+offer custom VM shapes, tooling,
+and workflow support for you
+
+to be able to scale from a
+single GPU under your desk
+
+to supercomputer computing
+scale available on demand
+
+with preemptible instances,
+as well as committed
+
+use discounts based
+on reservations,
+
+to get you the best price.
+
+Our virtual machines
+are available
+
+in many configurations,
+including predefined sizes that
+
+align to Numa topology or,
+as we've mentioned prior,
+
+the ability to create
+a custom machine type
+
+size for your specific needs.
+
+Then you aren't having
+to manage a single VM.
+
+You're also able to use managed
+instance groups in a way
+
+to control an entire fleet
+of your infrastructure.
+
+You're able to
+define a set of VMs
+
+and scale up and
+down as you need
+
+or as your application requires.
+
+
+
+Now let's dive into what's
+new with Cloud GPUs.
+
+
+
+Within our Cloud
+GPU portfolio, we
+
+have an accelerator
+for your use cases
+
+from ML training and inference,
+GPU-enabled HPC, CUDA Compute,
+
+and GPU-accelerated
+visualization.
+
+Our high-end offerings include
+high-performance GPUs, A100s
+
+and B100s, that are great
+for training, inference, HPC,
+
+and CUDA Compute.
+
+On the other end
+of the spectrum,
+
+we have T4s, which are
+in more global locations,
+
+providing you low latency
+at a very low cost.
+
+A very common use case that
+we see with our customers
+
+is training and doing
+inference on A100s or B100s
+
+and then serving in that
+global capacity on T4s.
+
+
+
+Let's take a closer look
+at our A100 offering.
+
+They're available in our
+accelerator-optimized VM
+
+family, A2s, on Compute Engine.
+
+The A100s have 40
+gigabits of memory.
+
+And within the VM,
+you can provision up
+
+to 96 Cascade Lake vCPUs
+and 1.3 terabytes of memory.
+
+They're in fixed VM shapes to
+align with the new transparent
+
+Numa topology.
+
+And they can scale up to 16
+GPUs for scale-up and scale-out
+
+workloads, such as natural
+language processing
+
+and computer vision.
+
+But don't worry if
+you don't need 16.
+
+You can go all the
+way down to two GPUs
+
+to be able to
+easily get started.
+
+NVLINK fabric is the
+all-to-all connectivity
+
+with up to 9.6 terabytes
+per second peak bandwidth.
+
+You also have the access
+to advanced networking
+
+as well as the
+option for local SSD.
+
+With all these features,
+you're able to achieve up
+
+to 20 petaops of int8 all
+within a single VM, which is
+
+what I call mega performance.
+
+As I mentioned earlier,
+T4s on Google Cloud
+
+are able to provide a low
+latency at a low cost.
+
+They're currently in 18 regions,
+with more along the way.
+
+What's new is that we do
+have flexible T4s in preview
+
+currently.
+
+You can provision exactly
+what you need for T4s
+
+from vCPU and VM memory.
+
+We're also launching automatic
+CUD renewals, Committed Use
+
+Discounts, for GPUs.
+
+This helps reduce
+cost and accidental
+
+loss of your reservations.
+
+Now, here's what's really going
+to make a difference for you
+
+for being able to easily find
+capacity in your selected
+
+region for batch workloads.
+
+We have distribution shapes
+within managed instance groups
+
+set to Any.
+
+The way you're able to
+take advantage of this
+
+is in three very
+simple, easy steps.
+
+First, create a
+managed instance group.
+
+Second, set the
+distribution shape to Any.
+
+And three, specify your
+target audience and region.
+
+Optionally, you can also
+run preemptible GPUs VMs
+
+to save money.
+
+You can take note
+of any constraints
+
+that you have, such
+as supported hardware
+
+in their zones or resource
+quotas, to get started.
+
+
+
+We also have the option
+for deep learning
+
+and HPC VMs that
+allows you to easily
+
+get started on our
+infrastructure within minutes.
+
+A simple one-click
+install, and your machine
+
+is provisioned and already
+performance-optimized
+
+on Google Cloud.
+
+It also has
+compatibility-tested.
+
+So you have no need to worry
+about the software stack.
+
+Simply select the CPU, GPU,
+or TPU to add on to the VM.
+
+We also provide the
+choice and flexibility
+
+between different ML models,
+or you have the ability
+
+to install your own.
+
+Schrodinger's team was looking
+for a cloud provider that
+
+was just as committed
+to advancing life
+
+sciences and drug
+discovery as they were.
+
+That's why they
+chose Google Cloud.
+
+They also chose
+Google because we're
+
+known for our strength of
+our network and our security
+
+posture.
+
+The partnership
+drastically changed the way
+
+they were doing drug discovery.
+
+And as Dr. Farid said,
+this could potentially
+
+transform all of the way that
+pharma is doing drug discovery.
+
+As with any large
+resource-intensive models,
+
+cost does start to pile up.
+
+The price per performance
+worked really well for them
+
+to create and discover
+life-saving drugs
+
+to help combat COVID.
+
+If they're able to do this
+cost-efficiently using
+
+custom types of
+VMs with GPUs, then
+
+think about what you'd be
+able to do with your workload.
+
+With the change in consumer
+behavior due to COVID,
+
+Pagani was able to
+create a virtual showroom
+
+to allow you to
+customize your own car
+
+from the comfort of your couch.
+
+This virtual showroom is served
+on NVIDIA T4s with the NVIDIA
+
+RTX virtual workstation image.
+
+[MUSIC PLAYING]
+
+
+
+Next, let's pass it up to
+Omkar to cover Cloud TPUs,
+
+what's new, and what's next.
+
+Take it away, Omkar.
+
+OMKAR PATHAK: Thanks, Chelsie.
+
+We have seen
+tremendous innovation
+
+in the field of machine
+learning in the past few years.
+
+And we expect this
+rate of innovation
+
+to grow in the future.
+
+However, this fast-paced
+innovation requests
+
+ever-increasing amounts
+of computing power.
+
+As machine learning
+models get more accurate,
+
+they tend to get
+larger, more complex,
+
+and require larger data sets.
+
+This is exactly why
+Google built TPUs,
+
+to accelerate the rate of
+machine learning innovation
+
+by delivering high performance
+and by training and serving
+
+at a very low cost.
+
+TPUs are used in many
+products at Google.
+
+And it's likely that
+you have interacted
+
+with these when you have used
+some of Google's products.
+
+
+
+These accelerators are
+available to you in Google Cloud
+
+right now.
+
+Our goal with TPUs is to
+advance machine learning
+
+at Google and across the world.
+
+So TPUs are built for this
+end-to-end user journey
+
+of an app developer
+or a researcher,
+
+starting from fast-paced
+iterative development
+
+in the beginning all the way to
+large-scale production training
+
+and serving across a range of
+machine learning use cases--
+
+vision, language,
+recommendations, and more.
+
+It's also easy to get
+started with Cloud
+
+TPUs with TensorFlow,
+PyTorch, or JAX
+
+in the Google Cloud
+project or equivalent.
+
+You can also bring
+your own models
+
+or use one of our reference
+models to get started.
+
+What's even more
+interesting is that once you
+
+get started with
+Cloud TPUs, it's
+
+easy to scale your machine
+learning models on Cloud TPU
+
+pods, which means that
+you can use petaflops
+
+of computing power with
+minimal code changes.
+
+
+
+This image here shows
+a Cloud TPU v3 pod,
+
+which has 2,048
+cores that are built
+
+from the ground-up
+for machine learning.
+
+All of these cores
+are connected together
+
+with a custom-built, super-fast
+interconnect, which is really
+
+what delivers that
+high performance when
+
+you scale your machine learning
+models on a Cloud TPU pod.
+
+Combined with the
+low cost of renting
+
+Cloud TPUs on Google Cloud as
+opposed to owning your own data
+
+centers, this
+high-performance machine
+
+can unlock completely new
+opportunities for innovation
+
+without any upfront capital
+investment on your part.
+
+
+
+To understand the power
+of easy scalability,
+
+just look at our recent
+results in MLPerf,
+
+which is the industry standard
+benchmark for ML performance.
+
+Cloud TPUs demonstrated
+leading performance numbers
+
+across a range of machine
+learning use cases.
+
+And as you can see
+in the chart here,
+
+Cloud TPUs can train some of
+the common machine learning
+
+reference models in
+just a few seconds--
+
+for example, TLRM in 38
+seconds or BERT in 17 seconds.
+
+We believe that this
+is incredibly valuable,
+
+especially since large-scale
+ML training has unlocked some
+
+of the recent
+breakthroughs in AI--
+
+for example, lambda
+in natural language
+
+processing in multimodal models.
+
+
+
+Cloud TPUs are particularly
+well-suited for these kinds
+
+of compute-intensive,
+large-scale machine learning
+
+workloads.
+
+
+
+Over the last few years, we
+have made relentless progress
+
+on TPU hardware and software.
+
+And this year, we are excited
+to announce our latest
+
+generation, Cloud TPU v4.
+
+On a chip-to-chip
+basis, Cloud TPU v4
+
+is more than twice as fast
+as its previous generation.
+
+And at a pod scale,
+Cloud TPU v4 pods
+
+take Google Cloud's machine
+learning infrastructure
+
+to a whole new level,
+with more than one exaflop
+
+of computing power
+equivalent to more than 10
+
+million laptops combined.
+
+
+
+We have already deployed
+many of these pods
+
+in Google's data
+centers and will soon
+
+have more, many of
+which will be operating
+
+at or near 90%
+carbon-free energy.
+
+Cloud TPU v4 pods will be
+available to our Google Cloud
+
+customers in
+preview in Q4, 2021.
+
+Now, it's not just
+the sheer computing
+
+power that pushes machine
+learning innovation forward.
+
+We believe that making
+the system easy to use
+
+is just as important as well.
+
+And so we recently launched
+a completely new software
+
+architecture that helps you
+interact much more easily
+
+and much more seamlessly
+with Cloud TPUs.
+
+With Cloud TPU VMs, you can
+now drag full Cloud TPU parts
+
+directly from your desks
+for the first time.
+
+It's like having a machine
+learning supercomputer
+
+under your desk.
+
+With Cloud TPU VMs, we aim to
+make interactive supercomputing
+
+attainable to our users.
+
+And it's been incredibly
+encouraging to see
+
+positive feedback from
+our early customers.
+
+
+
+For example, Hugging Face,
+which is a leading open source
+
+provider of NLP technologies,
+recently integrated
+
+JAX, along with
+TensorFlow and PyTorch,
+
+in their popular
+Transformers library.
+
+And they were able to
+pre-train a base-sized BERT
+
+model in less than a day with
+just eight cores of v3, which
+
+is the smallest
+reservable unit of a pod.
+
+Similarly, our
+users at Gridspace,
+
+which provides contact
+center automation
+
+tools, such as low-latency
+speech analytics,
+
+were able to train both
+speech and language
+
+models with an immediate
+2x performance improvement.
+
+They were also able to scale
+these models on Cloud TPU parts
+
+with no code changes.
+
+
+
+These usability and
+performance benefits
+
+make it much easier than
+ever before to get started
+
+with Cloud TPUs and scale
+your machine learning models
+
+on Cloud TPU pods.
+
+
+
+Along with this powerful
+user experience,
+
+Cloud TPUs also support
+all the major machine
+
+learning frameworks, including
+TensorFlow, PyTorch, and JAX.
+
+We encourage you to
+check out these links
+
+and try out our reference
+models and tutorials.
+
+
+
+In summary, at Google
+Cloud, we believe
+
+that cutting-edge machine
+learning infrastructure
+
+should excel at performance,
+usability, and scalability.
+
+So we'll continue to invest
+in making our systems
+
+more easy to use,
+enterprise-class,
+
+and open and pervasive.
+
+Hopefully, with all of these
+updates on Cloud GPUs and Cloud
+
+TPUs, our cutting-edge machine
+learning infrastructure
+
+is much more accessible and much
+more useful to you than ever
+
+before.
+
+Thank you.
+
+
+

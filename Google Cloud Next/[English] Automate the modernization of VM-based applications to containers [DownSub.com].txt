@@ -1,0 +1,1263 @@
+
+
+JASON DE LORME: Hi.
+
+Welcome to our
+session on automating
+
+the modernization of VM-based
+applications to containers.
+
+My name's Jason
+De Lorme, and I'm
+
+joined by my peer Mike Coleman.
+
+There's three areas
+of modernization
+
+that you can consider
+when moving applications
+
+to the cloud.
+
+The first is infrastructure
+modernization.
+
+And when we think about this
+on the axis of complexity
+
+and value, infrastructure
+modernization
+
+is by far the easiest step.
+
+As you graduate
+through this scale,
+
+complexity increases with
+changing code and building
+
+cloud-native applications
+all the way up
+
+to process automation.
+
+Moving and adopting
+cloud-native technologies
+
+also requires optimizing
+DevOps practices
+
+and optimizing your
+people and processes.
+
+So really to land those
+first few workloads,
+
+we're going to talk to you
+today about infrastructure
+
+modernization and some of the
+options that you have here.
+
+Often customers go through an
+application rationalization
+
+exercise in order to determine
+which applications to move
+
+to the cloud in which order.
+
+So the first category
+of applications,
+
+often called legacy
+applications and sometimes
+
+even referred to as
+monolith applications,
+
+that all of the functionality
+is into a single binary or one
+
+complicated application.
+
+And monoliths aren't
+always a bad thing.
+
+But when they're VM
+based, potentially they
+
+take a long time to start.
+
+They load logs.
+
+They load cache.
+
+They don't necessarily
+lend themselves
+
+to being able to be replicated
+into multiple instances.
+
+We think of these traditionally
+as not ready for cloud native.
+
+However, they can be rehosted
+into infrastructure VMs,
+
+so moving from on-prem VMs
+into a VM in infrastructure
+
+as a service, for example.
+
+The other option is
+to start thinking
+
+about maybe decomposing
+that monolith,
+
+and reimagining
+it, and refactoring
+
+to cloud native services.
+
+The second area are what we
+might think of as container
+
+ready.
+
+And this actually might
+be bigger than you think.
+
+The options here,
+you can clearly
+
+rehost these applications into
+an [INAUDIBLE] based approach
+
+with VMs, or you
+could replatform them
+
+to something like Kubernetes
+and put them in a container,
+
+and have them orchestrated.
+
+This is really going to be the
+focus of our talk here today.
+
+As you think about some
+of these other container--
+
+cloud-compatible,
+or cloud-friendly,
+
+or cloud-native
+applications that
+
+might already be in containers,
+those are certainly candidates.
+
+We'll dive into
+number two today.
+
+So what are containers?
+
+If you've been under a rock
+for the last five, six,
+
+seven years, then
+you've probably
+
+never heard the term container.
+
+And ultimately they're a method
+for packaging up an application
+
+and all of its dependencies.
+
+The most common phrase you
+hear related to containers
+
+is it works on my machine,
+hence it will work in the cloud.
+
+It will work on
+somebody else's machine.
+
+And we often get away from some
+of those mysterious dependency
+
+issues or configuration issues
+that weren't necessarily
+
+there when you ran it on your
+laptop in dev, for example.
+
+Other phrases that we hear often
+associated with containers,
+
+things like being lightweight.
+
+Because it doesn't take
+the entire operating
+
+system-- it's just your
+application and all
+
+the dependencies-- it
+becomes more portable.
+
+It's using a standardized
+format that can be used.
+
+It helps increase productivity
+and ultimately helps
+
+drive security as well.
+
+So why do we do this?
+
+Why do we build containers?
+
+If you think of a traditional
+VM-based application,
+
+often choices were made
+to put an application
+
+per VM inside of the
+customer's infrastructure
+
+because of that bleeding
+over of dependencies.
+
+Maybe one application
+leverages a shared library
+
+that can get overwritten,
+and that can create havoc
+
+for the other application.
+
+We ultimately optimize those
+applications for the minimum VM
+
+constraints for the
+operating system--
+
+a certain amount of memory,
+a certain amount of CPU
+
+and disk--
+
+not based on the application's
+requirements itself.
+
+So we often see underutilized
+hardware being leveraged
+
+and also a complicated rollout
+process for every single VM,
+
+because every single
+app has its own VM.
+
+If we can move to a
+place where applications
+
+can co-exist and not
+step on each other,
+
+and not conflict with
+each other in a single VM,
+
+we can get to a
+place where we're
+
+optimizing the
+infrastructure, optimizing
+
+even the licensing costs
+since often the operating
+
+system is licensed at the
+VM and not at the container.
+
+If I can get two applications
+into a single VM,
+
+I've halved my licensing
+costs for that.
+
+Or I can get to high
+availability easier
+
+with the same licensing
+costs because I
+
+can have two instances of
+this application running.
+
+Each VM now has
+two instances here.
+
+So I mentioned the
+container-based approach.
+
+You can use containers for
+Windows or Linux machines.
+
+Now, Windows is a
+little bit more recent
+
+when it comes to adopting
+containerized strategies.
+
+For that reason there are
+a few different behaviors
+
+versus Linux, which was
+built from the beginning
+
+to support containers.
+
+There are a handful
+of things that you
+
+need to think about when moving
+to a containerized environment
+
+in an orchestrator
+like Kubernetes.
+
+Specifically, some of
+those Windows containers
+
+don't support privileged pods.
+
+That means those things
+like virus-scanning software
+
+really live at the VM level.
+
+They don't live inside
+the container itself.
+
+Those types of services
+need to be examined.
+
+Anything that has low-level
+network dependencies, where
+
+it's dependent on something
+below layer 7 in the networking
+
+stack, for example,
+you don't necessarily
+
+want to depend on the IP
+address of another machine
+
+or joining a cluster where
+there's a heartbeat in between
+
+and they need to know
+a static IP address.
+
+Can be a little problematic
+when you think about IPs.
+
+And we can talk about
+ways of addressing that.
+
+If there's low-level
+GPU or TPU support,
+
+this isn't available in
+a Windows container yet.
+
+Cloud-native features like
+Istio to create a service mesh
+
+in order to help with traffic
+management and service
+
+discovery.
+
+This isn't supported in
+Windows containers just yet,
+
+nor is being able to use
+something like CloudRun
+
+or Knative, the open source
+version where you can steal
+
+the zero in a
+serverless environment--
+
+not quite ready for
+Windows containers.
+
+So let's talk about
+what is ready.
+
+And what are the ideal
+container candidates?
+
+So first off, I would look at
+your web applications, your web
+
+and logic tiers, things
+that-- maybe they're
+
+written in Python, PHP,
+Java, ASP.NET, for example,
+
+those things hosted in IIS.
+
+Those are great
+candidates potentially
+
+to run inside of a container
+in a container-orchestrated
+
+environment like Kubernetes.
+
+Another area to look at is batch
+jobs or console applications
+
+that may be running
+spiky workloads,
+
+things that run maybe
+every day at 6:00 PM
+
+or things that run and
+listen to queues that don't
+
+have any kind of GUI to them.
+
+They're an ideal candidate.
+
+Even Windows Services,
+those are applications
+
+that are registered with
+the Windows operating system
+
+to begin at startup,
+for example.
+
+They may even log to the
+Windows application event log.
+
+All these things can be
+containerized and run
+
+in a container orchestrator.
+
+Now let me jump to the lower
+right-hand side of this
+
+and talk about those
+container workloads that
+
+are potentially unsuitable.
+
+And I'm going to
+start right away.
+
+I mentioned GUI, the
+graphical user interface.
+
+Anything that has
+a GUI is not going
+
+to be a good candidate
+for a container.
+
+You can't run a remote desktop
+protocol session, for example,
+
+into a container.
+
+So virtualized desktop
+infrastructure, VDI,
+
+for example, is not
+a fit for containers.
+
+If the application
+you're using is primarily
+
+centered around user interaction
+through a Win32 console,
+
+for example, that
+is not something
+
+that's going to run
+inside of a container.
+
+Now, there's a
+gray area of things
+
+that you may want to investigate
+further and use a fit
+
+assessment tool, for example,
+to determine whether it's
+
+appropriate for running in a
+container-- things on the Linux
+
+side where there's a GPU or
+TPU dependency, areas where
+
+the container requires
+elevated privileges.
+
+Another big category here
+is commercial off-the-shelf
+
+software, or COTS.
+
+Now, most ISVs have come
+out with newer versions
+
+of their applications that
+are containerized already.
+
+So it's often a good fit to
+think about maybe a version
+
+upgrade that will take you to
+their container-based approach.
+
+However, there are a
+lot of applications
+
+where maybe the vendor
+is no longer in business,
+
+or maybe it's critical
+to the business,
+
+but nobody really knows what
+the application was written in.
+
+You just have the binaries.
+
+You don't have access
+to the source code.
+
+They could be a fit.
+
+However, we should run
+an assessment tool here
+
+in order to determine whether
+or not it will work well
+
+in a containerized environment.
+
+And with that I'd like to
+introduce my peer Mike Coleman,
+
+who can talk to you
+about a solution
+
+that we have at Google
+to help you with this.
+
+Mike?
+
+MIKE COLEMAN: Thanks, Jason.
+
+I want to talk to you
+today about a tool called
+
+Migrate for Anthos and GKE.
+
+We built this tool
+to help automate
+
+the migration of virtual
+machine-based workloads
+
+from environments like Amazon,
+AWS, VMWare, Azure, and even
+
+Google Cloud Compute Engine.
+
+This tool automatically
+inspects those container--
+
+those virtual machines--
+excuse me-- and convert them
+
+to containers where then you can
+start taking advantage of some
+
+of the benefits that Jason
+mentioned previously, things
+
+like improved resource
+utilization, unified logging
+
+and monitoring, and then
+potentially day 2 operations.
+
+So it's one thing to
+talk about a tool.
+
+It's another thing
+to actually show it.
+
+So I want to do a
+quick demo where
+
+I'm going to take
+you through a payment
+
+service-based virtual
+machine migration.
+
+So I have an online
+boutique, an online shopping,
+
+and a bunch of the services are
+already running in containers.
+
+So think of the front
+end, the shopping
+
+cart, some of those services.
+
+They call back to
+a payment service
+
+that's running in a virtual
+machine on Google Cloud.
+
+We're going to migrate
+that VM into a container
+
+and integrate it with the
+rest of the application.
+
+We'll start with
+the fit assessment.
+
+As Jason mentioned, it's
+critical to understand
+
+how well your VM-based workload
+can run in a container.
+
+From there we're going to
+create a migration plan.
+
+We'll make a few tweaks to that.
+
+We'll run the migration.
+
+We'll get a set of
+deployment artifacts.
+
+We'll deploy those.
+
+And then finally, we'll
+edit the service discovery
+
+so that it's not looking for
+the virtual machine, but rather
+
+the payment service running
+as a Kubernetes service.
+
+This is the VM that we're
+going to migrate today
+
+into a container
+running on Kubernetes.
+
+So let's go ahead.
+
+I'm going to go up here and
+close this down because we
+
+don't need it anymore.
+
+And let's take a look at this
+application actually running.
+
+So if I come over
+here and I click
+
+on one of the products,
+the antique camera,
+
+I click Add to Cart,
+and then I click
+
+Place Order, everything's
+working as expected.
+
+That order was processed
+using the payment service
+
+on the virtual machine.
+
+So the first thing we need to do
+to get this all working though
+
+is to stop the
+payment service VM.
+
+A virtual machine can't be
+migrated until it's stopped.
+
+With the VM stopped, let's go
+ahead and clear the screen,
+
+and close out of Cloud Shell.
+
+Now let's take a look at the
+migration fit assessment.
+
+I've created a report
+by running an agent
+
+on the virtual machine, and it's
+stored here in this JSON file.
+
+I can upload this in
+the Cloud Console,
+
+and it's going to give me an
+indication that my application
+
+is a good fit for migration.
+
+If I want to drill down,
+I can click on the name
+
+and get a list of all
+the different things that
+
+were inspected.
+
+We know that we're
+good to go here,
+
+so why don't we go ahead
+and close out of this
+
+and actually start
+the migration?
+
+I'm going to go
+over here, and I'm
+
+going to click on
+Migrations, and I'm going
+
+to click Create Migration.
+
+
+
+I'm going to give
+my migration a name.
+
+I'm going to call it
+online boutique migration.
+
+We'll choose our source.
+
+The instance name was
+payment service VM.
+
+And we're going to
+just do the image.
+
+So let's create the migration.
+
+In the interest of
+time I've sped this up
+
+so we can move on to our
+next step, which is to review
+
+and edit the migration plan.
+
+So the migration plan comes
+up, and the first thing
+
+I want to do is
+add an annotation
+
+to tell Migrate for GKE to
+create an image that can
+
+run on an autopilot cluster.
+
+I also want to go and adjust the
+image name and the Kubernetes
+
+service name and deployment
+name to payment service instead
+
+of payment service VMs since
+we're not running in a VM
+
+any longer.
+
+So this takes a few minutes.
+
+I've sped the video up.
+
+I'll rejoin you
+when it's finished.
+
+
+
+With the process completed,
+let's take a look
+
+at the artifacts
+that were created.
+
+So I've come down
+here under Next Steps.
+
+I click Options and
+Review Artifacts.
+
+And that will bring up a list
+of what was created for us.
+
+The first thing you'll
+see are a couple
+
+of Docker images one
+that will actually deploy
+
+and one we can use
+for day 2 operations.
+
+We also get a Dockerfile and
+a Kubernetes deployment spec.
+
+So if I open up
+Cloud Shell, you'll
+
+see that I've already
+downloaded these files.
+
+So I'll do an LS here.
+
+You can see all the files.
+
+Now, this Kubernetes
+deployment_spec.yaml is going
+
+to create a new
+Kubernetes deployment,
+
+and it's going to create
+a new Kubernetes service
+
+for our migrated workloads.
+
+So let's go ahead and do that.
+
+
+
+Let's make sure
+everything's started.
+
+We'll take a look
+at the service.
+
+And there it is running.
+
+And let's take a
+look at the pod.
+
+And it's running as well.
+
+So what we're going to do now
+is check on our application.
+
+Now, actually, I
+expect this to fail.
+
+So let's come in here.
+
+Let's click on the typewriter.
+
+And let's go ahead and add that
+to our cart, and check out.
+
+So it's in our cart.
+
+Place order.
+
+Now, what happened
+is it's trying
+
+to reach the payment service
+on the DNS name of the VM.
+
+So what we need
+to do is actually
+
+modify the deployment
+spec for our application.
+
+And we need to change it from
+looking at the internal DNS
+
+name of the VM to the
+Kubernetes service name.
+
+So that's payment service.
+
+So we'll chop off the DNS
+name here and just leave
+
+payment service.
+
+We'll save that out.
+
+And then we can go back in and
+rerun that deployment YAML.
+
+And that's going to
+reprovision our services.
+
+So let's go ahead and do that.
+
+We'll do a kubectl apply and
+apply that updated boutique
+
+deployment.yaml.
+
+It'll reconfigure the services.
+
+So let's go ahead and
+clear the screen here.
+
+Let's look at the pods.
+
+It looks like the checkout
+service has been reconfigured
+
+and is running.
+
+So if I come in here and
+I click on the typewriter,
+
+and I add it to cart,
+and I place order,
+
+everything is
+working as expected.
+
+We've successfully migrated
+our payment service
+
+from a virtual machine
+into a container
+
+running on a GKE autopilot
+cluster using Migrate for GKE.
+
+So that's the demo.
+
+And demos are great.
+
+They give you a feel
+for the product,
+
+and you can see some of
+the things in action.
+
+But it's important also to
+look at how the tool's used
+
+in the real world.
+
+So I want to start by
+discussing a customer example.
+
+This is The Telegraph.
+
+They're a content management,
+content publication service
+
+over in the UK.
+
+And they had a legacy
+content management system
+
+that they were running.
+
+It was super important
+to their business,
+
+but it was a little
+difficult for them
+
+to manually migrate
+it into containers.
+
+So they used Migrate for Anthos
+to do that work for them--
+
+vastly simplified the process.
+
+And they're already
+realizing savings,
+
+not just on the infrastructure
+as Jason mentioned before
+
+with the bin
+packing and whatnot,
+
+but also in the day-to-day
+operation of that CMS.
+
+So that's one customer.
+
+That's one example.
+
+Now, what about yourself?
+
+Now, if you're going
+to look at migrating,
+
+there's some things I
+want you to consider.
+
+These are six items.
+
+They're not insurmountable by
+any stretch of the imagination.
+
+They're really presented
+here just as things for you
+
+to be aware of.
+
+And the first we
+saw in the demo.
+
+We were using VM-based
+DNS hostname discovery.
+
+So we had the DNS name
+of that payment service.
+
+We converted that to
+a Kubernetes service.
+
+So we let Kubernetes take care
+of that service discovery using
+
+its own internal DNS structure.
+
+Along those same lines,
+if you have host files
+
+that you've customized
+and you've got hostnames,
+
+you can use host aliases in the
+pod spec to take care of that.
+
+So that's another
+simple migration.
+
+Again, looking at the
+pod YAML, a couple
+
+other things we could take
+care of are file shares.
+
+So file shares are great.
+
+You can use them.
+
+We just don't automatically
+migrate them for you.
+
+You're going to need to define
+NFS persistent volumes inside
+
+of the pod spec to
+take care of those.
+
+And the same with
+environment variables.
+
+You may be using an
+environment variable
+
+for the URI for your
+database, for instance.
+
+You can actually define that
+same environment variable
+
+in the pod spec,
+and then you don't
+
+need to change any other
+applications because you're
+
+getting the same information
+you're expecting.
+
+So find the environment
+variable in the pod YAML,
+
+and that'll take care of that.
+
+Now, I want to say something--
+
+and I might say it
+kind of forcefully
+
+because I really believe it--
+
+just because you're migrating
+something to a container
+
+doesn't mean that you don't
+have to understand how it works
+
+and how it runs.
+
+And matter of fact, if you want
+to have a successful migration,
+
+it's critical that you
+understand what you have
+
+and how it works.
+
+When you go in and you
+look at a migration,
+
+you should be looking at the
+services and the agents that
+
+are running in that VM and
+make a conscious decision on
+
+whether or not you need
+them in your container.
+
+For instance, you
+may have an agent
+
+running that's doing
+logging and monitoring.
+
+And we'll talk about
+that in a little bit
+
+in the next bulletpoint, but you
+probably want to disable that.
+
+You also want to
+make sure you're
+
+running at the right run level.
+
+So go through, audit
+those services.
+
+Disable the ones you don't need.
+
+That will help minimize
+container image size,
+
+and improve performance,
+and reduce complexity.
+
+So this is a really
+important one
+
+that I want you to go through.
+
+The other thing that's
+not specifically
+
+called out here along the same
+vein, file system structure.
+
+Are there directories
+and files that you don't
+
+need in the resulting image?
+
+You can tell Migrate
+for Anthos and Migrate
+
+for GKE to not include certain
+directories, certain files.
+
+Again, smaller image
+size, better performance.
+
+And then finally--
+I alluded to it--
+
+application logging.
+
+We integrate Migrate for
+Anthos and Migrate for GKE
+
+with the cloud, Google
+Cloud metrics, logging,
+
+and monitoring services.
+
+So you don't actually
+need to have those agents.
+
+You don't need to do that
+work in the container.
+
+We'll just pick that
+stuff up for you,
+
+and you can monitor
+it in Cloud Console
+
+right there within Google Cloud.
+
+So that's what we
+have for you today.
+
+I really want to thank you
+for tuning in on behalf
+
+of myself and Jason.
+
+Why don't you go out, have
+a great rest of your day,
+
+and look at migrating some
+of those VM workloads?
+
+
+

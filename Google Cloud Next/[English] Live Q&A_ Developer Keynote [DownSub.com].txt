@@ -1,0 +1,959 @@
+[MUSIC PLAYING]
+
+
+
+AJA HAMMERLY: Hi, everyone.
+
+Thanks for joining us
+today for the developer
+
+live Q&A. I'm Aja.
+
+And a reminder that
+this Q&A is live.
+
+If you want to join
+the conversation,
+
+reach out on Twitter with
+the hashtag googlecloudnext.
+
+We've reached out asking for
+your questions on social media,
+
+and y'all have been responding.
+
+We'll be answering your
+questions during the next 20
+
+minutes.
+
+And first of all,
+let's welcome Priyanka,
+
+who's here to answer your
+questions with me today.
+
+Hi, Priyanka.
+
+PRIYANKA VERGADIA: Thanks, Aja.
+
+That keynote was
+absolutely amazing.
+
+Yeah, so let's get
+into the goodness
+
+that Urs and Aparna shared.
+
+A highlight for me was really
+that upcoming documentary
+
+on Kubernetes.
+
+So cool.
+
+I also enjoyed the Google
+Cloud innovator community
+
+announcement, securing
+software supply chain,
+
+and building sustainably.
+
+What caught your eye?
+
+AJA HAMMERLY: Oh, a lot of
+the stuff you just mentioned.
+
+Definitely our innovations
+and sustainability.
+
+The ability to see your
+carbon footprint of your cloud
+
+workloads is
+really, really cool.
+
+When I heard about it
+in yesterday's keynote,
+
+I immediately went and looked
+at all my personal projects
+
+to see the carbon cost
+of what I'd been doing.
+
+And I love having
+that kind of data
+
+to use in decision making like--
+
+help me make the
+right decisions.
+
+But I'm mostly really excited
+about the Cloud innovators
+
+program.
+
+I've really missed interacting
+with our Google Cloud dev
+
+community.
+
+I want to hear and see
+all the amazing things
+
+the community has been up to.
+
+And the innovators program
+should let us do that.
+
+And we're working on some super
+special innovators-only events
+
+in 2022 that I can't wait
+to tell the community about.
+
+PRIYANKA VERGADIA: Wow.
+
+Yeah, that all sounds
+really amazing.
+
+I'm also excited about
+that secure supply chain
+
+announcement--
+
+SLSA-- and how the combination
+of Cloud Build and Binary
+
+Authorization actually
+helps kickstart your journey
+
+to secure your software
+artifacts by fully
+
+automating that build process.
+
+AJA HAMMERLY: Yeah, that's
+just so interesting.
+
+That's so cool.
+
+So let's get to
+our first question.
+
+We've got questions coming in
+just for the folks at home.
+
+The backstage crew is looking
+for your tweets as well,
+
+so keep them coming
+in during the thing.
+
+We'll be bringing them in live.
+
+So our first question
+is from Asher,
+
+and it is who would
+be good candidates
+
+for the participation in
+the private preview of Earth
+
+Engine?
+
+PRIYANKA VERGADIA:
+Yeah, so anybody
+
+who is like doing work
+on sustainable things.
+
+So with the
+sustainability lens--
+
+if you're thinking about
+financial services,
+
+the customer packaged
+goods, and their impact
+
+on the environment,
+and how all of that
+
+can be combined together.
+
+So yeah, anything that you're
+doing with the sustainability
+
+lens.
+
+Obviously, it's in private
+preview, so you have to qualify
+
+and stuff.
+
+But if you have that
+angle of sustainability,
+
+you're probably a
+right fit for it.
+
+AJA HAMMERLY: Awesome.
+
+Thank you for that.
+
+Ah, second question came
+in from Priyanka's Twitter.
+
+I saw this one this morning as
+I was coming in to do this Q&A,
+
+and this one is
+any examples-- do
+
+we have any examples of
+end-to-end Spark-based
+
+pipelines for ML?
+
+They'd love to see them.
+
+Specifically, they're
+interested in learning
+
+how serverless Spark can be
+leveraged in big data and ML
+
+ops framework on Google Cloud.
+
+PRIYANKA VERGADIA: Yeah, so
+thank you for this question.
+
+I think it came
+from [INAUDIBLE]..
+
+I saw it on my
+Twitter this morning.
+
+So really what it's all
+about is the serverless
+
+Spark ML framework
+is about not having
+
+to create your backend
+infrastructure to run Spark.
+
+So that's all taken
+care of for you.
+
+So you can just
+run your workloads,
+
+which is, in this
+case, like you're
+
+trying to run a machine
+learning Spark job--
+
+you can just get
+started by not worrying
+
+about the infrastructure.
+
+So that's one part.
+
+The other piece of it
+is the Vertex Workbench,
+
+which is the Jupyter
+notebook, but hosted.
+
+But it also gives
+you the opportunity
+
+to connect with
+Dataproc, or the Spark ML
+
+jobs that you might have
+built, and run all of that.
+
+So as a data scientist, I
+can just use my workbench,
+
+and that becomes my home
+to kind of get the data,
+
+massage it, connect with
+Dataproc, Spark ML jobs.
+
+And then get all
+those predictions
+
+right in that one spot.
+
+AJA HAMMERLY: Awesome.
+
+Thanks, Priyanka.
+
+That was a really
+comprehensive answer.
+
+Ah, so now we have a
+question from Christopher,
+
+and it's what are the benefits
+of the innovators program?
+
+You mind if I take this one?
+
+PRIYANKA VERGADIA: Yeah, please.
+
+AJA HAMMERLY: So the big benefit
+of the innovators program
+
+is going to be access to
+innovators only events.
+
+Like we're going to be
+doing some AMAs we're
+
+planning right now, roadmap
+meetings potentially.
+
+And there's also an
+innovators virtual background
+
+that you can download and use
+in your Google Meet meetings.
+
+Ooh, another question
+came in from Twitter.
+
+Awesome.
+
+So let me read this one.
+
+My POV, massive focus on
+the security-- massive focus
+
+on security focus in
+the Developer Cloud.
+
+Isn't this a topic
+that matters more
+
+for the managers of developers
+than for developers?
+
+And I'll take this one too,
+if that's cool with you.
+
+PRIYANKA VERGADIA: Yeah.
+
+AJA HAMMERLY: So I'm
+a manager, and yeah,
+
+that's a really good question.
+
+Security is vital to all
+aspects of software development,
+
+and security needs
+to be everyone's job.
+
+Yeah, managers need to
+care a lot about it,
+
+but we need to make the
+tools so that developers
+
+can do the right
+thing automatically,
+
+and that everyone
+is participating
+
+in making our cloud more secure.
+
+And we talked about
+some of those things.
+
+We talked about our tooling
+that can help you make sure
+
+that you put your secrets
+in secure locations
+
+as opposed putting them in code.
+
+We talked about the SLSA.
+
+We talked about
+lots of other parts.
+
+And all of this is part of a
+secure software supply chain,
+
+but security does need
+to be everyone's job.
+
+Managers can help by
+teaching their developers
+
+and enforcing it,
+but everyone needs
+
+to take the steps to
+make things more secure.
+
+So yes, good point, but
+everyone's involved.
+
+This is a great one from
+Priyanka's LinkedIn.
+
+Is it possible to connect to
+the public IP of a Cloud SQL
+
+instance from a private
+Cloud Run service?
+
+Ooh, I've been asked this one
+before when visiting customers.
+
+Also is this
+cross-project set up?
+
+Cloud Run service and
+Cloud SQL instance
+
+are on separate GCP
+projects, so can you
+
+do a cross-project
+setup with your database
+
+and you're running a
+server somewhere else?
+
+Priyanka?
+
+PRIYANKA VERGADIA:
+You actually can.
+
+So you have-- so
+in this scenario,
+
+you have a Cloud SQL
+instance in one project,
+
+and you have your
+compute or whatever
+
+is calling that Cloud SQL
+instance in another project.
+
+And you could totally
+make them work
+
+by using what is called
+as private service access.
+
+What it does is it connects
+the two together even
+
+with a private IP.
+
+So you don't even have to expose
+a public IP for your Cloud SQL
+
+instance, which again comes
+back to the security point
+
+you were making earlier--
+
+everybody has to
+think about security.
+
+So you're not exposing
+with public IP.
+
+You're just using the private
+IP of your Cloud SQL instance,
+
+and connecting it to
+the virtual machine
+
+or wherever you're
+running your compute
+
+to call your servers from.
+
+So it's possible.
+
+Private service
+access is the service
+
+you're looking for to kind
+of connect the two together.
+
+It's a VPC offering.
+
+AJA HAMMERLY: Awesome.
+
+Thank you so much, Priyanka.
+
+Cool.
+
+A question from Andy.
+
+This is one of my favorites.
+
+So there's a lot of ways to
+run an application with Google
+
+Cloud.
+
+It's a huge platform.
+
+How do I know what
+I should choose?
+
+Where do I run my stuff?
+
+Should I run it on GKE,
+Compute Engine, Cloud Run?
+
+So many good choices.
+
+PRIYANKA VERGADIA:
+Yeah, and this
+
+is a question we get a lot.
+
+And it really just
+depends on your situation.
+
+And the situations can be
+a lot-- the type of team,
+
+the size of team, and the
+number of developers you have,
+
+and the languages that
+you might be using.
+
+So there are lots of
+different scenarios
+
+in which you can decide.
+
+So I'll give an
+example of a few.
+
+So for example, Compute Engine.
+
+If you're migrating and you
+just want to get from on-premise
+
+infrastructure into cloud,
+and you just want the speed--
+
+you just want to get there--
+
+I would choose Compute Engine
+to just migrate as-is, and then
+
+modernize later if needed.
+
+Sometimes, you don't
+need to modernize
+
+if you have licensing
+requirements
+
+and stuff like that.
+
+So that's Compute Engine.
+
+If you want to work with
+containers-- need a little bit
+
+more abstraction--
+less abstraction,
+
+you can work with
+containers with GKE.
+
+And that gives you
+a lot more control
+
+over the number
+of nodes you have,
+
+and the processing
+that you're using.
+
+But if you might be just
+wanting to run containers,
+
+but don't want to manage the
+underlying infrastructure,
+
+like nodes and stuff like
+that, and the regions,
+
+just use Cloud Run,
+because it's serverless,
+
+but it allows you to use
+your container images
+
+and just deploy them.
+
+Cloud Functions is kind
+of like everywhere.
+
+So you're trying to do--
+handle one function, or a piece
+
+or a feature of
+code that you just
+
+deploy in that
+function as a Function
+
+as a Code sort of service.
+
+But it kind of
+applies everywhere.
+
+So I wouldn't say--
+
+so Cloud Function
+is not like an OR--
+
+it's more of an AND--
+
+like it works with any of those.
+
+It's just more of an
+extension and enhancement
+
+of your services
+with serverless.
+
+So I hope that helped
+clarify a little bit of that,
+
+but there's a lot that
+goes in that decision.
+
+AJA HAMMERLY: Yeah, I know.
+
+And I really liked
+how you called out
+
+the Cloud Functions is
+not an OR, it's an AND.
+
+It's-- Cloud Functions is
+just fantastic at tying pieces
+
+together.
+
+It's one of the things
+I love about it.
+
+And I'm just going to
+point out for folks
+
+that we have sessions on all
+of these in the breakouts.
+
+So if you want to go
+learn more about these,
+
+go look in our
+breakouts, and you
+
+can find out more about
+the different offerings
+
+that Google Cloud has.
+
+So now we have a
+question from Esther.
+
+What languages do Cloud Run
+and Cloud Functions support?
+
+Oh, let's see if I can
+do this from memory.
+
+I've been practicing.
+
+So GCF-- these are
+the standard languages
+
+you see on Google Cloud.
+
+We've got Node.js, Python,
+Go, Java, .NET, Ruby, and PHP.
+
+I got them all.
+
+Awesome.
+
+Cloud Run supports any
+language, or any library,
+
+or any binaries that you
+can put in a container.
+
+But if you want to use the
+source code deploys feature
+
+that Abby showed earlier, that
+is supported on Node, Python,
+
+Go, Java, and .NET.
+
+And specific versions of
+those languages are supported,
+
+so please do go to the website,
+and make sure the version
+
+that you need is the
+one that we support.
+
+PRIYANKA VERGADIA: Great
+memory, by the way.
+
+AJA HAMMERLY: Oh,
+yeah, I've been
+
+getting really good at
+naming all those languages.
+
+So from Selena-- ooh,
+yes, great question.
+
+When should I use GKE
+Autopilot versus Cloud Run?
+
+PRIYANKA VERGADIA: I'll
+let you take that one.
+
+AJA HAMMERLY: You're going
+to let me take this one?
+
+OK.
+
+So this pretty
+much boils down to,
+
+do you want Kubernetes or not?
+
+If you want Kubernetes, if you
+want the enhanced flexibility
+
+that Kubernetes has, or you
+want to have all those knobs
+
+and dials that you can turn
+to really fine tune everything
+
+for your networking needs or
+your particular load profile,
+
+use GKE Autopilot.
+
+If you want to-- if
+you have a container,
+
+and you want to run it on
+GCP, and that's your goal,
+
+Cloud Run is great.
+
+Cloud Run is fantastic at that.
+
+And as we pointed
+out, you don't even
+
+need a container if you
+use Cloud Run source
+
+deploys for those
+languages I just mentioned.
+
+More questions.
+
+Ooh, this one's
+for you, Priyanka.
+
+This is from Caleb.
+
+What file formats are
+supported with the Doc AI stuff
+
+that Anya talked about?
+
+PRIYANKA VERGADIA: Oh, yeah.
+
+So you can do images and PDFs.
+
+So it's really about
+the unstructured image
+
+data, so PDFs and images.
+
+AJA HAMMERLY: Awesome.
+
+Let's see what else we got.
+
+Ooh, this one's from Mark.
+
+Another for you, Priyanka.
+
+Ooh, it's another
+security question.
+
+So can you tell us more
+about Binary Authorization?
+
+We covered it very
+briefly in the keynote,
+
+but it's something I've
+been hearing a lot about,
+
+and I'd love to know a
+little more about it.
+
+PRIYANKA VERGADIA: Yeah.
+
+So again, it kind of boils down
+to the whole security narrative
+
+that you mentioned--
+that everybody
+
+is kind of responsible
+for the security
+
+of the entire platform.
+
+So in this case, the binary auth
+is really deploy time security.
+
+So you're deploying, and
+making sure that your images--
+
+or container images if you're
+using GKE or Cloud Run--
+
+works with binary auth.
+
+So when you're at your
+deployment stage, you have--
+
+you can provide signature
+authorizations on your images.
+
+So if-- and the verification
+and the authorities for those.
+
+So if they are authorized,
+only-- binary auth
+
+will apply the authorizations.
+
+And once the image
+is authorized,
+
+only then you can deploy it.
+
+AJA HAMMERLY: Awesome.
+
+So I just got the signal
+that we're running out
+
+of time, so this is
+going to, unfortunately,
+
+be the last question.
+
+And this question
+comes from Wesley.
+
+Can I use the build
+integrity features
+
+with my on-prem software?
+
+PRIYANKA VERGADIA: Hmm.
+
+Yeah, so you kind of can.
+
+So with Cloud Build, it's
+really any container image which
+
+is built on Cloud Build,
+you can use both on--
+
+you can use it in both
+on-prem or on Google Cloud.
+
+You just have to use the binary
+auth attestation Cloud Build.
+
+And it's on the GitHub page,
+so you can check that out.
+
+But if you're building
+it in Cloud Build,
+
+you can deploy it on-prem
+or in Google Cloud.
+
+AJA HAMMERLY: Thanks, Priyanka.
+
+Well, that was a lot of fun.
+
+It was great to hear all the
+questions from the audience.
+
+Y'all had some great ones.
+
+And I want to say
+just a huge thank you
+
+to Priyanka for joining
+us, and answering so many
+
+of those questions.
+
+Be sure to join us back
+over on g.co/cloudnext,
+
+as the open infrastructure
+spotlight will be kicking off
+
+shortly, and they have
+some amazing things that
+
+they're going to show off.
+
+Thanks for joining us, everyone.
+
+
+

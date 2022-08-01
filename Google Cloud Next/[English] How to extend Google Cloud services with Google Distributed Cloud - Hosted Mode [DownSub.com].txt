@@ -1,0 +1,918 @@
+
+
+ANDY QIN: Hello, everyone.
+
+Welcome to APP 101 breakout.
+
+Today we'd like to
+introduce Google Distributed
+
+Cloud, Hosting Mode.
+
+My name is Andy Qin,
+I'm a product manager
+
+in Google Cloud.
+
+I'm here with my colleague Ray.
+
+RAY COLLINE: Hi there.
+
+I'm Ray Colline.
+
+And I'm a software engineer,
+who works on Google Cloud.
+
+And it's great to be here.
+
+
+
+ANDY QIN: In this
+session, we'll first
+
+look at market pain points,
+and the limitations of existing
+
+solutions.
+
+And then we will
+introduce Google solution
+
+in terms of how it's
+defined, and what's
+
+the key streams and
+the characteristics.
+
+And we will then dive
+deep into the product
+
+areas, like platform,
+services, and support.
+
+
+
+Today the public clouds provide
+amazing results and benefits.
+
+So it seems everything is
+moving to public Cloud.
+
+But the reality is
+that not all workloads
+
+can move to public Cloud
+for different reasons,
+
+regulatory, IP protection,
+sovereignty concerns.
+
+Those workloads that
+stayed private, it's
+
+very challenging
+for them to leverage
+
+all the cool innovation
+from Cloud technologies
+
+to empower their business,
+and, oftentimes, those
+
+are very special and specific
+part of their business.
+
+As we in public clouds
+the infrastructure
+
+is quite transparent.
+
+Users do not need to care about
+the gory details of things
+
+like hardware operation.
+
+However, that's not the
+case for private Cloud.
+
+In the legacy private
+Cloud customers
+
+still have to
+spend a lot of time
+
+managing their infrastructure.
+
+And most hobbyists pinpointed
+that customers will end up
+
+with a public Cloud
+and private Cloud
+
+with different development
+models and toolings,
+
+and the resulted inconsistency
+impacts business agility.
+
+
+
+The market pain
+points are very clear,
+
+but if you look at the
+existing solutions out
+
+in the marketplace they didn't
+address all those pain points.
+
+As we know, some products are
+viewed on proprietary stack.
+
+There's no consistency between
+that and the public Cloud.
+
+Applications developed in
+private mode cannot be easily
+
+ported to the public Cloud.
+
+It's very difficult
+to achieve write once,
+
+and run anywhere [INAUDIBLE].
+
+Some private Cloud products
+a very infrastructure service
+
+oriented.
+
+No advanced Cloud innovations
+like AI/ML services and data
+
+analytics.
+
+And the management
+methodologies are very legacy.
+
+For example, the more
+declarative policy paradigm
+
+is quite common in public
+Cloud, but most private
+
+Cloud are still using
+the legacy imperative
+
+tools to match their systems.
+
+Some private Cloud products
+do meet most requirements.
+
+However, they require
+connections back
+
+to their Cloud region for the
+quintupling to even function.
+
+This poses a huge challenge
+for sensitive workloads,
+
+especially in the
+specific market segments,
+
+like defense and
+critical infrastructure.
+
+
+
+Google Cloud recognizes
+those market pain points
+
+and the clear gaps
+in the marketplace.
+
+We are going to offer a
+solution that can directly
+
+solve those challenges.
+
+The solution is called Google
+Distributed Cloud Hosted Mode.
+
+There's three key things to
+highlight on this solution.
+
+First, it doesn't
+require connections back
+
+to public Cloud.
+
+All quintupling, data plane,
+match plane can be local.
+
+It helps you meet
+the sovereignty
+
+and the regulatory requirements.
+
+Second, it comes with
+highly differentiated
+
+advanced services, like
+AI/ML and the data analytics.
+
+We believe those services
+are critical to empower
+
+the customer to stay
+competitive in their own market.
+
+And the third, it leverages
+open source and open API.
+
+This provides an automated
+portability and software
+
+survivability, which are super
+important to both business
+
+agility and the
+sovereignty needs.
+
+At this particular
+point in time,
+
+the Google Distributed
+Cloud Hosted Mode
+
+is still a pre-GA product.
+
+We are working hard to bring
+this to the market soon.
+
+
+
+Besides the three
+key things, I think
+
+it's important to look
+at the characteristics
+
+and the key strengths of Google
+Distributed Cloud Hosted Mode.
+
+The name Hosted Mode tells a
+lot about location and control.
+
+The solution can be deployed
+at a customer designated data
+
+center, even in the totally
+air gapped environment.
+
+This solution is not just
+the infrastructure play,
+
+it comes with Google advanced
+services, like AI/ML.
+
+The power of those technologies
+and Google's years of expertise
+
+are no longer limited
+to the public Cloud,
+
+with Google Distributed
+Cloud Hosted Mode,
+
+customers can now enjoy
+those on their own premise.
+
+Another strength
+worth highlighting
+
+is that the entire
+solution is flexible.
+
+It comes as pre-assembled
+and preconfigured racks
+
+and is delivered to your
+data center as a service.
+
+It can scale from 1
+rack, to a couple racks,
+
+and to hundreds of racks.
+
+It has local
+quintupling built in,
+
+so it covers all sovereignty
+dimensions, data sovereignty,
+
+operational sovereignty,
+and software sovereignty.
+
+While it's built
+by Google Cloud,
+
+so it inherits the Cloud DNA.
+
+Open and the Modern are
+the design philosophies
+
+we follow when we
+build the solution.
+
+We believe the solution
+will meet the needs of many
+
+industries, where they have
+a sensitive workload and they
+
+cannot move to the public Cloud,
+but they still want to leverage
+
+the modern innovation
+from Cloud.
+
+Public sector is a prime
+example of those industries.
+
+With that, let me
+invite my colleague
+
+Ray to talk about what
+exactly is in the solution
+
+and what are the
+key capabilities.
+
+RAY COLLINE: Thank you, Andy.
+
+We're going to get into a little
+bit of the technology that
+
+makes up Google distributed
+Cloud Hosted Mode.
+
+And we'll start with the
+lowest level, the hardware.
+
+So at Google Distributed
+Cloud Hosted Mode
+
+is full racks of hardware
+optimized to deliver
+
+an air gapped Cloud experience.
+
+These racks include
+modern hardware
+
+from top OEM providers,
+including HPE, NetApp,
+
+and Cisco.
+
+All of the
+infrastructure management
+
+is taken care of by
+Google Distributed Cloud.
+
+These are things like
+operating system upgrades,
+
+firmware upgrades, switch OS
+upgrades, NetApp upgrades,
+
+et cetera.
+
+All are taken care of as part
+of Google Distributed Cloud.
+
+It also includes GPUs
+for AI/ML workloads.
+
+And it includes storage block--
+
+or sorry, block, file,
+and object storage
+
+in a redundant manner.
+
+It also includes high
+performance networking.
+
+And in fact, each node
+has full bandwidth
+
+to all the other nodes
+within a GDC instance,
+
+and these instances can
+be up to 10,000 VCPUs.
+
+In addition, it's
+Kubernetes all the way down.
+
+So Andy spoke earlier
+about it being open, right?
+
+We've taken that and we've
+introduced Kubernetes APIs
+
+all the way down into the
+infrastructure management layer
+
+so that the notion
+of an OS upgrade
+
+is actually controlled through
+the reliability of Kubernetes.
+
+
+
+Google Distributed
+Cloud Hosted Mode
+
+is a full air gapped
+Cloud solution stand alone
+
+from any other Cloud,
+and so it comes
+
+with sophisticated
+multi-tendency.
+
+As we know in public
+clouds things like GCP
+
+have the notion of
+organizations and projects,
+
+and one creates a project
+before doing anything on GPC,
+
+creating a VM, creating a
+cluster, creating a database.
+
+Within Amazon, one creates an
+account to do the same thing.
+
+Well, GDC introduces the notion
+of fleets and fleet namespaces
+
+to provide that level of
+resource management and tenancy
+
+within a GPC instance.
+
+Fleets are hardware
+separated from each other,
+
+allowing a single GPC instance
+to serve multiple applications
+
+with good security
+guarantees between them.
+
+And fleet namespaces,
+like Amazon accounts
+
+and GCP projects,
+provide isolation
+
+between teams and
+components of applications.
+
+Policy control is built
+in from the beginning.
+
+As we said earlier, we're
+Kubernetes all the way down.
+
+So all the APIs benefit from
+having Anthos policy controller
+
+based on OPA gatekeeper,
+and Kubernetes emission
+
+control, such that one
+can govern all aspects
+
+of the usage, and also audit.
+
+This means you could,
+for example, take a VM
+
+and say no VMs can ever
+have the name Ray in it,
+
+and we could enforce such a
+policy at that granularity.
+
+It's also extensible
+and customizable.
+
+So Kubernetes APIs allow
+for custom controllers
+
+to do any sorts of things.
+
+We've had customers
+build controllers
+
+that disallow
+launching of new code
+
+unless there's an
+associated launch
+
+process that's been approved.
+
+And Google Distributed
+Cloud Hosted Mode
+
+is a rich and open ecosystem.
+
+Because it's built on
+standard Kubernetes,
+
+one could use the entire
+community of software
+
+available to operate
+Kubernetes within GPC.
+
+
+
+GDC comes with much
+security and confidentiality
+
+features built in.
+
+A local certificate
+authority backed by an HSM
+
+is provided out of the box.
+
+This allows GDC to meet FIPS
+140-2 level 3 compliance.
+
+In addition, GDC
+can be configured
+
+to work with an existing HSM
+provided by the customer.
+
+Secrets management is provided
+using the common secrets API,
+
+but it's backed by the
+HSM to make it secure.
+
+Also, GDC benefits from
+Google's investment
+
+in making GKE secure, and
+all of the enhancements put
+
+into GKE so far, plus
+Google's contributions
+
+into the Kubernetes community.
+
+Identity and access
+management is
+
+supported using standard
+protocols like OADC and SAML
+
+2.0, meaning it
+can be configured
+
+to work with existing
+identity providers
+
+that our customers have.
+
+And because it's Kubernetes
+all the way down,
+
+every aspect of the system
+is managed by Kubernetes role
+
+based access control.
+
+If you know GCPE,
+you will understand
+
+that IM is it's part of every
+control surface within Google
+
+Cloud platform.
+
+Well within Google
+Distributed Cloud,
+
+Kubernetes RBAC performs and
+operates at that same level,
+
+providing fine-grained
+control over all resources.
+
+Additionally, supply chain
+security, a top concern,
+
+is something that
+we've been working hard
+
+both on the hardware
+and software side.
+
+We've been working with Tier
+1 providers in each region,
+
+and we require strong
+hardware supply chain security
+
+as part of the GCD OEM process.
+
+Additionally, the GKE and
+our Google security teams
+
+have been ensuring software
+supply chain security
+
+in the Kubernetes OSS
+stacks for years and years.
+
+And we've made
+many contributions
+
+to making Kubernetes a
+safe, reliable system
+
+to run workloads on.
+
+And lastly, everything you do
+or perform on Google Distributed
+
+Cloud Hosted Mode is audited.
+
+And these audit logs are
+compliant with the NIST 853
+
+standards.
+
+
+
+Google Distributed
+Cloud Hosted Mode
+
+comes with a
+variety of services.
+
+And because it's
+built on Kubernetes,
+
+anything out in the
+open source community
+
+that runs on
+Kubernetes will also
+
+run on Google Distributed Cloud.
+
+We are also working with
+third party OEM providers
+
+to provide enterprise versions
+of popular open source
+
+packages enabling first
+class support and enterprise
+
+features.
+
+
+
+Lastly, I'm going to chat
+about operations and support,
+
+a key concern when
+operating a Cloud.
+
+Google Distributed
+Cloud Hosted Mode
+
+has a few different
+operational patterns
+
+to support customer needs,
+which Andy will cover later.
+
+But importantly, the bring
+up in deployment of GDC
+
+will be facilitated by
+Google every step of the way.
+
+As mentioned earlier, all
+the operational aspects
+
+are provided and
+operated by Google,
+
+meaning that
+customers do not have
+
+to worry about patching and OS
+upgrades, BIOS, firmware, CVE
+
+response, et cetera, et cetera.
+
+Instead, Google makes
+this largely push button,
+
+or can even provide the
+support and operations
+
+to do that for you.
+
+Additionally, the
+ability to support an air
+
+gapped deployments,
+Google engineering
+
+is ensuring that
+every area comes
+
+with full detailed support
+and training resources.
+
+As an anecdote within the
+engineering organization
+
+for GDC, any pull
+request that's submitted
+
+must come with metadata for
+support operations, which
+
+makes engineers think
+about the full lifecycle
+
+up front, providing
+a higher reliability
+
+and operable system.
+
+And regarding
+support, Google GDC
+
+can be used and trusted in
+air gapped environments.
+
+Google has developed
+new support techniques
+
+and operational techniques
+derived from Google SRE best
+
+practices, allowing GDC to
+maintain a reliable SLO,
+
+while also providing
+trusted user
+
+support without requiring any
+data to leave the GDC instance.
+
+Importantly for all
+operations, Google
+
+is the only vendor a
+customer has to call.
+
+And lastly,
+localized management.
+
+So in addition to local UI,
+local APIs, control plane,
+
+everything being on as
+part of the GDC instance
+
+in air gapped or
+other environments,
+
+documentation and
+access to support
+
+is also built in,
+meaning that users do not
+
+need any outside access
+to operate and use GDC.
+
+Now, in rare cases, if
+the customer desires
+
+faster support, we
+will offer a way
+
+to send sanitized
+logs, so they could
+
+be shared with the core
+engineering teams, increasing
+
+support turnaround.
+
+With that, I'm going to
+pass the baton back to Andy.
+
+Thank you very much.
+
+ANDY QIN: Thank you, Ray.
+
+To sum it up, Google
+Distributed Cloud Hosted Mode
+
+gives you the power of Cloud
+innovation with control.
+
+And it covers all
+aspects of sovereignty.
+
+Data is on customer premise
+or any data center designated
+
+by the customer.
+
+It can be operated by a customer
+directly or by an operating
+
+partner that has the right
+credentials and the trust
+
+from the end customer.
+
+Google will train
+and work closely
+
+with those chosen partners
+to ensure the service
+
+availability.
+
+In certain scenarios, Google
+can also operate the deployment
+
+directly with cleared and
+certified operational teams.
+
+Its build with
+open API, and means
+
+a lot when customers
+want to ensure
+
+business continuity in any
+potential black swan events.
+
+And it definitely helps
+to meet local government's
+
+regulatory requirements.
+
+
+
+Google Distributed
+Cloud Hosted Mode--
+
+RAY COLLINE: --the benefits
+of Cloud delivered locally.
+
+ANDY QIN: This
+concludes our session.
+
+Thank you for listening.
+
+Thank you, Ray, for being
+part of this conversation.
+
+RAY COLLINE: Thank you
+for having me, Andy.
+
+And I hope all of you have a
+great rest of the time at Next.
+
+
+

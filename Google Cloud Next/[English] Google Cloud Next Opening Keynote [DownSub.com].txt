@@ -1,0 +1,2090 @@
+
+
+[MUSIC PLAYING]
+
+
+
+ALISON WAGONFELD: Hi, everyone.
+
+I'm Alison Wagonfeld
+with Google Cloud.
+
+Welcome to Google Cloud Next.
+
+And thank you to our
+Google orchestra,
+
+composed of Bay Area Googlers.
+
+We are coming to you live
+from our Google Cloud
+
+campus in Silicon Valley,
+where I'm here with Sundar
+
+Pichai and Thomas Kurian.
+
+We have an incredible lineup
+over the next three days
+
+with live keynotes,
+demos, and Q&A
+
+with our leadership
+in over 140 sessions
+
+covering all our
+cloud solutions.
+
+Our customers and
+partners will share
+
+how they're using Google Cloud
+and Google Workspace technology
+
+to tackle their greatest
+challenges and opportunities.
+
+We are humbled to support their
+work and share their stories.
+
+Thank you for
+being here with us.
+
+And now, please join me in
+welcoming Google and Alphabet
+
+CEO, Sundar Pichai.
+
+SUNDAR PICHAI: Hi, everyone.
+
+Welcome to Google
+Cloud Next 2021.
+
+We are happy you're here.
+
+Of course, I'd be happier
+if we could actually
+
+be here in person.
+
+Don't get me wrong,
+Thomas is great company.
+
+But he still doesn't laugh
+at my container jokes.
+
+So while many of us are still
+waiting for a return to normal,
+
+it does feel like
+we are on our way.
+
+The question is, will
+we recognize normal
+
+when we get there?
+
+The pandemic has
+sped up digitization
+
+in all aspects of our lives.
+
+It's changed how
+we visit a doctor,
+
+how our kids learn
+in school, and how
+
+we connect with one another.
+
+And it's made the future
+of work our present,
+
+giving us renewed opportunity
+to transform our organizations.
+
+From our work with
+customers, Thomas and I
+
+have learned there are three
+things that position us to be
+
+most helpful to businesses--
+
+first, our Cloud
+platform, it's designed
+
+to help enterprises transform
+through digitization,
+
+built on the deep
+investments we've
+
+made in technical infrastructure
+over the past 23 years.
+
+Looking at our networking and
+data center investments alone,
+
+we have the largest network with
+the lowest latency of any cloud
+
+provider.
+
+With our expansions into Warsaw,
+Delhi, Melbourne, and Toronto
+
+this year, we now have 28
+regions with plans for 10 more.
+
+And it's all connected
+by 19 sub-sea cables.
+
+Our Grace Hopper
+transatlantic cable
+
+will be the first to incorporate
+novel optical fiber switching.
+
+Second, our enterprise customers
+benefit from our consumer scale
+
+and innovation.
+
+We have a deep and
+broad consumer ecosystem
+
+of devices and services.
+
+YouTube connects
+a global community
+
+of viewers and creators.
+
+Android, Nest,
+Assistant, and Maps
+
+are loved by people
+around the world.
+
+We have the unique ability to
+connect consumer ecosystems
+
+with enterprise ecosystems.
+
+For example, the realistic
+voices and language
+
+understanding that
+powers Google Assistant
+
+can improve enterprise
+customer experiences
+
+and increase satisfaction.
+
+And the underlying
+visual technology
+
+that enables Google Lens to
+help people shop or learn
+
+about a new flower
+in their garden
+
+can help manufacturers
+identify defects.
+
+Third, we offer
+comprehensive security
+
+that helps organizations,
+including ours,
+
+protect what matters.
+
+Security is foundational
+to everything we do.
+
+We have a long
+history of building it
+
+into every layer of the
+computing environment.
+
+We are a pioneer of
+zero trust computing
+
+and have deep experience
+running this model at scale.
+
+On its own, any one
+of these pillars
+
+would be helpful to customers.
+
+Put together, they can
+be transformative, which
+
+is the mission of Google Cloud.
+
+We continue to drive innovation
+through our products.
+
+Over the past year, we have
+had more than 1,500 product
+
+and feature releases.
+
+That's about four a day.
+
+They're all designed
+to be helpful,
+
+from Smart Canvas and
+Google Workspace that
+
+makes collaboration
+richer, to new AI powered
+
+industry solutions and BigQuery
+Omni for data analytics
+
+across any cloud.
+
+We've also made significant
+partnership announcements.
+
+For example, we teamed up
+with global telecom leaders,
+
+such as Ericsson, Nokia, and
+T-Systems to deliver 5G edge
+
+and hosted computing solutions.
+
+What I'm most
+excited about is how
+
+our strengths in cloud,
+consumer, and security
+
+are helping top
+enterprises accelerate
+
+their transformation.
+
+Ford chose Google as their
+transformation partner
+
+because of our strength
+in consumer and cloud.
+
+Together, we are innovating in
+electrification, connectivity,
+
+and self-driving technologies.
+
+Ford is harnessing Google
+Maps to help drivers navigate,
+
+Google Assistant to help
+drivers concentrate,
+
+and Google Play to keep
+passengers learning
+
+and entertained.
+
+L'Oreal partnered
+across Google to build
+
+a virtual try-on experience.
+
+They are harnessing
+the best AI models,
+
+as well as using YouTube to
+build a community of fans,
+
+and Google Shopping to make
+it easy to discover and buy
+
+their products.
+
+We are humbled that so many
+organizations continue to put
+
+their trust in Google Cloud.
+
+And we are committed to
+helping you solve the biggest
+
+challenges you face.
+
+I'll be back a little later to
+talk more about how we do that.
+
+But first, I'll
+turn the stage over
+
+to Thomas Kurian,
+CEO of Google Cloud
+
+to talk more about our mission.
+
+THOMAS KURIAN:
+Thank you, Sundar.
+
+Hello, everyone.
+
+It's a pleasure to be here on
+Google's Silicon Valley campus
+
+today for the moment we've
+all looked forward to all year
+
+long, the opportunity
+to connect with you,
+
+our customers, partners,
+and developers,
+
+and to share all the
+amazing, exciting stuff we've
+
+been working on.
+
+A special thank you
+to all our sponsors,
+
+especially our luminary
+sponsors, Accenture, Atos,
+
+Maven Wave, and Deloitte.
+
+Let's first hear from
+some of our customers
+
+about the amazing
+ways in which they
+
+have accelerated transformation
+with Google Cloud.
+
+[VIDEO PLAYBACK]
+
+[MUSIC PLAYING]
+
+- The pandemic
+really did accelerate
+
+the digital wave of change by
+easily three to five years.
+
+- We transitioned
+to all virtual care.
+
+- We're better
+positioned to accelerate.
+
+- Fast forward to today,
+we have a truly profound,
+
+permanent structural
+transformation.
+
+- Now, our team can look
+at hundreds of calls
+
+in minutes instead of weeks.
+
+- Our business has
+really been transformed
+
+with the help of Google Cloud.
+
+We have spikes in demand.
+
+We can scale four times
+in less than five minutes.
+
+- Schrodinger is transforming
+the way scientists
+
+are developing drugs.
+
+Chemical space is
+almost infinite.
+
+We can do things we
+couldn't do before.
+
+- Can't I just
+track my shipment?
+
+We think that we can help solve
+that for the supply chain.
+
+- How can we help workers
+with artificial intelligence?
+
+- Suddenly, lots of
+ideas become interesting.
+
+- We're very excited to develop
+our artificial intelligence
+
+and machine learning.
+
+- Access to innovation,
+the speed of innovation.
+
+- Seconds, milliseconds
+all matter.
+
+- We're rethinking routine
+and pioneering simplicity.
+
+- The partnership
+with Google Cloud
+
+provides us with technology
+that will drive us to be better.
+
+
+
+[END PLAYBACK]
+
+Now, it's not a secret that
+many of the biggest and most
+
+innovative technology companies,
+leaders such as Spotify,
+
+Twitter, Shopify, MercadoLibre,
+ShareChat, Dapper Labs,
+
+and so many other exciting
+startups and tech leaders
+
+choose Google Cloud to help
+them build, scale, and innovate.
+
+Still, other customers
+are transforming
+
+using our purpose-built
+industry solutions.
+
+The Home Depot,
+for instance, used
+
+contact center AI to
+reduce customer resolution
+
+time by 91 million minutes.
+
+Procter & Gamble
+creates personalized
+
+omnichannel journeys from over
+275 million consumer records.
+
+IKEA Retail use
+recommendations AI
+
+to increase e-commerce
+click-through rates by 30%
+
+and increase order value by 2%.
+
+FIH, a Foxconn company,
+used visual inspection
+
+to identify defects 10
+times more accurately.
+
+Mr. Cooper, a leading
+mortgage services provider,
+
+used document AI to process
+mortgage documents 400% more
+
+efficiently.
+
+And Bank of New York Mellon
+developed a liquidity solution
+
+that predicts nearly 40% of
+securities settlement failures
+
+with 90% accuracy.
+
+We're helping many businesses
+drive durable innovation
+
+through long-term partnerships
+with Google's transformation
+
+cloud.
+
+Now, to help them transform,
+we focus on five key themes.
+
+One, are we the best at
+understanding and using
+
+data in the industry?
+
+Two, do we have the
+industry's leading technology
+
+infrastructure?
+
+Three, are we creating
+the best hybrid workplace
+
+for our passionate and
+talented employees?
+
+Four, do we know that our data,
+systems, and users are secure
+
+now and that they will
+be secure in the future?
+
+And five, are we
+working together
+
+to address the most
+important challenges facing
+
+our world today?
+
+We help organizations address
+these important questions.
+
+Let's Start.
+
+With the first question.
+
+Are we the best at understanding
+and using data in the industry?
+
+We help organizations
+unify their data
+
+across multiple
+clouds and silos,
+
+combining structured
+and unstructured data,
+
+and making data every
+employee's superpower.
+
+Using data analytics
+and AI together,
+
+Schrodinger accelerated
+clinical drug discovery by 60%,
+
+finding new
+breakthroughs faster.
+
+Like many states around
+the United States,
+
+the Wisconsin Department
+of Workforce Development
+
+confronted a wave of
+new unemployment claims.
+
+Using Google's data cloud, they
+clear over 750,000 unemployment
+
+claims, reducing claim times
+from weeks to just days
+
+and dispersing over $2 billion
+in unemployment benefits.
+
+Walmart is transforming
+the experience
+
+for the approximately
+220 million shoppers
+
+around the globe who visit
+a Walmart store, club,
+
+or e-commerce website each week.
+
+I'm honored today to welcome
+Suresh Kumar, executive vice
+
+president, Walmart's global
+chief technology officer,
+
+and chief development officer.
+
+SURESH KUMAR: Hi, Thomas.
+
+And hello, everyone.
+
+I'm excited to be
+here today to share
+
+about how we at Walmart
+are innovating on behalf
+
+of our customers, our
+associates, and the role
+
+that our partners like
+you, Google, have played
+
+in our innovation journey.
+
+Now, I came to Walmart at a
+time of incredible digital
+
+transformation and,
+jointly with my team,
+
+created a robust execution
+plan to accelerate
+
+the transformation
+across three areas--
+
+building great
+customer experiences,
+
+optimizing our business,
+and modernizing our platform
+
+and our infrastructure.
+
+Each of these three priorities
+are individually important.
+
+But when you bring them
+together at the scale
+
+of a business like Walmart,
+it has a massive impact.
+
+If you move with speed,
+you can completely
+
+transform global operations
+and disrupt entire industries.
+
+Some of our most data intensive,
+our critical decisioning
+
+processes are getting
+the BigQuery treatment.
+
+Through this, not only are we
+seeing significant savings that
+
+will continue as we migrate
+more and more data over,
+
+we are also seeing the
+ability to use the data
+
+in interesting ways, including
+enabling analytics at scale
+
+and turning data into
+actionable insights.
+
+From a data migration
+to BigQuery standpoint,
+
+97% of the tables used
+for data warehouse
+
+have already migrated
+to the cloud.
+
+And 30% of the big data have
+been migrated with plans
+
+to almost double that by
+the end of this fiscal year.
+
+And the cherry on the
+top is that BigQuery
+
+has allowed us to integrate
+with pretty much any data
+
+visualization tool and analytics
+tools that's out there,
+
+thereby improving our processing
+time by 23% and, of course,
+
+needless to say, a
+much better experience.
+
+Using BigQuery has had a
+direct impact on our business.
+
+An excellent example
+is our ability
+
+to close our financial
+books in three days instead
+
+of five days.
+
+And that's a pretty big deal.
+
+Leveraging our
+cloud has enabled us
+
+to unleash the potential of
+AI across our entire business.
+
+This goes from
+predicting demand,
+
+to managing in stock levels,
+to optimizing supply chain,
+
+to freeing up time
+for our associates
+
+to serve our customers.
+
+As one example,
+Express Delivery,
+
+which is our two
+hour delivery service
+
+which we launched
+last year, actively
+
+uses it behind the
+scenes as our customer
+
+is creating their order.
+
+Multiple algorithms
+work in unison
+
+to optimize the deliveries
+out and determine
+
+if the customer is eligible
+for Express Delivery.
+
+We are building our own
+AI and ML capabilities
+
+to power multiple
+areas of our business,
+
+including classification,
+natural language processing,
+
+forecasting, regression,
+computer vision, predictions,
+
+process automations,
+and a whole lot more.
+
+So to wrap up, I'm really
+excited about the opportunity
+
+Walmart has to drive
+innovation and to further
+
+disrupt the retail industry.
+
+I hope you'll agree
+that our work together
+
+is making a huge difference
+for our customers
+
+and our associates.
+
+Thank you for having me.
+
+THOMAS KURIAN:
+Thank you, Suresh.
+
+Tens of thousands of incredible
+organizations like Walmart
+
+choose Google's data
+cloud for four reasons.
+
+First, Google's data cloud is
+the most complete and unified
+
+data and AI platform to help you
+manage every stage of the data
+
+lifecycle.
+
+From running
+operational transactions
+
+to developing
+analytical applications,
+
+we help customers unify
+data lakes and warehouses
+
+as data lake houses,
+to reduce complexity,
+
+and to combine structured
+and unstructured data.
+
+Built-in data science and AI
+with support for MapReduce,
+
+Spark, and Presto enables
+continuous learning
+
+and experimentation.
+
+And we support
+real-time streaming
+
+that natively uses open source
+standards, like Beam and Flink.
+
+Google's data Cloud is also
+unmatched for speed, scale,
+
+security, and reliability.
+
+BigQuery, one of the most
+successful and beloved data
+
+warehouse solutions, with its
+unique serverless approach,
+
+during a typical week
+helps more than 3,000
+
+different organizations
+analyze more than 200 petabytes
+
+of data.
+
+And thousands of
+customers use Dataproc
+
+to run Spark in Hadoop
+clusters easily.
+
+Spanner, a fully managed
+relational database
+
+with unlimited scale and
+multi-zone and multi-region
+
+consistency, serves more than
+1 billion requests per second
+
+and provides a 5-9 SLA.
+
+Google data Cloud's
+Vertex AI offers
+
+the AI-pioneered at Google
+Research and Deepmind
+
+so that every data scientist
+and ML engineer can now
+
+build, deploy, and scale AI
+models faster and with 80% less
+
+code using AI the
+same way Google does.
+
+For instance, GE Appliances, an
+appliance manufacturing leader
+
+for more than a century, is
+using Google Cloud including
+
+AI The Edge to build
+innovative digital products
+
+with over-the-air updates.
+
+Finally, Google's data cloud
+is more open standards-based.
+
+You can choose from Postgres,
+MySQL, Redis, MongoDB,
+
+or migrate from
+Oracle or SQL server.
+
+And we have strategic
+partners with leading
+
+data-driven applications.
+
+For instance, C3 AI has
+made its entire lineup
+
+of AI-based applications
+available on Google Cloud.
+
+Our customers can analyze,
+govern, and visualize data
+
+from many databases and
+storage systems on Google
+
+or other clouds, including
+all of Google's databases,
+
+Google Sheets,
+and BigQuery using
+
+Looker, our premier BI and
+embedded analytics solution.
+
+Today, we're
+thrilled and excited
+
+to announce that we'll
+be integrating Tableau,
+
+a leader in data
+visualization, with Looker,
+
+Google Sheets, and BigQuery.
+
+Tableau customers will
+soon be able to use
+
+Looker's semantic model,
+enabling new levels of data
+
+governance and access to data.
+
+Let's take a look at this.
+
+Alex, over to you.
+
+
+
+ALEKSANDRA ALEKSIC:
+Thank you, Thomas.
+
+In this demo, we're going to
+show you how you can seamlessly
+
+use Looker and Tableau
+together to answer
+
+your critical
+business questions.
+
+Let's say I work at
+an e-commerce company.
+
+And our Looker model
+provides a consistent view
+
+across the organization for
+our most important business
+
+metrics.
+
+Here, for example, you
+can see the definition
+
+for gross margin.
+
+Our Looker dashboard is based
+on that same semantic model.
+
+Since it provides trusted
+insights at a glance,
+
+I can immediately see
+that sales are up.
+
+However, did I miss anything?
+
+Let's find out.
+
+Say I'm more comfortable
+working in spreadsheets.
+
+I can now take advantage of the
+new integration between Looker
+
+and Google Sheets.
+
+With a couple of clicks, I
+have access to my governed
+
+and trusted Looker
+data in Sheets.
+
+And I can easily connect
+to my data models.
+
+To understand which factors
+are impacting sales,
+
+I'll drag and drop fields from
+my model into a pivot table
+
+to break out sales by
+category over time.
+
+Since it's pulling
+from Looker, I
+
+can trust that all the data
+definitions are consistent.
+
+I can use familiar Sheets
+formulas and formatting
+
+to get insights faster
+and understand how
+
+specific products are selling.
+
+We see a notable
+downward trend month
+
+over month for activewear.
+
+I want to share these findings
+with my marketing team, who's
+
+using Tableau.
+
+Now, I can use the new
+Tableau and Looker integration
+
+to combine data from my Looker
+data model with marketing data
+
+to build a more comprehensive
+view of my business.
+
+Next, I'm going to
+plot sales by category
+
+and then add marketing
+spend to the view.
+
+Tableau makes it easy for me
+to drill down on relevant data.
+
+Now, I can see that
+social marketing
+
+spend was significantly
+lower for activewear.
+
+And this is why there's a
+downward trend in activewear
+
+sales.
+
+I'm going to publish this
+result on Tableau Online
+
+and tag my marketing team,
+so they can take action.
+
+Leveraging integrations between
+Tableau, Sheets, and Looker
+
+allows our teams to build
+powerful visualizations
+
+using trusted data.
+
+We can then share
+these visualizations
+
+throughout our organization
+to drive informed decisions,
+
+action, and impact.
+
+Back over to you, Thomas.
+
+
+
+THOMAS KURIAN: Thank you, Alex.
+
+The second question
+customers ask--
+
+do we have industry-leading
+technology infrastructure?
+
+We're experiencing
+great momentum
+
+with our open
+infrastructure cloud.
+
+Many of the most demanding
+and technically advanced
+
+customers in the world
+disproportionately choose us.
+
+Take, for example, leading
+media companies and streaming
+
+services, such as
+Univision and Global,
+
+the largest media
+group in Latin America.
+
+They use our high performance
+networking, computing,
+
+and storage to broadcast
+media, including
+
+live events, such as the
+recent Tokyo Olympics.
+
+Leading telecommunications
+companies
+
+are also choosing Google Cloud.
+
+Reliance Jio, the world's
+second largest mobile carrier,
+
+is automating its 5G network.
+
+Vodafone is processing
+over a billion network
+
+events each day.
+
+AT&T is delivering new
+multi-access edge computing
+
+solutions.
+
+And Tellus is migrating critical
+IT and network workloads
+
+all to Google Cloud.
+
+Leading data
+management companies,
+
+including Databricks, Redis,
+Cockroach Labs, Couchbase,
+
+Elastic, InfluxData, MariaDB,
+MongoDB, Neo4j, and SingleStore
+
+are all growing faster on Google
+Cloud than on any other cloud.
+
+And they love our
+storage scalability
+
+and advanced infrastructure.
+
+MongoDB, for instance,
+has more net new customers
+
+via Google Cloud Marketplace
+than on any other cloud.
+
+Leading cybersecurity companies,
+such as Palo Alto Networks,
+
+[INAUDIBLE] Splunk,
+Broadcom, and ForgeRock
+
+are also choosing Google
+Cloud for its performance,
+
+global scale, and
+underlying security.
+
+Customers are migrating and
+transforming SAP and VMware
+
+workloads to Google Cloud.
+
+In just the last year, we've
+added three times the number
+
+of SAP customers
+as the prior year.
+
+And we're accelerating.
+
+PayPal, for instance, has
+an SAP HANA scale-out system
+
+supporting 40 million
+business transactions daily,
+
+200 billion records
+touched in just 30 seconds.
+
+Mitel in Canada migrated over
+1,000 VMware virtual machines
+
+in less than 90 days to
+Google Cloud VMware Engine.
+
+Nylas, an API platform company,
+chose our Tau virtual machines
+
+along with Google
+Kubernetes Engine,
+
+as they saw over 40%
+better price performance
+
+than in a competitor.
+
+Customers choose our
+open cloud Infrastructure
+
+for three main reasons.
+
+First, we make your path
+to migrate and modernize
+
+using cloud easy with
+migration tools, new serverless
+
+and container capabilities,
+and managed services
+
+as your developers
+spend more time building
+
+experiences that
+your customers love.
+
+Second, we offer
+transformative capabilities
+
+with cutting edge
+performance and security.
+
+And our network
+offers three times
+
+the throughput of
+other cloud providers.
+
+Third, we remain, and were,
+the very first and only cloud
+
+provider with a clear
+multi-cloud strategy.
+
+We provide you with a
+consistent developer experience
+
+built in open source to write
+once and deploy anywhere.
+
+Many customers, like Plaid,
+a financial services leader,
+
+use Anthos to deploy, operate,
+and manage applications
+
+across multiple clouds.
+
+Recently, we introduced
+Anthos for virtual machines,
+
+standardizing the
+way that you manage
+
+applications across both
+virtual machines and containers.
+
+For multi-cloud
+data, BigQuery Omni
+
+lets customers analyze data
+across Google Cloud, AWS,
+
+and Azure.
+
+With it, Johnson &
+Johnson, for instance,
+
+was able to combine data
+in Google Cloud and AWS-3
+
+using BigQuery Omni without
+needing to migrate data.
+
+Customers also want
+to expand where
+
+they use Google Cloud, whether
+in their private data centers
+
+or out on the edge.
+
+For instance, some workloads
+cannot move to the public cloud
+
+entirely due to the need for
+large amounts of local data
+
+processing, extremely low
+latency, or strict regulations.
+
+To solve these challenges,
+we're announcing today
+
+Google Distributed Cloud,
+a portfolio of hardware
+
+and software solutions that
+extend our infrastructure
+
+to the edge and even into
+your own data center.
+
+To tell you more about
+it, please welcome Ines
+
+from our Google Cloud
+Distributed cloud team.
+
+INES ENVI: Thank you, Thomas.
+
+Google Distributed
+Cloud is a set
+
+of fully managed services
+running on Google's managed
+
+hardware.
+
+Based on open APIs
+and built on Anthos,
+
+it gives customers greater
+deployment flexibility
+
+and ensures more
+consistent operations
+
+across hybrid and multi-cloud
+environments, more
+
+than any other Cloud provider.
+
+There are four
+deployment scenarios,
+
+depending on your
+specific needs.
+
+Google's network edge,
+this allows customers
+
+to leverage over
+140 network edge
+
+locations around the world.
+
+Operator edge, this
+scenario is designed
+
+to accommodate emerging
+services and applications
+
+with stringent latency and
+reliability requirements
+
+for a specific operator.
+
+Customer edge, this scenario
+supports customer-owned edge
+
+locations, such as retail
+stores, factory floors,
+
+or branch offices, which
+require localized compute
+
+and processes.
+
+And finally, customer
+data centers--
+
+this deployment option is
+specific to customer-owned data
+
+centers and call facilities.
+
+Google Distributed Cloud
+also includes a hosted mode
+
+to run sensitive
+workloads and address
+
+data sovereignty, security,
+and privacy requirements.
+
+It does not require connectivity
+to Google Cloud at any time
+
+to manage infrastructure,
+services, APIs, or tooling.
+
+You have the choice
+to manage it yourself
+
+or host through a
+designated trusted partner.
+
+Back to you, Thomas.
+
+
+
+THOMAS KURIAN: Thank you, Ines.
+
+Partners like HPE,
+Dell, Cisco, and NetApp
+
+are key as we deploy Google
+Distributed Cloud globally
+
+on best in class hardware.
+
+I'm pleased to announce the
+expansion of our partnership
+
+with Network Appliance
+in two important ways.
+
+First, NetApp is
+our primary partner
+
+supporting Google's Distributed
+Cloud storage infrastructure.
+
+Second, for customers using
+Google Cloud VMware Engine,
+
+they now have preview access
+for NetApp Cloud Volumes.
+
+We are the only hyperscale
+to provide customers
+
+with this choice.
+
+Deep partnerships with
+T-Systems systems and Telus
+
+have also enabled us to address
+the evolving sovereignty
+
+requirements for cloud
+technology in Germany
+
+and France.
+
+The next question we hear is,
+how can we provide the best
+
+environment to help
+employees create and innovate
+
+together, especially
+in a hybrid workplace?
+
+Hybrid is redefining
+how we all work,
+
+making it less
+about where we work,
+
+but more about the
+quality of our experience.
+
+Studies estimate that
+more than 48% of employees
+
+will work remotely post-COVID.
+
+Google Workspace is
+the best platform
+
+for hybrid work with simple,
+powerful, and secure tools
+
+to help people communicate and
+collaborate with one another,
+
+no matter where they are.
+
+We introduced Smart Canvas to
+help content creators remove
+
+friction from
+workflows and enable
+
+teams to stay connected
+outside of meetings,
+
+to foster well-being, and
+reduce video call fatigue.
+
+We made communication
+and collaboration
+
+completely seamless.
+
+For instance, users can
+easily present and collaborate
+
+in meetings, create meeting
+notes from their calendar,
+
+present in Meet directly
+from Docs, Sheets, or Slides,
+
+and collaborate directly
+from Chat and Spaces.
+
+We optimized collaboration
+from all mobile devices
+
+to provide great experiences for
+frontline workers who make up
+
+80% of the global workforce.
+
+One of America's largest
+hospital systems,
+
+CommonSpirit Health, is
+advancing its mission
+
+during the pandemic by
+making its frontline doctors
+
+and nurses productive
+at Google Workspace.
+
+Since hybrid work has
+removed the notion
+
+of a physical location
+for work, Google Workspace
+
+created spaces, a unified
+digital location for work.
+
+Today, more than 3 billion users
+move security and seamlessly
+
+between Mail, Chat, Audio,
+Video, and now Spaces.
+
+And you too can choose among
+the over 5,300 public apps
+
+in our marketplace.
+
+And you can also add
+thousands of private apps
+
+to enhance your workspace.
+
+And I want to step
+aside for just a minute
+
+and tell you about a hidden
+secret in our portfolio
+
+of products, AppSheet,
+our notebook platform that
+
+makes it easy for everyone, not
+just professional developers,
+
+to build amazing
+apps and workflows.
+
+For instance, property managers
+at [INAUDIBLE] Properties
+
+used AppSheet to
+build a mobile app,
+
+to log, track, and resolve
+problems with headquarters,
+
+replacing a multi-step
+manual process.
+
+We're also partnering
+with Citrix
+
+because employees sometimes
+need access to Windows,
+
+and Mac OS applications,
+and desktops directly
+
+served from the Cloud.
+
+We're expanding our
+partnership with Citrix
+
+today to deliver an integrated
+desktop as a service solution
+
+purpose-built on Google Cloud.
+
+Now, customers ask us, do we
+know that our data, systems,
+
+and users are secure?
+
+And how do we keep them
+secure in the future?
+
+As more digital users access
+more data from more locations,
+
+the risk of cybersecurity
+breaches is accelerating.
+
+By pioneering new
+approaches to security,
+
+Google keeps more
+people safe online
+
+than anyone else in the world.
+
+Take, for instance, JetBlue.
+
+It's keeping its system
+secure, protecting
+
+the data of all its travelers,
+and modernizing its security
+
+operations using Chronicle
+to detect threats
+
+across petabytes of
+security telemetry,
+
+eliminating data blind spots.
+
+Commerzbank, one of
+Germany's largest banks,
+
+is using a new certificate
+authority service
+
+to verify machine and
+workload identity,
+
+improving security, simplifying
+operations, eliminating
+
+entire classes of threats.
+
+Secure by default
+drives customers
+
+to choose Google Cloud.
+
+First, we've
+implemented zero trust
+
+at the core of our services
+and our operations,
+
+enabling you to trust nothing.
+
+Second, we've built cloud scale
+threat detection and response,
+
+allowing you to
+detect everything.
+
+And third, we know it's
+not just about tools.
+
+We provide the
+advisory services you
+
+need to transform
+security operations.
+
+We keep customers safe with
+BeyondCorp Enterprise, which
+
+enables zero trust
+access for all users.
+
+Today, we're
+expanding BeyondCorp
+
+to all your applications--
+modern and legacy, web
+
+and desktop, and even to
+production environments.
+
+We keep customers safe by
+eliminating software supply
+
+chain vulnerabilities.
+
+Over the past two decades,
+we've pioneered an approach
+
+to secure our own
+software supply chain.
+
+We are now making
+that technology
+
+available through the
+SLSA Open Source Framework
+
+and as managed
+services in our Cloud
+
+to help you secure your
+own software supply chain.
+
+We keep customers safe by
+integrating Chronicle's threat
+
+detection capability with
+our Security Command Center,
+
+allowing you to respond
+faster to potential risks.
+
+And we keep customers safe by
+bringing our security expertise
+
+to you with our Google
+Cybersecurity Action Team,
+
+a team of our leading
+security experts
+
+who can help shape your
+security transformation
+
+from your very
+first implementation
+
+through responding
+to a major incident
+
+and engineering new
+solutions as needs change.
+
+Finally, we continue to
+expand our security ecosystem
+
+with companies like Fortinet,
+Palo Alto Networks, [INAUDIBLE]
+
+and so many more.
+
+Today, I'd like to
+welcome your new security
+
+partner, Cybereason, with
+whom we are collaborating
+
+to deliver a new, extended
+detection and response
+
+offering that will
+combine Chronicle's
+
+capability with
+Cybereason's MalOps Engine
+
+for faster, easier threat
+detection and response.
+
+Our products, our new
+Cybersecurity Action Team,
+
+and our partnerships
+all make the world safer
+
+from cyber threats.
+
+To talk more about how we help
+keep each and every one of you
+
+secure and how we're
+addressing some
+
+of the most important
+challenges facing our world,
+
+I'd like to invite Sundar back.
+
+Thank you.
+
+SUNDAR PICHAI:
+Thank you, Thomas.
+
+Security is top of mind for
+businesses of all sizes,
+
+as well as the public sector.
+
+And despite the progress that
+has been made in cybersecurity,
+
+large scale breaches
+continue to make headlines.
+
+That's why, in August,
+Google announced
+
+we will invest $10 billion
+over the next five years
+
+to strengthen cybersecurity.
+
+That includes expanding
+zero trust programs,
+
+helping secure the
+software supply chain,
+
+and enhancing open
+source security.
+
+A new challenge is
+keeping collaboration
+
+secure and private, as we move
+to hybrid work environments.
+
+To help, we are introducing
+a new Work Safer program.
+
+It provides the highest level
+of security for your email,
+
+meetings, messaging, and
+more, and brings together
+
+Google Workspace with Titan
+Security Keys, BeyondCorp,
+
+and other secure technologies,
+products, and partners.
+
+Now, every kind of
+organization in business
+
+can access the same
+security protections
+
+that make work safer at Google.
+
+Security is an issue
+that affects us all.
+
+And this brings us to the
+last question Thomas posed.
+
+Are we addressing the
+most important challenges
+
+facing our world?
+
+Climate change is one of
+the most profound challenges
+
+we face.
+
+It'll take all of us working
+together to solve it.
+
+Sustainability has been
+a core value for us
+
+for more than two decades.
+
+Google has been carbon
+neutral since 2007.
+
+And we've matched our operations
+with 100% renewable energy
+
+over four consecutive years.
+
+Last year, we set out to make
+our third decade of climate
+
+action our biggest yet.
+
+That included a bold
+commitment to operate
+
+on 24/7 carbon free energy
+across our offices and data
+
+centers by 2030.
+
+And last week, we
+announced new ways
+
+we are helping 1 billion people
+make more sustainable choices.
+
+When it comes to
+enterprises, one
+
+of the most important
+sustainability choices
+
+is where to run your technology.
+
+IDC predicts cloud migrations
+over the next four years
+
+could reduce carbon emissions
+by over 1 billion metric tons
+
+or the equivalent of
+removing 200 million cars
+
+off the road for a year.
+
+We are proud that Google
+Cloud is the cleanest cloud
+
+in the industry.
+
+Earlier this year, we
+introduced a way for customers
+
+to choose the cleanest regions
+to run their workloads.
+
+Today, we are
+expanding our portfolio
+
+of solutions and partnerships
+to help reduce your carbon
+
+footprint.
+
+First, we have focused on
+giving you greater transparency
+
+around carbon emissions data.
+
+We are announcing Carbon
+Footprint, a new service
+
+to measure, track, and
+report the gross carbon
+
+emissions associated with
+your Google Cloud usage.
+
+Having this data at your
+fingertips is really important.
+
+And we know that many customers
+track sustainability data
+
+in other places.
+
+That's why I'm happy to announce
+that Google Cloud Emission
+
+Data will integrate directly
+into Salesforce Sustainability
+
+Cloud.
+
+We also want to give you the
+tools to act on the data.
+
+So today, we are
+introducing a new tool
+
+that will alert you when
+you have idle workloads
+
+and make recommendations
+to reduce carbon emissions.
+
+It's all part of
+our goal to help
+
+make your Cloud transformation
+secure and sustainable
+
+and solve for what's next.
+
+So on behalf of
+Thomas and myself,
+
+let me thank you once
+again for trusting
+
+us to be a partner with
+you on this journey.
+
+And we hope you enjoy
+the next three days.
+
+Thank you.
+
+[MUSIC PLAYING]
+
+
+

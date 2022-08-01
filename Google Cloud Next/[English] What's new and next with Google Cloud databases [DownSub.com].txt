@@ -1,0 +1,1217 @@
+
+
+ANDI GUTMANS: Hi, everyone.
+
+I'm Andi Gutmans,
+general manager
+
+and VP of engineering for
+databases at Google Cloud.
+
+Thank you for joining us
+for Google Cloud Next.
+
+We have some exciting product
+announcements to share with you
+
+in this session.
+
+Digital innovators
+are disrupting
+
+traditional industries in new
+ways because of their ability
+
+to use data and software to
+deliver new digital customer
+
+experiences.
+
+Customers expect personalized
+and seamless experiences
+
+across their devices, in all
+places, and at all times.
+
+To deliver these next-generation
+digital experiences,
+
+developers need to be
+empowered to build apps faster
+
+by leveraging fully
+managed databases,
+
+use their existing
+skills and investments,
+
+and build their apps for
+success with databases that
+
+were designed to power the
+most demanding workloads
+
+in the world.
+
+We offer best-in-class databases
+for always-on applications,
+
+with global reach
+and unlimited scale.
+
+Google Cloud is committed to
+open source and open standards.
+
+We offer managed
+services that are
+
+fully compatible with the most
+popular open-source engines,
+
+such as MySQL,
+Postgres, and Redis.
+
+We manage the complexity
+of running your database
+
+so that they are simple to
+use and operate, and make
+
+app development faster
+and easier for you.
+
+Leading organizations in
+all regions and industries
+
+have placed their
+trust in our databases.
+
+And our databases remain
+one of the fastest growing
+
+segments of Google Cloud.
+
+In the newly
+published Gartner 2021
+
+"Scorecard" for operational
+databases, Google Cloud
+
+received an overall
+score of 90 out of 100,
+
+which is higher than the score
+of the largest alternative
+
+cloud provider.
+
+Google Cloud met 100% of the
+required criteria outlined
+
+by Gartner.
+
+Also, Gartner predicts
+that 75% of databases
+
+will be deployed or migrated to
+a cloud platform by next year.
+
+Imagine 40 years
+of databases placed
+
+on-premises being superseded
+by cloud databases
+
+in such a short duration.
+
+It's amazing.
+
+Our customers'
+journey to undergo
+
+data-driven transformation
+typically involves three steps.
+
+The first step,
+migrate, is there
+
+to help customers move
+existing applications
+
+and databases to the cloud,
+frequently on a tight timeline.
+
+Customers need a
+fast-track approach
+
+to lift and shift what they're
+running today to the cloud.
+
+This as-is migration already
+adds tremendous value,
+
+even if it doesn't
+provide the full benefits
+
+of cloud-native capabilities.
+
+Once migrated, many
+of our customers
+
+seek to modernize their
+database environments
+
+by transitioning off
+expensive legacy databases
+
+and onto open-source databases.
+
+For customers looking to build
+next-gen applications entirely
+
+in the cloud, they're
+in the transform phase.
+
+This is about unlocking
+new possibilities
+
+in competitive differentiation.
+
+It's about delivering new
+transformational customer
+
+experiences and innovative
+business models.
+
+For your existing databases
+that you need to easily migrate
+
+to a fully-managed
+cloud service,
+
+we offer Cloud SQL, with
+full compatibility for MySQL,
+
+Postgres, and SQL Server.
+
+It is one of the fastest growing
+large services in Google Cloud.
+
+Cloud SQL offers
+easy integration
+
+with existing apps and
+Google Cloud Services,
+
+like Google Kubernetes
+Engine and BigQuery.
+
+More than 650,000 GKE pods
+securely connect to Cloud SQL.
+
+And BigQuery users
+query over 125 petabytes
+
+of data in Cloud SQL
+on average in a month,
+
+using our federated
+querying capabilities.
+
+We've invested heavily
+in improving Cloud SQL
+
+and making it enterprise-ready
+for your demanding workloads.
+
+In the past 12 months, we
+have introduced capabilities,
+
+such as cross-region replicas,
+point-in-time recovery,
+
+customer-managed encryption
+keys, VPC Service Controls,
+
+and IAM support.
+
+We have significantly improved
+the maintenance experience
+
+for customers and given
+them maintenance controls.
+
+Cloud SQL maintenance
+is, on average,
+
+80% shorter than it
+was 12 months ago.
+
+And maintenance for
+My SQL and Postgres
+
+is now shorter than that
+of competing offerings
+
+from other cloud
+providers, based
+
+on figures published in
+online documentation as
+
+of August 2021.
+
+Earlier this year, we launched
+industry-leading observability
+
+with Cloud SQL
+Insights for Postgres.
+
+It empowers developers to
+address database performance
+
+issues themselves at
+no additional cost.
+
+This has become one
+of the fastest adopted
+
+new capabilities in Cloud
+SQL, and we look forward
+
+to delivering
+equivalent functionality
+
+across more database engines.
+
+In addition, we recently
+introduced Cloud SQL Cost
+
+Recommenders with Active
+Assist that empowers developers
+
+to better manage costs.
+
+We have made migrations to
+Cloud SQL easier and faster
+
+with the Database
+Migration Service.
+
+This offers a simple experience
+with minimal downtime
+
+for reliable and predictable
+migrations to Cloud SQL.
+
+It is serverless,
+secure, and offered
+
+at no additional charge.
+
+More than 85% of all migrations
+are underway in under an hour,
+
+and a majority of customers
+are migrating databases
+
+from other clouds.
+
+Database Migration
+Service currently
+
+supports MySQL and
+Postgres databases,
+
+with support for SQL Server
+migrations coming soon.
+
+For customers bringing Oracle
+workloads to Google Cloud,
+
+we offer our bare metal
+solution for Oracle
+
+that allows you to run Oracle
+databases the same way you
+
+do it on-premises,
+but cost-effectively
+
+and with less than 2
+milliseconds latency
+
+to all of your GCP services.
+
+Bare metal solution
+enables you to continue
+
+using your existing Oracle
+technologies, such as RAC,
+
+Data Guard, and RMAN.
+
+For workloads that require
+microsecond latency,
+
+we offer Memorystore.
+
+Memorystore is fully compatible
+with Redis and Memcached,
+
+and offers an easy migration
+destination for your Redis
+
+and Memcached workloads.
+
+Memorystore is a scalable,
+secure, highly available
+
+in-memory service that is used
+by 90% of the top 100 Cloud
+
+customers.
+
+We recently announced a
+preview of Datastream,
+
+a serverless change data
+capture and replication service.
+
+With Datastream, you can
+easily and seamlessly
+
+deliver change data streams from
+your Oracle and MySQL databases
+
+into Google Cloud Services, such
+as BigQuery, Cloud SQL, Google
+
+Cloud Storage, and Spanner.
+
+The serverless
+architecture of Datastream
+
+transparently scales up
+or down, as data volumes
+
+shift in real time.
+
+Now let's discuss our
+transformative databases
+
+and how they can help you
+transform your business
+
+models and the digital
+experiences for your users.
+
+Today, your business-critical
+applications
+
+may need to serve millions
+of users across the globe
+
+and process data volumes that
+are an order of magnitude
+
+higher than just
+a few years ago.
+
+New, always-on business models
+require these applications
+
+to be reliable, secure,
+and continuously available.
+
+Your applications need to
+scale seamlessly and sustain
+
+high performance, even during
+unexpected spikes in demand.
+
+We give you access to the same
+databases that power the most
+
+demanding Google applications,
+like Search, YouTube, Gmail,
+
+Maps, and Payments.
+
+Google had to invent
+these databases
+
+because traditional
+databases were not
+
+designed to handle
+these demands for scale,
+
+availability, and performance.
+
+We offer not one, but three
+such transformative databases--
+
+Spanner, Bigtable,
+and Firestore.
+
+All three of them
+have a common set
+
+of highly differentiated
+core attributes,
+
+like industry-leading
+five 9s availability
+
+SLAs, no maintenance
+downtime, unlimited scale,
+
+automatic sharding,
+zero-touch global replication,
+
+automatic failover,
+superior price-performance,
+
+and enhanced security
+and compliance.
+
+Spanner is our fully
+managed relational database
+
+that offers the
+familiarity and developer
+
+experience of a
+relational database
+
+and the scalability
+of a NoSQL database.
+
+Spanner enables unlimited
+scale, so you can easily
+
+accommodate future growth
+without painful architecting,
+
+adjust your capacity on-the-fly,
+and pay for only what you use.
+
+It allows you to deliver
+high-performance transactions
+
+with strong consistency
+across regions and continents,
+
+so you can simplify
+operations and place data
+
+close to your users.
+
+Our enterprise customers in
+financial services, gaming,
+
+retail, technology, and
+many other industries
+
+run some of their most
+demanding operational workloads
+
+on Spanner.
+
+With Spanner, you
+can spend less time
+
+worrying about how to
+scale your database
+
+and instead focus on
+scaling your business.
+
+As wonderful and
+unique as Spanner is,
+
+it wasn't the most accessible
+database for developers.
+
+We wanted developers to be able
+to start small with Spanner
+
+so they could design their
+applications for success
+
+from the get-go.
+
+To this end, we
+recently introduced
+
+more granular instance
+sizing for Spanner
+
+to democratize access to it.
+
+With more granular
+instance sizing,
+
+you can start at 1/10 the
+cost of regular instances,
+
+equating to approximately
+$65 per month.
+
+This means you can
+start small and easily
+
+scale your Spanner instance
+as your workload grows,
+
+with no downtime.
+
+Developers love the scale
+and availability of Spanner,
+
+but they wanted to take
+advantage of Spanner
+
+using their familiar open tools
+and their existing skill set.
+
+Therefore, to continue this
+theme of democratizing access
+
+to Spanner, we're
+excited to announce
+
+the preview of a Postgres
+interface for Spanner,
+
+starting today.
+
+This empowers developers
+to take advantage
+
+of Google's transformative
+relational database
+
+using standard tools and skills
+from the popular Postgres
+
+ecosystem.
+
+This interface combines
+the power and reliability
+
+of Spanner with the familiarity
+and portability of Postgres
+
+to enhance flexibility.
+
+By providing a
+Postgres interface,
+
+we're democratizing access
+to Spanner for millions
+
+of developers and ISVs.
+
+Starting today, you can
+create Spanner databases that
+
+use PostgreSQL
+dialect and connect
+
+with its OpenWire protocol.
+
+This interface supports
+Spanner's rich feature
+
+set using most popular Postgres
+data types and SQL features.
+
+Postgres interface
+for Spanner is
+
+available at no
+additional charge.
+
+What this means is that for
+your Postgres workloads,
+
+we offer you not one, but
+two fully managed services.
+
+For maximum compatibility
+with open-source Postgres
+
+and for the easiest
+lift-and-shift migrations,
+
+you have Cloud SQL for Postgres.
+
+For your most
+demanding workloads
+
+where you need unlimited scale
+and five 9s availability SLAs,
+
+we offer Spanner with its
+new Postgres interface
+
+that allows you to leverage
+your skills and investments
+
+in the Postgres ecosystem.
+
+We're super excited about
+our rich Postgres offerings.
+
+Now for apps that require
+consistent single-digit
+
+millisecond latencies and need
+to support millions of requests
+
+per second, we offer Bigtable.
+
+Bigtable is our fully
+managed NoSQL database
+
+for large operational
+and analytical workloads.
+
+And it's HBase-compatible.
+
+Bigtable is uniquely capable
+at powering use cases
+
+like personalization at
+scale and fraud detection.
+
+We're excited to share that
+autoscaling is coming soon
+
+to Bigtable.
+
+This will allow Bigtable to
+automatically add or remove
+
+capacity in response to changing
+demands of your workloads,
+
+so you'll only pay for
+the capacity you need.
+
+We talked about the
+importance of the velocity
+
+of your application iteration.
+
+For rapid app
+development, we offer
+
+Firestore, our fully
+managed scalable
+
+serverless document database.
+
+Firestore is beloved
+by developers because
+
+of its ability to serve
+both as a document database
+
+and a backend as a service.
+
+Firestore enables
+offline support
+
+with real-time synchronization.
+
+An example of how
+much developers
+
+love Firestore is
+that Firestore has
+
+more than 250,000 monthly
+active developers and Firestore
+
+apps power more than 750
+million monthly active users
+
+using Firebase authentication.
+
+Not only is Firestore
+extremely developer-friendly,
+
+but we're also focusing
+on making Firestore
+
+more enterprise-friendly.
+
+We're introducing a
+number of enhancements
+
+to Firestore for greater
+enterprise readiness.
+
+With that, I'd like to introduce
+one of our most innovative
+
+customers who has
+successfully accomplished
+
+a data-driven cloud
+transformation.
+
+It is my pleasure to invite
+Kumar Menon, SVP of data fabric
+
+and decision science
+technology at Equifax.
+
+Kumar, thank you for
+joining us today.
+
+We would love to hear
+about Equifax's innovation
+
+that you and your team have been
+driving in partnership with us.
+
+KUMAR MENON: Thank you, Andi.
+
+I wanted to start off by giving
+you some background on Equifax
+
+and the transformation
+we are under.
+
+Equifax is a leading data
+analytics and technology
+
+company and is one of the three
+biggest credit rating agencies.
+
+We are present in 24
+countries worldwide.
+
+In 2018, we embarked on
+a massive company-wide
+
+transformation to
+modernize our technology.
+
+This was a result of an
+unfortunate breach incident
+
+in 2017, which brought
+the global spotlight
+
+onto our company.
+
+Due to the oversight that
+was placed on us and the need
+
+for us to ensure we are good
+custodians of the high-fidelity
+
+data we have, we realized
+that patching and modifying
+
+our legacy systems would not
+be a sustainable solution.
+
+We made the bold decision to
+adopt a cloud-first strategy
+
+and rewrite all of
+our data platforms
+
+and associated
+applications, leveraging
+
+cloud-native architecture.
+
+Our legacy systems
+were operating
+
+in silos, which made it
+difficult to effectively
+
+innovate and monetize
+our differentiated data
+
+assets through new
+multi-data products.
+
+So we also took this
+as an opportunity
+
+to reorganize our data under a
+common enterprise domain model,
+
+onto a single
+global data fabric,
+
+with the security and
+automated governance baked
+
+into the architecture.
+
+The goal was to make it easier
+for our data and analytics
+
+and product teams to
+innovate and deliver
+
+new products
+faster, thus helping
+
+our customers and consumers
+make better decisions.
+
+
+
+Here's what our end-to-end
+data flow looks like.
+
+The data fabric is at the heart
+of the Equifax value chain.
+
+If you look at this
+illustration from left to right,
+
+the data fabric helps us ingest
+different domains of data
+
+we bring into our ecosystem
+in a consistent, reliable,
+
+highly-performant, governed,
+compliant, and secure manner,
+
+so that our product, data and
+analytics, and business teams
+
+can leverage the synergies
+of all the data assets
+
+to innovate and deliver products
+that our customers need.
+
+In short, we want global
+data at our fingertips.
+
+Equifax Cloud will enable our
+product innovation, growth,
+
+and competitiveness.
+
+The data fabric platform is
+pivotal to the Equifax business
+
+model going forward.
+
+Why is the Equifax data
+fabric a gamechanger?
+
+Let me give you a few examples.
+
+Equifax has moved from
+80-plus data silos,
+
+enabling multiple
+sources of data
+
+to be standardized and organized
+into a seamless data fabric
+
+with logical separation
+in governing groups.
+
+The structure drastically
+simplifies our architecture
+
+and gives Equifax the
+ability to act quickly
+
+to address customer,
+regulatory, and security needs.
+
+We will achieve bolt-on
+mergers and acquisitions
+
+with better and faster
+integrations than ever before,
+
+accelerating our
+growth tremendously.
+
+Now let's look at a more
+technical view of the data
+
+fabric and see how we have
+leveraged GCP-managed database
+
+services to deliver our
+analytics and operational
+
+workloads.
+
+Let me break those down
+for you from top to bottom.
+
+The data fabric
+services shown here
+
+help curate the
+raw data we collect
+
+across the various domains, such
+as credit, employment, wealth,
+
+utilities, et cetera,
+to name a few.
+
+We then key and
+link the data, which
+
+is a form of entity
+resolution process
+
+that helps us identify a single
+unique instance of an entity--
+
+for example, a unique
+consumer identity--
+
+across all the domains
+of data we collect.
+
+This data is then made
+available for predictive models
+
+and real-time decisioning as a
+set of purpose-specific views
+
+with the regulatory
+rules applied,
+
+thus ensuring permissible use.
+
+
+
+This low-latency,
+high-value ecosystem
+
+leverages Cloud BigTable
+as the core Datastore
+
+and the pipelines are
+built in Cloud Dataflow.
+
+The Cloud BigTable
+scalable architecture
+
+and its support for
+customer-managed encryption
+
+keys help us provide a
+resilient, reliable, and secure
+
+data platform to support highly
+stringent millisecond SLAs
+
+that our customers
+demand from us.
+
+The data fabric
+is tightly coupled
+
+with our Ignite and our
+analytics services, which
+
+is used by our data scientists
+for feature engineering
+
+and building predictive
+models, which
+
+can be deployed into
+our decisioning systems,
+
+facilitating a full
+ML ops ecosystem.
+
+The data lake that powers
+Ignite is built on BigQuery.
+
+Our enterprise catalog services
+are built on Cloud SQL.
+
+This is what you see in
+the middle of this picture.
+
+It houses all of the metadata
+for our data features
+
+and models, plus the rules
+that are applied on our data.
+
+This provides the auditability
+and the automated governance
+
+capability.
+
+This design gives Equifax
+a leading position
+
+as a data analytics
+and technology company
+
+in a highly regulated space.
+
+
+
+Finally, I wanted to leave
+you with some metrics of where
+
+we will be when we are finally
+migrated onto this platform.
+
+You're looking at 75-plus
+data fabric services deployed
+
+in seven regions supporting
+the 24 countries we operate in.
+
+We would have 10 billion-plus
+of observations keyed,
+
+using almost 90,000-plus
+clicking and linking rules,
+
+enabling us to manage 800
+million-plus unique identities
+
+globally.
+
+We are well into our journey
+with significant production
+
+traffic coming soon.
+
+We have an aggressive
+plan to grow
+
+the company via acquisitions
+and organically.
+
+The partnership
+we've had with Google
+
+through this entire
+journey has been great.
+
+Both our engineering
+teams have been
+
+able to collaborate
+closely to achieve
+
+these capabilities and
+the seamless access
+
+to the product engineering
+teams at Google have been key.
+
+We have invested in a long-term
+relationship with Google
+
+and look forward to a
+symbiotic partnership.
+
+Thank you for having
+me, and hope you
+
+guys found this
+presentation useful.
+
+ANDI GUTMANS: Kumar,
+thank you for sharing
+
+your story of data-driven
+cloud transformation.
+
+It's truly inspiring.
+
+We look forward to our
+ongoing partnership
+
+with you and Equifax.
+
+At heart, Google
+is a data company.
+
+When it comes to
+managing data, we
+
+have to solve some of the
+most difficult problems.
+
+We re-imagined
+databases and invented
+
+Spanner, a database
+that gives you
+
+the best of relational and
+nonrelational databases.
+
+Our databases benefit from
+disaggregated computing storage
+
+and our privately-owned
+global network
+
+to improve performance,
+scalability, security,
+
+and availability.
+
+What all this means is that when
+you adopt our Cloud databases,
+
+you immediately benefit from
+our longstanding culture
+
+of engineering excellence
+and innovation.
+
+There is a lot more
+exciting content
+
+waiting for you in
+the upcoming sessions.
+
+I invite you to join these
+sessions to learn more
+
+about Google Cloud databases.
+
+And I would like to
+thank you for joining us
+
+at Google Cloud Next.
+
+We hope to partner
+with you to accelerate
+
+your data-driven
+business transformation.
+
+Thank you.
+
+
+

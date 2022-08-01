@@ -1,0 +1,1218 @@
+
+
+LEIGHA JARETT: Hi, and
+welcome to our session where
+
+we're going under the hood
+for Google Cloud's data
+
+technologies.
+
+I'm Leigha Jarett,
+and I'm a developer
+
+advocate here at Google Cloud,
+and I focus on data analytics.
+
+But today, I'm also joined
+by my colleague, Derek,
+
+who focuses on
+operational databases.
+
+Today, we're going to be
+talking about two technologies.
+
+First, Spanner on
+the operational
+
+databases side of things on the
+left-hand side of our screen.
+
+And then, we're
+also going to focus
+
+on BigQuery, our data warehouse
+for analytical processing.
+
+And these are just a few of the
+pieces in the broader Google
+
+Cloud data ecosystem.
+
+Integrations between
+both of these products
+
+and other products
+that support data
+
+fabric, artificial intelligence,
+and business intelligence
+
+all go into making it simple for
+data practitioners and business
+
+users to power data-driven
+innovation using Google Cloud.
+
+So the story of both
+Spanner and BigQuery
+
+starts with the evolution
+of the separation
+
+of storage and compute.
+
+Historically,
+database systems have
+
+been architected with tightly
+coupled storage and compute,
+
+so there's a dependence on
+locally attached storage
+
+because attaching
+storage to a network
+
+would result in higher latency.
+
+But more recently,
+these constraints
+
+have been lifted, largely
+due to faster networks,
+
+which we're going to
+talk about momentarily.
+
+So now, with architecture
+like BigQuery and Spanner,
+
+we have a separation
+of storage and compute,
+
+and this allows us
+to seamlessly scale
+
+to meet your high
+throughput data needs.
+
+New compute nodes
+can easily be added
+
+to handle large
+workloads, and we
+
+don't need to rebalance the data
+and ensure that a local replica
+
+is stored on new nodes.
+
+So let's take a closer look
+at how our distributed storage
+
+system, Colossus, is
+also faster, reliable,
+
+and cost-effective for you.
+
+So Colossus is Google's
+next generation
+
+distributed file system.
+
+It manages, stores,
+and provides access
+
+to all of your data for
+both BigQuery and Spanner.
+
+Its design enhances
+storage scalability
+
+and improves availability
+to handle the massive growth
+
+in data needs.
+
+Colossus introduced a
+distributed metadata model
+
+that delivers a more scalable
+and highly available system.
+
+With all this data
+stored remotely,
+
+if a single node fails,
+there's no data lost, or even
+
+made temporarily unavailable.
+
+Not to mention, remote storage
+is dramatically cheaper
+
+than local storage.
+
+And the proof is in the picture.
+
+So not only does Colossus
+handle your first-party data
+
+stored in Google
+Cloud, but it also
+
+stores the information needed
+to run vital Google systems that
+
+are used by so many
+people all over the world.
+
+Like we mentioned
+earlier, the separation
+
+of storage and
+compute would not be
+
+possible without the evolution
+of networks, which increased
+
+the speed at which compute
+clusters can pull data
+
+from storage and reduce latency.
+
+Just like Colossus,
+Google Cloud services
+
+like BigQuery and Spanner
+leverage the same network
+
+that powers the underpinnings
+of Google's systems.
+
+And we call this
+network Jupiter.
+
+So Jupiter is made up of
+an in-house custom network,
+
+hardware and software,
+and it connects
+
+all of the servers in our
+data centers together,
+
+powering our distributed
+computing and storage systems.
+
+So we discussed our file
+system and the network
+
+that connects the storage
+and compute together.
+
+Now, leading all the
+operations in our data center
+
+is Borg, Google's internal
+cluster management system
+
+and the predecessor
+to Kubernetes.
+
+So Borg goes ahead and
+provisions the needed compute
+
+resources to handle workloads
+for Spanner and BigQuery,
+
+running hundreds of
+thousands of jobs
+
+and making computing
+much more efficient.
+
+This allows our
+data centers to run
+
+at a really high utilization.
+
+So now, let's see how
+these pieces come together
+
+throughout the
+life of your data.
+
+
+
+So let's take a look at
+Cymbal Gaming, our fake gaming
+
+company who uses Spanner to
+support transactional or OLT
+
+workloads.
+
+So a new user might log
+into the Spanner game
+
+and enter their information.
+
+This data is then sent
+to Colossus for storage,
+
+but it's going to be in
+Spanner's file format.
+
+Next, this data is requested in
+a query sent through Spanner's
+
+compute engine.
+
+And finally, the
+results of the query
+
+will be returned
+in the application
+
+to populate the new
+user's profile when
+
+they load the page.
+
+So Spanner's storage
+and compute are both
+
+going to be optimized for
+those transactional workloads.
+
+And Derek is going to talk
+more about that in a minute.
+
+So even though Cymbal
+is using Spanner
+
+for transactional
+workloads, they also
+
+want to perform analytics
+on this information
+
+to understand how users are
+actually playing their game.
+
+But for analytical
+workloads, they're
+
+going to instead use BigQuery.
+
+So once the user's data lands in
+Spanner, they have two options.
+
+First, they can replicate the
+data in BigQuery's storage
+
+by pushing new rows into
+the native BigQuery table.
+
+This is going to provide
+optimized storage
+
+for analytics.
+
+On the other hand, they
+can use a federated query
+
+sent from BigQuery
+over to Spanner
+
+so that they get real-time
+access to information
+
+from their application.
+
+Either way, they'll benefit
+from BigQuery's query engine
+
+to perform scalable
+analysis, including
+
+built-in machine
+learning capabilities
+
+that power business
+intelligence reporting
+
+and real decision-making
+from business users.
+
+So now that you understand how
+BigQuery and Spanner both come
+
+together to support
+your data needs,
+
+let's talk about how
+Spanner is actually
+
+optimized for those
+transactional workloads.
+
+So, Derek, over to you.
+
+DEREK DOWNEY: Great.
+
+Thanks, Leigha.
+
+Cloud Spanner is Google's fully
+managed distributed relational
+
+database.
+
+Spanner provides customers with
+minimal operational overhead
+
+with no downtime
+for schema changes,
+
+or even maintenance windows.
+
+This allows Spanner to
+provide an industry leading
+
+99.999% SLA.
+
+Because Spanner is
+distributed database,
+
+it provides seamless
+replication and scaling
+
+across regions in Google Cloud.
+
+Spanner processes over
+one billion requests
+
+per second peak, and all of
+that as a relational database
+
+that provides strong external
+consistency, made possible
+
+by the technologies
+mentioned earlier,
+
+Borg, Colossus, and Jupiter.
+
+To set up an example,
+imagine that Cymbal Games
+
+has developed a game that
+will be played by people
+
+all around the world.
+
+These players must be able
+to sign up, authenticate,
+
+and play the game.
+
+Players really don't like
+to have to redo actions,
+
+so this activity has to
+have traditional consistency
+
+guarantees.
+
+Another thing players
+don't like is downtime.
+
+If they can't play, they get
+upset, and it better be fast.
+
+So Cymbal Games will need to
+have the ability to scale up
+
+to meet user demand.
+
+With availability, consistency,
+and scalability in mind,
+
+let's see how Cloud Spanner can
+help them achieve their goals.
+
+
+
+When you create a
+Spanner node, you
+
+get access to Spanner resources
+in three or more zones.
+
+Zones are Borg cells.
+
+These cells are a collection
+of Spanner resources
+
+that are physically
+separate from other cells.
+
+Spanner resources consist of
+Spanner servers and Colossus
+
+allocations of data storage,
+as discussed previously.
+
+Spanner servers provide
+the compute capacity
+
+for your cluster, and they
+contain the span process,
+
+Paxos, and other board tasks
+to enable Google SREs to manage
+
+the environment.
+
+The zones can be within a
+single region, as shown here,
+
+or across multiple regions.
+
+If you have a regional
+configuration,
+
+you have zones
+close together that
+
+provide the lowest read
+and write latencies,
+
+but you only get an SLA
+of 99.99% availability.
+
+In a multi-regional
+configuration,
+
+your zones are located
+farther apart, which
+
+can increase latencies,
+but it provides
+
+global scalability and an
+SLA of 99.999% availability.
+
+Now, imagine that Cymbal
+Games has a table of users.
+
+The user data is stored on
+Colossus and encrypted at rest.
+
+A copy of this data is
+in at least three zones,
+
+and replication of the rights
+is handled synchronously
+
+by Paxos consensus.
+
+So their data will
+survive zone outages
+
+and allows for zero downtime
+maintenance as well.
+
+To understand consistency, let's
+go over typical transaction
+
+life cycles.
+
+When a new user signs
+up, Cymbal Games
+
+issues an insert
+statement to Spanner.
+
+Since nodes exist
+in multiple zones,
+
+where the insert
+statement hits depends
+
+on which zone is the
+current Paxos leader.
+
+In this example,
+zone 2 is our leader.
+
+A single endpoint is
+exposed to the client
+
+and Spanner internals
+handles routing of the query.
+
+When the leader
+receives the write,
+
+it acquires locks and generates
+a true time commit time stamp,
+
+then, it sends the
+write to other nodes
+
+in the configuration.
+
+These nodes write the
+mutation to something
+
+like a durable transaction
+log and confirm the write
+
+to the leader.
+
+After a quorum of nodes
+approves the write,
+
+then the leader tells the
+nodes to commit the data,
+
+it releases the locks,
+and returns the success
+
+to the client.
+
+All of this usually happens
+within a few milliseconds.
+
+We can't do a
+session about Spanner
+
+without mentioning TrueTime.
+
+TrueTime is a highly
+available internal service
+
+backed by a network of
+atomic and GPS masters.
+
+This service can be called
+to generate a guaranteed
+
+monotonically
+increasing timestamp
+
+with microsecond granularity
+across all nodes.
+
+In Spanner, these timestamps
+are generated for writes.
+
+It is precisely
+because of TrueTime
+
+commit time stamps that
+allows a distributed
+
+database like Spanner to ensure
+strong external consistency.
+
+So let's see how they
+are used for reads.
+
+
+
+Once a user account
+has been created,
+
+they'd want to be able to
+log in and start playing.
+
+So Cymbal Games needs
+a consistent read
+
+to provide authentication
+for the user.
+
+In this example,
+the read is going
+
+to be executed against
+zone 1 since it's
+
+closest to the client
+making the request.
+
+But since zone 2 is
+the leader, zone 1
+
+checks in to make sure it
+has the latest commit data.
+
+If the data is the latest, it
+can be returned to the client.
+
+Otherwise, the read waits until
+the node receives updates.
+
+How does the replica know
+that it has the latest data?
+
+With TrueTime
+commit time stamps.
+
+The replica compares
+its own TrueTime state
+
+with the latest commit time
+stamp to know if it's enough
+
+up to date to serve the read.
+
+
+
+But not all reads of the user
+need to be strongly consistent.
+
+Since user data doesn't change
+that often, Cymbal Games can
+
+choose to issue a
+time-bound read,
+
+otherwise known as a still read.
+
+To do this, they
+provide the max age
+
+that is acceptable for their
+query, making it time-bound.
+
+This allows the Spanner
+node closest to the client
+
+to respond to the query without
+incurring additional round
+
+trip latency, communicating
+with the Paxos leader.
+
+No matter how fast
+the Jupiter network
+
+is, if you can cut out latency
+across zones, you should.
+
+
+
+With availability and
+consistency covered,
+
+Cymbal Games still needs
+scalability out of Spanner.
+
+So let's look at that.
+
+As a first step, Cymbal
+Games gets closer to launch,
+
+they can go ahead and
+increase the number of nodes
+
+from pre-prod levels
+to prod levels simply
+
+by updating the Cloud console.
+
+
+
+Next, as the user
+data grows, Spanner
+
+will start to create
+splits of the data.
+
+It does this both by
+detecting CPU load
+
+increases and hot spots.
+
+And we'll split the data into
+chunks to address these issues.
+
+
+
+These splits can be hosted
+on different Spanner servers
+
+backed by different
+Colossus allocations, which
+
+helps distribute the load.
+
+Data splits and increasing
+the number of Spanner nodes
+
+gives Cymbal Games
+the ability to scale
+
+as much as they need to.
+
+But to avoid headaches
+down the road,
+
+they need to be sure to place
+related data in the same split
+
+using interleaving.
+
+Imagine user activity data
+that relates to the user data.
+
+By interleaving the user
+activity table with the user
+
+table, Spanner will
+change the splitting logic
+
+to make sure that the data
+stays together on Colossus.
+
+In this way, Spanner
+scales easily
+
+while also keeping
+performance high
+
+by avoiding additional locking
+required to read or write
+
+across multiple splits.
+
+Managing this
+distributed database
+
+for transactional
+workloads is only possible
+
+because of technologies like
+TrueTime, Borg, Colossus,
+
+and Jupiter.
+
+So now, Leigha is going
+to take it over and talk
+
+about analytical workloads.
+
+LEIGHA JARETT: Great.
+
+Thanks, Derek.
+
+So now that you understand how
+Spanner is great and optimized
+
+for transactional
+workloads, let's
+
+talk about how BigQuery's
+architecture supports
+
+analytical workloads.
+
+So let's start by
+adding the new user
+
+data into a native
+BigQuery user table.
+
+As soon as you push data
+into a native BigQuery table,
+
+the data is going to be
+transformed into a file format
+
+called Capacitor.
+
+Capacitor uses what we call
+columnar-oriented storage,
+
+meaning, each
+column in the table
+
+is going to be stored in a
+different area of the file.
+
+So the amount of the
+columns you query
+
+is going to be proportional
+to the amount of data
+
+that's actually scanned.
+
+Now, if you think about it,
+this is optimal for analytics
+
+because you're often aggregating
+just a few columns over lots
+
+and lots of different rows.
+
+Plus, each column
+also has independently
+
+compressed information.
+
+Here, we use different
+types of encoding
+
+to optimize storage, which
+makes it easier for Dremel,
+
+our query engine, to quickly
+find and use the data it needs
+
+for your query.
+
+Even better, you can choose
+to cluster or partition
+
+your data stored in Capacitor
+so that Dremel can easily
+
+eliminate certain files
+or blocks from the query.
+
+Let's look at a quick
+example of this.
+
+So let's say we
+have our user table
+
+and we decided to
+partition based on the date
+
+that the user was created.
+
+We're also clustering or sorting
+our table based on the game ID.
+
+So now, when we filter our data
+based on created date and game
+
+ID, Dremel is going to use
+the file headings in Capacitor
+
+to reject the entire file
+or file block if it's not
+
+needed for the query.
+
+This means that less data
+is going to be scanned
+
+and your query is going to
+be both cheaper and faster.
+
+
+
+So in Colossus, your data
+is stored in Capacitor,
+
+and it's going to be
+automatically compressed,
+
+encrypted, replicated,
+and distributed.
+
+So 100% of your data is going
+to be encrypted at rest, just
+
+like Derek mentioned
+with Spanner.
+
+And Colossus is also going
+to ensure durability using
+
+something called
+erasure encoding, which
+
+stores redundant chunks of data
+on multiple physical disks.
+
+So immediately, upon
+writing data to Colossus,
+
+BigQuery is going to start
+this geo-replication process,
+
+mirroring all of the
+data into different data
+
+centers around the specified
+region or multi-region,
+
+depending on how you set
+up your BigQuery data set.
+
+This means that you have
+backups of your data stored
+
+in case of disk failure
+or data center outages.
+
+OK, so we talked a little
+bit about BigQuery storage.
+
+Now, let's talk about compute.
+
+So Dremel, BigQuery's
+query engine,
+
+is made up of
+something called slots,
+
+and these are Google's
+proprietary units of CPU, RAM,
+
+and network, and they're used
+to execute the SQL queries.
+
+So BigQuery will
+automatically calculate
+
+how many slots are
+required by each query,
+
+depending on the data size and
+the complexity of the query
+
+itself.
+
+You can think of a
+slot as a worker,
+
+and slots are going to be
+responsible for executing parts
+
+of the active query,
+independently and in parallel,
+
+and they're going to perform
+partial aggregations.
+
+They'll also read and
+write data back to storage.
+
+So the awesome thing about
+BigQuery's architecture
+
+is that you can actually
+purchase slots and reserve them
+
+for certain workloads
+in your organization.
+
+This means that you can
+scale your throughput
+
+and your runtime as needed.
+
+
+
+So now, let's go a little bit
+deeper into query execution.
+
+First, when you submit
+a query, BigQuery
+
+is going to break it down into
+different stages, which will
+
+be processed by those slots.
+
+Intermediary results are
+going to be written back
+
+to what we call the
+remote memory shuffle.
+
+Since data here is
+usually stored in memory,
+
+it's really fast for slots
+to read and write data
+
+from the shuffle.
+
+Now, each shuffled row
+can be consumed by slots
+
+as soon as it's created.
+
+This makes it possible to
+execute distributed operations
+
+in a parallel
+pipeline, which means
+
+that we can analyze huge
+amounts of data really fast.
+
+And if a worker were to have an
+issue during query processing,
+
+another worker could
+actually simply pick up
+
+from where the
+previous one left off
+
+because they're able to read
+from the previous shuffle.
+
+So this adds an extra
+layer of resilience
+
+to failures within the
+workers themselves.
+
+
+
+OK, so let's say
+we're running a query
+
+to count how many users
+joined Cymbal Games yesterday
+
+before feeding them
+into our ML model.
+
+In the first stage
+of the query, slots
+
+will read the columnar files
+from Colossus in parallel.
+
+Each slot processes a column or
+file block, filters the data,
+
+and then writes the partial
+aggregations to the shuffle.
+
+In the next stage, a slot
+reads the data from the shuffle
+
+and combines those partial
+aggregations together.
+
+Then, it's going to write
+the results back to Colossus
+
+so that it can be served as a
+cache table back to our user.
+
+
+
+So how do these architectural
+distinctions of BigQuery
+
+actually translate to
+business value for you?
+
+Well, first of all,
+we talked about how
+
+BigQuery's optimized
+storage and compute allows
+
+for super fast queries
+over huge data volumes,
+
+meaning your business
+will be empowered
+
+to make informed decisions
+without ever missing a beat.
+
+Next, we showed
+how BigQuery helps
+
+you save money on data
+storage and analysis
+
+so you spend less
+resources answering
+
+business-critical questions.
+
+We also talked about how
+BigQuery's storage ensures
+
+reliability and
+durability, meaning
+
+there's a very
+low risk of losing
+
+information and interrupting
+business processes.
+
+And finally, the ability to
+purchase and dedicate slots
+
+to specific workloads means you
+can scale throughput and run
+
+time so that you continue
+to support your business
+
+analytics as your data
+and your use cases grow.
+
+And don't just take
+our word for it.
+
+Google Cloud actually has
+hundreds of BigQuery customers
+
+with petabyte scale
+data warehouses.
+
+So thanks, Derek, for
+walking us through Spanner.
+
+And thank you all so
+much for joining us today
+
+to dig into Spanner and
+BigQuery under the hood.
+
+Here, we provided
+some resources to help
+
+you get started using
+both Spanner and BigQuery,
+
+and I've also
+listed some sessions
+
+that are going on at Next
+related to data analytics
+
+and databases.
+
+So thanks again for joining us.
+
+And we hope you
+enjoyed this session,
+
+and that you enjoy the rest of
+your time spent here at Next.
+
+
+

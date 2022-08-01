@@ -1,0 +1,772 @@
+
+
+SHAILESH SHUKLA: Good
+morning, good afternoon,
+
+and good evening, everyone.
+
+Thank you for joining us,
+and welcome to What's New
+
+and What's Next for Networking.
+
+I'm Shailesh Shukla, Vice
+President and General Manager
+
+for Networking.
+
+WENDY CARTEE: And I'm
+Wendy Cartee, Director
+
+of Outbound Product Management.
+
+We had a very busy
+year, and we're
+
+so excited to share what
+we've been working on.
+
+SHAILESH SHUKLA: We
+have a packed session,
+
+and we'll cover our Cloud
+networking portfolio, what's
+
+new in networking, network
+security, and monitoring.
+
+But first, the
+why of networking.
+
+In addition to being a critical
+part of the global Cloud
+
+Infrastructure, networking also
+drives real business outcomes
+
+for our customers.
+
+As workloads and workforces
+become increasingly global
+
+and increasingly
+distributed, the network
+
+is at the front and center
+of connecting, securing,
+
+and enabling everything,
+while delivering
+
+a seamless experience to
+all applications, all users,
+
+and all devices.
+
+For example, our
+retail customers
+
+tell us that a high-performance
+network is directly
+
+tied to superior user
+experience, which translates
+
+to faster revenue conversion.
+
+That's a top line.
+
+I don't want to go through
+each of these items here,
+
+but what you will
+see is our customers
+
+tell us, in all verticals,
+across the world,
+
+that networking is a key enabler
+for their business outcomes.
+
+Our Cloud Networking vision
+is centered on our customers,
+
+and the vision is this--
+
+planet-scale networking for
+a smart and connected world.
+
+Google has built a massive
+planet-scale network
+
+infrastructure serving
+billions of users today.
+
+And we are leveraging
+advanced AI, automation,
+
+and programmability to build
+a self-driving network that
+
+makes it simple, smart, trusted,
+and open, so our customers can
+
+focus on running and
+enabling their business.
+
+Our global network
+is at your service,
+
+with 27 regions, 82 zones,
+146 edge PoPs, thousands
+
+of edge nodes, 16 subsea
+cable investments,
+
+connecting more than 200
+countries and territories
+
+worldwide.
+
+We are proud to serve
+billions of users,
+
+while staying 100% carbon
+neutral since 2007.
+
+And we continue
+to invest heavily
+
+in our infrastructure,
+our network.
+
+And just this year,
+we have already
+
+added four new Cloud regions--
+
+Warsaw, Delhi,
+Melbourne, and Toronto.
+
+In addition, we have
+announced five subsea cables--
+
+Echo, Firmina, Blue,
+Raman, and Apricot,
+
+which connect all parts of
+the world from Asia, Europe,
+
+Africa, Middle East,
+to the Americas.
+
+On top of this massive
+global network,
+
+we offer a broad portfolio of
+network and security services
+
+that connect, secure,
+scale, optimize,
+
+and modernize your network
+and your infrastructure.
+
+To do that, we have
+this full stack
+
+of networking
+services from layer 1
+
+to layer 7, that provide
+high-performance networking
+
+for all your workloads
+running in VMs,
+
+in containers, or on Bare Metal.
+
+2021 has been an incredibly
+exciting year for us.
+
+We added several new
+products this year,
+
+including the Google Distributed
+Cloud, Cloud IDS Service,
+
+and enhanced our service
+networking portfolio,
+
+with Network Connectivity
+Center, Private Service
+
+Connect, Network Intelligence
+Center enhancements, et cetera.
+
+Wendy will tell you
+a lot more about it.
+
+Let's get started.
+
+Wendy, over to you.
+
+WENDY CARTEE: All right.
+
+Thank you, Shailesh.
+
+We have a lot of
+exciting announcements,
+
+so let's take a look at
+what's new in networking.
+
+I would like to introduce
+our Google Distributed Cloud
+
+strategy, which provides a fully
+managed, integrated hardware
+
+and software solution that
+extends Google Cloud's
+
+infrastructure and services to
+edge locations and customers'
+
+data center.
+
+Our Distributed Cloud
+solution is enabled by Anthos
+
+through a centralized
+control plane,
+
+so customers can build and
+run modern applications
+
+anywhere with low-latency
+and operational efficiency.
+
+Google Distributed
+Cloud is ideal
+
+for local data processing,
+low-latency edge
+
+compute workloads, modernizing
+on-prem environments,
+
+running sensitive workloads to
+meet sovereignty requirements,
+
+and offering private 5G LTE
+solutions for enterprise
+
+customers.
+
+It can be deployed at Google
+Edge, operator edge, customer
+
+edge, and/or customer
+data centers.
+
+We announced Network
+Connectivity Center, or NCC,
+
+a few months ago, and it
+is now generally available.
+
+NCC provides a simple and
+consistent management model
+
+to connect your on-prem
+and Cloud networking
+
+needs seamlessly.
+
+With NCC, you can connect
+VPNs, partner and dedicated
+
+interconnects, SD-WANs, and
+third-party router appliances
+
+in a hub-and-spoke model.
+
+And we've partnered
+with SD-WAN leaders
+
+like Cisco, Fortinet, Palo Alto
+Networks, Versa, and VMware,
+
+enabling you to
+simplify connectivity
+
+from branch to Cloud.
+
+In addition to
+network-layer connectivity,
+
+we also offer
+service-layer connectivity,
+
+with Private Service
+Connect, or PSC.
+
+PSC provides a service-oriented
+networking model
+
+by abstracting the underlying
+network, such as pairing,
+
+IP address,
+configuration, et cetera.
+
+PSC allows you to create
+private and secure connections
+
+from your Cloud networks
+to producer services,
+
+such as Cloud Storage,
+Cloud Bigtable,
+
+or third-party services from
+Elastic, MongoDB, or Snowflake.
+
+PSC is now GA in all
+regions, and we introduced
+
+three new enhancements.
+
+PSC with Consumer Service
+Controls is now in preview.
+
+With HTTPS Service
+Controls, PSC allows
+
+customers to have finer grained
+control of their own policies,
+
+and support data regionalization
+for sovereign clouds.
+
+We added HTTPS internal load
+balancer as a PSC target
+
+to help scale services.
+
+For example, you can
+configure the load balancer
+
+to log all requests
+to Cloud logging,
+
+or choose which services are
+available using a URL map.
+
+PSC is integrated
+with Service Directory
+
+so you can auto register
+available services to make
+
+service consumption
+even faster and simpler.
+
+This is so cool that companies
+like Bloomberg, Elastic Cloud,
+
+and MongoDB shared why they are
+using Private Service Connect.
+
+And we hope you will
+also test drive PSC
+
+and let us know how you like it.
+
+Now, moving up
+the service stack,
+
+let's talk about GKE
+and Anthos networking.
+
+We released a lot
+of features in GKE
+
+and Anthos networking
+recently, and we are only
+
+going to cover four today.
+
+First, GKE gateway controller
+is Google Cloud's implementation
+
+of the Kubernetes
+Gateway API, and it
+
+manages internal
+and external HTTPS,
+
+load-balancing for a GKE cluster
+or a fleet of GKE clusters.
+
+It is currently in preview
+and will GA this quarter.
+
+Second, Cloud DNS for GKE
+supports the full Kubernetes
+
+DNS specification, and
+it will GA this quarter.
+
+It provides pod and
+service-level resolution,
+
+with a fully managed DNS
+that does not require
+
+a cluster-hosted DNS provider.
+
+So it removes the overhead of
+managing cluster-hosted DNS.
+
+For Bare Metal fans out there,
+a BGP-based load balancer
+
+for Anthos Bare Metal
+is now in preview,
+
+supporting N-way
+active-active redundancy
+
+for faster failover and
+efficient utilization
+
+of bandwidth.
+
+And lastly, with
+the increasing use
+
+of container network
+functions for CNFs,
+
+we are introducing
+multi-NIC pods
+
+on Anthos Bare
+Metal, which allows
+
+pods to attach to multiple
+network interfaces for use
+
+cases such as data and
+control planes operations,
+
+multi-tenancy, management
+functions, et cetera.
+
+Now, we covered edge,
+hybrid connectivity,
+
+service-layer networking,
+GKE, Anthos networking.
+
+What's next?
+
+We're going to talk about
+Application Delivery.
+
+Our Application
+Delivery portfolio
+
+offers layer-7 load balancing
+and layer-4 network load
+
+balancing.
+
+In the layer-7 load
+balancing family,
+
+we are introducing regional
+external load balancer,
+
+which supports
+distribution of HTTP
+
+and HTTPS traffic to backends
+hosted on Compute Engine
+
+and GKE.
+
+Our layer-7 load
+balancers are now
+
+converged on Envoy, a
+CNCF open-source project,
+
+as the common data plane.
+
+Leveraging Envoy Proxy, the
+regional external load balancer
+
+provides advanced traffic
+management capabilities
+
+such as routing and
+traffic policies,
+
+so you can steer traffic
+where you want it.
+
+In addition, we added support
+for hybrid load balancing.
+
+Hybrid load balancing supports
+workloads running on-prem
+
+in Google Cloud
+or in other clouds
+
+to help customers with
+migration, performance
+
+optimization, and
+high availability.
+
+You can use external
+or internal HTTPS load
+
+balancing, in addition
+to TCP SSL proxy.
+
+Together, they're not only
+load-balance endpoints
+
+on GCP, on-prem,
+or other clouds,
+
+they can extend Cloud
+Armor to provide
+
+DDoS protection
+to your services,
+
+and leverage Cloud CDN for
+low-latency performance.
+
+Next, let's take a quick
+look at DNS enhancements.
+
+Now today, thousands of
+customers use our Cloud DNS.
+
+And we've added a
+lot of enhancements.
+
+One to highlight is
+Cloud DNS Policy Manager,
+
+which is in preview.
+
+It enables you to steer
+private and internet traffic
+
+using dynamic responses
+from Cloud DNS.
+
+Policies may be set up
+using weighted round robin
+
+and/or geolocation
+rules, and includes
+
+health checks, which can be
+used for automatic failovers.
+
+You can use this
+to manage traffic
+
+in a multi-vendor
+environment, direct traffic,
+
+and set up failover
+traffic patterns.
+
+Let's take a look at what's
+new in network security.
+
+We announced many new security
+enhancements this year,
+
+such as hierarchical firewall,
+Cloud Armor rate limiting,
+
+and Cloud IDS.
+
+We are excited to announce
+the preview of Cloud Armor
+
+bot and fraud management, which
+leverages reCAPTCHA Enterprise
+
+to detect and stop
+unwanted bot activity
+
+at the edge of the network.
+
+This integrated DDoS, WAF,
+and bot detection solution
+
+uses signals collected
+in the browser,
+
+plus threat data to automate
+the detection of fraud.
+
+While customers can use these
+products together already,
+
+we are simplifying
+the deployment process
+
+and providing a more
+integrated experience
+
+so customers can accelerate
+their time to value.
+
+For more information,
+please attend the session
+
+on DDoS, WAF, firewalls, and
+network-based threat detection.
+
+Next, we announced
+Cloud IDS in July
+
+with our partner
+Palo Alto Networks.
+
+Cloud IDS provides a fully
+managed network threat
+
+detection service, with
+high levels of security
+
+efficacy and low noise.
+
+We worked closely with
+Palo Alto Networks
+
+to embed their industry leading
+threat detection technologies,
+
+and deeply integrated them
+into our Cloud, beyond having
+
+a uniform usage model across
+the UI, APIs, and command line.
+
+This means that customers can
+pick from GCP native targets,
+
+including anything from a
+VPC to a specific workload,
+
+and even leverage
+our flexible tagging
+
+capabilities to identify
+what they want to monitor.
+
+We surface the alert information
+in the Google Cloud UI, APIs,
+
+and Cloud Logging systems,
+plus feed the data
+
+to our Security Command Center,
+Chronicle, and third-party SIEM
+
+and SOAR products.
+
+It's quick and easy to deploy,
+as it is managed, scaled,
+
+and operated by Google,
+with high performance
+
+and availability all built in.
+
+Now, with all the
+great products,
+
+what about day-2 apps?
+
+Let's take a look at monitoring.
+
+Our flagship monitoring product,
+Network intelligence Center,
+
+has been expanded with
+several new modules recently.
+
+Network Topology lets you view
+actual flows, traffic pattern
+
+changes, ingress-egress bytes
+over VPN and Interconnect
+
+to and from the internet
+and GCP managed services.
+
+Support for VPNs and
+Interconnect is now in preview,
+
+and support for Google
+managed services is now GA.
+
+Global Performance
+Dashboard gives you
+
+real-time metrics, such
+as latency and packet
+
+loss for the Google
+Cloud network,
+
+as well as visibility into the
+performance of your projects'
+
+resources.
+
+With connectivity
+tests, you can check
+
+the connectivity
+between a VM instance
+
+and GCP-managed services,
+such as GKE and Cloud SQL,
+
+and troubleshoot
+issues at any time.
+
+Well, I hope you
+enjoyed the What's
+
+New in Networking session.
+
+To learn more,
+please take the time
+
+to view the deeper dive
+sessions on these topics,
+
+and visit our website
+for more information.
+
+Thank you for joining us.
+
+
+

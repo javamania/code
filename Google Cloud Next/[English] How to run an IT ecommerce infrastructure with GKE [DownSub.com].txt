@@ -1,0 +1,1218 @@
+
+
+KOBI MAGNEZI: Hello, and thank
+you for joining us today.
+
+My name is Kobi Magnezi.
+
+I'm product manager for GKE.
+
+And today I would like to
+share with you some of the best
+
+practices on how to leverage
+GKE to power a competitive IT
+
+e-commerce infrastructure.
+
+First, let's start
+with looking at some
+
+of the drivers for
+e-commerce organization
+
+and the requirements
+they imply for
+
+the supporting infrastructure.
+
+In a recent validation study
+of Google Cloud solution
+
+for e-commerce, the ESG analysis
+found that retail industry
+
+is focused on providing
+better and more differentiated
+
+customer experience
+through specifically
+
+digital transformation
+initiatives with about 50%
+
+of retail organization
+strategically prioritizing
+
+this objective.
+
+For retailers, creating
+an e-commerce presence
+
+increases not just the
+touchpoints with the customer,
+
+but also the sales
+opportunity, especially when
+
+events like the pandemic
+pushes more customers
+
+to online channels.
+
+At the same time,
+it also increases
+
+the competitive landscape.
+
+To maintain the competitiveness,
+an e-commerce infrastructure
+
+must provide, one, high
+performance; two, scalability;
+
+three, reliability
+and availability;
+
+four, customization
+and innovation;
+
+and finally, flexibility.
+
+Let's look deeper
+into these areas
+
+to understand how Kubernetes
+and GKE address these areas.
+
+We will also provide
+some recommendation
+
+for configuration and
+options that you would want
+
+to consider for your cluster.
+
+
+
+Many customers use GCP to
+migrate, modernize, and improve
+
+their deployments.
+
+GCP infrastructure and
+networking are powering GKE.
+
+So when you create a
+Kubernetes cluster on GKE,
+
+we provision the machine and
+the resources needed for GKE
+
+to properly run your cluster's
+control plane and nodes on GCP.
+
+The Kubernetes
+cluster control plane
+
+is fully managed by
+us, backed by an SLA.
+
+We will keep the control
+plane up to date,
+
+and we'll scale it
+automatically up and down
+
+when cluster size changes.
+
+For efficiency and
+high performance,
+
+you can choose what
+type of machine,
+
+what machine configuration
+best meets your needs
+
+for your different node pools.
+
+And as demands
+change over time, so
+
+does the load on your
+e-commerce workloads.
+
+Scaling is necessary
+to ensure that GKE
+
+grows to match your need.
+
+Think about the number of
+pods, the number of nodes.
+
+GKE includes several
+autoscaling capabilities
+
+that will automatically
+resize your cluster based
+
+on your configuration and
+signals that we monitor.
+
+HPA, for example, automatically
+increases or decreases
+
+the number of pods on your
+cluster based on utilization.
+
+With VPA and NPA, you
+can enable vertical scale
+
+for both your nodes and pods.
+
+And if capacity planning
+is part of your practice,
+
+especially for peak season
+like Black Friday, Cyber Monday
+
+or New Year, you may want
+to reserve GCE capacity.
+
+With GCE reservation,
+when your cluster
+
+requires to scale,
+repair, or upgrade,
+
+it will have a reserved
+pool of dedicated resources
+
+available for the performance.
+
+You can also create a specific
+or non-specific reservation,
+
+and GKE will create new
+resources based on the pool
+
+that you reserved.
+
+Now let's talk
+about availability.
+
+And it's important
+to distinguish
+
+between application
+availability and infrastructure
+
+availability.
+
+The availability of the
+business application,
+
+which the customers
+interact with,
+
+and the availability of the
+infrastructure, which hosts
+
+and support the application.
+
+On the application
+side, the impact
+
+of insufficient availability can
+be an unresponsive e-commerce
+
+website or unreachable service.
+
+On the infrastructure
+side, the impact
+
+can happen at different levels.
+
+At the cluster
+level, for example,
+
+when nodes become
+unresponsive or when pods get
+
+rescheduled, at zone level,
+or at a regional level,
+
+where there is a connectivity
+issue, for example.
+
+While both the application
+and the infrastructure
+
+impacts the overall
+availability,
+
+it is actually the
+business application
+
+that drives the decision
+around redundancy, deployments,
+
+and architecture.
+
+With this definition
+in mind, it is
+
+important to understand how
+GKE is structured as a shared
+
+responsibility product.
+
+The data plane, the nodes where
+the e-commerce workloads are
+
+deployed, are the most
+critical piece for customers,
+
+as any reliability issue can
+directly impact the business.
+
+The Kubernetes control plane is
+the next most critical piece,
+
+as it's responsible
+for scaling, repairing,
+
+and managing the deployments.
+
+And then most of the workloads
+deployed on the data plane
+
+can probably survive an outage,
+a short outage of the control
+
+plane without too much impact.
+
+The GKE control plane
+on the leftmost side
+
+is the least critical
+piece, as they are mainly
+
+focused on the operations
+and the management of the GKE
+
+control plane.
+
+Let's look on the two
+most important pieces
+
+from a reliability perspective.
+
+Both control planes
+and nodes can
+
+be provisioned in a single
+zone, a zonal cluster,
+
+as illustrated on
+the right side,
+
+or can be provisioned
+in three different zones
+
+within a region, a
+regional cluster.
+
+There are some cases where
+zonal cluster topology better
+
+serves your needs
+and constraints.
+
+We do recommend, however,
+to use regional cluster
+
+for highly available Kubernetes
+infrastructure, especially
+
+for production workloads.
+
+For control planes,
+the redundancy
+
+provide high
+availability, and in
+
+turn provide higher SLA
+for the Kubernetes API.
+
+But besides of the
+API availability,
+
+the API availability
+in the control pane
+
+doesn't really impact
+the workloads themselves
+
+necessarily.
+
+The control plane is also
+responsible for maintaining
+
+the cluster with
+scaling, repairing,
+
+and other vital operations.
+
+And you may want to take
+into consideration, based
+
+on the nature of your
+e-commerce workloads and needs,
+
+the type of topology that is
+right for your architecture.
+
+Since we provision
+compute resources
+
+on GCP for the
+Kubernetes clusters,
+
+node availability are based on
+the Compute Engine availability
+
+for instances provisioned in
+a single or multiple zone.
+
+Finally, the availability
+of your application
+
+is closely tied to
+the node availability,
+
+as you can imagine.
+
+And luckily, Kubernetes
+offers an easy way
+
+to create multiple instances
+of your application
+
+for higher availability.
+
+One great way to secure
+higher availability
+
+for your application, and also
+to reduce potential disruption,
+
+is the use of PDB, or
+Pod Disruption Budget.
+
+PDB allows you to state
+your disruption tolerance.
+
+In other words, if your
+application is replicated,
+
+you can specify
+the minimum number
+
+of replicas that can be
+disrupted when maintenance even
+
+happens.
+
+In the example that I have on
+this slide here on the right
+
+side, we specify that we cannot
+tolerate less than two replicas
+
+of our application.
+
+This is just another way of
+saying max unavailable equal
+
+one, in case we have three
+replicas of the application.
+
+GKE respects PDB
+up to 60 minutes,
+
+and a termination grace
+policy up to 60 minutes.
+
+When a security patch or
+Kubernetes update is rolled out
+
+on your cluster, GKE
+will perform the upgrade
+
+in a way that satisfies
+the PDB configuration.
+
+The other thing
+that you want GKE
+
+to know about your workloads
+is what consideration
+
+it needs to apply
+when it schedules
+
+your pods on different
+nodes in the cluster.
+
+By default, the GKE and
+the Kubernetes scheduler
+
+automatically spread your
+pods across the nodes,
+
+whether it's regional
+or zonal cluster.
+
+However some e-commerce
+applications, and specifically
+
+stateful workloads,
+like Redis, for example,
+
+require a quorum of servers
+to successfully work
+
+in a redundant deployment.
+
+Without specific
+instruction, Kubernetes
+
+may decide to
+co-locate all the pods
+
+for your stateful
+application, stateful set
+
+on the same machine,
+on the same node,
+
+and basically create a single
+point of failure and risk
+
+to the availability of the
+e-commerce application.
+
+Exactly for those reasons,
+we can use pod anti/affinity
+
+to ensure pods are not scheduled
+on the same specific node
+
+if we set the criteria.
+
+So if I require a
+quorum of servers
+
+to properly operate a stateful
+application, for example,
+
+I would want
+Kubernetes to refrain
+
+from scheduling all the
+replicas on the same machine.
+
+So if something happened
+to that machine,
+
+it won't take down all
+the different replicas
+
+of my application.
+
+On the flip side, there
+are some applications,
+
+workloads that may actually
+benefit from being co-located
+
+on the same machine.
+
+For example, if you
+have a web server
+
+and you want to co-locate
+it with the cache
+
+service for better
+performance and lower latency.
+
+In this case, you might
+want to use pod affinity.
+
+Another important aspect of
+the infrastructure reliability
+
+is monitoring and specifically
+providing accurate signals
+
+to Kubernetes about your
+workload state and health.
+
+The first signal in this
+slide is readiness probe,
+
+which basically defines a
+signal for when a workload is
+
+ready to serve traffic.
+
+Say for example, if a workload
+takes some time to start,
+
+the lack of such signal may
+lead to Kubernetes starting
+
+to send traffic to a
+not yet ready to respond
+
+workload, which will lead
+to time out and impact
+
+its experience.
+
+The second signal here
+is liveness probe,
+
+which provides a health
+signal that Kubernetes
+
+uses to determine whether
+it should initiate a repair
+
+and replace of a
+faulty instance or not.
+
+Defining an upgrade
+strategy for your cluster
+
+is another important
+dimension of reliability.
+
+A new Kubernetes minor version
+is released roughly every four
+
+months from open source.
+
+And patch versions are
+released more frequently.
+
+Because Kubernetes clusters
+contain both control plane
+
+and nodes, there are
+two places to manage
+
+when it comes to
+keeping your clusters up
+
+to date with releases, security
+patches, and bug fixes.
+
+Luckily, GKE offers
+different ways
+
+to keep your cluster's
+infrastructure up to date.
+
+Being a shared
+responsibility product,
+
+GKE keeps control plane
+automatically updated.
+
+And alternatively, you can
+keep your node version upgraded
+
+automatically, or initiate
+the upgrade manually
+
+by running your own
+script, or using our API.
+
+To ensure that your
+infrastructure is up to date
+
+and also being kept as such in
+a safe and non-destructive way,
+
+we highly recommend the use
+of multiple environments.
+
+So when there is a new
+version or a patch,
+
+it can be rolled out for
+testing and qualification
+
+on staging and
+testing environments
+
+before it hits the
+production environment.
+
+In general, we recommend
+to use the same version
+
+in all environments so you get
+consistency and correctness
+
+of your qualification process.
+
+However, you may want to
+consider a second development
+
+environment where newer
+releases can be tested.
+
+This can be useful when a new
+GKE feature or Kubernetes API
+
+are being introduced,
+and you want
+
+to test them to get a head start
+and be ready for the market
+
+when you have a
+new feature that's
+
+relying on this capability.
+
+The process of upgrading
+your Kubernetes clusters,
+
+keeping the control plane
+and nodes preferably
+
+in sync when it comes
+to the same version,
+
+and also in a supported version,
+and also in a supported version
+
+SKU that is mandated
+by open source,
+
+that process can be thorny
+and very cumbersome.
+
+And one way to simplify it
+is by using release channel.
+
+Release channel
+in GKE allows you
+
+to choose your upgrade path.
+
+It also controls
+the type of upgrade
+
+that will be applied
+on your cluster.
+
+Some customers may want to use
+the latest Kubernetes version,
+
+because, as I mentioned
+before, dependencies
+
+on a new API or
+capability, or maybe they
+
+have a specific
+business objective.
+
+In this case, you may want to
+use the rapid channel, which
+
+is closer to open source
+in terms of releases.
+
+Other customers may prefer
+stability over functionality.
+
+And in that case,
+they will choose
+
+either the stable channel
+or the regular channel,
+
+which are the ones we recommend
+for production workloads.
+
+When it comes to patching
+or upgrading your cluster,
+
+the nodes where the e-commerce
+application are deployed,
+
+we replace them.
+
+Those nodes are being replaced
+with new provisioned machine
+
+running the newer
+Kubernetes GKE version when
+
+an upgrade takes place.
+
+When nodes are replaced,
+as you can imagine,
+
+pods running on
+them are gracefully
+
+shut down so the node can
+be drained and replaced.
+
+On the GKE side,
+node upgrade used
+
+to follow the
+workflow of delete,
+
+then create, meaning
+that when we upgrade,
+
+GKE used to drain a node,
+delete it, and then replace it
+
+with a new one.
+
+However, to increase
+the availability
+
+and also to reduce
+disruption, node upgrade
+
+is now happening through
+surge upgrade, where
+
+we change actually the order.
+
+We first create a new
+node for the upgrade,
+
+and only when that node
+is ready and available,
+
+we gracefully
+drain the old node.
+
+Not only that surge reduces
+disruption to existing nodes,
+
+it also allows you to control
+the number of nodes that
+
+can be upgraded concurrently.
+
+The default setting
+is one node at a time.
+
+So keep that in mind.
+
+If you are using large
+clusters with many nodes,
+
+you probably want to
+change that number
+
+so more nodes can be
+concurrently upgraded
+
+at the same time.
+
+It is clear that sustaining
+a competitive e-commerce
+
+infrastructure requires a
+continuous upgrade practice.
+
+However as we all know,
+sometimes business requirements
+
+may change, especially when
+disruption simply cannot be
+
+tolerated.
+
+For example, think
+about peak seasons,
+
+like Black Friday, Cyber Monday,
+New Year, or major company
+
+events, trade fairs,
+or something like that.
+
+We recommend you to
+use an exclusion window
+
+for this event.
+
+With an exclusion
+window, you can
+
+specify a range of
+dates in which you
+
+want to refrain completely
+from any type of maintenance.
+
+You can also set up
+maintenance windows
+
+to specify when you prefer
+maintenance to happen.
+
+This can help you to improve
+predictability of the upgrade,
+
+and also allow to control
+the time of the upgrades
+
+on different clusters.
+
+Exclusion windows and
+maintenance windows
+
+can greatly help you control
+the disruption and reduce risk.
+
+But we've seen with
+many retail customers
+
+that they are
+actually experiencing
+
+different requirements
+during different times
+
+of their fiscal year.
+
+For example, an
+e-commerce infrastructure
+
+is most likely to follow
+some regulation or compliance
+
+like PCI, for example.
+
+And this compliance
+has specific guidelines
+
+when it comes to keeping
+your software up to date
+
+and how frequent and
+fast a new security
+
+patch should be consumed.
+
+In this case, I might want
+to allow all type of upgrades
+
+and patches on both
+control planes and nodes
+
+throughout a low season month,
+while during a high peak
+
+season, like Black
+Friday, Cyber Monday,
+
+I want to refrain completely
+from any type of maintenance
+
+so my workloads will
+not be affected.
+
+And then also in
+some other cases,
+
+I might be OK with just
+patching my clusters, both nodes
+
+and control planes,
+but would want
+
+to refrain from upgrading
+to the next minor version.
+
+We believe that this
+level of flexibility
+
+is actually needed for
+e-commerce infrastructure
+
+so they can control
+maintenance events,
+
+and also the risk
+level associated
+
+with the change in accordance
+to their business needs.
+
+This way you can delegate all
+patching and upgrades to GKE,
+
+while being able to instruct
+it on what type of upgrades
+
+you want to allow, the scope,
+and when to initiate a process.
+
+So now that we know how upgrades
+and patches get rolled out,
+
+I think it's important to
+also stay informed and know
+
+about changes coming
+to your clusters.
+
+One place to learn
+about GKE releases
+
+is, of course, the GKE
+Release Notes page,
+
+which includes links
+to the release schedule
+
+and the version support policy.
+
+But we also recommend the use
+of GKE Notification, which
+
+includes notification
+for upgrades
+
+and upgrade available events.
+
+GKE Notification, which
+is based on Pub/Sub,
+
+you can listen to upgrade
+available events, which
+
+when they fire,
+indicate that there
+
+is a newer version or patch
+available for your cluster.
+
+In turn, you can use that
+event and trigger a workflow
+
+to apply these
+patches, for example,
+
+on your testing cluster.
+
+So the infrastructure version
+can be vetted and qualified
+
+before it gets released to
+your production environment.
+
+Finally, a robust
+e-commerce infrastructure
+
+must also provide
+some flexibility
+
+so you can apply some
+changes on the fly
+
+in a non-disruptive way.
+
+We've identified
+several common places
+
+where changes
+involve disruption,
+
+because when you
+apply these changes,
+
+it actually requires us to
+recreate the machine or node
+
+pool.
+
+For example, you may need to
+change network tags in order
+
+to change firewall rules,
+or routes of your commerce
+
+application.
+
+You can now do so, you
+can change network tags
+
+for existing running VMs,
+without recreating the VMs,
+
+and basically applying
+this change on the fly.
+
+The same thing goes
+for node things, which
+
+you can use to steer away
+pods from specific nodes,
+
+or labels, which are
+used to schedule pods
+
+on particular nodes.
+
+All these three options are now
+modifiable without requiring
+
+recreation of the machine.
+
+So we've learned
+from the ESG report
+
+that there are specific areas an
+e-commerce infrastructure must
+
+cover to maintain
+competitiveness.
+
+High availability,
+where redundancy
+
+is important to avoid
+single point of failure.
+
+That applies to both
+control plane and nodes.
+
+Scalability, use multiple
+replicas, the use of PDB
+
+to avoid disruption,
+affinity and anti/affinity
+
+to better instruct
+the Kubernetes
+
+scheduler on how to optimize the
+deployment of your workloads.
+
+Reliability and
+availability, remember
+
+that control planes are
+fully managed on GKE,
+
+but can go through maintenance.
+
+Make sure that you don't
+create unnecessary dependencies
+
+on the control plane
+API in your application
+
+to avoid disruption
+to your application
+
+when control plane
+is being upgraded.
+
+And then, finally,
+for flexibility, there
+
+are some changes that
+can be applied on the fly
+
+and do not impose any disruption
+for existing workloads.
+
+
+
+To close up, I want to share
+a quote from Loblaw, a GKE
+
+e-commerce customer, who
+achieved great success using
+
+both GCP and GKE, despite
+going through the unexpected
+
+challenges of the pandemic.
+
+Loblaw migrated and
+modernized its e-commerce
+
+with GCP and GKE, and also
+leveraged the Black Friday,
+
+Cyber Monday white glove service
+for additional peace of mind
+
+during this critical
+business period.
+
+This resulted in better
+performance at scale,
+
+faster application
+development and deployment,
+
+high availability, and
+elimination of Black Friday,
+
+Cyber Monday outages.
+
+And while keeping the
+infrastructure up to date,
+
+Loblaw managed to leverage
+the different infrastructure
+
+capabilities to roll out their
+COVID-19 vaccines delivery
+
+system in nine weeks
+instead of 18 months.
+
+There's much more to learn.
+
+You can download
+the full ESG report
+
+from the first link on this
+page and find more documentation
+
+best practices on the GKE
+website on the second link.
+
+Thank you so much for
+watching this session.
+
+I hope you enjoy the
+rest of your Google Next.
+
+
+

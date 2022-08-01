@@ -1,0 +1,974 @@
+
+
+SANDER BOGDAN: Welcome to
+Google Cloud Next 2021.
+
+In today's talk,
+Secure and Reliable
+
+Continuous Delivery to
+Google Kubernetes Engine.
+
+
+
+In today's talk,
+we're going to talk
+
+through some of the challenges
+of continuous delivery to GKE.
+
+We'll discuss the
+principles that
+
+can be applied to
+address those challenges.
+
+We'll be introducing
+Google Cloud Deploy.
+
+And finally, we'll show a demo.
+
+My name is Sander Bogdan,
+and I'm a product manager
+
+with Google Cloud.
+
+And I'm joined today by Bryan
+Morgan, who's an engineering
+
+manager with Google Cloud.
+
+So let's start off by
+talking about challenges.
+
+Over the past 18 months,
+we've had the opportunity
+
+to speak with numerous
+Google Cloud customers
+
+about the continuous delivery
+challenges they face with GKE.
+
+And from those conversations,
+three themes emerge.
+
+The first theme is
+cost of ownership.
+
+Defining robust
+delivery pipelines,
+
+patching, pooling, and scaling
+an organizational continuous
+
+delivery capability can be
+both difficult and complex.
+
+And even when an organizational
+continuous delivery capability
+
+has been established,
+knowing what to measure
+
+and how to optimize those
+measurements for success
+
+is often unclear.
+
+But in all situations,
+continuous delivery investment
+
+intensity can detract
+from core business focus.
+
+So the second theme we observed
+was around security and audit.
+
+Controlling releases as
+they make their way out
+
+to a production
+environment, approving
+
+releases for production, as
+well as delivery pipeline access
+
+control and audit were
+repeated as fundamentally
+
+necessary to modern
+software delivery.
+
+And the final theme
+was integrations.
+
+Continuous delivery capability
+exists within software delivery
+
+ecosystems.
+
+And because of that,
+systems integrations
+
+such as with continuous
+integration, connecting
+
+complex workflows such as
+multi-step, multi-party
+
+approvals, and advanced
+networking requirements
+
+demand continuous delivery
+tooling flexibility as well as
+
+modularity.
+
+And these three themes are best
+summed up by recent customer
+
+quote, and that quote
+went something like this,
+
+"We cannot afford to be
+innovating in continuous
+
+delivery.
+
+We want an opinionated
+product that provides
+
+best practices out of box."
+
+And while this quote is
+associated with one customer,
+
+the reality is it
+could be assigned
+
+to any number of customer
+conversations that we've had.
+
+All right.
+
+Now that we've talked
+about the challenges,
+
+I'd like to talk through
+some of the principles that
+
+can be applied to
+addressing these challenges.
+
+So there are four.
+
+The first principle is Easy--
+
+make it easy to define
+robust delivery pipelines,
+
+to onboard delivery
+pipelines, scale them,
+
+and to apply best practices
+as part of their setup.
+
+And we believe the best way to
+do this is through a managed
+
+opinionated service,
+and Bryan's going
+
+to be talking more
+about that later.
+
+The second principle is Control.
+
+Continuous delivery
+tooling must facilitate
+
+manual and automated
+release control
+
+as it makes its way out through
+a production environment.
+
+So that includes activities
+like promotion, rollback,
+
+as well as approvals.
+
+The third principle is Security.
+
+And what that means is
+platform administrators
+
+must have the ability to
+restrict delivery pipeline
+
+definition and activities.
+
+They need to be able to
+control who is doing what,
+
+where, and when.
+
+And when an audit
+is needed, that
+
+should be handily available too.
+
+And the final principle is
+about providing insights.
+
+So continuous
+delivery capability
+
+must provide insights
+both collectively
+
+as well as individually for
+delivery pipeline progressions,
+
+activities, and opportunities
+to further optimize delivery
+
+stability as well
+as release velocity.
+
+So again, the four
+principles are
+
+make it easy-- to make
+it easy to onboard,
+
+make it easy to
+scale, and make it
+
+easy to maintain
+continuous delivery tooling
+
+using best practices.
+
+The second is provide control.
+
+Releases should be controllable
+as they make their way out
+
+through a production
+environment.
+
+The third principle
+is security-- control
+
+who can do what, where,
+and when with audit.
+
+And finally, provide
+insights to further optimize
+
+your continuous
+delivery practices.
+
+So now that I've talked
+through these principles,
+
+I'd like to hand
+it over to Bryan,
+
+who's going to talk to
+how Google Cloud applies
+
+these principles.
+
+Bryan?
+
+BRYAN MORGAN: Thanks, Sander.
+
+Continuous delivery
+capabilities frequently
+
+exist within a software
+development lifecycle
+
+ecosystem.
+
+This implies flexibility and
+modularity, as Sander noted,
+
+as a delivery
+tooling requirement.
+
+For GCP customers, connecting
+Google and third-party tooling
+
+that intersects with
+your delivery processes
+
+is a necessity, particularly
+when you already
+
+have continuous integration,
+approval workflows,
+
+and associated test automation.
+
+
+
+We have found that GCP
+Kubernetes customers typically
+
+mature in their usage
+of GKE over time.
+
+Starting out, customers may
+have a single config that
+
+targets a single
+cluster, but this usually
+
+grows into multi-config,
+multi-cluster usage.
+
+From there, teams often find
+that application configuration
+
+should be standardized
+and source
+
+code controlled, allowing them
+to templatize configuration
+
+changes.
+
+Finally, advanced customers find
+tools such as KEP and Kustomize
+
+to be extremely
+useful in allowing
+
+them to make increasingly
+sophisticated and automated
+
+configuration changes
+across environments.
+
+
+
+Most software delivery
+pipelines can be thought
+
+of as a three-step process--
+
+define, manage, and deliver.
+
+Because usage of
+GKE is a journey,
+
+we advocate using Skaffold for
+the local development loop.
+
+From there, Skaffold
+profiles, in combination
+
+with the managed continuous
+delivery service,
+
+can be used to define delivery
+pipelines and orchestrate
+
+releases.
+
+Finally, that service
+can actuate the release
+
+to GKE target clusters.
+
+
+
+Up until this point, we've
+discussed the challenges,
+
+principles, and application
+of those principles
+
+for continuous
+delivery into GKE.
+
+Now, I'd like to step
+through the key features
+
+of our recent public preview
+launch of Google Cloud
+
+Deploy, GCP's continuous
+delivery service for Google
+
+Kubernetes Engine.
+
+
+
+We have engineered
+Google Cloud Deploy
+
+to be a scalable managed
+service that enables
+
+continuous delivery to GKE.
+
+Cloud Deploy relies on
+a ConfigOS code model
+
+with declarative manifests
+for configuring the delivery
+
+pipelines.
+
+In addition, it performs
+GKE manifest rendering
+
+and deployment on your behalf.
+
+Cloud Deploy additionally
+supports a number
+
+of security features,
+including a discrete IEM
+
+model, direct integration
+to GCP Cloud audit logs,
+
+manual approvals as part of
+a deployment process flow,
+
+and even execution on
+Cloud Build private pools
+
+for customers that desire
+security and control
+
+over their environments.
+
+Finally, Cloud Deploy
+has integration points
+
+to enable both Google and
+third-party delivery-related
+
+tooling and process
+integrations.
+
+I'd like to briefly walk
+you through the experience
+
+before I go into our demo.
+
+
+
+In this first slide, you can
+see that Google Cloud Deploy
+
+organizes CD workflows
+around pipelines,
+
+which can be
+monitored and measured
+
+using the GCP Cloud
+console as well
+
+as our gcloud command-line
+interface and API.
+
+
+
+Next, in the Delivery
+Pipeline Details view,
+
+a pipeline's rollouts
+can be controlled
+
+through promotions
+and approvals, which
+
+are again available
+via the Cloud Console
+
+UI and the gcloud CLI.
+
+You'll also note a
+delivery pipelines release
+
+history is accessible
+for similar review
+
+and taking action.
+
+
+
+Users with appropriate
+permissions
+
+can then proceed with
+a release promotion
+
+to evaluate configuration
+changes that
+
+are included with the
+release to be deployed.
+
+The Cloud Console user
+interface supports
+
+direct visual differentials to
+aid in the release progression
+
+decision-making process.
+
+
+
+I'd like to now demonstrate
+the use of Google Cloud Deploy
+
+to deploy an application to a
+series of GKE target clusters.
+
+
+
+In this demo, I will
+step through the process
+
+of creating a GCP Cloud Deploy
+release, deploying to staging,
+
+then approving a
+production rollout.
+
+Today, I'm going to demo
+the new Cloud Deploy
+
+service from Google.
+
+We'll start with
+a GitHub repo that
+
+contains two applications that
+will build two containers.
+
+That application is in
+this example directory,
+
+and you'll see
+there's a container
+
+called leeroy-app and a second
+container called leeroy-web.
+
+Both containers include their
+own Kubernetes deployment
+
+manifest as well as
+a Skaffold config
+
+that defines how
+those containers will
+
+be built and deployed.
+
+You can see here
+that we're planning
+
+to use the standard kubectl
+dplyr to deploy the two GKE
+
+clusters.
+
+If I take a look at GKE
+and my Cloud console,
+
+you can see that I've already
+pre-created three clusters--
+
+a test, staging, and prod.
+
+So those are already
+ready and waiting for me.
+
+So the first step I want to
+do is to go into Cloud Shell.
+
+I've already pulled
+the repo down.
+
+So I want to do a Skaffold
+build and upload-- building
+
+will upload those containers
+to Artifact Registry.
+
+All right.
+
+We can see the container
+build is finished.
+
+They have been uploaded.
+
+I'm going to go check out
+my Artifact Registry just
+
+to verify.
+
+Yep.
+
+We can see now just
+now two containers
+
+have been uploaded,
+leeroy-app and leeroy-web.
+
+So for my next step, I
+want to actually now set up
+
+my Cloud Deploy pipeline.
+
+My containers are
+built. They are ready.
+
+So let's take a look at
+what that looks like.
+
+Within my repo, you can
+see I have a declarative
+
+manifest for my pipeline.
+
+And it looks just like
+this, and it's very simple.
+
+I give it a name, which
+I've called it "web-app"
+
+with a description.
+
+And then it really just
+defines three stages--
+
+test, staging, and prod.
+
+The order in which
+these are defined in
+
+are basically the
+directional flow
+
+that the pipeline
+will promote through.
+
+So let me go into
+my Cloud Shell,
+
+and I'm going to apply that
+manifest to Cloud Deploy.
+
+
+
+All right.
+
+You can see it's
+now been applied.
+
+I can go check out my Cloud
+Deploy user interface.
+
+I'm going to do a refresh here.
+
+All right.
+
+Now, we have a web pipeline,
+and it's-- as we mentioned,
+
+it's planning to promote
+from test to staging to prod.
+
+Those are actually resources as
+well that need to be created.
+
+And you can see I have those
+defined declaratively as well.
+
+I have a target-test,
+target-staging,
+
+and target-prod.
+
+I've defined those in
+separate manifests.
+
+So I'm going to run
+those, and now that
+
+will create each of these
+targets in Cloud Deploy one
+
+at a time.
+
+All of these could have been
+added to a single manifest.
+
+I just opted not to.
+
+
+
+All right.
+
+So I've created the test
+target, the staging target,
+
+and the production target.
+
+At this point, I could
+do one of two things.
+
+The first step I'll take
+is just to manually create
+
+a release in Cloud Deploy.
+
+So I'm going to go ahead and
+create our first release.
+
+
+
+And we're going to
+call it "web-app-001."
+
+And you can see now that
+we've created the release,
+
+and it started a rollout
+to the first stage
+
+in our pipeline,
+which we call test.
+
+If I take a look at
+that, you can see
+
+the rollout has been queued.
+
+It's starting.
+
+And this is what the user
+interface looks like.
+
+We show that there's a
+test, a staging, and a prod.
+
+Rollout is queued.
+
+If you notice here,
+between staging and prod,
+
+it says "0 pending."
+
+And what that's referring
+to is zero approvals.
+
+And it knows that because if
+we take a look at our prod
+
+manifest, we configured
+it to require approval.
+
+So we'll talk about
+approvals in a little bit.
+
+But effectively,
+Cloud Deploy is aware,
+
+and it's expecting an approval
+before it allows that promotion
+
+to that final target.
+
+While this pipeline is
+queued, we're going to go in,
+
+and I'll show you
+as well that I've
+
+created a Cloud Build trigger
+that will automatically
+
+look for changes.
+
+And this is-- for those that
+are familiar with Cloud Build,
+
+this is looking at my Git repo.
+
+And any time a change happens
+to that repo, a commit is made.
+
+It's going to build
+a new container,
+
+upload it to Artifact Registry.
+
+And then you can see
+here, the second step
+
+is it's going to then
+create a new release.
+
+So we can test that out.
+
+I will go into my
+Visual Studio code.
+
+I have a sample app here.
+
+Let's just call it
+"Cloud Next 2021."
+
+We're going to update the
+comment here, apply the change,
+
+"Updated comment."
+
+
+
+We can see that
+trigger is running now.
+
+And what that trigger
+is going to do,
+
+it's going to update the
+containers in the Artifact
+
+Registry.
+
+And then when
+complete, it's going
+
+to kick off a brand-new
+release in Cloud Deploy.
+
+OK.
+
+Our trigger has
+successfully run,
+
+which should mean that a Cloud
+Deploy release has been kicked
+
+off, and we see that it has.
+
+The test has been
+deployed, and now
+
+let's say we want
+to do a promotion.
+
+So we're going to go ahead
+using the user interface
+
+and force the promotion to--
+
+kick off a promotion
+to the staging target.
+
+OK.
+
+Our promotion to
+staging was successful.
+
+So now we really
+have just one step
+
+left-- that's to
+promote to production.
+
+But if you recall,
+production also
+
+does require a manual approval.
+
+So we're going to kick
+off the promotion.
+
+And you can see now we
+have one pending review.
+
+I'll click the Review option.
+
+I'm going to go in there,
+and I can see that, oh, look,
+
+I have a rollout that
+does need an approval.
+
+I do have the
+appropriate permissions,
+
+so I can go in there
+and review that.
+
+At this point, I'm
+ready to approve it.
+
+I know what changed.
+
+I can see the differences.
+
+And so I'm going to approve.
+
+I'm going to go
+back to my pipeline.
+
+Our promotion to
+prod was successful.
+
+And you can see now
+we have successfully
+
+promoted an automated release
+through test, staging,
+
+and production.
+
+This release was built
+off of the GitHub
+
+trigger using Cloud Build.
+
+And this really showcases
+the end-to-end CI/CD pipeline
+
+using both Cloud Build
+and Cloud Deploy.
+
+To learn more about
+Google Cloud Deploy,
+
+visit us at
+cloud.google.com/deploy.
+
+Now back to you, Sander.
+
+SANDER BOGDAN: I'd like
+to thank you, Bryan,
+
+for presenting this
+talk with me today,
+
+as well as all of you for
+attending Google Cloud Next
+
+2021.
+
+
+

@@ -1,0 +1,1094 @@
+
+
+PRAJAKTA DAMLE:
+Welcome, everybody,
+
+and thank you for
+being here today.
+
+My name is Prajakta Damle,
+and I lead product management
+
+for Dataplex at Google Cloud.
+
+And joining me
+today is John Allen,
+
+head of data and
+analytics product
+
+strategy at Deutsche Bank.
+
+John has been with Deutsche
+Bank for over 9 years,
+
+building their data platforms,
+and enabling and championing
+
+big data and data science
+within the organization.
+
+Welcome, John, and thank
+you for your partnership,
+
+as well as for being here today
+to share Deutsche Bank's data
+
+journey with us.
+
+JOHN ALLEN: Well,
+thanks for inviting me.
+
+It's great to be
+here with you today.
+
+PRAJAKTA DAMLE: Likewise.
+
+So let's get started.
+
+Let's take a look at the
+enterprise data landscape,
+
+which as many of
+you know is diverse
+
+and becoming increasingly
+distributed with data that
+
+is stored in data lakes, data
+warehouses, specialized data
+
+marts, and databases, not
+only on GCP but on prem,
+
+as well as in other clouds.
+
+Now, each one of
+these systems have
+
+their own way of handling
+metadata, security,
+
+and governance.
+
+So on one hand, while the data
+is becoming more distributed,
+
+the number of users within an
+organization that need access,
+
+self-service access to this data
+in the tools of their choice
+
+is also growing.
+
+And as a result,
+companies often find
+
+it challenging to
+consistently manage and govern
+
+their data while making
+this data universally
+
+discoverable and accessible
+to the data consumers.
+
+Honestly, it's an
+operational nightmare
+
+that often results in
+data silos and impacts
+
+the overall analytics agility
+of most organizations.
+
+If you look at the data, 67%
+of the data that is produced
+
+is actually never analyzed.
+
+And 68% of the companies
+are unable to realize
+
+any tangible, measurable
+value from their data.
+
+What is even more
+surprising is that only 16%
+
+of the data consumers
+that have access to data
+
+actually trust the data
+that they have access to.
+
+And this is exactly
+why we built Dataplex--
+
+an intelligent data fabric that
+unifies your distributed data
+
+to help automate data management
+and power analytics at scale.
+
+So what does that actually mean?
+
+So let's double-click
+a little bit.
+
+Dataplex is built from ground up
+for distributed data, requiring
+
+you to not move your data
+or duplicate your data.
+
+At the foundation of
+Dataplex is its ability
+
+to logically represent data
+and unify data from a metadata
+
+perspective regardless of
+where this data is stored.
+
+We have focused on three
+key areas of value--
+
+intelligent, AI-driven
+data management;
+
+centralized security
+and governance;
+
+and an integrated
+analytics experience
+
+bringing together both GCP
+native and open-source tools.
+
+All of these areas
+are tightly integrated
+
+in a task-centric
+experience, helping
+
+you build a flexible
+data platform
+
+and making this data
+accessible to your end users,
+
+while ensuring that your
+policies and best practices
+
+can be consistently enforced.
+
+Now, this is a
+vision for Dataplex.
+
+We are starting out by unifying
+the data that our customers use
+
+for analytics on GCP
+before extending it
+
+to other sources outside of GCP.
+
+
+
+Taking a closer look at that
+task-centric experience,
+
+we've built an experience
+that focuses on the operations
+
+that you need to undertake on
+your data on a daily basis,
+
+starting from
+curating and managing
+
+that data to monitoring,
+securing, analyzing this data.
+
+We have built key integrations
+with existing products,
+
+such as BigQuery, Dataproc,
+Google Cloud Storage, Data
+
+Fusion, Dataflow, Data
+Catalog, and others
+
+to really bring together
+that single pane of glass
+
+that you can use to curate,
+manage, monitor, secure,
+
+and analyze your data.
+
+With Dataplex, you can
+really organize your data
+
+in a way that is meaningful
+for your business
+
+around different domains based
+on how this data is produced
+
+and owned or how
+this data is used,
+
+instead of where
+this data is stored.
+
+You can define
+standardized policies
+
+around access control, data
+quality, data classification,
+
+and lifecycle management.
+
+And you can leverage the
+built-in data intelligence
+
+and metadata propagation
+capabilities of Dataplex
+
+to get out-of-box
+access to this data
+
+from a variety of
+tools, both GCP
+
+native as well as open source.
+
+We have a number
+of customers who
+
+have been our early
+adopters using Dataplex.
+
+And these customers come from
+various different industry
+
+verticals as well
+as geographies.
+
+And they're using Dataplex
+as a foundational component
+
+of their data platform
+and seeing value
+
+in having this unified data
+fabric to manage and govern
+
+their distributed data.
+
+And today, I'm really
+happy to have John
+
+here with us, who is going
+to talk about how he sees
+
+the value of data in the overall
+strategy at Deutsche Bank,
+
+his vision for the data
+strategy, and the role
+
+that Dataplex plays in
+realizing that vision.
+
+So welcome, John.
+
+We are super excited
+to have you here.
+
+Could you tell us
+a little bit more
+
+about yourself first and
+then a little bit more
+
+about Deutsche Bank and
+how you use data today?
+
+JOHN ALLEN: Sure.
+
+Well, thanks again.
+
+It's great to be here.
+
+So I work within Deutsche
+Bank's chief data office,
+
+which is part of our Technology
+and Data and Innovation
+
+Division.
+
+And our goal is really to enable
+the secure supply, preparation,
+
+and analysis of data across
+the entire organization.
+
+Now in my role looking
+at product strategy,
+
+I spend a lot of my time
+working with the business teams
+
+and technology vendors
+to ensure that we
+
+have the right roadmaps in place
+to deliver those capabilities.
+
+Deutsche Bank is the
+leading German bank.
+
+We have 84,000 employees
+and operate just
+
+under 1,900 branches, with
+offices in over 50 countries.
+
+The bank comprises of four
+client-centric divisions--
+
+a corporate bank, a private
+bank, an investment bank,
+
+and an asset manager, DWS,
+which Deutsche Bank maintains
+
+a significant stake in.
+
+Now, being a global
+bank, we rely
+
+upon a very complex global
+technology estate comprising
+
+of tens of thousands
+of machines,
+
+thousands of
+applications, and hundreds
+
+of operational and
+analytical data stores.
+
+Our total data footprint is
+in excess of 100 petabytes.
+
+And we use that data for
+a wonderfully diverse set
+
+of use cases.
+
+I'm trying to think of some.
+
+In terms of our--
+
+some of the more interesting
+ones, our front office team
+
+use data to drive
+real-time analysis
+
+and low latency
+algorithmic trading,
+
+and allows our product
+managers to develop highly
+
+personalized client offerings.
+
+In the middle and
+back office, we
+
+leverage big data processing
+to help manage risk
+
+and to prevent fraud.
+
+And like any business, we rely
+upon highly accurate and timely
+
+financial data to serve
+regulatory and financial
+
+reporting requirements.
+
+
+
+PRAJAKTA DAMLE: You operate
+in such a global market.
+
+And the complexities of
+operations that you just
+
+mentioned across different
+businesses within the bank,
+
+it's quite interesting.
+
+What role does data
+play at Deutsche Bank?
+
+And what has your journey
+with data been like so far?
+
+JOHN ALLEN: Well, I agree.
+
+I mean, fundamentally
+we're a data business.
+
+And data is the
+digital manifestation
+
+of our clients, their
+transactions, relationships,
+
+and our internal processes.
+
+However, we didn't always view
+ourselves as a data business.
+
+Instead, we had a more
+application-centric mindset,
+
+which saw data is more of a
+side effect of that application
+
+processing.
+
+We locked data away
+in disparate silos
+
+with inconsistent
+taxonomies and formats,
+
+and a lack of clear ownership
+and an over-reliance
+
+on bilateral
+point-to-point data feeds.
+
+So to address this, we
+established a long-term plan,
+
+our data strategy, to
+improve the availability
+
+of high quality data organized
+around a set of consistent data
+
+models and golden sources,
+to uplift skills in data
+
+and increase understanding
+of data problems
+
+across the entire organization.
+
+And we set out to enable modern
+analytics, such as big data
+
+and machine learning.
+
+The transformation took
+sustained investments
+
+over many years and was
+executed in an environment
+
+of ever-changing regulations.
+
+Just as an aside,
+last year, there
+
+were over 6,000
+pages of new rules
+
+that we needed to examine
+to understand their impact
+
+on that data landscape.
+
+Today, we are a much more
+data-centric organization,
+
+which actively
+manages and improves
+
+its data as part of the
+normal day-to-day operations.
+
+We operate an
+integrated ecosystem
+
+of analytics platforms.
+
+And we have the
+key trusted sources
+
+of high quality business
+data needed to drive
+
+intelligent decision making.
+
+I know you asked for successes.
+
+And I think, frankly, there
+are too many to mention.
+
+But from my personal
+perspective,
+
+I think the work
+the private bank has
+
+done creating new
+personalized offerings
+
+for our retail clients through
+the application of machine
+
+learning is especially
+cool, as is the big data
+
+processing that our risk teams
+use to allow us to be much more
+
+efficient with our capital.
+
+PRAJAKTA DAMLE: It's
+quite interesting
+
+to hear how you have
+made this transition,
+
+or the bank has
+made this transition
+
+from an application-centric
+view to a data-centric view
+
+in an industry that is so highly
+regulated with, as you just
+
+mentioned, changing regulations
+and compliance rules.
+
+So what have been your top
+learnings and challenges
+
+so far?
+
+JOHN ALLEN: Well, for me some of
+the most significant learnings
+
+relate to governance, ownership,
+and how we as an organization
+
+think about data--
+
+our data culture, if you will.
+
+Foremost for me, data needs
+to be treated as a first class
+
+citizen within the enterprise
+if it is to be used and reused
+
+effectively.
+
+It must be seen as an
+asset in its own right.
+
+Also, finding the right
+balance between security
+
+and stability,
+coupled with agility
+
+to deliver analytics and
+help customers, is difficult.
+
+Maintaining distinctly separate
+operational and analytical
+
+organizations fails to
+deliver analytical stability
+
+and efficiency.
+
+What I mean there is this
+is when those teams do not
+
+use and thus value each
+other's representations of what
+
+is, in essence, the same data.
+
+Metadata is also a critical
+foundation for effective data
+
+management and data governance.
+
+However, building
+and maintaining
+
+a unified repository of
+high quality metadata
+
+is a significant challenge in
+traditional IT environments.
+
+And finally, I think while
+centralization of data
+
+can seem like an attractive
+approach to achieving
+
+consistency and standards and
+the application of policies,
+
+it very often leads
+to bottlenecks
+
+that inhibit business agility.
+
+PRAJAKTA DAMLE: So given
+these learnings, especially
+
+learnings around how to
+build trust in data, how
+
+to avoid data duplication,
+how to put metadata
+
+at the center and foundation
+of your data platform,
+
+could you share with us what is
+your short-term and long-term
+
+data strategy for the bank?
+
+JOHN ALLEN: Yeah, I'd love to.
+
+Well, our goal is to democratize
+the use of data and analytics
+
+by making it a secure
+and frictionless
+
+self-service experience.
+
+Only then will we
+be able to make
+
+data accessible to
+everyone and not
+
+just the data experts
+within the organization.
+
+We intend to do
+this by investing
+
+in the automation of
+controls and policies,
+
+which along with high quality
+metadata, technical, business,
+
+and contextual metadata,
+will allow us to build a data
+
+control plane that
+ensures that our data is
+
+easy to find and access,
+yet always remains secure
+
+wherever it is used.
+
+Now, currently we're
+completing our transition
+
+to managing data as an asset,
+changing our IT processes
+
+to allow data to thrive outside
+of those owning applications
+
+we traditionally had.
+
+We're also converging
+on common approaches
+
+to data sharing and
+data re-use, which
+
+use streamlined data
+governance processes,
+
+a new unified
+repository of metadata,
+
+and automation to make
+our data more accessible.
+
+To help our engineering
+teams, we're
+
+also developing standard
+reference architectures
+
+for common data problems,
+such as streaming and batch
+
+analytics, and machine
+learning in GCP.
+
+And finally, we're
+investing in our people
+
+with training in Cloud and
+agile data best practices.
+
+PRAJAKTA DAMLE: So speaking
+of cloud and your partnership
+
+with Google Cloud, how
+has Google Cloud helped
+
+you realize your data vision?
+
+JOHN ALLEN: Well, the
+partnership with Google
+
+has given us a fantastic base
+to build our future banking
+
+services on.
+
+Technologies such as GCS,
+BigQuery, Dataflow, Dataproc
+
+are much more powerful
+and easy to use than our
+
+on premise equivalents.
+
+Likewise, Cloud SQL, Datastore,
+GCE, App Engine, and Pub/Sub
+
+for transactional systems.
+
+However, for me
+what's really exciting
+
+is the advancements in machine
+learning that Vertex AI
+
+and BigQuery ML can bring.
+
+But that's not to say
+it's all plain sailing.
+
+There is still a lot of work
+to integrate and assemble
+
+these products into
+effective business solutions.
+
+And this is especially true in
+a risk averse, highly regulated
+
+industry such as ours.
+
+Speaking frankly, there is
+still quite a gap to close.
+
+I think this is an area where
+we see the partnership being
+
+especially beneficial.
+
+So Google understands
+this complexity.
+
+And together we are
+developing approaches
+
+to solve these
+problems in the Cloud.
+
+In fact, we are already
+seeing some exciting product
+
+developments from Google.
+
+A good example of that
+is indeed Dataplex.
+
+PRAJAKTA DAMLE:
+Your team has been
+
+an early adopter of Dataplex.
+
+And your close partnership
+is extremely valuable for us
+
+as you provide us guidance
+on product direction.
+
+I would love to
+hear more about how
+
+you see Dataplex fit in
+your overall data strategy,
+
+how Dataplex is helping you
+with some of the data challenges
+
+that you mentioned early on.
+
+JOHN ALLEN: Yeah, absolutely.
+
+Well, we are looking to
+use Dataplex to give us
+
+a way of organizing our data
+around our core business
+
+and data concepts,
+such as global markets
+
+data, payments
+data, customer data,
+
+without having to copy that data
+from its originating mastering
+
+application projects.
+
+Dataplex's lakes and zones
+give us an elegant way to group
+
+our data assets depending upon
+their type, their quality,
+
+or their stage in
+their data lifecycle.
+
+And we're experimenting
+with the designs
+
+for operating this at
+an enterprise level.
+
+These zones are very
+important concept for us.
+
+In fact, we implemented
+something similar in our
+
+on premise data lake.
+
+However with Dataplex, we can
+take this to the next level,
+
+realizing a much more
+federated system,
+
+employing a type of data mesh
+architecture, if you will,
+
+where data remains in
+situ, owned and governed
+
+by its originators,
+yet still part
+
+of a unified platform
+maintained by Dataplex
+
+and integrated with a set
+of leading analytical tools.
+
+I think GCP's Data Catalog also
+gives us amazing capabilities.
+
+It gives us visibility of key
+organizational data assets.
+
+But with Dataplex, we
+can go a step further
+
+and extend the Data Catalog
+with the automated discovery
+
+and classification of
+semi-structured and
+
+unstructured data.
+
+Now ensuring our data is secure
+is of paramount importance.
+
+And we're investing heavily
+in the automation of controls
+
+and embedding those controls
+into our infrastructure as code
+
+and as policies.
+
+However, today we still need
+to develop those controls
+
+for each data service we use.
+
+We also need to find a
+way of enforcing them
+
+through infrastructure
+as code templates
+
+and tools such as Terraform.
+
+This adds complexity.
+
+With Dataplex, we
+have the potential
+
+to develop these controls once
+for the lake, zone, and assets,
+
+and let Dataplex do the
+hard work of applying them
+
+to the different
+underlying technologies.
+
+And the plans Dataplex has for
+extending this policy driven
+
+approach to include
+data governance, data
+
+management, and data quality
+tasks is particularly exciting.
+
+We can imagine a world where we
+assess, transform, and promote
+
+our high quality data
+based upon policies
+
+and not hand coded data
+pipelines, allowing
+
+us to focus more on the
+value creating tasks
+
+and less on maintaining
+boilerplate data integration.
+
+So in summary, I think we
+see BigQuery for analytics
+
+and Dataplex for data management
+as cornerstones of our vision
+
+for enabling a secure
+and frictionless data
+
+experience in the cloud.
+
+PRAJAKTA DAMLE: Well,
+thank you, John.
+
+Thank you for sharing your
+insights and perspective
+
+with us today.
+
+JOHN ALLEN: Your welcome.
+
+PRAJAKTA DAMLE:
+And also, thank you
+
+to you and your team for
+your continued partnership.
+
+So as you heard
+John just outline,
+
+Dataplex helps enterprises
+unlock the freedom of choice
+
+by providing them
+the flexibility
+
+to keep data where they see fit
+and to use the tools that they
+
+need to run analysis
+within their organization.
+
+Dataplex provides a way to
+enable consistent controls
+
+across enterprise data landscape
+that is inherently distributed.
+
+And finally, with
+Dataplex our customers
+
+can leverage the built-in
+data intelligence
+
+to automate many of
+the common data tasks
+
+around data management
+and governance
+
+across their data estate.
+
+So that's all that
+we have today.
+
+If you would like to
+learn more about Dataplex,
+
+do check our website.
+
+And thank you, everyone,
+for your time today
+
+and for attending
+this session on how
+
+Dataplex helps enterprises
+break down their data silos.
+
+Thanks again.
+
+JOHN ALLEN: Thanks.
+
+
+

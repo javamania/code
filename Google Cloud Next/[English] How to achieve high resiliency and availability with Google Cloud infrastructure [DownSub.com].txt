@@ -1,0 +1,1315 @@
+
+
+BRIAN SCHWARZ: Hi, I'm Brian,
+and welcome to our session
+
+at Google Cloud Next.
+
+This session is going to be
+about achieving high resiliency
+
+and availability with
+Google Cloud infrastructure.
+
+I'm joined by my friend and
+colleague, Chris Schilling.
+
+We're both product
+managers at Google
+
+and are excited to talk
+to you about this session.
+
+The session today is going
+to cover a number of topics.
+
+First we're going
+to talk about why
+
+resiliency and high availability
+matter in the Cloud,
+
+a little bit about what Google
+Cloud provides to customers
+
+as a foundation of the
+platform, some of the things
+
+you as a user of
+Google Cloud need
+
+to take into account as you
+architect your solutions
+
+and applications
+on Google Cloud,
+
+and then Chris is going to talk
+a little bit about business
+
+continuity planning, and it's a
+good idea for all applications
+
+and all systems, and
+then we'll give you
+
+some links about how to
+find more information.
+
+With this, I'd like to
+turn it over to Chris
+
+to get into the content.
+
+CHRIS SCHILLING: Thanks, Brian.
+
+Now let's talk
+about why resiliency
+
+and high availability
+matter to technologists
+
+building in the Cloud.
+
+
+
+Terms like resiliency
+can be used
+
+in a lot of different
+contexts in IT infrastructure.
+
+We hear the term in the
+context of distributed systems,
+
+context of databases, in
+the context of networking.
+
+When we think broadly
+about what defines
+
+resilient infrastructure,
+there are two key components.
+
+First off, that
+infrastructure needs
+
+to be able to handle failures
+without unexpected data loss.
+
+If there is a network
+partition that
+
+results in the loss of
+a node, for example,
+
+a resilient distributed
+database with many nodes
+
+should be able to
+recover without
+
+a split-brain situation.
+
+Similarly, if there is a
+disk failure in a resilient
+
+enterprise storage
+array, the system
+
+should have copies of that data
+available elsewhere to mitigate
+
+against data loss.
+
+So that's the first
+component of resiliency.
+
+Failure should not
+mean data loss.
+
+The second component is
+that resiliency needs
+
+more than one layer of defense.
+
+Just as infrastructure
+has multiple components,
+
+from software-defined storage
+to the relational database,
+
+to network and access security,
+to business logic middle tier,
+
+so too does resiliency.
+
+Resilient infrastructure
+will have defense baked
+
+into those layers,
+and in certain layers,
+
+multiple lines of defense.
+
+If resiliency is a
+fundamentally-defensive concept
+
+focused on your data,
+high availability,
+
+on the other hand, is about
+your end user's experience.
+
+Highly-available
+applications are still
+
+available to the user
+even when something goes
+
+wrong with the infrastructure.
+
+That means that your users
+shouldn't be adversely affected
+
+when a failure occurs.
+
+An application can be resilient
+without being highly available,
+
+or it could be highly
+available without resiliency.
+
+We'd all like to achieve both.
+
+
+
+And that's why we
+at Google Cloud
+
+view these goals as linked.
+
+If your goal is
+high availability
+
+for a global
+consumer application,
+
+you want to ensure that
+an individual hardware
+
+failure in one of
+your cloud regions
+
+would not impact your
+customer's experience.
+
+That almost always means
+thinking about resiliency,
+
+because data loss can be harmful
+to your customers, as well.
+
+Similarly, if your
+goal is resiliency,
+
+you want to make sure that
+all your defensive hard
+
+work to protect
+against data loss
+
+and to create layers
+of defense will also
+
+have a direct business
+impact, ideally
+
+because your
+customers never notice
+
+any change to their experience,
+even when things go wrong.
+
+
+
+So those are linked
+goals, both resiliency
+
+and high availability.
+
+When we break down the
+requirements for this,
+
+I think the first
+one on our list
+
+is infrastructure durability.
+
+It lines up more with the
+defensive nature of resiliency
+
+because here we're talking
+about providing hardware SLAs,
+
+we're talking about making
+sure our data centers are safe,
+
+and we're thinking about how
+we respond to escalations
+
+within our network.
+
+A good example of
+infrastructure durability
+
+is our public durability service
+level objective for Persistent
+
+Disk, our block storage offering
+For regional balance PD,
+
+for example, we share that
+we had better than 99.9999%
+
+durability, six nines.
+
+Next up is application
+availability.
+
+That's something that veers
+toward the high availability
+
+goal, because we're thinking
+about how to keep a database up
+
+and running through your
+transactional applications
+
+or how to move traffic to
+the right node or even region
+
+within a distributed
+application.
+
+A great product level example
+is our high availability
+
+configuration for Cloud SQL,
+our managed database offering.
+
+It lets you set up an
+architecture designed
+
+to limit user impact if the
+primary database system fails.
+
+Last but not least is
+business continuity.
+
+We view this as a core
+component for both linked goals
+
+because this is all
+about planning, checking,
+
+and double checking that you
+have an infrastructure safety
+
+net.
+
+That means taking backups
+to ensure resiliency,
+
+and it also means testing your
+active-active disaster recovery
+
+architecture to ensure
+high availability
+
+for your application.
+
+One product that we
+have in this space
+
+is our multi-region storage,
+which stores your backup data
+
+across multiple Google Cloud
+regions in a given continent.
+
+The result is that it's easy
+to restore in multiple Google
+
+Cloud regions on that continent,
+depending on what your business
+
+continuity plan calls for.
+
+
+
+What I would take
+away from all this
+
+is that Google Cloud delivers
+infrastructure durability
+
+to all our infrastructure
+as a service customers.
+
+This is a default setting
+for us, not an upcharge
+
+or an option.
+
+If you want to build a
+resilient, highly-available
+
+application, we want to
+take care of the first step.
+
+The next two steps, ensuring
+application availability
+
+and creating a business
+continuity plan of attack,
+
+those are equally important.
+
+For them, we offer our
+customers tools and services
+
+that they can adopt to
+meet specific goals.
+
+We recognize that some tier one
+customer-facing transactional
+
+applications will
+have requirements
+
+above and beyond an
+internal sandbox application
+
+with a few users and no
+customer data, for example.
+
+So let's talk about
+durability first.
+
+It's a great topic
+to kick us off
+
+because Google Cloud
+really shines here.
+
+All our customers
+get the benefit
+
+of infrastructure
+durability that
+
+underpins some of the world's
+favorite applications,
+
+like YouTube.
+
+And that starts with storage
+for all types of applications.
+
+Our block offering,
+Persistent Disk,
+
+our first [INAUDIBLE]
+file offering, Filestore,
+
+and our object storage
+offering, Cloud Storage,
+
+all count some of the
+world's largest enterprises
+
+as customers and users.
+
+Regardless of whether you're
+a startup or a Fortune 100
+
+company, you can find the same
+public durability information
+
+under Persistent Disk
+offerings on our website.
+
+All that information
+is available publicly.
+
+We recently published a blog
+post to help customers further
+
+understand how we
+approach this durability
+
+and what we do to keep
+your infrastructure safe.
+
+Similarly, because
+we're a service provider
+
+for the infrastructure, we have
+operational safeguards in place
+
+to make sure you have a
+trusted platform to build on.
+
+That means having encryption
+by default, for example,
+
+so you don't have to worry
+about accidental leakage
+
+of unencrypted data.
+
+It also means having Site
+Reliability Engineering,
+
+or SRE, coverage across a
+growing global footprint
+
+and across all of our services.
+
+Many of Google's
+SREs have contributed
+
+to the open literature
+and public practices
+
+that help make all of us in
+product engineering better
+
+at our operations.
+
+You get the benefit of all
+this knowledge and the benefit
+
+of having these SREs available
+to address service-level issues
+
+when you build on Google Cloud.
+
+I'll hand the rest of
+the slide over to Brian.
+
+BRIAN SCHWARZ: Thanks, Chris.
+
+The other part of
+infrastructure durability
+
+really comes from our global
+data centers and our network.
+
+Our global data centers
+are significant.
+
+We have 27 regions
+and over 82 zones
+
+built out in many
+continents in the world,
+
+and they offer a tremendous
+amount of on-demand capacity
+
+and many layers of physical
+security in the data
+
+centers themselves.
+
+Of course, we've layered on
+top of this infrastructure
+
+sophisticated hardware
+monitoring, and all of these
+
+are used to basically offer
+the many managed services that
+
+are part of the
+Google Cloud network.
+
+And of course, the network--
+
+I always like to tell people
+the Google Cloud network scales
+
+and has high availability
+because Google
+
+itself has scale and
+high availability.
+
+Almost everybody in the
+world has some appreciation
+
+for the scale of Google's
+consumer services.
+
+You probably use some of
+these almost every day.
+
+These same pieces
+of infrastructure
+
+and the same network is used
+to provide the capabilities
+
+that we offer in the
+Google Cloud platform.
+
+And of course, we have
+significant investments
+
+in undersea cabling, edge
+PoPs, or Points Of Presence,
+
+where we essentially are
+peering into the internet
+
+and the network,
+and of course, we
+
+have thousands of
+edge caches to make
+
+the performance of Google
+services and, of course,
+
+the performance of many
+Google Cloud services
+
+incredibly performant
+and available.
+
+The other thing I'd like
+to use is an example
+
+is our networking prowess and
+the software-defined networking
+
+we have in Google Cloud
+makes it really easy for you
+
+to build on top of this
+global infrastructure.
+
+A specific example of
+that is the global VPCs,
+
+or Virtual Private Clouds,
+that you can build.
+
+They are network constructs
+that are very easy to set up
+
+and essentially span
+Google Cloud regions.
+
+So you can create one virtual
+network that spans a region.
+
+It makes it very easy for you to
+build global applications that
+
+take advantage of
+this infrastructure
+
+that we've built.
+
+Now let's talk about
+some of the things
+
+that it's important
+for you to think
+
+about architecting as
+you build applications
+
+and services on Google Cloud.
+
+And it's important to
+think about applications
+
+in terms of different
+types of applications.
+
+I often like to think
+about, particularly
+
+in a short session like this,
+different types of applications
+
+that would be like web servers
+and application servers,
+
+often being stateless apps and
+a second set of applications
+
+being databases and very
+durable apps, places
+
+where all of your data lives.
+
+And we're going to spend a
+little time to talk about each
+
+of those individually.
+
+
+
+So if we look at the left
+part of the slide here,
+
+the first thing I want to
+talk about is load balancing.
+
+So the first two, load balancing
+and the GCE, or Google Compute
+
+Engine, auto healing
+are really things
+
+to first think about when you're
+thinking about application
+
+servers and web servers, that
+first category of applications
+
+I mentioned.
+
+Load balancers essentially
+redirect traffic away
+
+from unresponsive servers,
+unresponsive web servers
+
+or application server.
+
+They may be too busy.
+
+It might be a software defect.
+
+There could be a
+lot of reasons why
+
+a node becomes unresponsive.
+
+Load balancing essentially
+will redirect traffic away
+
+from these unresponsive
+nodes so your customers
+
+and users of the applications
+get a great experience.
+
+There are different options on
+how you deploy a load balancer.
+
+You can deploy it to
+essentially give capabilities
+
+to span zones and regions for
+more local load balancing.
+
+There's also options
+to essentially do
+
+global load balancing.
+
+So all of your
+consumers and users
+
+can come into one single
+point, and the application
+
+may actually be spread
+across regions, so even
+
+full region outages will be
+hidden from your customers.
+
+They'll be redirected to
+surviving, healthy nodes.
+
+The second layer of
+defense-- as Chris
+
+mentioned, it's good to have
+multiple layers of defense
+
+for applications
+and web servers-- is
+
+to think about auto healing.
+
+So in Google
+Compute Engine, this
+
+is our main offering that
+essentially offers VMs.
+
+Many, many applications
+run in these VMs,
+
+and there's a construct
+that we've developed
+
+called managed instance groups.
+
+It's essentially a set of
+VMs that form an application
+
+tier in their environment.
+
+They can essentially provide
+a second layer of protection
+
+and availability,
+and, essentially,
+
+they will automatically
+restart unresponsive nodes.
+
+So a node may be too busy.
+
+It may get somehow
+locked in some state
+
+that it can't recover from.
+
+The load balancer will
+shift traffic away from it,
+
+and then the GCE auto
+healing will come in
+
+to essentially
+restart those nodes.
+
+So again, further
+rehealing the system.
+
+An important thing
+to think about
+
+as you start to build
+these layers of defense
+
+is how they work together.
+
+And an example is
+you essentially
+
+want the load balancer
+to redirect traffic away
+
+from an unresponsive node
+before it gets restarted.
+
+So as a perfect example,
+you want the health checks
+
+that are in your
+load balancer to be
+
+more frequent and aggressive,
+and reshift traffic
+
+away from unresponsive
+nodes, and then
+
+the managed instance group auto
+healing feature to kick in also
+
+has health checks to work
+slightly slower to actually go
+
+in and restart nodes.
+
+That way the system
+is, in some senses,
+
+self-healing or auto-healing.
+
+The second thing I
+want to talk about
+
+is more on the
+stateful application
+
+tier, which is why I've talked
+about Cloud SQL and Spanner.
+
+So Chris mentioned
+Cloud SQL earlier.
+
+You could of course run
+a database inside of one
+
+of our VMs.
+
+Many customers
+choose to do that.
+
+But it's also great to
+think about managed database
+
+offerings to reduce
+some of the toil
+
+about setting up and
+running a database server.
+
+And that's really where
+Cloud SQL comes in.
+
+It's a managed database
+service we have.
+
+It supports a lot of common
+databases, MySQL, PostgreSQL,
+
+SQL Server, and it has a number
+of interesting capabilities
+
+that really add value in
+the forms of durability
+
+and resilience and
+high availability.
+
+One is using
+snapshot-based backups.
+
+You can automate it, so
+it takes regular backups.
+
+Let's say every four hours you
+have good protection points.
+
+But you can also use it
+in on-demand snapshots
+
+if you're going to
+do a maintenance
+
+task on your database,
+add tables, change
+
+the scheme, et cetera.
+
+You can create a snapshot to
+create an easy recovery point.
+
+The managed database
+service also
+
+has a built in
+capability to offer you
+
+point-in-time recovery
+for your databases.
+
+So you have snapshots, and
+then you can essentially
+
+move the database to a
+particular point in time
+
+based on the logs that
+are in the database.
+
+So it's a combination of
+the managed database service
+
+working in conjunction
+with snapshots
+
+to offer you a
+capability to really
+
+be specific at exactly
+the point where
+
+the database is
+consistent and you want
+
+to restart the application.
+
+It's also great to think
+about the high availability
+
+capabilities in the
+Cloud SQL offering,
+
+because it offers
+failover replicas.
+
+These are essentially shadow
+databases that can be set up.
+
+There are options inside the
+service that can essentially
+
+run in multiple zones to
+protect you from a zone outage.
+
+These zonal things can use
+the regional PD offering,
+
+the regional Persistent Disk
+offering that Chris mentioned,
+
+so we're synchronously
+replicating the data
+
+for the database
+underneath the covers.
+
+And then you essentially
+have a Cloud SQL instance
+
+that's ready to go in the
+event of a zonal outage.
+
+There's also a
+capability in Cloud SQL
+
+to essentially do cross
+region protection.
+
+This is, of course, an
+asynchronous capability,
+
+but it can also protect you
+against full regional outages.
+
+So, again, there's a lot
+of power and flexibility
+
+in terms of the
+offering that Cloud SQL
+
+has in terms of
+building in resilience
+
+and high availability.
+
+The last thing I wanted
+to think about or talk
+
+to you about in
+the database tier
+
+is our Spanner
+offering, Cloud Spanner.
+
+This is a really
+powerful capability.
+
+It's highly differentiated.
+
+It really comes from
+technology that Google
+
+built to scale to the
+billions of users we have
+
+on our consumer applications.
+
+It's a fully-managed
+database service,
+
+so it's very easy to use.
+
+But it's basically a single
+cross regional database.
+
+It's active-active and
+read/write in many regions
+
+all at the same time, and that's
+really what makes it unique.
+
+So it preserves the
+value of standard SQL,
+
+because that's such a common
+application programming
+
+language, but it provides you
+essentially, in some senses,
+
+you can think about a
+cross-regional database
+
+as a continent-sized database
+for you to operate on.
+
+So it really allows you
+to simplify how you think
+
+about building these systems.
+
+And it comes with a
+five-nine availability SLA,
+
+so it's really a
+powerful capability
+
+to have in the arsenal as
+you think about how you build
+
+applications on Google Cloud.
+
+Now I'd like to turn it over
+to Chris for the next part.
+
+CHRIS SCHILLING: Much
+appreciate it, Brian.
+
+So let's switch back
+to business continuity,
+
+the insurance policy, the safety
+net that we all know we need.
+
+
+
+Business continuity is
+a pretty expansive term.
+
+It can mean a lot of things
+from how a cloud architect plans
+
+for disaster,
+production [INAUDIBLE],,
+
+to how a storage
+administrator tests backups.
+
+You'll noticed I mentioned
+planning and testing right
+
+off the bat, and we have a
+number of features and services
+
+built for business
+continuity purposes, features
+
+like being able to export
+a copy of your database
+
+to our object storage for
+long-term [? archival, ?]
+
+for example.
+
+But business continuity
+is about being absolutely
+
+certain that the data
+will be available
+
+when the auditor calls.
+
+That's why the human element
+of planning and testing
+
+is so important here.
+
+As the saying goes, an
+amateur takes a backup.
+
+A professional tests
+that it can be restored.
+
+
+
+So when we dial into
+a couple of services,
+
+two of interesting ones
+that I find differentiated
+
+are our multi-region storage
+and our orchestrated backup.
+
+They play different roles in
+our business continuity package.
+
+Multi-regional storage
+can mean keeping data
+
+in our object storage.
+
+We'll keep two
+copies of the data
+
+in two different
+regions on a continent,
+
+available in case of a
+regional failure or disaster.
+
+This also underpins some
+of our other offerings.
+
+It makes it possible, for
+example, for our customers
+
+to restore snapshots
+stored in North
+
+America to different
+North American regions
+
+without having to create
+a handful of copies
+
+across the continent and wait
+for them to be replicated one
+
+after another.
+
+And on the orchestrated
+backup side,
+
+we recently acquired Actifio,
+a proven backup vendor
+
+that sells Actifio GO, a backup
+as a service offering built
+
+on Google Cloud.
+
+Actifio GO can protect
+Google Compute Engine VMs
+
+if you're building in the Cloud.
+
+Or if you're looking at
+shifting relational databases
+
+into Google VMs and you
+need application-consistent,
+
+agent-based backups similar
+to what you have on-prem,
+
+Actifio GO can deliver the
+same functionality to you,
+
+allowing you to backup your
+newly-migrated database
+
+workloads as frequently
+as every 15 minutes.
+
+Best of all, that data can be
+stored in multiple Google Cloud
+
+object storage buckets in
+different regions and classes,
+
+and it can be restored directly
+from object storage, which
+
+means lower long-term
+storage costs for customers
+
+with severe data
+retention requirements
+
+and easier discussions with
+your internal compliance
+
+counterparts when you test
+that a backup is available,
+
+for example, without the need
+to complicate restores or move
+
+data around to different
+block storage options.
+
+These are just two
+of our features
+
+that we've created to make
+business continuity easier
+
+for you to plan and to test
+so that you and your team
+
+can achieve those
+goals around resiliency
+
+and high adaptability.
+
+If you'd like to
+learn more, we've
+
+included a couple of links
+to some interesting content
+
+on disaster recovery, high
+availability, and resilience.
+
+In the bottom right,
+there's a link
+
+to achieving resiliency and
+high availability in Cloud SQL.
+
+It's a video from
+last year's Next,
+
+and it covers a
+lot of the topics
+
+we've discussed here as they
+apply to that managed database
+
+service.
+
+Just above that, we have a
+DR planning guide for GCE.
+
+Those of you who are running
+stateful workloads and Google
+
+Cloud VMs, we think you'll
+find that useful to help you
+
+plan for your DR requirements.
+
+Over on the left, we have
+a few sessions of Next
+
+that we think you'll
+find relevant.
+
+We've included their titles
+and the shorthand name
+
+with numbers so you can
+find those in the catalog.
+
+I want to thank Brian for
+co-presenting with me,
+
+and I want to thank all of
+you for attending our session.
+
+
+

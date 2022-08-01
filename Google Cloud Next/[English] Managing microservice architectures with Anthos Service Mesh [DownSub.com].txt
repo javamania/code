@@ -1,0 +1,1635 @@
+
+
+AMEER ABBAS: Hello, and welcome.
+
+My name is Ameer Abbas.
+
+I'm a product manager at Google.
+
+I focus on application and
+platform modernization.
+
+Last year I delivered
+a presentation
+
+with an eerily similar
+topic to this one.
+
+It was called "Building
+Globally Scalable
+
+Applications with Istio
+and Anthos Service Mesh."
+
+So you're probably
+wondering why am I doing
+
+the same presentation again.
+
+Well, not quite.
+
+I thought this year I would
+take some of the foundations
+
+and principles we
+talked about last year
+
+and put them into practice,
+and I can show you
+
+some of the practical
+applications of delivering
+
+modern applications.
+
+So let's get started.
+
+Let's talk about a service.
+
+Everything revolves
+around a service.
+
+We build our teams, our
+organizations, our engineering,
+
+our product teams to deliver
+beautiful, scalable, resilient
+
+services to our customers.
+
+Every service
+needs a few things.
+
+For instance, a service
+needs to be resilient.
+
+It needs to be scalable.
+
+It needs to be secure.
+
+And most importantly, it
+needs to be manageable.
+
+And what we mean by
+that is by resiliency
+
+I mean that we need
+to be able to weather
+
+the storms against any
+infrastructure, human,
+
+or machine error.
+
+Scalability is pretty
+self-explanatory.
+
+We need to be able to run our
+services on many computers,
+
+maybe in many
+Kubernetes clusters
+
+in a lot of different
+zones in many regions.
+
+For security, we want to encrypt
+all traffic, all communication
+
+between services.
+
+And we want to be able to
+have the tools to implement
+
+policy and enforce policy to
+and from every single service.
+
+And for manageability,
+there's a lot
+
+of things that fall
+under that umbrella.
+
+For instance, what do
+we want to observe?
+
+How do we want to
+measure the signals?
+
+How do we deliver traffic to
+the right instance of a service?
+
+And how do we reliably roll
+out new versions of a service
+
+and keep innovating and
+manage the configuration that
+
+revolves around a service?
+
+All of that falls
+under manageability.
+
+So let's recap.
+
+Last year we talked
+about running services
+
+in a single cluster.
+
+Here we have a service
+called front end
+
+running in the front end
+namespace with a pod.
+
+And it's running in
+a single cluster.
+
+And everything is fine and dandy
+until that cluster goes down.
+
+And as soon as that
+cluster goes down,
+
+that service and
+any other service
+
+that's running in that cluster
+also goes down with it.
+
+So we've kind of
+broken that first tenet
+
+of resiliency, which
+is that we can't even
+
+weather the storms against
+infrastructure failures.
+
+So what do we do?
+
+Well, we run our services
+in more than one cluster.
+
+So we run something called
+distributed services.
+
+A distributed service is
+just a Kubernetes service
+
+that runs on multiple clusters.
+
+From an outsider's perspective,
+it's the same logical service.
+
+I don't need to know that it's
+running on multiple clusters.
+
+So here I have the
+same service front
+
+end running on four clusters.
+
+On the left-hand side,
+I have two clusters
+
+in region 1 in two
+different zones.
+
+And on the right-hand
+side, I have
+
+two clusters in region 2
+in two different zones.
+
+So you can see that not only
+do I have cluster resiliency,
+
+I have zonal redundancy
+and regional redundancy.
+
+And what that means is
+if my cluster goes down,
+
+I still haven't lost my service.
+
+I have three other clusters
+that can serve traffic
+
+for that service.
+
+I can lose an entire region and
+I have not lost that service.
+
+I can lose multiple clusters
+in multiple regions.
+
+As long as that last
+cluster has enough capacity
+
+to serve traffic for
+that particular service,
+
+I'm good to go.
+
+So you can already
+see the effects
+
+of scalability and
+resiliency when
+
+you run distributed services.
+
+But with distributed services
+comes a few considerations
+
+that you may not consider
+in a single cluster life.
+
+For example, service
+discovery and traffic routing.
+
+In a single cluster, service
+discovery and traffic routing
+
+are kind of automatic.
+
+When you drop a
+service into a cluster,
+
+it gets automatically
+discovered.
+
+Other services can get to it.
+
+Routing just works.
+
+So how do we do that in
+a distributed service
+
+environment?
+
+Here we have two
+distributed services.
+
+What if the front
+end service wants
+
+to talk to the cart service?
+
+How does the front
+end service know
+
+which pods are healthy
+for the cart service?
+
+Which pods to get to and
+how to route to those pods.
+
+So this is kind of the
+east-west traffic problem.
+
+Next is ingress.
+
+Again in a single
+cluster environment,
+
+we have an ingress object.
+
+We deploy the ingress
+object, and we
+
+can get traffic from outside
+of the cluster to our service
+
+no problem.
+
+Well, how do we do that in
+a multicluster environment?
+
+How do we do a
+multicluster ingress?
+
+So this is the
+multicluster ingress,
+
+or the north-south problem.
+
+And then when we bring
+location into the mix,
+
+things get a little
+bit more complicated.
+
+Here we have service running
+on two different regions.
+
+Let's say region 1 is in
+Europe and region 2 is in Asia.
+
+So the users that are in
+Europe or closer to region 1,
+
+we want to deliver their
+traffic to an instance
+
+of a service that's closer
+to them, so in Europe.
+
+And likewise, for the
+users that are in Asia,
+
+we want to deliver their traffic
+to an instance of a service
+
+that's running in Asia.
+
+Only when something
+goes wrong, for example,
+
+let's say everything in
+the Europe region is down,
+
+now we want to send the
+traffic from European users
+
+over to the Asia user.
+
+So how do we manage all of that?
+
+And then, lastly, telemetry.
+
+Again, in a single
+cluster environment,
+
+we have implementations
+and tools
+
+where we can measure
+logging, and tracing,
+
+and metrics for
+every single service.
+
+How do we do that in
+a distributed service?
+
+Which signals to measure?
+
+How do we know if a
+service is healthy?
+
+What to alert on?
+
+So all of those things
+we're going to talk about,
+
+and we're going to use
+Anthos Service Mesh to solve
+
+some of these things.
+
+So let's go to the demo.
+
+Let's get oriented
+to the environment.
+
+Here I have a Google Cloud
+project with four GKE clusters
+
+running.
+
+GKE 1 and 2 are running
+in region US West 2.
+
+GKE 3 and 4 are running
+in region US Central 1.
+
+So it's the same four-cluster
+model that we just saw.
+
+Let's look at the
+Workloads page.
+
+I've deployed a few
+sample applications.
+
+And one of them is the
+famous online boutique
+
+retail application that
+consists of 13 services.
+
+I've deployed each service
+in their own namespace,
+
+and you can see by the workloads
+that each service is deployed
+
+as a distributed service.
+
+So ad is running on
+all four clusters.
+
+Cart is running on
+all four clusters.
+
+Shopfrontend, which is how
+you access the application,
+
+is also running on
+all four clusters.
+
+Let's take a closer look at
+one of these deployments.
+
+So we're going to look at
+shopfrontend running in GKE 1.
+
+And I'm going to
+look at just the pods
+
+for that particular one.
+
+You can see that this pod
+is running two containers.
+
+One is the
+shopfrontend container.
+
+That's your actual
+application container.
+
+And the other one is
+the asm sidecar proxy
+
+called the istio-proxy.
+
+Now, this proxy governs
+the flow of traffic
+
+to and from this
+particular container.
+
+And if we look at the
+configuration of this proxy,
+
+we can see what version
+of asm we're running.
+
+So in this case,
+we're running 1.10.4,
+
+which also correlates
+to the Istio version.
+
+We can also see that we're
+using the Google-managed meshca
+
+as our certificate authority.
+
+We can also see that our
+trust domain is the workload
+
+identity for the project.
+
+And I'm using the same trust
+domain for all four clusters.
+
+And that's how services
+can talk and trust
+
+each other across clusters.
+
+What we want to do is we want to
+look at from this istio-proxy's
+
+perspective, how does
+it view other services?
+
+Let's quickly jump
+into the terminal.
+
+And I'm going to go ahead
+into my GKE 1 cluster.
+
+Let's look at the pods.
+
+So kubectl get pods.
+
+This is the same pod
+that we were just
+
+looking at in the console.
+
+We're going to use the
+istioctl CLI command.
+
+And I just want to look
+at the proxy-config.
+
+And I just want to look at
+the endpoints configuration
+
+in the proxy-config for
+this particular pod.
+
+And instead of dumping
+out the entire config,
+
+I'm just going to grep it for
+one of the services, which
+
+is the cart service.
+
+And here you can see
+that from the perspective
+
+of this shopfrontend
+pod, it sees
+
+that there are four
+endpoints out there
+
+that it can access when it
+accesses the cart service.
+
+These IP addresses
+point to the pod
+
+IP addresses of
+the four endpoints.
+
+Let's look at the pods.
+
+So the first thing
+I'm going to do
+
+is look at the pods
+in the GKE 1 cluster
+
+that's running in
+shop-cart namespace.
+
+So shop-cart namespace is where
+the cart service is running.
+
+And you can see that
+in GKE 1 cluster
+
+I only have one pod running with
+the IP address of 10.0.2.11,
+
+which is the same IP address
+that you see up here,
+
+which means that the other
+three IP addresses correspond
+
+to pods running in the
+other three clusters.
+
+And we can quickly
+verify that by just
+
+picking one other cluster,
+for example, GKE 4.
+
+And again, in GKE 4,
+we're also just running
+
+one cart pod with an IP
+address of 10.8.2.143,
+
+which is the IP address here.
+
+So the asm control plane goes
+out and discovers the endpoints
+
+for every single
+service and configures
+
+every single istio-proxy
+with those endpoints.
+
+And that's how every single
+service and every single pod
+
+knows how to get to
+every other service.
+
+So that's how the service
+discovery piece is working.
+
+But we also want to make
+sure that the traffic routing
+
+east-west is working.
+
+So for example, the
+front end service
+
+can talk to the cart service.
+
+So in order to demo
+that, it's best done
+
+visually through a dashboard.
+
+So here I have created a custom
+dashboard for the cart service.
+
+And this dashboard here
+on the left-hand side,
+
+I'm looking at
+the request rates.
+
+And I've grouped
+them by location.
+
+So I want to see who
+is accessing the cart
+
+service from which location.
+
+And from the legend
+here, you can
+
+see that I'm receiving
+requests to all four pods.
+
+Further, I can group this by,
+let's say, a source service,
+
+source_canonical_service.
+
+And here you can see that
+there are only two services
+
+accessing shop cart.
+
+One is shopfrontend.
+
+The other one is checkout.
+
+And both services are
+accessing all four locations.
+
+And you can see that I have
+a load generator that's
+
+running that's showing me that
+the traffic routing is working.
+
+So in GKE, every pod can
+talk to every other pod
+
+if you have deployed
+GKE in VPC native mode
+
+as long as you have the
+appropriate firewall rules.
+
+So now east-west
+traffic is working.
+
+Next, let's take a look
+at north-south traffic
+
+and how ingress works.
+
+So for that, let's go
+back to our Clusters page.
+
+
+
+And you'll notice that I have
+this fifth cluster called
+
+the ingress-config cluster.
+
+This is the cluster
+on how I configured
+
+multicluster ingress.
+
+Let's take a closer
+look at this cluster.
+
+So I'm going to go
+back into my terminal.
+
+I'm going to change my context
+to the ingress-config cluster
+
+and change my namespace
+to istio-system.
+
+Inside of the
+istio-system namespace,
+
+I have two resources.
+
+I have a multicluster
+ingress resource,
+
+and I also have a
+multicluster service resource.
+
+And I have multiple
+applications.
+
+And that's why you
+see a couple of these.
+
+So the multicluster ingress
+resource corresponds
+
+to an ingress resource and a
+multicluster service resource
+
+corresponds to a
+service resource,
+
+just like you would
+normally configure
+
+an ingress and a service.
+
+So let's take a closer
+look at each of these.
+
+So I'm going to look at the
+multicluster ingress resource
+
+first for the online boutique.
+
+And you can see that
+a multicluster ingress
+
+resource looks a lot
+like an ingress resource.
+
+So I have a rule with a host.
+
+So here's the host
+of how I'm going
+
+to access this application.
+
+And its points back
+to an app, a service.
+
+But in this case,
+instead of pointing back
+
+to a Kubernetes service, it's
+pointing back to a multicluster
+
+service on port 80.
+
+And if we look at the
+multicluster service
+
+resource that
+corresponds to this,
+
+again, it looks a lot like a
+Kubernetes service resource.
+
+So if we look at
+especially the spec
+
+of that particular
+resource, you can
+
+see that it has a
+service name, a port,
+
+and then most importantly,
+it has this selector.
+
+And what it's selecting is
+the istio-ingressgateway
+
+as the backend service.
+
+The only difference here
+is these cluster selectors.
+
+And in this
+particular case, I've
+
+selected all four clusters.
+
+So essentially what I've created
+is the multicluster ingress.
+
+You can think of it as the
+front end that points back
+
+to four different
+backend services that
+
+matches this selector, which
+is the istio-ingressgateway
+
+selector.
+
+And what that creates, if
+we go back to the console,
+
+and I'm going to go
+to Network Services,
+
+Load Balancing is a front
+end with four back ends.
+
+So here if we just
+look at these top two,
+
+as a matter of fact, if
+we look at the second load
+
+balancer, which is the online
+boutique, istio-mci, that got
+
+created when we created
+that MCI resource.
+
+And it gave me a front end.
+
+We'll talk about the
+certificate here shortly.
+
+But more importantly, we
+have created four back ends.
+
+And these four back
+ends are pointing
+
+to the istio-ingressgateway
+service that's
+
+running on all four clusters.
+
+And we can verify that
+by looking at the zone.
+
+And you can see that all
+four zones are covered.
+
+And if we click on any
+of these endpoints,
+
+you can see the actual
+pod IP addresses,
+
+and then they are healthy.
+
+If we go back to
+this, the certificate,
+
+I've created a Google managed
+certificate for a DNS name.
+
+So remember, in the
+multicluster ingress,
+
+we had a host field that
+pointed to this DNS name.
+
+And so in order to
+access this service,
+
+I can just simply copy this,
+open a new tab, paste it,
+
+and you can see that we can
+access our online boutique
+
+application.
+
+And we can navigate
+around this application.
+
+So here I'm looking at
+product description,
+
+adding it to the cart.
+
+Here I'm looking at
+the cart service.
+
+I can place the order, which
+invokes the checkout service.
+
+And you can see
+all the functions
+
+are working for that
+particular application.
+
+The way the actual
+traffic flow is working
+
+is when I access this
+URL, if I scroll back,
+
+I'm going to this
+frontend IP address.
+
+From this frontend, traffic
+is being routed to one or more
+
+of these istio-ingressgateway
+backends.
+
+And then the
+istio-ingressgateway backend
+
+routes the traffic
+to the shopfrontend.
+
+So the next thing is the
+implication of locations.
+
+So remember I have
+istio-ingressgateway
+
+running in two different regions
+in four different clusters.
+
+I also have the
+shopfrontend running
+
+in both of these regions
+in all four clusters.
+
+So what I want is if I'm
+closer to US West 2 region,
+
+I want to go to the US West
+2 istio-ingressgateway,
+
+and then eventually also to
+the US West 2 shopfrontends.
+
+So let's take a look at
+how that is configured.
+
+I'm going to go back into
+Kubernetes workloads.
+
+And I have a load
+generator running
+
+for the online boutique.
+
+And you notice that my
+load generator is only
+
+running in the West 2 region.
+
+And this is so I can show
+you locality load balancing.
+
+I also have locality load
+balancing configured, but only
+
+for the shopfrontend
+application,
+
+and the reason is just
+for this demo purposes.
+
+So let's go to the console.
+
+Let's go to one of the
+clusters, GKE 1, for example.
+
+And I'm going to show you
+the destination rule that's
+
+running for the shopfrontend.
+
+You can configure locality
+load balancing mesh wide,
+
+but I prefer to configure
+it on a per service level.
+
+So here I've configured it
+just for the shopfrontend.
+
+And the destination
+rule determines
+
+how the traffic is routed once
+the routing decision is made.
+
+And this is where you configure
+locality load balancing.
+
+So here in the load
+balancer section
+
+you can see that I have
+locality load balancing enabled.
+
+I also have a failover setting
+which says go from US West
+
+2 region to US Central 1,
+since I'm looking at the GKE 1
+
+configuration.
+
+And then I also have
+this outlier detection,
+
+which determines when a
+failover or a failure occurs.
+
+This is a very aggressive rule
+just for the sake of the demo.
+
+Essentially, I'm
+saying in every second,
+
+even if I have a single error,
+consider that an outage,
+
+and eject that particular
+deployment for a minute.
+
+And so you can see that
+just with the addition
+
+of these 5-10 lines, I've
+created locality load
+
+balancing.
+
+And I have the same
+exact destination
+
+rules for all four clusters
+for the frontend service.
+
+So in order to prove that
+that is actually working,
+
+remember that my load generator
+is only running in US West 2.
+
+So what I should expect
+is only the West frontend
+
+to be receiving traffic, because
+nobody else is really accessing
+
+this particular application.
+
+So the best way to do that
+is let's look at the charts.
+
+So here I have a
+custom dashboard
+
+that I've created for
+shopfrontend very similar
+
+to the one that we were
+looking at for cart earlier.
+
+Again, we're looking
+at the request rates.
+
+And I've grouped
+those by locations.
+
+So I have the four locations.
+
+So US West 2 a, b,
+and Central 1 a, b.
+
+But you can see that I'm
+only receiving traffic
+
+to the shopfrontend only
+in the West regions,
+
+and not in the Central regions,
+even though I have pods
+
+running in the Central region.
+
+That means locality load
+balancing is working.
+
+And you can configure the
+same locality load balancing
+
+for every single service.
+
+So in a sunny day
+scenario, that works great.
+
+Everything will go to
+its closest endpoint.
+
+But what happens when
+there is a failure?
+
+So my load generator is
+running in the West region.
+
+What happens if the
+West region is down?
+
+I should expect
+that load generator
+
+to start sending traffic
+to the Central region,
+
+because I have configured
+the failover rule as such.
+
+So let's do that.
+
+In order to simulate
+that, all I'm going to do
+
+is scale the replicas for the
+shopfrontend in the West region
+
+down to 0.
+
+So let's go to the console.
+
+And I'm going to run
+the scale command.
+
+And I'm just going to
+fix this spelling error.
+
+So all I'm doing is scaling
+the shopfrontend deployment
+
+replicas down to 0 in GKE
+1, as well as in GKE 2.
+
+These are my two
+US West locations.
+
+What that's going to do is
+render a failover from US West
+
+2 region to US Central 1.
+
+So we'll wait a few minutes
+and see how the charts do.
+
+A few minutes have
+passed, and now you
+
+can see that all
+of the traffic is
+
+routed to the central servers.
+
+So I have not changed the
+load generator's location.
+
+It's still running in US West.
+
+But because of the
+failover from US West,
+
+we're now going to Central 1.
+
+The chart to the right is
+also showing us error rates
+
+by location.
+
+You can see that
+for the same time
+
+that the failover occurred, we
+did not experience any errors.
+
+So it was a seamless failover.
+
+And we expect this
+to kind of go back
+
+when we change the
+replicas back to one.
+
+So let's quickly do that.
+
+So we go back to the console.
+
+All I'm going to do
+is rerun that command.
+
+But this time change the replica
+to 1 for GKE 2 and for GKE 1,
+
+we'll wait a few minutes.
+
+And now we see that the traffic
+has gone back to the US West 2
+
+clusters, and no more traffic
+going to the central clusters.
+
+So we're back to our sunny
+day state of locality load
+
+balancing.
+
+And again, we did not
+experience any errors
+
+throughout this changeover.
+
+So this technique is
+also useful if you
+
+want to perform some scheduled
+maintenance on a cluster.
+
+You can now manually
+and explicitly
+
+drain clusters by scaling
+just the replicas down
+
+for any cluster down to
+zero, and shifting traffic
+
+over to different clusters as
+long as there's capacity there.
+
+And then you can
+perform an upgrade
+
+or any kind of maintenance
+on those clusters.
+
+The last thing we
+want to look at
+
+is observability and
+manageability of services.
+
+So for that, let's go
+back to the Cloud Console.
+
+And here we're going to
+go to Anthos Service Mesh.
+
+When you have Anthos
+Service Mesh deployed
+
+on one or more clusters, you
+will get this dashboard view.
+
+And this dashboard view
+gives you a table view
+
+and a topology view for all
+the Anthos enabled services.
+
+So here I have
+all of my services
+
+that are running in
+multiple clusters,
+
+for example, shopfrontend
+is running on four clusters.
+
+I can look at which four
+clusters it's running on.
+
+This comes completely
+out of the box
+
+without you having to instrument
+anything in the application.
+
+If I click on shopfrontend,
+I can get further information
+
+about this service.
+
+So I can see inbound
+and outbound services
+
+that it's talking to.
+
+I can get the golden signals.
+
+I can look at the metrics
+for this particular service.
+
+These are canned
+dashboards, again,
+
+that come with every
+single service.
+
+So you get these
+dashboards out of the box.
+
+So you get requests per
+second, error rates, latency
+
+for the three
+different percentiles,
+
+the 50th, 95th, and 99th, as
+well as request size, response
+
+size, CPU, memory, and disk
+for every single service
+
+without having to
+instrument anything.
+
+From here, you can also
+go to Application Logs.
+
+So I can just click
+on Application Logs,
+
+and it will create the
+right filters for me.
+
+So I can just look at
+the application logs
+
+for the frontend
+so I can see that I
+
+have requests going in and out.
+
+I can also look at
+traces from here.
+
+So I can just click on traces.
+
+So if I want to look
+at request trace,
+
+this is something you do have to
+configure in your application.
+
+I can look at the histogram
+of my requests coming in.
+
+And then I can click on
+an individual request.
+
+And I can obviously look at that
+particular trace information.
+
+Again, all of this is part
+of the info service mesh.
+
+Furthermore, I can go to
+health, and I can create SLOs.
+
+So here I've created
+a latency-based SLO
+
+for the frontend service.
+
+And if I open this up,
+and if I edit this SLO,
+
+I can just kind of show
+you how I created it.
+
+So the first thing is I
+picked latency as my metric.
+
+I can either choose
+availability or latency.
+
+I can hit Continue.
+
+Here's the actual signal or
+the metric that I'm using,
+
+which is the response latencies.
+
+I can see the historical
+response latency.
+
+And based on that, I
+just picked a value.
+
+So here I could see that there
+are some spikes above 1,500
+
+milliseconds.
+
+So I picked one for
+1,500 milliseconds.
+
+You give it the
+compliance period.
+
+So I'm picking calendar day.
+
+And I'm keeping my goal at 95%.
+
+So 95% of the time
+I want my latency
+
+to be 1,500
+milliseconds or below
+
+for that particular service.
+
+If I hit Continue, it also
+gives me the JSON view
+
+of that particular SLO.
+
+So I can use the SLO API
+to create this if I'd like.
+
+And then I just create my SLO.
+
+So for every single
+service you can do that.
+
+And I recommend you do that
+for every single service.
+
+And you can do that as part
+of your CI/CD pipeline.
+
+This is where you'll get your
+SLIs and your error budget,
+
+as well as if you've
+configured any alerts.
+
+You can create alerts by
+just clicking on this.
+
+And you can measure how
+exactly your service is being
+
+experienced across the board.
+
+So we typically
+recommend at least
+
+creating two SLOs for
+every single service,
+
+one for availability
+and one for latency.
+
+So you can see whether
+your users are actually
+
+able to access your
+service, and then
+
+what is their
+experience when they
+
+access that particular service.
+
+So that's the end of the demo.
+
+Let's go back to
+the presentation.
+
+A few calls to action.
+
+First, hopefully
+it's very obvious,
+
+run distributed services.
+
+Never bet your services
+on your infrastructure.
+
+By running your service on more
+than one Kubernetes cluster,
+
+you've immediately
+gained the advantage
+
+of scale and resiliency.
+
+Second, monitor your
+distributed services.
+
+Golden signals is a
+great place to start.
+
+Somebody gave me this analogy
+that when you go to the doctor,
+
+they don't try to diagnose
+you for every single disease.
+
+They look at your symptoms,
+and then they figure out
+
+exactly what's wrong with you.
+
+So alert on symptoms, not on
+every single potential cause.
+
+In the distributed world, there
+are thousands and thousands
+
+of signals out there.
+
+And if you want to alert
+on every single time
+
+a CPU or memory spikes, you're
+going to get overwhelmed.
+
+Lastly, use location
+as a benefit.
+
+I see two main
+benefits for location,
+
+especially if you're running
+multiregional services.
+
+First is you can deliver your
+service closer to your user.
+
+And secondly, thinking
+about failure domains.
+
+So I think of failure domains
+in terms of concentric circles.
+
+For instance, a Kubernetes
+cluster is a failure domain.
+
+When a cluster
+goes down, it only
+
+takes down the services
+that are running
+
+on that cluster A zone
+is a failure domain.
+
+If all the clusters in a zone
+or the zone itself goes down,
+
+then that zone
+cannot serve traffic.
+
+And a region is
+a failure domain.
+
+Thinking in those
+terms helps you
+
+kind of do figure out how
+to do maintenance windows
+
+and scheduled operations
+on your infrastructure.
+
+If you want to build
+distributed services,
+
+you can go to this link,
+bit.ly/run-distributed-services,
+
+or you can pause the video and
+scan this QR code that takes
+
+you to the same link.
+
+I thank you for your time.
+
+And enjoy the rest
+of the conference.
+
+
+

@@ -1,0 +1,1026 @@
+
+
+LEE YANCO: Hey, everybody.
+
+Welcome to App 203,
+introducing our new managed
+
+service for Prometheus.
+
+My name is Lee Yanco.
+
+I'm a Product Manager
+within Google Cloud.
+
+I'm joined today by Bartosz
+Jakubski, Senior DevOps
+
+Engineer at OpenX.
+
+So today we're going to
+talk about some challenges
+
+with Prometheus, we're going to
+introduce Google Cloud Managed
+
+Service for Prometheus,
+do a bit of a deep dive
+
+in the components of the system,
+talk about how it compares
+
+to cloud monitoring,
+and then OpenX
+
+is going to talk
+about their journey
+
+with managed service
+for Prometheus.
+
+So, challenges with Prometheus.
+
+Prometheus is great.
+
+It works really well.
+
+There is a very good reason
+why it is the de facto standard
+
+for Kubernetes monitoring.
+
+Managing Prometheus for small
+deployments is pretty easy.
+
+Managing Prometheus at
+scale can be very hard.
+
+So first of all, Prometheus can
+be hard to scale horizontally.
+
+When you have a small
+cluster, you just
+
+put a couple of gigs of RAM in
+the server and it just works.
+
+Your cluster gets
+a little larger,
+
+you have to scale up by
+throwing more RAM at the server.
+
+Eventually your
+cluster gets so large
+
+that you have to shard
+by frontend application
+
+and backend application
+or by A through M and N
+
+through Z or
+something like that.
+
+Somewhat interestingly for
+a cloud-native service,
+
+Prometheus doesn't have a
+particularly good horizontal
+
+scaling story.
+
+Prometheus can be
+hard to make global.
+
+So when you're small and you
+only have a few clusters,
+
+it's no big deal.
+
+You have a couple of different
+data sources within Grafana,
+
+you swap between them, it works.
+
+Eventually you might want to get
+a global view, so you federate.
+
+Eventually your Prometheus
+deployment grows even more.
+
+So you have multiple
+federation servers.
+
+You might simplify it
+by switching to Thanos.
+
+So you have Thanos querying
+your Prometheus servers.
+
+And then you go
+hybrid or multicloud,
+
+and you have Thanos querying
+Thanos querying your Prometheus
+
+servers.
+
+And then somebody
+on your team adds
+
+user ID or IP address as a
+label, cardinatily explodes,
+
+and the whole thing falls
+over, which leads me
+
+to my third point--
+managing Prometheus
+
+can be an ongoing operational
+burden and a thankless task.
+
+Your end customers
+do not care how good
+
+you are at managering/monitoring
+infrastructure.
+
+They care how good you are at
+keeping your app up, of course.
+
+But the monitoring
+infrastructure part
+
+is really a thankless task.
+
+None of this is hard,
+it's just toil, it's work.
+
+It's 20 to 30 hours of
+somebody's time, every week,
+
+in perpetuity.
+
+Here's the thing.
+
+Google has been through
+this exact experience.
+
+10 years ago, we
+also had a system
+
+for monitoring where we
+had local servers that
+
+federated into
+regional servers that
+
+federated into global servers.
+
+We built some new
+technology for ourselves
+
+to solve this
+problem for Google.
+
+And we're excited to
+share this next-generation
+
+Prometheus-compatible
+solution with you.
+
+So we're introducing Google
+Cloud Managed Service
+
+for Prometheus, a drop-in
+replacement for Prometheus
+
+and Thanos.
+
+This is the managed service
+for Prometheus ecosystem.
+
+I'm going to use this
+to frame a conversation
+
+about the different
+parts of the system
+
+and how they benefit
+you as a customer.
+
+So in the center sits Monarch.
+
+Monarch is Google's planet-scale
+time-series metric storage
+
+and retrieval database.
+
+Monarch is the same
+exact system that we
+
+use to monitor internal Google.
+
+So ads, search,
+networking, YouTube,
+
+Google Play, you
+name it, all use
+
+Monarch to make sure
+that their apps are up
+
+and running and stable.
+
+We have a separate instance of
+monarch called Cloud Monarch.
+
+Cloud Monarch is the
+same instance that's
+
+used by Cloud Monitoring.
+
+And Managed Service
+for Prometheus
+
+shares some of these
+cloud monitoring APIs.
+
+And I'll get back
+to why that's super
+
+interesting in the second.
+
+On the left side, we
+have the collectors.
+
+So our collector is compatible
+anywhere that Prometheus runs.
+
+Because our collector
+is Prometheus.
+
+It's Prometheus plus a
+couple hundred lines of code
+
+that wrap things up in a
+proto and send it to Google.
+
+So we have two different
+types of collectors.
+
+So the self-managed collectors
+use your existing Prometheus
+
+operator configs to
+configure the scraping.
+
+So you just copy-paste
+those, switch out the binary,
+
+and they just work.
+
+If you're in GKE, we also
+have managed collectors,
+
+in which case Google will handle
+the scaling, the sharding,
+
+the deployment of
+these collectors.
+
+And you configure the
+scraping using CRDs.
+
+On the query side, because
+we have implemented PromQL,
+
+your existing Grafana
+dashboards written in PromQL
+
+just work, your Prometheus
+alerts and alert manager
+
+configs just work, and
+your PromQL-based tools,
+
+any PromQL-based
+tool that you might
+
+find on the internet, any
+community-curated dashboard,
+
+any random alert template you
+might want to use, just works.
+
+And because we're using the
+same APIs and backend systems
+
+as Cloud Monitoring,
+your Cloud Monitoring
+
+metrics-- your free
+metrics, your free BigQuery,
+
+your free Anthos, your free
+Istio, your free Dataflow,
+
+your free Pub/Sub,
+whatever you use,
+
+those metrics will be
+accessible within Grafana
+
+using PromQL, right alongside
+your Prometheus metrics,
+
+giving you a single
+pane of glass.
+
+And likewise, because we're
+using the same backend system,
+
+your Prometheus
+metrics will also
+
+be available within
+Cloud Monitoring.
+
+So you can use advanced features
+such as SLO alerting, cloud
+
+alerting, our Dashboard Builder,
+et cetera, with your Prometheus
+
+metrics in Cloud Monitoring.
+
+We built this to be as drop-in
+of a replacement as possible
+
+so that you can keep
+doing what you're doing
+
+and just outsource the hard
+part, the metric storage
+
+and retrieval part, to us.
+
+Now let's do a bit of a deep
+dive of some of the components
+
+here.
+
+So let's talk about Monarch,
+the planet-scale in-memory
+
+time-series database.
+
+It's the same tool we use
+to monitor internal Google.
+
+Monarch has over a trillion
+time series in RAM,
+
+14 quadrillion points on
+disk, writes 2 and 1/2
+
+terabytes a second, processes
+16 million queries per second.
+
+Whatever you can throw at
+us, we can handle, promise.
+
+Monarch is configured for
+two-year retention, included
+
+for all metrics by
+default. And Monarch
+
+has regional storage with
+ad hoc global aggregations
+
+at query time.
+
+So if you say you want your
+data to live in cloud zone x,
+
+your data will live
+in cloud zone x.
+
+On the collection side,
+we're compatible anywhere
+
+Prometheus is deployed.
+
+There's two flavors,
+managed for GKE environments
+
+and self-hosted for other
+Kubernetes environments.
+
+This means that managed
+service for Prometheus
+
+is hybrid- and
+multicloud-compatible
+
+from the very beginning.
+
+Our collectors are
+open source, so you
+
+can see what's running within
+your clusters of course.
+
+And there's no need to
+store any data locally.
+
+So you can use way less
+RAM to run these collectors
+
+than normal Prometheus.
+
+On the query side, we're
+fully PromQL compatible.
+
+So your existing Grafana
+dashboards just work.
+
+You can query your
+free GCP metrics
+
+alongside your
+Prometheus metrics,
+
+getting you a single
+pane of glass.
+
+And read permissions
+are enforced on groups
+
+of projects at query time.
+
+So this is really
+nice for customers
+
+that have tenants of their own.
+
+So you can do something
+like send tenant 1's metrics
+
+to project A, send tenant
+2's metrics to project B.
+
+And then you have a
+separate permissions
+
+that has both project A and
+B included for your SRE teams
+
+to get a global view
+across all your tenants.
+
+On the alerting and
+recording rule side,
+
+we work with Prometheus
+Alert Manager out of the box.
+
+We work with PromQL-based
+alerts and recording rules,
+
+anything you might
+have developed already,
+
+out of the box.
+
+And we are compatible
+with Google Cloud's
+
+alerting as well.
+
+So as you can see here, we
+built an interactive query UI
+
+within Cloud Console.
+
+You can see this is
+working software.
+
+This is me querying
+Prometheus metrics.
+
+And you can see them
+returning to the screen.
+
+We also have full
+Grafana compatibility.
+
+So you can see this is
+me just changing the data
+
+source from local to foreign.
+
+And it just works.
+
+Nothing changes.
+
+So this is great for you as
+a customer, terrible for me
+
+as a presenter.
+
+Because really
+nothing should change.
+
+When you swap from
+your local Prometheus
+
+to Managed Service for
+Prometheus as your data source,
+
+it should be exactly
+the same data.
+
+And that's what you're
+seeing right here.
+
+So let's do a brief comparison
+with Cloud Monitoring,
+
+because we do now have two
+products within the same area.
+
+So there are two products
+coming out around the same time.
+
+There's Google Cloud Managed
+Service for Prometheus, which
+
+is Google's recommended way
+to run Prometheus at scale,
+
+and there's Cloud Monitoring
+and the upcoming GKE Workload
+
+Metrics, which is
+Google's recommended way
+
+to monitor Kubernetes
+applications.
+
+So maybe another way to
+think of this might be,
+
+if you, as a customer, if
+you're saying to yourself,
+
+you know what, I don't want
+to deal with any monitoring
+
+infrastructure
+whatsoever, I want
+
+Google to manage
+everything for me
+
+and I want to get the best
+practices of Google monitoring
+
+and Google SRE's philosophy
+built into my monitoring
+
+infrastructure, then Cloud
+Monitoring and GKE Workload
+
+Metrics is the product for you.
+
+If you're saying
+to yourself, you
+
+know what, I like Prometheus, I
+like the Prometheus ecosystem,
+
+I want to keep what
+I have already,
+
+I just want to outsource the
+hard part of metric storage
+
+and retrieval scaling, then
+Managed Service for Prometheus
+
+is the product for you.
+
+Another way to think of this
+might be, how much do you
+
+want to be managed?
+
+So with Managed
+Service for Prometheus,
+
+you get scalable
+collections, global queries,
+
+and long-term retention included
+as a managed service, of course
+
+with open-source interfaces.
+
+Whereas with Cloud Monitoring
+and GKE Workload Metrics,
+
+you also get alert
+management, dashboarding,
+
+and unified metrics, logs,
+and traces as managed services
+
+as well.
+
+Remember, because we're
+using the same backend
+
+and share a lot of the same
+APIs, swapping between these
+
+is pretty easy.
+
+So you're never locked
+into your decision.
+
+You can choose the best solution
+for you at any given time.
+
+We are in preview right now.
+
+We expect to be in
+general availability
+
+sometime early next year.
+
+But we would love to
+have you in preview.
+
+You can sign up at
+g.co/cloud/managedprometheus.
+
+Once again, that's
+g.co/cloud/managedprometheus.
+
+So I'm going to turn
+it over to Bartosz
+
+now to talk about
+OpenX's journey
+
+with Managed Service for
+Prometheus in preview.
+
+BARTOSZ JAKUBSKI: Hi, my
+name is Bartosz Jakubski,
+
+and I'm a senior DevOps
+Engineer at OpenX.
+
+
+
+OpenX is a global
+advertising exchange.
+
+We handle over 200 billion
+dynamic requests per day.
+
+In 2019, we completed our
+move from on-premises servers
+
+to GCP.
+
+
+
+Before moving to cloud,
+we've had a custom monitoring
+
+solution which is
+based on Graphite,
+
+and use Grafana now
+for visualization.
+
+We've used migration to
+GCP as an opportunity
+
+to update our monitoring stack
+to Prometheus-based solution.
+
+We're a global company.
+
+So our monitoring
+spans many GKE clusters
+
+in multiple GCP regions
+on three continents.
+
+And right now we ingest over
+350,000 samples per second.
+
+We do use Cloud
+Monitoring too, mainly
+
+for metrics from
+services managed by GCP.
+
+
+
+When it comes to
+Prometheus, we run
+
+what I'd call a pretty standard
+global Prometheus setup.
+
+We use Thanos for
+long-term storage
+
+of metrics and global view.
+
+We do use Grafana with about
+100 dashboards right now.
+
+And majority of our
+other team works on data
+
+from more than one GKE cluster.
+
+So it's usually quite global.
+
+And we store about two
+years of metrics right now.
+
+We really do like our stack.
+
+Grafana, Prometheus, and
+Thanos work well together
+
+in the cloud.
+
+Most importantly, it just works.
+
+But there are some issues.
+
+Running full kind of stack can
+be quite an involved process.
+
+You can see here a list
+of Thanos components
+
+that are running in our
+global observability cluster.
+
+You have to deploy, manage,
+and monitor all of them.
+
+In some cases, like
+with Thanos start,
+
+you have to manually
+shard instances by time
+
+to ensure they won't
+run out of memory
+
+and performance
+will be adequate.
+
+Scaling, managing
+resource requirements,
+
+modifying sharding
+configuration,
+
+is something we have
+to do regularly.
+
+Just keeping the lights
+on does require work.
+
+For example,
+Kubernetes upgrades may
+
+require modifications and
+manifests for our components.
+
+There's always
+some effort needed.
+
+We do have some
+performance issues.
+
+Some of them could be solved
+on modifying our setup.
+
+But again, it needs time
+and resources to do so.
+
+Due to a large amount
+of components involved,
+
+our global alerting
+and monitoring
+
+is a bit more fragile
+than we'd like.
+
+Also, for global setup,
+intercluster connectivity
+
+is required.
+
+It is another piece of
+cloud infrastructure
+
+that you have to set
+up and secure yourself.
+
+
+
+Also, more components
+and more involved setup
+
+means that more
+knowledge or more time
+
+is required to make
+changes or fix issues.
+
+
+
+Why we decided to use Managed
+Service for Prometheus
+
+in preview.
+
+First, as a company,
+we are always
+
+interested in reducing
+complexity and maintenance
+
+burden.
+
+One way to achieve that is
+by using managed services
+
+instead of rolling out and
+maintaining our own ones.
+
+Another reason is Prometheus
+query language compatibility.
+
+This is a big
+selling point for us.
+
+Complete migration to
+any other query language
+
+would require a major effort.
+
+And ability to run
+unmodified queries
+
+makes the move possible.
+
+
+
+Self-managed collector
+is just Prometheus.
+
+You just deploy it like you
+deploy your regular Prometheus.
+
+It can run alongside
+your Prometheus.
+
+And to do so, it only
+requires small changes
+
+in existing configuration.
+
+So we installed collectors
+in our production clusters,
+
+gathered some data, added
+a data source to Grafana,
+
+and we got the same
+graph basically.
+
+So it turns out that Grafana
+dashboards indeed do work.
+
+We do use more advanced
+PromQL queries in some places.
+
+And their compatibility
+is pretty good too.
+
+
+
+So what opportunities for OpenX
+Managed Service for Prometheus
+
+provides.
+
+
+
+This is a simplified
+diagram of components
+
+that we are running in our
+global monitoring stack.
+
+If we were to move to Managed
+Service for Prometheus,
+
+in transitioning period, when
+we will still need access
+
+to our older data in
+cloud storage bucket,
+
+some components can
+already be eliminated.
+
+Once we are fully migrated to
+Managed Service for Prometheus,
+
+most of the components will
+disappear with only Prometheus
+
+collectors remaining.
+
+
+
+This reduction in complexity
+will get us some time back.
+
+We will no longer need to adjust
+storage volumes and resource
+
+requests.
+
+There will be no need to
+modify sharding in Thanos start
+
+instances.
+
+Fewer components
+means fewer incidents
+
+caused by problems in alerting
+and monitoring system.
+
+Last but not least,
+better integration
+
+with Cloud Monitoring
+would allow us not only
+
+utilize Cloud Monitoring
+tools like SLO alerting,
+
+but would also simplify
+and streamline access
+
+to metric data.
+
+No more combining two query
+languages in single graph
+
+in Grafana to combine our
+application metrics with,
+
+for example, load
+balancer metrics.
+
+Thank you for letting me
+share my OpenX Prometheus
+
+story with you.
+
+Now back to Lee.
+
+LEE YANCO: Thank you, Bartosz.
+
+Once again, we would love
+to have you for the preview.
+
+You can sign up at
+g.co/cloud/managedprometheus.
+
+Thank you for watching.
+
+
+

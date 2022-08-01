@@ -1,0 +1,1365 @@
+[MUSIC PLAYING]
+
+
+
+RICHARD SEROTER: Hey.
+
+Welcome, everyone.
+
+I'm Richard.
+
+VIDYA NAGARAJAN
+RAMAN: Hi, I'm Vidya.
+
+RICHARD SEROTER: We're really
+glad you joined us here today.
+
+We're going to have a
+lot of fun talking tech.
+
+And I wish you could be
+here with us personally,
+
+but we're live at least.
+
+And that means we can
+kind of say anything.
+
+Like, I could say, Google
+should bring back Google Reader,
+
+and I'm still working here.
+
+So that's awesome.
+
+If you have other
+hot takes, you want
+
+to share some feedback,
+put it in the chat.
+
+We can see that stuff live
+right now, so keep it coming.
+
+VIDYA NAGARAJAN
+RAMAN: If you can't
+
+see the live
+interactivity, please click
+
+on the blue Join Live
+Interactive Experience
+
+button on the next
+website and we'll
+
+see you on the other side.
+
+For those of you just joining
+us from the Spotlight session,
+
+you heard about some of our
+new product announcements,
+
+including Anthos for VMs, Anthos
+Multi-Cloud API, and the Google
+
+Distributed Cloud.
+
+RICHARD SEROTER: Awesome.
+
+In the next 15
+minutes, we're actually
+
+going to show you all of these
+in action, which is great.
+
+So, here's what we're
+going to do together.
+
+First we're going to migrate
+something and demonstrate
+
+how to get some new
+value from an old system
+
+by moving VM-based
+applications to a newer
+
+containerized platform.
+
+And we'll start by showing
+you how to run a legacy
+
+app in a serverless platform.
+
+So buckle up, Vidya.
+
+VIDYA NAGARAJAN RAMAN:
+Next, we'll create.
+
+We'll build a new
+experience for customers
+
+through our AI powered
+software, and then we'll
+
+deploy with some
+brand new deployment
+
+tools, unique to Google Cloud.
+
+RICHARD SEROTER: Love it.
+
+Finally, we're going to be
+expanding our deployment
+
+targets.
+
+We're not just shipping
+to Cloud anymore,
+
+but extending that
+awesome path to production
+
+to other public clouds and
+even closer to your customers
+
+at the edge.
+
+All right, so let's switch
+some things up, shall we?
+
+
+
+I now work at Cymbal Shops
+probably because of that Google
+
+Reader crack.
+
+So let's pretend that
+I am the director of IT
+
+at this company, Cymbal Shops.
+
+And like many of you,
+our global business
+
+has been shifted because of
+increasing demands online.
+
+And at the same time,
+we have some problems.
+
+So old software was never
+meant for all the customer
+
+load we're putting on it now.
+
+It's holding us back.
+
+We're trying to offer mobile
+experiences, real time stuff.
+
+We have to do it
+as quick as we can.
+
+And look, I can't
+rewrite everything.
+
+So how do we reduce some cost
+and add some capabilities
+
+to that existing
+software a little easier,
+
+without much too much effort?
+
+So I want to start with a
+smart migration approach.
+
+I want a repeatable,
+efficient way
+
+to move old systems to
+newer stuff, maybe even
+
+a serverless one,
+but Cymbal Shop
+
+needs help from our trusted
+partners at Google Cloud.
+
+Help, Vidya.
+
+You're my only hope.
+
+VIDYA NAGARAJAN RAMAN:
+I got you, Richard.
+
+So our fit assessment tool,
+which you can see here,
+
+is initiated from the
+Google Cloud console.
+
+It helps us understand what
+can be automatically migrated
+
+and which workloads
+are going to be most
+
+successful in their new home.
+
+It's unique to Google
+Cloud and saves you time.
+
+By pointing our migrate
+service at a set
+
+of over 2,000 virtual machines
+in our on-prem vSphere
+
+environment, we just
+generated a fit assessment
+
+for the workloads running
+in each of those VMs.
+
+And remember, these VMs could
+be running on Prem, in Google
+
+Cloud, in AWS, or in Azure.
+
+So now, let's take a look at
+the results of the assessment.
+
+See here, we have a graphical
+view of our most likely
+
+candidates for migration.
+
+This tool is particularly good
+at detecting compatibility
+
+for older Java applications,
+like Java EE application
+
+servers.
+
+Now that we have
+assessed, let's migrate.
+
+Using our migrate service,
+I'm taking a Java app
+
+running on WebSphere
+in an on-prem VM
+
+and generating a
+container image that
+
+can run on any of our container
+services, all via automation.
+
+And you can see here that the
+classic Java app is now served
+
+up by our only
+pay-for-what-you-use serverless
+
+container product, Cloud Run.
+
+RICHARD SEROTER:
+Wow, I love that.
+
+So this is great.
+
+Let me make sure we notice
+what we just did there.
+
+I mean, I don't have to manage
+all these partially utilized
+
+virtual machines anymore
+because you containerized it.
+
+And I've offloaded some of the
+operating system management.
+
+I don't have to
+patch OSes anymore.
+
+That's awesome.
+
+And you've actually
+given me access
+
+to brand new functionality
+and saved me money
+
+by running on a modern
+platform, like Cloud Run.
+
+So you just took
+a classic Java app
+
+and ran that on a
+serverless platform.
+
+That's pretty wild stuff.
+
+If you like that,
+tell us in the chat
+
+that you have a need for putting
+some of your older systems
+
+in these newer platforms.
+
+All right, so next up,
+let's create some new value
+
+and get that to Google Cloud.
+
+So Cymbal Shops has some
+problems we want to solve.
+
+We have a app that tracks
+some of the store performance,
+
+but it runs in VMs.
+
+And it needs some
+serious modernization
+
+to support all those sort
+of new customer experiences
+
+and can keep us competitive.
+
+So this means upgrading
+functionality and even changing
+
+how we could deliver
+it to production.
+
+So curbside pickup,
+super hot right now.
+
+How do I add functionality then
+to count how many customers
+
+did curbside pickup each day?
+
+That seems really important.
+
+Vidya, I don't know.
+
+Can you help me with this one?
+
+VIDYA NAGARAJAN RAMAN:
+Yes, of course I can.
+
+So, Richard, what does your
+current app consist of?
+
+RICHARD SEROTER: Well,
+thank you for asking.
+
+Our current app has a MongoDB
+database with multiple services
+
+that track orders and pickups.
+
+We actually want to add
+new services and data
+
+to capture and analyze
+that curbside pickup info.
+
+And to make that
+happen, we could
+
+look at historical
+footage from the past day,
+
+and count the pickups, and
+do some analysis later.
+
+VIDYA NAGARAJAN RAMAN: This
+looks like a great opportunity
+
+to do two things.
+
+First, we're going
+to add Google Cloud
+
+AI to process video footage
+and capture metrics.
+
+Second, we'll containerize
+these workloads
+
+and put them on a
+continuous delivery pipeline
+
+so that it's easy to
+keep making changes.
+
+RICHARD SEROTER: I like that.
+
+So if you do this,
+then we actually
+
+know how many customers
+are doing curbside pickup,
+
+maybe even how long
+they were waiting.
+
+And I think you're
+going to fix them
+
+on my path to prod and
+make it easy to package
+
+and keep changing the
+software over and over again.
+
+I love that.
+
+VIDYA NAGARAJAN RAMAN:
+Yes, absolutely.
+
+Check it out.
+
+So Google Cloud Vision
+API can detect vehicles
+
+in this footage to determine
+how well curbside pickups have
+
+been going at each location.
+
+So now, let's write some code
+and deploy the updated app
+
+to Google Cloud.
+
+This is exciting.
+
+And I'm hoping all our
+audience is excited too.
+
+I'm using Visual
+Studio Code here,
+
+but I could easily use
+IntelliJ or any JetBrains IDE.
+
+And using the no-cost
+Cloud Code plug-in,
+
+I can easily browse Google Cloud
+Services, add them to my app,
+
+and then code and test
+this container-based app.
+
+RICHARD SEROTER: You are the
+fastest coder I've ever seen.
+
+That was remarkable.
+
+So that was pretty simple too.
+
+I like that.
+
+So now that everything
+is working locally,
+
+how would they then
+deploy this to the Cloud?
+
+VIDYA NAGARAJAN RAMAN:
+Let me show you.
+
+First, they need to package
+up this app into a container.
+
+You probably want your
+developers spending time
+
+writing code, not Docker files.
+
+And we can help with that.
+
+I'll show you how we like
+to package containers.
+
+And while I'm doing
+that, audience,
+
+tell us how do you
+package your containers.
+
+So here is our poll, and we
+have four options in our poll.
+
+So I'm hoping you would
+actually pick it up.
+
+RICHARD SEROTER: Awesome.
+
+VIDYA NAGARAJAN
+RAMAN: So Cloud Build
+
+is a serverless built tool
+that many customers use
+
+for continuous integration.
+
+We also now support
+industry-standard Cloud
+
+buildpacks to package up a
+app into a container image
+
+automatically and push
+it to artifact registry.
+
+Artifact registry stores
+your container images
+
+in regional repositories.
+
+And here you see
+that we automatically
+
+scan for vulnerabilities.
+
+RICHARD SEROTER: That's neat.
+
+What else do we use
+artifact registry for?
+
+I haven't seen as
+much about that.
+
+Can you tell me a
+little bit about that?
+
+VIDYA NAGARAJAN RAMAN: Yeah.
+
+So while we use
+artifact registry
+
+for storing docker
+container images, Richard,
+
+we can also use
+it for storing all
+
+your language-specific
+artifacts in one place.
+
+For instance, we just went GA
+with Java, Node.js, and Python
+
+packages using the Maven
+NPM and PyPI repository
+
+formats respectively.
+
+RICHARD SEROTER:
+That's pretty cool.
+
+So while we're waiting
+for the poll results,
+
+looking at some of the chat,
+I saw some questions about,
+
+how do we do day two management
+of migrated workloads.
+
+I think the migrate tooling
+gives you a container image
+
+that now I could
+download to my desktop,
+
+I can run in different places.
+
+I have different
+ways to run that.
+
+Some other questions
+about, again, thinking
+
+about how do we migrate
+to GKE and Cloud Run?
+
+I think these tools are pretty
+cool that they can actually
+
+take an app and run it in either
+one, which is pretty great.
+
+And I think we're seeing
+the poll results coming in.
+
+VIDYA NAGARAJAN RAMAN: Yeah, it
+looks like the results are in.
+
+And it's amazing
+that a lot of folks
+
+are already automating
+today, and they're
+
+automating via Docker build
+commands in CI pipeline.
+
+That's excellent.
+
+So now that we have a
+container in the registry,
+
+I think it's time to deploy it.
+
+So to deploy our app, let's
+use the new Google Cloud Deploy
+
+Service, a continuous
+delivery service for deploying
+
+containerized workloads.
+
+While the service is
+containerized and could
+
+run in GKE or Cloud Run,
+the app is fairly coupled
+
+to our MongoDB infrastructure
+running in Kubernetes
+
+and is part of our
+multi-cloud strategy.
+
+So let's target one of our
+GKE Autopilot clusters.
+
+GKE Autopilot is the fully
+managed Kubernetes service
+
+where Google Cloud
+provisions, scales,
+
+upgrades, and troubleshoots
+the cluster for me.
+
+Here we see a
+deployment pipeline
+
+that helps us manage release
+candidates and environments.
+
+Cloud Deploy helps us
+manage promotion and rollout
+
+across these environments.
+
+And once the app is
+deployed to GKE Autopilot,
+
+you can start using it from
+each retail store that you have.
+
+You kick this all off
+with a push to git,
+
+and also you manually approve
+final promotion to production.
+
+In fact, I'm going
+to have someone drop
+
+the URL in the chat
+window now so that you
+
+can see it for yourself.
+
+It all works just like magic.
+
+RICHARD SEROTER: That's cool.
+
+It must be true.
+
+You put the link there.
+
+That's great.
+
+So it's awesome.
+
+So from development to
+packaging to deployment, I mean,
+
+I think, personally,
+this is the best
+
+set of integrated tools
+for services and building
+
+containers that I've seen.
+
+So I think that's awesome.
+
+So we're also seeing
+some other folks
+
+in the chat talking about some
+of these components as well
+
+and what they're
+seeing for migrating
+
+the apps and, hopefully,
+clicking links
+
+and trying to break the
+app we just deployed.
+
+All right.
+
+So now that we've just
+taken that existing app,
+
+we added AI functionality,
+we dramatically
+
+changed the knowledge
+that each of our stores
+
+has about the
+customer experience.
+
+That's pretty cool.
+
+VIDYA NAGARAJAN RAMAN: Indeed.
+
+Isn't it, Richard?
+
+What else do you
+want to throw my way?
+
+RICHARD SEROTER: I
+think we got some time.
+
+So we've acquired a
+few other retail chains
+
+who use different clouds.
+
+I mean, nobody's perfect, right?
+
+So at the same time, this app
+needs to run in more places
+
+so that each of those
+stores can analyze curbside
+
+pick up behavior, regardless
+of what cloud they're using.
+
+So I guess, Vidya,
+my question for you
+
+is, how do I run
+this app everywhere?
+
+VIDYA NAGARAJAN
+RAMAN: Yeah, that's
+
+a great question, Richard.
+
+And we do have a
+solution for consistency
+
+across any environment.
+
+Check out how we do
+it through Anthos.
+
+With the new
+multi-cloud API, we can
+
+provision these clusters right
+from the Google Cloud CLI
+
+or console in other
+clouds, including
+
+AWS and Azure, where
+you already had
+
+some applications installed.
+
+See here that I'm using a single
+GCloud command to create a GKE
+
+cluster on Azure.
+
+Here, we have
+deployed GKE clusters
+
+to Google Cloud and
+Microsoft Azure.
+
+I'm managing it all
+from Google Cloud,
+
+and I'm even able to centrally
+deploy and view workloads
+
+to any of these GKE clusters.
+
+RICHARD SEROTER: That's wild.
+
+Thanks, Vidya.
+
+So you're actually
+putting GKE-- and I
+
+think it's the best Kubernetes
+in the public Cloud--
+
+anywhere I want it.
+
+I mean, that's really
+powerful stuff.
+
+I love that new Azure support.
+
+And again, each store manager,
+whatever Cloud they're using,
+
+can actually see a report
+at the end of the day
+
+to know how they performed
+on curbside pickup.
+
+That was the goal.
+
+All right, but
+now, you're making
+
+me think that we could
+probably even do more, right?
+
+We could expand
+some of our thinking
+
+here and maybe respond to the
+customer demands in real time.
+
+Could we actually evolve from
+that after-the-fact analysis
+
+of parking lot footage
+to maybe improve
+
+the experience in real time?
+
+By that, I'm
+thinking of, could I
+
+run this AI model against
+live camera footage instead
+
+of recorded stuff, and maybe
+be able to do something with it
+
+as it happens?
+
+But of course, as
+always, new challenges
+
+emerge if we think of
+something like this.
+
+So off the top of my head,
+we'd have to somehow customize
+
+this AI model,
+because now I have
+
+to identify the number
+of cars in motion,
+
+how many are waiting, is
+the curbside lot picking up.
+
+And I probably want to
+operationalize that model
+
+and move it closer to
+the store, because I'm
+
+processing data in real time.
+
+So latency matters.
+
+And then I want to
+integrate all that insight
+
+I'm getting with the
+existing in-store systems
+
+for the managers
+to use so they can
+
+move their employees around.
+
+So that's a lot of stuff.
+
+I don't know.
+
+Can you help me with that?
+
+VIDYA NAGARAJAN RAMAN: We can.
+
+So, I'm calling in my
+colleague, Gabriele.
+
+He has been working with one
+of your on-prem locations,
+
+Richard, in Austin.
+
+And he can explain how
+we improve your software
+
+for edge scenarios.
+
+Hi, Gabriele.
+
+GABRIELE DI PIAZZA: Hi, Vidya.
+
+And hello, everyone.
+
+Glad to join you, Richard.
+
+By the way, congrats
+on your role in Cymbal.
+
+What you're asking
+for can be solved
+
+with our newly announced Google
+Distributed Cloud on the Edge.
+
+As you mentioned, it brings
+the best of Google Cloud
+
+to the Edge.
+
+It consists of a
+fully managed CPU,
+
+GPU optimized platform,
+with a common set of Google
+
+and third-party applications.
+
+You build once and
+deploy anywhere.
+
+As an example, here at
+some of your stores.
+
+So let's get going.
+
+We're going to add real time
+intelligence with AI models
+
+and process the data locally
+to reduce video latency.
+
+Let's get these running
+on the Edge in each store.
+
+So we start out by first
+using Google Vertex AI.
+
+So, we train the engines and
+the visual objects recognition
+
+and classification models
+in the Central Cloud.
+
+Here we are monitoring
+the progress and accuracy
+
+of the model.
+
+And as you can see,
+the train models
+
+can now be packaged
+into container images.
+
+Those container images can be
+ready to be deployed anywhere,
+
+including in the Edge.
+
+In this case, we'll be targeting
+five different Cymbal stores.
+
+From the Google console, we can
+choose the Kubernetes clusters
+
+running at specific
+Edge locations
+
+across all the Cymbal stores.
+
+Once we pick those clusters, we
+can deploy the vision AI model
+
+that we created to
+each Edge in the store
+
+and manage those
+Edge clusters just
+
+like any other GKE clusters.
+
+The Cymbal operations team has
+the same familiar experience,
+
+only now Cymbal can also
+leverage the GPU optimize
+
+Google Distributed Cloud to
+achieve better performance
+
+at lower latency.
+
+And as a fully managed
+service, Distributed Cloud
+
+comes with the same
+integrated Google Cloud
+
+operation and
+management capabilities
+
+that you're used to.
+
+Here, Cymbal can monitor the
+health and state of their store
+
+deployments, manage
+capacity scale,
+
+all of these using a
+familiar Google console
+
+and backed by Google
+SRE practices.
+
+So as you can see
+in the video here,
+
+a real time analysis of
+curbside service level
+
+from the live footage
+led to real time insights
+
+for Cymbal shops to build a
+better customer experience
+
+at each store.
+
+Specifically, this
+new model at the Edge
+
+is recognizing cars
+in motion, telling you
+
+when the curbside pick-up
+lots are filling up,
+
+all executed in real time.
+
+So what do you think, Richard?
+
+Back to you.
+
+RICHARD SEROTER: This is great.
+
+You're amazing, Gabriele.
+
+I can't believe you built
+all that all by yourself.
+
+So this actually gives
+all our store managers
+
+really new insight into the
+real time customer experience,
+
+letting those stores allocate
+staff and people based
+
+on real time customer demand.
+
+That's awesome.
+
+So for the audience out there,
+I'm actually interested.
+
+What sort of apps do you think
+about running at the Edge?
+
+Is that a real use case
+you're considering?
+
+What sort of things
+might run there?
+
+All right.
+
+So I do love what
+you built for me.
+
+I don't want to be greedy,
+but I want a little more.
+
+This app isn't an island, right?
+
+You're doing some cool AI
+containerized-based stuff,
+
+but there's a lot of things
+already at that store location,
+
+right?
+
+Our notification services,
+other back office.
+
+It's all in VMs.
+
+So now that we have to integrate
+our new customer service
+
+app, these VM-based
+systems, am I
+
+signing up for completely
+different management
+
+experiences across containers
+and virtual machines,
+
+or can you do something for me?
+
+GABRIELE DI PIAZZA:
+Oh, absolutely not.
+
+We're going to provide
+you the same experience
+
+with the new Anthos for VMs.
+
+We can actually help you
+bring those virtual machines
+
+into the Anthos platform
+and manage them the same way
+
+we manage containers.
+
+So see here that I've moved
+a set of virtual machines
+
+under Anthos management,
+which now gives me
+
+a straightforward way
+to move and modernize
+
+existing apps at the Edge.
+
+RICHARD SEROTER:
+Wow, that's awesome.
+
+There's nothing you
+can't do, Gabriele.
+
+That's great.
+
+So what's powerful here is that
+all the Google-powered fleet
+
+management in Google Cloud,
+other clouds, at the Edge,
+
+is all based on Anthos, with one
+open control plane for wherever
+
+those workloads run.
+
+This simplifies our
+operations a lot.
+
+Or that open foundation makes
+hiring developers and operators
+
+a heck of a lot easier.
+
+All right.
+
+So last challenge for you.
+
+Cymbal has this growing
+European presence,
+
+but some of those
+regional stores
+
+operate with some restrictions
+on data sovereignty.
+
+I don't want to sacrifice
+all the amazing development
+
+and management capabilities that
+you and Vidya have showed me
+
+today.
+
+So is this a lost cause, or
+do you have something for me?
+
+GABRIELE DI PIAZZA: Yes,
+we have something for you.
+
+As we announced it yesterday,
+with the new Google Distributed
+
+Cloud posted, we can use a
+single hardware and software
+
+stack from Google Cloud,
+but now with local compute
+
+and a local control plane.
+
+It runs not only our
+container and VM workloads,
+
+but also the data
+and application
+
+services we care about.
+
+You could run this,
+as an example,
+
+with a regional hoster,
+fully air gapped,
+
+and have local stores
+connect directly to that.
+
+One open modern platform from
+wherever you want to operate.
+
+RICHARD SEROTER: I'm sold.
+
+You've done it.
+
+So that's pretty cool.
+
+So same Anthos control
+plane tech, but also
+
+local services in this
+fully air-gapped setting.
+
+That's great stuff.
+
+Thanks, Gabriele.
+
+Appreciate you joining us here.
+
+And, Vidya, did you like that?
+
+VIDYA NAGARAJAN RAMAN:
+I did, actually.
+
+And, Gabriele, that was amazing.
+
+And I'm sure our audience
+thinks so as well.
+
+Over the last 15
+minutes, we've shown you
+
+how Google Cloud offers
+a world-class experience
+
+for building new software or
+modernizing what you have.
+
+Our solutions for
+container-based apps
+
+are second to none.
+
+And we're now making
+it possible to extend
+
+those terrific services to
+wherever you need us to be.
+
+RICHARD SEROTER: All right.
+
+Thank you all for joining
+us, Vidya, Gabriele as well.
+
+This was terrific stuff.
+
+And thank you out there for
+the chat and the engagement.
+
+It was awesome to see that.
+
+So now, stay tuned for the
+live Q&A coming up next.
+
+We're going to talk
+about everything
+
+from the spotlight all the
+way through to this demo.
+
+Get your questions in there,
+and we'll be answering it live.
+
+Thanks so much.
+
+Bye, bye.
+
+VIDYA NAGARAJAN RAMAN: Bye.
+
+
+

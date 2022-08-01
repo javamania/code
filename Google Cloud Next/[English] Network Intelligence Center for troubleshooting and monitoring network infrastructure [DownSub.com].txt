@@ -1,0 +1,1168 @@
+
+
+LAKSHMI SHARMA: Hello, everyone.
+
+Welcome to the
+session on monitor
+
+and troubleshoot your
+network infrastructure
+
+with data driven insights.
+
+This is Lakshmi Sharma,
+Director of Product Management
+
+for Networking with my colleague
+Irene Abezgauz, Product
+
+Manager, working on
+one of these products
+
+that you will hear about today.
+
+In this 20-minute
+talk, we are going
+
+to discuss the
+common user journeys
+
+during migration,
+troubleshooting,
+
+and optimization
+of your network.
+
+We will also demonstrate how
+Network Intelligence Center,
+
+the product that provides
+you tools and capabilities
+
+to support these user journeys,
+is helping you by data insights
+
+and offering a
+platform that would
+
+be used in most effective
+ways throughout your user
+
+journeys of infrastructure,
+specifically
+
+networking, troubleshooting,
+migration, and optimization.
+
+Network Intelligence
+Center is a way
+
+of offering you AI/ML powered
+NetOps acceleration platform.
+
+This is Cloud AI Ops in real,
+working for your workloads
+
+onto GCP.
+
+Our goal is to become the
+simplest Cloud to operate on
+
+through an Intelligent
+Self-Driving Network that
+
+extends beyond GCP to hybrid,
+to multi-cloud, to branches,
+
+to places and capabilities that
+you have built for operating
+
+into virtual and Cloud
+journeys, and also integrating
+
+all the way to legacy
+infrastructure and services
+
+that are built on-prem
+or any location
+
+here henceforth I
+mentioned, leveraging all
+
+the AI and the data insights
+that we continue to build
+
+for building GCP and making
+GCP the platform driven
+
+by intelligent insight
+and self-driving Cloud.
+
+So Network Intelligence
+Center is Google Cloud's way
+
+of delivering onto that vision
+of Self-Driving Network.
+
+It contains multiple
+modules to ensure
+
+you can deploy what
+you have intended to.
+
+Basically, it gives you
+tools for the deployment
+
+to be matched to your intent.
+
+It offers you troubleshooting
+in any kind of performance
+
+and connectivity issues
+as you're migrating
+
+or as you're operating
+on the GCP, whichever
+
+location, whichever place,
+and whichever application
+
+you have been running
+currently or you
+
+have been building towards.
+
+It helps you optimize your
+network, including firewalls
+
+and other network services
+and infrastructure services
+
+that you will be using to
+deploy your workloads onto GCP.
+
+
+
+Networking is the foundation
+for all Cloud deployments
+
+and business processes.
+
+We expect it to be up
+and performing well.
+
+Our customers expect it to be.
+
+They want networking
+to be seamless,
+
+regardless of the use
+case and the journey
+
+that you are working towards.
+
+User journeys
+throughout Cloud, based
+
+on our experiences of
+customers migrating and working
+
+on GCP with us, specifically
+networking scenarios,
+
+there are three
+main categories--
+
+planning and migration, day 2
+ops at scale, and optimization.
+
+So these are the three sets of
+categories and user journeys
+
+that we will be
+taking it through,
+
+and how different modules and
+Network Intelligence Center
+
+help you build and
+drive towards that.
+
+Here's what you need in
+each of those stages.
+
+Early stages,
+deployment is live.
+
+So when you're migrating your
+network or your workloads,
+
+while your deployment is live
+what you want to make sure
+
+is that what you intended to
+do, what kind of architecture
+
+you deploy for, is what you're
+getting when you have migrated
+
+or when you're migrating.
+
+And then you also, once you
+have measured configuration
+
+and your intended
+[INAUDIBLE],, then you really
+
+want to make sure
+that your traffic is
+
+flowing as you intended to.
+
+So that's kind of number one
+in the early stages of our user
+
+journey during
+planning and migration.
+
+The next step would be
+that yes, I have migrated.
+
+Yes, I have it as intended--
+configuration and traffic
+
+as intended, as I
+expected it to be.
+
+Now the second phase is
+that, is it production ready?
+
+Is it production live?
+
+So that's the time when
+you want to make sure
+
+that your network
+continues to stay healthy,
+
+you are able to identify
+and troubleshoot
+
+issues in advance--
+
+
+
+not at the time the issue
+happens, but prior to
+
+when the issue has happened.
+
+Or in cases issue
+has happened, you
+
+being able to troubleshoot
+it and identify the root
+
+cause for each of those
+issues in operation
+
+or during production
+operations very fast
+
+and be able to remedy
+it at an instant.
+
+We also want to be able to
+optimize your deployment.
+
+You want to be able to optimize
+your deployments that you're
+
+running by having the control
+on performance and cost.
+
+First you want to be making
+sure that your applications are
+
+running with the
+performance and reliability,
+
+no matter what kind of
+optimization that you make--
+
+configuration
+optimization, [INAUDIBLE]
+
+optimization, and services
+optimization, maybe
+
+architecting it again.
+
+So we give you a tool so
+that you can optimize it back
+
+and then you can go back
+and check your intent again,
+
+your traffic patterns
+again, and you're back
+
+to a very healthy
+operation cycle.
+
+So for all of
+these user journeys
+
+that we talked through, you need
+a lot of data to be available.
+
+You want your data to be
+continuously monitored for you.
+
+You want the control on where
+my data is, where my logs are,
+
+where my alerts are--
+
+you want all of that information
+across all your deployments
+
+across these
+stages, and you want
+
+the data monitoring and
+telemetry, everything
+
+to be available to you so that
+you start to make decisions
+
+in a self-driving and
+self-sustainable manner
+
+without really any
+interactions-- to be honest,
+
+like, literally zero
+interaction with people
+
+on the other side of the Cloud.
+
+So for all of these data, how
+do we bring this data to you?
+
+Network Intelligence Center
+provides that visibility
+
+into working on this network,
+how the deployment actually
+
+works, how and where the
+traffic flows, and are there
+
+or if there are any problems
+and issues with configurations,
+
+or the traffic, or the
+routing-- any kinds
+
+of [INAUDIBLE] or any anomalies,
+or any suboptimalities that you
+
+see.
+
+So once we have all this
+information for you,
+
+the next step is for us
+to provide users the tools
+
+to make that data
+easily available
+
+and have the system
+intelligently and then
+
+automatically address
+any existing issues,
+
+as well as service the user the
+most important things, the most
+
+relevant insights.
+
+We do want to avoid
+the noise fatigue.
+
+And after all, the network
+is a business enabler.
+
+We want your focus to be on
+the most important and relevant
+
+information.
+
+It allows everything
+else to communicate.
+
+Network allows you to
+communicate with your users.
+
+Network allows
+you to communicate
+
+with your business processes
+and your business people.
+
+You want the network to
+auto-resolve problems where
+
+they're relevant, and to
+service users any issues that
+
+requires intervention.
+
+That is why we are working
+on enhancing [INAUDIBLE]
+
+capability across different
+services and capabilities
+
+that we have in
+networking to deliver
+
+the most important
+information to our users
+
+across all these
+journeys that you put
+
+in a timely and concise manner.
+
+So we want to be
+going from a place
+
+where you're
+planning, migrating,
+
+writing your architecture,
+you're making sure
+
+that your intent is
+right, then you're
+
+automating and optimizing
+toward for your performance
+
+and reliability and cost.
+
+Once you have
+delivered this cycle,
+
+we want the [INAUDIBLE]
+to be working with you so
+
+that you are able to deliver.
+
+And you want these
+capabilities to be
+
+delivered in a self-driving,
+self-contained manner to you.
+
+So Day 2 Ops.
+
+Day 2 Ops capability, which
+you see in the middle,
+
+are what we are focusing in now.
+
+And you will see some
+capabilities and planning
+
+and migration state
+in Day 2 Ops case
+
+so that you are able to leverage
+our products and capabilities
+
+today while we bring
+you onto the journey
+
+of eventual optimization and
+self-driving capabilities.
+
+IRENE ABEZGAUZ:
+Thank you, Lakshmi.
+
+So basically, when we
+listen to the users,
+
+they emphasize the
+following thing.
+
+We want the network
+to be up and running.
+
+It needs to be available, and
+it needs to be performing,
+
+and we have a business to run.
+
+We don't need to deal
+with anything else.
+
+And essentially, it needs
+to be up and running.
+
+If it breaks, we want to
+know as soon as possible.
+
+Now, this needs to happen
+regardless of what's
+
+happening with our traffic.
+
+It can be spiky.
+
+In a nice way to say it, it
+could be dynamically changing.
+
+And in those conditions,
+we need to be
+
+able to monitor the network.
+
+And essentially,
+that's what the users
+
+have been saying that
+Network Intelligence
+
+Center has been giving them.
+
+And I think the best example,
+or the best quote that I
+
+got from this, from one
+of our users, was, listen,
+
+we're used to aggressively
+monitoring everything on-prem.
+
+Now, you take our most
+precious workloads
+
+and you put it on this
+magical mystery black box,
+
+and we don't want
+to lose visibility.
+
+We cannot afford
+to lose visibility.
+
+And that really
+resonated with me, maybe
+
+with the tiny exception
+of not wanting
+
+to bring SNMP to the Cloud
+unless I really have to.
+
+But with the exception
+of that, I really
+
+believe in that-- as much
+data as possible, and as much
+
+visibility as possible.
+
+Now, let's jump right
+in and take a look
+
+at the modules of the
+Network Intelligence Center
+
+and how they're used
+in the user journeys
+
+that Lakshmi has described.
+
+The first place where
+users typically start
+
+is Network Topology.
+
+Basically, they come here when
+you've just migrated something,
+
+or you've created
+something from scratch.
+
+Now, there is a
+new thing, and you
+
+want to make sure that whatever
+it is that you've built,
+
+that it matches your intent.
+
+Are those the servers
+that I wanted to have?
+
+Are they communicating in
+the way that I expected?
+
+How is traffic following?
+
+How is it flowing?
+
+Are the relevant
+regions being served
+
+from relevant continents?
+
+Do I have any inter-regional
+communications
+
+that I'm not supposed to have?
+
+Am I bypassing load balancers
+when I shouldn't be?
+
+All those things
+are basically things
+
+that you see in
+Network Topology,
+
+with the addition of being
+able to see performance
+
+metrics on the edges.
+
+Now, from here, if you're
+trying to get more information,
+
+there is actually a direct
+pivot from Network Topology
+
+into VPC Flow Logs.
+
+So if you are looking
+at a specific server
+
+at a specific edge, and you
+want to get more Swiss knife
+
+kind of information,
+you can just
+
+go directly from
+here into VPC Flow
+
+Logs in the relevant context
+and see what's happening.
+
+Now, in Network
+Topology, you can
+
+see compute instances,
+load balancers, connections
+
+to on-prem, Cloud APIs.
+
+We are going to add GKE
+infrastructure support.
+
+And that's essentially Topology,
+typically used in migration
+
+or where something changes.
+
+Now, the next thing is
+the Performance Dashboard.
+
+This is where you end
+up when things are not
+
+going quite as expected.
+
+Usually, when you see
+there is a problem
+
+or you suspect the
+problem, you'll go here.
+
+And here, you can actually see
+packet loss and latency metrics
+
+for traffic in your projects.
+
+There is a combination here of
+synthetic traffic and sampling
+
+of actual user traffic
+of your machines.
+
+You will see here only zones,
+regions where you are deployed.
+
+And you can essentially see
+your own specific performance.
+
+
+
+Now, one thing that we
+have recently launched
+
+is the Global
+Performance Dashboard.
+
+In many cases, when
+there is a problem
+
+and you get to the
+Performance Dashboard,
+
+the question you're
+going to ask yourself
+
+is, OK, something is
+not going as expected.
+
+I'm seeing high latency, or
+I'm seeing high packet loss.
+
+OK?
+
+For that matter, is the problem
+anywhere in my deployment,
+
+or is it a Google
+Cloud-wide kind of problem?
+
+And having those two Performance
+Dashboards side-by-side
+
+basically lets you compare
+your project performance
+
+to the performance
+of all of Google.
+
+And then you can know whether
+there is a network outage,
+
+or maybe there is just a few
+servers choking somewhere--
+
+100% CPU-- and that is the
+reason why they're not properly
+
+responding to requests.
+
+
+
+Any Google-wide
+outages are going
+
+to be very clearly visible
+on both dashboards.
+
+And obviously, when you pivot
+from your project to this one,
+
+you'll be able to see where
+is the source of that problem.
+
+
+
+Now, as I said, we are going
+from relatively high-level--
+
+OK, I just upgraded.
+
+Please tell me in high-level
+how everything looks,
+
+because I'm trying to understand
+the connection between things.
+
+And from there, you
+can actually drill down
+
+to very specific metrics.
+
+As I said, it really actually
+depends on the type of user.
+
+Right?
+
+Some users, they're
+going to say,
+
+listen, just throw all
+the information you can.
+
+I'm going to derive all
+the insights myself.
+
+Just give me all
+the data possible.
+
+I'm just going to plug it
+into a third-party system,
+
+or I'm going to process it.
+
+And I want to see raw data.
+
+And other types
+of users are just
+
+going to say, please
+crunch everything for me,
+
+and please only call me if
+it's super critical, super
+
+important, and you're
+absolutely sure that this
+
+requires my attention.
+
+Now, for the kind
+of users who want
+
+to see everything and want
+to get this visibility,
+
+there in-Cloud monitoring.
+
+There are very specific
+product metrics.
+
+You can see, for example, for
+every VPN in every project.
+
+You can see the state
+of the VPN tunnel.
+
+Are there any issues?
+
+You can see whether the
+tunnel is up or not,
+
+have there been any
+Handshake problems,
+
+what's the throughput?
+
+For Interconnect as
+well, you can see
+
+the status of the attachment.
+
+You can see the throughput.
+
+You can see the throughput
+over a period of time.
+
+Essentially, you can go from
+very kind of high-level,
+
+this is your Topology, to
+very, very specific details.
+
+And I think this is the goal
+of really providing something
+
+that we can proudly
+call data-driven, right?
+
+OK, here's all the data.
+
+And you can crunch it yourself,
+or we can crunch it for you
+
+and get to a point.
+
+Now, another-- this
+is actually one
+
+of the favorite
+products by our users,
+
+saving a huge amount
+of support calls.
+
+And it goes like this.
+
+Give me endpoint A.
+Give me endpoint B.
+
+And this product checks whether
+the configuration allows
+
+connectivity between
+these two endpoints.
+
+This means essentially, if
+you're looking at VM to VM,
+
+nodes to master, VM to Cloud
+SQL, on-prem to Cloud SQL,
+
+is your configuration actually
+allowing this connectivity?
+
+And then if it's not
+allowing this connectivity,
+
+basically, this module
+is going to tell you
+
+there is a firewall
+rule blocking it,
+
+or you have a routing issue.
+
+Now, these look
+at configuration.
+
+And what we have just
+recently launched
+
+is dynamic connectivity
+tests, which
+
+for quite a few
+of the scenarios,
+
+they also look at
+what's actually
+
+happening on the data plane.
+
+OK, so your configuration
+allows connectivity.
+
+Now let's take a deeper dive
+and look at the metrics.
+
+What is the latency
+between these two?
+
+What is the packet loss ratio,
+if any, between these two?
+
+You have the connectivity
+test to basically tell you
+
+whether any two
+endpoints are able to
+
+or should be able to
+for configuration,
+
+and are actually able to
+connect and talk to each other,
+
+and how that
+connection looks like.
+
+Now, Network Intelligence
+Center has additional modules,
+
+like Firewall
+Insights, for example.
+
+That's going to tell you whether
+you have unused firewall rules,
+
+or any additional information.
+
+So there is quite a
+lot there that you
+
+can go and actually check out.
+
+
+
+And a quick recap.
+
+In this not-very-long
+presentation,
+
+we've talked about what we have
+seen to be the typical user
+
+journeys when users
+are migrating,
+
+when they're actually
+operating at very large scales,
+
+and when they're trying
+to do optimization.
+
+And now, since this
+is a recorded session,
+
+I want to share with you
+some of the questions
+
+that we're usually being
+asked, and the answer to these.
+
+Probably the most
+common question
+
+I get is, what about GKE?
+
+And the answer is that yes,
+essentially, the Performance
+
+Dashboards show the
+performance for GKE cheeky
+
+workloads as well.
+
+We have GKE connectivity
+in Connectivity Test.
+
+As I mentioned, in
+Topology, we are
+
+working on showing the
+GKE infrastructure.
+
+That is a big part
+of the workloads that
+
+are running on Google
+Cloud, and that's definitely
+
+something to be covered.
+
+We're also looking at
+serverless-- for example,
+
+not just GKE.
+
+Again, the same support.
+
+You have Topology.
+
+You have Connectivity Test.
+
+So there's quite a lot
+that you can learn.
+
+This is definitely
+not just for Compute.
+
+Another super common question,
+especially by the larger
+
+organizations, is how does this
+fit into my existing processes,
+
+because I am hybrid, because
+I'm the Cloud, because I already
+
+set up a thing, and
+I want to continue
+
+using that thing, which
+makes a lot of sense?
+
+So basically, we're looking
+at it from two aspects.
+
+One aspect is taking all the
+information in the Network
+
+Intelligence Center
+and making it
+
+available to be consumed
+programmatically.
+
+So you can grab it via API.
+
+You can plug it into
+your own systems.
+
+So you can trigger any sort
+of response based on alerts,
+
+for example, which you've
+set, and so on and so on.
+
+The other one is that the
+combination of Network
+
+Intelligence Center
+and Cloud Monitoring
+
+basically allows you to
+see all your monitoring
+
+in a single place.
+
+Last question, as I see
+we are approaching time,
+
+is can this be used
+for compliance?
+
+And that's actually one of
+the major goals of the Network
+
+Intelligence Center.
+
+You can see where
+traffic is flowing,
+
+or for [INAUDIBLE]
+purposes, you can see
+
+where traffic is not flowing.
+
+You can get VPC Flow
+Logs on the trail.
+
+You can get screenshots
+that you can then
+
+use in compliance reports.
+
+So there is actually quite a lot
+in mind in terms of compliance,
+
+and quite a lot that
+the Network Intelligence
+
+Center can deliver.
+
+This team is always available
+for any additional questions
+
+that you may have.
+
+There is also quite
+a lot happening
+
+in the Next '21
+networking sessions,
+
+and I do encourage you to
+go ahead and take a look.
+
+Thank you.
+
+
+

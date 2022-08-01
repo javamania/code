@@ -1,0 +1,978 @@
+[Music]
+
+hello and welcome to our very first
+
+spotlight i hope you enjoyed the opening
+
+keynote for the next hour we will be
+
+diving into all things data i'm
+
+stephanie wong a developer advocate and
+
+i'm here with garrett kasmeier who leads
+
+database analytics and bi solutions at
+
+google cloud
+
+thanks stephanie i'm very excited to be
+
+here and to share with everyone what we
+
+have been working on
+
+the team thought we start on the light
+
+side of things here and start with a
+
+joke one of my favorite jokes actually
+
+so
+
+here it goes a secret query walks into a
+
+bar
+
+and approaches two tables and asks
+
+can i join you
+
+[Music]
+
+okay i guess we wrote a video instead
+
+innovation is a huge challenge in
+
+baseball the current mlb fan expects us
+
+to be relevant customers call us
+
+patients call us members call us and you
+
+can imagine a team that's just buried
+
+under the weight of thousands of call
+
+recordings
+
+we look at so much data everything you
+
+can imagine we analyze frankly we spend
+
+70 percent of our time just trying to to
+
+capture it and trying to sift through it
+
+we're expecting to
+
+transfer around 300 to 400 petabytes to
+
+the cloud
+
+it's hard to even describe how big that
+
+is
+
+google cloud was very impressive to us
+
+it allowed us flexibility in storage and
+
+compute scaling google cloud provides us
+
+with technology that will drive us to be
+
+better
+
+now our team can look at hundreds of
+
+calls a day in minutes instead of weeks
+
+with google cloud we're going to be able
+
+to spend our time analyzing real time
+
+and using the data that we've been
+
+collecting
+
+we thought google cloud was the best
+
+partner for us i think this is very much
+
+going to be an open and evolving
+
+long-term relationship between google
+
+and twitter it's a perfect fit with
+
+google cloud as we go forward google's
+
+made it possible for us to reach
+
+exceptional customer experience in a way
+
+that hasn't been done before
+
+[Music]
+
+and welcome back so what are we solving
+
+for today this spotlight session is
+
+about how to leverage data as your most
+
+strategic business asset especially as
+
+you adapt to and anticipate change
+
+data has the power to transform stagnant
+
+businesses into profitable ones
+
+streamline operations to improve
+
+people's lives and identify areas of
+
+waste to radically reduce unnecessary
+
+spending
+
+it can be used to solve businesses and
+
+world problems both the simple ones and
+
+the ones that keep people up at night
+
+it has the potential to accelerate
+
+progress faster than a think tank or
+
+world summit
+
+and it's largely untapped
+
+as you learn more about google cloud
+
+capabilities and make progress on your
+
+data cloud journey you can unlock your
+
+own 10x mindset as external factors
+
+accelerate the pace of change
+
+never before have we faced this much
+
+uncertainty and now is the time when
+
+every company can turn data into an
+
+ability
+
+the reality today is that too many
+
+companies struggle to remove the
+
+barriers to turn data into intelligence
+
+this is exactly what we are seeing with
+
+our customers turning data into
+
+intelligence and delivering value is no
+
+longer a nice to have it is essential a
+
+recent study shows that only 32 percent
+
+of the companies surveyed gain value
+
+from their data investments and this is
+
+the result of difficult to access slow
+
+unreliable complex and fragmented
+
+systems
+
+many companies just feel overwhelmed
+
+with the demand for the various types of
+
+working with data and of doing it at
+
+scale they feel walled in with a lack of
+
+integration a lack of openness a lack of
+
+portability and very poor apis
+
+it is time to reimagine our data cloud
+
+strategy that is unlocking your data
+
+advantage
+
+build great applications that understand
+
+and interact with your customer on
+
+operational databases that scale to
+
+billions of queries per second
+
+react on any event in real time and
+
+process millions of data streams
+
+analyze petabytes of data without sizing
+
+or tuning your data warehouse anymore
+
+and ultimately optimize your processes
+
+with hundreds of machine learning models
+
+in production
+
+this is how you unlock your data cloud
+
+and unlock your data advantage
+
+to build your data cloud you need your
+
+systems to be simple
+
+and this requires a partner that meets
+
+you where you are today and helps you to
+
+mature where you want to be
+
+but at your own pace
+
+making the complex simple is our
+
+business
+
+it has been for decades building systems
+
+that mask the complexity of the entire
+
+internet behind a simple single
+
+interface and building applications with
+
+billions of users
+
+it all runs on data and analytics so you
+
+can say the data is our dna
+
+and we can't predict the future but we
+
+can plan for it and we are deeply
+
+grateful to work with tens of thousands
+
+of organizations who build their data
+
+clouds on google cloud
+
+and unlock ultimately their data
+
+advantage from databases to analytics to
+
+streams to lakes to ai
+
+and build a unified data cloud together
+
+with us
+
+it's leaders like you who are
+
+accelerating their use of data to
+
+transform complexity into simplicity
+
+this week at next you'll hear from
+
+leading organizations that have chosen
+
+google cloud for their data cloud
+
+strategy over market alternatives
+
+verizon media is one of these customers
+
+verizon uses bigquery and looker to
+
+scale their massive enterprise media
+
+warehouse supporting monthly scans of
+
+more than one exabyte of data
+
+the performance improvements include
+
+90 percent plus productivity
+
+improvements across the board and lower
+
+overall tco compared to other cloud
+
+providers
+
+almost overnight traffic to chess.com
+
+tripled the pandemic and successful
+
+series the queen's gambit created a
+
+perfect storm
+
+ten years worth of growth occurred in
+
+just six months and daily active users
+
+rose from 280 000 to more than 1 million
+
+there's no way to handle that search
+
+without the move to google cloud using
+
+bigquery's near infinite ability to
+
+scale in response to demand this meant
+
+that chess.com didn't have to forecast
+
+site traffic and worry about unexpected
+
+surges or waste money by over
+
+provisioning servers that go unused take
+
+autotrader it's uk's largest online
+
+automotive marketplace and they were
+
+able to migrate more than 60 of their
+
+current oracle footprint to cloud sql
+
+autotrader builds their data cloud by
+
+leveraging cloud sql bigquery and looker
+
+to deliver access to their data to all
+
+of their users and with cloud sql as a
+
+fully managed service auto greater
+
+release cadence has improved by over 130
+
+percent year over year enabling an
+
+impressive peak of more than
+
+450 releases to production
+
+on a single day and this is how you
+
+build your data advantage
+
+when cardinal health migrated to google
+
+cloud they enabled disaster recovery
+
+increased their ability to respond to
+
+business challenges and leverage machine
+
+learning to drive business efficiencies
+
+all while reducing their cost by 25
+
+we would like to welcome ray bajaj cto
+
+of cardinal health to share their data
+
+transformation story
+
+ray thank you so much for joining us
+
+here today
+
+thanks stephanie and i'm really happy to
+
+be here today cardinal health is a
+
+pioneer in healthcare industry for
+
+leveraging the cloud as a primary source
+
+of infrastructure
+
+achieving our cloud transformation
+
+journey goal
+
+with more than 80 percent of our
+
+workload fully migrated onto the cloud
+
+our journey to google cloud started in
+
+2018 leveraging the security and
+
+flexibility of google cloud
+
+allows us to scale and innovate at lower
+
+cost
+
+which empowers our organization to focus
+
+on building the future of healthcare
+
+and driving better outcomes across the
+
+healthcare ecosystem so
+
+why google cloud
+
+with google we can deliver modern data
+
+insights capabilities
+
+to our engineering teams so that they
+
+can transform our core business
+
+while also improving the customer
+
+experience
+
+helping the organization evolve
+
+in the adjacent areas of healthcare
+
+we also selected google cloud because of
+
+its ability to partner with sap
+
+and run massive erp workloads reliably
+
+now what outcomes have you been able to
+
+realize as a result of this
+
+we leveraged google's local and bigquery
+
+to develop episode analytics a data
+
+driven predictive cost tracking tool
+
+that enables community oncology
+
+practices to accurately measure
+
+the cost of care and provides clearer
+
+insights
+
+into value-based performance
+
+well ray cardinal is clearly at the
+
+forefront of these shifts and we can't
+
+wait to see what's in store for you so
+
+thank you so much for being here with us
+
+today
+
+thank you
+
+organizations like cardinal health are
+
+solving complex challenges with google
+
+cloud
+
+but
+
+what is holding others back from using
+
+data to accelerate innovation
+
+companies are looking for solutions that
+
+can simplify their data landscape to
+
+move from a state where every scenario
+
+requires a new tool to an agile platform
+
+that combines data analytics databases
+
+data engineering and science security
+
+and governance into a single platform to
+
+move from data at rest to a platform
+
+where data is accessible in real time
+
+our vision is to provide a platform that
+
+allows data to unfold its full potential
+
+ultimately enabling us to reach new
+
+horizons ranging from newly built
+
+digital experiences products and
+
+business models to advanced machine
+
+learning and ai to ultimately empowering
+
+humans to reason beyond their own
+
+biological capacity
+
+and we have built the industry's most
+
+simple intelligent and best integrated
+
+cloud data platform that enables
+
+businesses to fuel their own digital
+
+transformation
+
+and this is how you unlock your data
+
+advantage
+
+to seize new opportunities improve
+
+operational efficiencies and deliver new
+
+user experiences that delight customers
+
+partners and your employees
+
+thanks to you our customers and partners
+
+google's data platform is one of the
+
+fastest growing clouds fueled by the
+
+demand for products like big query and
+
+here comes the most exciting part today
+
+we are excited to announce a number of
+
+new product innovations
+
+and the first announcement goes out to
+
+all of the data engineers in the world
+
+who are using spark on google cloud open
+
+standards are at the heart of our data
+
+cloud strategy and at google we follow
+
+an open approach that enables
+
+flexibility and choice and today i am
+
+excited to announce project big spark it
+
+is the world's first auto scaling
+
+serverless spark service in existence
+
+and regardless of whether you are a big
+
+query user a data proc user our cloud ai
+
+user we have created an integrated
+
+ecosystem around spark the de facto
+
+standard for data engineering workloads
+
+we want to make it easy for you to
+
+onboard on our platform with spark and
+
+never limit your ambition with data
+
+science and data engineering
+
+our long history in the open source
+
+community has shown us that betting on
+
+the community first is always the right
+
+strategy to give our customers
+
+portability and optionality we're
+
+excited to make spark a first-class
+
+citizen on our platform and to automate
+
+the productionalization of your data
+
+engineering and data science workloads
+
+the next announcement goes to all of the
+
+data scientists
+
+as enterprises consolidate their data
+
+platforms the distinction between
+
+advanced analytics and data science and
+
+machine learning is really diminishing
+
+today more than ever data scientists are
+
+looking for a unified interface to be
+
+able to seamlessly connect their entire
+
+data estate and also run all
+
+explorations with sql spark and other
+
+machine learning libraries with vertex
+
+ai we have simplified the experience for
+
+data scientists with 80 percent less
+
+code required to drain a model compared
+
+to any other platform
+
+as a part of google's vertex ai strategy
+
+i am happy to announce the brief view of
+
+ai notebook for vertex ci that offers a
+
+fully managed scalable and enterprise
+
+great ide combined with easily
+
+enforceable policies and user management
+
+these ai notebook innovations are great
+
+examples of google bringing together the
+
+power of data and ai
+
+google truly aims to fast-track
+
+innovation by eliminating the need for
+
+data scientists to shift context between
+
+aspects like data analytics data science
+
+and machine learning
+
+that is right on and here is an exciting
+
+announcement to all of the developers
+
+we are adding a postgres interface
+
+for spanner which continues our
+
+commitment to openness and reinforces
+
+our efforts to democratize the access to
+
+spanner with this new postgres interface
+
+enterprises can take advantage of
+
+spanner's unmatched global scale
+
+five nines of availability and strong
+
+consistency using skills and tools from
+
+the popular postgres ecosystem and
+
+starting today you can create a spanner
+
+database that uses postgres sql dialect
+
+and connect with its open wire protocol
+
+this interface supports banner's rich
+
+feature set using the most popular
+
+postgres data types and sql features and
+
+thus democratizing access to spanner for
+
+millions of developers out there our
+
+commitment to the ecosystem has been
+
+long standing with ongoing support for
+
+cloud sql for mysql postgres and sql
+
+server so you can lift and shift your
+
+databases
+
+our mission with cloud sql is
+
+compatibility and we were the first
+
+cloud provider to support postgres 13.
+
+these announcements are so exciting
+
+because postgres has emerged as a
+
+popular choice for operational databases
+
+postgres is known and love for its
+
+stability and feature set and has built
+
+an active and growing ecosystem of
+
+developers and tools
+
+our investments in postgres are a step
+
+in the right direction to continue
+
+meeting developers where they are with
+
+the tools they love we are excited to
+
+announce new ways to help organizations
+
+going beyond traditional business
+
+intelligence to analyze access and act
+
+on data looker continues to integrate
+
+with the other offerings in our
+
+portfolio as well as continues to
+
+innovate with our core product and to
+
+address the needs we are continuing to
+
+simplify the experience across bigquery
+
+looker and data studio together with
+
+connected sheets today we are announcing
+
+new enhancements which bring the reality
+
+of augmented analytics to more people
+
+with looker's solution for contact
+
+center ai to help businesses leverage ai
+
+and converse naturally with customers
+
+and deliver outstanding experiences
+
+we are also announcing a new looker
+
+block for healthcare nlp ai which
+
+creates a user interface to advanced ai
+
+and natural language functionality and
+
+this helps healthcare providers to gain
+
+deeper understandings of their patient
+
+data part of the secret sauce lies in
+
+lookers in database architecture and the
+
+semantic layer which makes it possible
+
+for business users to trust data no
+
+matter how they experience it via a
+
+dashboard email or text alert or even a
+
+custom application
+
+we are excited for these recent
+
+innovations but we couldn't do this
+
+alone together with our community of
+
+customers partners and developers we are
+
+delivering innovation across a variety
+
+of use cases we are able to create new
+
+solutions and accelerate your journey to
+
+transform data into value
+
+next i want to announce an important
+
+partnership with informatica we have
+
+partnered with informatica to help
+
+hundreds of customers succeed with their
+
+journey to the cloud
+
+together we are helping customers move
+
+mission critical workloads to the cloud
+
+and integrate with google cloud
+
+technologies such as bigquery
+
+today we are excited to announce that we
+
+are deepening our partnership with
+
+informatica even more first for existing
+
+informatica power center customers
+
+we are so pleased to announce our
+
+migration factory which will help to
+
+accelerate migration of data-driven
+
+workloads to google cloud with
+
+informatica cloud
+
+second
+
+we are pleased to announce our new
+
+services on google cloud's marketplace
+
+which will include informatica's
+
+integration and enterprise data catalog
+
+offerings
+
+and we are continuing to invest in key
+
+product integrations with data bricks
+
+our engineering and product teams
+
+continue to work together to deliver the
+
+joint roadmap and we have multiple
+
+customers using our latest enterprise
+
+security and performance enhancements of
+
+databricks on gke in q4 we will also
+
+deliver data brick sql databricks photon
+
+on google cloud as well as we are
+
+launching new data center regions
+
+together in emea and apec
+
+our ai teams are engaged to allow
+
+customers to experiment and develop
+
+models on data bricks and vertex ai
+
+together and deploy models at scale into
+
+production with vertex ml ops suite so
+
+much goodness okay before we get into
+
+the live demo i recommend tuning in to
+
+more sessions to hear from all our
+
+customers this week join the chief data
+
+officer panel discussion and listen to
+
+our product strategy sessions for
+
+database data analytics bi and ai
+
+we can't wait to hear from you connect
+
+with you join us in our community and
+
+share your expertise and ask you
+
+questions but most importantly start to
+
+build your data cloud and unlock your
+
+data advantage
+
+okay
+
+time now to get hands on and check out
+
+our products in real action
+
+join us for a live demo and interact
+
+with our experts and one another and
+
+then stick around for the live q a
+
+following the demo
+
+i see you there
+

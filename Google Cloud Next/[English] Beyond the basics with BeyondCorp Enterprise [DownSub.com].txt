@@ -1,0 +1,1300 @@
+[MUSIC PLAYING]
+
+
+
+MARCO GENOVESE: Hi, everyone.
+
+I'm Marco.
+
+TANISHA RAI: And I'm Tanisha.
+
+MARCO GENOVESE: In the
+Security Spotlight,
+
+we heard about the importance
+of a zero-trust approach
+
+to security.
+
+TANISHA RAI: And
+in our demo today,
+
+we will show you how to
+implement zero-trust access
+
+to be more secure
+and more productive.
+
+And a quick shout
+out to our audience.
+
+This is truly live.
+
+Dive into the chat.
+
+We want to hear from you.
+
+Tell us what you do and
+where you're joining from.
+
+We can see you.
+
+Check it out, Marco.
+
+MARCO GENOVESE: Sure enough,
+we can see everybody down here.
+
+And we're so excited to interact
+and talk to you all today.
+
+If you're still hanging out
+in the Next Event website,
+
+click on the blue
+button that says
+
+Join the Interactive Experience
+to activate these features.
+
+OK.
+
+So let's get into it.
+
+We're going to
+cover three things.
+
+One-- how your entire workforce
+can securely access legacy
+
+and modern applications
+without exposing your network
+
+to attacks, and two--
+
+how you can get
+better protection
+
+against threats and data loss
+right from within your browser,
+
+and three--
+
+how you can gain visibility
+into unsafe activity,
+
+even if users aren't on a
+corporate network or device.
+
+And we're going
+to do all of this
+
+with BeyondCorp Enterprise.
+
+BeyondCorp Enterprise,
+or BCE as we call it,
+
+is Google Cloud's
+zero-trust access solution.
+
+With BCE, you can use Chrome
+to access apps and resources.
+
+In the background,
+Google's network
+
+protects and proxies traffic,
+enforcing access policies.
+
+These policies use factors
+such as identity, device info,
+
+location, and
+third-party signals
+
+to authorize access
+to apps and data
+
+that you need to do your job.
+
+TANISHA RAI: That's
+awesome, Marco.
+
+So let's get to the good stuff.
+
+Think about it.
+
+How easy is it for
+your developers
+
+to work remotely and
+securely right now?
+
+We know it's a tough task.
+
+We know that making
+life easy for developers
+
+while also protecting
+your code is critical.
+
+That's why our new BeyondCorp
+Enterprise feature, Client
+
+Connector, is so important.
+
+It enables zero-trust access
+to legacy thick client
+
+applications.
+
+MARCO GENOVESE:
+Yeah, I think a lot
+
+of people run into that today.
+
+So let's take a look at how
+developers would use it.
+
+We set up this laptop
+for the Cymbal Group.
+
+TANISHA RAI: By the way,
+they're a fictional company.
+
+Cymbal has been around
+since the 1970s,
+
+and they haven't modernized
+all their applications.
+
+Sound familiar?
+
+One of their main
+developer applications
+
+is still hosted in a
+private data center.
+
+MARCO GENOVESE: Yeah,
+I see this quite a bit.
+
+Until recently,
+Cymbal developers
+
+didn't have a way to access
+this application remotely
+
+without a VPN.
+
+The security team
+had constant concerns
+
+that remote users could
+expose the network, or even
+
+worse, their source code,
+to attacks or hackers.
+
+But now, using BeyondCorp
+Enterprise Client Connector,
+
+they can access client
+server apps without a VPN.
+
+Let me show you how
+Cymbal developers would
+
+connect via SSH to
+their Git repository.
+
+And before I show you, let
+me just say, don't blink,
+
+or you might miss it.
+
+It's that simple.
+
+So let's go ahead and swing on
+over to our developer machine.
+
+From here, I can simply
+open up Google Chrome.
+
+Once Google Chrome
+has actually loaded,
+
+you can see I have authenticated
+to my Git Application
+
+Repository already.
+
+Up in the right-hand
+corner, I simply
+
+click on my Endpoint
+Verification Extension.
+
+And from here, I click
+on Start Connection.
+
+My endpoint is being
+postured in the background,
+
+and a secure connection
+is being made to GitLab.
+
+From there, I can simply
+then-- once it's turned green,
+
+of course--
+
+minimize my browser.
+
+And then on the
+left-hand side, I'm
+
+going to go ahead and open
+up my terminal application.
+
+This is my thick
+client application.
+
+I'm going to then go
+ahead and run a Git clone,
+
+and that's actually going to
+pull down the code from Git
+
+to my local machine.
+
+And there's my application
+pulled down locally
+
+onto my endpoint.
+
+I know that probably seemed
+pretty straightforward.
+
+But what you might not
+have noticed was first,
+
+there were no clients.
+
+It's all in the browser you
+probably already had open.
+
+Second, in the background,
+continuously validating
+
+the identity, and the device,
+and a bunch of other factors
+
+is our Identity-Aware Proxy.
+
+And third, our TCP proxy
+seamlessly and securely
+
+forwards all the traffic.
+
+The fact that developers
+around the world
+
+can do this remotely,
+simply, and securely
+
+without all the hassle of
+a VPN is pretty awesome.
+
+TANISHA RAI: And with
+BeyondCorp Enterprise,
+
+workers are only allowed
+access to applications
+
+they're permitted to use.
+
+So we prevent unwanted lateral
+movement across the network.
+
+So audience, we want
+to know, would you
+
+use this method for remote
+access in your organization?
+
+
+
+MARCO GENOVESE: Awesome.
+
+Now let's see how your
+workforce can securely
+
+access modern web
+applications even
+
+from non-corporate devices.
+
+Let's look at how Cymbal does
+it for their extended workforce,
+
+their call center contractors.
+
+TANISHA RAI: Meet Rhonda.
+
+She's one of thousands
+of remote contractors
+
+who help with
+Cymbal's 24/7 support
+
+during the holiday
+shopping season.
+
+So, security community,
+can you share in our chat--
+
+in the past year,
+have you onboarded
+
+new temporary workers?
+
+Did you send them a laptop
+or make them install software
+
+so they could be more secure?
+
+MARCO GENOVESE: Looks
+like that would be a yes.
+
+Contractors also tend to be
+more vulnerable to attacks.
+
+Last year, 44% of organizations
+experienced a breach,
+
+and 74% of those
+breaches were the result
+
+of giving too much privileged
+access to third parties.
+
+So for Cymbal, keeping those
+users off the corporate network
+
+decreases the risk
+of being exposed
+
+to attacks like ransomware.
+
+And here's where using
+BeyondCorp Enterprise
+
+comes through again for Cymbal.
+
+Contractors and other
+employees are able to BYOD,
+
+onboard quickly,
+and use a device
+
+that they feel comfortable with
+while BCE layers of protection
+
+keep them secure.
+
+TANISHA RAI: That
+way, Rhonda can
+
+have secure access
+from her own device
+
+with clear separation between
+work and personal activity.
+
+Let me show you exactly what
+she sees as she begins her day.
+
+She first navigates to
+her Google Chrome browser,
+
+then she navigates to her
+Cymbal Call Center application.
+
+We'll enter in our credentials.
+
+
+
+We'll then do two-factor
+authentication
+
+with our Titan Security Key.
+
+
+
+Now that we've passed
+two-factor authentication,
+
+we are in our Cymbal
+Call Center application.
+
+You saw Rhonda log into Chrome
+with her Cymbal credentials.
+
+This is what we call a
+BeyondCorp Protected Profile.
+
+It extends threat
+and data protection
+
+as soon as she logs in.
+
+As you can see, our
+agentless approach
+
+means no additional software.
+
+She gets right to
+work on her own device
+
+rather than picking
+up a laptop from IT
+
+and waiting hours while
+everything gets configured,
+
+therefore saving time and money.
+
+MARCO GENOVESE:
+Awesome demo, Tanisha.
+
+And the thing about
+zero-trust access
+
+is that we don't automatically
+trust Rhonda just because she
+
+has login credentials.
+
+Authorization is continuous,
+not just when she first logs in.
+
+BeyondCorp Enterprise enforces
+Cymbal's contractor access
+
+policies based on her
+identity and contextual
+
+information about her
+device and location
+
+as well as the fact that she's
+authenticated with her Titan
+
+key.
+
+So security community,
+we want to know--
+
+what do you all use for
+multifactor authentication?
+
+SMS code, security keys, maybe
+an authentication app, or maybe
+
+something else completely?
+
+Hopefully it's not nothing.
+
+TANISHA RAI: For me, it's
+my security key every day,
+
+especially since I don't
+always have my phone on me.
+
+MARCO GENOVESE: Yeah, same here.
+
+And they're so easy to use,
+and they provide the strongest
+
+protection against phishing.
+
+Regardless of what
+you use, some form
+
+of multifactor authentication
+is critical for basic security
+
+hygiene.
+
+And we highly recommend it,
+especially for remote access.
+
+So let's take a look.
+
+I don't know if
+anybody has anything.
+
+Looks like most
+people use, let's say,
+
+security keys, B. Awesome.
+
+That's what we love to hear.
+
+So let's get back to Rhonda, who
+just authenticated to the, app
+
+and explore how we can integrate
+threat and data protection
+
+right from within her browser.
+
+TANISHA RAI: Great.
+
+Let's see her get
+to work and show
+
+how BCE protects Cymbal,
+their customers, and Rhonda
+
+with ease.
+
+It's been a really busy day.
+
+She doesn't have
+enough time to finish
+
+processing a batch of customer
+refunds before her next call.
+
+She wants to save the customer
+credit card information
+
+to a local file and do the
+refunds when things slow down,
+
+but saving the sensitive
+information to another location
+
+is against Cymbal's
+security policy.
+
+Let me show you her experience.
+
+Let's navigate to
+our credit card file,
+
+and let's download
+this so Rhonda can
+
+do the refunds at another time.
+
+
+
+As you can see, she's blocked.
+
+You can see a message appear
+at the bottom that prevents her
+
+from doing so.
+
+MARCO GENOVESE: Yeah, exactly.
+
+You can actually see
+where the credit card
+
+PDF has sensitive dangerous
+content inside of it.
+
+And I'll show you
+a policy that's
+
+been configured for Cymbal that
+will detect risky behaviors
+
+just like these.
+
+So let's go ahead and look
+at our Administrative Console
+
+here at admin.google.com.
+
+Over on the left-hand side,
+you can see the Security menu.
+
+And if you scroll down
+underneath Security,
+
+you can actually
+see Data Protection.
+
+And we're going to go ahead
+and authenticate, obviously,
+
+as administrator securely.
+
+So let's go and type
+in our password.
+
+
+
+And once I've
+authenticated, I'll
+
+be able to go ahead and look
+at my data protection policies.
+
+You'll notice here
+it says Manage Rule,
+
+so we're going to go ahead
+and drill into Manage Rules.
+
+And we can actually see now
+the credit card detection
+
+policy that Rhonda is
+hitting right here.
+
+We've also got detectors for
+things like Social Security
+
+or even detecting code that's
+being copied, or pasted,
+
+or shared by the developers.
+
+So as the admin, you
+can decide if you
+
+want to automatically block
+user actions, as Cymbal
+
+as done here, or if you want to
+trigger a warning to the user
+
+instead.
+
+TANISHA RAI: And in addition
+to things like credit card
+
+numbers, you can also
+set specific DLP policies
+
+to detect file type
+as source code.
+
+So that way, you can protect
+sensitive information and code
+
+by monitoring, controlling,
+or even blocking
+
+what people upload or download.
+
+MARCO GENOVESE: Yeah, exactly.
+
+We can use very
+granular policies
+
+for this type of
+information in order
+
+to protect against exfiltration.
+
+So we just showed you some of
+the types of data protection
+
+policies you can set up.
+
+You can also customize
+access policies,
+
+and the changes take
+effect in real time.
+
+This is a really big deal
+because you get continuous
+
+checking of whether a user
+is in or out of policy,
+
+giving you up-to-the-second
+security controls.
+
+In fact, let's make an update
+here in real time for Rhonda.
+
+So OK, community.
+
+We're going to ask you which
+policy we should change.
+
+Is it her location, maybe
+her operating system policy,
+
+or whether or not she's on
+a corporate-owned device?
+
+Please chime in here.
+
+We'd really love to
+understand and hear
+
+what you guys deem important.
+
+While we wait for the
+results to come in,
+
+I will say that I see
+these kinds of things
+
+all the time with my customers.
+
+They want to be
+able to dynamically
+
+change policies depending
+on their circumstances.
+
+In particular,
+some customers are
+
+really interested in
+controlling for location,
+
+perhaps limiting access
+to only certain countries.
+
+Additionally, if a company
+is going through an org
+
+change or maybe a merger, being
+able to change access policies
+
+for select groups of users
+or departments in real time
+
+is crucial.
+
+And beyond these three
+choices in the poll,
+
+there are many other ways
+to customize your access
+
+policies based on what
+your organization needs.
+
+So let's go ahead and
+look back at the polls.
+
+And it looks like
+corporate-owned device.
+
+So awesome.
+
+I love it.
+
+And thanks for
+everybody contributing.
+
+Let's go ahead and
+do this right now.
+
+So we're going to go
+ahead and jump on over
+
+into our GCP Cloud Console.
+
+And from here, we can see
+our Identity-Aware Proxy.
+
+We can actually see
+our Cymbal GitLab
+
+for Developer application.
+
+We can also see our
+Call Center application.
+
+And again, these applications
+could be anywhere.
+
+For this demo, they're in GCP.
+
+We're going to go ahead
+and select the Call Center
+
+application.
+
+And down at the bottom,
+we can see Rhonda over
+
+on the right-hand side, her
+application access policy.
+
+Let's go ahead and edit that.
+
+And we're going to go ahead
+and remove the existing access
+
+policy that's allowing access
+from Europe and the US.
+
+And we're going to go
+ahead and delete that one.
+
+And we're going
+to add a new role.
+
+We're simply going to go ahead
+and select Cloud IP, IP Web App
+
+User.
+
+And then from there, we're
+going to go ahead and select
+
+the access policy
+which everybody chose.
+
+And that was Require
+Corporate Device, right?
+
+OK.
+
+I just want to make sure I
+remembered that correctly.
+
+Let's go ahead and
+save that in place.
+
+Click Save.
+
+And when we save
+that policy, it's
+
+actually going to be propagated
+across the world within a very
+
+short period of time.
+
+All of the proxies across
+Google's global network
+
+are immediately updated.
+
+So the next time any user tries
+to access a protected resource,
+
+they're evaluated against
+that new policy set.
+
+We mentioned continuous
+authorization earlier,
+
+and this is a key part of that.
+
+Authorization is not
+a one-time occurrence.
+
+So even if you
+begin a new session,
+
+that doesn't mean you'll
+have perpetual access.
+
+TANISHA RAI: Exactly.
+
+And for companies like Cymbal
+that employ hourly and temp
+
+workers, the ability
+to dynamically update
+
+access conditions is important.
+
+For instance, they could set
+these policies so workers only
+
+access applications and
+resources during their shift
+
+hours or working days,
+or only allow access
+
+from specific geographies.
+
+They also may want to
+require that devices
+
+have the most up-to-date
+operating systems and security
+
+patches, so this is
+an important condition
+
+to manage, especially for
+all the contractors using
+
+their own devices.
+
+MARCO GENOVESE: Exactly.
+
+So because Rhonda doesn't meet
+that condition which I just
+
+updated, she will no longer be
+able to access the Call Center
+
+application.
+
+Now, I think we've
+all faced this.
+
+And it's one of the
+most frustrating things
+
+about remote access, especially
+when you're using a VPN.
+
+You think you should
+have access to something,
+
+but for some reason,
+it's just not working.
+
+TANISHA RAI: It's the worst.
+
+So let's see if our
+real-time change worked.
+
+So when Rhonda tries to open
+a new task in the Call Center
+
+application, let's take
+a look at what she sees.
+
+
+
+Let's navigate back to her home.
+
+And she's denied access as
+a result of the change Marco
+
+just did.
+
+But once, again BCE
+has Rhonda covered.
+
+She can report this error using
+our new feature, the BeyondCorp
+
+Enterprise Policy
+Troubleshooter, which
+
+informs end users that
+they're blocked and tells them
+
+how to get help quickly.
+
+So as you can see
+here, she would
+
+follow the prompt to email
+the admin to get help.
+
+Let's go ahead and
+email our admin.
+
+
+
+Our admin is now notified
+of us being blocked.
+
+With BeyondCorp Enterprise
+Policy Troubleshooter,
+
+admins can quickly fix issues
+that are blocking users,
+
+keeping them productive.
+
+MARCO GENOVESE: Yep, you bet.
+
+Let me show you what
+the Cymbal admin would
+
+see on the other
+side of this request
+
+and how they could
+unblock users like Rhonda.
+
+So we're going to go
+ahead and switch gears.
+
+Let's go over to Gmail,
+another Google application.
+
+And it looks like we've got a
+notification for credit card
+
+detection, which is good.
+
+So we know if Rhonda is taking
+some interesting actions
+
+within her endpoint-- oh,
+and it looks like we just
+
+got an email from Rhonda
+because she's actually
+
+been blocked to an application.
+
+There's the link that she
+sent over, so let's go ahead
+
+and click on that.
+
+And we'll automatically
+be logged directly
+
+into the Google Cloud platform.
+
+So from here, I can actually
+see the different policies
+
+and bindings that are in place.
+
+So let's go ahead and select
+the Call Center application.
+
+And over on the
+right-hand side here,
+
+we can actually see the granted
+conditions or the denials
+
+themselves.
+
+So let's go ahead and look
+at the binding details.
+
+So interestingly
+here, we can see
+
+that Rhonda failed to meet any
+of the listed access levels.
+
+And sure enough, it's
+requiring a corporate device
+
+which was not granted.
+
+So I would normally
+go back in a blocker
+
+by updating that policy so
+her access level is evaluated
+
+like any other
+contractor, but we're
+
+going to keep moving just
+in the interest of time.
+
+TANISHA RAI: Sounds good.
+
+That was so easy, by the way.
+
+MARCO GENOVESE:
+Yeah, super easy.
+
+Now let's look at how BCE
+can give us better visibility
+
+into unsafe user
+activities, whether they're
+
+unsuccessful access
+attempts like we just saw
+
+or other anomalous
+activities across the apps
+
+that BCE protects.
+
+Let me pull up the Security
+Dashboards in Chrome
+
+and give you all a look.
+
+So we're going to jump back over
+into our Google Admin Console
+
+here.
+
+And in the same Security
+menu on the left-hand side,
+
+we can actually
+click on Dashboards.
+
+We'll wait for those to
+load out for a second.
+
+So something to
+make note of here
+
+is that with Chrome
+data protection,
+
+you're actually going
+to get a whole slew
+
+of different information.
+
+We can see Chrome
+high-risk users.
+
+We can see individual
+DLP incidents.
+
+If we want to scroll
+down a little bit,
+
+we could actually
+see how many users
+
+are forgetting their
+passwords if I can figure out
+
+how to use a trackpad here.
+
+So we can see user
+login attempts.
+
+We can see, for example,
+messages that are encrypted.
+
+But what we're interested
+in is whether or not
+
+those credit card numbers
+are making it through.
+
+So let's go ahead and
+drill a little bit
+
+into one of these reports.
+
+So we can see every single file
+uploaded, file downloaded, web
+
+content upload, for example.
+
+And we can actually
+see every single time
+
+that this took place for our
+Social Security detection
+
+as well as credit
+card detection.
+
+And if we were to actually drill
+in on Credit Card Detection
+
+here-- and I think this
+is really cool, so I'm
+
+going to show everybody
+real quick here since we do
+
+have another minute.
+
+And that is all
+the sensitive data
+
+transfers that are taking
+place, blocked, detected,
+
+or otherwise.
+
+So even if your
+organization isn't
+
+using all
+corporate-owned devices,
+
+you can still monitor
+security events
+
+and investigate those alerts.
+
+TANISHA RAI: That's
+awesome, Marco.
+
+Audience, so what do you think?
+
+Let us know in the chat.
+
+We definitely know this
+is something of interest.
+
+In the last 15 minutes, you've
+seen how an entire workforce
+
+can access modern and legacy
+applications securely,
+
+how you can improve threat
+and data protection,
+
+and how you can get better
+visibility into risky activity,
+
+even on unmanaged devices.
+
+MARCO GENOVESE: Yeah.
+
+Our goal, at the end of the
+day, with BeyondCorp Enterprise
+
+is to make your experience more
+productive and more secure.
+
+And our team looks
+forward to supporting you
+
+on your zero-trust journey.
+
+TANISHA RAI: Thanks
+so much for joining us
+
+today and participating.
+
+We have a live
+Q&A coming up next
+
+to answer all of your Google
+Cloud Security questions
+
+as well as any questions you
+might have had from the demo,
+
+so please stick around.
+
+MARCO GENOVESE: Yeah, please do.
+
+And thank you all for joining.
+
+We'll see you all soon.
+
+TANISHA RAI: Bye.
+
+
+

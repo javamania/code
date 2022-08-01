@@ -1,0 +1,1451 @@
+
+
+DAVID FEUER: Hello, all.
+
+And welcome to Dev 302, Building
+and Managing GraphQL APIs.
+
+I'm Dave Feuer, and I'm
+joined by Greg Brail.
+
+We're a part of the Apigee team.
+
+And we're super excited to
+present this to you today.
+
+GREGORY BRAIL: Hey, I'm Greg.
+
+I'm also part of
+the Apigee team.
+
+And I'm also excited.
+
+
+
+DAVID FEUER: I guess the first
+thing I wanted to get out
+
+of the way is that
+sometimes, in technology,
+
+we can overemphasize how new
+technologies and exciting ideas
+
+are dominant in
+the conversation.
+
+And so I just wanted to be
+clear-- and I think both Greg
+
+and I share-- that REST
+is still the king of APIs.
+
+If you look at this graph,
+which is from Google Trends,
+
+it clearly shows that REST
+is still the king of APIs
+
+and still dominates interest.
+
+And so while we're here to
+talk to you about GraphQL
+
+and some other API
+styles, it's important
+
+that we realize that REST still
+has a very important and very
+
+prominent position in
+building and designing
+
+APIs for the future.
+
+If we're going to contrast
+GraphQL and REST APIs,
+
+I think there's three
+specific areas that we'd
+
+want to talk to you about.
+
+The first is that both GraphQL
+and REST offer a consistent way
+
+to access different
+types of data.
+
+So while GraphQL and REST
+construct things differently
+
+and construct requests
+differently and get responses
+
+differently, fundamentally, they
+both allow you to access data.
+
+GraphQL offers a query
+language that's different,
+
+of course, than the
+REST query style.
+
+And that can potentially work
+across many types of back ends.
+
+But fundamentally, they're
+both requesting data,
+
+and they're both offering
+a consistent access
+
+pattern for the data.
+
+The second is efficiency.
+
+While it's possible to construct
+REST APIs in an efficient way,
+
+GraphQL is specifically
+built to avoid
+
+over-fetching or
+under-fetching data.
+
+The query language
+is super powerful
+
+and allows you to
+request just the data you
+
+need for your client, whether
+it's a mobile client, a web
+
+client, or another
+style of application.
+
+And the last is
+implementation complexity.
+
+Implementing an HTTP server
+to parse URLs and return
+
+data from a variety of sources,
+that's a straightforward task.
+
+And many people do that in
+their environments today.
+
+But GraphQL requires specific
+software and a specific engine
+
+on the server side that
+can parse the queries
+
+and break them down
+into execution steps.
+
+And so that's a
+significant difference
+
+between GraphQL and REST.
+
+To recap some of the
+benefits of GraphQL,
+
+I think data load control
+and granularity are
+
+super important.
+
+The fact that GraphQL
+has a single endpoint
+
+and allows you to really
+execute one request
+
+and then have the fan-out
+on the southbound side
+
+make a whole bunch of
+subsequent requests
+
+and return that, it's
+very, very powerful.
+
+It also means that if
+one resolves or fails,
+
+other queries can still
+succeed and still resolve
+
+and bring back useful data.
+
+In the REST world, REST doesn't
+necessarily work that way.
+
+REST has multiple
+different endpoints.
+
+And so each query
+to each endpoint
+
+has to be treated individually.
+
+GREGORY BRAIL: So could
+you maybe talk a little bit
+
+about, as a software engineer,
+maybe I'm building an app.
+
+Why would I choose GraphQL,
+and why would I choose REST?
+
+DAVID FEUER: Great,
+great question.
+
+I think there's a lot
+of apps-- specifically,
+
+apps built using the ReactJS
+framework-- that really benefit
+
+from the fact that
+GraphQL will only
+
+get the data that's in view.
+
+So that for
+instance, if you were
+
+tracking sports
+statistics, you only
+
+retrieve the sports
+statistics for the player
+
+that you're looking
+at, or you only
+
+receive the sports statistics
+for the specific table
+
+that you can view
+in a mobile app.
+
+As opposed to REST,
+which might require
+
+additional APIs or
+additional parameters
+
+to accommodate all
+the different views
+
+that might exist in an app
+and create individual APIs
+
+for those different views.
+
+So being able to leverage
+the GraphQL query
+
+language to really only
+get the data that you need
+
+for that specific user creates
+a certain amount of efficiency
+
+and a certain amount of
+developer safety, where
+
+they know they're getting the
+data that they expect when they
+
+expect it, versus having to
+make multiple calls in order
+
+to fill out whatever
+table the user
+
+might choose to view
+in that application.
+
+Does that make sense?
+
+GREGORY BRAIL: Yeah.
+
+So with REST, I'm used to using
+an API gateway like Apigee,
+
+where I might have a couple of
+customized versions of my API
+
+for different devices
+because I want
+
+to have it be more efficient.
+
+Are you saying, with
+GraphQL, I have more options,
+
+I have more
+flexibility in the data
+
+that I return to my client?
+
+DAVID FEUER: Absolutely.
+
+Along with the control
+that gives you the ability
+
+to request exactly what you want
+and retrieve exactly the data
+
+you want also comes a tremendous
+amount of responsibility,
+
+right?
+
+Suddenly, you have to figure
+out up front what data you want,
+
+versus simply calling an API.
+
+That being said,
+with that control
+
+comes a certain amount of
+developer safety, as we said,
+
+where calling that
+one API just becomes
+
+very simple and very easy.
+
+And that query
+language is really
+
+what provides that control
+in the GraphQL world.
+
+GREGORY BRAIL: So
+a mobile developer
+
+might really like
+the fact that they
+
+can choose exactly
+what they want,
+
+send one request to the server,
+and get it all back at once,
+
+rather than having to navigate a
+whole forest of individual URLs
+
+in order to get the
+same information.
+
+DAVID FEUER: Absolutely.
+
+Yeah, that's a
+great point, Greg.
+
+The third point is that
+whereas in the past,
+
+GraphQL required a whole
+bunch of specific glue
+
+in order to work with
+different programming
+
+languages and
+different frameworks,
+
+we're really seeing a
+proliferation of GraphQL client
+
+libraries.
+
+So GraphQL really is available
+as a polyglot protocol,
+
+and is no longer simply
+reduced to a few languages
+
+or a few frameworks.
+
+GraphQL is really fairly
+open and really portable.
+
+And so we're seeing a change,
+a shift, in adoption of GraphQL
+
+as a result of that.
+
+So I think if we
+take a step back,
+
+we'll see that there are
+really two communities of use
+
+for APIs.
+
+There are API
+programs, which are
+
+tight-knit teams where
+the client and server are
+
+tight-knit group.
+
+Or sometimes, they're
+the same person
+
+that's developing both
+the server application
+
+and the client application.
+
+And then, there are
+developer programs,
+
+which are really about
+creating APIs as products,
+
+and exposing those APIs to
+those different communities
+
+so that different developers
+can build their own front
+
+ends of their own
+application servers
+
+that leverage your APIs
+to create different value
+
+propositions.
+
+So in that specific instance,
+it could be a different business
+
+unit.
+
+It could be a different company.
+
+It can be a partner.
+
+But you no longer
+have the same scope
+
+of control over both the
+server and the client.
+
+And that's a significant change.
+
+But that's a significant
+difference between API programs
+
+and developer programs,
+that in API programs,
+
+you really don't have
+to be as strict about
+
+design of your API.
+
+Because since you control
+the client and the server,
+
+you can assume a certain
+amount of knowledge,
+
+and mediate between
+that on your own.
+
+But when you have a
+developer program,
+
+the clients don't
+know what you know.
+
+And so you have to make
+sure to actually productize
+
+your API in such
+a way that makes
+
+it discoverable and
+accessible and makes
+
+it easy for
+developers to leverage
+
+and consume that API
+in order to drive
+
+business value not just for you,
+but also for their application.
+
+GREGORY BRAIL: So if
+I'm using GraphQL,
+
+how do I know a
+developer is not going
+
+to do something crazy
+and query a bunch of data
+
+they aren't supposed to get?
+
+DAVID FEUER: Exactly.
+
+Greg, perfect setup.
+
+I think that's the fundamental
+challenge, is that we don't.
+
+We don't know what
+clients are going to do.
+
+In REST, we know
+what APIs we expose.
+
+And so we know what clients
+are going to request,
+
+because that's what the API is.
+
+The API exposes that resource.
+
+In GraphQL, when you're
+exposing all of your resources,
+
+like a graph, clients can really
+request whatever they want.
+
+And so we're seeing GraphQL
+struggling in that area,
+
+in the area of developer
+programs, where it's been super
+
+popular with API programs.
+
+And I think what we're doing
+with Apigee is super exciting
+
+here, in taking all the
+learnings that we've
+
+had from productization
+of APIs and bringing them
+
+over to GraphQL.
+
+Greg, why don't you
+talk a little bit
+
+about API productization and how
+we're bringing that to GraphQL?
+
+GREGORY BRAIL: Awesome, thanks.
+
+So if we look at
+this chart, this
+
+talks about a lot of the
+things that an API team
+
+needs to think
+about when they're
+
+trying to turn an
+API into a product,
+
+taking something that's just
+an HTTP endpoint with some JSON
+
+and turn it into
+something that developers
+
+from different organizations
+and different companies
+
+can consume.
+
+And a lot of these
+things are things
+
+that if you've been following
+the world of API management
+
+or seen in the
+Apigee things before,
+
+you've probably heard of
+about a lot of these things.
+
+Timing to First Hello,
+World, for instance--
+
+that's what that
+acronym is for--
+
+is a really important
+metric for an API program
+
+if you want developers
+to adopt your API.
+
+Having a community, having
+standards, like oAuth,
+
+as part of your API, and having
+things like developer portals.
+
+And this enables, really, one
+of the most important things
+
+that's a difference
+between an API
+
+used by a small team and a
+developer program used by lots
+
+of developers and
+different organizations,
+
+is the ability to
+do self-service.
+
+And when we talk about
+API productization,
+
+a big part of it
+is self service.
+
+How does a developer who
+wants to use your API
+
+find out about the API,
+figure out what the API does,
+
+and get credentials?
+
+If they can do that
+in a few minutes,
+
+your API is ready
+for consumption
+
+by almost anyone in the world.
+
+And that applies
+whether your API
+
+is a REST API of the style we've
+been talking about for years
+
+and years in the world of API
+management or a GraphQL API.
+
+
+
+Now, when we talk about this,
+we talk about control, security,
+
+observability, and governance.
+
+And in the world of
+REST APIs, we often
+
+do a lot of these things based
+on the fundamental principles
+
+of REST, like URLs and verbs.
+
+We'll do things like,
+we'll say, if you've
+
+got credentials for
+the API, you are
+
+authorized to invoke certain
+URLs, but not other URLs.
+
+Or perhaps you're authorized
+to get all the URLs,
+
+but if you want to
+post some of the URLs,
+
+you need a different
+kind of credentials.
+
+All of these same things are
+going to apply to GraphQL.
+
+We're going to ask a lot
+of these same questions.
+
+So when David talked about
+making a GraphQL API ready
+
+for consumption by
+developers, the developers
+
+will love it, because
+now I can do anything.
+
+I have access to
+your whole schema.
+
+I can query all kinds of stuff.
+
+And I can build a great app.
+
+And what I've said for years
+and years about this stuff
+
+is that it's not just that you
+have to worry about an attacker
+
+or someone who's malicious.
+
+You also have to
+worry about people
+
+who just make mistakes, right?
+
+Like, oh, I didn't realize
+that by executing that GraphQL
+
+query, I would download 10,000
+rows of data from the database
+
+and clog up the internet and
+make my mobile device crash.
+
+Now, I know that.
+
+So I know I have to
+include a parameter.
+
+But wouldn't it be nice if
+we could put some controls
+
+in front of the GraphQL API,
+so a developer can't even
+
+do that sort of
+thing by accident?
+
+
+
+So what we're
+doing at Apigee is,
+
+we're starting on a
+journey of figuring out
+
+what we need to
+do to make GraphQL
+
+APIs the same kind of
+first-class APIs as the REST
+
+APIs and the other kinds of
+APIs that Apigee traditionally
+
+supports.
+
+So in the traditional
+world of API management,
+
+we have this chart where we
+have API teams build APIs,
+
+developers build apps for APIs
+to create user experiences
+
+for end users.
+
+And that transition from
+an API used by an API team
+
+to a developer program is
+what this is all about.
+
+The question is, when we
+are working with GraphQL,
+
+how does this differ from the
+way it looks for a REST API?
+
+And the answer
+is, not very much.
+
+All of the same
+principles apply.
+
+The developer wants
+to be able to discover
+
+the API via self-service.
+
+They want to get credentials.
+
+They want to use the API.
+
+The API team wants
+to have control
+
+over who's allowed
+to use their API
+
+and how much they're
+allowed to use the API.
+
+Are they allowed to use
+different parts of the API
+
+for different purposes?
+
+Is there a quota that stops them
+from using the API too much?
+
+Are there security
+rules or audit rules?
+
+Is there even a billing plan
+associated with that API?
+
+We want to be able to
+do all of these things
+
+for GraphQL APIs, which means
+that we have to not only look
+
+at URLs and verbs, but we
+have to look at the structure
+
+of the GraphQL query.
+
+And we have to understand,
+when you make a query, what
+
+is this query trying to do?
+
+And as an API team,
+what kind of things
+
+can I let the developers do?
+
+And you can do this by having
+lots of different GraphQL
+
+endpoints.
+
+But one of the advantages
+of an API management system
+
+is that it allows
+the API team to be
+
+very sophisticated in turning
+those APIs into products.
+
+So if they want to launch with
+an API that does five things
+
+and sell it to customers for
+a certain price or for free.
+
+But then, they want to
+add two more things,
+
+but they only want
+certain customers
+
+to be able to do those things.
+
+And then, they want
+to add one more thing
+
+that only a few
+customers can see,
+
+but no one else
+should find out about.
+
+You can do all of this in
+your API management product
+
+without changing
+your API at all.
+
+You do this by restricting.
+
+In Apigee, you do this
+by creating something,
+
+something called an API product.
+
+And an API product
+basically specifies
+
+which parts of the API are
+available to which kind
+
+of consumers, what
+kind of quotas on them.
+
+And we can attach
+additional data to it
+
+that we can use to
+make other decisions.
+
+We want to do those same sorts
+of things with GraphQL APIs.
+
+
+
+So if you look at what
+we've added to Apigee,
+
+Apigee now has a way,
+inside any Apigee proxy,
+
+to parse a GraphQL request.
+
+First of all, just to reject
+it if it's invalid, or even
+
+do schema validation.
+
+That can be super
+valuable, because it
+
+means that if you have malicious
+users or developers who
+
+are still learning the
+API and making mistakes,
+
+Apigee can nip all of
+those invalid requests
+
+right in the Apigee
+proxy, and not
+
+even let them get to your
+back-end server, which takes
+
+a load off your GraphQL engine.
+
+But Apigee can now
+parse that query,
+
+understand what it's trying
+to do, and make decisions.
+
+So a very simple thing you
+could do, for instance,
+
+is say that certain developers
+or certain applications
+
+are only allowed
+to execute queries
+
+against the GraphQL API.
+
+Whereas you have to have a
+different kind of credential
+
+and, possibly,
+approval from the API
+
+team in order to make mutations.
+
+Which means, basically,
+we can very easily
+
+separate the read only API
+from the read or write API.
+
+And then, we can do more.
+
+And I think what we're
+doing in the future is,
+
+we're looking at
+what more we can do.
+
+So for instance, we also,
+now that we understand
+
+the shape of the API, we can
+put a bunch of information
+
+into the Apigee message flow.
+
+We can then use other policies
+to make other decisions.
+
+So it gives a lot of
+flexibility for you
+
+as a developer, right now, to
+build some interesting GraphQL
+
+API-related access control
+and other decision-making
+
+logic into your Apigee proxy.
+
+And it's going to
+make it possible
+
+for us to do even more
+with this in the future.
+
+DAVID FEUER: And Greg,
+do you see this affecting
+
+how enterprises are
+able to position
+
+GraphQL APIs for consumption?
+
+Like, is this
+something that you see
+
+helping application developers
+build new experiences using
+
+GraphQL APIs?
+
+GREGORY BRAIL: Yeah.
+
+So if you're an application--
+
+I mean, you and I have
+been around the world
+
+a little while.
+
+Once upon a time, it was
+considered terribly bad form
+
+to expose your relational
+database directly
+
+to developers.
+
+Because developers
+might be able to do
+
+something like select
+star from customers--
+
+or worse yet, delete
+star from customers--
+
+and overwhelm the database, or
+execute some ridiculous query
+
+that is nested 17 levels deep
+and joins 12 different tables
+
+together and slows down the
+application for everybody.
+
+So that's where three-tier
+computing and transaction
+
+processing monitors and
+all these things came in.
+
+Same thing with GraphQL.
+
+If you just put a GraphQL API
+in front of your core data
+
+and give access to developers
+to get at it directly,
+
+then you have to have some
+trust in your developers
+
+that they're not going
+to execute queries that
+
+cause performance problems or
+security problems or compliance
+
+problems.
+
+So if you have something sitting
+in front of that GraphQL API
+
+that's able to
+look at the queries
+
+and make decisions about what's
+allowed and what's not allowed,
+
+I think it makes it
+easier for an enterprise
+
+to be OK with the idea of using
+GraphQL for critical data.
+
+DAVID FEUER: Awesome.
+
+GREGORY BRAIL: And with
+that, we have a demo.
+
+You're going to listen to me.
+
+And what we're going
+to do is, we're
+
+going to show some of the new
+GraphQL features of Apigee
+
+and what we can do with them.
+
+[VIDEO PLAYBACK]
+
+- I'm going to start with an
+example of a mobile application
+
+that uses GraphQL.
+
+This application is
+a product catalog.
+
+And it makes one API call to
+get the product information,
+
+plus an API call for every price
+and every stock information.
+
+So as you can see, when
+I refresh the screen,
+
+we have a lot of
+these blue circles
+
+that show API calls being made.
+
+And when I click on
+an individual product,
+
+we make three API calls
+to get the result.
+
+However, I can also
+switch my application
+
+to take advantage of GraphQL.
+
+In that case, it makes one
+API call to my back end.
+
+It's querying the exact
+same database tables.
+
+In my case, it's even
+calling the exact same gRPCs.
+
+But the mobile app is sending
+one request to the back end.
+
+And the back end is
+fanning all of that
+
+and returning one response.
+
+The result is quite a
+bit more responsive.
+
+There's only one API call
+required to get all the product
+
+information I need.
+
+When I scroll up and
+down, it's nice and zippy.
+
+And there's none of that
+refreshing going on.
+
+So as you can see, GraphQL
+can be a very effective way
+
+to make an efficient
+and snappy mobile app.
+
+Now that we've
+looked at the app,
+
+let's actually see what's
+going on with the API
+
+under the covers.
+
+Underneath, of course,
+I have a GraphQL API.
+
+And I can do some
+things in this GraphQL
+
+API, like, for instance,
+got a list of products.
+
+And like in all
+good GraphQL APIs,
+
+I can merge data from
+different data sets.
+
+I can sort.
+
+I can decide how many.
+
+And I can get information
+about an individual product.
+
+And once again, I can
+decide exactly what fields
+
+I want to see or don't see.
+
+And on this particular case,
+this particular GraphQL query
+
+is being secured
+via an API key which
+
+is being enforced by Apigee.
+
+Using this particular
+API key, I can also
+
+try and get information
+about the price of an item.
+
+And if I use that key, here's
+my query to get the price.
+
+You'll see that I get an error.
+
+This is coming from Apigee.
+
+Because Apigee parsed the query.
+
+It saw that the
+top-level selection
+
+set was called "price."
+
+And this particular API key is
+not allowed to make that query.
+
+However, if I change
+the API key to an API
+
+key that uses a
+different API product,
+
+I now can get the price.
+
+Now that we've seen
+with the API looks
+
+like, let's see how
+it works in Apigee.
+
+First of all, Apigee has
+always had API products.
+
+They're key to API management,
+because they let you package up
+
+an API without changing the back
+end into different combinations
+
+of functionality,
+different quota settings,
+
+and even different
+aspects, like security,
+
+depending on who's
+consuming the API.
+
+We've added GraphQL
+support to API products.
+
+So now, in addition to filtering
+on URL paths and verbs,
+
+like we could
+before, we can also
+
+filter on, for instance,
+the GraphQL operation type,
+
+like whether it's a
+query or mutation.
+
+And we can set different
+quotas for different products,
+
+like we always could.
+
+So for instance,
+you could set it up
+
+so a certain API key or a
+certain set of applications
+
+that use oAuth might be
+allowed only to do queries.
+
+Or they might have a different
+quota than another set.
+
+And they might
+even be restricted
+
+based on the name of
+the GraphQL operation.
+
+Now, the way this is enforced
+is in the proxy, of course.
+
+And we have the first part
+of functionality to do this,
+
+is our new GraphQL policy.
+
+First thing it does is parse the
+query to make sure it's valid.
+
+It can also validate the
+schema if you'd like.
+
+And then, it sets a
+bunch of variables
+
+that we can use
+for other things.
+
+For instance, it's used
+in the CheckAPIKey policy
+
+to enforce the API product
+logic that I just talked about.
+
+I wanted to go a little
+bit further in this demo
+
+and use the name of the
+selection set, which
+
+is the top of that
+query, to determine
+
+which API keys could query which
+parts of my GraphQL schema.
+
+And I did that using
+some JavaScript.
+
+I set a variable
+in the product that
+
+specifies what top-level
+selection sets are allowed.
+
+And I use a variable that is
+set by the GraphQL policy which
+
+contains that information.
+
+After that, a little
+bit of error checking
+
+follows, and some clever
+but simple JavaScript
+
+that simply looks to see if
+the name of that selection set
+
+is in the product.
+
+That's all there is to it.
+
+And now I'm able to have some
+very interesting controls
+
+on my GraphQL application.
+
+[END PLAYBACK]
+
+GREGORY BRAIL: So
+we've just seen
+
+a demo that shows how you
+can use the new GraphQL
+
+features of Apigee
+to parse queries
+
+and understand them, and
+have additional logic
+
+to make decisions about
+those to make your API more
+
+ready for the enterprise.
+
+Over to you, Dave.
+
+DAVID FEUER: Thanks, Greg.
+
+That was awesome.
+
+We're super excited about
+GraphQL and our ability
+
+to bring it to our customers
+and prospects to build new apps
+
+and experience with
+this new technology.
+
+Please go to
+cloud.google.com/apigee to try
+
+it out.
+
+We'd love to hear
+what you think.
+
+Thanks for joining
+us today, and have
+
+a great rest of the summit.
+
+
+

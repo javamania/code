@@ -1,0 +1,975 @@
+
+
+BRIAN RICE: Hi, everybody.
+
+I hope you're enjoying
+Google Cloud Next so far.
+
+In this session, we're
+going to talk to you
+
+about the value of
+getting a Google Cloud
+
+certification to help
+you in your career
+
+and to help advance the
+projects that you're
+
+involved in in the world
+of cloud computing.
+
+My name is Brian Rice, and
+I work on Google's Cloud's
+
+Learning Portfolio Team.
+
+And I'm joined today
+by my colleague, Osaze.
+
+OSAZE IMASUEN: Hello, everyone.
+
+My name is Osaze Imasuen.
+
+And I'm a technical
+program manager
+
+in Google Global Networking.
+
+Really excited to be here and
+looking forward to this talk.
+
+BRIAN RICE: Thank you so much.
+
+Here's the way we're going to
+structure our session today.
+
+I'm going to kick it off
+by talking about the roles
+
+that are out there
+in the world of cloud
+
+computing and their demand and
+how that's shaping and changing
+
+as we move further and
+further into the cloud era.
+
+I'm going to talk about
+the learning resources
+
+that Google Cloud
+makes available to help
+
+people achieve a wide range of
+Google Cloud certifications.
+
+Then I'm going to
+bring on Osaze.
+
+And he's going to tell us
+about how certifications helped
+
+him propel his career path.
+
+Finally, we'll wrap
+it up by talking
+
+about the benefits of
+Google Cloud certifications,
+
+both to the people
+who achieve them
+
+and to the teams that
+they're a part of.
+
+Let's start off by talking about
+the demand for cloud computing
+
+roles.
+
+We recently did a
+survey where leaders
+
+were asked about the barriers
+that they had to cloud success.
+
+And over 80% of them identified
+a skills gap on their team
+
+as a top barrier.
+
+And this is a really
+significant problem
+
+if you think about the fact that
+more than 90% of those leaders
+
+expect to have increased use
+of cloud over the next three
+
+years.
+
+This tells us that skills are
+a critical factor in companies'
+
+move to the cloud.
+
+And we know it's of growing
+importance to the cloud
+
+community, because job
+postings that were specifically
+
+calling for cloud skills
+grew by more than 40%
+
+over the two years that ended
+in the first quarter of 2021.
+
+And of course, there
+was a lot of change
+
+and a lot of upheaval
+over that period.
+
+This significant growth
+tells us about the fact
+
+that skills are fuel for
+companies moving into the cloud
+
+and revolutionizing
+the way they work.
+
+We at Google Cloud are
+especially proud of the fact
+
+that, in a survey conducted
+by Global Knowledge,
+
+the top two paying IT
+certifications in the year 2021
+
+in the US were both Google
+Cloud certifications.
+
+We take this both as testimonial
+to the value of Google Cloud
+
+itself and also to
+the programs that we
+
+offer for recognizing
+people's skills
+
+and helping people train
+themselves up so that they
+
+can achieve those credentials.
+
+Now, cloud computing
+always requires an approach
+
+to learning and credentialing
+that is focused on job roles.
+
+After all, the roles
+that people play
+
+is how people get value
+out of cloud computing.
+
+Google Cloud technology training
+is aimed at cloud solutions
+
+rather than following
+particular products boundaries.
+
+And it's key to the solutions
+that customers tried to pursue,
+
+which was their
+reason for getting
+
+into the cloud in
+the first place.
+
+Now I'd like to talk with you
+about the resources that we
+
+make available to
+help people skill up
+
+and the certifications that
+we make available to recognize
+
+people's skill levels.
+
+Now, when you're leading
+a team of professionals,
+
+you have to keep in
+mind that people are all
+
+starting in different places.
+
+Everybody on a team
+starts with a wide variety
+
+of existing skill levels.
+
+Also, people have different
+preferred learning styles.
+
+The same kind of
+learning experience
+
+doesn't work for everybody.
+
+So that's why we offer a wide
+variety of choices for people
+
+consuming our offerings.
+
+Some people prefer
+to consume training
+
+in a traditional
+classroom-style format,
+
+either with a live instructor
+or with virtual instructor-led
+
+training.
+
+We have a worldwide network of
+authorized training partners
+
+that does just that.
+
+Other learners want the
+increased convenience
+
+and flexibility of
+consuming online training
+
+with virtual lectures
+and online assessments.
+
+In order to help these
+people, we make our training
+
+available in online
+channels as well,
+
+with online training partners.
+
+Both of those two modes
+contain the same hands-on labs,
+
+in which people can gain real
+world skills using real Google
+
+Cloud, not a simulation, that
+gives them the confidence
+
+to do new things on the job.
+
+Finally, some learners want a
+maximum amount of flexibility.
+
+They want a la carte
+learning, snackable learning.
+
+That's why we also make
+available a wide portfolio
+
+of hands-on lab exercises that
+can be consumed individually
+
+in a safe sandbox environment.
+
+Now, all of these
+lead up to achieving
+
+professional and
+associate-level certifications.
+
+These are benchmarks that a team
+can adopt to bring everybody up
+
+to a baseline of skill.
+
+That's how they know they
+have the right foundation
+
+for innovating and
+for scaling up.
+
+
+
+Now, the benchmark concept
+is very, very important
+
+in the way we build
+our certifications.
+
+Their content is defined
+by subject matter experts.
+
+And they're key
+to real-world job
+
+roles and the uses to which
+people put Google Cloud
+
+technology.
+
+That's why Google
+Cloud certifications
+
+have significant benefit
+not just to individuals,
+
+but to companies as well.
+
+They're a well defined set
+of skills that fuels growth.
+
+
+
+There's a wide variety
+of certifications,
+
+because we know that people
+start at different points
+
+and because we know
+that people have
+
+a wide variety of interests.
+
+The certifications range
+from being targeted
+
+at people with no
+prior cloud skills
+
+or experience all the way up
+to people who have three years
+
+or more of industry experience
+and in a wide variety
+
+of subject matter areas.
+
+Our certifications are organized
+into three main categories.
+
+Two of these categories contain
+certifications that are aimed
+
+at hands-on technical
+professionals--
+
+the associate-level and
+the professional-level
+
+certifications.
+
+Here's the difference.
+
+Associate-level certifications,
+such as Associate Cloud
+
+Engineer, challenge the
+candidate for the cert to map
+
+from technical requirements
+to the way a customer would
+
+implement a solution.
+
+The professional level
+of certifications
+
+introduces one more layer,
+challenging the candidate
+
+to map from business
+requirements,
+
+through technical requirements,
+to the details of the way
+
+the customer
+implementation would work.
+
+Finally, our credential
+that is aimed
+
+at anyone involved in
+or impacted by the move
+
+to the cloud, Cloud
+Digital Leader,
+
+contains three main bodies
+of knowledge that it covers--
+
+general cloud
+knowledge, knowledge
+
+of Google Cloud in
+particular, and awareness
+
+of the business value
+and role of a variety
+
+of important Google
+Cloud Services.
+
+
+
+Let me give you more
+information about the exams
+
+that we make available.
+
+They're a two-hour experience.
+
+And they're offered
+in a multiple choice
+
+and multiple select format.
+
+The exams don't
+have prerequisites
+
+in that you are not required to
+complete any specific training
+
+or any specific
+prior certifications
+
+in order to attempt them.
+
+We do recommend that people
+have hands-on experience
+
+for our certifications that call
+for that in their descriptions.
+
+And we also encourage people
+to structure their preparation
+
+and make sure they come
+in with the knowledge
+
+that each credential calls for.
+
+But no prerequisites
+in the realm
+
+of training or other
+certifications are enforced.
+
+The exams are delivered
+at your choice
+
+of either a remote
+location, in which case
+
+the proctoring for the
+exams is done online,
+
+or you can go to a
+physical testing center
+
+and take an exam in an
+on-site proctored system.
+
+Finally, we make available
+official study guides,
+
+in addition to all of
+the other resources
+
+that we make available.
+
+These books are available
+from major resellers of books.
+
+At this point, I'd
+like to bring Osaze on.
+
+Osaze, we wanted to
+ask you to join us
+
+today to tell us about
+your career journey
+
+through the lens
+of certification.
+
+Could I ask you to start off
+by telling us about your career
+
+path before the cloud?
+
+OSAZE IMASUEN: Sure, Brian.
+
+So my career has spanned
+approximately two decades.
+
+And I've had a variety
+of roles, from hands-on
+
+to technical leadership, to
+just pure leadership roles.
+
+And I would say
+that certifications
+
+and learning and relearning
+has been a key component.
+
+It enabled me to
+progress through
+
+from being an engineer up
+into leadership positions.
+
+Why do I say this?
+
+Early on in my
+career, I started out
+
+trying to build
+infrastructures for companies
+
+and deliver their IT
+solutions internally.
+
+But I found that the moment
+I added certifications
+
+and that learning
+experience to my journey,
+
+it accelerated, one, my
+knowledge, my learning,
+
+and then also my scope
+of responsibility.
+
+So it's something that has
+worked very well for me
+
+in my career.
+
+And it's something
+that I continue
+
+to use and reuse over and over.
+
+BRIAN RICE: Super.
+
+And tell us more about
+what happened when you
+
+started moving into the cloud.
+
+OSAZE IMASUEN: Sure.
+
+So before the
+journey to the cloud,
+
+my organization would
+procure, build, and operate
+
+our own internal resources.
+
+So think of private cloud.
+
+And at some point, we realized
+that the cost and also the time
+
+to delivery made us not meet
+certain business requirements.
+
+And we had to start looking
+at the option of moving
+
+some of those
+workloads to the cloud.
+
+Now, we didn't migrate
+everything over all in one day.
+
+We started out in a
+step by step process
+
+by doing the trial for setting
+non-critical workloads first
+
+to get a feel for how things
+will operate in the cloud
+
+and also what the security
+framework would be,
+
+because that is a
+huge consideration
+
+for anyone trying to make
+that journey into the cloud.
+
+Over time, as a
+team, we got more
+
+confident in using
+resources and understanding
+
+the products in the cloud.
+
+We were able to move
+even critical workloads
+
+into the cloud.
+
+And one of the
+benefits, which I think
+
+is perhaps well-known
+in the industry,
+
+is, when you run your
+own resources internally,
+
+you most often plan
+for peak demand.
+
+And that means that,
+a lot of times,
+
+you have resources
+idling, not being used,
+
+whereas in the cloud, in
+the more pay-per-use model,
+
+you're able to more effectively
+use resources and also reduce
+
+your spend if you plan
+your resources properly.
+
+BRIAN RICE: Indeed.
+
+Well, to sum up,
+can you tell us now
+
+about how certifications played
+a role in your own transition
+
+to the cloud?
+
+OSAZE IMASUEN: Sure.
+
+So I've always enjoyed
+learning and relearning.
+
+So for me,
+certifications help me
+
+focus my attention
+over a period of time
+
+to learn that new
+technology or learn
+
+whatever is new in that space.
+
+So an example with
+Google Cloud is--
+
+over a couple of years,
+I was aware of using
+
+Google Cloud platform and
+also some other providers.
+
+But when I made that
+conscious effort to say,
+
+I'm going to get certified,
+it helped focus and narrow
+
+my learning to make sure
+that I mastered the content
+
+and understood the
+products and offerings
+
+and how they related
+to my business.
+
+The end result is I've been
+able to achieve certifications
+
+in some of the
+professional-level engineer
+
+programs like the Professional
+Cloud Architect, Data
+
+Professional, and some of
+the other professional-level
+
+certifications.
+
+Why I find these
+helpful is it helps
+
+cover a range of topics that are
+relevant to the business of IT
+
+and computing today.
+
+And the certification
+itself provides knowledge.
+
+That is for sure.
+
+It gives you the
+confidence to be
+
+able to interact with either
+external or internal peers
+
+or customers.
+
+It also gives you
+that confidence.
+
+And, as well, there's
+also the Google swag
+
+in terms of the goodies,
+the bags, and all
+
+the other nice things
+that Google gives you
+
+when you're certified.
+
+BRIAN RICE: So true.
+
+OSAZE IMASUEN: Thank
+you so much, Osaze,
+
+for telling us your story.
+
+Now, the last section
+of our presentation
+
+is focused on the benefits of
+Google Cloud certifications,
+
+both to individuals and to
+companies and the ecosystem.
+
+We did a survey in
+the beginning of 2020
+
+of people who had achieved
+Google Cloud certifications
+
+using an independent
+third-party organization.
+
+Of the people that
+we surveyed, 78%
+
+said that they had gotten
+additional confidence
+
+in their professional
+future because they
+
+got this certification.
+
+82% felt like they
+now had a special way
+
+to prove their cloud
+skill competency
+
+to potential recruiters.
+
+83% felt that their
+resume or CV was now
+
+more attractive to
+prospective employers.
+
+And finally, 85% said that they
+themselves felt more confident
+
+in their cloud skills.
+
+IT leaders have also been
+surveyed about the impact
+
+of certification.
+
+Out of those who authorized
+training for their teams
+
+within the last 12 months
+in a different survey,
+
+2/3 did so specifically
+with the aim
+
+of preparing their team
+members for certification
+
+or re-certification.
+
+93% of those leaders agreed that
+certified employees add value
+
+to their organizations
+well beyond the sheer cost
+
+of the certification itself.
+
+How much was that?
+
+Well, 63% of them were
+comfortable estimating
+
+that the economic benefit
+of those certified employees
+
+was more than
+$10,000 USD a year,
+
+which is a significant
+increment for what
+
+is comparatively a small
+investment in skills
+
+and knowledge.
+
+As Osaze mentioned, there's
+a wide variety of benefits
+
+for getting certification.
+
+And some of them are swag.
+
+Folks who achieve our
+professional-level
+
+certifications do get
+excellent merchandise
+
+that allows them to show off
+their credentials in public.
+
+Everybody gets a
+digital badge that they
+
+can put on their
+profiles on social media
+
+and display in other ways.
+
+Professional-level
+certified people
+
+also get access to special
+events at Google Cloud
+
+Next and other venues.
+
+They get access to the Google
+Cloud certified community
+
+so that they can exchange
+ideas and knowledge
+
+with other certified people
+and seek out networking
+
+opportunities as well.
+
+Now, this talk
+wouldn't be complete
+
+if we didn't have
+something new to present.
+
+In order to help the
+broad ecosystem get
+
+more cloud and
+Google Cloud skills,
+
+today we are announcing
+Google Cloud skills boost.
+
+It's a brand new way to
+consume Google Cloud learning.
+
+It makes more than 700
+labs, courses, and tools
+
+for preparing for our
+certifications available.
+
+And for the next
+month, we're making
+
+it available to all of
+our customers and partners
+
+at no cost.
+
+The URL is
+g.co/cloud/freetraining.
+
+And we hope that
+everybody listening
+
+will take advantage
+of this offer
+
+and see what we are
+making available to help
+
+people take their careers
+to the next level.
+
+At this point, I
+want to thank Osaze
+
+for joining us today and
+telling us his story.
+
+And I'd like to thank everyone
+in the audience for joining us.
+
+And we wish you all the best
+with your cloud careers.
+
+
+

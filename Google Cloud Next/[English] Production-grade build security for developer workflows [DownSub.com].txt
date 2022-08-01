@@ -1,0 +1,1359 @@
+
+
+CHRISTOPHER SANSON:
+Hey, everyone.
+
+Welcome to Dev 301,
+production-grade
+
+build security for
+developer workflows.
+
+My name is Christopher Sanson.
+
+I'm a Product Manager at Google
+working on developer tooling.
+
+And with me is Anthony Bushong,
+Specialist Customer Engineer
+
+who will be joining us a little
+bit later to give a demo about
+
+some of the new
+features and concepts
+
+we'll be talking about.
+
+The increase in cyber
+and ransomware attacks
+
+over the last year,
+including high profile cases
+
+such as SolarWinds, has been a
+wake up call for the industry.
+
+Security is top of mind for
+companies large and small
+
+across all verticals.
+
+In May, the White House
+issued an executive order
+
+on improving the nation's
+cybersecurity in face
+
+of increasingly sophisticated
+and persistent threats
+
+to the public and
+private sectors.
+
+In this 20 minute
+talk, we're going
+
+to introduce some
+specific actions
+
+that you can take to
+create a more secure
+
+build environment
+on Google Cloud.
+
+
+
+Over the last 20
+years, Google has
+
+built some of the most
+secure computing systems
+
+in the world, pioneering
+concepts such as zero trust.
+
+As part of GCP, we're bringing
+these internal best practices
+
+to our cloud customers
+through both open standards
+
+and integration in a variety
+of ways into GCP's managed
+
+services.
+
+In June of this year, we
+launched Open Source Insights,
+
+an exploratory
+visualization site
+
+for viewing the dependencies
+of open source projects.
+
+And in July, we
+announced SLSA, S-L-S-A,
+
+an open framework based on
+internal Google best practices
+
+for formalizing the criteria
+around software supply chain
+
+integrity to help the industry
+and open source ecosystem
+
+secure the software
+development lifecycle.
+
+
+
+CI/CD is one of the most
+critical paths for securing
+
+your software supply chain.
+
+It's the gatekeeper by which
+code changes are released out
+
+to your users and has many entry
+points for vulnerabilities,
+
+pulling resources
+from a large number
+
+of internal and external sources
+while accepting contributions
+
+from hundreds or maybe even
+thousands of developers
+
+and other contributors
+at your company.
+
+In the SolarWinds breach, that,
+in part, led to the White House
+
+executive order, it was actually
+a compromise built system
+
+that attackers used to inject
+malware into the candidate
+
+release that was ultimately
+published to downstream users.
+
+
+
+So in this talk, we're
+going to focus in
+
+on the build process
+specifically and talk
+
+about how to improve the
+security posture of your built
+
+environment.
+
+And we're going to do this by
+focusing on three main areas.
+
+One, network security.
+
+Two, build permissions.
+
+And three, binary authorization.
+
+So let's start with
+network security.
+
+One of the risks
+to an organization
+
+is data exfiltration
+at build time.
+
+Built by their nature
+typically handle
+
+a large amount of private
+intellectual property
+
+across source code, databases
+and artifact repositories.
+
+Now, actually, we
+want to minimize
+
+the risk of any of this data
+egress to the public internet,
+
+whether it happens to be
+maliciously or just simply
+
+accidentally.
+
+The most common way
+that companies do this
+
+is by hosting resources
+inside their private network
+
+behind a firewall.
+
+Traditionally,
+this has meant then
+
+that you are self hosting
+your own CI/CD solution.
+
+And besides just the additional
+overhead and total cost
+
+of ownership around
+developer velocity of having
+
+to install, manage, upgrade
+and scale this system,
+
+it also means that you're
+responsible for securing it.
+
+And as we saw with
+the SolarWinds attack,
+
+bad actors can try to corrupt or
+attack the build system itself.
+
+In the case of SolarWinds,
+where at build time,
+
+when a file was fetched
+from the source repo,
+
+it was actually swapped
+out with malicious code
+
+and then sent to downstream
+users through the compile,
+
+build and publish process.
+
+
+
+So let's take a
+different approach.
+
+Fully managed solutions,
+like Google's Cloud Build,
+
+offer a different tactic
+and are hosted and managed
+
+by Google Cloud running in
+Google's secure network,
+
+taking the burden off
+of you and your team
+
+for having to secure the system
+itself in terms of accessing
+
+the workers that builds run on.
+
+In June, Cloud Build launched
+Private Pools, a new feature
+
+which lets you securely
+connect a fully managed
+
+build system into your private
+network using VPC network
+
+peering.
+
+It supports private IPs on the
+worker, data regionalization
+
+and static IP ranges
+for IP allow listing.
+
+Another common pattern
+with this firewall approach
+
+alone is that, in
+many organizations,
+
+it's treated as all or nothing.
+
+There's inside the firewall
+and outside the firewall.
+
+Then once inside, you can
+access anything that is also
+
+inside the private network.
+
+Now, one of the best practices
+that we want to follow
+
+is that builds can
+access only what
+
+they need to and nothing more.
+
+So let's say, for
+example, that you
+
+have resources in
+multiple GCP projects
+
+that your build needs to access.
+
+How could we
+configure Cloud Builds
+
+so that it can access
+these resources, but only
+
+these resources and
+nothing else that would
+
+be sort of an attack factor?
+
+
+
+So this is where VPC
+Service Controls come in.
+
+With Private Pool support
+for VPC Service Controls,
+
+you can configure
+Cloud Build to restrict
+
+access more granularly
+to just the services
+
+that it needs to access.
+
+Additionally, you can use VPC
+Service Controls on the project
+
+that the worker pool itself
+is in to restrict egress
+
+and an additional
+layer of security
+
+against leakage of data
+to the public internet.
+
+Using Private Pool's support
+for the GCP org policy,
+
+you can enforce
+that all builds are
+
+run on these approved worker
+pools that were successfully
+
+set up by your security team.
+
+
+
+So now we talked about
+network security,
+
+let's move over to
+build permissions
+
+where we have two main goals.
+
+Again, we want to grant builds
+only the permissions they need
+
+and nothing more.
+
+And second, we want to avoid
+the escalation of permissions
+
+from the build
+system to developers.
+
+We don't want developers to be
+able to access our production
+
+environments directly or decrypt
+production secrets that the
+
+build system needs but
+developers shouldn't really
+
+have direct access to.
+
+So as an example, let's say we
+have two environments, staging
+
+and production.
+
+The first thing
+we're going to do
+
+is enforce that all changes
+go through our source
+
+repo, or version control
+system, which then invokes
+
+the build automatically.
+
+This has a number of benefits,
+including change history,
+
+audit trail, CI tests.
+
+And using productive
+branches, we
+
+can enforce that only developers
+that have commit rights
+
+to the prod branch
+have the ability
+
+to invoke the production
+release pipeline.
+
+This lets us use pull
+requests to add a approval
+
+or manual review layer
+to all suggested changes
+
+from developers that don't have
+permission to release directly
+
+to production.
+
+
+
+Likewise, we're going
+to want to make sure
+
+that the staging build doesn't
+have permissions to access
+
+our production environment
+either, which would allow
+
+another escalation
+of permissions
+
+to environments and
+secrets that should not
+
+be accessible from
+our staging pipeline.
+
+For that, we're going
+to take advantage
+
+of a new feature of Cloud
+Build for user-provided service
+
+accounts.
+
+In this instance, we're
+going to create two service
+
+accounts, one for
+our staging bill
+
+and one for our production
+bill, and grant them
+
+the respective permissions that
+they need so that they can only
+
+access the resources
+that are needed
+
+in each of those environments.
+
+
+
+Next, we're going to use
+Cloud Build's integration
+
+with Secret Manager for
+managing the secrets.
+
+With Cloud Build's native
+Secret Manager integration,
+
+secrets are only
+decrypted at build time,
+
+and so not available in plain
+text in the build config
+
+or to developers.
+
+And because you're
+using Secret Manager,
+
+it's much easier and faster
+to rotate secrets frequently
+
+further, improving
+your security posture.
+
+
+
+The last thing we're going to
+do is add a manual approval step
+
+for the production pipeline.
+
+Using Cloud Build's
+approval features,
+
+we are going to make
+sure that an admin
+
+or other approved reviewer
+is able to manually
+
+review and approve all
+production deployments.
+
+
+
+And all of this is
+in the spirit of,
+
+again, preventing access
+from individual developers
+
+to production environments
+and other secrets
+
+that they should not be
+able to access directly
+
+while enabling the build
+system to deploy to production.
+
+
+
+So now we've talked about
+build permissions as well.
+
+Let's move on to the last topic,
+which is Binary Authorization.
+
+So we've created our
+built pipeline that builds
+
+our container and deploys it
+out-- in this particular case,
+
+Kubernetes Engine or Cloud Run--
+
+through our continuous
+delivery pipeline,
+
+whether that could be the
+newly announced Cloud Deploy,
+
+an open source solution like
+Spinnaker or even Cloud Build
+
+itself.
+
+But how do we enforce that only
+approved builds are deployed
+
+to our runtime environments?
+
+What's stopping a bad
+or unauthorized actor
+
+from building their
+own image and then
+
+deploying that out
+directly or injecting it
+
+into our CD pipeline?
+
+
+
+For this we're going to
+leverage Binary Authorization
+
+from GCP, which lets
+you define deployment
+
+policies for which containers
+can and can't be deployed.
+
+So in this case, let's
+create a policy that
+
+says only containers
+built by Cloud Build
+
+can be deployed out
+to GKE or Cloud Run.
+
+This will ensure that any
+unsigned images or images
+
+signed by an untrusted build
+system will fail our policy
+
+check and not get deployed
+out to our production users,
+
+whether trying to be deployed
+directly or through our CD
+
+pipeline.
+
+Lastly, Cloud Build will create
+and assign an asset station
+
+for each image that
+it builds saying
+
+that it was built
+by Cloud Build,
+
+allowing it to pass the binary
+authorization and verification
+
+process and get deployed
+out to our environment.
+
+
+
+So we talked quickly
+about Cloud Build
+
+and how you can use Cloud
+Build to improve your security
+
+posture to create a more
+secure build environment while,
+
+at the same time, improving
+developer productivity
+
+and reducing operational
+overhead altogether.
+
+So we talked about some of
+the features that were newly
+
+launched in 2021,
+including Private Pools,
+
+user-provided service accounts,
+Secret Manager integration,
+
+manual approvals
+and better support
+
+for Binary Authorization.
+
+
+
+Now, let's hand
+it off to Anthony
+
+for a demo of some
+of what we discussed.
+
+Anthony.
+
+ANTHONY BUSHONG:
+Thanks, Christopher.
+
+Let's dive into how we can put
+these principles into practice.
+
+Let's start by taking a look
+at our Cloud Run application.
+
+In this case, we're utilizing a
+containerised Python Flask web
+
+app that's accessible
+at this URL.
+
+And it's only accessible
+by authorized users,
+
+so it will provide a token
+when issuing a request.
+
+And you'll see that we get
+a HTML page in response
+
+to our request.
+
+Our Cloud Run
+application actually
+
+has Binary
+Authorization enabled.
+
+As a reminder,
+Binary Authorization
+
+is the ability to only admit a
+certain set of container images
+
+to your runtime environment,
+like Cloud Run or GKE.
+
+In this case, we've configured
+Binary Authorization
+
+to only approve images that have
+been signed by the Cloud Run
+
+attestor.
+
+In this case, the
+Cloud Run attestor
+
+is only signing
+images that have been
+
+built with Google Cloud Build.
+
+We can see Binary
+Authorization in action
+
+if we try to deploy an image
+to the Cloud Run service that
+
+was not signed by our tester.
+
+So in this case, for
+our next 2021 app,
+
+you'll see here that I have
+a container image that's
+
+tagged rogue, and this
+was built out of band,
+
+not utilizing
+Google Cloud Build.
+
+And if I was to try to deploy
+this container image to Cloud
+
+Run, we should actually see
+our Binary Authorization policy
+
+in action by denying
+that container image
+
+to be deployed to Cloud Run.
+
+Now that we've demonstrated
+how we can handle images
+
+that we don't trust,
+let's take a look
+
+at the automation that
+Cloud Build provides
+
+and how we can build
+images that we do trust.
+
+To build our container image,
+what we're actually utilizing
+
+are Google Cloud Build's
+support for triggers.
+
+Both of these
+triggers are connected
+
+to my GitHub repository titled
+Next 2021, which actually
+
+has our application code.
+
+The first trigger kicks
+off builds automatically
+
+based on any changes
+to a feature branch.
+
+In this case, it'll run builds
+that build a container image,
+
+signs a container image,
+and will actually open up
+
+a pull request against the
+main branch in the GitHub
+
+repository.
+
+The second trigger
+actually kicks off
+
+and deploys the container
+image to Cloud Run
+
+based on any changes
+made to the main branch.
+
+One of the things we
+want to consider here
+
+is the ability to apply the
+principle of least privilege.
+
+And in this case, we're
+actually able to do this
+
+by separating the service
+accounts that each of these
+
+triggers utilize.
+
+You can see here, for
+the first trigger,
+
+we're utilizing
+a service account
+
+that is titled build-next-2021.
+
+And this has permissions
+to the Container Registry
+
+and things like
+that that actually
+
+help it to perform the
+build that it needs to run.
+
+And then the second
+service account
+
+is called deploy-next-2021,
+which has permissions
+
+to deploy to Cloud Run.
+
+While in this example I'm
+utilizing a GitHub.com
+
+repository, it is
+important to call out
+
+that Google Cloud Build also has
+support for self-hosted source
+
+code management systems
+like GitHub Enterprise.
+
+So you can actually see
+here that in Cloud Build
+
+I actually have a host
+connection to a private GitHub
+
+Enterprise server that I
+also utilize in Google Cloud.
+
+And you can see that I've
+actually made connections
+
+to various repositories in that
+GitHub Enterprise instance.
+
+This means that
+I can also create
+
+Cloud Build triggers on
+these private self-hosted
+
+repositories.
+
+Now let's take a
+look at the actual
+
+build that our first
+trigger is running.
+
+This trigger is looking
+in the build folder.
+
+And the first
+trigger specifically
+
+is looking at the build.yaml
+specification for Google Cloud
+
+Build.
+
+Our first build step is building
+our container image that
+
+will end up running
+in Cloud Run,
+
+and we're actually
+publishing that
+
+to Google Container Registry.
+
+And you can see here that
+we're utilizing Cloud Native
+
+Buildpacks to automatically
+generate that container image.
+
+Once we've signed
+the container image,
+
+our final build step actually
+will open up a pull request
+
+against our GitHub repository.
+
+And you can see here that the
+way that we're able to do this
+
+is that we're utilizing
+the GitHub API.
+
+And in order to
+authorize ourselves,
+
+or the build, to be able
+to perform this action,
+
+we're providing a GitHub token.
+
+And so one of the critical
+components of a secure
+
+build environment is
+careful secret management.
+
+In this case, Google
+Cloud Build allows
+
+us to natively access secrets
+stored in Google Cloud Secret
+
+Manager.
+
+So you can see in this
+scenario we're actually
+
+storing our token, our GitHub
+token, in Secret Manager
+
+and providing that back to the
+build itself as an environment
+
+variable.
+
+This means that we are not
+providing static credentials
+
+to our actual build
+or codifying that
+
+into our build of
+container images,
+
+but rather these are
+dynamically accessed
+
+utilizing the service account,
+which is provided to the build.
+
+If we jump over to Google
+Cloud's Secret Manager,
+
+we'll see our secret,
+our GitHub token.
+
+And we'll see here
+under permissions
+
+that we've actually granted
+secret access or permissions
+
+to our build-next-2021 service
+account, which is being
+
+utilized by Google Cloud Build.
+
+And the important thing
+to note is that this
+
+is a granular permission.
+
+It is not for all secrets that
+are stored in Secret Manager,
+
+but rather on a per
+secret access basis.
+
+The next important field
+to call our attention to
+
+in the Cloud Build specification
+is under options worker pool.
+
+This actually allows for
+us to specify on a per
+
+build basis whether or not a
+build should run in a Cloud
+
+Build private pool.
+
+So what is a Cloud
+Build private pool?
+
+Well, private pools extend
+the user configurability
+
+for the workers that
+actually run a user's build.
+
+So in this case, we can specify
+additional things like regions.
+
+We can also specify and have
+access to more machine types.
+
+And perhaps, most
+importantly, we
+
+have private VPC connectivity
+to access private resources,
+
+either within our own
+network in Google Cloud
+
+or within the data center that
+is connected to our Google
+
+Cloud VPC.
+
+So you can see here
+that I have specified
+
+for sandbox-private pool
+to have connectivity
+
+to sandbox-VPC-privatepools,
+which is actually running
+
+in the GitHub Enterprise server
+that I was showing earlier
+
+in this demonstration.
+
+Not only do we get
+private VPC connectivity
+
+with Cloud Build private
+pools, we actually
+
+have the ability to remove
+external IPs from our workers
+
+altogether.
+
+And in general, can
+now consider how
+
+we can use VPC Service Controls
+to secure our build perimeter
+
+running in private pools.
+
+So now let's actually
+trigger this first
+
+build that'll run
+on a private pool.
+
+So I'm going to change
+the web application
+
+and just add a couple of
+small, very minor changes
+
+by adding a couple
+of exclamation points
+
+in some of the HTML.
+
+And I'm going to commit this
+to the development branch,
+
+and then what we're
+going to want to do
+
+is create a feature branch that
+will kick off our trigger now
+
+that we're done with
+the development branch.
+
+And as you can see,
+our build is now
+
+queued to run in US-west1
+on a private pool.
+
+And if we actually
+dig into the build,
+
+we can see our build steps,
+which builds a container image,
+
+attests a container image,
+or signs a container image,
+
+and then creates that
+GitHub pull request.
+
+And after a short
+amount of time,
+
+we can see that our build has
+completed, the final step being
+
+the pull request being created.
+
+So if we actually jump
+over to the repository,
+
+we can actually see the PR
+from feature against main.
+
+And so we can review that.
+
+We can see that our
+build is completed,
+
+and now we can utilize
+it as an opportunity
+
+to basically gate the next build
+because we have the opportunity
+
+to either approve and
+merge these changes
+
+or we can close the PR.
+
+So in this case, once
+we click on merge,
+
+we're actually going to kick
+off the second trigger which
+
+will deploy the
+service to Cloud Run.
+
+So we're going to click that.
+
+And that branch has now
+been successfully merged.
+
+So if we quickly glance at the
+build that is going to run,
+
+we can see here that
+it's a single step,
+
+and we're just using G
+Cloud as our build step,
+
+and we are passing
+in the arguments
+
+to basically deploy to
+Cloud Run, our latest image
+
+that we built. Now let's
+take a look at our last
+
+build from the
+second trigger that
+
+will deploy our new container
+image to Google Cloud Run.
+
+One of the things to consider
+is that many teams will often
+
+introduce a manual approval
+stage for pipelines
+
+that deploy to a
+production environment,
+
+and this basically allows
+for an operator or developer
+
+to have that final decision
+to actually promote an image
+
+into a production environment.
+
+So as you can see,
+Google Cloud Build
+
+has actually introduced the
+notion of manual approvals.
+
+So we can see that the
+trigger has created our build.
+
+However, the build has
+not begun to execute
+
+to actually deploy to Cloud
+Run because I have not yet
+
+approved it.
+
+So once we click off Approve,
+we may have the ability
+
+to provide context
+on perhaps monitoring
+
+or certain documentation or a
+ticket that actually captures
+
+whatever metrics or
+heuristics that allow
+
+us to promote this production.
+
+And we can click
+Approve, and our
+
+build will actually begin
+to kick off and run.
+
+And after a short
+period of time,
+
+we'll see that our single
+step build has completed
+
+and we have now deployed the new
+container image to Cloud Run.
+
+So let's take a
+look at Cloud Run.
+
+And we can actually see
+that we have a new revision.
+
+This was the failed
+revision that
+
+was not signed by the attester
+in Google Cloud Build,
+
+so it failed to deploy due
+to Binary Authorization.
+
+But because we built this
+image with Cloud Build
+
+and it was actually properly
+signed by the Cloud Run
+
+attester that we had, it is
+now successfully deployed.
+
+And once we issue that request
+again to our application,
+
+we can see our changes with the
+additional exclamation points.
+
+We demonstrated
+how we can secure
+
+our build environments
+with granular
+
+build permissions,
+a secure network
+
+perimeter, manual approvals
+and admission control
+
+to targets like
+Cloud Run and GKE.
+
+Back to you, Christopher.
+
+CHRISTOPHER SANSON:
+Thanks, Anthony.
+
+That was a great demo.
+
+Now, of course, what we just
+covered today was really
+
+meant as an introduction and
+a high level overview of some
+
+of the specific
+actions you can take
+
+to secure part of your
+larger end-to-end ecosystem.
+
+If you're interested
+in learning more,
+
+here are some
+additional talks here
+
+at Next around securing
+your software supply
+
+chain that we highly recommend
+you check out as well.
+
+Thank you for your time.
+
+And we're happy to
+take any questions.
+
+
+

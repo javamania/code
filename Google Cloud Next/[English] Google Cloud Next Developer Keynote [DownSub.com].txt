@@ -1,0 +1,2622 @@
+[MUSIC PLAYING]
+
+
+
+APARNA SINHA: Hi,
+I'm Aparna Sinha.
+
+Welcome to day two
+of Google Cloud Next.
+
+I'll be co-hosting today
+alongside Urz Holzle,
+
+and we've got a really great
+lineup of new technology
+
+and demos from Google Cloud.
+
+But before we get
+started, I want
+
+to thank you all for taking
+time out of your busy week
+
+to be here with us.
+
+Yesterday was an incredible
+first day at Next.
+
+Thomas and Sundar made
+some amazing announcements.
+
+This week we're releasing over
+100 new products, services,
+
+and programs for you.
+
+We're kicking off day two
+now with this keynote,
+
+a Cloud built for developers.
+
+After this, we'll jump right
+into a live developer Q&A
+
+where you can ask us anything.
+
+And then tomorrow
+is community day,
+
+and that'll be totally
+dedicated to you
+
+for learning,
+discussions, networking,
+
+and all kinds of fun.
+
+All right, let's get things
+started by welcoming Urz.
+
+Hi, Urz.
+
+URS HOLZLE: Hi, Aparna.
+
+Hi, everyone.
+
+I hope you are as excited as
+I am to get started today.
+
+And since this is a
+developer keynote,
+
+we'll kick it off
+with our first demo
+
+right away from Google
+Research and our Deep Mind
+
+colleagues who've been
+working on some amazing voice
+
+technology.
+
+SPEECH MODEL:
+Welcome to Next 21.
+
+[SPEAKING FRENCH]
+
+URS HOLZLE: Now before
+you get too impressed
+
+by my language skills, I did
+not actually speak these words.
+
+What you just heard is a
+custom text to speech model
+
+that has trained on
+my voice and that
+
+can generate synthetic speech
+in different languages.
+
+And our teams have
+already started
+
+using this technology
+to improve our voice
+
+experience for all users.
+
+APARNA SINHA: That's right.
+
+Google's project Euphonia is
+already using custom voice
+
+to help people with
+atypical speech
+
+to communicate and
+be better understood.
+
+Technology like this creates
+a more inclusive world.
+
+To find out more about
+this, check out the project
+
+Euphonia website.
+
+Custom Voice is available today
+for select Cloud customers.
+
+We're very mindful of
+the potential misuses
+
+of this technology, and
+we're taking great care
+
+to prevent them by reviewing
+each use case uniquely.
+
+URS HOLZLE: Now look
+around you, every day
+
+you see innovation that's
+brought to you by developers
+
+like yourself with
+persistence and skill,
+
+and Google has a long tradition
+of supporting developers
+
+in open source and elsewhere.
+
+For years, you've been
+using technologies
+
+like Kubernetes, Firebase,
+Tensorflow, Go, Angular,
+
+GRPC, and many others.
+
+And when we built Google Cloud,
+we built it for developers,
+
+and we were inspired by all the
+things you've created with it.
+
+And our job is quite
+simply to make it easier
+
+for you to do what you love.
+
+So we focus on making you as
+productive as possible with
+
+the least amount of effort.
+
+And so in everything we design,
+we take all the feedback
+
+that you're sharing
+with us and build
+
+a platform that just works.
+
+Whether that's by natively
+embedding key security
+
+or sustainability features
+into the platform itself
+
+or by featuring
+partner solutions right
+
+within our own console, we're
+really focused on one goal,
+
+giving you the best developer
+experience of any Cloud
+
+provider.
+
+APARNA SINHA: Google Cloud
+has had tremendous traction
+
+with digital native customers
+since our very early days.
+
+How have you seen
+customer and partner
+
+adoption evolve since then?
+
+URS HOLZLE: Well, many
+of our biggest customers
+
+are Cloud natives, but we've
+seen tremendous adoption
+
+by a broad segment of
+enterprise customers
+
+in traditional industries
+as well like entertainment
+
+or financial services.
+
+For example, Major
+League Baseball,
+
+which is North America's
+oldest and most attendance
+
+professional sports league
+is using Google Cloud
+
+to modernize fan
+engagement and to increase
+
+operational efficiency.
+
+And Equifax, which
+was founded in 1899
+
+and is one of the
+world's largest consumer
+
+credit reporting agencies,
+is transforming itself
+
+from a credit bureau to a
+next generation data analytics
+
+and technology company
+built on Google Cloud.
+
+APARNA SINHA: We've
+seen a huge shift.
+
+Essentially every company
+is becoming a tech company
+
+to increase their
+competitiveness
+
+and establish leadership
+in their industries.
+
+Developer talent
+and Cloud Services
+
+are at the heart of this shift.
+
+Whether you call that digital
+transformation or something
+
+else, companies of
+all sizes are finding
+
+that Google Cloud is
+optimized to help make
+
+your data, your
+applications, and your talent
+
+more useful and relevant
+to your business.
+
+URS HOLZLE: Exactly.
+
+And as Thomas
+mentioned yesterday,
+
+everyone needs to be
+thinking through how they'll
+
+fundamentally shift into
+a technology company
+
+to serve their customers in the
+most meaningful ways 10 years
+
+from now, and you as developers
+are key to making this happen.
+
+So organizations
+ask themselves, do
+
+we have the most cutting
+edge technology to become
+
+a leader in our industry.
+
+And you, the developers, are
+well-equipped to answer this.
+
+And we are super
+focused on making you
+
+and your company successful.
+
+And there's two
+areas we focus on
+
+to support your growth,
+first of course,
+
+making it easier for developers
+to get their job done, second,
+
+investing in a
+developer community
+
+so that everyone can learn
+and grow from each other.
+
+So let's talk about
+how Google Cloud is
+
+making it easier for developers
+to get their job done.
+
+From our transformational
+infrastructure
+
+stack to our deep innovations
+in data, security, ML,
+
+every feature we release starts
+with simplifying the developer
+
+experience.
+
+Take our open Cloud
+experience, for example.
+
+We recently expanded
+our compute stack
+
+to include [INAUDIBLE] VMs
+that deliver 42% better price
+
+performance over any
+other comparable solution
+
+in the market with no recompile.
+
+And thanks to our zero
+trust approach to security,
+
+Google Cloud was ranked a leader
+in IS platform native security
+
+by Forrester, well ahead
+of the competition.
+
+And of course,
+we're focusing also
+
+on managed services
+that make it easy
+
+for you to deploy scale and
+manage Kubernetes clusters
+
+on the edge or in the Cloud.
+
+And Google Cloud has the
+most complete and most secure
+
+container experience
+for developers.
+
+In fact, the 2021 Gartner
+solution scorecard
+
+for Google Analytics
+Engine gave GKE
+
+an overall score of 92, again,
+well ahead of the competition.
+
+And of course with
+GKE and Anthos,
+
+you can run these containers
+anywhere on-premise,
+
+other clouds, on
+the edge, anywhere.
+
+So it's fair to say that in
+the years since Google invented
+
+Kubernetes, containers
+have really completely
+
+revolutionized IT operations.
+
+Now recently European
+filmmakers from Honeypot.io
+
+created a documentary on
+the history of Kubernetes,
+
+and it will be out
+in January 2022.
+
+And you are the
+very first audience
+
+to have a look at the
+trailer right now.
+
+So let's roll that.
+
+[VIDEO PLAYBACK]
+
+- Sounds good.
+
+- Do I look at you,
+look at camera?
+
+- 2013, it was clear
+that Cloud was a thing,
+
+but most folks were focused
+on infrastructure Cloud.
+
+- The dirty secret for a long
+time is like people who are
+
+either building their own
+data centers using co-los,
+
+there's a huge resource waste.
+
+- And so at that
+point, automation tools
+
+are all the rave.
+
+People are now trying to
+abstract away the servers.
+
+- Google was looking
+for ways to apply
+
+its internal infrastructure
+expertise to the Cloud.
+
+- As we started looking at
+technologies like Docker,
+
+we were like impressed
+by the strength
+
+of what they'd
+accomplished in solving
+
+a very specific problem.
+
+- This is going to happen
+with us or without us.
+
+- Google had to make a bold
+move in the Cloud space to be
+
+the long-term winner.
+
+- Every big startup, I felt,
+had a container orchestration
+
+project, and half of them were
+announced at Docker Con 2014.
+
+- Open source is most
+successful when it's
+
+played as a positive sum game.
+
+[MUSIC PLAYING]
+
+
+
+[END PLAYBACK]
+
+APARNA SINHA: This is
+such a great community.
+
+URS HOLZLE: Yeah, absolutely.
+
+I recognize a lot
+of the faces, and I
+
+can't wait to see the film.
+
+Now let's get back to how we're
+making it easier for developers
+
+for you to build really
+the leading technology
+
+companies of tomorrow.
+
+Now Kubernetes
+deployments can involve
+
+a fair bit of manual
+configuration, clusters, nodes,
+
+load balancers,
+animals, et cetera
+
+but not on Google
+Cloud, because we
+
+offer you the most automated
+and secure Kubernetes
+
+experience available.
+
+With GKE Autopilot,
+Google provisions and
+
+manages the clusters entire
+underlying infrastructure,
+
+including control plane,
+node pools, working nodes.
+
+And that lets you
+focus on the higher
+
+level of services
+and applications
+
+that you're building.
+
+Nobody else offers
+anything like this,
+
+because beyond
+managing node upgrades,
+
+GKE Autopilot also automatically
+configure security features
+
+like shielded GKE nodes, secure
+boots, and workload identity.
+
+And it also implements
+security best practices
+
+by blocking less safe features
+like external IPS or legacy
+
+authorization.
+
+So you don't get
+a toy Kubernetes
+
+cluster, which GKE Autopilot.
+
+You get a sophisticated
+cluster that
+
+uses the best practices brought
+to you by the team that brought
+
+to you Kubernetes itself.
+
+So you're always
+up to date, and you
+
+get the same results
+as the experts
+
+without having to be
+an expert yourself.
+
+APARNA SINHA: The
+pandemic put developers
+
+in the driver's seat, and
+you all drove GKE usage
+
+to all time highs.
+
+At the same time, we
+saw explosive growth
+
+in the use of Google Cloud
+serverless offerings,
+
+especially Cloud Run
+and Cloud Functions.
+
+It's mainly
+enterprise developers
+
+who have driven this growth.
+
+Cloud Run excels at
+developer experience.
+
+It's earned the highest
+customer satisfaction rating
+
+among developers as measured
+by user research international.
+
+Cloud Run combines the best
+of both worlds bringing you
+
+serverless and containers.
+
+There's no cluster to
+set up or configure,
+
+so developers are able to
+scale seamlessly and securely.
+
+Under the hood, Cloud Run
+scales container instances
+
+in isolated sandboxes.
+
+Any access outside a
+sandbox is mediated
+
+by network controls or identity
+and access management or both.
+
+And it isn't just for new apps.
+
+Cloud Run supports
+traditional workloads
+
+like Java Spring
+Boot and asp.net.
+
+We also recently introduced
+committed use discounts
+
+to lower the cost at scale.
+
+And we've introduced
+Always on CPU,
+
+which enables asynchronous
+and background processes to be
+
+used on Cloud Run.
+
+So you have all the
+benefits of serverless
+
+without the restrictions.
+
+The theme here is easier, more
+secure development, especially
+
+with remote work.
+
+URS HOLZLE: You're
+absolutely right.
+
+We've been focusing on remote
+development for some time now,
+
+but the pandemic has certainly
+accelerated the shift.
+
+Now what would be more
+essential to remote development
+
+than to be able to use
+the full power of TCP
+
+right from your laptop
+with zero local setup?
+
+Cloud Shell Editor is a context
+aware remote development
+
+environment that lets you
+develop and manage applications
+
+securely from any browser.
+
+It supports languages like Go,
+java, node, Python, C Sharp,
+
+and comes with an integrated
+debugger source control API
+
+Explorer.
+
+And if you want to test
+locally on your laptop,
+
+it also comes with local
+emulators for Kubernetes
+
+and serverless APIs.
+
+APARNA SINHA:
+Thanks, Urs. Next let
+
+me introduce you to Abby Carey.
+
+She is going to show us how
+Google Cloud makes it easy
+
+for you to securely build
+modern applications, again,
+
+right from your laptop.
+
+Hi, Abby.
+
+ABBY CAREY: Hi, Aparna.
+
+We developers have had a
+hard time writing, extending,
+
+deploying, and
+operating applications,
+
+but it doesn't have
+to be difficult.
+
+Let's start with
+Cloud Shell editor.
+
+It comes with current versions
+of your favorite DevTools
+
+like Docker, Minikube,
+Scaffold, and more.
+
+So it's nothing to download
+or install locally.
+
+Tutorials are built
+into Cloud Shell
+
+Ed, which makes it easy
+to come up to speed
+
+on complex topics like GKE.
+
+APARNA SINHA: So no more
+switching between tabs, docs,
+
+your terminal, and your code.
+
+This integrated
+experience is highly
+
+differentiated
+from other clouds.
+
+You can even offer
+your own tutorials,
+
+and that allows
+your organization
+
+to share best practices and
+on board new hires faster.
+
+ABBY CAREY: Another
+popular feature
+
+is Kubernetes YAML
+authoring assistance.
+
+Let's say I want to add YAML
+for a service to this project.
+
+I can press Control
+Space and then find
+
+the Kubernetes service snippet.
+
+Now I can tap through
+and fill everything in.
+
+I also get auto completes.
+
+And if I happen to make
+a formatting mistake,
+
+I am notified that there's
+an issue in real time.
+
+APARNA SINHA: Now
+many of you prefer
+
+to work locally in an IDE.
+
+This same YAML
+authoring assistance,
+
+it's also available for VS code
+and IntelliJ via the Cloud Code
+
+plugin.
+
+Cloud Code has built in
+support for both Cloud Run
+
+and Kubernetes.
+
+ABBY CAREY: In fact, if you're
+using Cloud Run or functions,
+
+you don't need to know Docker.
+
+You can build and deploy your
+app with just one command,
+
+because Cloud Code--
+
+because Cloud Build is
+integrated under the hood.
+
+This is an application
+with no Docker file.
+
+With the new GCloud run deploy
+command, all I have to do
+
+is provide a name for
+my service and then
+
+let it know where my
+source code lives,
+
+which is this current
+directory, and we're deploying.
+
+APARNA SINHA: So nice.
+
+And thanks to this ease
+of use, 98% of users
+
+deploy an application to
+Cloud Run on their first try
+
+in less than five minutes.
+
+ABBY CAREY: I just showed source
+code deploys the Cloud Run
+
+but there are more ways Google
+Cloud has made deployment
+
+easier and more secure.
+
+First, I can scan my
+build container images
+
+to check for vulnerabilities.
+
+I've already run an on demand
+scan on one of my images
+
+using GCloud Artifacts
+Docker images scan.
+
+Now I can copy the ID
+of my scan and then
+
+view my images vulnerabilities
+with the list vulnerabilities
+
+command.
+
+And once that's finished,
+a severity level
+
+is assigned to
+each vulnerability
+
+to help you prioritize.
+
+APARNA SINHA: That's
+super important.
+
+It's really helpful in
+addressing security concerns
+
+earlier in the software
+development lifecycle.
+
+But now what if your build
+pipeline is compromised?
+
+ABBY CAREY: For
+that, I can enable
+
+Binary Authorization on my
+deployed Cloud Run services.
+
+This way only trusted
+container images
+
+are deployed to production.
+
+APARNA SINHA:
+Binary Authorization
+
+is truly unique in the industry.
+
+It enables you to put proactive
+security measures in place
+
+to reduce software
+supply chain attack
+
+risk by blocking deployments
+that violate policy.
+
+And speaking of
+deploying, we're making
+
+it seamless for you
+to do CI/CD securely.
+
+You can take advantage
+of serverless
+
+build environments within your
+own private network with Cloud
+
+Build private pools.
+
+ABBY CAREY: And
+for advanced CD, we
+
+have Google Cloud
+deploy, which allows
+
+you to create custom delivery
+pipelines for your specific use
+
+case and needs.
+
+APARNA SINHA: That is so cool.
+
+Well, a real application
+connects to many supporting
+
+Cloud Services.
+
+So Abby can you
+show us an example
+
+of how we make these
+integrations easier.
+
+ABBY CAREY: Sure.
+
+When creating a
+Cloud Function, it's
+
+easy to integrate
+with Secret Manager.
+
+First, create a secret
+that stores your API
+
+key, which I've already done.
+
+Now I can either
+mount it as volume
+
+or expose it as an
+environment variable.
+
+I'll mounted it as a volume, and
+then I'll name my Mount path.
+
+This will always point to the
+latest version of my secret.
+
+And now I can securely
+reference this API key
+
+from my source code.
+
+This abstraction enables
+portability and a better
+
+local development experience.
+
+Cloud Run also integrates
+with Secret Manager
+
+to make it easier to
+do the right thing
+
+and not put sensitive
+data in source.
+
+APARNA SINHA: Love that so much.
+
+OK, so now you've written your
+app, you've deployed your app,
+
+and you've connected your app
+to other Google Cloud resources.
+
+What's next?
+
+ABBY CAREY: Operating
+your app in production.
+
+With Cloud ops, you
+get one integrated view
+
+for your alerts, events,
+metrics, and logs.
+
+No more jumping
+around multiple tools
+
+as you try to understand
+what went wrong.
+
+APARNA SINHA: That
+was so awesome, Abby.
+
+Thank you for
+sharing this with us.
+
+ABBY CAREY: Thanks, Aparna.
+
+APARNA SINHA: In each
+of these instances,
+
+we've done the
+integration work for you.
+
+Because the more work
+we put into this,
+
+the less work you have to do.
+
+And this principle applies
+to security as well.
+
+We've put a lot of energy into
+building security natively
+
+into everything
+we do so that you
+
+can innovate with assurance.
+
+Both GKE and Cloud Run
+benefit from the security
+
+fixes we implement before
+vulnerabilities are exposed.
+
+Just think about the
+famous vulnerability
+
+uncovered in how Kubernetes
+was handling proxy requests.
+
+We found it we coordinated and
+communicated the disclosure,
+
+we fixed it for the entire
+Kubernetes community,
+
+and we patched all our
+products before any customers
+
+were impacted.
+
+More recently,
+cyber threats have
+
+shifted the focus towards
+the software supply chain.
+
+URS HOLZLE: That's right
+malicious actors are trying
+
+to compromise the software
+supply chain from bad code
+
+emission to bypassing this
+CI/CD pipeline altogether.
+
+And to help solve
+this problems, we
+
+proposed an industry
+standard called Salsa.
+
+It's a security framework
+that provides common criteria
+
+for increasing
+levels of software
+
+security through automation and
+through cryptographic signing
+
+at each stage of the
+software supply chain.
+
+And that makes it possible
+but not necessarily easy.
+
+And so making it easy for
+developers to ensure security
+
+is super important,
+and that's why
+
+we're focusing on
+building the security
+
+right into the
+developer tool chain
+
+anticipating and preventing
+issues ahead of time,
+
+not when you're most at risk.
+
+So for example, Cloud
+Build our service
+
+that lets you build,
+test, and deploy
+
+across multiple environments,
+such as VMs, Serverless,
+
+Kubernetes, or Firebase
+now offers Salsa level
+
+one compliance by default.
+Because Cloud Build gives you
+
+a verifiable build provenance.
+
+So this provenance lets you
+trace a binary to the source
+
+code that it was built
+from to prevent tampering
+
+and to prove that
+the code that you
+
+think you're running actually
+is the code you are running.
+
+Cloud Build is the first
+and only CI/CD service
+
+to offer this capability,
+but we go beyond that.
+
+As you've seen, build the
+integrity automatically
+
+generates digital
+signatures, which
+
+can then be validated
+before deployment by Binary
+
+Authorization.
+
+That's another
+Google Cloud first.
+
+And so without you
+needing to do anything
+
+we prevent anyone
+in your organization
+
+from deploying code that has not
+been built by your legitimate
+
+build system.
+
+Now ensuring security
+post-deployment
+
+is equally critical.
+
+On GCP, you can enable
+continuous scanning,
+
+and you can use our service
+mesh to embrace a zero trust
+
+security model and automatically
+and declaratively secure
+
+your services and
+the communication.
+
+So you can manage
+authentication, authorization,
+
+and encryption between services
+with little or no changes
+
+to the applications themselves.
+
+Let me say that again--
+
+with little to no changes to
+the applications themselves.
+
+So that means that these
+security improvements
+
+help secure not just new code
+but also existing binaries
+
+so you can use them
+for any application
+
+that you're migrating
+to the Cloud.
+
+Both Anthos Service Mesh
+and now Cloud Build hybrid
+
+are available
+across Google Cloud
+
+and your on-premise
+environment, and they
+
+work with VPC Service
+Controls and VPC appearing
+
+to automate the development
+security for your enterprise.
+
+No other Cloud provider protects
+your software supply chain
+
+to this level,
+because we started
+
+working on software
+supply chain security
+
+long before it was
+in the headlines.
+
+And so by choosing GCP, you
+benefit from this leading edge
+
+focus on security.
+
+APARNA SINHA: Whether
+we're building
+
+foundational open source
+technologies like Kubernetes
+
+or Istio or turning them into
+fully managed services like GKE
+
+and Anthos Service
+Mesh, our goal
+
+is always to reduce
+complexity for our users
+
+by helping create these
+industry standards
+
+we can provide safer and simpler
+services for you, the developer
+
+and that's exactly our approach
+to securing the software supply
+
+chain.
+
+We've co-founded the Open
+Source Security Foundation
+
+with other technology leaders
+to create security standards
+
+for open source software.
+
+And we're starting to
+bring products to market
+
+like Open Source Insights,
+which provides you
+
+a complete transitive dependency
+graph for many Open Source
+
+packages.
+
+Now let's turn
+back to Urs to hear
+
+why Google Cloud
+is best positioned
+
+to support you in
+becoming a technology
+
+leader in your industry
+using data as a core asset.
+
+URS HOLZLE: Thanks.
+
+Yes, so far we've been talking
+about developing and managing
+
+code, but data is at the
+heart of many enterprises.
+
+So we also have the
+leading data cloud products
+
+in the industry designed
+for optimal performance
+
+and reliability for applications
+of all sizes while scaling
+
+to immense capacity.
+
+Now let's start with databases.
+
+When it comes to databases,
+every Cloud gives you choices.
+
+They offer SQL databases, which
+are great but unfortunately
+
+don't scale, and of
+course NoSQL databases,
+
+which do scale but,
+unfortunately, are not SQL.
+
+Only Google Cloud gives you
+a third choice with Spanner.
+
+Because Spanner is
+SQL, and, in fact,
+
+it just got a
+post-credits interface,
+
+but it scales horizontally,
+and it can literally handle
+
+a billion requests per second.
+
+Nobody else has is
+scalable SQL system,
+
+so it's no wonder we're
+seeing huge adoption.
+
+Now on that data
+warehouse side, we
+
+have, of course, the
+leading Cloud data warehouse
+
+with BigQuery.
+
+Hundreds of customers are using
+BigQuery at petabyte scale
+
+today, petabyte each.
+
+And you can run of course
+BigQuery on AWS or Azure.
+
+On top of that
+open source systems
+
+for data-like processing
+like flank, spark,
+
+and beam run natively
+on Google Cloud
+
+in a simpler and more
+cost effective way than
+
+in other environments.
+
+In fact, you can
+realize a 57% lower TCO
+
+compared to on-premise
+data lakes for data science
+
+projects.
+
+Now on top of that
+savings, our data cloud
+
+also includes the
+world's first and only
+
+autoscaling and
+serverless Spark service.
+
+And finally, Google
+has deep partnerships
+
+with leading data driven
+companies, including
+
+Data Flint, Confluent, MongoDB,
+Reddy's labs, and many others.
+
+And so together
+we help customers
+
+access an open platform that
+powers analytics at scale
+
+yet is easy to use.
+
+APARNA SINHA: Our
+partner community
+
+is central to the health
+of our Cloud business,
+
+and we're especially excited
+about the innovation coming
+
+from our data
+Cloud partnerships.
+
+Together, we've optimized
+our infrastructure
+
+for performance and efficiency
+to give our partners
+
+that extra edge when
+they run on Google Cloud.
+
+One of our leading data
+partners is MongoDB.
+
+And we have their CEO Dev
+Ittycheria here with us today.
+
+Welcome, Dev.
+
+DEV ITTYCHERIA: Hi, everyone.
+
+Happy to be here.
+
+APARNA SINHA: Dev,
+one of the trends
+
+we're seeing in our
+enterprise customer base
+
+is that they're now
+competing for leadership
+
+positions in their industry by
+becoming technology companies.
+
+How would you say Google Cloud
+and MongoDB working together
+
+can help these customers
+achieve that transition.
+
+DEV ITTYCHERIA: Well,
+Aparna, the companies
+
+who are in the leadership
+positions in their industries
+
+are those who have built their
+competitive advantage using
+
+software and data to
+transform their business.
+
+And the key word here
+is built. You can't
+
+buy a competitive advantage.
+
+You have to build it.
+
+This means you need to enable
+your developers to innovate
+
+as quickly as
+possible, whether it's
+
+building new software to
+seize new opportunities
+
+or to respond to new threats.
+
+MongoDB and Google Cloud
+deeply understand this.
+
+Developers choose
+MongoDB on Google Cloud,
+
+because we give
+them the tools they
+
+need to be as
+productive as possible,
+
+including having our services
+available in the Google Cloud
+
+console for easy
+discovery and deployment.
+
+Today MongoDB Atlas runs
+in 24 Google regions
+
+across the world with deep
+technical integrations
+
+with Google's
+analytic and AI tools.
+
+This enables our customers to
+innovate quickly and emerge
+
+as leaders in their industries.
+
+As a result, we're seeing
+explosive growth or customers
+
+embracing the true value
+of our partnership.
+
+APARNA SINHA: That's incredible.
+
+So when you think about
+the development teams
+
+that these new customers,
+what's the biggest challenge
+
+that you're helping them solve?
+
+DEV ITTYCHERIA: Yeah, when
+you talk to development teams,
+
+you find that they
+spend the most
+
+amount of their time trying
+to work with data, as serving
+
+relevant data at the right
+time to the right audience
+
+is critical to building
+any application.
+
+Unfortunately,
+relational databases
+
+are not designed for the way
+developers think or code,
+
+nor are they designed for scale,
+fault tolerance, or resilience.
+
+Consequently,
+development teams find
+
+it hard to move fast using
+relational databases.
+
+MongoDB is designed to
+address this problem.
+
+We make it very easy for
+developers to work with data,
+
+and we're able to address the
+most demanding requirements
+
+for performance scale
+and fall tolerance.
+
+The partnership with
+MongoDB and Google Cloud
+
+enables developers
+around the world
+
+to easily build modern software
+applications to address
+
+their needs of
+today and tomorrow.
+
+APARNA SINHA: That's terrific.
+
+Thank you so much for
+being here with us today.
+
+DEV ITTYCHERIA: Thank
+you for having me.
+
+URS HOLZLE: Yes.
+
+Thanks, Dev, for joining us.
+
+Now there's lots
+of ways developers
+
+can improve their productivity,
+automate tasks that
+
+are repetitive, master
+the command line,
+
+use the best tools that
+make your life easier,
+
+or reuse other people's
+code just to name a few.
+
+And another great way to
+accelerate your productivity
+
+is with building
+blocks or templates
+
+or fully managed services in
+areas like machine learning.
+
+Because on Google
+Cloud, you don't
+
+have to be an expert to
+build smart applications.
+
+With new services like Vertix
+AI, you can build, deploy,
+
+and scale more effective
+AI models quickly.
+
+So that lets you
+deliver the insights
+
+to your organization that
+will help them create more
+
+personalized
+customer experiences,
+
+run more efficient processes,
+and take that leadership
+
+position in your industry.
+
+APARNA SINHA: So with that,
+let's go to our next live demo.
+
+Joining me today
+is Anu Srivastava.
+
+She's going to show us how
+these breakthroughs in AI
+
+are advancing Cloud adoption
+and redefining the world
+
+of document processing.
+
+Hi, Anu.
+
+ANU SRIVASTAVA: Hey, Aparna.
+
+We all know how to
+work with data when
+
+it's in a structured format like
+in a database, some JSON, CSV
+
+files, or just variables
+in my code, right.
+
+But what about
+unstructured data?
+
+Many of the world's business
+processes start, include,
+
+or end with a document,
+but these documents
+
+can be difficult to process.
+
+Think about all the ways you
+could enhance your application
+
+if you could just
+unlock that data.
+
+This is where Google Cloud
+document AI comes in.
+
+Doc AI is a platform that
+has solutions and tooling
+
+for automating your workflows
+backed by machine learning.
+
+We've bundled together some of
+Google's flagship AI technology
+
+such as computer vision, OCR,
+natural language understanding,
+
+and even Google's expertise
+in building knowledge graphs
+
+all to provide you with
+a simple yet powerful way
+
+to build applications
+that better understand
+
+unstructured data.
+
+Let's go see a demo
+of DocAI in action.
+
+So here we have a receipt.
+
+I was buying some
+office supplies,
+
+since we are unfortunately
+not back in the office yet.
+
+What I'm going to do is I'm
+going to actually upload this
+
+into the DocAI platform.
+
+So in our Cloud console,
+we have the DocAI platform
+
+where we have built
+in preview mechanisms
+
+so you can test
+out your documents.
+
+
+
+So this is going to
+an endpoint, which
+
+has a specialized model we
+have specifically trained
+
+on a variety of expenses.
+
+Google maintains and
+improves the models for you.
+
+APARNA SINHA: Wait a minute.
+
+I hope this is not with my data.
+
+ANU SRIVASTAVA: Absolutely not.
+
+We never use your data
+to train our models.
+
+Your data is only used
+to serve your request.
+
+So let's take a look
+at the data extracted.
+
+APARNA SINHA: I've
+seen this before.
+
+Next you're going to
+tell me that you're
+
+going to automate my expenses.
+
+ANU SRIVASTAVA: I knew
+you would say that.
+
+This is the canonical
+demo use case, right.
+
+But have you ever
+seen it like this?
+
+Take a look at this field
+that I'm highlighting,
+
+the supplier address.
+
+This address isn't present
+anywhere in the document.
+
+APARNA SINHA: Wow.
+
+Where did that come from?
+
+ANU SRIVASTAVA: This is only
+possible with Google's Document
+
+AI.
+
+The secret sauce here is
+that the knowledge graph
+
+is able to not only give
+you back the original text
+
+from document, but
+it's going to enrich
+
+your response akin to what you'd
+see in a search but as part
+
+of your API response.
+
+APARNA SINHA: Wow.
+
+That's really great.
+
+ANU SRIVASTAVA: And
+it's not just this.
+
+We have several
+specialized models
+
+for many more document types
+of much higher complexity.
+
+Let's take a look
+at this payslip.
+
+So I ran this earlier, and we're
+looking at the preview output
+
+again.
+
+You can see that
+we have some keys.
+
+We have some fields.
+
+You can see enrichment on the
+employer name and the address.
+
+Once your data is in
+a schematized format,
+
+meaning that we know for every
+document of a certain doc type
+
+there are common important
+pieces of information,
+
+so what we did is we
+predefined a set of keys.
+
+So what we do is with
+your extracted data,
+
+we merge your data to
+these pre-defined keys.
+
+So it's much easier to
+work with than raw OCR.
+
+So once it's in a
+schematized format,
+
+it's easier to pass on
+to a downstream service,
+
+or maybe you're using
+something for analytics
+
+like BigQuery or Looker.
+
+APARNA SINHA: That makes sense.
+
+But what about ensuring
+accuracy, and also
+
+do you have
+multi-language support.
+
+ANU SRIVASTAVA: We know that
+with important documents
+
+such as these, you can't
+afford any missteps when
+
+it comes to accuracy.
+
+So that's why DocAI
+provides a human in the loop
+
+configuration to trigger
+on confidence scores,
+
+so either for specific keys or
+on the entire document itself.
+
+And as for a
+translation, we support
+
+over 100 languages, such as
+Spanish, Japanese, Arabic.
+
+No other solution on the market
+supports such a wide array
+
+of languages.
+
+APARNA SINHA: Human in the
+loop, translation, and knowledge
+
+graph capabilities
+that can be applied
+
+to a wide variety of documents,
+this seems super useful.
+
+Of course, the next
+big question is can it
+
+be applied to big,
+bulky, complex documents
+
+like business contracts.
+
+ANU SRIVASTAVA:
+Let's take a look.
+
+So here I read a contract
+earlier this morning.
+
+You can see that there
+are typical things
+
+you'd find in any contract.
+
+There are some document
+names, the parties involved,
+
+some dates.
+
+And like with every
+easy to read contract--
+
+being sarcastic here--
+
+there is an expiration term.
+
+So this expiration date
+actually isn't present
+
+anywhere in the document,
+and it's actually not
+
+easy to figure out.
+
+It's not in an easily
+parsable format, shocker.
+
+Google's contract processor is
+able to figure out this date
+
+value by understanding
+signals found
+
+across the entire document.
+
+APARNA SINHA: Wow.
+
+Well, Anu, before
+you go, can you
+
+tell our awesome
+developers how they can get
+
+started with DocAI.
+
+ANU SRIVASTAVA: Absolutely.
+
+So I know we covered a lot
+at just breakneck speed.
+
+So check out the
+breakout sessions
+
+on DocAI to dive deeper.
+
+You can also check
+out the documentation
+
+for code labs and quick starts.
+
+We have client libraries in
+all of your favorite languages,
+
+such as Python, node.js.
+
+My personal favorite is
+Java, but it's an API
+
+so you can really use this with
+whatever platform or framework
+
+you're already using.
+
+We are thrilled and look forward
+to see how you use Google Doc
+
+AI to power your applications.
+
+APARNA SINHA: That was amazing.
+
+Can I have a high five?
+
+Yeah.
+
+Thank you, Anu.
+
+I loved every part of it.
+
+ANU SRIVASTAVA: Thank
+you for having me.
+
+
+
+URS HOLZLE: Another area that
+Google has invested in deeply
+
+and that's becoming more
+important to more companies
+
+is sustainability.
+
+Many Cloud providers have
+a vision for a sustainable
+
+future, and many aim to match
+their electricity consumption
+
+with 100% renewable
+energy by 2025 or 2030.
+
+We accomplished 100%
+renewable energy in 2017.
+
+So we're the only hyperscale
+Cloud to do this today
+
+and all of that
+with data centers
+
+that are twice as efficient
+as the average data center.
+
+APARNA SINHA: This
+past week Sundar
+
+talked about Google's goal to
+enable over a billion users
+
+to live and work more
+sustainably by next year.
+
+To reach goals like
+this and those outlined
+
+in climate pledges made by
+more organizations every day,
+
+we rely on developers like
+you to do something about it,
+
+but we also know
+that it's difficult.
+
+URS HOLZLE: That's right.
+
+One of the biggest challenges
+that companies face
+
+is that they lack
+the tools to account
+
+for environmental costs.
+
+And to help developers address
+this for their organizations,
+
+we built sustainability tools
+directly into Google Cloud.
+
+With Google Cloud
+carbon footprint,
+
+you have access to the
+energy related emissions data
+
+that you need for external
+carbon disclosures in just one
+
+click.
+
+Now you won't need
+this calculator
+
+if you just want to
+report the net carbon
+
+footprint of your workload
+on GCP, because on GCP it's
+
+always zero.
+
+We also have our
+region picker where
+
+you can choose that data
+center region with the lowest
+
+gross carbon cost right now.
+
+Of course, again,
+your net impact
+
+is zero no matter
+what region you pick,
+
+but this tool lets you
+help go one step further
+
+to become carbon free,
+not just carbon neutral.
+
+Now that's actually
+a tool that I
+
+can't wait to deprecate
+in 2030 or so,
+
+because Google
+Cloud has committed
+
+to be 100% carbon free by
+2030 every hour of every day.
+
+Now we also realized
+there's still
+
+a lot to learn when it comes
+to building sustainably.
+
+And to help we just
+released a master class
+
+called Sustainable
+IT Decoded with some
+
+of the world's top experts.
+
+So check it out for
+guidance on how we can all
+
+build more sustainably.
+
+Now while we're proud to run the
+cleanest Cloud in the industry,
+
+we're even more
+inspired by the work
+
+that our customers are
+doing with Google Cloud
+
+to solve climate
+change challenges that
+
+are unique to their business.
+
+And today we bring you a
+preview of Google Earth
+
+Engine and its integration
+with Google Cloud.
+
+With over 700 data sets
+and 50 petabytes of data
+
+today, Earth Engine gives
+scientists and developers
+
+access to the world's largest
+catalog of satellite imagery
+
+and the tools for driving
+sustainable impact.
+
+APARNA SINHA: So let's look
+at this in a bit more detail
+
+with an example of how Google
+Earth Engine and Google
+
+Cloud enable customers
+to assess risks
+
+arising from climate change.
+
+But instead of me
+telling you about it,
+
+we've invited Joel
+Conkling to show you.
+
+JOEL CONKLING: Thanks, Aparna.
+
+The world is
+constantly changing,
+
+and that creates
+opportunities and risks.
+
+Helping uncover critical
+insights about the changing
+
+world is why we're integrating
+Earth Engine into Google Cloud,
+
+and that integration is
+now in private preview.
+
+Today I'll demo a
+workflow that combines
+
+Vertex AI, Earth Engine.
+
+BigQuery, and
+Google Maps platform
+
+to show how Google Cloud makes
+it incredibly easy for you
+
+to innovate and deliver
+insights and do it quickly.
+
+So here's a scenario.
+
+You work at an
+insurance company,
+
+and you need to analyze
+your company's exposure
+
+to flood risk.
+
+You think New buildings
+may be a strong contributor
+
+to that risk, and you want
+to test your hypothesis.
+
+To do that, we first need to
+understand where the built
+
+environment is expanding.
+
+In other words, we just need
+to categorize the surface
+
+of the entire planet.
+
+That could be hard, but
+Vertex AI offers the tooling
+
+to develop a best
+in class ML model,
+
+and Earth Engine provides
+constantly updated data.
+
+Let's fast forward a bit.
+
+We finished training our
+model, and now Earth Engine
+
+is sending satellite
+imagery to be categorized,
+
+so your understanding
+of the world
+
+can update in near real time.
+
+Here's the Earth
+Engine script showing
+
+the results of that model.
+
+This area in red is
+where the model estimates
+
+the locations of buildings.
+
+That's your current
+built environment.
+
+To find the change over time, we
+need a few more lines of code.
+
+These lines of code give us
+a built environment in 2016.
+
+And here, we calculate
+the difference
+
+between 2016 and today.
+
+When there's a change, it
+shows up in purple on the map.
+
+This is where there
+are new buildings.
+
+So next we're going to
+export sample and export
+
+the data so we can do
+additional analysis in BigQuery.
+
+
+
+Over in the BigQuery
+console, this script
+
+clusters those data points
+here and then outputs
+
+polygons that show the areas
+with the biggest changes
+
+in the built environment.
+
+So at this point, you
+have a few options.
+
+You could combine this
+data with flood locations
+
+you identify around the
+world also with Earth Engine.
+
+Maybe you want to enhance
+your model with weather
+
+data and physical terrain data.
+
+That's available in
+Earth Engine too.
+
+You could also include data
+on your company's insurance
+
+portfolio to gain additional
+insight into critical risks.
+
+We'll wrap up this
+demo by visualizing
+
+our results and a new feature
+available on Google Maps
+
+platform, the open source
+data viz library deck.gl
+
+with a BigQuery connector
+provided by [INAUDIBLE]..
+
+So we now have a clear picture
+of where the built environment
+
+is changing and where to
+focus next for our work
+
+on flood risks.
+
+In summary, no
+wrangling data, no need
+
+to manage infrastructure,
+just actionable insights
+
+incredibly quickly.
+
+We can't wait to see what
+you'll do with Earth Engine's
+
+new integration
+with Google Cloud,
+
+and with that, I'll
+pass it back to Aparna.
+
+
+
+APARNA SINHA: Thank you, Joel.
+
+It's incredible to see
+how our customers can
+
+use our sustainable technologies
+to address climate change now.
+
+I'm really inspired
+by all the things
+
+we've talked about today.
+
+And thinking about
+how you're going
+
+to lead your companies into the
+future, that's super exciting.
+
+No pressure, but it's
+really up to you.
+
+We've invested millions
+in the developer community
+
+over the last five
+years and we'll continue
+
+to invest in the coming years.
+
+And Urs, as proof of
+that, I understand
+
+you have some additional
+news to share today.
+
+URS HOLZLE: Absolutely.
+
+I'm really excited
+to announce today
+
+our new developer community
+program called Google Cloud
+
+innovators.
+
+I want to welcome and introduce
+our first group of leaders
+
+who are driving meaningful
+impact in the industry
+
+and their communities.
+
+So take a look.
+
+[VIDEO PLAYBACK]
+
+[KEYBOARD CLICKING]
+
+
+
+[MUSIC PLAYING]
+
+
+
+[END PLAYBACK]
+
+APARNA SINHA: This
+is so exciting.
+
+URS HOLZLE: Yeah,
+through this program.
+
+We'll give developers access
+to early technology previews
+
+and Google engineers.
+
+We'll recognize the expertise
+of our community influencers
+
+by promoting their
+contributions,
+
+and we will work
+closely with them
+
+to solve the toughest problems.
+
+So we're excited
+to come together
+
+with this group of innovators.
+
+Join us at
+cloud.google.com/innovators.
+
+APARNA SINHA: So cool.
+
+I've been waiting
+for all this time.
+
+Community is extremely
+important for companies
+
+to create that much needed human
+connection with developers,
+
+and we hope that this
+gives you a window
+
+into the motivation
+that you all give
+
+Google to build Cloud products
+and services that developers
+
+love.
+
+URS HOLZLE: And we look
+forward to partnering with you
+
+to become the greatest tech
+companies in your industries.
+
+APARNA SINHA:
+Remember to join us
+
+next at the live
+developer Q&A session
+
+and also tomorrow
+at community day.
+
+Enjoy the rest of the show.
+
+URS HOLZLE: Thanks, everyone.
+
+[MUSIC PLAYING]
+
+
+

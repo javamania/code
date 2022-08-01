@@ -1,0 +1,1241 @@
+
+
+KELSEY KRIPPAEHNE: Hey.
+
+Welcome.
+
+In this session,
+we're going to be
+
+talking about applying
+Kubernetes app
+
+development and best practices.
+
+We're going to talk about
+what are the best practices,
+
+and then we're going to give a
+demo on how we use Google Cloud
+
+DevTools to implement them.
+
+First, we'd like to
+introduce ourselves.
+
+I'm Kelsey Krippaehne.
+
+I'm a developer relations
+engineer at Google.
+
+ABBY CAREY: And I'm Abby Carey,
+developer advocate for Google
+
+Cloud's developer experiences.
+
+KELSEY KRIPPAEHNE: So as
+with any type of development,
+
+following best practices
+when working with Kubernetes
+
+can save you time and
+unnecessary frustration.
+
+You may have to write lots
+of YAML configuration files.
+
+So unless you're a
+YAML expert, you'll
+
+want to have authoring
+support so that you don't
+
+have to constantly look up
+what property takes what fields
+
+or memorize the basic
+components of a service.
+
+For local Kubernetes
+development,
+
+you don't need to replicate
+your production cluster.
+
+But it's important to have
+a cluster for local dev
+
+that's configured in
+a way that ensures
+
+that what you're
+building will be
+
+compatible with the
+production cluster.
+
+
+
+Using commands like
+kubectl logs to inspect
+
+pods and services works
+OK, but trying to parse
+
+logs this way can be a pain,
+especially for beginners.
+
+A tailored logging interface
+is a more efficient way
+
+to get the info
+you're looking for.
+
+Debugging Kubernetes with
+CLI commands is cumbersome.
+
+Once again, using a
+tool that's tailored
+
+for Kubernetes
+debugging can save you
+
+from a lot of frustration.
+
+Excessive time to
+build and deploy--
+
+it's always a best practice to
+improve development velocity
+
+and not get stuck in
+a lengthy build cycle
+
+on every change
+to the code base.
+
+And finally, it's
+a best practice
+
+to share best practices.
+
+If your team has specific
+policies for developing
+
+Kubernetes apps,
+those patterns should
+
+be accessible as
+project templates
+
+that your team can reuse
+to ensure conformity
+
+and to make it easy for
+new devs to onboard.
+
+So we're going to start
+implementing these best
+
+practices with
+Google's Cloud Code.
+
+Cloud Code is an IDE plugin
+that automates dev workflows
+
+for cloud-native applications.
+
+You can see Cloud Code
+as sort of a bridge
+
+between you developing in
+your IDE and Google Cloud.
+
+It's bringing the cloud to you.
+
+Cloud Code is
+particularly helpful
+
+when developing with
+Kubernetes because it
+
+comes pre-installed with
+tools like Skaffold, minikube,
+
+and the Cloud SDK.
+
+Skaffold is a command
+line tool that
+
+handles the workflow
+for building, pushing,
+
+and deploying your application.
+
+Cloud Code uses Skaffold
+behind the scenes,
+
+so it acts as sort of a user
+interface for the Skaffold CLI.
+
+minikube sets up a local
+Kubernetes cluster.
+
+It's small but powerful and
+extremely beginner-friendly.
+
+Cloud Code is available for
+VS Code and JetBrains IDEs,
+
+like IntelliJ.
+
+You can also try out Cloud
+Code on Google's web-based IDE,
+
+the Cloud Shell Editor.
+
+All of these tools--
+
+Cloud Code, Cloud Shell,
+Skaffold, and minikube--
+
+are 100% free to use.
+
+And we encourage you, if you
+want to try it out right now,
+
+go ahead and install
+Cloud Code on your IDE
+
+or try it out in
+your web browser
+
+with this link to an
+interactive tutorial.
+
+So we've talked
+about best practices
+
+and how it can be difficult
+to implement them.
+
+The question now is, how do
+these Google Cloud DevTools
+
+make it easy to incorporate best
+practices into your Kubernetes
+
+development workflow?
+
+First, you don't need to
+be a YAML expert in order
+
+to write functional
+Kubernetes resource manifests.
+
+Tools like Cloud Code
+that provide YAML snippets
+
+and autocompletes make
+it so that you can author
+
+entire Kubernetes
+manifests without looking
+
+at YAML documentation.
+
+You should be developing
+on a cluster that
+
+replicates your production
+cluster as much as
+
+possible to avoid issues
+when pushing to production.
+
+You can configure
+a minikube cluster
+
+to quickly develop and test
+locally with no added cost.
+
+You can also use Skaffold
+to create distinct profiles
+
+for dev versus prod
+and incorporate
+
+customized [INAUDIBLE] for
+even more powerful deployment
+
+workflows.
+
+As mentioned before,
+it's a good idea
+
+to use a dedicated logging
+tool that makes Kubernetes
+
+logs more accessible.
+
+With Cloud Code's
+new logging support,
+
+you can drill down into your
+containers and container builds
+
+and your deployment logs.
+
+And you'll see that in
+a minute in the demo.
+
+For debugging, sometimes
+prints and log statements
+
+just aren't enough.
+
+It's useful to be able
+to step through the code.
+
+Cloud Code brings Kubernetes
+debugging into your IDE.
+
+It lets you do
+step-by-step debugging live
+
+in your Kubernetes cluster,
+locally and remotely,
+
+using the IDE's debugging
+interface that you're already
+
+familiar with.
+
+Having an automated
+local dev loop
+
+is a general best
+practice, and you
+
+can setup Kubernetes iterative
+development using Skaffold.
+
+Skaffold has a file
+sync functionality
+
+that prevents you from needing
+to rebuild and redeploy
+
+your containers on
+every little change.
+
+And finally, you can use a
+tool like Cloud Code's custom
+
+samples to create
+project templates
+
+or samples to easily distribute
+your team's best practices.
+
+With custom samples, you can
+have a reusable Kubernetes
+
+configured app that your
+team can access right
+
+from their IDE.
+
+And now I'll hand things
+over to Abby for a demo.
+
+ABBY CAREY: Thanks, Kelsey.
+
+Let's get into IntelliJ
+and see some of these best
+
+practices in action.
+
+To kick off this
+demo, I'll show how
+
+you can Kubernetify
+a non Kubernetes
+
+application with Skaffold.
+
+I already have Cloud Code
+installed from the JetBrains
+
+marketplace, which
+means Skaffold
+
+has been installed, too, since
+it's a managed dependency.
+
+I'll use Skaffold's init
+--generate-manifests command
+
+to get this app working
+with Kubernetes in seconds.
+
+And I want to mention that
+this functionality will soon
+
+be added to Cloud Code's UI.
+
+You can view Cloud
+Code as a frontend
+
+for Skaffold, which is
+a command-line tool.
+
+And now Skaffold's going to
+prompt me to pick my builder.
+
+And for my frontend, I will
+be building with Buildpacks.
+
+And for my backend, I'll use
+the existing Dockerfile here.
+
+Skaffold looks at my
+application and determines
+
+what the Kubernetes
+resources are,
+
+and then it creates a
+deployment.yaml file
+
+for each one.
+
+And now that that's
+finished, I have
+
+manifests generated
+for my application,
+
+and a skaffold.yaml
+file that specifies
+
+it's a build-and-deployment
+pipeline.
+
+We'll take a closer look
+at skaffold.yaml later.
+
+This application is
+ready for Kubernetes,
+
+but these manifests that were
+generated are starting points.
+
+You will likely want
+to customize them.
+
+Your organization may have
+certain naming patterns
+
+or file system layouts.
+
+In this case, this
+application needs
+
+some environment
+variables and labels
+
+for the frontend and
+backend containers,
+
+and an additional
+Kubernetes resource
+
+to deploy a MongoDB
+service for our database.
+
+I've added a version
+of this application
+
+with these changes made to a
+Custom Samples Git repository.
+
+Cloud Code's Custom
+Samples feature
+
+allows your organization
+to easily distribute
+
+best practices by letting
+developers connect
+
+their IDEs to custom sample
+repos, which I've already
+
+done here.
+
+A team best practice is to
+have starter projects that
+
+are setup to fit your team's
+preferred configurations.
+
+When talking in the
+context of K8s development,
+
+this would include
+run configurations
+
+and certain YAML files.
+
+And my new ready-to-go
+sample is called Nextbook,
+
+so I'll create it.
+
+
+
+The Nextbook application
+is a basic Kubernetes app
+
+with a frontend and
+backend service.
+
+We've kept this demo app
+simple to better demonstrate
+
+complex Kubernetes dev flows.
+
+It includes logic to read
+from and write to a database,
+
+and displays the most
+recently added database entry.
+
+Let's take a look at the
+contents of this project.
+
+This project is
+configured to use
+
+Skaffold for both development
+and production workflows.
+
+That's all setup with
+this skaffold.yaml file.
+
+I've also set up
+runConfigurations in my .idea
+
+folder.
+
+By committing these files
+to your project's repo,
+
+this enables any developer
+to run and develop
+
+your application the same way.
+
+This helps with onboarding
+in a team environment.
+
+skaffold.yaml ties
+the container images
+
+we're going to build
+to the K8s resources
+
+we're going to deploy.
+
+Skaffold supports a number
+of container image builders,
+
+like Docker, Jib, Ko, and more.
+
+I've already setup
+my Skaffold file
+
+to build my backend with a
+Dockerfile and my frontend
+
+image with buildpacks.
+
+Buildpacks are a set of
+opinionated image builders
+
+that encode language-specific
+best practices
+
+for containerizing applications.
+
+They save you from having
+to write custom Dockerfiles.
+
+Skaffold profiles are very
+powerful for separating
+
+configurations for different
+uses or environments,
+
+including build, test, and
+deployment configurations.
+
+I have two already set for
+development and production,
+
+which is a best practice.
+
+My dev profile applies
+development settings,
+
+which shouldn't be
+enabled in production.
+
+One of our new products,
+Google Cloud Deploy,
+
+leverages Skaffold profiles to
+gather configuration details
+
+for each target environment.
+
+I'll dig deeper into
+the Skaffold file
+
+as I go through this demo.
+
+Cloud Code automatically
+installs necessary tools,
+
+like Skaffold, so
+we're ready to start
+
+working on this application.
+
+Cloud Code comes with
+a Kubernetes Explorer.
+
+This gives you a view of all
+your deployed K8s resources
+
+and is an excellent
+tool for operators.
+
+Looking closer at one
+of my existing clusters
+
+I've deployed to, I can
+explore my deployed resources,
+
+and even shell into a running
+pod to run some commands.
+
+
+
+Cloud Code supports any
+conformant Kubernetes cluster,
+
+whether that's a local
+cluster, like minikube or k3d,
+
+or hosted by a cloud provider.
+
+Today, I'll be deploying
+this application
+
+to my GKE dev cluster.
+
+For this sample app,
+my run configurations
+
+are already defined
+so that any developer
+
+can run this application on
+IntelliJ the same way I would.
+
+I have two configurations--
+development and production.
+
+It's a best practice
+to tailor workflows
+
+for different contexts.
+
+Let's take a look at my
+development configuration.
+
+This is a Cloud Code
+Kubernetes configuration
+
+that I've built on.
+
+My container register
+URL is already set,
+
+and this is needed because my
+skaffold.yaml doesn't specify
+
+an image repository, allowing
+developers to easily deploy
+
+to multiple locations.
+
+An example of this is if you
+have a personal dev repository
+
+and a production repository.
+
+My Run configuration is set
+to run on my GKE dev cluster.
+
+The option to automatically
+rebuild and rerun
+
+turns on Skaffold's watch mode
+for iterative development.
+
+In the Build-Deploy
+section, we already
+
+have a Skaffold file, so
+nothing needs to be done here.
+
+As a side note, though, if you
+don't have a Skaffold file,
+
+this is the spot where you'd
+be prompted to initialize one
+
+with just a couple clicks.
+
+One last thing I want to
+touch on before running
+
+is that I have a Deployment
+profile set named dev.
+
+dev is one of my
+Skaffold profiles
+
+that I already defined
+in skaffold.yaml.
+
+Looking at my
+skaffold.yaml file again,
+
+my dev profile specifies
+a Dockerfile target, dev,
+
+for my backend Dockerfile.
+
+Now taking a look at
+my backend Dockerfile,
+
+you'll see that
+it's multi-staged.
+
+With my dev target set,
+running my configuration
+
+will build the base image,
+along with the dev portion here,
+
+turning on my Flask
+backend's debug mode.
+
+And if the target
+were set to prod,
+
+which is for my production
+run configuration,
+
+my Flask debugger would be
+turned off in production mode.
+
+Now I'll focus on my dev cluster
+in the Kubernetes Explorer
+
+and run this with my
+development configuration.
+
+
+
+Right now, Cloud Code
+is building and pushing
+
+my container images
+to my cluster.
+
+Now that that's done,
+Cloud Code port forwards
+
+my cluster's services
+to my local machine,
+
+so all I have to do is click
+the link for my frontend.
+
+You can also explicitly
+set up port forwarding
+
+for other resources, like
+deployments or stateful sets
+
+in skaffold.yaml.
+
+Now let's take a look
+at this application.
+
+And this is my
+application running
+
+remotely on my GKE cluster.
+
+Everything is
+looking as expected,
+
+so I'll enter a new
+entry to the database.
+
+And yep, my output box is
+displaying the latest entry.
+
+Deploying an app to a cluster
+generates a ton of logs.
+
+Loading container images,
+deployments, spinning up pods,
+
+and the logs streaming from your
+containers all generate logs.
+
+Figuring out the best way
+to view all these logs
+
+can require running
+multiple kubectl commands.
+
+Cloud Code splits the logs
+up into easily selectable
+
+sections.
+
+This makes finding where errors
+occurred in your deployment
+
+process easy.
+
+Logs are also streamed
+for each container,
+
+letting you focus on different
+components of your application.
+
+So right now we're still
+running our application,
+
+and Skaffold's watch mode is
+waiting for us to make changes.
+
+Now let's look at the YAML
+of our deployed application
+
+and see if we can
+make it better follow
+
+Kubernetes best practices.
+
+We don't have a readiness
+probe, and you should always
+
+have one so that Kubernetes
+knows when your app is
+
+ready to serve traffic.
+
+This gets us a
+step closer towards
+
+zero-downtime deployments
+and higher availability.
+
+We're going to use Cloud
+Code's YAML authoring
+
+support to create
+this probe real quick.
+
+I'll go down to my container
+and press Control-Space.
+
+And there's the option
+for a readinessProbe.
+
+Now to add some parameters.
+
+I'll press Control-Space
+again and pick tcpSocket.
+
+My port is 8080.
+
+What other parameters
+do I need, though?
+
+Hovering over readinessProbe
+shows me documentation,
+
+and I see that I have
+a couple more options.
+
+Now I'll add
+initialDelaySeconds, set to 5,
+
+and periodSeconds, set to 5.
+
+That's looking good.
+
+Now I'll save this file.
+
+Skaffold's watch
+mode just kicked off
+
+and we're redeploying.
+
+And now it's done.
+
+Our readiness probe is ready.
+
+This whole rebuilding
+and redeploying process
+
+is pretty fast, but
+we can make it faster,
+
+and that is with file sync.
+
+By setting up Skaffold's
+file sync feature,
+
+you can copy over a local
+file that you've just
+
+edited with one in your
+deployed container in seconds.
+
+This avoids the need to
+rebuild, redeploy, and restart
+
+your corresponding
+pod on a file change,
+
+saving you local
+development time.
+
+To get file sync working
+with my backend's Dockerfile,
+
+a little extra
+configuration is needed.
+
+But to save a little time,
+I've already done that.
+
+I'm using inferred syncing when
+using my dev Skaffold profile.
+
+This means that Skaffold
+will look at my Dockerfile
+
+to determine the location of
+where my edited files should
+
+be synced to.
+
+All you need to do is tell
+Skaffold what files to watch.
+
+I've added *.py so that any
+Python file in my backend that
+
+I edit will trigger a sync.
+
+My frontend automatically
+has file sync
+
+turned on, because it's
+being built with buildpacks.
+
+This autosync feature is
+specific to buildpacks.
+
+There are file type limitations
+when using buildpacks,
+
+but JavaScript is supported,
+so my frontend syncing
+
+is good to go.
+
+File sync may require
+configuring your web framework
+
+to detect and respond
+to file changes.
+
+I'm using Flask's development
+mode to restart the app
+
+on a .py change.
+
+For compiled languages
+or frameworks
+
+that don't provide
+this support, you'll
+
+need to use an
+external file watcher,
+
+like Nodemon or Watchexec.
+
+If you're building
+with buildpacks,
+
+Watchexec is
+automatically configured.
+
+Now let's see if we can
+sync a backend Python file.
+
+To visually test this,
+I'll hard code a new entry
+
+into the output text box
+that says, This is syncing.
+
+Now I'll open my Run
+window back up and save it.
+
+My logs are showing
+that a sync just
+
+finished, so let's check out my
+Kubernetes app now and give it
+
+a refresh.
+
+And there is that data
+I just set in there.
+
+With Skaffold's file
+syncing, locally iterating
+
+on a deployed Kubernetes
+application is super fast.
+
+Now let's talk about debugging.
+
+There are a ton of ways to
+debug a Kubernetes application.
+
+But what if debugging it
+was as simple as debugging
+
+any application in your IDE?
+
+You should run and
+debug your applications
+
+in environments that
+closely mimic production,
+
+so why not remotely
+on a GKE cluster?
+
+I could also switch to
+using a local minikube
+
+cluster to cut down on latency.
+
+But since we're already
+talking about GKE clusters,
+
+I'll stick with that.
+
+So now I'm going
+to try and debug
+
+my frontend's app.js file.
+
+And all I should need to
+do is place a breakpoint.
+
+I'll set it to trigger
+after I post a message.
+
+And now I'll kick off debugging
+with Cloud Code's debug mode.
+
+
+
+And once I've set my paths
+for my frontend and backend
+
+containers, I can now
+open up my application
+
+and post a message to see if
+we can trigger this breakpoint.
+
+
+
+And there we go.
+
+I'm now remotely debugging my
+application on my GKE cluster
+
+right from my IDE.
+
+I'll just step through
+the code a couple times
+
+and then finish running it.
+
+Super simple.
+
+
+
+It's a good practice to add
+tests for your container image,
+
+and Skaffold supports
+running tests.
+
+For the last part
+of this demo, I'm
+
+going to run container
+structure tests with Skaffold.
+
+Container structure tests
+validate the structure
+
+of your container image,
+can check command outputs,
+
+and verify file
+content and metadata.
+
+Here we have test files for
+the backend and frontend
+
+containers.
+
+These files are written in
+YAML, but you can also use JSON.
+
+In the backend, I'm checking
+that Python is installed
+
+and that the requirements
+file exists in the container.
+
+In the frontend,
+I'm testing to make
+
+sure I don't have any
+comments that include xxx left
+
+in my code, because I
+definitely don't want
+
+to push those into production.
+
+So my tests are written.
+
+Now let's go over
+to skaffold.yaml.
+
+In my prod profile,
+I've configured Skaffold
+
+to run the container tests.
+
+Now after Skaffold
+builds the image,
+
+it'll run the tests before
+deploying to the cluster.
+
+I'll switch to my
+production run configuration
+
+and see if these tests pass.
+
+
+
+Looks like one of my
+tests didn't pass.
+
+Let's take a closer look.
+
+So my backend
+container test passed,
+
+but it looks like my frontend
+container has a comment that's
+
+causing this to fail.
+
+I'll go fix that right now.
+
+
+
+I'll delete this comment
+here and give it a run
+
+one more time.
+
+
+
+And everything passed this time.
+
+This application is now
+ready for production,
+
+thanks to Google
+Cloud's dev tools,
+
+like Cloud Code and Skaffold.
+
+
+
+Thanks for following
+along with us today.
+
+And if you want to check
+out the demo we used,
+
+you can find it on GitHub.
+
+To try these tools out yourself
+and maybe with your team,
+
+install Cloud Code from
+your IDE's marketplace.
+
+And finally, we encourage
+you to join the conversation
+
+at Cloud Code's Slack channel.
+
+And on behalf of Kelsey
+and I, thank you again,
+
+and enjoy the rest of Next.
+
+
+

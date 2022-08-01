@@ -1,0 +1,1170 @@
+
+
+JAMIE KINNEY: Hi, everyone.
+
+I'd like to welcome
+you to INF300.
+
+And thank you for
+joining us today
+
+for this Cloud Next session,
+exploring GCE VM families.
+
+Today, we're going to
+start by giving you
+
+an overview of the
+GCE VM families.
+
+And then we're going to
+have a deep dive looking
+
+at each of these VM families
+to see how they're tailored
+
+to meet the needs of
+individual workloads,
+
+looking at our
+general-purpose VM
+
+families, compute-intensive VM
+families, memory-optimized VMs,
+
+and then finally, options for
+running accelerated workloads
+
+on Google Compute Engine.
+
+I'd like to start by
+introducing myself.
+
+I'm Jamie McKinney.
+
+I'm a product manager.
+
+And I am responsible for
+the Tau T2D VM family.
+
+I joined Google a little
+bit over three years
+
+ago initially as a cloud
+solutions architect,
+
+focusing on both scientific
+and technical computing,
+
+and also working with some
+of Google Cloud's largest
+
+customers as they migrated their
+cloud-native workloads to GCE.
+
+Subra, would you like
+to introduce yourself?
+
+SUBRA CHANDRAMOULI: Sure.
+
+Thanks, Jamie.
+
+Hey, my name is
+Subra Chandramouli.
+
+I'm also a product
+manager at Google Cloud,
+
+covering Google Compute
+Engine products.
+
+My background has been primarily
+in the semiconductor industry,
+
+focused on processors
+and FPGA accelerators
+
+for data center
+markets, including--
+
+amongst others.
+
+JAMIE KINNEY: Thanks, Subra.
+
+OK.
+
+Just to kick things
+off, I'd like
+
+to start with an
+overview of what GCE is.
+
+So GCE, or Google
+Compute Engine,
+
+is Google Cloud's
+managed service
+
+for offering virtual
+machines as a service.
+
+With GCE, you can
+easily choose a VM
+
+that meets your needs,
+either selecting
+
+one of our predefined shapes
+or custom-defining your own.
+
+Following our recommendations,
+if you'd like,
+
+or if you have the
+exact specifications,
+
+you can dial in that VM to
+precisely meet your needs.
+
+GCE also takes care of a lot
+of the operational overhead
+
+of running applications,
+offering technologies
+
+like live migration,
+for example, which
+
+will allow us to easily
+move your virtual machine
+
+to a server while we perform
+maintenance on a machine that
+
+might need some assistance.
+
+We can also give you
+a number of mechanisms
+
+to reduce the cost of running
+your workloads when you run
+
+on top of Google Compute
+Engine with features
+
+like sustained use discounts
+that automatically provide
+
+discounts for
+long-running applications.
+
+Or if you'd like to get
+even deeper cost savings,
+
+you can look at our one-year
+and three-year committed use
+
+discounts.
+
+Today, our focus is going
+to be on GCE VM families
+
+and how to choose the right
+family for the needs of a given
+
+workload.
+
+Just to provide a
+little bit of history
+
+on Google Compute Engine, we
+initially launched the service
+
+back in June of 2012.
+
+And at that time,
+Google Compute Engine
+
+offered just a single
+type of virtual machine.
+
+And over the past nine years,
+on top of that single VM family,
+
+we also built a
+number of features,
+
+things like live
+migration, the ability
+
+to attach persistent
+disk, and other features
+
+that make those virtual machines
+even more capable and powerful
+
+and a better fit for your
+applications and their needs.
+
+In recent years, we've
+expanded the number
+
+of virtual machine families that
+are offered by Google Compute
+
+Engine to include
+compute-optimized,
+
+memory-optimized, accelerated
+workload-optimized VMs,
+
+and even more
+general-purpose VM families.
+
+So today, we're going
+to look into each
+
+of these young families and
+see how they're best applied.
+
+Starting with a map to
+help you orient yourself
+
+around the different VM
+families that we offer,
+
+we generally divide these into
+two high-level categories,
+
+general-purpose VMs and
+workload-optimized VM families.
+
+On the general purpose side,
+we have the cost-optimized VM
+
+families.
+
+This includes E2.
+
+And these are our VM
+families that are designed
+
+to minimize the price per vCPU.
+
+We also offer a
+balanced VM family
+
+that gives you access to
+all of GCE's features--
+
+the flexibility to attach
+local SSDs, to attach
+
+any of our persistent
+disk variants,
+
+access to the
+fastest networking,
+
+and the ability to dial
+in the custom VM shapes.
+
+For customers that are
+running scale-out workloads
+
+for a wide range
+of applications,
+
+be it web serving
+application serving
+
+or even high-throughput
+computing workloads,
+
+we've introduced a new category
+of VM families designed
+
+to meet those needs, currently
+including the Tau T2D VM
+
+family that you'll be
+hearing more from Subra.
+
+On the other side
+of this map, you
+
+see the workload-optimized
+VM families.
+
+These are VM families
+that are specifically
+
+tailored to meet the needs
+of a possibly niche or a very
+
+well-defined set
+of applications.
+
+This could include the
+compute-optimized VM
+
+family that's really well suited
+for high-performance computing,
+
+game servers, and other
+compute-intensive applications;
+
+memory-optimized VMs for
+vertically-scaled applications
+
+that need access to
+large amounts of memory
+
+and balanced compute
+to go with it;
+
+and accelerator-optimized
+VMs with TPUs and GPUs
+
+to meet the needs
+of machine learning
+
+and other workloads that
+benefit from these specific
+
+accelerators.
+
+In addition to VM families,
+Google Compute Engine,
+
+as I mentioned, over
+the past several years
+
+has developed a
+number of features
+
+that provide even more value to
+your virtual machine engines.
+
+This includes things like
+custom machine types,
+
+the ability to launch
+sole-tenant VMs--
+
+we'll talk about it more
+later in the presentation--
+
+the ability to attach
+various forms of storage,
+
+be it local SSD or persistent
+disk storage of various speeds
+
+and capabilities; and also
+enhanced 100-gigabit networking
+
+that delivers
+fantastically low latency
+
+and the bandwidth needed
+for some of your most
+
+demanding workloads.
+
+Now I'd like to
+hand it off to Subra
+
+to give us a deeper dive on what
+we mean by general-purpose VM
+
+families and talk about the
+workloads and the families that
+
+tend to go with those.
+
+Subra?
+
+SUBRA CHANDRAMOULI:
+Hey, thanks, Jamie.
+
+As Jamie was alluding to,
+one of our core philosophies
+
+at Google Cloud is to enable
+our customers the flexibility
+
+to choose the right
+virtual machine
+
+to run their various
+different workloads.
+
+General-purpose workloads
+make up a whole wide variety
+
+from simple web serving, to
+more complex media transcode
+
+or processing types of
+workloads, to data analytics,
+
+to name a few.
+
+You can also think of dev and
+test as a separate workload
+
+that--
+
+whose requirements
+are pretty unique.
+
+In addition, various
+enterprise applications
+
+may be categorized under
+the general purpose category
+
+as well.
+
+Our general-purpose N2
+and N2D machine types
+
+are a good fit for
+such workloads.
+
+Our general-purpose
+N2 and N2D VMs
+
+are designed to support
+a variety of workloads
+
+by offering a perfect balance
+of compute and memory resources,
+
+up to 224 vCPUs with
+864 gigabytes of memory.
+
+N2 and N2D machine types provide
+a high degree of flexibility
+
+for our customers.
+
+Custom machine types enable you
+to rightsize your resources,
+
+enabling great cost
+saving feature.
+
+More on this later.
+
+They also enable
+you to auto-upgrade
+
+to new CPU generations when
+you launch a new CPU platform.
+
+This means you can simply
+choose a minimum CPU platform,
+
+and Google will
+automatically run your VM
+
+on the latest-generation CPU.
+
+And also attach up to 9
+terabytes of local SSD
+
+per node.
+
+And you get high
+networking performance up
+
+to 100 gigabits per second.
+
+These VMs are also available
+globally across GCE regions
+
+now.
+
+The key difference
+between N2 and N2D
+
+are summarized in the table on
+the right side of the slide.
+
+N2 VMs are a general-purpose
+Intel processor-based,
+
+VMs supporting second-generation
+Intel Xeon scalable
+
+processor, or Cascade
+Lake, and offering
+
+VMs that go up to 80 vCPUs.
+
+The N2 VMs offer
+up to 20% to 30%
+
+price performance
+improvements compared to N1.
+
+N2D is our AMD EPYC-based
+general-purpose VMs
+
+leveraging second-generation
+AMD EPYC Rome processors.
+
+They come with up to
+224 vCPUs per node
+
+and offer you a lower price
+point, with approximately 13%
+
+lower pricing compared
+to our N2 machine types.
+
+N2 VMs are ideal for
+workloads that require
+
+high per-core performance.
+
+You can see some benchmarks that
+compare N2 VMs to our N1 VMs
+
+on the right side of the slide.
+
+N2 machines are priced
+at parity to N1 family,
+
+enabling much higher
+price performance when
+
+compared to our N1 machines.
+
+
+
+N2D machines are ideal for
+high-throughput workloads
+
+that can benefit from having
+a large number of threads.
+
+N2D machines are
+ideal for workloads
+
+that can benefit from
+confidential computing
+
+features in addition.
+
+
+
+Switching gears a
+bit, our E2 VM family
+
+are ideal for applications
+where cost is a priority.
+
+E2 VMs offer machine
+types up to 32 vCPUs
+
+and 128 gigabytes of memory.
+
+We also offer the flexibility
+of choosing custom machine
+
+types with our E2 family.
+
+E2 family runs on Intel Haswell
+through Cascade Lake and AMD
+
+Rome processors.
+
+E2 machines are ideal for dev
+and test types of workloads
+
+or for workloads that may be
+batch-processed, for example.
+
+This family provides up to
+31% cost saving when compared
+
+to our N1 family per VM.
+
+
+
+Switching gears again,
+earlier this year in June,
+
+we announced our latest VM
+family under the brand of Tau.
+
+The T2D is our
+first family of VMs
+
+that will be offered
+under the Tau brand.
+
+Currently under
+preview, Tau VMs are
+
+designed to meet the
+needs of customers
+
+owning scale-out
+workloads on Google Cloud.
+
+We chose the Tau brand
+as the Greek letter
+
+tau is used to represent both
+torque and the golden ratio.
+
+The Torque is a
+metaphor that is apt,
+
+because T2D VM family allocates
+an entire physical core
+
+per vCPU, delivering excellent
+per-thread performance,
+
+while the golden
+ratio tau represents
+
+T2D's focus on only
+core features needed
+
+for scale-out workloads in
+order to deliver excellent price
+
+performance.
+
+
+
+Focusing on T2D's
+performance, we
+
+can see that it outperforms
+VM types available elsewhere.
+
+Here's a quick look at
+two benchmarks where
+
+we showcase T2D's
+price performance
+
+for estimated
+SPECrate and CoreMark.
+
+For estimated SPECrate,
+T2D provides 42%
+
+better price performance when
+compared to other major cloud
+
+providers.
+
+Back to you, Jamie.
+
+JAMIE KINNEY: Thanks, Subra.
+
+Now we'd like to take a look
+at compute-intensive workloads.
+
+And I thought we would
+start by giving you
+
+an overview of what we mean by
+compute-intensive workloads.
+
+While I've focused on scientific
+and technical computing
+
+in the past, compute-intensive
+workloads actually
+
+fall under a number of
+verticals and industries
+
+around the world.
+
+This includes workloads such
+as high-performance web servers
+
+that need access to
+fast clock speed CPUs,
+
+as well as the networking
+that allows pages to be served
+
+with incredibly low latency.
+
+Also really important
+for triple-A game
+
+servers that need to
+both scale up vertically
+
+but also ensure that
+there's no jitter that's
+
+being viewed as a result of any
+inconsistencies in performance
+
+with the CPU or
+network variability.
+
+High-performance computing,
+near and dear to my heart,
+
+tends to fall into two
+categories-- tightly coupled,
+
+which will usually
+rely on low latency
+
+networking between a
+number of machines,
+
+and also high-throughput
+computing that
+
+relies on many machines working
+in concert to solve a problem,
+
+where the per-core
+performance of those machines
+
+is going to indicate how
+well that application runs.
+
+And a great example of a
+high-throughput computing
+
+workload is Electronic
+Design Automation, or EDA,
+
+which needs access
+to both fast cores,
+
+but also a network that
+makes it easy for all
+
+of those cores to
+access resources
+
+that are stored on a
+high-performance shared file
+
+system.
+
+In order to meet the needs
+of these unique applications,
+
+we've developed
+compute-optimized VMs,
+
+including the C2
+family, that offer
+
+a combination of excellent
+per-core performance,
+
+consistent performance,
+and also isolation
+
+between virtual machines.
+
+The C2 VMs, as we can see here
+with the benchmark results that
+
+compare C2 to the
+N1 family, offer
+
+better per-core performance,
+offer low latency,
+
+high bandwidth
+networking, and are really
+
+designed to meet the needs
+of these unique applications.
+
+Another element of
+the C2 family is
+
+that the standard
+machine types for C2
+
+have a lower
+memory-per-core ratio,
+
+as these types of applications
+tend to focus on CPU
+
+needs as opposed
+to taking advantage
+
+of large amounts
+of memory per core.
+
+Speaking of memory
+per core, I'd like
+
+to now transition over to the
+memory-intensive workloads.
+
+So this could include a
+number of different types
+
+of applications.
+
+It could be in-memory
+database like SAP HANA.
+
+It could be in-memory
+analytics, OLAP systems,
+
+and other analytic
+systems that need
+
+to keep data sets in memory
+for low-latency analysis
+
+and access, as well as
+in-memory caching that's
+
+common components
+of many distributed
+
+and cloud-native applications.
+
+Think of Redis or
+ElastiCache, for example.
+
+For these workloads, the
+M1 and M2 VM families
+
+are likely to be your best fit.
+
+M1 and M2 VMs can offer up
+to 12 terabytes of memory,
+
+while also offering a
+large number of cores
+
+to go hand-in-hand
+with that memory
+
+so that you're able
+to analyze at scale.
+
+The largest M2-- ultramem
+and megamem VMs, for example,
+
+offer over 400 cores or 400
+vCPUs per virtual machine.
+
+These VM families also take
+advantage of the fully flexible
+
+infrastructure, allowing you
+to adjust the CPU and memory
+
+needs provisioned to meet the
+needs of your applications.
+
+And we also support the
+provisioning models,
+
+including flex cuts,
+that allow your--
+
+to get discounts
+when you're using
+
+all of our memory-optimized
+VM shapes, both current
+
+and future.
+
+
+
+Now I'd like to
+transition us back
+
+to another class of workloads.
+
+These are the accelerated
+workloads that
+
+need access to GPUs and TPUs.
+
+Subra, would you like
+to give us an overview
+
+of these workloads and the
+VM families to go with them?
+
+SUBRA CHANDRAMOULI: Sure.
+
+Thanks, Jamie.
+
+There are several workloads
+that can take advantage
+
+of hardware GPU acceleration.
+
+Typically, these are
+data-intensive workloads.
+
+For instance, you may have
+an AI inference or a training
+
+type of a workload.
+
+Some of the training
+workloads could be bursty,
+
+where they have to deal with a
+lot of data in a bursty mode.
+
+Or you can think
+of a data analytics
+
+where you have massive
+data coming through,
+
+and you have the ability to
+process the data parallelly.
+
+GPUs are a great fit
+for parallel processing.
+
+Other types of workloads
+that can take advantage
+
+of GPU acceleration are
+high-performance computing
+
+and several
+video-intensive workloads.
+
+Our A2 VM family
+includes the latest
+
+NVIDIA A100 GPUs with up
+to 40 gigabytes of memory.
+
+In these machine
+types, we support up
+
+to 96 vCPUs with 1.3
+terabytes of memory.
+
+These machines come in various
+predefined machine types
+
+with support up to
+16 NVIDIA A100 GPUs,
+
+delivering up to 10
+teraflops of FP16 performance
+
+or 20 teraflops of int8
+performance in a single VM.
+
+JAMIE KINNEY: Thanks, Subra.
+
+Really appreciate that.
+
+In addition to each of the VM
+families that we've mentioned,
+
+we also have a number
+of GCE features
+
+that span multiple VM
+families and that are really
+
+going to be relevant to a
+broad range of workloads.
+
+We just want to touch
+on a few of these today.
+
+And I'd like to start by talking
+about custom machine types.
+
+This is a feature that's
+unique to Google Cloud.
+
+And it's a feature that
+is giving our customers
+
+significant cost savings.
+
+On average, they're
+seeing 19% savings.
+
+And in many cases,
+they're seeing
+
+substantially more than that.
+
+Custom machine types, as you
+can see in the little slide
+
+or diagram in the
+middle of this,
+
+allows you to precisely dial
+in the CPU and memory that's
+
+allocated to the VMs that you're
+launching within Google Compute
+
+Engine.
+
+This is often applied in cases
+where the standard machine
+
+types that we've predefined
+for ease of use and flexibility
+
+might not meet your
+needs, and where
+
+you need to allocate
+perhaps a little bit
+
+more memory or a little bit
+more CPU for your workload.
+
+And by allowing you to tell
+us exactly what you need,
+
+we don't over-provision
+those resources for you.
+
+This allows us to then reduce
+the cost of Google Compute
+
+Engine, and we pass those
+savings back onto you.
+
+Some additional
+GCE features that
+
+also benefit the wide
+range of workloads
+
+you might want to run
+on Google Compute Engine
+
+include sole-tenant nodes.
+
+This is most often
+applied for applications
+
+that have licensing
+requirements that
+
+mandate that you are the
+only customer, or only user,
+
+running on a given
+physical server.
+
+The sole-tenant nodes, you have
+access to the entire machine,
+
+and you have the ability to
+carve that up into whatever
+
+VM shapes you need.
+
+Very helpful for
+applications that
+
+have those specific
+licensing requirements.
+
+Shielded VMs are a
+feature that allow
+
+you to ensure that
+your workloads are
+
+running on trusted
+and verified hardware,
+
+taking advantage of
+the TPM UEFI firmware
+
+that we're running on
+GCE infrastructure.
+
+And confidential VMs
+provide additional isolation
+
+and sandboxing for especially
+sensitive applications.
+
+You can read more
+about these in some
+
+of the resources that we've
+provided below, accessing both
+
+the GCE documentation
+tutorials, case
+
+studies, and other resources.
+
+We've also provided some links
+to additional Next sessions
+
+that you might want
+to attend, as well as
+
+a couple of Coursera
+courses for those of you
+
+who might be new to
+Google Compute Engine
+
+or simply want to expand your
+familiarity and understanding
+
+of our services.
+
+With that, I'd really
+like to thank Subra
+
+for joining me today.
+
+And most importantly, I'd like
+to thank you for joining us
+
+and for listening to this talk.
+
+I hope that it improves your
+understanding of Google Compute
+
+Engine.
+
+And I hope that the rest
+of your Next experience
+
+is a wonderful one.
+
+Have a great day.
+
+Thanks.
+
+
+

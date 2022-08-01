@@ -1,0 +1,1572 @@
+
+
+TIMOTHY PEACOCK: Thanks for
+joining us for Security 209,
+
+Cloud posture and
+workload protection
+
+with Security Command
+Center Premium.
+
+I'm Timothy Peacock, a product
+manager here at Google Cloud.
+
+I look after our
+threat-detection capabilities.
+
+And in my spare time, I co-host
+the "Cloud Security Podcast"
+
+by Google.
+
+I'll be joined today by
+Dr. Jasyn Voshell, director
+
+of product and solution
+security at Zebra.
+
+If you're interested
+in learning how
+
+to protect your organization's
+use of Google Cloud
+
+as a platform and protect
+your workloads on top,
+
+this session is for you.
+
+We have a packed agenda
+today-- an overview
+
+of SCC Premium for those of you
+new to the product, a deep dive
+
+with our friend
+Jasyn from Zebra,
+
+and a lightning round
+of announcements
+
+from across the Security Command
+Center platform, misconfig,
+
+and threat-detection teams.
+
+Let's dive right in.
+
+Security Command Center
+Premium brings together,
+
+in one central tool,
+security insights
+
+across your organization and
+across the security lifecycle.
+
+I think of SCC Premium as
+providing four pillars of value
+
+for security teams.
+
+First, asset and
+resource tracking.
+
+Staying current with resource
+creation, update, and deletion
+
+can be a challenge
+in public clouds.
+
+If you choose to give
+engineering teams flexibility
+
+in creating new services,
+Security Command Center's Cloud
+
+Asset Inventory makes it really
+easy for organizational admins
+
+to stay aware of what's
+changing inside their org
+
+and easily query for
+deleted and changed assets.
+
+Second, hardening.
+
+Misconfiguration and
+vulnerability detection.
+
+Thanks to our real-time
+asset updates,
+
+SCC Premium provides real-time
+misconfiguration detection.
+
+Cloud Security Posture
+Management, CSPM,
+
+is a must-have for
+security teams in Cloud.
+
+Security Command Center Premium
+provides "out of the box,"
+
+actionable posture insights
+for our top GCP services.
+
+Understanding and responding
+to misconfiguration exposure
+
+is crucial for preventing
+breach in Cloud.
+
+The third pillar is
+threat detection.
+
+And we all know that despite our
+best investments in hardening,
+
+bad guys are still going
+to try to do bad things.
+
+I'll talk a lot more
+about detecting threats
+
+in just a minute.
+
+Fourth and finally,
+SCC Premium helps
+
+you tie your success in Cloud
+Security Posture Management
+
+back to leading
+compliance standards.
+
+Not only do our findings
+map to leading standards,
+
+we also provide the right
+tooling in the platform
+
+to help you report
+on your compliance
+
+across your organization.
+
+Now let's look in-depth
+at two of these areas--
+
+first hardening, and
+then threat detection.
+
+SCC Premium provides
+"out of the box"
+
+platform and workload hardening.
+
+Our posture findings are, like
+I said, generated in real time
+
+and come with
+remediation instructions,
+
+making these insights
+usable and actionable
+
+by engineering teams
+and project owners who
+
+are maybe not security experts.
+
+Above the infrastructure
+layer, we're
+
+now bringing in operating-system
+vulnerability insights,
+
+thanks to our partnership with
+Google's VM Manager service.
+
+Users can expect to see more
+updates on SCC's presentation
+
+of CVE detection from
+a couple of other teams
+
+from Google Cloud really soon.
+
+Finally, on top of those
+common vulnerability insights,
+
+SCC Premium also
+provides the same web-app
+
+scanning for OWASP top
+10 vulnerabilities,
+
+as we use ourselves
+in-house to protect Google.
+
+Our web-security scanner is
+even easier to use than ever,
+
+with automated discovery and
+scanning of your web apps.
+
+All of this comes together to
+help security teams proactively
+
+secure both their cloud
+environment and their workloads
+
+running on top without bringing
+in third-party dependencies,
+
+exposures, and risk.
+
+And with that, let's turn to
+talking about the most unwanted
+
+of third parties
+with a quick look
+
+at threat detection in Cloud.
+
+A few years ago at
+conferences, we all
+
+got to feel very smart
+and smug by saying,
+
+oh, the cloud is just
+someone else's computer.
+
+The truth is, in Cloud,
+there's a lot more than just
+
+someone else's computer.
+
+We have new planes
+of attack surface,
+
+and with them, new opportunities
+for instrumentation.
+
+At the same time as
+the world of cloud
+
+has brought tremendous
+change to the security job,
+
+our needs, as security
+professionals,
+
+haven't really
+changed all that much.
+
+We're still focused on
+keeping data confidential,
+
+guaranteeing integrity,
+and ensuring availability.
+
+Tolstoy wrote that,
+quote, "All happy families
+
+resemble one another.
+
+Every unhappy family is
+unhappy in its own way."
+
+Today's major public clouds
+are our proverbial unhappy
+
+families.
+
+Adversaries attack and pivot
+through clouds differently.
+
+And security teams need deep
+cloud-specific expertise
+
+to detect the most dangerous
+threats in their environments.
+
+With Security Command
+Center Premium,
+
+our customers get access to the
+same real-time threat detection
+
+as Google uses to protect
+its own use of Google Cloud.
+
+They say all models are
+wrong, but some are useful.
+
+Here, I offer what
+is definitely wrong
+
+but a hopefully useful,
+six-layer model for thinking
+
+about protect surface
+in cloud environments.
+
+SCC Premium offers
+detection modules
+
+at each layer of
+this six-layer cake,
+
+with special emphasis on
+detecting identity compromise
+
+and protecting Kubernetes
+workloads at runtime.
+
+We handle platform
+threat detection
+
+with our real-time
+log-processing service, Event
+
+Threat Detection, and
+workload threat detection
+
+with our Container
+Threat Detection service.
+
+We'll talk more about
+some new capabilities
+
+in both of those
+services in just a bit.
+
+With that, I want to welcome
+our guest today, Dr. Jasyn
+
+Voshell of Zebra Technologies.
+
+Jasyn, thanks so much
+for joining us today.
+
+JASYN VOSHELL:
+Thanks for having me.
+
+TIMOTHY PEACOCK:
+Tell our audience
+
+a little bit about yourself,
+your role in the org,
+
+and what your company does.
+
+JASYN VOSHELL: Absolutely.
+
+So I'm Dr. Jasyn Voshell.
+
+I'm the director for product
+and solution security
+
+for Zebra Technologies.
+
+Zebra may be the
+biggest smallest company
+
+you've never heard of.
+
+Everything from
+scanning a package
+
+to tracking an
+asset from point A
+
+to point B-- that's the
+products we put out.
+
+And my responsibility
+and accountability
+
+is to make sure those
+products we put out
+
+are as secure as possible.
+
+A good example-- if
+any of you have ever
+
+gotten a package
+delivered to you,
+
+and it has a barcode on it,
+that tracking from where
+
+it was all the way to
+arrives at your doorstep
+
+was using Zebra Technologies
+products and possibly solutions
+
+as well.
+
+And so my job is to, again,
+make sure that everything
+
+we do with that is as
+secure as possible.
+
+TIMOTHY PEACOCK: That's
+an amazing impact
+
+that a company like
+that has so invisibly.
+
+So they say to start secure
+stories at the beginning.
+
+So could you tell the
+audience a little bit
+
+about getting started with
+Security Command Center
+
+Premium, how long
+that took, and what
+
+it was like rolling it out to
+your different business units?
+
+JASYN VOSHELL: Yeah,
+it did take some time.
+
+I think with any new product
+that comes into play,
+
+there's always some
+resistance at first.
+
+People are used to doing
+things a certain way.
+
+But with the Google
+Command Center,
+
+we use a lot of GCP,
+Google Cloud Platform,
+
+in the solutions that we build.
+
+The old ways of trying to
+make sure that's secure,
+
+the apps on top
+of it are secure,
+
+tracking the inventory
+of what we have--
+
+it took a little bit of time.
+
+But as we progress
+forward, it really helped.
+
+Good example-- we
+had a customer,
+
+during an RFP-- a Request
+for Proposal-- discussion.
+
+And we were stepping through.
+
+They were asking us, well,
+how are you securing this?
+
+How are you doing this?
+
+And at one point,
+we said, oh, we're
+
+using the Google
+Security Command Center
+
+on top of this application.
+
+And they stopped
+and went, well, I
+
+don't think we need to ask
+the next 10 or 20 questions,
+
+because they knew
+about this product,
+
+and they knew that
+those questions
+
+were being answered already.
+
+And so with that, when that took
+a hold, when customers started
+
+to realize, yeah, you're using
+that, our internal teams went,
+
+that's a lot faster.
+
+We can answer questions quicker.
+
+We can make sure
+the risk is reduced
+
+or to an acceptable amount
+where we need it to be.
+
+And with that, we were able to
+get better internal adoption.
+
+You always want to carry
+that big stick around,
+
+but you never want to swing it.
+
+You want the teams,
+internally, to want to use it,
+
+to show them the value.
+
+And after a little bit of
+that, getting over the hump,
+
+having a customer go, yeah,
+that makes it a lot easier,
+
+having the sales
+teams realize, hey,
+
+you just answered an
+RFP quicker on security
+
+because you're
+using this product--
+
+they're happier about it, too.
+
+We got a lot of--
+
+quicker adoption much easier.
+
+It also helped a great deal--
+
+and I think we'll dive
+into this a bit more
+
+in a second-- but being able to
+give those teams back feedback.
+
+Hey, we found something, and
+here's how you can go fix it,
+
+and here's how quick
+we gave it to you,
+
+and not getting a lot of FUD
+or a lot of cloudy stuff--
+
+pun fully intended--
+for those teams.
+
+So that does help,
+across the board.
+
+TIMOTHY PEACOCK: Yeah,
+so let's dive in on that,
+
+because one of the
+things that comes up
+
+for me, with my
+customers, is really,
+
+how do they scale their
+security operations as they
+
+grow their cloud footprint?
+
+One of the features
+that we built--
+
+really two things here--
+
+to help address
+that-- one is what
+
+we call scoped or
+delegated views of SCC,
+
+where you can give the teams
+responsible for a project
+
+or folder a view of
+their findings in SCC.
+
+And the other is packing a
+lot of detail and remediation
+
+instructions into
+the posture findings
+
+so that non-expert teams
+can really respond to them.
+
+So how has it gone rolling
+out that delegation
+
+of posture issues to teams?
+
+JASYN VOSHELL: Yeah, so I
+don't know if anyone has had
+
+the old-school
+way of, how do I--
+
+IT or some team finds a
+bunch of vulnerabilities,
+
+and they want to give that
+to the engineering teams
+
+and say, go fix it.
+
+In the past, they might
+have gotten a spreadsheet
+
+or logged into a website.
+
+And it's just a
+plethora of data.
+
+And anybody who looks at that
+goes, like, my head hurts.
+
+I forgot what happened.
+
+And they kind of dismiss it.
+
+With the Security
+Command Center,
+
+the ability to focus in on
+this business unit for this
+
+project--
+
+so you're not looking
+at every project,
+
+just, hey, this business
+unit, this project.
+
+Here are the things we're
+finding for you to go look at.
+
+It cuts right to the chase.
+
+And I think being able
+to give those teams
+
+or delegate to a certain
+engineering team or security
+
+team only what
+they need to see--
+
+They don't need
+to see everything.
+
+In fact, if they do, they're
+looking at the squirrel,
+
+trying to figure out
+where it's going.
+
+They can focus on
+that, and they can
+
+fix it a lot quicker, right?
+
+It's not too overburdened.
+
+So with that, it's helped
+us speed up production,
+
+in many cases, because
+as we're moving--
+
+we'll talk about shift
+left in a second--
+
+as we're moving that further
+into the development lifecycle,
+
+we're finding things quicker.
+
+And we're only
+showing the teams,
+
+this is what you need to fix.
+
+And so it feels a
+lot quicker for them.
+
+TIMOTHY PEACOCK:
+Let's talk about shift
+
+left, because we've got a
+lot of different sessions
+
+on shift left at
+this year's Next.
+
+We've got talks about
+supply-chain security
+
+and securing that.
+
+Could you tell us
+a little bit how
+
+you see SCC's hardening work
+supporting your organization's
+
+shift-left efforts?
+
+JASYN VOSHELL:
+Yeah, so shift left,
+
+for anyone who's not familiar--
+hopefully everyone is--
+
+it means putting security
+earlier in the development
+
+lifecycle.
+
+So as you're even
+dreaming about a product
+
+that you want to build,
+you're thinking security
+
+almost upfront, right away.
+
+And so this tool allows
+us-- so as we stand up,
+
+even at development, a
+non-production instance,
+
+we stand up GCP.
+
+We put [INAUDIBLE] on top of it.
+
+That Security Command
+Center is still
+
+scanning that, still taking
+a real-time type of look
+
+into what we're doing.
+
+And we're able to fix
+those items quicker.
+
+And if anybody knows,
+when you shift left--
+
+because if I find a
+vulnerability late in the game,
+
+it's about to go out the
+door, and suddenly I realize,
+
+oh, no, the
+foundation is cracked
+
+on this house we already
+built, it's a little late
+
+to fix the foundation now.
+
+Or if I'm going to fix it, it's
+going to cost me quite a bit.
+
+And so we really want to do
+those things early on, or left,
+
+in the process.
+
+The Command Center allows us
+to find those vulnerabilities
+
+quickly, all during the process.
+
+So we're not, like, moving 10
+feet and then doing a check.
+
+Every time we're
+making a little move,
+
+it's always checking
+on us so we can say,
+
+hey, we found something.
+
+Oh, we'll take care
+of that right away.
+
+It helps to actually speed
+up the development lifecycle
+
+while keeping the
+product secure.
+
+And that's very
+important for us.
+
+It helps us get the
+product out the door
+
+quicker, which means
+our customers have it
+
+when they need it.
+
+And that's the most
+important for us.
+
+TIMOTHY PEACOCK: That's
+such a nice story
+
+around both helping
+with security
+
+as well as helping with
+development velocity.
+
+So often, those are intention.
+
+Could we also talk a
+little bit about how
+
+this is being used at your
+organization for threat
+
+detection and how that's
+gone for your teams?
+
+JASYN VOSHELL: Yeah, so one
+of the nice things we like
+
+to look at threat detection--
+
+tons of tools in the world.
+
+Everyone is going, oh, I can
+find out what's going on here.
+
+The hardest part, for me--
+
+false positives.
+
+You see something.
+
+Hey, we think there's
+a threat at the door.
+
+Well, is it or is it not?
+
+And if you're making
+me put a resource on it
+
+to go investigate it,
+you're chewing up resources.
+
+I can't expand my teams.
+
+The Security Command
+Center, in my opinion,
+
+has driven that false-positive
+rate down quite a bit.
+
+[INAUDIBLE] with a
+little bit of tuning
+
+that we can do with the
+help from Google to help
+
+tune that as well.
+
+So when we get an actual threat
+or detection of a threat,
+
+it feels more real.
+
+We'll say, in the past,
+you get a threat detection.
+
+Maybe there's a 40%,
+50%, 60% confidence.
+
+When we see them now, through
+the Security Command Center,
+
+we're in the high 90s
+on a confidence of,
+
+yes, that is an actual threat.
+
+It is actionable.
+
+It's an event.
+
+Let's go take care of that.
+
+What does that naturally do?
+
+It frees up our
+resources to do things
+
+that are more important,
+more risk-adverse, as opposed
+
+to chasing ghosts, chasing FUD.
+
+So that helps us a
+great deal, provides
+
+confidence in the product.
+
+It also helps us, even when
+we're talking to our customers,
+
+telling them, yes,
+we're using this tool.
+
+OK, what kind of things
+are you looking for?
+
+We look for this.
+
+We're able to knock
+things down quickly
+
+and move to the next problem
+or vulnerability or threat that
+
+possibly comes up.
+
+Also, getting to the
+false-positive piece,
+
+it does allow--
+again, it frees up
+
+those resources,
+which means they
+
+can go look at other things.
+
+So as teams are
+developing a project,
+
+we're not chasing a ghost.
+
+We're looking at real threats.
+
+And we can get
+back to looking at,
+
+is there a misconfiguration?
+
+Are we now aligned
+with a benchmark?
+
+Is there a standard
+we're not aligned to?
+
+And fix those things
+to keep it hardened,
+
+and not just chasing
+things around.
+
+TIMOTHY PEACOCK:
+Oh, that's awesome.
+
+I want to touch on one
+area before we wrap up,
+
+which is the user interface.
+
+We've made a lot of changes
+since some people started
+
+using the product.
+
+I understand you may have
+seen the more recent versions.
+
+We've got a lot of good
+changes coming soon.
+
+How is your team finding the UI?
+
+JASYN VOSHELL:
+Yeah, so you and I
+
+have talked about this before.
+
+I don't like to call it a UI.
+
+I like to call it a UFI,
+User Friendly Interface.
+
+The ability for anyone
+to just log in on a whim
+
+and not have to crack open a
+16-page or 160-page guide that
+
+looks like some
+major book and just
+
+get to where you want to get
+to is extremely important.
+
+So as a director, I'm not in
+the tool every day, right?
+
+Our teams, our
+SecOps division, is
+
+in there looking at
+what they need to do.
+
+They're more advanced on it.
+
+But when we have
+something come up,
+
+or leadership asks
+a question on,
+
+Jasyn, what's our
+security posture?
+
+What's our risk look like?
+
+Or we have a customer
+that says, we
+
+would like to know a
+little bit more about,
+
+what are you doing with
+your vulnerabilities?
+
+How often do you see things?
+
+As a director, I can
+have the team open it up.
+
+I can look inside.
+
+And without really
+knowing much more
+
+than just my technical
+space, I can figure out
+
+what's going on in that
+dashboard fairly quick.
+
+And I've got to tell you,
+that user-friendly interface
+
+is very beneficial.
+
+I, as a director,
+can get an answer
+
+really quick without
+having to know
+
+the technical details of it.
+
+Now, of course,
+there are some things
+
+that that team is better for.
+
+But from where I'm sitting,
+I can get an answer quick.
+
+I can tell our leadership,
+our customers, or even
+
+our internal people that
+need those answers, even
+
+from where I'm sitting.
+
+So I'm very much
+a fan of your UFI.
+
+TIMOTHY PEACOCK: Jasyn,
+I love that answer.
+
+And with apologies to
+directors of security
+
+everywhere, I think
+what we just heard
+
+is that our user
+interface is so easy, even
+
+a director can use it.
+
+Jasyn, thank you so much
+for joining us today.
+
+I really appreciate your
+thoughts and insights
+
+on the product.
+
+We didn't want to leave
+out your CISO, either.
+
+He's got this to add.
+
+And what I love
+about his quote here
+
+is that it really shows how SCC
+Premium brings together both
+
+the Cloud Security Posture
+Management side as well
+
+as the Cloud Workload
+Protection capabilities
+
+to give your company really
+a one-stop shop for all
+
+your needs in
+protecting Google Cloud.
+
+So I promised announcements,
+and I didn't forget.
+
+We've got a couple
+of new capabilities
+
+that are exciting
+in the platform
+
+as well as in the hardening
+and threat-detection sides
+
+of the house.
+
+So with that, a couple of
+really great announcements here.
+
+The first one is that I've
+had so many users ask me,
+
+over the years, how
+they can tune and manage
+
+our systems that I suspect
+security engineering is
+
+actually full of musicians.
+
+We're rolling out a
+feature now that we're
+
+calling Mute, which
+is essentially
+
+Gmail filters for
+your SCC environment.
+
+We know that not every
+one of our findings
+
+is always right for
+your environment.
+
+Organizations can have
+compensating controls,
+
+and threat intelligence
+is occasionally noisy.
+
+With the Mute feature, teams
+can easily silence and control
+
+the scope of those
+silences to ensure
+
+that their findings
+queue is full of findings
+
+that teams care about.
+
+Muting would be really hard
+to get right without finding
+
+standardization.
+
+And so we've
+standardized attributes
+
+across our different findings.
+
+With Mute, we're simultaneously
+rolling out new attributes
+
+and making sure that our
+vulnerability and threat
+
+teams are using
+those to give you
+
+a consistent experience as you
+go through the findings set.
+
+We know that teams
+already have workflows
+
+for their other
+security tooling.
+
+And we're making
+it easier than ever
+
+to export SCC's findings
+into your channels of choice,
+
+including, now, your
+Slack channels of choice.
+
+Finally, a big ask from users
+has been scoped or delegated
+
+views.
+
+Jasyn and I touched
+on their value.
+
+And using the normal IAM
+patterns from Google Cloud,
+
+teams can now give teams
+responsible for projects
+
+and folders insights
+into the issues
+
+happening in those environments.
+
+On the misconfig and
+vulnerability side,
+
+we've got some really exciting
+announcements as well.
+
+Security Health Analytics, our
+real-time posture-management
+
+system, now supports
+user-defined detection.
+
+This has been a
+top ask, and we're
+
+really excited about
+what's now possible.
+
+I mentioned that we're bringing
+in OS-level CVE detection
+
+with our VM Manager integration.
+
+This is a great collaboration
+with our friends
+
+over on Google Compute Engine
+and will help organizations
+
+to understand how
+well they are doing
+
+at the eternal
+topic of patching.
+
+It's a bit like flossing-- not
+exciting, not necessarily fun,
+
+but definitely among the
+most important things
+
+you can do to shift
+your security outcomes.
+
+Finally, on the misconfig
+and hardening front,
+
+we're also bringing
+in detection of CVEs
+
+in widely-deployed applications
+with a managed deployment
+
+of our open-source Tsunami tool.
+
+Now, with that, on to the
+threat-detection updates--
+
+three areas in Event
+Threat Detection and one
+
+in Container Threat Detection.
+
+Google Groups is used
+by most organizations.
+
+Rather than assign IAM
+roles directly to users,
+
+roles are assigned
+to groups, and users
+
+belong to those groups.
+
+This makes management of
+onboarding and offboarding
+
+a lot easier, but there
+are some gaps and risks
+
+that get introduced
+by Google Groups.
+
+ETD has now integrated
+with Google Groups
+
+to give teams findings
+that highlight
+
+when a group with permissions
+becomes more widely joinable,
+
+as well as when a grant
+is made to a group that
+
+contains external members.
+
+Additionally, we've
+recently released
+
+a set of detection techniques
+using User Entity Behavioral
+
+Analytics, or UEBA.
+
+It's one of those acronyms that
+only our friends at Gartner
+
+could love.
+
+But it describes the
+general technique
+
+of profiling and detecting
+deviation from those profiles.
+
+We're using it today to
+detect account takeover
+
+and compromise for
+both IAM accounts
+
+as well as service accounts.
+
+On the Kubernetes side,
+we're rolling out a number
+
+of new detection modules.
+
+One that we released
+very recently
+
+is a machine-learning-powered
+bash-script classifier.
+
+Our general theory
+of defense with KTD
+
+is to take away from adversaries
+entire classes of technique
+
+rather than specific procedures.
+
+With this detector, we have
+a robust and generic approach
+
+to detecting malicious script
+execution inside of containers.
+
+It leverages Google's
+strengths in ML,
+
+and we're really
+excited about how
+
+it's performing against
+production data already.
+
+One more thing.
+
+We've integrated
+Security Command Center
+
+Premium with Chronicle.
+
+This is a wonderful
+case of the teams
+
+truly being better together.
+
+SCC's real-time
+threat detection joins
+
+Chronicle's powerful
+investigatory capabilities.
+
+With this integration,
+users can seamlessly
+
+pivot from a [INAUDIBLE] detail
+in Security Command Center
+
+into a curated alert
+view within Chronicle.
+
+From there, users can
+investigate the threat
+
+and quickly pivot to
+associated actions and events
+
+related to the finding.
+
+For example, imagine a SOC
+operator quickly investigating
+
+if a principal observed making
+a suspicious IAM grant had
+
+recent login activity or if they
+made other suspicious changes
+
+after that IAM grant.
+
+We're really excited about
+where this partnership is going.
+
+Beyond ingesting SCC
+findings, Chronicle
+
+is also ingesting the stream of
+Cloud audit logs in real time
+
+and pulling Cloud Asset
+Inventory metadata to ensure
+
+that analysts have the
+latest and greatest context
+
+when investigating threats.
+
+I know this has been
+a whirlwind tour
+
+of SCC Premium, our
+capabilities, and what's new.
+
+Thanks for hanging on.
+
+If you're ready to learn more
+or get started with SCC Premium,
+
+you can check out our
+detailed documentation
+
+or contact your account
+team to get started today.
+
+We're here to protect
+your organization,
+
+and we're definitely
+no use of you
+
+if you can't follow
+what's going on.
+
+We take feedback on these
+sessions really seriously,
+
+so please do fill out the
+feedback for the session
+
+and let us know how we
+could help you better.
+
+With that, I want to
+thank you for joining us
+
+for Security 209, Cloud posture
+and workload protection.
+
+I'm Timothy Peacock, and
+I want to thank you again
+
+for taking the time to learn
+about how Security Command
+
+Center Premium could help
+your organization with asset
+
+visibility, misconfiguration
+and vulnerability
+
+management, threat detection,
+and compliance reporting.
+
+Have a great day.
+
+
+

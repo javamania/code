@@ -1,0 +1,1064 @@
+
+
+VINOD RAMACHANDRAN: Hello.
+
+Welcome to our talk,
+addressing advanced use cases
+
+with new Cloud
+Functions capabilities.
+
+I'm Vinod.
+
+I'm a product manager at Google.
+
+SARA FORD: Hi, I'm Sara,
+and I'm a Cloud Developer
+
+Advocate at Google.
+
+
+
+VINOD RAMACHANDRAN: Just
+the overview of our talk.
+
+First, we'll provide
+you a product overview
+
+on Cloud Functions.
+
+Then, walk you through
+key FaaS and function
+
+as a service use cases.
+
+Then, walk you through the
+FaaS programming model.
+
+Then, we'll cover key
+performance, scalability
+
+and availability features
+in Cloud Functions.
+
+Then, walk you through
+key new security features
+
+in Cloud Functions, as well
+as cover the cloud event
+
+support that is being added
+to Cloud Functions as well.
+
+And to conclude, we'll cover
+a couple of exciting demos
+
+provided to you by Sara.
+
+So let's get started.
+
+Cloud Functions.
+
+Cloud Functions is Google
+Cloud's event-driven serverless
+
+compute platform.
+
+Cloud Functions lets you
+write small snippets of code
+
+that react to events
+such as HTTP as well
+
+as asynchronous events.
+
+For example, uploading a file
+to a cloud storage bucket
+
+and doing some
+processing after that
+
+or sending a message
+to [INAUDIBLE]
+
+and processing the
+message accordingly.
+
+Cloud Functions are
+truly serverless.
+
+They scale seamlessly.
+
+You don't have to manage
+any of the infrastructure,
+
+and you pay for what you use.
+
+Further, functions of a
+streamlined development model
+
+where you can get
+started very quickly
+
+and have it running as well.
+
+In addition, functions are
+integrated with different GCP
+
+products through
+events as well as HTTP.
+
+
+
+Key FaaS use cases that
+customers and users
+
+use Cloud Functions are
+serverless webhooks.
+
+For example, doing
+a GitHub push commit
+
+and then processing a function
+and posting a message to Slack.
+
+Real-time data processing
+where you can upload files
+
+to a Cloud Storage bucket and
+process the data using MLA APIs
+
+and store the result back.
+
+IoT backends, where
+temperature and humidity
+
+sensors from all over the world
+upload temperature and humidity
+
+data.
+
+This process is by
+Cloud Functions,
+
+and you take corrective
+action accordingly.
+
+Intelligent applications
+such as Twilio chat
+
+bots that upload messages
+to Cloud Functions,
+
+which are processed by a
+natural language API or BigQuery
+
+for trend analysis.
+
+Functions in the FaaS
+programming model
+
+are very easily deployable.
+
+You can deploy a function
+from the UI, from the CLI,
+
+through the IDE using functions
+frameworks, as well as the API.
+
+Here's a simple example if
+you have a snippet of code,
+
+where it's going to
+be deployed using
+
+a single command ready to
+serve traffic in minutes.
+
+
+
+You can deploy these functions
+in your favorite programming
+
+language.
+
+We are super excited to
+ship these languages to you.
+
+Think about Node, Python,
+Go, Java, .NET, Ruby and PHP.
+
+
+
+Along with the
+programming model,
+
+functions offer key performance,
+scalability and availability
+
+capabilities.
+
+We are super excited to
+ship the min instances
+
+capability in Cloud Functions.
+
+Cold starts is a real
+problem in serverless
+
+where whenever your
+function starts up
+
+or your serverless
+service starts up,
+
+you have a startup text.
+
+Min instances lets you
+mitigate this problem,
+
+which are pre-run instances.
+
+So for example, in this podcast
+transcription application,
+
+you can have a set of
+pre-run instances with each
+
+of your functions in order
+to improve end-to-end latency
+
+of your serverless workflow.
+
+Here is a GitHub
+tutorial as well.
+
+Please feel free
+to check it out.
+
+
+
+Longer processing.
+
+We're super excited to
+ship longer processing
+
+with Cloud Functions.
+
+Now you can process your
+functions up to 60 minutes.
+
+This capability is in preview.
+
+This is 6x the execution time.
+
+Think about longer data
+processing pipelines
+
+and longer ML pipelines.
+
+
+
+Along with longer
+processing, we're
+
+also shipping larger instances
+with Cloud Functions.
+
+Now you can have up to 16 GB
+of memory, which is in preview,
+
+as well as the ability
+to have multiple CPUs.
+
+So think about larger
+in memory operations
+
+as well as like [INAUDIBLE]
+parallel applications
+
+with your functions.
+
+
+
+They've also expanded the number
+of regions that are available
+
+with Cloud Functions, going
+to about 22 regions globally.
+
+
+
+Along with the other
+capabilities we talked about,
+
+we're adding some new
+security capabilities
+
+in Cloud Functions.
+
+We are super excited
+to ship the integration
+
+with Secrets Manager for
+your Cloud Functions.
+
+Now you can securely set
+your environment variables
+
+and access them using Secret
+Manager in your Cloud Functions
+
+in a programmatic fashion and
+making the developer experience
+
+seamless as well.
+
+
+
+Along with secrets,
+we are also shipping
+
+a capability called
+Customer-Managed Encryption
+
+Keys.
+
+So users can provide
+user-provided encryption keys,
+
+which can then be used by
+GCP to do all the encryption
+
+throughout the function flow.
+
+This gives more
+control to the users
+
+and create a level of
+encryption as well.
+
+And if the key does not work,
+Google cannot even access
+
+the data, and it's completely
+in the control of the user.
+
+
+
+Shared VPC support.
+
+We're also super excited
+to ship this new networking
+
+capability, which
+lets your functions
+
+access resources
+in a shared VPC.
+
+You can access Compute
+Engine resources
+
+as well as on prem systems.
+
+Further, this is within a
+secure VPC-SC perimeter,
+
+which is a logical
+boundary that adds
+
+additional restrictions such
+as only authorized users
+
+can deploy a Cloud Function
+within the perimeter
+
+as well as only authorized users
+within the perimeter can invoke
+
+a function.
+
+Further, the function can be
+configured behind a Cloud Load
+
+Balancer for load
+balancing as well.
+
+
+
+In addition to the
+networking capabilities,
+
+we're also shipping a capability
+called private pools that
+
+gives users more
+control on their
+
+build time environment
+for their Cloud Function.
+
+Users can have more control
+and how their Cloud Function
+
+is built, thereby letting users
+control the entire software
+
+supply chain of code, build,
+and invocations per run.
+
+
+
+Along with the
+security capabilities,
+
+we are adding cloud event
+support through Cloud Functions
+
+as well.
+
+Cloud events are
+industry standard events,
+
+which are open and portable,
+making your architecture
+
+for the long term as well.
+
+
+
+We added cloud event
+support for Cloud Functions
+
+by supporting cloud audit logs.
+
+This lets you invoke functions
+from over 90 plus GCP products.
+
+For example, every time you
+create a compute engine or a VM
+
+instance, you can
+now invoke a function
+
+to do some processing
+after the VM creation,
+
+such as labeling the VM.
+
+Every time a BigQuery
+job finishes,
+
+you can do some processing
+after the job is completed.
+
+The same applies for SQL,
+Spanner, so on and so forth.
+
+
+
+Now, I would like to
+hand over to Sara,
+
+who has a couple of interesting
+and exciting demos for you
+
+on these capabilities.
+
+SARA FORD: Thanks, Vinod.
+
+In the first demo,
+you'll see how
+
+you can use min
+instances to keep
+
+a certain number of
+your applications
+
+warm to improve performance
+time and minimize cold starts.
+
+And the reason why you
+might want to do this
+
+is if, for example,
+you know you're
+
+going to be receiving
+additional traffic soon.
+
+Perhaps it's due to like a Black
+Friday, Cyber Monday event,
+
+or you know that
+you just need to get
+
+the best possible latency time.
+
+So by keeping a number
+of instances warm,
+
+you can help reduce cold
+starts and get the best latency
+
+and the response time possible.
+
+So you'll see how that
+works in this upcoming demo.
+
+In this first demo, I
+have a Node.js function,
+
+and it's already deployed with
+min instances set to zero,
+
+which is the default.
+So let's take
+
+a look at this function code.
+
+Now, the entry
+point is helloWorld.
+
+So that means that all the
+code outside of the entry point
+
+is going to be in global scope.
+
+So in other words, here is the
+event handler, the entry point
+
+for the function.
+
+So any code outside
+of that function,
+
+like here, as you see,
+is in global scope.
+
+
+
+So line three, where we
+call the start up method,
+
+this is going to get executed
+any time there is a cold start,
+
+like the instances warming up.
+
+So we'll log that
+this is a cold start,
+
+and then you'll see me
+simulate a long connection.
+
+This could be something to--
+
+a call to establishing a
+connection with the database.
+
+This could be an API call
+that takes a while to respond,
+
+but something that you want
+to do once, cache that value
+
+and have it available for future
+invocations of your function.
+
+And so once this time-out
+to sleep comes back,
+
+then you'll see me
+log, I'm ready now,
+
+and then return, ready, back.
+
+
+
+So here is a code that
+is invoked every time--
+
+that is executed every time
+the function is evoked.
+
+And I'm using the utility for
+just pure debugging purposes
+
+just to illustrate
+what is happening.
+
+And it's getting the current
+status of the promise.
+
+And if it's still
+a cold start, it
+
+reports that, it waits until
+the 30 second time-out has
+
+completed, and then
+it says, now I'm
+
+warmed up, using the warm emoji.
+
+Otherwise, if it's
+already a warm instance,
+
+then it just reports back
+that it's a warm instance.
+
+And, of course, it
+needs to respond back
+
+to the request with
+request completed.
+
+So let's invoke our function
+and see this in action.
+
+So on the trigger,
+we'll simply click here.
+
+And this is going to take a--
+
+because of the 30 seconds.
+
+
+
+So we can go to cloud logging.
+
+And as that is
+spinning up, we'll
+
+see it report, as we saw in
+the code, I am a cold start.
+
+That will be logged first.
+
+
+
+So there it is.
+
+I'm a cold start.
+
+I'm still a cold start.
+
+So if we go back here,
+we'll see I'm a cold start.
+
+And since we invoked it
+while it was still pending,
+
+that's where we see this.
+
+And then as soon
+as it comes back,
+
+it will say I'm warmed up.
+
+We see that the
+request completed,
+
+and we'll see in the logs
+the function completed.
+
+So now I am warmed
+up, which is great.
+
+But let's say we
+know in advance we're
+
+going to get future
+invocations, what can
+
+we do to-- you might
+be thinking, what can
+
+I do to have this ready to go?
+
+Maybe this connection, database
+connection already established,
+
+or this API call, have
+that value already cached,
+
+ready to go when there is--
+
+when you can predict
+that you're going
+
+to have future invocations.
+
+And that's where min
+instances comes in.
+
+
+
+And now you'll see me
+redeploy the function using
+
+min instances.
+
+So let's go to edit.
+
+And then, in these advanced
+features, scroll down,
+
+you'll see min instances.
+
+And instead of using
+0, let's give it 5.
+
+
+
+And deploy that.
+
+
+
+Now that this function has
+been deployed with the new min
+
+instances, we can go here and
+see in details now that we
+
+have five min instances.
+
+We can confirm that.
+
+If we go to the logs now
+and rerun this query,
+
+you'll see the call
+function's updated.
+
+And you might think that this
+is off by one, but instead
+
+of five cold starts because,
+remember, we're spinning up
+
+five instances, you
+might be thinking, well,
+
+why am I seeing six?
+
+Well, this first one is
+called a health check.
+
+This is just to make sure that
+your call function builds.
+
+And as a part of--
+
+not being invoked,
+but just builds.
+
+And since this is
+in global scope,
+
+that's going to get executed.
+
+But this is just a
+health check just
+
+to make sure that the coding--
+
+there wasn't like a compile
+error, or build error,
+
+or I'm missing dependency
+or the function, identity,
+
+lock permissions, that's
+what this health check is.
+
+So that's why you
+see six of these.
+
+And now, if we were to go--
+
+we'll go back to the function.
+
+Go back to trigger.
+
+And you see, now you noticed
+that it hit instantly.
+
+
+
+And if we go to cloud run--
+
+I'm sorry, run query.
+
+
+
+We may see that all the
+instances were warm,
+
+and you see I'm a warm instance.
+
+So as you just
+saw, you might want
+
+to consider using
+min instances to keep
+
+a certain number of your
+Cloud Functions instances
+
+warm in case you're expecting
+an increase in traffic
+
+or you just need to get the
+best latency times possible.
+
+Now, for the second
+demo, you're going
+
+to see how a Cloud Function
+can listen for and respond
+
+to a cloud audit log event.
+
+For example, let's
+say that a company
+
+has a policy where
+their engineers need
+
+to put their user name
+as a label on any VM
+
+that they create.
+
+Well, you can have a checklist
+for their engineers to follow,
+
+but they might forget or
+they might have a typo.
+
+And so one of the best ways
+to reduce human error is to,
+
+quote, "automated out."
+
+So instead, you could
+write a Cloud Function
+
+to listen to a cloud audit
+log event for whenever
+
+a VM is created and have the
+Cloud Function automatically
+
+label the VM with their
+user name instead.
+
+In this second
+demo, you'll see how
+
+you can use a Cloud Function
+to listen for and respond
+
+to a cloud audit log event.
+
+In this scenario, you'll see
+a Cloud Function automatically
+
+label a VM using the user name
+of the person who created it.
+
+So first, let's go over
+how to deploy a function
+
+to respond to a cloud
+audit log event.
+
+Now, notice in this deployment
+you'll specify the trigger
+
+event filters.
+
+So we have a type,
+cloud audit log.
+
+
+
+Service name is compute.
+
+And insert instances when
+a new instance is created.
+
+
+
+So let's deploy that.
+
+And while that deploys, let's
+take a look at the code.
+
+
+
+So the first thing to
+notice is that the signature
+
+for the function event
+handlers is different
+
+and now it's cloudevent.
+
+And so we grab the data from
+the cloudevent data payload.
+
+And just in case an event
+has more than one audit log,
+
+we want to make sure
+we're responding
+
+to the very last event.
+
+The resource names, they look
+like in this particular case.
+
+And so we want to break it
+up and grab the instance
+
+name and the user name.
+
+And we log appropriately.
+
+Now, if you're trying
+to-- like in this case,
+
+set a label, the API,
+make sure that you're
+
+setting the most recent label.
+
+And so you need to get the
+instance label fingerprint,
+
+otherwise you're not going
+to be able to set the label.
+
+And then we can
+invoke the VM label.
+
+And then, finally,
+we log the results.
+
+So let's look at the
+setVMLabel, the more interesting
+
+of the two.
+
+So here's the API call.
+
+We set up instanceName,
+zone, project.
+
+Resource here, I have the
+label named as creator.
+
+And then you'll see my
+user name for this account.
+
+And then we make the API call to
+set the label for the instance.
+
+Now, let's take a peek.
+
+And yes, our cloud function
+has finished deploying.
+
+So let's jump over
+to Cloud Console,
+
+and every refresh we'll see
+the vmlabelerdemo is up.
+
+So let's go to the VMs
+and create a new VM.
+
+
+
+And we'll just use the defaults.
+
+
+
+And as soon as that is created,
+you'll see the label is added.
+
+And the nice thing about having
+a Cloud Function automatically
+
+perform this task
+is one less thing
+
+that you have to ask your
+engineers or your developers
+
+or whoever is doing
+the particular task.
+
+It's one less thing for
+them to remember to do.
+
+So instead of having a long
+checklist of, did I do this?
+
+Did I do that?
+
+The more you can automate
+that out, the less human error
+
+you will have.
+
+So let's go to the instance.
+
+And now you can see
+that the creator
+
+is drofaras, which
+is my user name,
+
+or my full name, Sara Ford
+spelled backwards for my demo
+
+account purposes.
+
+VINOD RAMACHANDRAN:
+Thank you, Sara,
+
+for those amazing
+and exciting demos.
+
+So that's a wrap, folks, with
+our session on Cloud Functions.
+
+Please check out Cloud Functions
+at cloud.google.com/functions.
+
+Please also sign up for
+the advanced features
+
+that we've covered
+in this session.
+
+You can do so by
+reaching out to us.
+
+Further, if you
+have any questions,
+
+please feel free to
+reach out to us as well.
+
+Thank you, and have
+a great conference.
+
+
+

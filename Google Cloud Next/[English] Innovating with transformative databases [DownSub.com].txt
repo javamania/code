@@ -1,0 +1,1060 @@
+
+
+SAILESH KRISHNAMURTHY: Hello,
+welcome to this session
+
+on innovating with
+transformative databases
+
+for an always-on digital world.
+
+
+
+My name is Sailesh
+Krishnamurthy,
+
+and I lead engineering for cloud
+native databases at Google.
+
+Today I am thrilled to
+have Hari Ramamurthy, who
+
+is a technology fellow at
+the Home Depot join us.
+
+Hari will share how the Home
+Depot uses Google's cloud
+
+native databases to
+transform their business
+
+in the modern digital world.
+
+We'll begin today
+by talking about
+
+transformative capabilities
+and why they're so important.
+
+Next we'll review our
+transformative databases,
+
+Spanner, Bigtable,
+and Firestore,
+
+and the new innovations we are
+bringing to this portfolio.
+
+And then we'll hear from
+Hari on how the Home
+
+Depot uses these databases.
+
+Today's innovators
+are disrupting
+
+traditional industries by
+using data and software
+
+to deliver personalized and
+seamless digital experiences
+
+across devices and channels.
+
+Modern conveniences, like
+buy online, pickup in-store,
+
+instant digital payments,
+real time ride ridesharing
+
+requests, and other
+marketplace services
+
+have raised the bar in consumer
+experiences with the respect
+
+to the size and the
+complexity of the problem,
+
+or even how regulated
+the industry is.
+
+These disruptive
+experiences require
+
+sophisticated and
+complex applications
+
+that need to serve millions
+of users in a reliable
+
+and continuously
+available fashion,
+
+skillfully handle viral growth
+and unpredictable spikes
+
+in demand without
+missing a beat,
+
+and securely deal
+with bad actors,
+
+and comply with stringent
+regulatory regimes.
+
+Speed is critical, and
+you need the flexibility
+
+to iterate quickly and deliver
+innovative and differentiated
+
+experiences for your customers.
+
+The key to scalably and securely
+serving millions of users
+
+is an operational database
+that'll power your applications
+
+and run your business.
+
+You need databases with
+transformative capabilities.
+
+And the new table stakes are an
+availability SLA of five nines,
+
+with zero maintenance downtime,
+and automatic failure recovery.
+
+That's at most five minutes
+of downtime every year.
+
+Online and unlimited
+scaling and zero
+
+touch global and
+multi-region deployments.
+
+And most important,
+the highest security,
+
+complying with the industry's
+most demanding standards.
+
+At Google Cloud
+we offer not one,
+
+but three
+transformative databases
+
+that provide the
+capabilities that you
+
+need to deliver innovative
+customer experiences.
+
+These are Spanner,
+Bigtable, and Firestore.
+
+And through these
+databases, you get
+
+to access the very same
+groundbreaking technologies
+
+that power the Google apps that
+we all love and use every day,
+
+Search, YouTube, Gmail, Maps.
+
+Each of these are used by
+billions of users worldwide.
+
+And while data is born
+in operational databases,
+
+these are only the first
+part of a bigger journey.
+
+Our database services are
+deeply integrated with a larger
+
+ecosystem of market leading
+data and AI services that
+
+are part of Google Cloud.
+
+These include services like
+BigQuery, GKE, DataFlow,
+
+DataStream, Pub/Sub, Cloud
+Functions, and so on.
+
+And these services
+help you break down
+
+your operational silos,
+build data pipelines,
+
+generate real time insights, and
+make better business decisions.
+
+In 2021 we delivered many
+new features and enhancements
+
+across the entire portfolio.
+
+Some of the more
+notable ones include
+
+customer managed encryption
+keys, data access audit
+
+logging, key visualizers
+for observability,
+
+and an availability
+SLA of up to five nines
+
+for Bigtable, matching that
+of Spanner and Firestore.
+
+And today we are
+excited to share
+
+how we are raising the
+bar yet again with more
+
+new innovations.
+
+Let's take a closer look.
+
+Spanner is a fully managed
+relational database
+
+with global scale,
+asset transactions,
+
+and full SQL support,
+strong consistency
+
+across regions and
+continents, high availability,
+
+up to five nines with
+zero scheduled downtime.
+
+To give you a sense of the
+magnitude of its scale,
+
+Spanner processes over a billion
+requests per second at peak.
+
+There's never, ever been
+a relational database
+
+with the scale of Spanner.
+
+And now we want to
+democratize Spanner and make
+
+it available to everyone.
+
+Earlier this year we announced
+granular instance sizing, which
+
+is available in
+preview, and works
+
+based on a new concept of
+Processing Units, or PUs.
+
+A node is made of 1,000
+PUs, and you can now
+
+get started by
+commissioning 100 PUs.
+
+You can scale up in steps of
+100 PUs without any downtime,
+
+going from 100, 200, 300,
+all the way to 1,000 PUs,
+
+which is one node.
+
+And you can then scale
+out by adding capacity
+
+in increments of 1,000 PUs,
+1,000, 2,000, 3,000, or a node
+
+at a time.
+
+With granular instance
+configurations,
+
+you will be able
+to provision one
+
+tenth of a current node
+for one tenth the price,
+
+and can now get started with
+Spanner for just $65 a month.
+
+We think this is a game
+changer for customers
+
+who need smaller instances
+for smaller and medium sized
+
+workloads, and also
+unlocks creativity
+
+and innovation for smaller
+teams on tight budgets.
+
+
+
+PostgreSQL has emerged today as
+the de facto industry standard
+
+for relational
+databases as businesses
+
+accelerate to the cloud.
+
+And today I am excited to
+announce Cloud Spanner's
+
+Postgres interface, which
+further democratizes access
+
+to Spanner for millions
+of developers and ISPs.
+
+This interface combines
+the power and reliability
+
+of Spanner with the familiarity
+and portability of Postgres.
+
+With the Postgres
+interface, enterprises
+
+looking to standardize
+on Postgres
+
+can now take advantage of
+Spanner's global scale,
+
+five nines availability,
+and strong consistency using
+
+the skills and tools of the
+popular and ubiquitous Postgres
+
+ecosystem.
+
+Spanner's Postgres interface
+is now available in preview,
+
+and we'd love your feedback.
+
+If you are interested,
+please sign up on the URL
+
+listed on the slide.
+
+Bigtable is a fully managed,
+scalable, NoSQL database
+
+for large, operational,
+and analytical workloads,
+
+with an industry
+leading availability
+
+SLA of up to five nines.
+
+It's ideal for apps that require
+consistent, single digit,
+
+millisecond latencies,
+and need to support
+
+high throughput, millions
+of requests per second.
+
+Bigtable scales seamlessly
+from a first gigabyte
+
+to petabyte scale.
+
+And in fact, Bigtable
+has more than 10 exabytes
+
+of data under management.
+
+It also integrates with
+the Apache ecosystem
+
+and supports the HBase API.
+
+And today I'm excited to share
+that autoscaling is coming soon
+
+to Bigtable.
+
+With autoscaling, Bigtable will
+automatically add or remove
+
+capacity in response
+to the changing demands
+
+of your workloads.
+
+So you only pay for the
+capacity that you need.
+
+Autoscaling reduces management
+overhead, as your teams can now
+
+spend more time
+on your business,
+
+and less time managing
+your infrastructure.
+
+And we've also doubled the
+storage units for Bigtable
+
+so you can now store
+more data cheaply.
+
+Bigtable nodes now support
+twice as much storage capacity.
+
+From SSD you go from a limit
+of two and a half terabytes
+
+per node to a maximum of
+five terabytes per node,
+
+and for HDD, from 8
+terabytes per node
+
+to a maximum of 16
+terabytes per node.
+
+This is especially more cost
+effective for batch workloads
+
+that operate on large
+amounts of data.
+
+Firestore is our fully managed,
+scalable, and truly serverless
+
+document database that lets
+you easily and rapidly develop
+
+rich mobile and
+web applications.
+
+All this with an availability
+SLA of up to five
+
+nines that's achieved through
+strongly consistent data
+
+replication.
+
+Developers love Firestore
+because of its ability
+
+to serve both as a
+document database
+
+and as a backend
+business service.
+
+It's therefore, no
+surprise that Firestore
+
+has built a thriving
+developer community
+
+with more than 250,000 monthly
+active developers and Firestore
+
+apps powering more than 750
+million monthly active end
+
+users using Firebase Auth.
+
+You can develop and
+deploy apps fast,
+
+with direct connectivity
+to the database,
+
+no middle tier needed.
+
+These apps can have rich and
+collaborative experiences
+
+with built-in real time live
+synchronization across devices,
+
+as well as seamless
+support for disconnected
+
+or an offline mode.
+
+
+
+Firestore's developer
+experience truly sets it apart.
+
+And we continue to invest
+heavily in this area.
+
+With Key Visualizer, customers
+can quickly and visually
+
+identify performance issues.
+
+With the latest
+version of our web SDK,
+
+we've added tree shaking,
+which reduces the SDK footprint
+
+by as much as 80%.
+
+A smaller SDK means faster
+load times for your app.
+
+Both Key Visualizer and the new
+web SDK are available today.
+
+We also graduate the Unity
+and C++ SDKs to general
+
+availability in Q4.
+
+Both of these SDKs
+make it easier
+
+to develop mobile
+games using Firestore.
+
+We're excited about
+mobile gaming.
+
+As game developers have
+told us how Firestore lets
+
+them quickly build and
+iterate on their games.
+
+In addition to
+developer friendliness,
+
+we've been focused
+on making Firestore
+
+more enterprise friendly, with
+a strong commitment to security
+
+and privacy.
+
+Data access audit
+logs in preview
+
+lets privileged
+administrators audit
+
+all operations, admin, and
+data on a Firestore database.
+
+Custom IAM in GA lets you
+align Firestore permissions
+
+with your organization's
+IAM roles.
+
+In addition to
+these enhancements,
+
+I'm excited to
+announce new features.
+
+With VPC service
+controls customers
+
+will be able to reduce
+exfiltration risks
+
+through network level security
+controls that include Firestore
+
+in a security perimeter.
+
+And with App Check,
+customers will
+
+be able to ensure only signed
+and pre-authorized apps
+
+are allowed to make
+requests to Firestone.
+
+We'll roll out previews
+for VPC service controls
+
+and App Check in Q4.
+
+Let's now take a look
+at real world examples
+
+and hear from Hari on
+how the Home Depot is
+
+using these transformative
+databases for a variety of use
+
+cases.
+
+
+
+HARI RAMAMURTHY:
+Thank you, Sailesh.
+
+Home Depot is the largest
+home improvement retailer
+
+in the US with close to
+2,000 stores in the US.
+
+But specifically in the context
+of this last year that's
+
+been so unprecedented,
+the amount of stress
+
+that we've been placing on
+all our IT systems in general
+
+has really been significant.
+
+And thanks to the Google
+platform overall and many
+
+of these databases, I think
+our systems have actually
+
+come out doing quite well during
+these really challenging times.
+
+Some of the key
+metrics, if you really
+
+look at it in the course of
+this really extraordinary period
+
+that we are in, we're delighted
+that we grew our business
+
+in 2020 by $21 billion.
+
+86% of the digital sales growth
+and over $3.6 billion visits
+
+to our website are some
+of the key metrics that
+
+underscore the criticality
+of the technology platforms
+
+and solutions that we've been
+running through this period.
+
+
+
+Let's look at Cloud Spanner and
+its usage in some more detail.
+
+There are multiple scenarios
+in the organization,
+
+especially in areas
+like supply chain,
+
+or order management, or loyalty
+where it is really critical
+
+that the system state
+moves from one atomic,
+
+ACID compliance state to another
+consistent transactional state.
+
+And we need to do
+this in addition
+
+to those systems actually being
+available in multiple data
+
+centers and serving
+traffic coming
+
+from various regions
+to these APIs
+
+and the databases
+that power them.
+
+And this is really
+where Spanner has
+
+been a key player in
+ensuring that we're
+
+meeting the level
+of service that
+
+is expected of our customers.
+
+To look at Spanner
+in some more detail,
+
+I think the fact that
+we, in these areas,
+
+are able to deploy our software
+on three or more data centers
+
+and have really large
+volumes of data--
+
+I mean, the 10 TB is still
+where we are currently
+
+and we see that growing rapidly.
+
+But be able to serve the
+traffic that's coming through
+
+in multiple data centers,
+and have the system move
+
+from that one consistent
+transactional state to another
+
+has been really key in making
+sure that we are always
+
+not only serving traffic
+at extremely high volumes,
+
+but we do not have to do it with
+any fear about the consistency
+
+with which the system
+is actually performing.
+
+In addition, capabilities
+like secondary indices
+
+has been really helpful
+in some of these scenarios
+
+in making sure that
+we can access the data
+
+and reach the appropriate
+pattern of usage,
+
+depending on the context.
+
+The fact that we
+are fundamentally
+
+able to deploy these
+applications that
+
+have strong consistency
+guarantees without needing
+
+to worry about uptime,
+and be able to serve
+
+our customers in these
+various geographical zones
+
+has really been a
+game changer for us.
+
+And it's something
+that we've been
+
+really excited to use
+and employ as part
+
+of our overall strategy.
+
+
+
+On the other side
+of the spectrum,
+
+there are also multiple
+scenarios where we may not
+
+need the strong
+consistency guarantees,
+
+but we have extremely demanding
+requirements with regards
+
+to the response time
+of the database,
+
+as well as the scale
+of the database.
+
+And this is really
+where Bigtable's
+
+been a game changer for us.
+
+A specific case in point
+is on the website where
+
+we employ personalized
+experiences for our customers,
+
+we've been able to tailor
+these experiences at extremely
+
+high volumes based
+on the journey
+
+that the customer has taken,
+combine it with prior purchase
+
+history, as well as both
+static and dynamic rules
+
+that we've actually learned
+based on customer shopping
+
+behaviors.
+
+And some of these
+requirements demand
+
+that we easily scale
+up to thousands
+
+of transactions per second.
+
+And we've been able to do
+that quite effortlessly
+
+with Bigtable.
+
+In addition, there are scenarios
+like inventory aggregation
+
+where we really have to
+bring together the inventory
+
+picture across our network,
+both the stores and the supply
+
+chain, and be able to do this
+in a matter of milliseconds
+
+so that we are able to
+appropriately promise
+
+to our customers
+the inventory that's
+
+available in various locations.
+
+And we're really glad that we
+chose Bigtable as the platform
+
+to bring some of
+these experiences.
+
+I think it's noteworthy that
+in many of these scenarios,
+
+we are dealing with certainly
+thousands of transactions
+
+per second during
+regular processes,
+
+but in scenarios like
+the recommendations,
+
+there are scenarios where we
+need to process certain batch
+
+processes that may push up
+the database's transaction
+
+throughput to up to 450,000
+transactions per second.
+
+And we do this on a consistent
+basis for short periods of time
+
+without needing to
+employ a large cluster
+
+throughout the period, but
+rather just bringing up
+
+the increased number of
+nodes when we need it,
+
+and then going back to a
+more regular sized cluster.
+
+As mentioned here, currently
+that's typically from 10
+
+to up to 30 nodes.
+
+And we're really excited about
+having this type of elasticity
+
+come to play.
+
+In addition, the fact that we're
+able to serve these extremely
+
+high volumes of
+traffic without having
+
+to worry about maintaining
+these databases,
+
+worrying about updates,
+and be able to do it
+
+in that multi datacenter
+set up that is almost
+
+necessary for our
+scales and volumes
+
+has been truly a
+game changer and has
+
+allowed us to deal
+with the type of spikes
+
+that we have seen through
+the course of this last year.
+
+
+
+Firestore is another
+really interesting database
+
+that we're doing
+some prototypes with.
+
+And the specific
+capability of Firestore,
+
+with its offline
+capabilities both from a read
+
+as well as from a write
+through cache standpoint
+
+is something that's
+of great interest.
+
+And there are certain scenarios
+across our stores in home
+
+where we really believe
+that this capability could
+
+come in really handy.
+
+And we're currently
+in the process
+
+of prototyping this database.
+
+And we're really excited
+by what it has to offer.
+
+
+
+SAILESH KRISHNAMURTHY:
+Thank you, Hari,
+
+for sharing how the Home
+Depot is innovating customer
+
+experiences with
+Google Cloud Databases
+
+and driving the growth
+of your business
+
+in this very challenging and
+interesting time for all of us.
+
+Google Cloud Databases provide
+a groundbreaking platform
+
+for innovation
+based on decades of
+
+our own firsthand experiences
+with shaping the digital world.
+
+We offer the highest levels
+of availability, reliability,
+
+and global scale,
+enabling you to deliver
+
+the best possible experiences
+for your customers.
+
+There is tons more
+exciting content at Next.
+
+And I encourage
+you all to attend
+
+these sessions to learn more
+about Spanner, Bigtable,
+
+and Firestore.
+
+To dive deeper,
+take the Qwiklabs.
+
+Thank you all so much
+for your time today.
+
+
+

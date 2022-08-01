@@ -1,0 +1,1010 @@
+
+
+JENNIFER SMITH: Dear everyone,
+I hope you're enjoying Next '21.
+
+Welcome to our
+session on extending
+
+Anthos to manage VM workloads
+in on-premises environments.
+
+I'm Jennifer Smith, Director
+of Product Management
+
+within Google Cloud Anthos.
+
+I'm also joined today by my
+colleague Amr, Senior Product
+
+Manager for Google Cloud Anthos.
+
+Amr, want to say
+hi to everybody?
+
+AMR ABDELRAZIK: Hi, everyone.
+
+Thank you for joining us.
+
+We're excited to show you
+some of the cool things we've
+
+been working on over the
+last couple of months.
+
+JENNIFER SMITH: Thanks, Amr.
+
+We'll talk to you again soon.
+
+And like Amr said, we're really
+excited to share with you some
+
+of the recent work we've
+been doing to help enterprise
+
+customers further
+when they navigate
+
+their hybrid and
+multicloud applications.
+
+I know virtual presentations and
+conferences have been our norm
+
+for longer than we all
+might have imagined,
+
+so we've constructed our
+session today as part talk
+
+and part do via a product demo.
+
+So let's get going.
+
+Customers are
+increasingly looking
+
+to modernize, whether that
+modernization is in place, lift
+
+and shift, or via
+containerization.
+
+An overwhelming
+majority of enterprises
+
+have a hybrid and
+multicloud strategy.
+
+Wanting to modernize
+with consistency
+
+across all environments isn't
+just a nicety, it's crucial.
+
+And yet even with this
+increasing desire to modernize,
+
+only about one sixth
+of enterprise workloads
+
+are containerized.
+
+That leaves many millions
+of non-containerized VM
+
+based workloads still
+in the data center.
+
+How can we include these VMs
+in modernization efforts?
+
+We'll come back to that soon.
+
+
+
+Let me start by providing
+a brief overview of Anthos.
+
+Anthos is Google's hybrid
+and multicloud platform,
+
+providing a consistent
+operating system for Cloud
+
+native deployments
+across all site types,
+
+whether that's on-premises,
+at the edge, or public Cloud.
+
+It gives you all the tools you
+need for consistent operations,
+
+service and policy
+management, so that you can
+
+build once, and run anywhere.
+
+Starting with
+container management,
+
+it's a reliable
+and efficient way
+
+to deploy and run containers,
+leveraging our experience
+
+with Google Kubernetes Engine,
+the industry leading container
+
+management platform.
+
+On top of this sits the
+service management layer.
+
+It's a managed service mesh
+offering to connect, manage,
+
+and secure VMs and containers.
+
+This is based on Istio.
+
+And on top of that is the
+application development layer,
+
+comprising a wide selection of
+production-ready development
+
+solutions and services
+from both Google
+
+and our partners all available
+through the Google Cloud
+
+marketplace.
+
+
+
+The layers are flanked on two
+sides by policy management,
+
+offering a central place
+to manage configuration
+
+and security policies
+across your fleet,
+
+using the power of
+Kubernetes along with getops
+
+to implement an infrastructure
+as code approach to your Cloud
+
+native network, and on the
+other by operations management,
+
+offering an integrated
+logging and monitoring
+
+service for containers,
+services, and applications.
+
+There were a few really
+important attributes
+
+we felt were essential to
+building this new platform
+
+to help customers with
+their hybrid and multicloud
+
+applications.
+
+We wanted it to be open
+source, declarative in nature,
+
+developer friendly,
+and extensible.
+
+Because of this,
+we chose Kubernetes
+
+as the basis of our
+Anthos platform.
+
+And as we've been working
+with many Anthos customers
+
+on their modernization
+journeys, we've
+
+received some very
+important feedback.
+
+
+
+Customers have shared with us
+some of their key challenges
+
+with modernization, starting
+with the simple fact that there
+
+are many workloads that cannot
+be easily or immediately moved
+
+to containers or
+VMs in the Cloud.
+
+They also have
+organizational, skills,
+
+and process gaps between
+Cloud native and traditional
+
+operations.
+
+Their infra teams lack
+unified management, security
+
+and monitoring for
+VMs and containers.
+
+And their dev teams are
+constrained and using
+
+modern application development
+techniques and tools
+
+with traditional VM workloads.
+
+Delving a little bit deeper, the
+root causes of these challenges
+
+are long, multi-step
+provisioning,
+
+fragmented observability,
+manual compliance enforcement,
+
+and an expensive
+proprietary ecosystem.
+
+So what can we do?
+
+
+
+Currently, there are
+three Cloud-centric
+
+and one on-premises option
+for modernizing existing VM
+
+applications.
+
+You can migrate virtual
+machines to Google Cloud
+
+VMs with Migrate
+for Compute Engine.
+
+We can lift and shift your
+entire virtualization stack
+
+with Google Cloud VMware Engine.
+
+You can migrate
+your VM workloads
+
+to containers on Cloud
+with Migrate for GKE.
+
+Or you could decide to modernize
+to containers on-premises
+
+with Migrate for Anthos.
+
+We support all of these
+incremental VM modernization
+
+strategies, but our customers
+want another option.
+
+They want a way to leave
+apps in VMs until and if they
+
+can be migrated, while gaining
+the same benefits of running
+
+those VMs on Kubernetes
+and mapping those VMs
+
+using a consistent
+Kubernetes-style approach
+
+to provisioning, configuration,
+monitoring and logging,
+
+security, and optimization.
+
+So today we're adding a
+new on-premises option.
+
+Leveraging Google's
+leadership in Kubernetes,
+
+you can modernize
+VM applications
+
+without needing to containerize
+or move to Cloud right away,
+
+and you can do this now
+with Anthos for VMs.
+
+Anthos for VMs lets
+customers apply the expertise
+
+they're building and running in
+managing containers to their VM
+
+environments to build bridges
+of automation between containers
+
+and VMs and to reduce
+their spending on VM
+
+platforms and management tools.
+
+With this new option, we provide
+the flexibility of choice
+
+to modernize in a way that
+best meets your business needs.
+
+So how does it
+actually come alive?
+
+We've created two
+adoption models, Shifable
+
+and Attachable.
+
+In the Shiftable case,
+VMs run on Anthos.
+
+In the Attachable scenario,
+we manage other hypervisors
+
+VMs with Anthos.
+
+You can choose between
+the two approaches
+
+or use them both simultaneously.
+
+You get unified management,
+declarative deployment,
+
+and policy enforcement for
+your VMs and your containers.
+
+You bring a Cloud-like
+experience to your VMs
+
+and can leverage Cloud native
+services for your VM workloads.
+
+Moving to a bit of a deeper
+look at the technologies
+
+that enable the Shiftable and
+the Attachable approaches.
+
+First, we see the runtime
+layer with Anthos VM runtime
+
+based on Kubevirt in
+the Shiftable scenario.
+
+In the Attachable track,
+we use VMware vSphere.
+
+Next we have network security
+and policy via Anthos Service
+
+Mesh based on Istio.
+
+And moving up the stack, we have
+Kubernetes APIs and an Anthos
+
+config and policy management.
+
+At the top of the stack, we
+have Cloud native capabilities
+
+and services, such as patch
+management, databases,
+
+and AIML.
+
+So with Anthos for
+VMs, we help ease
+
+many of the
+modernization challenges
+
+our customers have
+shared with us.
+
+Using Kubernetes, we're
+able to provide fast, secure
+
+infrastructure provisioning,
+unified operational visibility,
+
+automated compliance,
+and cost reduction.
+
+I'm gonna pass it over to
+Amr now, ask him to come back
+
+and join us and help explain
+how we can get started.
+
+And you can get started
+with answers for VMs
+
+and run us through what
+the demo will look like.
+
+Amr?
+
+AMR ABDELRAZIK:
+Thank you, Jennifer.
+
+So the first step is
+to do a fit assessment.
+
+This is a tool that actually
+understands your infrastructure
+
+and tries to understand
+what is the right migration
+
+or what is the
+right modernization
+
+journey for your application.
+
+It runs as a
+standalone tool or you
+
+can run it on top of an
+existing Anthos cluster
+
+if you're an Anthos customer.
+
+And it does an assessment
+of the VM workloads.
+
+And it decides on a
+score that tells you
+
+what is the right journey,
+whether it's Shiftable,
+
+you want to be able to migrate
+it to the Anthos VM runtime,
+
+if it's Attachable, connecting
+this VM to Anthos Management
+
+Layer, or if it's
+Containerizeable,
+
+whether this VM is
+containerized or not.
+
+And if a VM has multiple
+options, it lays that out too.
+
+And there is a fit score that
+also gives you the effort,
+
+and if there is
+any data that you
+
+need to address, for example,
+in order to move from one path
+
+to the other.
+
+From a workload perspective, you
+download the standalone tool,
+
+you connect to existing vCenter.
+
+It generates a local report
+that, optionally, you
+
+can upload to the Cloud for
+a detailed visualization
+
+or historical view.
+
+We'll go to the
+next slide, please.
+
+This is how the fit
+assessment report looks like.
+
+It provides you a data center
+wide readiness, as I mentioned,
+
+Actionable VM level suggestions,
+ROI analysis, and risk metrics
+
+to every migration.
+
+And now next we have a demo--
+
+and we're very excited
+to show you that demo.
+
+We've been working on
+some of these technologies
+
+for a couple of months.
+
+So just to describe the demo,
+the first part of the demo
+
+talks about the discovery and
+assessment using the mfit tool
+
+that we just mentioned.
+
+And then we're going to showcase
+two scenarios of Shiftable
+
+VM and Attachable VM that have
+been migrated or attached.
+
+And then for day two we're
+going to talk about management
+
+from Cloud Operations, Anthos
+Configuration Management,
+
+and Anthos Service Mesh.
+
+So with that, let's
+move on to the demo.
+
+SPEAKER: All right, we're
+now ready for a quick demo
+
+of Anthos for VMs.
+
+Here we see the
+Anthos landing page.
+
+This is the central
+interface where
+
+you can view your
+registered Anthos clusters,
+
+alter your services with
+Anthos Service Mesh,
+
+or manage legacy workloads
+with Anthos for VMs' new VM
+
+Management Capabilities.
+
+
+
+The critically important first
+step when using Anthos for VMs
+
+is to run a fit assessment on
+your legacy VMware environment,
+
+determine which VMs can be
+easily containerised, shifted,
+
+or attached.
+
+Anthos for VMs' fit
+assessment tooling
+
+quickly scans your
+VMware environment
+
+and collects application,
+hardware, networking,
+
+and storage metadata
+related to each VMware VM
+
+to systematically determine
+which category it belongs to.
+
+Once its assessment
+is completed,
+
+the results are displayed
+in a report that explains
+
+each recommendation in detail.
+
+OK, now with that
+explanation out of the way,
+
+let's run a fit assessment
+and see the results.
+
+
+
+Here we go in Terminal, it has
+Anthos for VMs fit assessment
+
+tooling installed on it.
+
+After we run a single command
+and authenticate our VMware
+
+environment, we'll see
+the assessment tool start
+
+to rapidly scan
+through over 2,000 VMs,
+
+and then upload it's results
+to the Google Cloud console.
+
+
+
+Once a report has
+been generated,
+
+we see that we've
+assessed 2,077 VMs.
+
+15 of them were categorized
+as being excellent candidates
+
+to attach to Anthos
+for VMs with an agent,
+
+and the rest were
+great candidates
+
+to be hosted on
+Kubernetes using Kubevirt.
+
+In particular, we
+see detailed results
+
+for three legacy VMs, a
+front end, a back end,
+
+and a transaction service.
+
+We'll examine a few of
+these results in more depth.
+
+And later on in the demo,
+we'll use Anthos for VMs
+
+to both shift and
+attach these legacy
+
+VMs to Anthos' modern
+Kubernetes-based control point.
+
+
+
+Now opening the result for
+legacy front end service,
+
+we'll see that it has been
+categorized a shift candidate,
+
+due to its Kubevirt compatible
+application profile.
+
+
+
+Opening the result for the
+legacy transaction service,
+
+we see it as being categorized
+an attach candidate
+
+due to the fact that it requires
+multiple network interfaces.
+
+
+
+OK, now it's time to generate
+the migration artifacts
+
+that Anthos for VMs will use
+to take control of these legacy
+
+VMs.
+
+
+
+Here we see a
+migration job called
+
+demo1 is already underway.
+
+
+
+Clicking on Create
+Migration will show us
+
+the prompt that was
+used to create this job.
+
+
+
+By filling in just a few values,
+such as migration source,
+
+operating system type
+for the source VMs,
+
+and the desired output from
+migration, like containerize
+
+or convert to a Kubevirt
+VM, one can easily
+
+create a VM migration job.
+
+
+
+Examining our in-progress
+migration job more closely,
+
+we can see that it's currently
+preparing some VM management
+
+artifacts.
+
+
+
+Switching back to the
+Google Cloud console,
+
+we see an empty table.
+
+After clicking the
+Refresh button,
+
+we see that our Anthos cluster
+now contains the new Kubevirt
+
+and Istio custom resources
+that are just created
+
+by Anthos Config Manager.
+
+
+
+We navigate to
+the Workloads tab,
+
+we can see at the Kubernetes
+pods associated with the two
+
+legacy VMs that we shift to
+Kubevirt are now ready as well.
+
+Click on of these
+workloads takes us
+
+to an overview page that shows
+real time metrics and events.
+
+
+
+Clicking on the
+Operations button
+
+opens a side panel, displays
+tons of additional information,
+
+like regular metrics and
+logs specifically designed
+
+to assess application
+reliability.
+
+
+
+Next we shift our focus to the
+Anthos for VMs Service Mesh.
+
+Here we see the entire
+service topology
+
+of our example application.
+
+Our example app
+generates client traffic
+
+that is sent to a modern
+containerized front end
+
+service.
+
+
+
+This front end service
+in turn sends a request
+
+to a few other modern
+APIs and our three shifted
+
+and attached legacy VMs.
+
+
+
+The front end service
+is highly available.
+
+It sits behind a load
+balancer, which spreads traffic
+
+across five service replicas.
+
+
+
+Request to the modern front end
+made to a few particular end
+
+points are automatically routed
+to the legacy shifted from it.
+
+Similarly, the
+modern front end also
+
+routes a few specific API
+calls to the legacy shifted
+
+backend service.
+
+
+
+The legacy attached
+transaction service
+
+is called both by the shifted
+back end service and a number
+
+of other modern APIs.
+
+
+
+Double clicking on the
+shifted back end service
+
+takes us to a detailed view
+of its local service topology,
+
+where we can see info on
+its current performance
+
+and resource utilization,
+and lots of other stuff.
+
+More importantly, now that our
+legacy VM is managed by Anthos,
+
+we can now use Anthos
+observability tooling
+
+to make the old app awesome.
+
+To demonstrate this we're going
+to go ahead and create an SLO,
+
+AKA a Service Level Objective.
+
+
+
+First, we select an
+availability-based SLI.
+
+Here we'll set our compliance
+period to one week,
+
+and a performance goal
+to 99.5% availability.
+
+Finally, we click Create.
+
+
+
+Next we'll add an
+alert to our SLO.
+
+
+
+Here we'll just select all
+the default settings, and then
+
+a short message.
+
+
+
+Awesome.
+
+We've just sprinkled
+some Google SRA magic
+
+on our legacy application.
+
+And now we've reached
+the end of our demo.
+
+We've seen how Anthos or VMs can
+be used to consistently manage
+
+legacy applications using
+Kubernetes awesomeness,
+
+and slick Google tooling.
+
+Enjoy.
+
+AMR ABDELRAZIK: We hope
+you liked the demo.
+
+And with that, I'll
+hand it over to Jennifer
+
+to tell us how we can learn
+more about Anthos for VMs.
+
+JENNIFER SMITH: Thanks Amr.
+
+Thanks for sharing how
+our customers can get
+
+started with Anthos for VMs.
+
+Like Amr said, we would love
+to work with you as well.
+
+Anthos for VMs is
+currently in preview,
+
+and we are working with a group
+of customers as our design
+
+partners.
+
+If you're interested in our
+preview, or learning more,
+
+please contact us at this email.
+
+We would really love
+to talk some more.
+
+Thank you very much.
+
+Have a great day.
+
+And enjoy the rest of Next '21.
+
+
+

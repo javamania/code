@@ -1,0 +1,1656 @@
+
+
+CHRISTOPHER CROSBIE:
+Hey, everyone.
+
+I'm excited to be here to
+discuss how you can speed up
+
+your software development with
+better insights and deeper
+
+diagnostics with new
+capabilities that
+
+have been jointly developed from
+the BigQuery and Cloud Logging
+
+teams.
+
+I'm Christopher Crosbie.
+
+I'm a product manager
+focused on advanced analytics
+
+here at Google Cloud.
+
+Later I'll be joined by Charles
+from the Cloud Logging team.
+
+
+
+So a fundamental
+requirement for enterprises
+
+wanting to transform
+themselves digitally
+
+is a need to store,
+manage, and analyze
+
+large quantities of operational
+data from a variety of sources.
+
+Logs are a critical data
+source for troubleshooting
+
+machine learning, data
+analytics, and security.
+
+So while Cloud Logging
+today can already
+
+handle massive amounts of data,
+capturing petabytes with ease,
+
+many developers still struggle
+to analyze this log data,
+
+and they're unable to find
+those symptoms in the log that
+
+lead to deeper diagnostics.
+
+And despite the large
+volumes of data,
+
+often they still find it hard
+to move from a retrospective log
+
+analysis to predictive
+insights and prevent issues
+
+before they happen.
+
+So to help you achieve this next
+level of software development
+
+with better insight
+and deeper diagnostics,
+
+Charles and I are
+thrilled to announce
+
+Log Analytics, a new
+comprehensive, easy to use,
+
+cost effective,
+and performant tool
+
+within Cloud Logging that
+has the performance and power
+
+of BigQuery behind it.
+
+This capability should
+help you use your logging
+
+data for both
+better diagnostics,
+
+as well as getting more
+insight into your business.
+
+Now with the companies
+I've worked with,
+
+I've seen several teams
+that rely on logging data.
+
+Yet the majority
+of the users really
+
+struggle to analyze that high
+volume of messy log data.
+
+And that leaves
+organizations with a lot
+
+of unrealized potential.
+
+So the new Log Analytics
+feature is directly
+
+targeted at those teams who are
+wrestling to extract insight
+
+that they need from that hard
+to analyze logging information.
+
+This is targeted at DevOps
+teams who want to improve system
+
+reliability, and they might be
+struggling with analyzing logs
+
+at large scale and want a
+centralized logging repository.
+
+Or IT teams that need insight
+into how to better manage
+
+their fleet, and
+they're struggling
+
+to analyze signals across
+multiple clouds or even data
+
+centers and look at the
+trends over historical amounts
+
+of time.
+
+Security teams that
+want to identify
+
+attacks, and they want to start
+taking advantage of the latest
+
+and greatest machine
+learning and advanced
+
+analysis techniques to
+detect those threats.
+
+Or business users that want to
+make better decisions but today
+
+they struggle to
+get logs integrated
+
+with their visualization
+and analytic tools,
+
+and they struggle to combine
+their logs data and business
+
+data.
+
+Now when I go and
+talk to these teams,
+
+it becomes pretty obvious what
+the source of their struggle
+
+is.
+
+What makes log
+analytics hard today
+
+is the complexity
+of the data systems
+
+that organizations need to run.
+
+So most of you watching,
+you're probably
+
+familiar with a similar
+convoluted architecture
+
+at your own company.
+
+Where possibly application logs,
+they go into an elastic index,
+
+and then that's where your
+application performance
+
+monitoring or Kibana
+dashboards are.
+
+But then you have
+lower level operating
+
+system network logs that flow
+into a proprietary security
+
+vendor's database.
+
+Then of course,
+there's other machine
+
+generated logs, like maybe
+from sensors or IoT data.
+
+And they get stored
+in a format that's
+
+optimized for time
+series analysis, which
+
+is then downsampled
+into a data warehouse.
+
+And so there is a lot of
+overhead with all of this,
+
+and you definitely
+pay an additional tax
+
+for extracting and copying
+all that data around.
+
+So when I chat with the
+end users of these systems,
+
+they tell me that today's
+common architecture patterns,
+
+it generates five
+critical issues
+
+that make this log
+analytics so hard.
+
+First is the latency issues.
+
+There's just a lot
+of additional hops,
+
+and that means data takes
+longer to get to different end
+
+systems.
+
+Two, if no clear
+source of truth.
+
+Data transformation might
+happen in multiple places.
+
+That makes it a
+challenge to understand
+
+what's happened to the data.
+
+Three, moving to
+machine learning
+
+requires a lot of
+additional hoops.
+
+It is not trivial to just take
+a TensorFlow model or a notebook
+
+and put that on top of
+these various systems.
+
+Four, the reliance on
+multiple interfaces
+
+where the same users need
+to learn different systems
+
+just has a whole mess of
+different applications and tabs
+
+that users have to manually
+reconcile themselves.
+
+And even with all
+this user pain,
+
+the IT teams still
+have to manage
+
+a lot of high cost
+and management
+
+complexities of running
+all these different vendor
+
+databases and applications.
+
+When I ask customers
+what they want,
+
+it essentially
+boils down to having
+
+a separation between the
+log aggregation and the log
+
+applications.
+
+More of our tech savvy
+customers have already
+
+started to adopt BigQuery
+as their centralized log
+
+aggregation store for data
+collection, normalization,
+
+and storage management tasks
+like auditing and compliance.
+
+Now here at Google, it
+does seem intuitive to us
+
+that customers are
+choosing BigQuery
+
+as their next generation
+logging analysis platform.
+
+Dremel, which is
+the query engine
+
+that BigQuery is based
+on, that was originally
+
+designed and built for logs.
+
+And it's being used
+for over a decade
+
+for analyzing logs and creating
+sophisticated machine learning
+
+on those logs for some of
+Google's biggest applications--
+
+Search, YouTube, Gmail.
+
+And so if I start
+to compare BigQuery
+
+against typical
+logging platforms
+
+that customers are using today
+there's some clear advantages
+
+that I'm seeing.
+
+First is just the management.
+
+Today's logging platforms
+need more automation
+
+just due to the applications
+shifting into ephemeral servers
+
+and microservice architectures.
+
+It's just becoming way
+too hard to keep up
+
+with all the various
+IT management
+
+tasks that are required for
+running the various logging
+
+backends.
+
+BigQuery, fully
+managed, serverless.
+
+Two, customers need
+data lake scalability.
+
+Logs are coming
+from all over now.
+
+On prem, multiple clouds,
+Kubernetes, real world IoT
+
+systems.
+
+What used to really
+be a telco scale
+
+for a lot of these
+security vendors
+
+that relied on logs
+data is pretty standard
+
+for your average enterprise now.
+
+And when it comes to
+security analysis,
+
+you need these logs in
+a centralized place.
+
+Threats are not system specific.
+
+A hacker got into GCP?
+
+Guess what, they probably
+got into AWS, too.
+
+And you want to review and
+track that in one location.
+
+It's equally
+important to also have
+
+a full history of the logs.
+
+That's becoming more important.
+
+If you look at something like
+the recent SolarWinds attack,
+
+that went back over 9 months.
+
+It doesn't work
+anymore to just have
+
+30 or 60 days worth of logs
+in your security database.
+
+You need something that can
+cost effectively, independently
+
+scale the storage and
+analysis like BigQuery can.
+
+And speaking of security,
+the security posture
+
+that many of these legacy
+or on prem log systems
+
+had relied on security
+controls like maybe the network
+
+as a primary layer
+of protection.
+
+But now in our
+cross cloud world,
+
+things like network
+perimeters are vanishing.
+
+And you mix that with tougher
+regulations like GDPR,
+
+you really need a
+backend now that
+
+can help you achieve a
+security posture that
+
+makes it easy to align
+for our digitalized world
+
+and that you can trust with
+your logging information.
+
+Another big one that I'm
+really hearing from customers
+
+is a need for advanced
+analytics and custom ML.
+
+Customers are finding that these
+pre-canned outlier dashboards
+
+that their logs applications are
+coming with just don't cut it
+
+for the systems today.
+
+I was working with
+one enterprise who
+
+moved over their existing
+[INAUDIBLE] to GKE
+
+and almost instantly got
+30,000 erroneous alerts.
+
+So customers have
+told me that they
+
+want to do their own analysis,
+develop their own algorithms
+
+that are designed for their
+architecture, their business.
+
+BigQuery is already being used
+by some of the largest security
+
+vendors out there to develop
+XDR platforms as an alternative
+
+to reactive approaches
+of the [INAUDIBLE]..
+
+And they're doing that
+with GCP AI capabilities
+
+like BQML and Vertex.
+
+Finally, there's just
+a lot of new use cases
+
+that customers want to use,
+that customers are realizing.
+
+Customers, they understand
+now that there's
+
+a lot of business value in
+joining all of this logging
+
+data to their business
+data, and then they
+
+want to share it with others.
+
+I'm working with an
+e-commerce company who's
+
+analyzing weblog data alongside
+their clickstream data
+
+to better understand how users
+interact with their site,
+
+and then they can offer them
+better product recommendations.
+
+And that's already led to
+increased sales for them.
+
+So having logs that can be
+easily analyzed and joined
+
+the rest of your warehouse,
+that just opens up
+
+a whole new set of use cases
+like predicting customer
+
+behavior, optimizing
+online marketing campaigns,
+
+and maybe even
+understanding how employees
+
+engage with different software
+solutions in your organization.
+
+So to unlock these use
+cases and help customers
+
+better understand the logs data
+that they bring to BigQuery,
+
+we're enhancing support
+for log analytics
+
+with investments in
+three core areas.
+
+Semi-structured
+data, search indexes,
+
+and time series analysis.
+
+These new features
+and functions are
+
+going to let you
+explore and analyze
+
+the wealth of logging
+data that you have
+
+alongside your business data.
+
+So with native JSON, there's
+going to be a new data type
+
+specific to JSON.
+
+And it's going to
+on a load shred
+
+that JSON document that
+can be unstructured,
+
+constantly changing, into
+a columnar store format
+
+so you can get the same
+performance and cost
+
+effectiveness that
+you've come to expect
+
+from any other structured
+data in BigQuery.
+
+Along with that, you're going to
+find additional JSON functions,
+
+like a dot subscript notation
+to make it a lot easier to work
+
+with these JSON data sets.
+
+Second, the search
+indexes are going
+
+to provide text indexes that
+provide users the ability
+
+to run what I call needle
+in the haystack type
+
+queries on the log data.
+
+This is when you want to
+pinpoint a very specific data
+
+element.
+
+So let's say I
+want to find Chris
+
+Crosbie in a petabyte
+of logging data
+
+so I can delete him
+for GDPR reasons.
+
+This search index
+is going to let
+
+you do that, or find
+specific IP addresses
+
+or other specific data elements.
+
+Finally, coming soon
+there's going to be also
+
+TimeSeries joins and data types.
+
+So we're going to support
+joining table by arbitrary time
+
+windows, where we
+sample that data,
+
+and you'll also be able to
+store time periods, as opposed
+
+to just a point in time.
+
+So here at GCP we're putting
+our money where our mouth is
+
+and we're standing
+behind these features
+
+in our own logs applications.
+
+We are using these features as
+a base for our log analytics
+
+application from Cloud
+Logging, and so now I'm
+
+going to hand you
+over to Charles
+
+to tell you more about that.
+
+CHARLES BAER: Thanks Chris.
+
+My name is Charles Baer.
+
+I'm a product manager
+in Cloud Logging,
+
+and Chris and I have been
+partnering on Log Analytics.
+
+Log Analytics combines the
+purpose built logging platform
+
+provided by Cloud Logging
+with BigQuery's powerful data
+
+analytics platform.
+
+And we build log analytics
+and Cloud Logging
+
+for three reasons.
+
+First, ad hoc log analysis.
+
+To empower users to answer
+sophisticated questions
+
+where ad hoc grouping can
+deliver useful insights.
+
+For log aggregation-- to
+answer the types of questions
+
+that require log aggregation
+over large data volumes.
+
+And to build a
+platform upon which
+
+both our users and our product
+can grow for the future.
+
+Now Cloud Logging is uniquely
+positioned for log analytics.
+
+Cloud Logging provides an
+integrated logging solution,
+
+both for services that
+are running on top of GCP,
+
+as well as logs that are
+generated externally.
+
+This includes log collection,
+routing, storage, and analysis.
+
+All the things you need
+in a logging platform.
+
+So in Cloud Logging, log
+collection is really easy.
+
+Logs for services
+on Google Cloud
+
+are automatically
+collected, and it's
+
+easy to collect other
+infrastructure and application
+
+logs if you need to.
+
+Getting the right logs is easy.
+
+It's a first critical step for
+the logging analytics, as well.
+
+The second thing
+is the logs router.
+
+It provides powerful
+routing capabilities.
+
+The built in routing routes
+logs to Cloud Logging, other GCP
+
+services like Cloud
+Storage, and even
+
+to external third party
+tools with integration
+
+through Pub/Sub.
+
+Now for log analytics
+the platform routes
+
+logs to BigQuery.
+
+The storage platform provides
+scalable log management
+
+capabilities.
+
+These capabilities
+provide controls
+
+around what logs are stored,
+where they're stored,
+
+how long they're stored, and
+who can access them to meet
+
+your compliance requirements.
+
+For logging analysis, this
+manages the storage and access
+
+in BigQuery.
+
+Cloud Logging already provides
+several tools to analyze
+
+logs, each with
+special purposes.
+
+The Logs Explorer is a tool
+optimized for troubleshooting
+
+use cases with great
+features like log streaming,
+
+a log Resource Explorer, and
+a histogram for visualization.
+
+You have error
+reporting, which helps
+
+users react to critical
+application errors
+
+through automated error
+grouping and notifications.
+
+And through log based metrics
+dashboards and alerting,
+
+which all provide other
+ways to understand and make
+
+your logs actionable for
+operational use cases.
+
+Our new Log Analytics
+feature expands this toolset
+
+to include ad hoc log
+analysis capabilities.
+
+Taken together, Cloud Logging
+provides a powerful platform
+
+specifically designed
+for working with logs.
+
+So what is Log
+Analytics exactly?
+
+Log analytics extends
+the capabilities
+
+provided by Cloud Logging
+in several important ways.
+
+First, log analytics
+automatically
+
+stores logs in BigQuery with
+a simple configuration setup.
+
+With a checkbox,
+enable Log Analytics
+
+when you're creating
+a log bucket,
+
+you can use Cloud
+Logging's pipeline
+
+to make it easy to store
+those logs, which you can then
+
+analyze in Log Analytics.
+
+Second, we're excited
+for our new purpose built
+
+log analytics UI, which provides
+access to the logs using SQL.
+
+SQL is a well known, widely
+use domain specific language,
+
+has powerful aggregation
+capabilities,
+
+and of course it's
+widely used in BigQuery.
+
+When you need to group by,
+or sum, or find a ratio,
+
+Log Analytics supports the
+same standard SQL functions
+
+provided by BigQuery.
+
+Now the Log Analytics UI
+provides an optimized results
+
+experience designed
+specifically for working
+
+with unstructured log data.
+
+And you'll see more of this
+experience in the demo later.
+
+Third, logs included in
+Log Analytics are made
+
+available directly in BigQuery.
+
+If users need to join logs
+with another data source,
+
+they can run the same
+query in Log Analytics
+
+UI and the BigQuery UI and
+join that data with data
+
+already in BigQuery.
+
+So by making this log data
+available where users need it,
+
+Log Analytics can help
+remove data silos.
+
+
+
+So how can you benefit from
+these new capabilities?
+
+Log Analytics can
+help reduce the need
+
+to send logs to so
+many different systems
+
+to address the
+separate use cases.
+
+I'll cover three common
+use cases as examples.
+
+First is for the DevOps team.
+
+Resolving issues quickly is
+critical to maintaining system
+
+reliability, especially
+with user facing services.
+
+Log analytics helps here by
+helping users more quickly find
+
+patterns by correlating
+IDs across services
+
+so that you can reduce
+outages more quickly.
+
+Faster troubleshooting
+can also help improve
+
+the speed of
+software development
+
+by reducing time spent on
+debugging and therefore
+
+freeing up developer time.
+
+The second is security.
+
+Investigations are
+a critical part
+
+of understanding and
+remediating security threats.
+
+Log Analytics can help
+here by finding logs
+
+across large time ranges, which
+often means large data volumes.
+
+The third is IT operations.
+
+Managing a fleet of
+different services
+
+is a core part of IT
+operations, and it's
+
+important to understand
+the events and trends
+
+across the whole fleet.
+
+Log Analytics helps
+here by identifying
+
+patterns and the fleet
+performance over time.
+
+Now there are many
+ways that Log Analytics
+
+can help enable business
+decisions, including analyzing
+
+business data reported in logs.
+
+And by unlocking
+valuable insights,
+
+Log Analytics brings
+new value to your logs.
+
+And now, since there's no better
+way to show off a new feature,
+
+let's see a demo.
+
+In this demo, I'll show you
+the new log analytics UI,
+
+an example of
+combining data stored
+
+in Log Analytics with
+other data in BigQuery.
+
+I'll highlight the capabilities
+offered by Log Analytics
+
+to address two use cases.
+
+One is the DevOps
+troubleshooting use case,
+
+and the other is a
+security use case.
+
+For the demo I've instances
+of the online boutique,
+
+which is an open source
+microservices demo app.
+
+It's deployed to two
+GK clusters, which
+
+are generating logs,
+which are ingested
+
+into Cloud Logging using the
+out of the box configuration.
+
+I've set up a logging
+sink to capture the logs
+
+and send them to Log Analytics
+Enable bucket in Cloud Logging.
+
+With a click of a
+checkbox, logs are
+
+available both in Log
+Analytics and Cloud Logging
+
+and in BigQuery.
+
+First let's look at
+the Log Analytics
+
+UI, which is a new UI Cloud
+Logging optimized for viewing
+
+logging data.
+
+In the Log Analytics UI,
+use the same standard SQL
+
+that is available in BigQuery.
+
+SQL queries are used
+to view the log data
+
+and can range from
+simple or complex.
+
+There's a Query
+Builder here where
+
+you can enter your SQL
+in a results viewer
+
+to view the query results.
+
+To start, let's take a look
+at the completed Kubernetes
+
+logs for the front end
+service over the past hour.
+
+Once the query is valid
+I can run the query.
+
+Now the Log
+Analytics UI provides
+
+two specific optimizations that
+have been added to BigQuery
+
+and used by Log Analytics.
+
+The first is that
+JSON value function,
+
+which allows you to
+extract JSON data
+
+and compare it to strings, which
+is really useful for queries
+
+like this or when you
+want to look at the string
+
+results of data stored in JSON.
+
+And the second optimisation
+is the JSON dot notation.
+
+Notice that the JSON
+payload dot message field
+
+is actually using
+the dot notation
+
+to refer to a field inside
+the JSON structure of a JSON
+
+payload.
+
+Both of these make it easier
+to work with JSON data.
+
+The results are displayed
+using a view optimized
+
+for working with log data.
+
+You can see that the
+JSON payload is actually
+
+stored as JSON data, which
+means that any JSON structured
+
+data can be stored in there
+without having to know
+
+or specify the schema up front.
+
+Log Analytics UI, the
+JSON data, is actually
+
+displayed using JSON
+[INAUDIBLE] format
+
+to make it even easier to use.
+
+Now by looking at
+some of these logs,
+
+I notice that there is a
+value inside these logs, which
+
+is the response
+took milliseconds,
+
+which is the time the
+request took to complete.
+
+So one of the
+things we can do is
+
+look at the min, max,
+and average values
+
+of that over time.
+
+These kind of queries can be
+very useful in troubleshooting.
+
+So let's take a look at
+what this would look like.
+
+There we go.
+
+OK.
+
+So what we're doing here is
+we're extracting this field,
+
+and we're casting it as an
+integer so we can do the sum.
+
+We're also taking the hour.
+
+And then what we're
+doing is we're
+
+grouping, looking at the
+minimum, the maximum,
+
+and the average value.
+
+But what we notice by
+looking at the results here
+
+is that around hour
+14, both the maximum
+
+as well as the average time
+increased substantially.
+
+So this gives me great insight
+during troubleshooting,
+
+and it can help me
+more quickly identify
+
+the signals, which can help me
+resolve issues more quickly.
+
+Well, Log Analytics
+provides the flexibility
+
+to look at individual
+logs, as you see,
+
+and run complex
+aggregations, s which
+
+can help surface critical
+insights for the DevOps team
+
+when troubleshooting an issue.
+
+Now let's take a look at
+the security use case.
+
+Again, staying with
+the same scenario,
+
+the app deployed to GKE.
+
+This time let's look
+at the security related
+
+logs for application
+and infrastructure.
+
+We can do that by using
+a query like this.
+
+The main difference
+here is that we're
+
+looking at the proto
+payload field here
+
+and we're looking
+for audit logs.
+
+So why don't we run the query.
+
+Here's what the audit logs
+look like in Log Analytics.
+
+You can see that they are the
+record type within BigQuery,
+
+and you can see that there's a
+detailed structure of the audit
+
+log within the
+proto payload field.
+
+There's a lot of
+information that's
+
+stored within an audit log,
+and it's actually displayed
+
+in the UI using the
+JSON [INAUDIBLE] format
+
+to make it easier to work with.
+
+All of the fields that are
+actually stored as a record
+
+type are also displayed
+using the JSON data type
+
+to make it easier to work with.
+
+Again, what's more interesting
+is to look at the aggregations.
+
+So let's take a
+look at the audit
+
+logs grouped by the
+principal and the IP address
+
+fields, which are
+the users as well
+
+as the IP address from which
+those actions originated.
+
+Great.
+
+So now we can see both email
+address and the IP address
+
+and the number of calls that
+have originated from both.
+
+Now for security use
+cases, sometimes it's
+
+useful to search for a value
+in a log without knowing which
+
+specific field.
+
+The newly added search
+function in BigQuery
+
+allows you to do just that.
+
+The function searches across an
+entire table or set of columns
+
+to find a value.
+
+To demonstrate, let's pick an IP
+address and find all the audit
+
+logs associated with the IP
+across any field in the table.
+
+And we can do that by
+using the search function,
+
+specifying the table, as well
+as the IP address defined.
+
+So by using the
+search function I've
+
+been able to find all of the
+records that are associated
+
+or include this
+particular IP address.
+
+This is extraordinarily useful
+for unstructured data that is
+
+stored in JSON in other fields.
+
+For example, it's not limited
+to IP address or just for audit
+
+logs.
+
+It can be used generally
+across any of the fields
+
+within BigQuery.
+
+Now one of the powerful
+features of Log Analytics
+
+is it also provides you
+with access to the same log
+
+data in BigQuery.
+
+While Log Analytics provides
+an optimized UI and one
+
+that evolves to add
+more optimizations,
+
+having access to
+log data in BigQuery
+
+means that you can
+join the log data
+
+with other data and BigQuery.
+
+By clicking the Run in
+BigQuery link in Log Analytics,
+
+the same query is
+loaded in BigQuery.
+
+And running that will
+return the same results
+
+with the standard
+BigQuery formatting.
+
+You'll notice it's
+the same data.
+
+However, the results
+appear differently
+
+for the proto
+[INAUDIBLE] format.
+
+Now in BigQuery, we can
+combine that IP address data
+
+that we looked up in
+the previous example
+
+with other data.
+
+As an example, I'll combine the
+IP address with a public data
+
+set and use the
+functions in BigQuery
+
+to produce a list
+of all the countries
+
+and the number of logs for each.
+
+We can do that with this query.
+
+Here we have the
+Select statement,
+
+which will look at all of the
+audit logs over the past 30
+
+days and select the IP addresses
+from them as well as the count.
+
+And here we'll join that
+data with a public data set,
+
+as well as use the
+BigQuery IP functions
+
+to be able to get the
+country associated
+
+with each of those IPs.
+
+
+
+So by combining
+the audit log data
+
+with the geolocation
+public data set,
+
+I've been able to gain insight
+into the requests coming
+
+from different countries.
+
+Most of the requests have
+come from the United States.
+
+I do see that other requests
+have originated from places
+
+outside the United States.
+
+This combination can
+provide powerful insights.
+
+So to recap, Log Analytics
+and Cloud Logging
+
+provides a powerful way
+to analyze your logs
+
+based on the power of BigQuery.
+
+The Log Analytics UI
+provides an optimized way
+
+to view and work with log
+data, and the log data
+
+stored in Log Analytics is made
+available directly in BigQuery
+
+for joining with other data.
+
+While we're excited
+about Log Analytics,
+
+we're already hard at work
+making it both easier to use
+
+and more powerful.
+
+To make it easier to
+use, we're working
+
+on adding a new visualization
+result type via charts,
+
+so that users can more easily
+understand their query results.
+
+We're also working to simplify
+the user query experience.
+
+We know that not everybody
+is a SQL expert, which
+
+is why we're working
+to make it easier
+
+to gain the benefits
+of Logging Analytics
+
+without becoming a SQL expert.
+
+We're also working to enable
+Log Analytics by default.
+
+This will make it
+easier for any users
+
+to access the advanced
+logging capabilities.
+
+Now to make Log Analytics
+an even more powerful tool,
+
+we're working on
+logging insights.
+
+Logging insights can surface
+data that you would otherwise
+
+have to search to find.
+
+By analyzing data
+proactively, Logging Analytics
+
+can help uncover
+powerful insights,
+
+such as proactive
+recommendations.
+
+We're also working
+to expand the scope
+
+to include other
+operational data.
+
+By combining logs data with
+other operational data,
+
+such as trace data, you
+can gain even more context
+
+for a more rich analysis.
+
+We're really excited about
+launching the Log Analytics
+
+feature today, and we're
+excited to see the powerful ways
+
+that you'll use these
+new capabilities.
+
+So on behalf of the whole Cloud
+Logging and BigQuery teams,
+
+thank you for watching.
+
+To learn more about
+Logging Analytics
+
+and Cloud Logging
+please visit our Docs
+
+and sign up for the
+preview to get started.
+
+
+

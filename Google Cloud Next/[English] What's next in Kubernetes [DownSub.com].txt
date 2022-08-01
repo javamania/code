@@ -1,0 +1,952 @@
+
+
+BOB KILLEN: Hello, everyone.
+
+And welcome to What's
+Next in Kubernetes.
+
+I'm Bob Killen, a program
+manager within Google's Open
+
+Source Programs Office,
+also a longtime contributor
+
+to the Open Source
+Kubernetes project.
+
+And I'm here to
+talk a little bit
+
+about some of the overarching
+future paths for Kubernetes.
+
+But before I can dig
+into what's next,
+
+I need to talk a little
+about where we've been,
+
+what it's taken for
+Kubernetes to become
+
+the foundational platform
+that powers so much today.
+
+
+
+From a high level, you can sort
+of break down Kubernetes phases
+
+into three broad layers that
+highlight a focus or theme
+
+in the project's lifecycle.
+
+The first and the
+longest was four years,
+
+from June 2014 to March 2018.
+
+This is a period of
+rapid growth, where
+
+all the various
+resource types are
+
+being defined and solidified.
+
+These are the basic
+components that
+
+are used by everything else.
+
+Think of the core workloads,
+such as deployments,
+
+stateful sets, and
+all the others.
+
+These core workloads graduated
+to GA in the 1.9 release
+
+and was shortly
+thereafter recognized
+
+by the Cloud Native Computing
+Foundation's Technical
+
+Oversight Committee, approving
+the project for graduation.
+
+Kubernetes was the first
+project to achieve the status.
+
+It was recognized
+for being stable,
+
+used by a number of companies,
+having a diverse contributor
+
+base and solid
+project governance.
+
+
+
+This is the foundational stage.
+
+And every future thing
+is built on top of it.
+
+The second phase, from March
+2018 to September 2019,
+
+is marked by the graduation of
+custom resource definitions,
+
+or CRDs--
+
+a unified pattern to
+extend Kubernetes.
+
+It created an entire ecosystem
+allowing people, projects,
+
+and organizations
+to create and manage
+
+their own applications in
+any other sort of Kubernetes
+
+resource.
+
+Instead of managing
+these deployments,
+
+you can now directly
+manage things,
+
+like a database
+or a game server,
+
+in a Kubernetes native way.
+
+It was huge for the
+cloud native landscape.
+
+And if you look at the CNCF,
+with its 100 or so projects,
+
+you'll find that the majority
+of them are using CRDs.
+
+
+
+This last phase, from
+late 2019 to August 2020,
+
+isn't noted by a new feature,
+but a shift in the mentality
+
+of the project.
+
+We built our core
+workload types.
+
+We've made the project
+easy to extend.
+
+And now with more users
+than ever using the project,
+
+we shifted to support
+mobility and stability.
+
+Policies and processes
+were put in place
+
+to help ensure every
+feature being developed
+
+was observable, scalable,
+could be rolled back,
+
+and a slew of other important
+things for general operations.
+
+And in doing so, we
+were more comfortable
+
+expanding our support window,
+with new releases being
+
+supported for a full year.
+
+
+
+We built our core, we made it
+easy to extend and integrate
+
+with, and then
+committed ourselves
+
+to a stronger support policy.
+
+So that takes us to now
+and where we're going.
+
+And I'll keep the theme for
+this one sort of a secret
+
+to the end.
+
+But I want to give
+you an idea of some
+
+of the features and areas
+of where we're focusing.
+
+And for that, I picked
+two big things to follow.
+
+The first is multi-cluster.
+
+
+
+So why multi-cluster?
+
+Kubernetes has done a lot to
+help people rethink and reshape
+
+their architecture
+and build more
+
+resilient and scalable systems.
+
+But for many use
+cases, you can't just
+
+build a larger cluster.
+
+Say you want global availability
+and to minimize the latency
+
+to your customers.
+
+That's something
+you can't easily
+
+do with a single cluster.
+
+Or you might want to scale
+and burst your workloads,
+
+especially in something like a
+hybrid environment where you've
+
+outgrown your on-prem hardware
+and want to burst to the cloud.
+
+You may also be working with
+privileged or sensitive data,
+
+and want to maximize your
+security by using clusters
+
+as a security boundary.
+
+Or lastly, you may just want
+to make your application more
+
+resilient by running multiple
+clusters in HA and to segment
+
+your failure domains.
+
+The list goes on.
+
+And it's often one
+of the first places
+
+organizations go to after
+getting up and going
+
+with a single cluster.
+
+Now with that, I'm going to
+go out a little on a limb.
+
+But in a multi-cluster world,
+clusters are the new pod.
+
+As management of Kubernetes
+clusters becomes easier,
+
+it allows you to focus on
+the important parts, namely
+
+your application.
+
+Clusters are becoming a tightly
+coupled grouping of these app
+
+components that you might
+want to scale and secure
+
+independently.
+
+So just like a deployment
+manages the pods and help scale
+
+them up and down and
+manages their life cycle,
+
+you should be able to do
+that with clusters too.
+
+So why has this been so hard?
+
+
+
+Well, to be frank,
+multi-cluster configurations
+
+in their current form are
+incredibly complex with a lot
+
+of moving parts.
+
+If you have a
+database in cluster A
+
+that should be accessible to
+some component in cluster B,
+
+it requires a lot of
+additional plumbing
+
+of services between clusters--
+
+often, additional load
+balancers or a mix of them
+
+with a service mesh.
+
+It's not fun and
+by no means easy.
+
+Also, to be frank,
+Kubernetes was honestly
+
+not really designed
+for multi-cluster
+
+in mind initially.
+
+But this has been
+long recognized
+
+by the upstream community.
+
+And there have been several
+initiatives targeting
+
+and improving this use case.
+
+
+
+The first is the introduction
+of multi-cluster services,
+
+a new CRD that standardizes
+the way in which you
+
+can share Kubernetes
+services across clusters.
+
+No more additional provisioning
+of load balancers, no more
+
+hodgepodge custom DNS rules
+that require manual updating.
+
+You define a cluster set or a
+group of two or more clusters
+
+and decide which
+services in each cluster
+
+you want to expose.
+
+And a new controller will
+just take care of the rest.
+
+For your applications,
+all you have to do
+
+is them to a new cluster set
+service DNS entry instead
+
+of the regular cluster.local
+one that we all
+
+are sort of used to.
+
+And with that, your traffic
+will be routed appropriately.
+
+Now, this is a
+very simple model.
+
+And it was specifically
+designed to be that way
+
+to address the complexity
+of cross cluster networking
+
+and service discovery
+to make it easy to use
+
+as a drop in replacement
+for current services.
+
+Now, there's a lot that
+goes on under the hood.
+
+But you as a user do not need
+to manage those aspects of it.
+
+So now that we have these
+multi cluster services that
+
+can help you manage your
+cross cluster networking,
+
+how about Ingress?
+
+How do you manage
+getting traffic
+
+into your cluster
+at a global level?
+
+Well, there's something
+for that too--
+
+
+
+the Gateway API.
+
+Think of it as
+Ingress version 2.0.
+
+It was designed with
+all the lessons learned
+
+from the original
+Kubernetes Ingress
+
+implementation with
+many of the pain points,
+
+such as excessive use of
+annotations being addressed.
+
+And for the purposes
+of multi-cluster,
+
+it can use the exports from
+the multi-cluster services
+
+API as a valid
+back end, allowing
+
+you to manage your
+Ingresses at a global level.
+
+
+
+Now, for GKE,
+these two resources
+
+have come together to offer
+a very flexible and powerful
+
+system.
+
+Within GKE, there are two
+fundamental different types
+
+of clusters--
+
+standard, where you
+retain full control,
+
+and autopilot, where much
+of the management aspects
+
+are abstracted away
+and managed by Google.
+
+Autopilot is a great
+option for many workloads.
+
+It comes with advantages like
+better security and per pod
+
+billing.
+
+But there are some workloads
+that don't necessarily
+
+lend itself to it well, namely
+large stateful applications
+
+or things where you may need to
+run in a pod in privilege mode.
+
+But that's where
+multi-cluster comes in.
+
+What if we can interconnect
+and deploy apps
+
+where they fit
+best without having
+
+to worry about the plumbing?
+
+You'd be able to take advantage
+of the greater security and per
+
+pod billing for most
+resources in autopilot
+
+and retain the greater
+control over just the parts
+
+of your stack that need it
+in a standard cluster while,
+
+honestly, managing them in
+a dramatically easier way.
+
+And that's part of the
+future we're working towards.
+
+
+
+So now that we've
+covered multi-cluster,
+
+let's take a look at
+the next focus area.
+
+And that's in the area of
+AI/ML and batch computing.
+
+Now, this is an
+area that's actually
+
+near and dear to my heart.
+
+Before I started at Google,
+I was heavily involved
+
+in research computing
+and exploring
+
+Kubernetes for high
+performance computing needs.
+
+And while there
+have been advances
+
+in what I'll say broadly
+as research computing
+
+on top of Kubernetes,
+there has generally
+
+been a much slower
+rate of adoption of it
+
+versus, I'll say, more
+traditional applications.
+
+And that's because it's hard
+for a number of reasons.
+
+
+
+First and foremost, the
+Kubernetes scheduler
+
+is built for bin packing,
+or trying to cram as much
+
+on a single node
+as possible, which
+
+tends to go against most
+really resource intensive jobs.
+
+It also doesn't support the
+concept of co-scheduling, where
+
+you block scheduling
+until there's
+
+enough resources available
+to run your entire job.
+
+
+
+The other thing is most of
+these research applications also
+
+require a lot of tuning--
+
+the application, the underlying
+system or host OS, and also
+
+things like the API server.
+
+If you're spinning up hundreds
+of thousands of tasks,
+
+you need everything to be
+working at peak performance
+
+and to be able to handle
+that sort of scale.
+
+Now, there are a few
+things coming in the pipes
+
+to help improve this.
+
+But I want to focus
+on one thing that
+
+has been an open request
+for a very long time
+
+and will help reduce the
+complexity of work queues.
+
+
+
+Works queues are a
+fairly simple in concept.
+
+They are a list of tasks or
+data intended to be processed
+
+by one or more workers.
+
+They are by far the
+most common work pattern
+
+seen in AI/ML and batch.
+
+You're providing a data
+set and iterating over it
+
+in parallel for
+training or processing.
+
+And Kubernetes has not really
+supported this workflow
+
+natively.
+
+It's always required some
+other external system,
+
+such as Pub/Sub to keep track
+of what's being processed.
+
+This also means
+that you must have
+
+bake in more sort of
+middleware logic into your job,
+
+just to be able to process it.
+
+It works.
+
+Organizations have been
+using this pattern since jobs
+
+were a thing in Kubernetes.
+
+But do you really
+want to do that?
+
+Or would you rather
+rely on something
+
+that could be done natively?
+
+I'd pick the latter.
+
+
+
+So in Kubernetes 1.21,
+a new alpha feature
+
+was added to jobs--
+
+a completion mode, where if
+you specify it as indexed,
+
+each pod is given a
+numbered identifier
+
+with the index starting at 0.
+
+This index will be
+used in the generation
+
+of the pods hostnames, giving
+it something predictable akin
+
+to stateful sets.
+
+That index is also passed
+into the pod as an environment
+
+variable.
+
+And what this does is it
+gives you the ability--
+
+a built in native way to
+statically assign data
+
+to the processes of each pod.
+
+It will require a little bit
+of planning ahead of time.
+
+But you won't have to
+run an external system.
+
+You won't have to bake something
+into your code for the job just
+
+to pull items from the queue.
+
+It reduces the overall
+complexity of work queues
+
+significantly.
+
+And this seems
+like a small thing.
+
+But it solves a problem
+for a lot of people.
+
+In addition to this, there
+are also several other things
+
+in the works that
+will enable or AI/ML
+
+and batch types of workloads--
+
+things like the
+scheduler framework,
+
+where instead of trying to
+make the committee scheduler be
+
+everything to everyone,
+many more hooks and methods
+
+of integrating with
+it have been created.
+
+It's now significantly easier
+to extend and customize
+
+how scheduling is done
+by assigning workloads
+
+to different
+scheduling profiles.
+
+
+
+Jobs can also now be suspended.
+
+And what this means is that
+if you say a higher priority
+
+job is to be scheduled,
+the lower priority job
+
+can be suspended until
+the higher priority
+
+job is completed.
+
+It doesn't have
+to be rescheduled.
+
+Work can pick back up when the
+higher priority job is done--
+
+something we've seen in
+a lot of classic batch
+
+systems for years.
+
+Lastly, there's been some
+changes to the Kubernetes API
+
+server so it can be tuned
+to support the exceedingly
+
+high throughput of requests that
+often come in with batch job
+
+oriented systems.
+
+And all these
+things combined will
+
+make running AI/ML and batch
+workloads significantly easier
+
+on top of Kubernetes.
+
+And at this point with
+that sort of short preview
+
+of the improvements to
+things like multi-cluster
+
+and AI/ML and
+batch, you may have
+
+started to pick up on a theme.
+
+What is Kubernetes?
+
+
+
+Kubernetes is foundational.
+
+We spent four years
+building a strong base.
+
+All the core workloads
+and design patterns
+
+that you depend on
+today started here.
+
+It is extensible.
+
+A year and a half were spent
+making it easy for people
+
+to adopt, build, and
+extend on that foundation,
+
+creating an ecosystem that is
+just absolutely massive today.
+
+Kubernetes is mature.
+
+We put a lot of
+effort into making
+
+sure you can depend on every
+feature and every release.
+
+And we demonstrated this by
+extending our support window.
+
+So what is Kubernetes now?
+
+Is it easy?
+
+Well, we're not there yet.
+
+We're making it
+easier for you to use.
+
+We're reducing much
+of the complexity that
+
+has forced people
+into workarounds
+
+and building our large,
+more complex systems.
+
+A lot of these features
+and improvements
+
+may seem minor at first look.
+
+But all of them
+are there to help
+
+improve the various
+workflows that people
+
+have built around and
+on top of Kubernetes.
+
+And as we make Kubernetes
+easier for people to use,
+
+it will also enable a
+whole new set of use cases
+
+that we haven't imagined yet.
+
+So Kubernetes isn't easy yet.
+
+But we'll get there.
+
+
+
+And with that, if you are
+interested in learning more
+
+about some of the stuff
+I talked about today,
+
+here are some
+additional resources
+
+that you might find useful.
+
+In particular, I want to
+highlight the Learn Kubernetes
+
+with Google Video series.
+
+You'll find videos
+going over how
+
+you can get going with
+multi-cluster index jobs
+
+and quite a bit more.
+
+Thank you.
+
+And I look forward to building
+the future of Kubernetes
+
+with you.
+
+
+

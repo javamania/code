@@ -1,0 +1,907 @@
+
+
+MANU BATRA: Welcome, folks.
+
+Thanks for joining the session,
+Protect Your Enterprise
+
+Applications with Backup
+for GKE and Anthos.
+
+
+
+We'll start with
+looking at History
+
+of Storage Evolution
+in Kubernetes,
+
+get a deep dive
+into new Kubernetes
+
+Backup Service
+for GKE workloads.
+
+We also have with us
+the Broadcom team,
+
+who will share their
+experience using
+
+the Backup for GKE service.
+
+Before we get into
+details, let's
+
+start with a quick
+round of introductions.
+
+My name is Manu Batra.
+
+I am a Product Manager
+with Google Cloud,
+
+and I own container native
+storage and data management
+
+services.
+
+Apparao, do you want to go
+ahead and introduce yourself?
+
+APPARAO CHITIKELA: Hi, folks.
+
+My name is Apparao Chitikela.
+
+Currently, I am working as
+a Saas Platform & Delivery
+
+Engineer at Broadcom.
+
+MANU BATRA: Thanks, Apparao,
+for the introduction.
+
+Now, let's look at the evolution
+of storage in Kubernetes.
+
+We have seen terrific
+customer adoption of GKE
+
+for all types of workloads.
+
+This includes
+stateful workloads,
+
+like databases, that were
+uncommon in the earlier
+
+waves of Kubernetes adoption.
+
+With enhancements in
+Kubernetes storage support,
+
+customers are more
+comfortable deploying
+
+data-intensive workloads, like
+databases inside containers.
+
+The net result is
+that GKE customers
+
+are managing far more critical
+data inside containers
+
+than ever before.
+
+But many Cloud
+customers are still
+
+held back from
+greater adoption by
+
+their service-level objectives
+and backup requirements.
+
+Additionally, we have
+heard from customers
+
+in more regulated verticals,
+like finance, payments,
+
+manufacturing, and
+aerospace, that
+
+have strict data backup
+and lifecycle management
+
+requirements.
+
+These customers
+are often blocked
+
+from expanding their
+use of GKE to include
+
+production-critical
+straightforward workflows.
+
+Our goal is to unblock
+traditional enterprise
+
+customers from running more
+stateful workloads with more
+
+regulated data
+inside GKE customers
+
+and meet their backup
+and BR service levels.
+
+
+
+With that objective
+in mind, we're
+
+introducing a new Google
+service, called Backup for GKE.
+
+Backup for GKE is an
+easy Cloud-native way
+
+for customers running workloads
+on GKE to protect, manage,
+
+and restore their containerized
+applications and data.
+
+
+
+Now, let's get
+into more details,
+
+into what really
+is Backup for GKE
+
+and a bit more of
+the architecture.
+
+The service operates at
+three different layers.
+
+The bottom-most layer
+is the data layer where
+
+we take a copy of the data.
+
+Today, we do support
+Persistent Disk,
+
+which is Google
+Cloud's block storage.
+
+In future, we will
+also be supporting
+
+additional types of
+storage, including
+
+file and other elements.
+
+So the first part is we
+take a copy of the data
+
+and store it as a
+part of the backup.
+
+Second is, as a
+part of the backup,
+
+we also take Kubernetes objects.
+
+And this is where a user can
+define the scope of a backup.
+
+A user can define a backup
+to be an entire cluster,
+
+a specific namespace
+within a cluster,
+
+or a set of namespaces.
+
+Or a user can define a lot
+more granular control and scope
+
+of backup call applications.
+
+And I'll talk more
+about applications
+
+in the following slides.
+
+But once the user defines
+the scope of backup,
+
+we pick up all the Kubernetes
+configurations and objects,
+
+depending on the
+scope of the backup.
+
+We also orchestrate backups
+within an application.
+
+And this is to support
+app-consistent backups.
+
+A lot of applications
+are crash-consistent,
+
+but some applications like
+to flush their memory,
+
+or do QS-ing and un-QS-ing
+pre- and post-backup.
+
+To be able to accommodate
+such applications,
+
+there is a flexibility to create
+application profiles, which
+
+enables users to inject
+scripts at par level for QS-ing
+
+or other application-level
+orchestration.
+
+So as I've touched,
+backup essentially
+
+includes two different elements.
+
+One is Kubernetes objects, and
+second is the volume backup,
+
+which is the Persistent
+Disk data that we backup
+
+as a part of the backup itself.
+
+Now, as a part of backup,
+there are multiple options.
+
+As a user, you can choose
+where the backup is stored.
+
+So if there are data
+residency requirements,
+
+you can specify which region you
+want the backups to be stored.
+
+You also have ability to select
+and skip certain resources.
+
+If you're managing
+secrets outside,
+
+you can tell the backup service
+to skip and not backup secrets
+
+as a part of the backup package.
+
+Same thing, you can also
+decide not to backup volumes,
+
+if there are other ways
+you are backing up data,
+
+or it's more for transient data
+that you don't want to backup.
+
+Another feature,
+which is very critical
+
+to protect against ransomware
+and malicious deletions,
+
+is time lock.
+
+The service allows you
+to time lock backups,
+
+which will disable any
+automated or manual deletion
+
+of the backup, unless
+the time lock expires.
+
+This is a really
+critical feature,
+
+in case a ransomware
+attack, or somebody
+
+tries to delete those backups
+with a malicious intent.
+
+And of course, all data
+is encrypted, by default.
+
+Getting more into details
+about protected applications.
+
+So I touched upon a user can
+define the scope of backup.
+
+A user can define a
+cluster as a scope
+
+of backup, a set of namespaces.
+
+Or, depending on
+the scope of backup,
+
+a user can define a
+specific application.
+
+And an application
+can correspond
+
+to something like a
+MySQL, or a Redis Data,
+
+or a Postgres database itself.
+
+And this allows users to execute
+QS-ing and un-QS-ing commands
+
+pre- and post-backup.
+
+We also support more complex
+definitions of applications,
+
+like an HR data
+processing application,
+
+which could be a combination
+of a messaging bus, a database,
+
+and a web services agent.
+
+The system allows you to
+group all those applications
+
+into protected
+application groups.
+
+And the backup
+orchestrates, knowing
+
+that a particular application
+is part of a larger component,
+
+and orchestrates the backup
+with that knowledge in mind.
+
+So essentially, as a
+part of the backup,
+
+you can define a cluster, a
+namespace, or an application
+
+or application group as
+a scope of the backup.
+
+
+
+Backups are fine,
+recoveries are better.
+
+This is where the tool
+provides multiple use
+
+cases to restore the data.
+
+You can backup a cluster,
+restore the cluster
+
+into a new cluster,
+or into a new region.
+
+The system also allows
+you to backup a cluster
+
+and restore a specific
+namespace or an application.
+
+This can be done in case there
+was an accidental deletion
+
+of a specific data set,
+or an upgrade failed
+
+and you want to restore the data
+in its previous healthy state.
+
+The system also allows
+you to clone and scale
+
+workloads in different regions.
+
+So all these are
+multiple use cases
+
+that can be supported via
+the backup and the recovery
+
+workflows.
+
+Getting into a bit more
+details of restore options.
+
+As a part of the
+restore, the system
+
+also allows users to
+change certain parameters
+
+before the backup is restored.
+
+This may include changing
+storage classes or replica
+
+accounts.
+
+An example could be, you backup
+production environment, which
+
+was running PDS SDs.
+
+But for test and dev, you
+are using PD Standard.
+
+So this is where,
+before you restore,
+
+you can change storage classes
+to map to the new environment
+
+that you are restoring.
+
+Another use case is sub-scope
+restores where you can always
+
+backup an entire cluster.
+
+But at the time of
+restore, you can decide
+
+what is the scope of restore.
+
+You may restore
+only one namespace,
+
+or a set of namespaces,
+or one application out
+
+of the entire backup.
+
+Another feature that
+was added to the service
+
+is for delegated admin.
+
+And this use case is
+more around when--
+
+let's say a cluster backup
+executes at midnight.
+
+But as an app
+admin, you may want
+
+to take an ad hoc
+backup at 4:00 PM,
+
+just before a critical
+upgrade is kicking in.
+
+So this allows cluster admins
+to delegate certain authority
+
+to application admins to
+execute an ad hoc backup just
+
+before critical upgrades
+or critical changes that
+
+are about to make an
+application, namespace,
+
+or a cluster.
+
+
+
+Backup for GKE experience is
+completely integrated into GKE.
+
+So as you log into
+your GKE framework,
+
+you'll be able to see Backup and
+Restore in the left navigation.
+
+Once you get in there,
+you'll be able to see
+
+all the backup policies, all
+the clusters that are protected
+
+with the backup policies, when
+was the last backup executed,
+
+and what was the
+duration of the backup.
+
+The whole interface also allows
+you to create new backup plans,
+
+restore plans, the
+intent being it's
+
+a completely seamless
+workflow as you
+
+operate your workloads in GKE.
+
+Now, I'll pass to
+Apparao to talk more
+
+about Broadcom's experience
+using Backup for GKE service.
+
+Apparao?
+
+APPARAO CHITIKELA: Thanks, Manu.
+
+So I'm part of Broadcom team.
+
+So my team is Saas Platform.
+
+So this thing, this Cloud,
+it shows as the platform.
+
+So in the platform, we
+have different components.
+
+Those are infrastructure,
+monitoring, Kubernetes,
+
+networking, identity,
+and access management.
+
+While using this platform,
+different products teams
+
+will deploy their applications.
+
+So Broadcom software uses a
+foundational Saas Platform
+
+architecture to manage multiple
+elements across regions
+
+and lifecycle stages.
+
+The core functional
+uses Terraform modules
+
+to describe the infrastructure,
+node, networking,
+
+and Kubernetes cluster used
+to support Saas products being
+
+delivered to the customers.
+
+The environment spans
+across development, verify,
+
+and production, and spread
+across multiple regions.
+
+By using flexible modules,
+we can create clusters
+
+to various sizes, while
+maintaining consistency
+
+across environments.
+
+
+
+Yeah.
+
+This is-- it will give you
+more details about the host
+
+projects and shared VPC.
+
+All service projects are
+connected with the Shared VPC
+
+project and will communicate
+each of the applications.
+
+So the Saas Platform
+Foundation takes
+
+advantage of a
+cross-project communication,
+
+using Google's Shared VPC.
+
+This enables separation
+between the GKE projects.
+
+And product-specific projects
+are projects for dB servers
+
+that have not yet
+been migrated to GKE.
+
+
+
+Yeah, this slide talks about the
+state of stateful applications.
+
+So as with most of
+enterprise companies,
+
+we started our
+Kubernetes journey
+
+with deploying
+stateless applications.
+
+This helped us take advantage
+of the GKE scale and cost
+
+optimization.
+
+Moving to GKE improved
+our development velocity,
+
+besides helping with
+optimizing cost.
+
+But the split
+architecture created
+
+some additional challenges,
+as our application components
+
+were split between
+VMs and containers.
+
+Because they are
+stateful applications,
+
+it takes a lot of additional
+data management services
+
+in the platform to trust it
+with data, especially databases.
+
+Modernizing applications
+during the migration
+
+by moving the
+operators-based versions
+
+allows us to add
+operational flexibility.
+
+We had stateful
+applications on VMs
+
+and stateless
+applications on GKE,
+
+creating application complexity.
+
+In order to simplify the
+operational environment,
+
+we started exploring moving
+stateful applications to GKE
+
+as well.
+
+So we'll continue.
+
+So these stateful
+applications, today, we
+
+have about 150 stateful
+workloads deployed in GKE.
+
+This helps us
+streamline operations
+
+and remove a lot of
+functional causes
+
+by non-uniform involvement.
+
+But a few challenges
+remain, likely ability
+
+to issue backup and disaster
+recovery service level.
+
+Remote some workloads to GKE,
+but with very fragmented backup
+
+solutions.
+
+The fragment backup
+solutions made
+
+it difficult to
+maintain consistency
+
+and created
+operational challenges.
+
+
+
+Key requirements for critical
+stateful applications.
+
+Some of the use cases that will
+help for key stateful workloads
+
+are ability to achieve critical
+backup and disaster recovery
+
+service levels, ability
+to recover an application
+
+to non-healthy state in the
+event of fault or corruption.
+
+Other use cases include ability
+to quickly scale and migrate
+
+applications.
+
+Backup for GKE provides us
+with an integrated backup
+
+and recovery platform to
+achieve these critical use
+
+cases, enabling us to migrate
+additional workloads to GKE.
+
+
+
+Key highlights from GKE backup.
+
+We were particularly
+impressed with the simplicity
+
+of taking cluster backups
+and ability to implement
+
+standard backup policies across
+our enterprise workloads.
+
+Backup for GKE also supports
+application-consistent backups,
+
+besides crash-consistent backup.
+
+This enables us to break
+any soils of backups
+
+across our organization.
+
+Ability to take
+incremental backup
+
+helps us optimize cost without
+compromising critical service
+
+levels.
+
+
+
+So our experience on
+Backup for GKE service.
+
+After [INAUDIBLE] introduced
+us to the new offering Backup
+
+for GKE, it unblocked a lot
+of critical stateful workloads
+
+to move GKE.
+
+Before backup, we are using
+storage backup directly.
+
+It made it very
+difficult to adhere
+
+to service-level projects.
+
+We are using Backup
+for GKE service,
+
+and we'll integrate it part
+of our core platform services.
+
+This will enable us to
+standardize our backup
+
+and disaster recovery policies
+for the entire Kubernetes
+
+application fleet.
+
+Thanks.
+
+So I'll hand it back to Manu
+to continue the session.
+
+MANU BATRA: Apparao,
+thank you so
+
+much for walking
+through the use case
+
+and how Broadcom is
+leveraging Backup for GKE
+
+to unlock additional
+SQL workloads
+
+and deploy them on GKE.
+
+To recap, folks, Backup for
+GKE is an easy Cloud-native way
+
+for customers running workloads
+on GKE to protect, manage,
+
+and restore their containerized
+applications and data.
+
+Please reach out to your
+Google Cloud contact
+
+to get more information
+on Backup for GKE,
+
+and please let us know if
+there are any other details we
+
+can provide.
+
+Thank you again so
+much for taking time
+
+to look at our session today.
+
+And we'd love to
+get your feedback.
+
+Thank you all.
+
+
+

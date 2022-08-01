@@ -1,0 +1,720 @@
+[MUSIC PLAYING]
+
+
+
+JEANA JORGENSEN: Welcome to
+Community Day at Next '21.
+
+My name is Jeana Jorgensen.
+
+And I'm here with Urs Holzle.
+
+Today is unique in that
+it will span an entire 24
+
+hours to bring
+together communities
+
+from all around the world
+in local time zones.
+
+But before we get
+into those details,
+
+we wanted to share some
+really exciting news with you.
+
+URS HOLZLE: That's right.
+
+But first, I'd like to thank
+you all for your incredible
+
+collaboration and
+commitment to Google Cloud,
+
+because developers are
+really the core inspiration
+
+behind everything that we build.
+
+Your constant pursuit of
+excellence motivates us.
+
+And your feedback
+pushes us to be better.
+
+In a developer
+keynote yesterday,
+
+I announced the Google
+Cloud Innovators Program.
+
+With this program, we want
+to bring all of Google Cloud
+
+developers together
+to co-create, to learn
+
+from each other, and to
+unite our global technical
+
+communities where we're
+supporting Google Cloud.
+
+And we also want it to
+reignite the human connection
+
+that many of you have missed
+over the last 18 months.
+
+And that can be dismissed or
+overlooked in online forums.
+
+And finally, we know that
+technical communities
+
+can sometimes be
+intimidating to new members.
+
+And so our program's
+primary design principle
+
+is grounded in
+inclusion and in serving
+
+the community, regardless
+of your knowledge base
+
+or your status earned.
+
+So I want to personally
+invite each of you
+
+to join us to become a
+Google Cloud innovator.
+
+So come share your experience,
+coach and grow others.
+
+Most importantly,
+learn from each other
+
+to build things that
+have a meaningful impact
+
+on the people who use them.
+
+JEANA JORGENSEN: Terrific.
+
+To join us, just sign up at
+cloud.google.com/innovators.
+
+We're really excited
+to get to know you.
+
+We also wanted to let you know
+about a dedicated technical
+
+community event we will
+host for the first time
+
+this coming February.
+
+Twice a year in different
+regions around the world,
+
+we'll bring the users and
+creators of Google Cloud
+
+together to brainstorm,
+learn, and get hands
+
+on to move projects forward.
+
+Google Cloud innovators will
+be eligible for invitations
+
+and speaking
+opportunities early.
+
+So please sign up to
+be an innovator today,
+
+and we'll share more details
+about the event in the coming
+
+weeks.
+
+Urs, we've got a few more
+pieces of good news to share.
+
+URS HOLZLE: All right.
+
+Yes.
+
+We continue to invest
+heavily, of course,
+
+in developer experiences through
+intuitive in-product usability
+
+or through community engagement
+to offer deeper recognition
+
+of your expertise or through
+access to tools and resources
+
+that help you get your job done.
+
+And another key investment is
+in our learning experiences.
+
+So, for example,
+to meet the demands
+
+of cybersecurity
+professionals, Google
+
+has pledged to train
+100,000 Americans in fields
+
+like data privacy, data
+analytics, security,
+
+and IT support.
+
+And additionally,
+"Tech News World"
+
+cited that over
+90% of IT leaders
+
+expect to expand Cloud
+Services over the next one
+
+to three years, but over
+80% identified a lack
+
+of internal skills and
+knowledge as a top barrier
+
+to Cloud success.
+
+And according to another study
+done by Global Knowledge,
+
+Google Cloud skills are
+in super high demand,
+
+commanding the top two paying
+it certifications in 2021
+
+in the US.
+
+So I'm very happy to announce
+Google Cloud Skills Boost.
+
+Google Cloud Skills Boost is
+the definitive destination
+
+for Google Cloud learning,
+including 700 labs, courses,
+
+learning paths, skills badges,
+and certification resources all
+
+authored by Google Cloud.
+
+The platform is
+available globally today
+
+in English, Japanese,
+and Spanish,
+
+with more languages
+to follow soon
+
+to enable millions of
+people to build and validate
+
+the skills that they need
+to thrive in an evolving
+
+Cloud-first world.
+
+And finally, to
+reaffirm our commitment
+
+to accessibility of
+these learning resources,
+
+we are offering access at no
+cost for 30 days to Google
+
+Cloud Skills Boost.
+
+So visit the website to
+access free training today.
+
+JEANA JORGENSEN: Fantastic.
+
+OK.
+
+Before we get on to the details
+of how Community Day will run,
+
+I have got two
+questions for you.
+
+OK, first question,
+Google Cloud has
+
+been talking about empathetic
+engineering for quite some time
+
+now.
+
+Can you tell us a little bit
+more about what that means
+
+and why you think it strengthens
+developer experiences?
+
+URS HOLZLE: Sure.
+
+By empathetic
+engineering, we really
+
+mean, how are we
+putting ourselves
+
+in the shoes of our
+users, the developers,
+
+and ensure that we build
+products and services that
+
+really start with
+your needs first?
+
+We've always been an
+engineering-led company.
+
+So what we needed
+to learn was really
+
+how you wanted to use our
+services because users come
+
+with different challenges
+and different backgrounds
+
+from different
+industries, some of them
+
+new to Cloud technologies.
+
+So that's where customer
+empathy comes in.
+
+As an engineer, do you really
+understand the experience
+
+that real users have
+with your products?
+
+Are you really walking
+in their shoes?
+
+So we implemented a
+listening and learning system
+
+based on customer empathy.
+
+So for example,
+teams test products
+
+by performing common user
+journeys just the same way
+
+customers would without internal
+help, without internal tools,
+
+without insider tips.
+
+We gather the feedback.
+
+We improve the services
+or the documentation
+
+and then test it
+with real customers.
+
+So we keep iterating until
+we're confident that we've
+
+built intuitive
+services that are
+
+easy for developers
+to implement and build
+
+great solutions around.
+
+JEANA JORGENSEN: Great.
+
+Thank you for that.
+
+So here's my second
+question for you.
+
+If you were starting your
+career in technology today,
+
+where would you
+focus your learning?
+
+URS HOLZLE: Wow,
+that's a huge question.
+
+Because technology
+evolves so quickly
+
+that it can be
+pretty overwhelming,
+
+especially if you're
+early in your career,
+
+and unfortunately because of
+the digital transformation
+
+of many industries, the
+success of those organizations
+
+will increasingly depend on
+the services and products that
+
+are built by its developers,
+so learning really
+
+is super important.
+
+Based on what I've
+seen, I would probably
+
+start with these three things.
+
+First, you have to dedicate time
+for learning every single week,
+
+right?
+
+So I'd start out by determining
+what forms of learning work
+
+for you independently
+of the subject and then
+
+really allocate a set of hours
+to grow your knowledge base.
+
+So for some, reading works best.
+
+For some, it's videos.
+
+For some, it's
+interactive events.
+
+You just got to understand
+what works out for you.
+
+And so next, I would pick
+a couple of topic areas
+
+that really interest
+you and start
+
+learning the fundamentals.
+
+Joining online
+communities or forums
+
+can be a really good way to
+get different perspectives
+
+on the subject that maybe aren't
+in the standard traditional
+
+learning paths.
+
+And then finally, of
+course, the question
+
+is, well, what subjects
+should you go after?
+
+Now, there's hundreds of them.
+
+And so that's really
+something that depends on you
+
+and your preferences
+and your situation.
+
+But I'd say three
+areas kind of come
+
+to mind for me, first
+customer empathy.
+
+I already talked about it.
+
+It's not something
+that's taught in schools,
+
+but it's really,
+really important
+
+that we build technology that
+people actually want to use,
+
+right?
+
+And so when design
+a product, and you
+
+start with a deep understanding
+what the customer actually
+
+needs, then you can really
+build more than just a solution.
+
+You can create a viable
+business and a viable product
+
+that really lasts.
+
+Second, learning what it
+takes to ship a product,
+
+also not broadly
+taught in schools,
+
+it's really invaluable in
+almost every job that I've seen.
+
+So that includes things like
+the fundamentals of release
+
+processes, lean or
+agile development,
+
+and how you best design products
+for self-service delivery
+
+because you want to
+design your product such
+
+that users can start
+using it quickly
+
+rather than depend on some
+complicated instructions
+
+or deployment process.
+
+And then last but
+not least, security.
+
+You've all heard about
+the growing cyber threats
+
+that so many
+organizations are facing.
+
+And they're only going to get
+more sophisticated and more
+
+invasive.
+
+And so security is
+something that you
+
+need to build into your product
+and in your development process
+
+from the beginning.
+
+You can't bolt it on later.
+
+So learn about the fundamentals
+of securing a product
+
+or system, and then
+keep up with the trends.
+
+So that will give
+you the confidence
+
+that you need to build long-term
+viable products or companies.
+
+JEANA JORGENSEN: Right.
+
+Really great advice.
+
+Thank you for that.
+
+I know it'll be especially
+important for new developers
+
+and early-in-career folks.
+
+So thank you.
+
+I mentioned earlier
+that I'd give you
+
+a quick rundown of Community
+today and how it would unfold.
+
+So let's do that now.
+
+Right after this, there is
+a special spotlight session
+
+featuring Jim
+Hogan, a health care
+
+strategist in Google
+Cloud alongside Vint
+
+Cerf, the co-creator of TCP/IP
+and who has often been coined
+
+the father of the internet.
+
+The two will have a
+candid conversation
+
+about accessibility
+in the workplace.
+
+We think it's going
+to be a great session.
+
+And we really, really are
+excited to have you join us.
+
+After that, we'll head into
+the heart of Community Day.
+
+You can join us in an immersive
+gathering experience called
+
+Kumospace, which creates virtual
+campus with meeting rooms,
+
+smaller spaces to hang out
+for one-on-one conversations,
+
+and then larger auditoriums
+for more common topics.
+
+Every single part
+of the day will
+
+be powered by Google
+Cloud, including Kumospace.
+
+So the day kicks off
+with conversations
+
+led by Google Developer
+Groups across Europe, Middle
+
+East, and India, and
+then the rest of the day,
+
+we'll have a variety
+of experiences
+
+and community gatherings
+with a few topics
+
+available at each time block.
+
+The first time
+block, you can attend
+
+discussions led by Googlers
+and community members
+
+like our Google Developer
+Experts and expert innovators
+
+dedicated to specific
+technologies like Vertex AI,
+
+secure software supply
+chain, Flutter, or Workspace.
+
+And then the second block, you
+can follow a specific community
+
+pathway and spend time with
+specialized groups like Kaggle
+
+data scientists or
+Women Techmakers or even
+
+region-specific groups.
+
+And the third and final
+track throughout the day
+
+will have dedicated
+spaces for learning--
+
+how you can earn a
+Cloud certification,
+
+develop new skills in
+hands-on lab sessions,
+
+or even apply your skills for
+good and philanthropic-related
+
+competition with
+other attendees.
+
+We really look
+forward to seeing you
+
+and hope you enjoy
+the rest of the event.
+
+Join us next for the
+DEI spotlight session
+
+with Jim and Vint.
+
+Thank you so much for spending
+the last few days with us.
+
+Remember to sign up for
+Google Cloud innovators
+
+and become part of our
+Google Developer family.
+
+We're excited to get to know
+you and spend more time with you
+
+in the future.
+
+Enjoy the rest of Next.
+
+
+

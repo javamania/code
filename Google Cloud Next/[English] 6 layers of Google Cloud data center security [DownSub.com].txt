@@ -1,0 +1,1928 @@
+
+
+STEPHANIE WONG: Hi,
+everyone, and welcome.
+
+I hope you're enjoying
+Google Cloud Next '21.
+
+I know this is
+another virtual year.
+
+But I'm hoping that today, I get
+to bring some of my experiences
+
+to life for you.
+
+I'm going to be
+talking about what
+
+it was like to explore the six
+layers of Google Cloud data
+
+center security.
+
+Now, you might be thinking of
+lasers, night vision cameras,
+
+and military-grade fences.
+
+You're not too far
+off because security
+
+is one of the most critical
+elements of our data center's
+
+DNA and Google Cloud workloads.
+
+With dozens of data
+centers globally,
+
+security operations
+means managing
+
+a massively complex network.
+
+I was one of the rare
+Googlers to visit one.
+
+So I'm going to take
+you on a journey
+
+to the core of a data
+center to show you
+
+the six layers of
+physical security designed
+
+to thwart unauthorized access.
+
+But first, I'll touch on Google
+Cloud security philosophy
+
+before I take you on that
+journey to the core of the data
+
+center.
+
+And then we'll
+touch on how you can
+
+leverage that same
+philosophy on Google Cloud.
+
+And it's great to be here today.
+
+My name is Stephanie Wong.
+
+I'm a Cloud developer advocate.
+
+And I've been creating
+developer-focused content
+
+for the last four
+years or so here.
+
+Of course, when I got the
+chance to visit a data center
+
+and make a film about it, I
+jumped at the opportunity.
+
+So let's go ahead and
+dive right into it.
+
+So in terms of
+transparency, we're
+
+very clear about our commitments
+to customers about your data.
+
+Rule number one-- your data
+belongs to you, no one else.
+
+We do not sell customer
+data to third parties,
+
+nor do we use it
+for advertising.
+
+Your data is your data.
+
+Your data is also encrypted in
+transit and at rest all times.
+
+And you do not have
+to ask for that.
+
+And if you want, we
+can give you ways
+
+to add additional
+encryption on top of that.
+
+We also have explicit rules to
+guard against insider access.
+
+There is no back door to Google.
+
+There's no secret
+government access.
+
+We take pride in our
+international audits.
+
+And we deliver
+results on request.
+
+These are the most
+important roles
+
+in our mission of
+digital transformation.
+
+It's giving you the trust that
+you need to build great things.
+
+So how can Google Cloud
+help organizations
+
+with their security?
+
+Well, first, we provide
+protection from threats
+
+through a secure foundation
+core infrastructure
+
+that is designed, built, and
+operated with security in mind.
+
+Second, we provide customers
+with a constantly expanding
+
+array of controls
+that they can use
+
+to help meet policy, regulatory,
+and business objectives.
+
+And third, we work to meet our
+compliance responsibilities
+
+and provide capabilities
+to make compliance easier
+
+for customers.
+
+But first, let's talk
+about the protection
+
+that you get from building on
+our infrastructure foundation.
+
+Our infrastructure doesn't
+rely on any single technology
+
+to make it secure.
+
+Rather, we build security
+through progressive layers that
+
+deliver true defense in depth.
+
+So our hardware is
+Google-controlled, built,
+
+and hardened.
+
+Any application binary that
+runs on our infrastructure
+
+is deployed securely.
+
+We do not assume any
+trust between services.
+
+And we use multiple mechanisms
+to establish and maintain
+
+trust.
+
+Our infrastructure
+was designed to be
+
+multi-tenant from the start.
+
+All identities,
+users, and services
+
+are strongly authenticated.
+
+Data stored on
+our infrastructure
+
+is automatically
+encrypted at rest
+
+and distributed for
+availability and reliability.
+
+Any communications over the
+internet to our Cloud Services
+
+are also encrypted.
+
+And the scale of
+our infrastructure
+
+allows us to absorb many
+denial of service attacks.
+
+We have multiple
+layers of protection
+
+that further reduce the
+risk of any DDoS impact.
+
+And finally, our operations
+teams detect threats
+
+and respond to incidents
+24/7, 365 days a year.
+
+We actually have a white paper
+written on our infrastructure
+
+design that goes into all
+of these areas in much
+
+more detail.
+
+Other cloud providers might
+describe a similar stack
+
+of capabilities.
+
+But the way that Google Cloud
+approaches many of these,
+
+in my opinion, is very unique.
+
+So I had the chance to
+visit a data center in 2019.
+
+And I made a video
+about my experience
+
+that you should all check out.
+
+I'll be sure to share the link.
+
+But you can find it
+at bit.ly/6layersdeep.
+
+This was a huge project.
+
+And it wasn't easy to
+get approvals or even
+
+step foot inside the premises.
+
+But in my job at
+Google, I spend my days
+
+working with developers.
+
+Our data centers are crucial
+to the work that they do.
+
+But most never actually set
+foot inside a data center.
+
+So as you can see here, there
+is a huge amount of space
+
+that our data centers span,
+352,000 square feet, or 33,000
+
+square meters.
+
+And all in all, less
+than 1% of Googlers
+
+ever get to set foot inside.
+
+So I was determined to make a
+video because for close to two
+
+decades, Google
+has designed data
+
+centers from the ground up.
+
+Security has surfaced as one
+of the most critical elements
+
+of our DNA.
+
+And it's part of our commitment
+to keep our customers'
+
+data safe, and not to
+mention Google Cloud
+
+now meets more than 45
+regulatory requirements,
+
+and growing.
+
+Our products regularly undergo
+independent verification
+
+of their security, privacy,
+and compliance controls,
+
+achieving certifications,
+attestations of compliance,
+
+or audit reports against
+these global standards.
+
+This means that an
+independent auditor
+
+has examined the controls
+present in our data centers,
+
+infrastructure, and operations.
+
+These certifications include
+some of the most widely
+
+recognized, internationally
+accepted independent security
+
+standards, including ISO/IEC
+27001 for security controls,
+
+ISO/IEC 27017 for
+Cloud Security,
+
+and ISO/IEC 27018
+for cloud privacy
+
+as well as AICP SOC 1, 2, and 3.
+
+These certifications
+are helping us
+
+meet the demands of
+the industry standards,
+
+like CSA STAR and
+PCI DSS as well
+
+as many other regional
+standards as well.
+
+We continue to expand our
+list of compliance offerings
+
+globally to assist our
+customers with their compliance
+
+obligations.
+
+So while auditors can sometimes
+enter our data centers
+
+to perform these audits, most
+people, including Googlers,
+
+cannot.
+
+Under special
+authorization, I found out
+
+that our physical
+data center security
+
+is built using that defense
+in depth foundation.
+
+It's made up of six
+layers, from the exterior
+
+all the way to the center,
+each increasing in controls
+
+as you get to layer 6.
+
+So I'm going to walk
+through each layer and some
+
+of the most notable
+features and experiences
+
+that I went through.
+
+So let's start with layer 1.
+
+This is the secure perimeter.
+
+Basically, it means the
+property boundaries.
+
+And that includes all
+the signage and fencing
+
+around the property.
+
+These are the furthest, most
+exterior edges of the property.
+
+So as you drive
+into the property,
+
+you'll see signs that might
+have a Google logo or a signage.
+
+But otherwise, you really
+can't tell immediately
+
+that's-- it's a data center.
+
+It's, more or less--
+
+looks like an industrial
+area or a business park.
+
+But things really start
+to get interesting
+
+when it comes to layer 2, also
+known as the secure perimeter.
+
+And that includes the
+main entrance gate.
+
+So I started my
+journey by driving up
+
+to this gate, at
+which point I needed
+
+my credentials and
+my identity checked.
+
+Even before stepping foot
+into the property boundaries,
+
+I was already on an
+access approval list.
+
+The least privileged
+protocol is the idea
+
+that someone should have only
+the bare minimum privileges
+
+necessary to perform their job.
+
+So if your least privilege
+is to enter layer 2,
+
+then you're not going to
+have luck moving to layer 3.
+
+Each person's access
+and permissions
+
+are checked at badge readers,
+starting with layer 1,
+
+and progresses more
+stringently at layer 6.
+
+These exist at every access
+point in the data center
+
+facility.
+
+And authorization
+measures happen everywhere
+
+using this protocol.
+
+This is something that we don't
+just employ in a data center,
+
+but it's also a best
+practice we always
+
+recommend for how you set up
+your organization resources
+
+and data on Google Cloud.
+
+So as you know, applying
+least privilege to IAM roles
+
+on Google Cloud is recommended.
+
+So any user has the bare minimum
+roles and their permissions
+
+to perform their functions.
+
+So layer 2 has a lot
+of security features,
+
+ranging from smart fencing
+to overlapping cameras
+
+to 24/7 guard patrols and more.
+
+And there's actually
+a lot more technology
+
+and operations going on behind
+the scenes than meets the eye.
+
+So from the time
+that you're on-site,
+
+they already know
+that you're there.
+
+But what I found
+also interesting
+
+is that they're able to do
+correlation analysis of where
+
+you've been on site through
+cameras, badge access
+
+tracking, et cetera.
+
+And there are also
+guards in vehicles
+
+and some guards on foot.
+
+As you can see here, there's
+also the vehicle crash barrier.
+
+This is designed to stop a
+fully loaded truck from crashing
+
+through the front entrance.
+
+This particular black fence
+also that you see here
+
+is an anti-climb fence.
+
+So there are spikes
+pointed outward.
+
+It'd be pretty hard to get
+over that in one piece.
+
+It's also equipped with fiber.
+
+The technology tells data
+center security operations
+
+if someone's near the
+fence or touches the fence.
+
+They also use thermal
+cameras and standard cameras
+
+so that they're able to see
+video footage at night just
+
+as clearly as they
+can during the day.
+
+Each camera overlaps the
+area that it can cover.
+
+So there's no blind
+spots anywhere
+
+around the data center.
+
+Now, you might be
+wondering, well,
+
+what if somebody skydives
+into the property
+
+or digs under the ground?
+
+Trust me, they have enough
+coverage of the area
+
+that they will detect
+something coming
+
+into the property
+or motion that's
+
+occurring near the fence.
+
+These are not only
+physical safeguards,
+
+but act as a big
+deterrent to anyone
+
+even thinking about trying
+to forcibly come inside.
+
+And more obstacles
+await them inside.
+
+And we have additional
+operational monitoring
+
+happening in any case that
+will alert more guards
+
+to take action if
+they detect something.
+
+Layer 3 is building access.
+
+In this case, I was
+able to enter the lobby.
+
+But just so you
+know, this is still
+
+nowhere near the
+data center floor
+
+because that's still a
+few more layers deep.
+
+So let's say that you've
+gotten through the gate,
+
+you've come inside, you've
+come into the secured lobby,
+
+and you have your card or a
+form of identification, which
+
+is checked by a receptionist
+to make sure that you're
+
+on the access control list.
+
+But what happens if
+you lose your card?
+
+Then what?
+
+For that reason, biometric
+scanning is also employed.
+
+So, yes, I did have to
+get my irises scanned.
+
+Similar to concepts in
+software development,
+
+biometric scanning is for
+authentication of identity.
+
+Meanwhile, my badge allowing
+access to a certain area
+
+is authorization.
+
+Yes, this also felt
+like I was on some sort
+
+of secret top mission, maybe
+"Mission Impossible" or maybe
+
+"Ocean's Eleven"
+or, more recently,
+
+I've been hearing it's
+been compared to Professor
+
+from "Money Heist."
+
+But once that was taken
+care of, another rule
+
+exists at the data
+center that prevents
+
+a vehicle or an
+individual closely
+
+following another to gain
+entry into a restricted area
+
+without a badge swipe.
+
+So if the system detects
+a door open for too long,
+
+it immediately alerts
+security personnel.
+
+Any gate or door must close
+before the next vehicle
+
+or the person can badge
+in and then gain access.
+
+You've probably seen
+dual authentication
+
+when you try to
+sign into an account
+
+and you get a one-time
+password sent to your phone.
+
+We take a similar
+approach at the data
+
+centers to verify a person's
+identity and access.
+
+At some layers in
+the data center,
+
+you're required to
+swipe your badge
+
+and then enter a circle
+lock or a tubular doorway.
+
+You walk into this
+special half-portal
+
+that checks your badge and
+scans your eyes to gain access
+
+to the next layer
+of the data center.
+
+It prevents anyone from
+closely following you
+
+through because only one person
+is allowed into the circle lock
+
+at a time.
+
+So you can see here that I
+have to first badge, then
+
+step inside, get
+my irises scanned,
+
+and then it verifies my identity
+and the door on the other side
+
+unlocks.
+
+And something not shown
+in the video that I made
+
+is the facility loading
+docks, which are
+
+a special section of layer 3.
+
+They're used to receive and
+send shipments of materials,
+
+like new hardware.
+
+Truck deliveries from vendors
+must be approved for access
+
+to layer 3 to enter the dock.
+
+For security, the
+loading dock room
+
+is physically isolated from
+the rest of the data center.
+
+And a guard is present--
+
+a guard presence
+is required when
+
+a shipment is received or sent.
+
+I actually got super lucky
+when I was there and got
+
+to witness shipments being made
+of new servers being delivered.
+
+And in order for them
+to even get to layer 3,
+
+they had to have been on
+the allowed access list
+
+through layers 1 and 2
+before arriving at layer 3.
+
+Guards checked their
+identification and the access
+
+list before letting them into
+layer 2 and, subsequently,
+
+opening the garage door to let
+them back up into the loading
+
+dock room.
+
+Then out came fresh new
+server racks, one by one.
+
+And once unloading was
+complete, the vendor left
+
+and the hardware
+operations team began
+
+to move the racks into layer
+4 by badging themselves in,
+
+one at a time, with the actual
+hardware going into the data
+
+center.
+
+Badge checks occur
+at every entry point
+
+throughout the
+facility to ensure
+
+least privilege is adhered to.
+
+Even timed
+authorizations happen.
+
+So you can do your job for only
+an allotted amount of time.
+
+So this could apply to loading
+docks or even performing
+
+hardware maintenance on
+the data center floor.
+
+You're probably thinking
+of your favorite movie,
+
+wondering, what if supply
+chain gets intercepted?
+
+Well, additional checks happen
+for this potential risk.
+
+And we have tested for
+many potential risk
+
+scenarios, which I'll talk
+about in a little bit.
+
+Layer 4 is once you've actually
+entered the data center itself.
+
+And this includes an extremely
+important part of data center
+
+security, the Security
+Operations Center, or SOC,
+
+a hive of activity that's
+monitoring the data
+
+center 24/7, 365 days a year.
+
+The doors, the cameras, the
+badge readers, iris scan--
+
+everything is
+monitored from here.
+
+Anyone on site at
+the facility will
+
+have their movement patterns
+tracked throughout the property
+
+via their badge
+and biometric scans
+
+at entry points and doors.
+
+If a door is kept open for
+too long or correlation
+
+analysis finds that
+their presence is
+
+in an unauthorized location,
+alerts will be sent to the SOC
+
+instantly.
+
+This is the brains of
+the security system.
+
+So if there's anything out
+of the ordinary happening,
+
+they have to be able
+to pick that up.
+
+The SOCs of all
+Google data centers
+
+are also designed to
+roll up to a regional SOC
+
+for multi-regional
+high-availability purposes.
+
+If an on-site SOC
+were to be disrupted
+
+due to an event, such as a
+natural disaster or emergency
+
+building evacuation,
+monitoring instantly
+
+rolls over to the regional SOC
+for continuous, uninterrupted
+
+monitoring.
+
+SOCs act as a center
+for emergency and safety
+
+response in addition to
+security responsibilities.
+
+These SOCs monitor
+and respond to alarms
+
+at all of our facilities
+and are constantly
+
+tracking local and global events
+that could impact operations
+
+at our data centers.
+
+Think of this like
+high availability
+
+for physical security.
+
+And really, that also means
+it's high availability
+
+for logical security and
+data protection as well.
+
+Layer 5 is the
+data center floor.
+
+Servers and network equipment
+that power Google live here.
+
+Security in this layer is one
+of the most highly restrictive,
+
+as it's where the data resides.
+
+And this meant I needed
+to enter a circle lock,
+
+get my irises scanned
+and badge checked.
+
+And then once in there, I
+was accompanied by our guards
+
+in every space.
+
+And the VP of global
+data centers, Joe Kava,
+
+took me around.
+
+So only hardware operations
+personnel, security
+
+professionals, and
+key people granted
+
+access on an as-needed
+basis can enter.
+
+Access is limited to the
+time required to complete
+
+the necessary job function.
+
+So this is truly an
+as-needed-only access area,
+
+meaning that only the
+technicians and engineers that
+
+have to be there to
+maintain, upgrade, or repair
+
+the equipment are
+ever allowed there.
+
+This layer is protected by a
+circle lock, as I mentioned,
+
+security staff, and
+badge-protected doors.
+
+And the data center floor
+features laser beam intrusion
+
+detection.
+
+Additional cameras are also
+placed throughout the area
+
+while security staff monitor the
+data center floor at all times.
+
+And the technicians who
+have access to the devices
+
+are there.
+
+But the data at
+rest is encrypted.
+
+And you can also issue and
+keep your own encryption keys.
+
+And if you're
+wondering, Googlers
+
+do not have access to the data
+unless you've authorized it
+
+for a technical issue.
+
+And this is called
+access transparency,
+
+which is a technical control.
+
+It produces immutable logs any
+time a Google administrator
+
+needs to enter a customer's
+tenant to perform something,
+
+whether it's a support
+request or maintenance.
+
+And you control what types of
+access that you want to permit.
+
+For example, maintenance is OK.
+
+Support's not, or it's OK for a
+given set of your environment.
+
+So layer 6 is disk destroyal
+or, as I like to call it,
+
+hard drive graveyard.
+
+So Google employs a
+strict equipment chain
+
+of custody monitoring,
+meaning that we meticulously
+
+track the location and the
+status of all equipment
+
+within our data center.
+
+This means that we track
+the location and status
+
+of every hard drive, from
+acquisition to destruction,
+
+using bar codes and asset tags.
+
+These asset tags are scanned
+throughout a hard drive's
+
+lifecycle in a data
+center from the time
+
+that it's installed
+to the time that it's
+
+removed from circulation.
+
+And tracking these
+hard drives closely
+
+ensures that they don't
+go missing or end up
+
+in the wrong hands.
+
+We also make sure hard
+drives are properly
+
+functioning by doing
+frequent performance tests.
+
+If a component fails to
+pass a performance test,
+
+then it's deemed
+no longer usable.
+
+So to prevent any
+sensitive information
+
+from living on that disk, then
+we remove it from inventory
+
+to be erased and destroyed
+in layer 6, disk erase.
+
+Disks enter layer 6 through a
+secure two-way locker system,
+
+allowing only
+authorized personnel
+
+to retrieve it in layer 6,
+which you're seeing here.
+
+When a hard drive is
+erased and retired,
+
+the disk erase formatter
+uses a zero-filling method
+
+that wipes the disk data and
+replaces each bit of data
+
+with zeros.
+
+And we try to recycle
+drives and their components.
+
+But if a drive can't
+be erased, then it's
+
+stored securely until it
+can be physically destroyed,
+
+as you can see here.
+
+And it'd be pretty
+impossible to recover
+
+any data from these drives.
+
+And even if anyone tried to take
+anything out of the data center
+
+floor with them, we also
+have metal detectors
+
+and video surveillance to
+ensure all personnel exiting
+
+the data center
+halls are properly
+
+checked to prevent unauthorized
+equipment from leaving
+
+the floor.
+
+If you're wondering what
+happens to this waste,
+
+we actually have researchers
+in Google's Oklahoma facility
+
+who are looking into methods
+of collecting and recycling
+
+rare earth metals
+in hard drives.
+
+Data centers are the largest
+consumer of hard drives
+
+that contain elements like
+neodymium and dysprosium.
+
+These are the same
+elements that have
+
+a role in the components
+of electric cars.
+
+And there's a great
+article to check out
+
+if you want to learn more.
+
+Leaving layers 5 and 6 is
+arguably more difficult
+
+than entering, as
+each person must
+
+exit through full
+metal detection
+
+and detailed examination.
+
+And fun fact-- Google Cloud
+also employs a security testing
+
+program where undercover
+actors are, in our employ,
+
+attempting to bring hardware
+out of the data center.
+
+This helps us constantly test
+and improve our physical data
+
+center security techniques.
+
+We actually run dozens
+of these drills a year,
+
+paying unannounced,
+skilled adversaries
+
+to try to get past
+controls by any means
+
+necessary except for violence.
+
+And this includes fake badges,
+social engineering, fake UPS
+
+trucks, ladder trucks to
+get over the fence, people
+
+hidden in trucks, attempts
+in thick fog, everything.
+
+And we usually win.
+
+After every attempt, we actually
+run a blameless post-mortem
+
+to improve and make the
+next attempt even harder.
+
+And we ensure the strength
+of our security controls
+
+and iterate controls as needed.
+
+This is all about building
+a culture of security.
+
+So these layers don't stop
+at the physical layer.
+
+They extend into our
+technology stack that supports
+
+Google Cloud products, too.
+
+So at Google Cloud, we provide
+capabilities and assistance
+
+across Google, Cloud,
+Workspace, and connected devices
+
+that cover the whole
+scope of responsibility.
+
+We have a number of
+native security features
+
+that help protect you
+from vulnerabilities,
+
+like encryption in
+transit and at rest.
+
+And our hardware infrastructure
+is custom-designed.
+
+Our servers don't include
+any unnecessary components,
+
+like video cards or
+peripheral interconnects,
+
+that can introduce
+any vulnerabilities.
+
+And the same goes for software,
+including low-level software
+
+and our OS, which is a
+stripped down, hardened
+
+version of Linux.
+
+Further, we also design and
+include hardware specifically
+
+for security, like Titan,
+our custom security
+
+chip that we use to establish
+a hardware root of trust
+
+in our servers and peripherals.
+
+We build our network
+hardware and software
+
+to improve performance
+as well as security.
+
+So on Google Cloud, what's the
+best way to approach security?
+
+Well, cloud security is
+a shared responsibility.
+
+Depending on what cloud
+service you're using,
+
+Google Cloud will manage
+various parts of security
+
+above what we ensure through
+our secure infrastructure.
+
+So customers are responsible
+for securing their own workloads
+
+to meet their requirements
+and compliance.
+
+When it comes to cloud
+security best practices,
+
+there are two sides to it,
+preventative and architectural
+
+controls, which are implemented
+through architecture and policy
+
+decisions.
+
+And first, we're going to cover
+architectural controls, which
+
+include the communication
+between services,
+
+how you structure your
+resources on Google Cloud,
+
+and permissions.
+
+And then I'll quickly cover
+detective controls, which
+
+use monitoring capabilities
+to look for drift, anomalous,
+
+or malicious behavior
+as it happens.
+
+Let's talk about our
+approach to security tooling
+
+on Google Cloud.
+
+We have layers of security
+products and blueprints
+
+for you to quickly
+get started here.
+
+So from the bottom up,
+we have a global scale
+
+technical infrastructure that's
+designed to provide security
+
+throughout the entire
+information processing
+
+lifecycle at Google.
+
+And this infrastructure provides
+secure deployment of services,
+
+secure storage of data, secure
+storage with end user privacy
+
+safeguards, secure
+communications
+
+between services, and also
+secure private communications
+
+with customers over the internet
+as well as safe operation
+
+by administrators.
+
+Building on top of the
+secured core infrastructure,
+
+the next layer is the
+security products,
+
+like Security Command
+Center Premium, which
+
+is our security and risk
+management platform,
+
+and assured workloads for
+securing your government
+
+workloads, which enable you
+to secure your deployments.
+
+These form the lowest levels
+of the security stack.
+
+And then on top of this baseline
+are security foundations
+
+blueprints.
+
+These are security
+blueprints which
+
+include Google Cloud
+security best practices that
+
+are embedded within them.
+
+So our goal here is
+to make it much easier
+
+for you to start and operate
+securely on Google Cloud.
+
+They actually enable you to
+jump-start your deployments
+
+by handling some of
+your key advanced needs
+
+without your teams first needing
+to take time out and learn
+
+all of the advanced skills.
+
+They help you set up org
+policies as a resource
+
+hierarchy, networking, access,
+logging, detective controls,
+
+and then posture
+blueprints, which
+
+cover specific sets of
+services and workloads.
+
+Blueprints also
+come in three tiers,
+
+which differ in their level of
+native support and lifecycle
+
+management.
+
+Supported blueprints are created
+by the Google security teams
+
+and managed as
+products, which are
+
+regular refreshes
+and attestation
+
+and testing of the
+functionality and resilience.
+
+They're all verified.
+
+So blueprints can be created
+by Google teams or partner
+
+teams or even customer teams.
+
+And the key is that the
+lifecycle management
+
+and attestation
+of fit for purpose
+
+is the responsibility
+of the creating team.
+
+And today, they're
+offered via Terraform.
+
+So compatible blueprints
+can be created by anyone.
+
+The requirement
+is just that they
+
+need to be correctly
+formatted to operate
+
+through the blueprint
+tool chains.
+
+And then we also
+have blueprints that
+
+address specific use cases,
+like protecting storage buckets
+
+or doing--
+
+protecting BigQuery users, AI
+notebooks, or Anthos, even.
+
+So the topmost layer
+here is comprised also
+
+of your own web app and API
+protection services, analytics,
+
+or even high-performance
+computing environments.
+
+So the security
+foundations blueprints
+
+provides a strong starting
+point for customers
+
+to build and deploy
+their organization.
+
+So customers have access
+to the opinionated guide
+
+of the full Terraform
+repo of automation scripts
+
+to deploy the
+foundational landing zone.
+
+And it can be deployed
+either at the full org level
+
+or at the folder level
+in the hierarchy.
+
+These blueprints provide an
+opinionated vetting pattern
+
+for resource hierarchy,
+org policies, IAM,
+
+separation of duties, network
+architecture, data access
+
+segmentation, logging,
+and detective controls
+
+across projects and accounts.
+
+So that way, you can meet
+your security compliance
+
+and have a starting point.
+
+And then you can also start
+to build your own workloads
+
+and projects on top.
+
+It provides the foundation
+upon which you can further
+
+deploy an increasing number
+of opinionated Google-created
+
+security posture blueprints
+for specific products,
+
+sets of services, and workloads.
+
+And we update these blueprints
+on a six-month cycle.
+
+We also provide a project
+factory Terraform module
+
+that enables you to
+set the parameters
+
+and constraints for projects
+when they are created.
+
+You can access the latest
+reference guide, PDF,
+
+and the Terraform scripts repo
+from the Google Cloud Security
+
+Best Practices Resource Center.
+
+And here, in addition to the
+curated set of Google Cloud
+
+security blueprints,
+you can also
+
+access both the
+Google BeyondProd
+
+paper, which lays out the
+principles and practices
+
+of Google's approach for
+Cloud-native security
+
+and how we think about and
+how we operate Cloud-native.
+
+For customers who want to
+dive deeper into the knowledge
+
+and experience that Google
+has, then the Resource Center
+
+also includes a link to
+our building security
+
+and reliable systems
+reference book.
+
+Additionally, a range
+of detailed background
+
+white papers around
+our reference materials
+
+is available to customers
+from that Resource Center.
+
+And it covers topics like
+infrastructure design
+
+and how encryption at
+rest and in transit
+
+are handled on Google Cloud.
+
+On the preventative
+side, we also
+
+launched Security
+Command Center.
+
+This is the canonical
+security and risk
+
+database for Google Cloud.
+
+So it includes a risk
+dashboard and analytics system
+
+for surfacing, understanding,
+and remediating
+
+Google Cloud security and data
+risk across your organization.
+
+So this means from
+one dashboard,
+
+you can uncover
+common web application
+
+and vulnerabilities, like
+cross-site scripting or
+
+outdated libraries in
+your web applications
+
+running on App Engine,
+GKE, and Compute Engine.
+
+And you can also
+detect threats using
+
+logs running in Google Cloud
+or common container attacks,
+
+including suspicious binary
+or suspicious library
+
+and reverse shell.
+
+Security Health Analytics is a
+vulnerabilities dashboard here.
+
+And it helps you view
+security misconfigurations
+
+by severity, compliance
+standards, or project.
+
+And you can take
+action from there.
+
+So with this, you can take
+inventory of your Google Cloud
+
+assets and partner solutions.
+
+You can also understand exactly
+what changed in your asset
+
+history in near real time and
+respond to the most pressing
+
+issues first.
+
+You can also receive
+notifications
+
+about new findings or updates
+to findings within minutes
+
+and be able to take action.
+
+And also, you can identify
+security misconfigurations
+
+in your Google Cloud
+assets and resolve them
+
+by following actionable
+recommendations
+
+that they actually have there.
+
+Lastly, you can catch
+web vulnerabilities
+
+before they hit production and
+reduce your exposure to risks
+
+and identify compliance-- so see
+violations in your Google Cloud
+
+assets and resolve them
+with these recommendations.
+
+And of course, you want
+to be able to export them.
+
+So you can export
+compliance reports
+
+to ensure all your resources
+are meeting your compliance
+
+requirements.
+
+We have support for
+compliance standards,
+
+like Payment Card
+Industry, which
+
+is PCI, the International
+Organization
+
+for Standardization, ISO.
+
+There's National Institute of
+Standards and Technology, NIST,
+
+and the Center for
+Internet Security, CIS,
+
+1 and 1.1, and benchmarks.
+
+This industry-leading
+threat intelligence
+
+detects threats
+using logs running
+
+in Google Cloud at scale.
+
+And it also uses
+kernel-level instrumentation
+
+to identify potential
+compromises of containers
+
+and, lastly, combines
+threat intelligence
+
+from first- and
+third-party providers
+
+to better protect
+your enterprise
+
+from costly and
+high-risk threats.
+
+Thank you so much for
+joining this session.
+
+I know there's a
+lot packed in there.
+
+So I hope you found it
+as much of an adventure
+
+as it felt like
+to go through it.
+
+If you do want to
+learn more, check out
+
+the resources that we'll
+include for this session.
+
+And always feel free to
+reach out to me on social,
+
+like on Twitter, @stephr_wong.
+
+Thanks again.
+
+
+
